@@ -1,4 +1,5 @@
-﻿
+﻿C
+
 # Coworkers
 
 {% api-method method="get" host="https://spaces.nexudus.com/api" path="/spaces/coworkers" %}
@@ -21,7 +22,8 @@ Basic Authentication token.
 
 {% api-method-query-parameters %}
 
-{% api-method-parameter name="Coworker_CoworkerType" type="integer" %}
+{% api-method-parameter type="integer" %}
+Coworker_CoworkerType
 {% endapi-method-parameter %}
 {% api-method-parameter name="Coworker_FullName" type="string" %}
 {% endapi-method-parameter %}
@@ -377,5 +379,3 @@ Could not find a cake matching this query.
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
-
-
