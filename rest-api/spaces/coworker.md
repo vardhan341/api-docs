@@ -2353,9 +2353,9 @@ Binary stream or null
 
 
 ## Related Entities
-
-* [Business](../../)
-* [Team](../../)
-
-
-
+* [Country](../sys/country)
+* [SimpleTimeZone](../sys/simpletimezone)
+* [Business](../sys/business)
+* [Country](../sys/country)
+* [SimpleTimeZone](../sys/simpletimezone)
+* [User](../sys/user)
