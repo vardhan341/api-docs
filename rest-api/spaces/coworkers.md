@@ -1,4 +1,4 @@
-# Coworkers
+# Coworkers 2
 
 {% api-method method="get" host="https://spaces.nexudus.com/api" path="/spaces/coworkers" %}
 {% api-method-summary %}
@@ -47,6 +47,7 @@ Cake successfully retrieved.
     "cake": "Binary cake"
 }
 ```
+
 {% endapi-method-response-example %}
 
 {% api-method-response-example httpCode=404 %}
@@ -59,10 +60,8 @@ Could not find a cake matching this query.
     "message": "Ain't no cake like that."
 }
 ```
+
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
-
-
-
