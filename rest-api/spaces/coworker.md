@@ -2218,7 +2218,7 @@ application/json
 {% api-method-parameter name="Key" type="string" required=true %}
 The command Key defining the command to run.  
   
-`"ADD_COWORKER_TO_GROUP"`
+`"COMMAND_KEY_1"`
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Parameters" type="array" required=false %}
@@ -2236,7 +2236,7 @@ A list of object with the structure below. The parameters required for each comm
 {% api-method-parameter name="Ids" type="array" required=true %}
 A list of integer IDs for each of the records to run this command for.  
   
-`[33892859, 123565978]`
+`[987654321, 123565978]`
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
@@ -2290,7 +2290,7 @@ application/json
 
 {% api-method-path-parameters %}
 {% api-method-parameter name="id" type="integer" required=true %}
-The id of the coworker to get the avatar for.
+The id of the Coworker to get the avatar for.
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
 {% endapi-method-request %}
@@ -2308,6 +2308,49 @@ Binary stream or null
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
+
+{% api-method method="get" host="https://spaces.nexudus.com/api" path="/spaces/coworkers/getbannerimage/:id" %}
+{% api-method-summary %}
+BannerImage
+{% endapi-method-summary %}
+
+{% api-method-description %}
+
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+Basic Authentication token. Base64 encoding of 'username:password'.
+{% endapi-method-parameter %}
+{% api-method-parameter name="Content" type="string" required=true %}
+application/json
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+
+{% api-method-path-parameters %}
+{% api-method-parameter name="id" type="integer" required=true %}
+The id of the Coworker to get the bannerimage for.
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```javascript
+Binary stream or null
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
 
 ## Related Entities
 
