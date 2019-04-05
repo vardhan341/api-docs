@@ -1,4 +1,4 @@
-# Coworkers 2
+# Coworkers
 
 {% api-method method="get" host="https://spaces.nexudus.com/api" path="/spaces/coworkers" %}
 {% api-method-summary %}
