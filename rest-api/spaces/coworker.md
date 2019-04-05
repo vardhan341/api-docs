@@ -1,3 +1,4 @@
+﻿
 ---
 description: 'Coworkers represent your customers, both members and contacts.'
 ---
@@ -10,534 +11,843 @@ Find
 {% endapi-method-summary %}
 
 {% api-method-description %}
-This endpoint allows you to GET a list of coworkers based on one or more filter parameters
+This endpoint allows you to GET a list of coworkers based on one or more filter querystring parameters.
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
-{% api-method-headers %}
-{% api-method-parameter name="Content" type="string" required=true %}
-application/json
-{% endapi-method-parameter %}
 
+{% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
+{% endapi-method-parameter %}
+{% api-method-parameter name="Content" type="string" required=true %}
+application/json
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
 {% api-method-query-parameters %}
-{% api-method-parameter name="CoworkerType" type="integer" %}
+
+{% api-method-parameter name="Id" type="int" %}
+?Id=...
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="UniqueId" type="Guid" %}
+?UniqueId=...
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="SystemId" type="string" %}
+?Coworker\_SystemId=...
+{% endapi-method-parameter %}
+
+
+{% api-method-parameter name="CoworkerType" type="Nexudus.Coworking.Core.Enums.eCoworkerRecordType" %}
 ?Coworker\_CoworkerType=...
 {% endapi-method-parameter %}
+
+
+{% api-method-parameter name="Businesses" type="ICollection<Business>" %}
+?Coworker\_Businesses=...
+{% endapi-method-parameter %}
+
+
+{% api-method-parameter name="Teams" type="ICollection<Team>" %}
+?Coworker\_Teams=...
+{% endapi-method-parameter %}
+
+
+{% api-method-parameter name="Proposals" type="IList<Proposal>" %}
+?Coworker\_Proposals=...
+{% endapi-method-parameter %}
+
+
+{% api-method-parameter name="Contracts" type="IList<CoworkerContract>" %}
+?Coworker\_Contracts=...
+{% endapi-method-parameter %}
+
+
+{% api-method-parameter name="Tasks" type="IList<CoworkerTask>" %}
+?Coworker\_Tasks=...
+{% endapi-method-parameter %}
+
+
+{% api-method-parameter name="Files" type="IList<CoworkerDataFile>" %}
+?Coworker\_Files=...
+{% endapi-method-parameter %}
+
+
+{% api-method-parameter name="Messages" type="IList<CoworkerMessage>" %}
+?Coworker\_Messages=...
+{% endapi-method-parameter %}
+
+
+{% api-method-parameter name="CoworkerDiscountCodes" type="IList<CoworkerDiscountCode>" %}
+?Coworker\_CoworkerDiscountCodes=...
+{% endapi-method-parameter %}
+
+
+{% api-method-parameter name="CoworkerBookingCredits" type="IList<CoworkerBookingCredit>" %}
+?Coworker\_CoworkerBookingCredits=...
+{% endapi-method-parameter %}
+
+
+{% api-method-parameter name="Bookings" type="IList<Booking>" %}
+?Coworker\_Bookings=...
+{% endapi-method-parameter %}
+
+
+{% api-method-parameter name="Charges" type="IList<Charge>" %}
+?Coworker\_Charges=...
+{% endapi-method-parameter %}
+
 
 {% api-method-parameter name="FullName" type="string" %}
 ?Coworker\_FullName=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="Salutation" type="string" %}
 ?Coworker\_Salutation=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="Gender" type="integer" %}
+
+{% api-method-parameter name="Gender" type="Nexudus.Coworking.Core.Enums.eGender" %}
 ?Coworker\_Gender=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="Email" type="string" %}
 ?Coworker\_Email=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="CreateUser" type="bool" %}
 ?Coworker\_CreateUser=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="Address" type="string" %}
 ?Coworker\_Address=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="PostCode" type="string" %}
 ?Coworker\_PostCode=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="CityName" type="string" %}
 ?Coworker\_CityName=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="State" type="string" %}
 ?Coworker\_State=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="Country" type="int" %}
+
+{% api-method-parameter name="Country" type="Country" %}
 ?Coworker\_Country=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="SimpleTimeZone" type="int" %}
+
+{% api-method-parameter name="SimpleTimeZone" type="SimpleTimeZone" %}
 ?Coworker\_SimpleTimeZone=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="MobilePhone" type="string" %}
 ?Coworker\_MobilePhone=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="LandLine" type="string" %}
 ?Coworker\_LandLine=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="DateOfBirth" type="DateTime?" %}
 ?Coworker\_DateOfBirth=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="NickName" type="string" %}
 ?Coworker\_NickName=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="BusinessArea" type="string" %}
 ?Coworker\_BusinessArea=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="Position" type="string" %}
 ?Coworker\_Position=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="CompanyName" type="string" %}
 ?Coworker\_CompanyName=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="ProfileWebsite" type="string" %}
 ?Coworker\_ProfileWebsite=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="ProfileTags" type="string" %}
 ?Coworker\_ProfileTags=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="ProfileSummary" type="string" %}
 ?Coworker\_ProfileSummary=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="Twitter" type="string" %}
 ?Coworker\_Twitter=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="Facebook" type="string" %}
 ?Coworker\_Facebook=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="Google" type="string" %}
 ?Coworker\_Google=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="Telegram" type="string" %}
 ?Coworker\_Telegram=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="Linkedin" type="string" %}
 ?Coworker\_Linkedin=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="Skype" type="string" %}
 ?Coworker\_Skype=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="Github" type="string" %}
 ?Coworker\_Github=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="Pinterest" type="string" %}
 ?Coworker\_Pinterest=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="Flickr" type="string" %}
 ?Coworker\_Flickr=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="Instagram" type="string" %}
 ?Coworker\_Instagram=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="Vimeo" type="string" %}
 ?Coworker\_Vimeo=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="Tumblr" type="string" %}
 ?Coworker\_Tumblr=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="Blogger" type="string" %}
 ?Coworker\_Blogger=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="ProfileIsPublic" type="bool" %}
 ?Coworker\_ProfileIsPublic=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="InvoicingBusiness" type="int" %}
+
+{% api-method-parameter name="InvoicingBusiness" type="Business" %}
 ?Coworker\_InvoicingBusiness=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="BillingEmail" type="string" %}
 ?Coworker\_BillingEmail=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="BillingName" type="string" %}
 ?Coworker\_BillingName=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="BillingAddress" type="string" %}
 ?Coworker\_BillingAddress=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="BillingPostCode" type="string" %}
 ?Coworker\_BillingPostCode=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="BillingCityName" type="string" %}
 ?Coworker\_BillingCityName=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="BillingState" type="string" %}
 ?Coworker\_BillingState=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="BillingCountry" type="int" %}
+
+{% api-method-parameter name="BillingCountry" type="Country" %}
 ?Coworker\_BillingCountry=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="BillingSimpleTimeZone" type="int" %}
+
+{% api-method-parameter name="BillingSimpleTimeZone" type="SimpleTimeZone" %}
 ?Coworker\_BillingSimpleTimeZone=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="TaxRate" type="decimal?" %}
 ?Coworker\_TaxRate=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="TaxIDNumber" type="string" %}
 ?Coworker\_TaxIDNumber=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="BankName" type="string" %}
 ?Coworker\_BankName=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="BankAccount" type="string" %}
 ?Coworker\_BankAccount=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="BankBranch" type="string" %}
 ?Coworker\_BankBranch=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="NotifyOnNewInvoice" type="bool" %}
 ?Coworker\_NotifyOnNewInvoice=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="NotifyOnNewPayment" type="bool" %}
 ?Coworker\_NotifyOnNewPayment=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="NotifyOnFailedPayment" type="bool" %}
 ?Coworker\_NotifyOnFailedPayment=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="ShowPayingMemberInvoices" type="bool" %}
 ?Coworker\_ShowPayingMemberInvoices=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="EnableGoCardlessPayments" type="bool" %}
 ?Coworker\_EnableGoCardlessPayments=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="UseGoCardlessProPayments" type="bool" %}
-?Coworker\_UseGoCardlessProPayments=...
-{% endapi-method-parameter %}
 
 {% api-method-parameter name="GoCardlessContractNumber" type="string" %}
 ?Coworker\_GoCardlessContractNumber=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="LastOverDueInvoiceReminder" type="DateTime?" %}
-?Coworker\_LastOverDueInvoiceReminder=...
-{% endapi-method-parameter %}
 
-{% api-method-parameter name="LastLowCreditReminder" type="DateTime?" %}
-?Coworker\_LastLowCreditReminder=...
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="RefererGuid" type="Guid?" %}
-?Coworker\_RefererGuid=...
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="RegularPaymentProvider" type="integer" %}
+{% api-method-parameter name="RegularPaymentProvider" type="Nexudus.Coworking.Core.Enums.eRegularPaymentProvider?" %}
 ?Coworker\_RegularPaymentProvider=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="RegularPaymentContractNumber" type="string" %}
 ?Coworker\_RegularPaymentContractNumber=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="CardNumber" type="string" %}
 ?Coworker\_CardNumber=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="DoNotProcessInvoicesAutomatically" type="bool" %}
 ?Coworker\_DoNotProcessInvoicesAutomatically=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="AllowNetworkCheckin" type="bool" %}
 ?Coworker\_AllowNetworkCheckin=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="CheckinSinceLastRenewal" type="int" %}
 ?Coworker\_CheckinSinceLastRenewal=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="MinutesSinceLastRenewal" type="int" %}
 ?Coworker\_MinutesSinceLastRenewal=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="AccessCardId" type="string" %}
 ?Coworker\_AccessCardId=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="AccessPincode" type="string" %}
 ?Coworker\_AccessPincode=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="KeyFobNumber" type="string" %}
 ?Coworker\_KeyFobNumber=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="NotifyOnDelivery" type="bool" %}
 ?Coworker\_NotifyOnDelivery=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="EzeepUserId" type="Guid?" %}
 ?Coworker\_EzeepUserId=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="EzeepFreePrinting" type="bool" %}
 ?Coworker\_EzeepFreePrinting=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="PaperCutPayAsYouPrint" type="bool" %}
 ?Coworker\_PaperCutPayAsYouPrint=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="PaperCutFreePrinting" type="bool" %}
 ?Coworker\_PaperCutFreePrinting=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="ReferenceNumber" type="string" %}
 ?Coworker\_ReferenceNumber=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="Tag" type="string" %}
 ?Coworker\_Tag=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="Notes" type="string" %}
 ?Coworker\_Notes=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="ShowAlert" type="bool" %}
 ?Coworker\_ShowAlert=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="AlertNote" type="string" %}
 ?Coworker\_AlertNote=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="User" type="int" %}
+
+{% api-method-parameter name="CoworkerNotes" type="IList<CoworkerNote>" %}
+?Coworker\_CoworkerNotes=...
+{% endapi-method-parameter %}
+
+
+{% api-method-parameter name="User" type="User" %}
 ?Coworker\_User=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="Active" type="bool" %}
 ?Coworker\_Active=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="NextAutoInvoice" type="DateTime?" %}
 ?Coworker\_NextAutoInvoice=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="InvoiceDueDatePeriod" type="int?" %}
 ?Coworker\_InvoiceDueDatePeriod=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="RegistrationDate" type="DateTime?" %}
 ?Coworker\_RegistrationDate=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="GeneralTermsAccepted" type="bool" %}
 ?Coworker\_GeneralTermsAccepted=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="LastRenewal" type="DateTime?" %}
-?Coworker\_LastRenewal=...
+
+{% api-method-parameter name="CoworkerProducts" type="IList<CoworkerProduct>" %}
+?Coworker\_CoworkerProducts=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="LastInvoiceAttempt" type="DateTime?" %}
-?Coworker\_LastInvoiceAttempt=...
+
+{% api-method-parameter name="TimePasses" type="IList<CoworkerTimePass>" %}
+?Coworker\_TimePasses=...
 {% endapi-method-parameter %}
+
+
+{% api-method-parameter name="Tickets" type="IList<EventAttendee>" %}
+?Coworker\_Tickets=...
+{% endapi-method-parameter %}
+
+
+{% api-method-parameter name="CoworkerExtraServices" type="IList<CoworkerExtraService>" %}
+?Coworker\_CoworkerExtraServices=...
+{% endapi-method-parameter %}
+
+
+{% api-method-parameter name="Invoices" type="IList<CoworkerInvoice>" %}
+?Coworker\_Invoices=...
+{% endapi-method-parameter %}
+
+
+{% api-method-parameter name="LedgerEntries" type="IList<CoworkerLedgerEntry>" %}
+?Coworker\_LedgerEntries=...
+{% endapi-method-parameter %}
+
 
 {% api-method-parameter name="Custom1" type="string" %}
 ?Coworker\_Custom1=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="Custom2" type="string" %}
 ?Coworker\_Custom2=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="Custom3" type="string" %}
 ?Coworker\_Custom3=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="Custom4" type="string" %}
 ?Coworker\_Custom4=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="Custom5" type="string" %}
 ?Coworker\_Custom5=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="Custom6" type="string" %}
 ?Coworker\_Custom6=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="Custom7" type="string" %}
 ?Coworker\_Custom7=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="Custom8" type="string" %}
 ?Coworker\_Custom8=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="Custom9" type="string" %}
 ?Coworker\_Custom9=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="Custom10" type="string" %}
 ?Coworker\_Custom10=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="Custom11" type="string" %}
 ?Coworker\_Custom11=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="Custom12" type="string" %}
 ?Coworker\_Custom12=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="Custom13" type="string" %}
 ?Coworker\_Custom13=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="Custom14" type="string" %}
 ?Coworker\_Custom14=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="Custom15" type="string" %}
 ?Coworker\_Custom15=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="Custom16" type="string" %}
 ?Coworker\_Custom16=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="Custom17" type="string" %}
 ?Coworker\_Custom17=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="Custom18" type="string" %}
 ?Coworker\_Custom18=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="Custom19" type="string" %}
 ?Coworker\_Custom19=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="Custom20" type="string" %}
 ?Coworker\_Custom20=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="Custom21" type="string" %}
 ?Coworker\_Custom21=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="Custom22" type="string" %}
 ?Coworker\_Custom22=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="Custom23" type="string" %}
 ?Coworker\_Custom23=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="Custom24" type="string" %}
 ?Coworker\_Custom24=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="Custom25" type="string" %}
 ?Coworker\_Custom25=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="Custom26" type="string" %}
 ?Coworker\_Custom26=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="Custom27" type="string" %}
 ?Coworker\_Custom27=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="Custom28" type="string" %}
 ?Coworker\_Custom28=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="Custom29" type="string" %}
 ?Coworker\_Custom29=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="Custom30" type="string" %}
 ?Coworker\_Custom30=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="NextInvoiceLocal" type="DateTime?" %}
-?Coworker\_NextInvoiceLocal=...
+
+{% api-method-parameter name="InvoicingBusiness\_Name" type="string" %}
+?Coworker\_InvoicingBusiness\_Name=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="NextAutoInvoiceLocal" type="DateTime?" %}
-?Coworker\_NextAutoInvoiceLocal=...
+
+{% api-method-parameter name="User\_FullName" type="string" %}
+?Coworker\_User\_FullName=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="RegistrationDateLocal" type="DateTime?" %}
-?Coworker\_RegistrationDateLocal=...
+
+{% api-method-parameter name="User\_IsAdmin" type="string" %}
+?Coworker\_User\_IsAdmin=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="AccessControlDebounceTime" type="DateTime?" %}
-?Coworker\_AccessControlDebounceTime=...
+
+{% api-method-parameter name="User\_LastAccess" type="string" %}
+?Coworker\_User\_LastAccess=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="Office365AccessToken" type="string" %}
-?Coworker\_Office365AccessToken=...
+
+{% api-method-parameter name="User\_Active" type="string" %}
+?Coworker\_User\_Active=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="Office365RefreshToken" type="string" %}
-?Coworker\_Office365RefreshToken=...
+
+{% api-method-parameter name="User\_ReceiveCommunityDigest" type="string" %}
+?Coworker\_User\_ReceiveCommunityDigest=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="Office365SubscriptionId" type="string" %}
-?Coworker\_Office365SubscriptionId=...
+
+{% api-method-parameter name="User\_ReceiveEveryMessage" type="string" %}
+?Coworker\_User\_ReceiveEveryMessage=...
 {% endapi-method-parameter %}
+
+
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
 
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-Cake successfully retrieved.
-{% endapi-method-response-example-description %}
+
 
 ```javascript
 {
     "Records": [{
+        "CoworkerType": Nexudus.Coworking.Core.Enums.eCoworkerRecordType.Individual,
         "FullName": "Name",
+        "Salutation": "Name",
+        "Gender": Nexudus.Coworking.Core.Enums.eGender.NotSet,
+        "Email": "email@email.com",
+        "CreateUser": true,
+        "Address": "Address",
+        "PostCode": "PostCode",
+        "CityName": "CityName",
+        "State": "State",
+        "Country": null,
+        "SimpleTimeZone": null,
+        "MobilePhone": "MobilePhone",
+        "LandLine": "LandLine",
+        "DateOfBirth": null,
+        "NickName": "NickName",
+        "BusinessArea": "BusinessArea",
+        "Position": "Position",
+        "CompanyName": "CompanyName",
+        "ProfileWebsite": "ProfileWebsite",
+        "ProfileTags": "BusinessArea",
+        "ProfileSummary": "BusinessArea",
+        "Twitter": "Twitter",
+        "Facebook": "Facebook",
+        "Google": "Google",
+        "Telegram": "Telegram",
+        "Linkedin": "Linkedin",
+        "Skype": "Skype",
+        "Github": "Github",
+        "Pinterest": "Pinterest",
+        "Flickr": "Flickr",
+        "Instagram": "Instagram",
+        "Vimeo": "Vimeo",
+        "Tumblr": "Tumblr",
+        "Blogger": "Blogger",
+        "ProfileIsPublic": true,
+        "InvoicingBusiness": null,
+        "BillingEmail": "Address",
+        "BillingName": "Address",
+        "BillingAddress": "Address",
+        "BillingPostCode": "PostCode",
+        "BillingCityName": "CityName",
+        "BillingState": "State",
+        "BillingCountry": null,
+        "BillingSimpleTimeZone": null,
+        "TaxRate": 0,
+        "TaxIDNumber": "State",
+        "BankName": "Bank Name",
+        "BankAccount": "Bank Account #",
+        "BankBranch": "Branch / Sort Code",
+        "NotifyOnNewInvoice": true,
+        "NotifyOnNewPayment": true,
+        "NotifyOnFailedPayment": true,
+        "ShowPayingMemberInvoices": true,
+        "EnableGoCardlessPayments": false,
+        "GoCardlessContractNumber": "false",
+        "RegularPaymentProvider": Nexudus.Coworking.Core.Enums.eRegularPaymentProvider.Manual,
+        "RegularPaymentContractNumber": "false",
+        "CardNumber": "",
+        "DoNotProcessInvoicesAutomatically": false,
+        "AllowNetworkCheckin": false,
+        "CheckinSinceLastRenewal": 0,
+        "MinutesSinceLastRenewal": 0,
+        "AccessCardId": "Notes",
+        "AccessPincode": "Notes",
+        "KeyFobNumber": "Notes",
+        "NotifyOnDelivery": null,
+        "EzeepUserId": null,
+        "EzeepFreePrinting": null,
+        "PaperCutPayAsYouPrint": false,
+        "PaperCutFreePrinting": null,
+        "ReferenceNumber": "ReferenceNumber",
+        "Tag": "Tag",
+        "Notes": "Notes",
+        "ShowAlert": false,
+        "AlertNote": "Tag",
+        "User": null,
+        "Active": true,
+        "NextAutoInvoice": null,
+        "InvoiceDueDatePeriod": null,
+        "RegistrationDate": null,
+        "GeneralTermsAccepted": true,
+        "Custom1": "Custom1",
+        "Custom2": "Custom1",
+        "Custom3": "Custom1",
+        "Custom4": "Custom1",
+        "Custom5": "Custom1",
+        "Custom6": "Custom1",
+        "Custom7": "Custom1",
+        "Custom8": "Custom1",
+        "Custom9": "Custom1",
+        "Custom10": "Custom1",
+        "Custom11": "Custom1",
+        "Custom12": "Custom1",
+        "Custom13": "Custom1",
+        "Custom14": "Custom1",
+        "Custom15": "Custom1",
+        "Custom16": "Custom1",
+        "Custom17": "Custom1",
+        "Custom18": "Custom1",
+        "Custom19": "Custom1",
+        "Custom20": "Custom1",
+        "Custom21": "Custom1",
+        "Custom22": "Custom1",
+        "Custom23": "Custom1",
+        "Custom24": "Custom1",
+        "Custom25": "Custom1",
+        "Custom26": "Custom1",
+        "Custom27": "Custom1",
+        "Custom28": "Custom1",
+        "Custom29": "Custom1",
+        "Custom30": "Custom1",
     }],
     "CurrentPageSize": 25,
     "CurrentPage": 1,
@@ -567,11 +877,21 @@ List
 {% endapi-method-summary %}
 
 {% api-method-description %}
-REPLACE\_WITH\_LIST\_DESCRIPTION
+This endpoint allows you to GET a list of coworkers.
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
+
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+Basic Authentication token. Base64 encoding of 'username:password'.
+{% endapi-method-parameter %}
+{% api-method-parameter name="Content" type="string" required=true %}
+application/json
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+
 {% api-method-query-parameters %}
 {% api-method-parameter name="dir" type="string" required=false %}
 one of 'Ascending' or 'Ascending'
@@ -600,7 +920,119 @@ size=25 \(maximum=1000\)
 ```javascript
 {
     "Records": [{
+        "CoworkerType": Nexudus.Coworking.Core.Enums.eCoworkerRecordType.Individual,
         "FullName": "Name",
+        "Salutation": "Name",
+        "Gender": Nexudus.Coworking.Core.Enums.eGender.NotSet,
+        "Email": "email@email.com",
+        "CreateUser": true,
+        "Address": "Address",
+        "PostCode": "PostCode",
+        "CityName": "CityName",
+        "State": "State",
+        "Country": null,
+        "SimpleTimeZone": null,
+        "MobilePhone": "MobilePhone",
+        "LandLine": "LandLine",
+        "DateOfBirth": null,
+        "NickName": "NickName",
+        "BusinessArea": "BusinessArea",
+        "Position": "Position",
+        "CompanyName": "CompanyName",
+        "ProfileWebsite": "ProfileWebsite",
+        "ProfileTags": "BusinessArea",
+        "ProfileSummary": "BusinessArea",
+        "Twitter": "Twitter",
+        "Facebook": "Facebook",
+        "Google": "Google",
+        "Telegram": "Telegram",
+        "Linkedin": "Linkedin",
+        "Skype": "Skype",
+        "Github": "Github",
+        "Pinterest": "Pinterest",
+        "Flickr": "Flickr",
+        "Instagram": "Instagram",
+        "Vimeo": "Vimeo",
+        "Tumblr": "Tumblr",
+        "Blogger": "Blogger",
+        "ProfileIsPublic": true,
+        "InvoicingBusiness": null,
+        "BillingEmail": "Address",
+        "BillingName": "Address",
+        "BillingAddress": "Address",
+        "BillingPostCode": "PostCode",
+        "BillingCityName": "CityName",
+        "BillingState": "State",
+        "BillingCountry": null,
+        "BillingSimpleTimeZone": null,
+        "TaxRate": 0,
+        "TaxIDNumber": "State",
+        "BankName": "Bank Name",
+        "BankAccount": "Bank Account #",
+        "BankBranch": "Branch / Sort Code",
+        "NotifyOnNewInvoice": true,
+        "NotifyOnNewPayment": true,
+        "NotifyOnFailedPayment": true,
+        "ShowPayingMemberInvoices": true,
+        "EnableGoCardlessPayments": false,
+        "GoCardlessContractNumber": "false",
+        "RegularPaymentProvider": Nexudus.Coworking.Core.Enums.eRegularPaymentProvider.Manual,
+        "RegularPaymentContractNumber": "false",
+        "CardNumber": "",
+        "DoNotProcessInvoicesAutomatically": false,
+        "AllowNetworkCheckin": false,
+        "CheckinSinceLastRenewal": 0,
+        "MinutesSinceLastRenewal": 0,
+        "AccessCardId": "Notes",
+        "AccessPincode": "Notes",
+        "KeyFobNumber": "Notes",
+        "NotifyOnDelivery": null,
+        "EzeepUserId": null,
+        "EzeepFreePrinting": null,
+        "PaperCutPayAsYouPrint": false,
+        "PaperCutFreePrinting": null,
+        "ReferenceNumber": "ReferenceNumber",
+        "Tag": "Tag",
+        "Notes": "Notes",
+        "ShowAlert": false,
+        "AlertNote": "Tag",
+        "User": null,
+        "Active": true,
+        "NextAutoInvoice": null,
+        "InvoiceDueDatePeriod": null,
+        "RegistrationDate": null,
+        "GeneralTermsAccepted": true,
+        "Custom1": "Custom1",
+        "Custom2": "Custom1",
+        "Custom3": "Custom1",
+        "Custom4": "Custom1",
+        "Custom5": "Custom1",
+        "Custom6": "Custom1",
+        "Custom7": "Custom1",
+        "Custom8": "Custom1",
+        "Custom9": "Custom1",
+        "Custom10": "Custom1",
+        "Custom11": "Custom1",
+        "Custom12": "Custom1",
+        "Custom13": "Custom1",
+        "Custom14": "Custom1",
+        "Custom15": "Custom1",
+        "Custom16": "Custom1",
+        "Custom17": "Custom1",
+        "Custom18": "Custom1",
+        "Custom19": "Custom1",
+        "Custom20": "Custom1",
+        "Custom21": "Custom1",
+        "Custom22": "Custom1",
+        "Custom23": "Custom1",
+        "Custom24": "Custom1",
+        "Custom25": "Custom1",
+        "Custom26": "Custom1",
+        "Custom27": "Custom1",
+        "Custom28": "Custom1",
+        "Custom29": "Custom1",
+        "Custom30": "Custom1",
+    }],
     }],
     "CurrentPageSize": 25,
     "CurrentPage": 1,
@@ -638,6 +1070,16 @@ Gets a list of coworkers based on the date when they were created or updated.
 
 {% api-method-spec %}
 {% api-method-request %}
+
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+Basic Authentication token. Base64 encoding of 'username:password'.
+{% endapi-method-parameter %}
+{% api-method-parameter name="Content" type="string" required=true %}
+application/json
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+
 {% api-method-query-parameters %}
 {% api-method-parameter name="CreatedOn" type="object" required=false %}
 ?to\_Coworker\_CreatedOn=...
@@ -650,6 +1092,98 @@ Gets a list of coworkers based on the date when they were created or updated.
 {% api-method-parameter name="CreatedOn" type="object" required=false %}
 ?from\_Coworker\_CreatedOn=...
 {% endapi-method-parameter %}
+
+{% api-method-parameter name="DateOfBirth" type="datetime" required=false %}
+?from\_Coworker\_DateOfBirth=...
+{% endapi-method-parameter %}
+{% api-method-parameter name="DateOfBirth" type="datetime" required=false %}
+?to\_Coworker\_DateOfBirth=...
+{% endapi-method-parameter %}
+{% api-method-parameter name="TaxRate" type="decimal" required=false %}
+?from\_Coworker\_TaxRate=...
+{% endapi-method-parameter %}
+{% api-method-parameter name="TaxRate" type="decimal" required=false %}
+?to\_Coworker\_TaxRate=...
+{% endapi-method-parameter %}
+{% api-method-parameter name="LastOverDueInvoiceReminder" type="datetime" required=false %}
+?from\_Coworker\_LastOverDueInvoiceReminder=...
+{% endapi-method-parameter %}
+{% api-method-parameter name="LastOverDueInvoiceReminder" type="datetime" required=false %}
+?to\_Coworker\_LastOverDueInvoiceReminder=...
+{% endapi-method-parameter %}
+{% api-method-parameter name="LastLowCreditReminder" type="datetime" required=false %}
+?from\_Coworker\_LastLowCreditReminder=...
+{% endapi-method-parameter %}
+{% api-method-parameter name="LastLowCreditReminder" type="datetime" required=false %}
+?to\_Coworker\_LastLowCreditReminder=...
+{% endapi-method-parameter %}
+{% api-method-parameter name="CheckinSinceLastRenewal" type="decimal" required=false %}
+?from\_Coworker\_CheckinSinceLastRenewal=...
+{% endapi-method-parameter %}
+{% api-method-parameter name="CheckinSinceLastRenewal" type="decimal" required=false %}
+?to\_Coworker\_CheckinSinceLastRenewal=...
+{% endapi-method-parameter %}
+{% api-method-parameter name="MinutesSinceLastRenewal" type="decimal" required=false %}
+?from\_Coworker\_MinutesSinceLastRenewal=...
+{% endapi-method-parameter %}
+{% api-method-parameter name="MinutesSinceLastRenewal" type="decimal" required=false %}
+?to\_Coworker\_MinutesSinceLastRenewal=...
+{% endapi-method-parameter %}
+{% api-method-parameter name="NextAutoInvoice" type="datetime" required=false %}
+?from\_Coworker\_NextAutoInvoice=...
+{% endapi-method-parameter %}
+{% api-method-parameter name="NextAutoInvoice" type="datetime" required=false %}
+?to\_Coworker\_NextAutoInvoice=...
+{% endapi-method-parameter %}
+{% api-method-parameter name="InvoiceDueDatePeriod" type="decimal" required=false %}
+?from\_Coworker\_InvoiceDueDatePeriod=...
+{% endapi-method-parameter %}
+{% api-method-parameter name="InvoiceDueDatePeriod" type="decimal" required=false %}
+?to\_Coworker\_InvoiceDueDatePeriod=...
+{% endapi-method-parameter %}
+{% api-method-parameter name="RegistrationDate" type="datetime" required=false %}
+?from\_Coworker\_RegistrationDate=...
+{% endapi-method-parameter %}
+{% api-method-parameter name="RegistrationDate" type="datetime" required=false %}
+?to\_Coworker\_RegistrationDate=...
+{% endapi-method-parameter %}
+{% api-method-parameter name="LastRenewal" type="datetime" required=false %}
+?from\_Coworker\_LastRenewal=...
+{% endapi-method-parameter %}
+{% api-method-parameter name="LastRenewal" type="datetime" required=false %}
+?to\_Coworker\_LastRenewal=...
+{% endapi-method-parameter %}
+{% api-method-parameter name="LastInvoiceAttempt" type="datetime" required=false %}
+?from\_Coworker\_LastInvoiceAttempt=...
+{% endapi-method-parameter %}
+{% api-method-parameter name="LastInvoiceAttempt" type="datetime" required=false %}
+?to\_Coworker\_LastInvoiceAttempt=...
+{% endapi-method-parameter %}
+{% api-method-parameter name="NextInvoiceLocal" type="datetime" required=false %}
+?from\_Coworker\_NextInvoiceLocal=...
+{% endapi-method-parameter %}
+{% api-method-parameter name="NextInvoiceLocal" type="datetime" required=false %}
+?to\_Coworker\_NextInvoiceLocal=...
+{% endapi-method-parameter %}
+{% api-method-parameter name="NextAutoInvoiceLocal" type="datetime" required=false %}
+?from\_Coworker\_NextAutoInvoiceLocal=...
+{% endapi-method-parameter %}
+{% api-method-parameter name="NextAutoInvoiceLocal" type="datetime" required=false %}
+?to\_Coworker\_NextAutoInvoiceLocal=...
+{% endapi-method-parameter %}
+{% api-method-parameter name="RegistrationDateLocal" type="datetime" required=false %}
+?from\_Coworker\_RegistrationDateLocal=...
+{% endapi-method-parameter %}
+{% api-method-parameter name="RegistrationDateLocal" type="datetime" required=false %}
+?to\_Coworker\_RegistrationDateLocal=...
+{% endapi-method-parameter %}
+{% api-method-parameter name="AccessControlDebounceTime" type="datetime" required=false %}
+?from\_Coworker\_AccessControlDebounceTime=...
+{% endapi-method-parameter %}
+{% api-method-parameter name="AccessControlDebounceTime" type="datetime" required=false %}
+?to\_Coworker\_AccessControlDebounceTime=...
+{% endapi-method-parameter %}
+
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
 
@@ -662,7 +1196,119 @@ Gets a list of coworkers based on the date when they were created or updated.
 ```javascript
 {
     "Records": [{
+        "CoworkerType": Nexudus.Coworking.Core.Enums.eCoworkerRecordType.Individual,
         "FullName": "Name",
+        "Salutation": "Name",
+        "Gender": Nexudus.Coworking.Core.Enums.eGender.NotSet,
+        "Email": "email@email.com",
+        "CreateUser": true,
+        "Address": "Address",
+        "PostCode": "PostCode",
+        "CityName": "CityName",
+        "State": "State",
+        "Country": null,
+        "SimpleTimeZone": null,
+        "MobilePhone": "MobilePhone",
+        "LandLine": "LandLine",
+        "DateOfBirth": null,
+        "NickName": "NickName",
+        "BusinessArea": "BusinessArea",
+        "Position": "Position",
+        "CompanyName": "CompanyName",
+        "ProfileWebsite": "ProfileWebsite",
+        "ProfileTags": "BusinessArea",
+        "ProfileSummary": "BusinessArea",
+        "Twitter": "Twitter",
+        "Facebook": "Facebook",
+        "Google": "Google",
+        "Telegram": "Telegram",
+        "Linkedin": "Linkedin",
+        "Skype": "Skype",
+        "Github": "Github",
+        "Pinterest": "Pinterest",
+        "Flickr": "Flickr",
+        "Instagram": "Instagram",
+        "Vimeo": "Vimeo",
+        "Tumblr": "Tumblr",
+        "Blogger": "Blogger",
+        "ProfileIsPublic": true,
+        "InvoicingBusiness": null,
+        "BillingEmail": "Address",
+        "BillingName": "Address",
+        "BillingAddress": "Address",
+        "BillingPostCode": "PostCode",
+        "BillingCityName": "CityName",
+        "BillingState": "State",
+        "BillingCountry": null,
+        "BillingSimpleTimeZone": null,
+        "TaxRate": 0,
+        "TaxIDNumber": "State",
+        "BankName": "Bank Name",
+        "BankAccount": "Bank Account #",
+        "BankBranch": "Branch / Sort Code",
+        "NotifyOnNewInvoice": true,
+        "NotifyOnNewPayment": true,
+        "NotifyOnFailedPayment": true,
+        "ShowPayingMemberInvoices": true,
+        "EnableGoCardlessPayments": false,
+        "GoCardlessContractNumber": "false",
+        "RegularPaymentProvider": Nexudus.Coworking.Core.Enums.eRegularPaymentProvider.Manual,
+        "RegularPaymentContractNumber": "false",
+        "CardNumber": "",
+        "DoNotProcessInvoicesAutomatically": false,
+        "AllowNetworkCheckin": false,
+        "CheckinSinceLastRenewal": 0,
+        "MinutesSinceLastRenewal": 0,
+        "AccessCardId": "Notes",
+        "AccessPincode": "Notes",
+        "KeyFobNumber": "Notes",
+        "NotifyOnDelivery": null,
+        "EzeepUserId": null,
+        "EzeepFreePrinting": null,
+        "PaperCutPayAsYouPrint": false,
+        "PaperCutFreePrinting": null,
+        "ReferenceNumber": "ReferenceNumber",
+        "Tag": "Tag",
+        "Notes": "Notes",
+        "ShowAlert": false,
+        "AlertNote": "Tag",
+        "User": null,
+        "Active": true,
+        "NextAutoInvoice": null,
+        "InvoiceDueDatePeriod": null,
+        "RegistrationDate": null,
+        "GeneralTermsAccepted": true,
+        "Custom1": "Custom1",
+        "Custom2": "Custom1",
+        "Custom3": "Custom1",
+        "Custom4": "Custom1",
+        "Custom5": "Custom1",
+        "Custom6": "Custom1",
+        "Custom7": "Custom1",
+        "Custom8": "Custom1",
+        "Custom9": "Custom1",
+        "Custom10": "Custom1",
+        "Custom11": "Custom1",
+        "Custom12": "Custom1",
+        "Custom13": "Custom1",
+        "Custom14": "Custom1",
+        "Custom15": "Custom1",
+        "Custom16": "Custom1",
+        "Custom17": "Custom1",
+        "Custom18": "Custom1",
+        "Custom19": "Custom1",
+        "Custom20": "Custom1",
+        "Custom21": "Custom1",
+        "Custom22": "Custom1",
+        "Custom23": "Custom1",
+        "Custom24": "Custom1",
+        "Custom25": "Custom1",
+        "Custom26": "Custom1",
+        "Custom27": "Custom1",
+        "Custom28": "Custom1",
+        "Custom29": "Custom1",
+        "Custom30": "Custom1",
+    }],
     }],
     "CurrentPageSize": 25,
     "CurrentPage": 1,
@@ -696,6 +1342,16 @@ Gets one coworker record.
 
 {% api-method-spec %}
 {% api-method-request %}
+
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+Basic Authentication token. Base64 encoding of 'username:password'.
+{% endapi-method-parameter %}
+{% api-method-parameter name="Content" type="string" required=true %}
+application/json
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+
 {% api-method-path-parameters %}
 {% api-method-parameter name="id" type="integer" required=true %}
 The ID of the coworker to fetch.
@@ -711,7 +1367,118 @@ The ID of the coworker to fetch.
 
 ```javascript
 {
-    "FullName": "Name"
+        "CoworkerType": Nexudus.Coworking.Core.Enums.eCoworkerRecordType.Individual,
+        "FullName": "Name",
+        "Salutation": "Name",
+        "Gender": Nexudus.Coworking.Core.Enums.eGender.NotSet,
+        "Email": "email@email.com",
+        "CreateUser": true,
+        "Address": "Address",
+        "PostCode": "PostCode",
+        "CityName": "CityName",
+        "State": "State",
+        "Country": null,
+        "SimpleTimeZone": null,
+        "MobilePhone": "MobilePhone",
+        "LandLine": "LandLine",
+        "DateOfBirth": null,
+        "NickName": "NickName",
+        "BusinessArea": "BusinessArea",
+        "Position": "Position",
+        "CompanyName": "CompanyName",
+        "ProfileWebsite": "ProfileWebsite",
+        "ProfileTags": "BusinessArea",
+        "ProfileSummary": "BusinessArea",
+        "Twitter": "Twitter",
+        "Facebook": "Facebook",
+        "Google": "Google",
+        "Telegram": "Telegram",
+        "Linkedin": "Linkedin",
+        "Skype": "Skype",
+        "Github": "Github",
+        "Pinterest": "Pinterest",
+        "Flickr": "Flickr",
+        "Instagram": "Instagram",
+        "Vimeo": "Vimeo",
+        "Tumblr": "Tumblr",
+        "Blogger": "Blogger",
+        "ProfileIsPublic": true,
+        "InvoicingBusiness": null,
+        "BillingEmail": "Address",
+        "BillingName": "Address",
+        "BillingAddress": "Address",
+        "BillingPostCode": "PostCode",
+        "BillingCityName": "CityName",
+        "BillingState": "State",
+        "BillingCountry": null,
+        "BillingSimpleTimeZone": null,
+        "TaxRate": 0,
+        "TaxIDNumber": "State",
+        "BankName": "Bank Name",
+        "BankAccount": "Bank Account #",
+        "BankBranch": "Branch / Sort Code",
+        "NotifyOnNewInvoice": true,
+        "NotifyOnNewPayment": true,
+        "NotifyOnFailedPayment": true,
+        "ShowPayingMemberInvoices": true,
+        "EnableGoCardlessPayments": false,
+        "GoCardlessContractNumber": "false",
+        "RegularPaymentProvider": Nexudus.Coworking.Core.Enums.eRegularPaymentProvider.Manual,
+        "RegularPaymentContractNumber": "false",
+        "CardNumber": "",
+        "DoNotProcessInvoicesAutomatically": false,
+        "AllowNetworkCheckin": false,
+        "CheckinSinceLastRenewal": 0,
+        "MinutesSinceLastRenewal": 0,
+        "AccessCardId": "Notes",
+        "AccessPincode": "Notes",
+        "KeyFobNumber": "Notes",
+        "NotifyOnDelivery": null,
+        "EzeepUserId": null,
+        "EzeepFreePrinting": null,
+        "PaperCutPayAsYouPrint": false,
+        "PaperCutFreePrinting": null,
+        "ReferenceNumber": "ReferenceNumber",
+        "Tag": "Tag",
+        "Notes": "Notes",
+        "ShowAlert": false,
+        "AlertNote": "Tag",
+        "User": null,
+        "Active": true,
+        "NextAutoInvoice": null,
+        "InvoiceDueDatePeriod": null,
+        "RegistrationDate": null,
+        "GeneralTermsAccepted": true,
+        "Custom1": "Custom1",
+        "Custom2": "Custom1",
+        "Custom3": "Custom1",
+        "Custom4": "Custom1",
+        "Custom5": "Custom1",
+        "Custom6": "Custom1",
+        "Custom7": "Custom1",
+        "Custom8": "Custom1",
+        "Custom9": "Custom1",
+        "Custom10": "Custom1",
+        "Custom11": "Custom1",
+        "Custom12": "Custom1",
+        "Custom13": "Custom1",
+        "Custom14": "Custom1",
+        "Custom15": "Custom1",
+        "Custom16": "Custom1",
+        "Custom17": "Custom1",
+        "Custom18": "Custom1",
+        "Custom19": "Custom1",
+        "Custom20": "Custom1",
+        "Custom21": "Custom1",
+        "Custom22": "Custom1",
+        "Custom23": "Custom1",
+        "Custom24": "Custom1",
+        "Custom25": "Custom1",
+        "Custom26": "Custom1",
+        "Custom27": "Custom1",
+        "Custom28": "Custom1",
+        "Custom29": "Custom1",
+        "Custom30": "Custom1",
 }
 ```
 {% endapi-method-response-example %}
@@ -742,10 +1509,134 @@ Creates a new coworker.
 
 {% api-method-spec %}
 {% api-method-request %}
+
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+Basic Authentication token. Base64 encoding of 'username:password'.
+{% endapi-method-parameter %}
+{% api-method-parameter name="Content" type="string" required=true %}
+application/json
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+
 {% api-method-body-parameters %}
+
+{% api-method-parameter name="CoworkerType" type="Nexudus.Coworking.Core.Enums.eCoworkerRecordType" required=false %}
 {% api-method-parameter name="FullName" type="string" required=true %}
+{% api-method-parameter name="Salutation" type="string" required=false %}
+{% api-method-parameter name="Gender" type="Nexudus.Coworking.Core.Enums.eGender" required=false %}
+{% api-method-parameter name="Email" type="string" required=true %}
+{% api-method-parameter name="CreateUser" type="bool" required=false %}
+{% api-method-parameter name="Address" type="string" required=false %}
+{% api-method-parameter name="PostCode" type="string" required=false %}
+{% api-method-parameter name="CityName" type="string" required=false %}
+{% api-method-parameter name="State" type="string" required=false %}
+{% api-method-parameter name="Country" type="Country" required=true %}
+{% api-method-parameter name="SimpleTimeZone" type="SimpleTimeZone" required=true %}
+{% api-method-parameter name="MobilePhone" type="string" required=false %}
+{% api-method-parameter name="LandLine" type="string" required=false %}
+{% api-method-parameter name="DateOfBirth" type="DateTime?" required=false %}
+{% api-method-parameter name="NickName" type="string" required=false %}
+{% api-method-parameter name="BusinessArea" type="string" required=false %}
+{% api-method-parameter name="Position" type="string" required=false %}
+{% api-method-parameter name="CompanyName" type="string" required=false %}
+{% api-method-parameter name="ProfileWebsite" type="string" required=false %}
+{% api-method-parameter name="ProfileTags" type="string" required=false %}
+{% api-method-parameter name="ProfileSummary" type="string" required=false %}
+{% api-method-parameter name="Twitter" type="string" required=false %}
+{% api-method-parameter name="Facebook" type="string" required=false %}
+{% api-method-parameter name="Google" type="string" required=false %}
+{% api-method-parameter name="Telegram" type="string" required=false %}
+{% api-method-parameter name="Linkedin" type="string" required=false %}
+{% api-method-parameter name="Skype" type="string" required=false %}
+{% api-method-parameter name="Github" type="string" required=false %}
+{% api-method-parameter name="Pinterest" type="string" required=false %}
+{% api-method-parameter name="Flickr" type="string" required=false %}
+{% api-method-parameter name="Instagram" type="string" required=false %}
+{% api-method-parameter name="Vimeo" type="string" required=false %}
+{% api-method-parameter name="Tumblr" type="string" required=false %}
+{% api-method-parameter name="Blogger" type="string" required=false %}
+{% api-method-parameter name="ProfileIsPublic" type="bool" required=false %}
+{% api-method-parameter name="InvoicingBusiness" type="Business" required=false %}
+{% api-method-parameter name="BillingEmail" type="string" required=false %}
+{% api-method-parameter name="BillingName" type="string" required=false %}
+{% api-method-parameter name="BillingAddress" type="string" required=false %}
+{% api-method-parameter name="BillingPostCode" type="string" required=false %}
+{% api-method-parameter name="BillingCityName" type="string" required=false %}
+{% api-method-parameter name="BillingState" type="string" required=false %}
+{% api-method-parameter name="BillingCountry" type="Country" required=false %}
+{% api-method-parameter name="BillingSimpleTimeZone" type="SimpleTimeZone" required=false %}
+{% api-method-parameter name="TaxRate" type="decimal?" required=false %}
+{% api-method-parameter name="TaxIDNumber" type="string" required=false %}
+{% api-method-parameter name="BankName" type="string" required=false %}
+{% api-method-parameter name="BankAccount" type="string" required=false %}
+{% api-method-parameter name="BankBranch" type="string" required=false %}
+{% api-method-parameter name="NotifyOnNewInvoice" type="bool" required=false %}
+{% api-method-parameter name="NotifyOnNewPayment" type="bool" required=false %}
+{% api-method-parameter name="NotifyOnFailedPayment" type="bool" required=false %}
+{% api-method-parameter name="ShowPayingMemberInvoices" type="bool" required=false %}
+{% api-method-parameter name="EnableGoCardlessPayments" type="bool" required=false %}
+{% api-method-parameter name="GoCardlessContractNumber" type="string" required=false %}
+{% api-method-parameter name="RegularPaymentProvider" type="Nexudus.Coworking.Core.Enums.eRegularPaymentProvider?" required=false %}
+{% api-method-parameter name="RegularPaymentContractNumber" type="string" required=false %}
+{% api-method-parameter name="CardNumber" type="string" required=false %}
+{% api-method-parameter name="DoNotProcessInvoicesAutomatically" type="bool" required=false %}
+{% api-method-parameter name="AllowNetworkCheckin" type="bool" required=false %}
+{% api-method-parameter name="CheckinSinceLastRenewal" type="int" required=true %}
+{% api-method-parameter name="MinutesSinceLastRenewal" type="int" required=true %}
+{% api-method-parameter name="AccessCardId" type="string" required=false %}
+{% api-method-parameter name="AccessPincode" type="string" required=false %}
+{% api-method-parameter name="KeyFobNumber" type="string" required=false %}
+{% api-method-parameter name="NotifyOnDelivery" type="bool" required=false %}
+{% api-method-parameter name="EzeepUserId" type="Guid?" required=false %}
+{% api-method-parameter name="EzeepFreePrinting" type="bool" required=false %}
+{% api-method-parameter name="PaperCutPayAsYouPrint" type="bool" required=false %}
+{% api-method-parameter name="PaperCutFreePrinting" type="bool" required=false %}
+{% api-method-parameter name="ReferenceNumber" type="string" required=false %}
+{% api-method-parameter name="Tag" type="string" required=false %}
+{% api-method-parameter name="Notes" type="string" required=false %}
+{% api-method-parameter name="ShowAlert" type="bool" required=false %}
+{% api-method-parameter name="AlertNote" type="string" required=false %}
+{% api-method-parameter name="User" type="User" required=false %}
+{% api-method-parameter name="Active" type="bool" required=false %}
+{% api-method-parameter name="NextAutoInvoice" type="DateTime?" required=false %}
+{% api-method-parameter name="InvoiceDueDatePeriod" type="int?" required=false %}
+{% api-method-parameter name="RegistrationDate" type="DateTime?" required=false %}
+{% api-method-parameter name="GeneralTermsAccepted" type="bool" required=false %}
+{% api-method-parameter name="Custom1" type="string" required=false %}
+{% api-method-parameter name="Custom2" type="string" required=false %}
+{% api-method-parameter name="Custom3" type="string" required=false %}
+{% api-method-parameter name="Custom4" type="string" required=false %}
+{% api-method-parameter name="Custom5" type="string" required=false %}
+{% api-method-parameter name="Custom6" type="string" required=false %}
+{% api-method-parameter name="Custom7" type="string" required=false %}
+{% api-method-parameter name="Custom8" type="string" required=false %}
+{% api-method-parameter name="Custom9" type="string" required=false %}
+{% api-method-parameter name="Custom10" type="string" required=false %}
+{% api-method-parameter name="Custom11" type="string" required=false %}
+{% api-method-parameter name="Custom12" type="string" required=false %}
+{% api-method-parameter name="Custom13" type="string" required=false %}
+{% api-method-parameter name="Custom14" type="string" required=false %}
+{% api-method-parameter name="Custom15" type="string" required=false %}
+{% api-method-parameter name="Custom16" type="string" required=false %}
+{% api-method-parameter name="Custom17" type="string" required=false %}
+{% api-method-parameter name="Custom18" type="string" required=false %}
+{% api-method-parameter name="Custom19" type="string" required=false %}
+{% api-method-parameter name="Custom20" type="string" required=false %}
+{% api-method-parameter name="Custom21" type="string" required=false %}
+{% api-method-parameter name="Custom22" type="string" required=false %}
+{% api-method-parameter name="Custom23" type="string" required=false %}
+{% api-method-parameter name="Custom24" type="string" required=false %}
+{% api-method-parameter name="Custom25" type="string" required=false %}
+{% api-method-parameter name="Custom26" type="string" required=false %}
+{% api-method-parameter name="Custom27" type="string" required=false %}
+{% api-method-parameter name="Custom28" type="string" required=false %}
+{% api-method-parameter name="Custom29" type="string" required=false %}
+{% api-method-parameter name="Custom30" type="string" required=false %}
+
 
 {% endapi-method-parameter %}
+
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
 
@@ -761,7 +1652,7 @@ Creates a new coworker.
     "WasSuccessful": true,
     "Message": "Record 'Name of the record' has been succesfully created.",
     "Value": {
-        "FullName": "Name",
+        "Id": 12354678,
     }
 }
 ```
@@ -769,7 +1660,7 @@ Creates a new coworker.
 
 {% api-method-response-example httpCode=400 %}
 {% api-method-response-example-description %}
-
+_This response is an example, errors and messages will follow this structure but keys and descriptions may be different for each record._  
 {% endapi-method-response-example-description %}
 
 ```javascript
@@ -827,13 +1718,23 @@ Update
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Updates and existing coworker  
+Updates and existing coworker.
   
 Required User Role: `coworker-edit`
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
+
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+Basic Authentication token. Base64 encoding of 'username:password'.
+{% endapi-method-parameter %}
+{% api-method-parameter name="Content" type="string" required=true %}
+application/json
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+
 {% api-method-body-parameters %}
 {% api-method-parameter name="FullName" type="string" required=true %}
 
@@ -867,7 +1768,7 @@ The id of the record to update
 
 {% api-method-response-example httpCode=400 %}
 {% api-method-response-example-description %}
-
+_This response is an example, errors and messages will follow this structure but keys and descriptions may be different for each record._  
 {% endapi-method-response-example-description %}
 
 ```javascript
@@ -932,6 +1833,16 @@ Required User Roles: `coworker-delete`
 
 {% api-method-spec %}
 {% api-method-request %}
+
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+Basic Authentication token. Base64 encoding of 'username:password'.
+{% endapi-method-parameter %}
+{% api-method-parameter name="Content" type="string" required=true %}
+application/json
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+
 {% api-method-path-parameters %}
 {% api-method-parameter name="Id" type="integer" required=false %}
 
@@ -1011,6 +1922,15 @@ Get all command available to run for coworker records.
 {% api-method-spec %}
 {% api-method-request %}
 
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+Basic Authentication token. Base64 encoding of 'username:password'.
+{% endapi-method-parameter %}
+{% api-method-parameter name="Content" type="string" required=true %}
+application/json
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
 {% api-method-response-example-description %}
@@ -1020,19 +1940,19 @@ _This response is an example, commands are regularly added to different entities
 ```javascript
 [
     {
-        "Key": "COWORKER_SENDWELCOME",
-        "Name": "Send welcome email",
+        "Key": "COMMAND_KEY_1",
+        "Name": "Command English Description",
         "AppliesOnlyToMultipleEntities": false,
         "AppliesOnlyToOneEntity": false,
         "AppliesOnlyToTwoEntities": false,
         "NeedsEntitiesToRun": true,
-        "Order": 2,
+        "Order": 1,
         "RequiresParameters": []
     },
     {
-        "Key": "COWORKER_NEW_USER",
-        "Name": "Create user for this member",
-        "AppliesOnlyToMultipleEntities": false,
+        "Key": "COMMAND_KEY_2",
+        "Name": "Command 2 English Description",
+        "AppliesOnlyToMultipleEntities": true
         "AppliesOnlyToOneEntity": false,
         "AppliesOnlyToTwoEntities": false,
         "NeedsEntitiesToRun": true,
@@ -1058,6 +1978,16 @@ Run Command
 
 {% api-method-spec %}
 {% api-method-request %}
+
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+Basic Authentication token. Base64 encoding of 'username:password'.
+{% endapi-method-parameter %}
+{% api-method-parameter name="Content" type="string" required=true %}
+application/json
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+
 {% api-method-body-parameters %}
 {% api-method-parameter name="Key" type="string" required=true %}
 The command Key defining the command to run.  
@@ -1122,6 +2052,16 @@ Avatar
 
 {% api-method-spec %}
 {% api-method-request %}
+
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+Basic Authentication token. Base64 encoding of 'username:password'.
+{% endapi-method-parameter %}
+{% api-method-parameter name="Content" type="string" required=true %}
+application/json
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+
 {% api-method-path-parameters %}
 {% api-method-parameter name="id" type="integer" required=true %}
 The id of the coworker to get the avatar for.
@@ -1147,4 +2087,6 @@ Binary stream or null
 
 * [Business](../../)
 * [Team](../../)
+
+
 
