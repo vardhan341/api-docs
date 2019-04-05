@@ -10,14 +10,16 @@ Find
 {% endapi-method-summary %}
 
 {% api-method-description %}
-This endpoint allows you to GET a list of coworkers based on one or more filter parameters  
-  
-Required User Role: `Coworker-List`
+This endpoint allows you to GET a list of coworkers based on one or more filter parameters
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-headers %}
+{% api-method-parameter name="Content" type="string" required=true %}
+application/json
+{% endapi-method-parameter %}
+
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
@@ -550,13 +552,16 @@ Cake successfully retrieved.
     "TotalItems": 60,
     "TotalPages": 3
 }
+
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="get" host="" path="" %}
+> 🔒 Requires user role `coworker-list`
+
+{% api-method method="get" host="https://spaces.nexudus.com/api" path="/spaces/coworkers" %}
 {% api-method-summary %}
 List
 {% endapi-method-summary %}
@@ -616,17 +621,19 @@ size=25 \(maximum=1000\)
 {% endapi-method-spec %}
 {% endapi-method %}
 
+> 🔒 Requires user role `coworker-list`
+
 {% hint style="info" %}
 You can also get a list of records based when they were created or updated. This is useful if you want to get a list of records created after or before a particular point in time. 
 {% endhint %}
 
 {% api-method method="get" host="https://spaces.nexudus.com/api" path="/spaces/coworkers" %}
 {% api-method-summary %}
-by Range
+By date range
 {% endapi-method-summary %}
 
 {% api-method-description %}
-REPLACE\_WITH\_RANGE\_DESCRIPTION
+Gets a list of coworkers based on the date when they were created or updated.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -676,15 +683,15 @@ REPLACE\_WITH\_RANGE\_DESCRIPTION
 {% endapi-method-spec %}
 {% endapi-method %}
 
+> 🔒 Requires user role `coworker-list`
+
 {% api-method method="get" host="https://spaces.nexudus.com/api" path="/spaces/coworkers/:id" %}
 {% api-method-summary %}
 One by Id
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Gets one coworker record  
-  
-Required User Role: `Coworker-Read`
+Gets one coworker record.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -722,15 +729,15 @@ The ID of the coworker to fetch.
 {% endapi-method-spec %}
 {% endapi-method %}
 
+> 🔒 Requires user role `coworker-read`
+
 {% api-method method="post" host="https://spaces.nexudus.com/api" path="/spaces/coworkers" %}
 {% api-method-summary %}
 Create
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Creates a new coworker.  
-  
-Required User Role: `coworker-create`
+Creates a new coworker.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -811,6 +818,8 @@ Required User Role: `coworker-create`
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
+
+> 🔒 Requires user role `coworker-create`
 
 {% api-method method="put" host="https://spaces.nexudus.com/api" path="/spaces/coworkers" %}
 {% api-method-summary %}
@@ -908,6 +917,8 @@ The id of the record to update
 {% endapi-method-spec %}
 {% endapi-method %}
 
+> 🔒 Requires user role `coworker-edit`
+
 {% api-method method="delete" host="https://spaces.nexudus.com/api" path="/spaces/coworkers/:id" %}
 {% api-method-summary %}
 Delete
@@ -973,9 +984,20 @@ Required User Roles: `coworker-delete`
 {% endapi-method-spec %}
 {% endapi-method %}
 
+> 🔒 Requires user role `coworker-delete`
+
 ## Commands
 
-Commands allow you to perform actions against one or more coworkers. Some commands accept only one record while others can run an action for a number of records at the same time. 
+Commands allow to perform actions against one or more coworker records. Some commands accept only one record while others can run an action for a number of records at the same time.  Each command has metadata with information about how it can be used and the amount of records, if any, it needs to run.
+
+> ```javascript
+> {
+>     "AppliesOnlyToMultipleEntities": false|true,
+>     "AppliesOnlyToOneEntity": false|true,
+>     "AppliesOnlyToTwoEntities": false|true,
+>     ...
+> }
+> ```
 
 {% api-method method="get" host="https://spaces.nexudus.com/api" path="/spaces/coworkers/commands" %}
 {% api-method-summary %}
@@ -1077,6 +1099,44 @@ _Commands also return a status 200 when they fail to process one or more of the 
    "Errors":null,
    "WasSuccessful":false
 }
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+> 🔒 Requires user role `coworker-edit`
+
+## Binary files
+
+The following endpoints return binary. Check the `ContentType` header to understand the type of file being returned in the response stream.
+
+{% api-method method="get" host="https://spaces.nexudus.com/api" path="/spaces/coworkers/getavatar/:id" %}
+{% api-method-summary %}
+Avatar
+{% endapi-method-summary %}
+
+{% api-method-description %}
+
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="id" type="integer" required=true %}
+The id of the coworker to get the avatar for.
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```javascript
+Binary stream or null
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}
