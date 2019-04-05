@@ -1763,8 +1763,6 @@ The id of the coworker to update
 {% endapi-method-parameter %}
 {% api-method-parameter name="Email" type="string" required=true %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="CreateUser" type="bool" required=false %}
-{% endapi-method-parameter %}
 {% api-method-parameter name="Address" type="string" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="PostCode" type="string" required=false %}
@@ -1869,15 +1867,9 @@ The id of the coworker to update
 {% endapi-method-parameter %}
 {% api-method-parameter name="RegularPaymentContractNumber" type="string" required=false %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="CardNumber" type="string" required=false %}
-{% endapi-method-parameter %}
 {% api-method-parameter name="DoNotProcessInvoicesAutomatically" type="bool" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="AllowNetworkCheckin" type="bool" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="CheckinSinceLastRenewal" type="int" required=true %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="MinutesSinceLastRenewal" type="int" required=true %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="AccessCardId" type="string" required=false %}
 {% endapi-method-parameter %}
