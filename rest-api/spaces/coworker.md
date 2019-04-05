@@ -1,14 +1,18 @@
-# Coworker
+---
+description: 'Coworkers represent your customers, both members and contacts.'
+---
 
-## Coworkers
+# Coworker
 
 {% api-method method="get" host="https://spaces.nexudus.com/api" path="/spaces/coworkers" %}
 {% api-method-summary %}
-GET Coworkers
+Find
 {% endapi-method-summary %}
 
 {% api-method-description %}
-This endpoint allows you to GET a list of coworkers.
+This endpoint allows you to GET a list of coworkers based on one or more filter parameters  
+  
+Required User Role: `Coworker-List`
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -530,21 +534,81 @@ Cake successfully retrieved.
 
 ```javascript
 {
-    "name": "Cake's name",
-    "recipe": "Cake's recipe name",
-    "cake": "Binary cake"
+    "Records": [{
+        "FullName": "Name",
+    }],
+    "CurrentPageSize": 25,
+    "CurrentPage": 1,
+    "CurrentOrderField": "Id",
+    "CurrentSortDirection": 1,
+    "FirstItem": 1,
+    "HasNextPage": true,
+    "HasPreviousPage": false,
+    "LastItem": 25,
+    "PageNumber": 1,
+    "PageSize": 25,
+    "TotalItems": 60,
+    "TotalPages": 3
 }
 ```
 {% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
 
-{% api-method-response-example httpCode=404 %}
+{% api-method method="get" host="" path="" %}
+{% api-method-summary %}
+List
+{% endapi-method-summary %}
+
+{% api-method-description %}
+REPLACE\_WITH\_LIST\_DESCRIPTION
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-query-parameters %}
+{% api-method-parameter name="dir" type="string" required=false %}
+one of 'Ascending' or 'Ascending'
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="orderby" type="string" required=false %}
+?orderby=Id
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="page" type="integer" required=false %}
+?page=1
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="size" type="integer" required=false %}
+size=25 \(maximum=1000\)
+{% endapi-method-parameter %}
+{% endapi-method-query-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
 {% api-method-response-example-description %}
-Could not find a cake matching this query.
+
 {% endapi-method-response-example-description %}
 
 ```javascript
 {
-    "message": "Ain't no cake like that."
+    "Records": [{
+        "FullName": "Name",
+    }],
+    "CurrentPageSize": 25,
+    "CurrentPage": 1,
+    "CurrentOrderField": "Id",
+    "CurrentSortDirection": 1,
+    "FirstItem": 1,
+    "HasNextPage": true,
+    "HasPreviousPage": false,
+    "LastItem": 25,
+    "PageNumber": 1,
+    "PageSize": 25,
+    "TotalItems": 60,
+    "TotalPages": 3
 }
 ```
 {% endapi-method-response-example %}
@@ -555,4 +619,472 @@ Could not find a cake matching this query.
 {% hint style="info" %}
 You can also get a list of records based when they were created or updated. This is useful if you want to get a list of records created after or before a particular point in time. 
 {% endhint %}
+
+{% api-method method="get" host="https://spaces.nexudus.com/api" path="/spaces/coworkers" %}
+{% api-method-summary %}
+by Range
+{% endapi-method-summary %}
+
+{% api-method-description %}
+REPLACE\_WITH\_RANGE\_DESCRIPTION
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-query-parameters %}
+{% api-method-parameter name="CreatedOn" type="object" required=false %}
+?to\_Coworker\_CreatedOn=...
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?from\_Coworker\_CreatedOn=...
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="CreatedOn" type="object" required=false %}
+?from\_Coworker\_CreatedOn=...
+{% endapi-method-parameter %}
+{% endapi-method-query-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```javascript
+{
+    "Records": [{
+        "FullName": "Name",
+    }],
+    "CurrentPageSize": 25,
+    "CurrentPage": 1,
+    "CurrentOrderField": "Id",
+    "CurrentSortDirection": 1,
+    "FirstItem": 1,
+    "HasNextPage": true,
+    "HasPreviousPage": false,
+    "LastItem": 25,
+    "PageNumber": 1,
+    "PageSize": 25,
+    "TotalItems": 60,
+    "TotalPages": 3
+}
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+{% api-method method="get" host="https://spaces.nexudus.com/api" path="/spaces/coworkers/:id" %}
+{% api-method-summary %}
+One by Id
+{% endapi-method-summary %}
+
+{% api-method-description %}
+Gets one coworker record  
+  
+Required User Role: `Coworker-Read`
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="id" type="integer" required=true %}
+The ID of the coworker to fetch.
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```javascript
+{
+    "FullName": "Name"
+}
+```
+{% endapi-method-response-example %}
+
+{% api-method-response-example httpCode=404 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```
+"Not found"
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+{% api-method method="post" host="https://spaces.nexudus.com/api" path="/spaces/coworkers" %}
+{% api-method-summary %}
+Create
+{% endapi-method-summary %}
+
+{% api-method-description %}
+Creates a new coworker.  
+  
+Required User Role: `coworker-create`
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-body-parameters %}
+{% api-method-parameter name="FullName" type="string" required=true %}
+
+{% endapi-method-parameter %}
+{% endapi-method-body-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```javascript
+{
+    "Status": 200,
+    "WasSuccessful": true,
+    "Message": "Record 'Name of the record' has been succesfully created.",
+    "Value": {
+        "FullName": "Name",
+    }
+}
+```
+{% endapi-method-response-example %}
+
+{% api-method-response-example httpCode=400 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```javascript
+{
+    "Status": 500,
+    "Message": "Email: may not be null or empty",
+    "Value": null,
+    "WasSuccessful": false,
+    "Errors": [
+        {
+            "AttemptedValue": null,
+            "Message": "may not be null or empty",
+            "PropertyName": "FullName"
+        },
+        {
+            "AttemptedValue": null,
+            "Message": "may not be null or empty",
+            "PropertyName": "Email"
+        },
+        {
+            "AttemptedValue": null,
+            "Message": "may not be null",
+            "PropertyName": "Country"
+        },
+        {
+            "AttemptedValue": null,
+            "Message": "may not be null",
+            "PropertyName": "SimpleTimeZone"
+        }
+    ]
+}
+```
+{% endapi-method-response-example %}
+
+{% api-method-response-example httpCode=500 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```javascript
+{
+    "Message": "An error has occurred."
+}
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+{% api-method method="put" host="https://spaces.nexudus.com/api" path="/spaces/coworkers" %}
+{% api-method-summary %}
+Update
+{% endapi-method-summary %}
+
+{% api-method-description %}
+Updates and existing coworker  
+  
+Required User Role: `coworker-edit`
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-body-parameters %}
+{% api-method-parameter name="FullName" type="string" required=true %}
+
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="Id" type="integer" required=true %}
+The id of the record to update
+{% endapi-method-parameter %}
+{% endapi-method-body-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```javascript
+{
+    "Status": 200,
+    "WasSuccessful": true,
+    "Message": "The record 'name of the record' was updated successfully,
+    "Value": {
+        "Id": 123456
+    },
+    "OpenInDialog": false,
+    "Errors": null
+}
+```
+{% endapi-method-response-example %}
+
+{% api-method-response-example httpCode=400 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```javascript
+{
+    "Status": 500,
+    "Message": "Email: may not be null or empty",
+    "Value": null,
+    "WasSuccessful": false,
+    "Errors": [
+        {
+            "AttemptedValue": null,
+            "Message": "may not be null or empty",
+            "PropertyName": "FullName"
+        },
+        {
+            "AttemptedValue": null,
+            "Message": "may not be null or empty",
+            "PropertyName": "Email"
+        },
+        {
+            "AttemptedValue": null,
+            "Message": "may not be null",
+            "PropertyName": "Country"
+        },
+        {
+            "AttemptedValue": null,
+            "Message": "may not be null",
+            "PropertyName": "SimpleTimeZone"
+        }
+    ]
+}
+```
+{% endapi-method-response-example %}
+
+{% api-method-response-example httpCode=500 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```javascript
+{
+    "Message": "An error has occurred."
+}
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+{% api-method method="delete" host="https://spaces.nexudus.com/api" path="/spaces/coworkers/:id" %}
+{% api-method-summary %}
+Delete
+{% endapi-method-summary %}
+
+{% api-method-description %}
+Deletes a coworker.  
+  
+Required User Roles: `coworker-delete`
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="Id" type="integer" required=false %}
+
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```javascript
+{
+    "Status": 200,
+    "WasSuccessful": true,
+    "Message": "The record was deleted successfully.",
+    "Value": null,
+    "OpenInDialog": false,
+    "RedirectURL": null,
+    "JavaScript": null,
+    "Errors": null
+}
+```
+{% endapi-method-response-example %}
+
+{% api-method-response-example httpCode=404 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```
+"Not found"
+```
+{% endapi-method-response-example %}
+
+{% api-method-response-example httpCode=500 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```javascript
+{
+    "Message": "An error has occurred."
+}
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+## Commands
+
+Commands allow you to perform actions against one or more coworkers. Some commands accept only one record while others can run an action for a number of records at the same time. 
+
+{% api-method method="get" host="https://spaces.nexudus.com/api" path="/spaces/coworkers/commands" %}
+{% api-method-summary %}
+Commands
+{% endapi-method-summary %}
+
+{% api-method-description %}
+Get all command available to run for coworker records.
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+_This response is an example, commands are regularly added to different entities._  
+{% endapi-method-response-example-description %}
+
+```javascript
+[
+    {
+        "Key": "COWORKER_SENDWELCOME",
+        "Name": "Send welcome email",
+        "AppliesOnlyToMultipleEntities": false,
+        "AppliesOnlyToOneEntity": false,
+        "AppliesOnlyToTwoEntities": false,
+        "NeedsEntitiesToRun": true,
+        "Order": 2,
+        "RequiresParameters": []
+    },
+    {
+        "Key": "COWORKER_NEW_USER",
+        "Name": "Create user for this member",
+        "AppliesOnlyToMultipleEntities": false,
+        "AppliesOnlyToOneEntity": false,
+        "AppliesOnlyToTwoEntities": false,
+        "NeedsEntitiesToRun": true,
+        "Order": 2,
+        "RequiresParameters": []
+    },
+    ...
+]
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+{% api-method method="get" host="https://spaces.nexudus.com/api" path="/spaces/coworkers/runcommand" %}
+{% api-method-summary %}
+Run Command
+{% endapi-method-summary %}
+
+{% api-method-description %}
+
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-body-parameters %}
+{% api-method-parameter name="Key" type="string" required=true %}
+The command Key defining the command to run.  
+  
+`"ADD_COWORKER_TO_GROUP"`
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="Parameters" type="array" required=false %}
+A list of object with the structure below. The parameters required for each command are returned in the "RequiresParameters" array return by the "commands" endpoint.  
+  
+`[  
+   {  
+      "Name": "Name",   
+      "Type":"Type",   
+      "Value":recordId  
+    }  
+]`
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="Ids" type="array" required=true %}
+A list of integer IDs for each of the records to run this command for.  
+  
+`[33892859, 123565978]`
+{% endapi-method-parameter %}
+{% endapi-method-body-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+_Commands also return a status 200 when they fail to process one or more of the records. Use the 'WasSuccessful'  property to know if the command run succeeded._  
+{% endapi-method-response-example-description %}
+
+```javascript
+{  
+   "Status":500 or 200,
+   "Message":"Command error description",
+   "Value":null,
+   "Errors":null,
+   "WasSuccessful":false
+}
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+## Related Entities
+
+* [Business](../../)
+* [Team](../../)
 
