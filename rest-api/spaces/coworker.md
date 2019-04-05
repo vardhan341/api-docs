@@ -1520,124 +1520,232 @@ application/json
 {% endapi-method-headers %}
 
 {% api-method-body-parameters %}
-
 {% api-method-parameter name="CoworkerType" type="Nexudus.Coworking.Core.Enums.eCoworkerRecordType" required=false %}
-{% api-method-parameter name="FullName" type="string" required=true %}
-{% api-method-parameter name="Salutation" type="string" required=false %}
-{% api-method-parameter name="Gender" type="Nexudus.Coworking.Core.Enums.eGender" required=false %}
-{% api-method-parameter name="Email" type="string" required=true %}
-{% api-method-parameter name="CreateUser" type="bool" required=false %}
-{% api-method-parameter name="Address" type="string" required=false %}
-{% api-method-parameter name="PostCode" type="string" required=false %}
-{% api-method-parameter name="CityName" type="string" required=false %}
-{% api-method-parameter name="State" type="string" required=false %}
-{% api-method-parameter name="Country" type="Country" required=true %}
-{% api-method-parameter name="SimpleTimeZone" type="SimpleTimeZone" required=true %}
-{% api-method-parameter name="MobilePhone" type="string" required=false %}
-{% api-method-parameter name="LandLine" type="string" required=false %}
-{% api-method-parameter name="DateOfBirth" type="DateTime?" required=false %}
-{% api-method-parameter name="NickName" type="string" required=false %}
-{% api-method-parameter name="BusinessArea" type="string" required=false %}
-{% api-method-parameter name="Position" type="string" required=false %}
-{% api-method-parameter name="CompanyName" type="string" required=false %}
-{% api-method-parameter name="ProfileWebsite" type="string" required=false %}
-{% api-method-parameter name="ProfileTags" type="string" required=false %}
-{% api-method-parameter name="ProfileSummary" type="string" required=false %}
-{% api-method-parameter name="Twitter" type="string" required=false %}
-{% api-method-parameter name="Facebook" type="string" required=false %}
-{% api-method-parameter name="Google" type="string" required=false %}
-{% api-method-parameter name="Telegram" type="string" required=false %}
-{% api-method-parameter name="Linkedin" type="string" required=false %}
-{% api-method-parameter name="Skype" type="string" required=false %}
-{% api-method-parameter name="Github" type="string" required=false %}
-{% api-method-parameter name="Pinterest" type="string" required=false %}
-{% api-method-parameter name="Flickr" type="string" required=false %}
-{% api-method-parameter name="Instagram" type="string" required=false %}
-{% api-method-parameter name="Vimeo" type="string" required=false %}
-{% api-method-parameter name="Tumblr" type="string" required=false %}
-{% api-method-parameter name="Blogger" type="string" required=false %}
-{% api-method-parameter name="ProfileIsPublic" type="bool" required=false %}
-{% api-method-parameter name="InvoicingBusiness" type="Business" required=false %}
-{% api-method-parameter name="BillingEmail" type="string" required=false %}
-{% api-method-parameter name="BillingName" type="string" required=false %}
-{% api-method-parameter name="BillingAddress" type="string" required=false %}
-{% api-method-parameter name="BillingPostCode" type="string" required=false %}
-{% api-method-parameter name="BillingCityName" type="string" required=false %}
-{% api-method-parameter name="BillingState" type="string" required=false %}
-{% api-method-parameter name="BillingCountry" type="Country" required=false %}
-{% api-method-parameter name="BillingSimpleTimeZone" type="SimpleTimeZone" required=false %}
-{% api-method-parameter name="TaxRate" type="decimal?" required=false %}
-{% api-method-parameter name="TaxIDNumber" type="string" required=false %}
-{% api-method-parameter name="BankName" type="string" required=false %}
-{% api-method-parameter name="BankAccount" type="string" required=false %}
-{% api-method-parameter name="BankBranch" type="string" required=false %}
-{% api-method-parameter name="NotifyOnNewInvoice" type="bool" required=false %}
-{% api-method-parameter name="NotifyOnNewPayment" type="bool" required=false %}
-{% api-method-parameter name="NotifyOnFailedPayment" type="bool" required=false %}
-{% api-method-parameter name="ShowPayingMemberInvoices" type="bool" required=false %}
-{% api-method-parameter name="EnableGoCardlessPayments" type="bool" required=false %}
-{% api-method-parameter name="GoCardlessContractNumber" type="string" required=false %}
-{% api-method-parameter name="RegularPaymentProvider" type="Nexudus.Coworking.Core.Enums.eRegularPaymentProvider?" required=false %}
-{% api-method-parameter name="RegularPaymentContractNumber" type="string" required=false %}
-{% api-method-parameter name="CardNumber" type="string" required=false %}
-{% api-method-parameter name="DoNotProcessInvoicesAutomatically" type="bool" required=false %}
-{% api-method-parameter name="AllowNetworkCheckin" type="bool" required=false %}
-{% api-method-parameter name="CheckinSinceLastRenewal" type="int" required=true %}
-{% api-method-parameter name="MinutesSinceLastRenewal" type="int" required=true %}
-{% api-method-parameter name="AccessCardId" type="string" required=false %}
-{% api-method-parameter name="AccessPincode" type="string" required=false %}
-{% api-method-parameter name="KeyFobNumber" type="string" required=false %}
-{% api-method-parameter name="NotifyOnDelivery" type="bool" required=false %}
-{% api-method-parameter name="EzeepUserId" type="Guid?" required=false %}
-{% api-method-parameter name="EzeepFreePrinting" type="bool" required=false %}
-{% api-method-parameter name="PaperCutPayAsYouPrint" type="bool" required=false %}
-{% api-method-parameter name="PaperCutFreePrinting" type="bool" required=false %}
-{% api-method-parameter name="ReferenceNumber" type="string" required=false %}
-{% api-method-parameter name="Tag" type="string" required=false %}
-{% api-method-parameter name="Notes" type="string" required=false %}
-{% api-method-parameter name="ShowAlert" type="bool" required=false %}
-{% api-method-parameter name="AlertNote" type="string" required=false %}
-{% api-method-parameter name="User" type="User" required=false %}
-{% api-method-parameter name="Active" type="bool" required=false %}
-{% api-method-parameter name="NextAutoInvoice" type="DateTime?" required=false %}
-{% api-method-parameter name="InvoiceDueDatePeriod" type="int?" required=false %}
-{% api-method-parameter name="RegistrationDate" type="DateTime?" required=false %}
-{% api-method-parameter name="GeneralTermsAccepted" type="bool" required=false %}
-{% api-method-parameter name="Custom1" type="string" required=false %}
-{% api-method-parameter name="Custom2" type="string" required=false %}
-{% api-method-parameter name="Custom3" type="string" required=false %}
-{% api-method-parameter name="Custom4" type="string" required=false %}
-{% api-method-parameter name="Custom5" type="string" required=false %}
-{% api-method-parameter name="Custom6" type="string" required=false %}
-{% api-method-parameter name="Custom7" type="string" required=false %}
-{% api-method-parameter name="Custom8" type="string" required=false %}
-{% api-method-parameter name="Custom9" type="string" required=false %}
-{% api-method-parameter name="Custom10" type="string" required=false %}
-{% api-method-parameter name="Custom11" type="string" required=false %}
-{% api-method-parameter name="Custom12" type="string" required=false %}
-{% api-method-parameter name="Custom13" type="string" required=false %}
-{% api-method-parameter name="Custom14" type="string" required=false %}
-{% api-method-parameter name="Custom15" type="string" required=false %}
-{% api-method-parameter name="Custom16" type="string" required=false %}
-{% api-method-parameter name="Custom17" type="string" required=false %}
-{% api-method-parameter name="Custom18" type="string" required=false %}
-{% api-method-parameter name="Custom19" type="string" required=false %}
-{% api-method-parameter name="Custom20" type="string" required=false %}
-{% api-method-parameter name="Custom21" type="string" required=false %}
-{% api-method-parameter name="Custom22" type="string" required=false %}
-{% api-method-parameter name="Custom23" type="string" required=false %}
-{% api-method-parameter name="Custom24" type="string" required=false %}
-{% api-method-parameter name="Custom25" type="string" required=false %}
-{% api-method-parameter name="Custom26" type="string" required=false %}
-{% api-method-parameter name="Custom27" type="string" required=false %}
-{% api-method-parameter name="Custom28" type="string" required=false %}
-{% api-method-parameter name="Custom29" type="string" required=false %}
-{% api-method-parameter name="Custom30" type="string" required=false %}
-
-
 {% endapi-method-parameter %}
-
+{% api-method-parameter name="FullName" type="string" required=true %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Salutation" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Gender" type="Nexudus.Coworking.Core.Enums.eGender" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Email" type="string" required=true %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="CreateUser" type="bool" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Address" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="PostCode" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="CityName" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="State" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Country" type="Country" required=true %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="SimpleTimeZone" type="SimpleTimeZone" required=true %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="MobilePhone" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="LandLine" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="DateOfBirth" type="DateTime?" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="NickName" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="BusinessArea" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Position" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="CompanyName" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="ProfileWebsite" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="ProfileTags" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="ProfileSummary" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Twitter" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Facebook" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Google" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Telegram" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Linkedin" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Skype" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Github" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Pinterest" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Flickr" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Instagram" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Vimeo" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Tumblr" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Blogger" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="ProfileIsPublic" type="bool" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="InvoicingBusiness" type="Business" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="BillingEmail" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="BillingName" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="BillingAddress" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="BillingPostCode" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="BillingCityName" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="BillingState" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="BillingCountry" type="Country" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="BillingSimpleTimeZone" type="SimpleTimeZone" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="TaxRate" type="decimal?" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="TaxIDNumber" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="BankName" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="BankAccount" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="BankBranch" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="NotifyOnNewInvoice" type="bool" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="NotifyOnNewPayment" type="bool" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="NotifyOnFailedPayment" type="bool" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="ShowPayingMemberInvoices" type="bool" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="EnableGoCardlessPayments" type="bool" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="GoCardlessContractNumber" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="RegularPaymentProvider" type="Nexudus.Coworking.Core.Enums.eRegularPaymentProvider?" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="RegularPaymentContractNumber" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="CardNumber" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="DoNotProcessInvoicesAutomatically" type="bool" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="AllowNetworkCheckin" type="bool" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="CheckinSinceLastRenewal" type="int" required=true %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="MinutesSinceLastRenewal" type="int" required=true %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="AccessCardId" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="AccessPincode" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="KeyFobNumber" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="NotifyOnDelivery" type="bool" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="EzeepUserId" type="Guid?" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="EzeepFreePrinting" type="bool" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="PaperCutPayAsYouPrint" type="bool" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="PaperCutFreePrinting" type="bool" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="ReferenceNumber" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Tag" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Notes" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="ShowAlert" type="bool" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="AlertNote" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="User" type="User" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Active" type="bool" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="NextAutoInvoice" type="DateTime?" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="InvoiceDueDatePeriod" type="int?" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="RegistrationDate" type="DateTime?" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="GeneralTermsAccepted" type="bool" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Custom1" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Custom2" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Custom3" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Custom4" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Custom5" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Custom6" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Custom7" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Custom8" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Custom9" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Custom10" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Custom11" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Custom12" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Custom13" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Custom14" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Custom15" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Custom16" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Custom17" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Custom18" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Custom19" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Custom20" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Custom21" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Custom22" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Custom23" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Custom24" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Custom25" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Custom26" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Custom27" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Custom28" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Custom29" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Custom30" type="string" required=false %}
+{% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
+
 {% endapi-method-request %}
 
 {% api-method-response %}
@@ -1735,13 +1843,236 @@ application/json
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
-{% api-method-body-parameters %}
-{% api-method-parameter name="FullName" type="string" required=true %}
-
-{% endapi-method-parameter %}
-
+{% api-method-path-parameters %}
 {% api-method-parameter name="Id" type="integer" required=true %}
-The id of the record to update
+The id of the coworker to update
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+
+{% api-method-body-parameters %}
+{% api-method-parameter name="CoworkerType" type="Nexudus.Coworking.Core.Enums.eCoworkerRecordType" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="FullName" type="string" required=true %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Salutation" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Gender" type="Nexudus.Coworking.Core.Enums.eGender" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Email" type="string" required=true %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="CreateUser" type="bool" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Address" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="PostCode" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="CityName" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="State" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Country" type="Country" required=true %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="SimpleTimeZone" type="SimpleTimeZone" required=true %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="MobilePhone" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="LandLine" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="DateOfBirth" type="DateTime?" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="NickName" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="BusinessArea" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Position" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="CompanyName" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="ProfileWebsite" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="ProfileTags" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="ProfileSummary" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Twitter" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Facebook" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Google" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Telegram" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Linkedin" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Skype" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Github" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Pinterest" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Flickr" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Instagram" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Vimeo" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Tumblr" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Blogger" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="ProfileIsPublic" type="bool" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="InvoicingBusiness" type="Business" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="BillingEmail" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="BillingName" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="BillingAddress" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="BillingPostCode" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="BillingCityName" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="BillingState" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="BillingCountry" type="Country" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="BillingSimpleTimeZone" type="SimpleTimeZone" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="TaxRate" type="decimal?" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="TaxIDNumber" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="BankName" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="BankAccount" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="BankBranch" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="NotifyOnNewInvoice" type="bool" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="NotifyOnNewPayment" type="bool" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="NotifyOnFailedPayment" type="bool" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="ShowPayingMemberInvoices" type="bool" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="EnableGoCardlessPayments" type="bool" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="GoCardlessContractNumber" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="RegularPaymentProvider" type="Nexudus.Coworking.Core.Enums.eRegularPaymentProvider?" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="RegularPaymentContractNumber" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="CardNumber" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="DoNotProcessInvoicesAutomatically" type="bool" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="AllowNetworkCheckin" type="bool" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="CheckinSinceLastRenewal" type="int" required=true %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="MinutesSinceLastRenewal" type="int" required=true %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="AccessCardId" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="AccessPincode" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="KeyFobNumber" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="NotifyOnDelivery" type="bool" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="EzeepUserId" type="Guid?" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="EzeepFreePrinting" type="bool" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="PaperCutPayAsYouPrint" type="bool" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="PaperCutFreePrinting" type="bool" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="ReferenceNumber" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Tag" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Notes" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="ShowAlert" type="bool" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="AlertNote" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="User" type="User" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Active" type="bool" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="NextAutoInvoice" type="DateTime?" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="InvoiceDueDatePeriod" type="int?" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="RegistrationDate" type="DateTime?" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="GeneralTermsAccepted" type="bool" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Custom1" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Custom2" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Custom3" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Custom4" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Custom5" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Custom6" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Custom7" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Custom8" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Custom9" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Custom10" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Custom11" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Custom12" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Custom13" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Custom14" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Custom15" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Custom16" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Custom17" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Custom18" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Custom19" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Custom20" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Custom21" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Custom22" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Custom23" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Custom24" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Custom25" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Custom26" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Custom27" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Custom28" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Custom29" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Custom30" type="string" required=false %}
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
