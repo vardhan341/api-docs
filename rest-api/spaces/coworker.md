@@ -1,11 +1,4 @@
-﻿
----
-description: 'Coworkers represent your customers, both members and contacts.'
----
-
-# Coworker
-
-{% api-method method="get" host="https://spaces.nexudus.com/api" path="/spaces/coworkers" %}
+﻿{% api-method method="get" host="https://spaces.nexudus.com/api" path="/spaces/coworkers" %}
 {% api-method-summary %}
 Find
 {% endapi-method-summary %}
@@ -41,63 +34,8 @@ application/json
 {% endapi-method-parameter %}
 
 
-{% api-method-parameter name="CoworkerType" type="Nexudus.Coworking.Core.Enums.eCoworkerRecordType" %}
+{% api-method-parameter name="CoworkerType" type="enum" %}
 ?Coworker\_CoworkerType=...
-{% endapi-method-parameter %}
-
-
-{% api-method-parameter name="Businesses" type="ICollection<Business>" %}
-?Coworker\_Businesses=...
-{% endapi-method-parameter %}
-
-
-{% api-method-parameter name="Teams" type="ICollection<Team>" %}
-?Coworker\_Teams=...
-{% endapi-method-parameter %}
-
-
-{% api-method-parameter name="Proposals" type="IList<Proposal>" %}
-?Coworker\_Proposals=...
-{% endapi-method-parameter %}
-
-
-{% api-method-parameter name="Contracts" type="IList<CoworkerContract>" %}
-?Coworker\_Contracts=...
-{% endapi-method-parameter %}
-
-
-{% api-method-parameter name="Tasks" type="IList<CoworkerTask>" %}
-?Coworker\_Tasks=...
-{% endapi-method-parameter %}
-
-
-{% api-method-parameter name="Files" type="IList<CoworkerDataFile>" %}
-?Coworker\_Files=...
-{% endapi-method-parameter %}
-
-
-{% api-method-parameter name="Messages" type="IList<CoworkerMessage>" %}
-?Coworker\_Messages=...
-{% endapi-method-parameter %}
-
-
-{% api-method-parameter name="CoworkerDiscountCodes" type="IList<CoworkerDiscountCode>" %}
-?Coworker\_CoworkerDiscountCodes=...
-{% endapi-method-parameter %}
-
-
-{% api-method-parameter name="CoworkerBookingCredits" type="IList<CoworkerBookingCredit>" %}
-?Coworker\_CoworkerBookingCredits=...
-{% endapi-method-parameter %}
-
-
-{% api-method-parameter name="Bookings" type="IList<Booking>" %}
-?Coworker\_Bookings=...
-{% endapi-method-parameter %}
-
-
-{% api-method-parameter name="Charges" type="IList<Charge>" %}
-?Coworker\_Charges=...
 {% endapi-method-parameter %}
 
 
@@ -111,7 +49,7 @@ application/json
 {% endapi-method-parameter %}
 
 
-{% api-method-parameter name="Gender" type="Nexudus.Coworking.Core.Enums.eGender" %}
+{% api-method-parameter name="Gender" type="enum" %}
 ?Coworker\_Gender=...
 {% endapi-method-parameter %}
 
@@ -376,7 +314,7 @@ application/json
 {% endapi-method-parameter %}
 
 
-{% api-method-parameter name="RegularPaymentProvider" type="Nexudus.Coworking.Core.Enums.eRegularPaymentProvider?" %}
+{% api-method-parameter name="RegularPaymentProvider" type="enum" %}
 ?Coworker\_RegularPaymentProvider=...
 {% endapi-method-parameter %}
 
@@ -476,11 +414,6 @@ application/json
 {% endapi-method-parameter %}
 
 
-{% api-method-parameter name="CoworkerNotes" type="IList<CoworkerNote>" %}
-?Coworker\_CoworkerNotes=...
-{% endapi-method-parameter %}
-
-
 {% api-method-parameter name="User" type="User" %}
 ?Coworker\_User=...
 {% endapi-method-parameter %}
@@ -508,36 +441,6 @@ application/json
 
 {% api-method-parameter name="GeneralTermsAccepted" type="bool" %}
 ?Coworker\_GeneralTermsAccepted=...
-{% endapi-method-parameter %}
-
-
-{% api-method-parameter name="CoworkerProducts" type="IList<CoworkerProduct>" %}
-?Coworker\_CoworkerProducts=...
-{% endapi-method-parameter %}
-
-
-{% api-method-parameter name="TimePasses" type="IList<CoworkerTimePass>" %}
-?Coworker\_TimePasses=...
-{% endapi-method-parameter %}
-
-
-{% api-method-parameter name="Tickets" type="IList<EventAttendee>" %}
-?Coworker\_Tickets=...
-{% endapi-method-parameter %}
-
-
-{% api-method-parameter name="CoworkerExtraServices" type="IList<CoworkerExtraService>" %}
-?Coworker\_CoworkerExtraServices=...
-{% endapi-method-parameter %}
-
-
-{% api-method-parameter name="Invoices" type="IList<CoworkerInvoice>" %}
-?Coworker\_Invoices=...
-{% endapi-method-parameter %}
-
-
-{% api-method-parameter name="LedgerEntries" type="IList<CoworkerLedgerEntry>" %}
-?Coworker\_LedgerEntries=...
 {% endapi-method-parameter %}
 
 
@@ -1520,13 +1423,13 @@ application/json
 {% endapi-method-headers %}
 
 {% api-method-body-parameters %}
-{% api-method-parameter name="CoworkerType" type="Nexudus.Coworking.Core.Enums.eCoworkerRecordType" required=false %}
+{% api-method-parameter name="CoworkerType" type="enum" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="FullName" type="string" required=true %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="Salutation" type="string" required=false %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="Gender" type="Nexudus.Coworking.Core.Enums.eGender" required=false %}
+{% api-method-parameter name="Gender" type="enum" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="Email" type="string" required=true %}
 {% endapi-method-parameter %}
@@ -1632,7 +1535,7 @@ application/json
 {% endapi-method-parameter %}
 {% api-method-parameter name="GoCardlessContractNumber" type="string" required=false %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="RegularPaymentProvider" type="Nexudus.Coworking.Core.Enums.eRegularPaymentProvider?" required=false %}
+{% api-method-parameter name="RegularPaymentProvider" type="enum" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="RegularPaymentContractNumber" type="string" required=false %}
 {% endapi-method-parameter %}
@@ -1850,13 +1753,13 @@ The id of the coworker to update
 {% endapi-method-path-parameters %}
 
 {% api-method-body-parameters %}
-{% api-method-parameter name="CoworkerType" type="Nexudus.Coworking.Core.Enums.eCoworkerRecordType" required=false %}
+{% api-method-parameter name="CoworkerType" type="enum" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="FullName" type="string" required=true %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="Salutation" type="string" required=false %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="Gender" type="Nexudus.Coworking.Core.Enums.eGender" required=false %}
+{% api-method-parameter name="Gender" type="enum" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="Email" type="string" required=true %}
 {% endapi-method-parameter %}
@@ -1962,7 +1865,7 @@ The id of the coworker to update
 {% endapi-method-parameter %}
 {% api-method-parameter name="GoCardlessContractNumber" type="string" required=false %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="RegularPaymentProvider" type="Nexudus.Coworking.Core.Enums.eRegularPaymentProvider?" required=false %}
+{% api-method-parameter name="RegularPaymentProvider" type="enum" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="RegularPaymentContractNumber" type="string" required=false %}
 {% endapi-method-parameter %}
