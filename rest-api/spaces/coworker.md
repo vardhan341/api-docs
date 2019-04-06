@@ -1443,9 +1443,9 @@ application/json
 {% endapi-method-parameter %}
 {% api-method-parameter name="State" type="string" required=false %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="Country" type="Country" required=true %}
+{% api-method-parameter name="CountryId" type="int" required=true %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="SimpleTimeZone" type="SimpleTimeZone" required=true %}
+{% api-method-parameter name="SimpleTimeZoneId" type="int" required=true %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="MobilePhone" type="string" required=false %}
 {% endapi-method-parameter %}
@@ -1495,7 +1495,7 @@ application/json
 {% endapi-method-parameter %}
 {% api-method-parameter name="ProfileIsPublic" type="bool" required=false %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="InvoicingBusiness" type="Business" required=false %}
+{% api-method-parameter name="InvoicingBusinessId" type="int" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="BillingEmail" type="string" required=false %}
 {% endapi-method-parameter %}
@@ -1509,9 +1509,9 @@ application/json
 {% endapi-method-parameter %}
 {% api-method-parameter name="BillingState" type="string" required=false %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="BillingCountry" type="Country" required=false %}
+{% api-method-parameter name="BillingCountryId" type="int" required=false %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="BillingSimpleTimeZone" type="SimpleTimeZone" required=false %}
+{% api-method-parameter name="BillingSimpleTimeZoneId" type="int" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="TaxRate" type="decimal?" required=false %}
 {% endapi-method-parameter %}
@@ -1575,7 +1575,7 @@ application/json
 {% endapi-method-parameter %}
 {% api-method-parameter name="AlertNote" type="string" required=false %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="User" type="User" required=false %}
+{% api-method-parameter name="UserId" type="int" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="Active" type="bool" required=false %}
 {% endapi-method-parameter %}
@@ -1771,9 +1771,9 @@ The id of the coworker to update
 {% endapi-method-parameter %}
 {% api-method-parameter name="State" type="string" required=false %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="Country" type="Country" required=true %}
+{% api-method-parameter name="CountryId" type="int" required=true %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="SimpleTimeZone" type="SimpleTimeZone" required=true %}
+{% api-method-parameter name="SimpleTimeZoneId" type="int" required=true %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="MobilePhone" type="string" required=false %}
 {% endapi-method-parameter %}
@@ -1823,7 +1823,7 @@ The id of the coworker to update
 {% endapi-method-parameter %}
 {% api-method-parameter name="ProfileIsPublic" type="bool" required=false %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="InvoicingBusiness" type="Business" required=false %}
+{% api-method-parameter name="InvoicingBusinessId" type="int" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="BillingEmail" type="string" required=false %}
 {% endapi-method-parameter %}
@@ -1837,9 +1837,9 @@ The id of the coworker to update
 {% endapi-method-parameter %}
 {% api-method-parameter name="BillingState" type="string" required=false %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="BillingCountry" type="Country" required=false %}
+{% api-method-parameter name="BillingCountryId" type="int" required=false %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="BillingSimpleTimeZone" type="SimpleTimeZone" required=false %}
+{% api-method-parameter name="BillingSimpleTimeZoneId" type="int" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="TaxRate" type="decimal?" required=false %}
 {% endapi-method-parameter %}
@@ -1897,7 +1897,7 @@ The id of the coworker to update
 {% endapi-method-parameter %}
 {% api-method-parameter name="AlertNote" type="string" required=false %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="User" type="User" required=false %}
+{% api-method-parameter name="UserId" type="int" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="Active" type="bool" required=false %}
 {% endapi-method-parameter %}
@@ -2046,80 +2046,6 @@ _This response is an example, errors and messages will follow this structure but
 
 > 🔒 Requires user role `coworker-edit`
 
-{% api-method method="delete" host="https://spaces.nexudus.com/api" path="/spaces/coworkers/:id" %}
-{% api-method-summary %}
-Delete
-{% endapi-method-summary %}
-
-{% api-method-description %}
-Deletes a coworker.  
-  
-Required User Roles: `coworker-delete`
-{% endapi-method-description %}
-
-{% api-method-spec %}
-{% api-method-request %}
-
-{% api-method-headers %}
-{% api-method-parameter name="Authorization" type="string" required=true %}
-Basic Authentication token. Base64 encoding of 'username:password'.
-{% endapi-method-parameter %}
-{% api-method-parameter name="Content" type="string" required=true %}
-application/json
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
-
-{% api-method-path-parameters %}
-{% api-method-parameter name="Id" type="integer" required=false %}
-
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
-{% endapi-method-request %}
-
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
-```javascript
-{
-    "Status": 200,
-    "WasSuccessful": true,
-    "Message": "The record was deleted successfully.",
-    "Value": null,
-    "OpenInDialog": false,
-    "RedirectURL": null,
-    "JavaScript": null,
-    "Errors": null
-}
-```
-{% endapi-method-response-example %}
-
-{% api-method-response-example httpCode=404 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
-```
-"Not found"
-```
-{% endapi-method-response-example %}
-
-{% api-method-response-example httpCode=500 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
-```javascript
-{
-    "Message": "An error has occurred."
-}
-```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
 
 > 🔒 Requires user role `coworker-delete`
 
