@@ -438,7 +438,7 @@ By date range
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Gets a list of coworkers based on the date when they were created or updated.
+Gets a list of bookings based on the date when they were created or updated.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -455,15 +455,15 @@ application/json
 
 {% api-method-query-parameters %}
 {% api-method-parameter name="CreatedOn" type="object" required=false %}
-?to\_Coworker\_CreatedOn=...
+?to\_Booking\_CreatedOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="UpdatedOn" type="object" required=false %}
-?from\_Coworker\_CreatedOn=...
+?from\_Booking\_CreatedOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="CreatedOn" type="object" required=false %}
-?from\_Coworker\_CreatedOn=...
+?from\_Booking\_CreatedOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="FromTime" type="datetime" required=false %}
@@ -601,7 +601,7 @@ One by Id
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Gets one coworker record.
+Gets one booking record.
 {% endapi-method-description %}
 
 {% api-method-spec %}

@@ -2230,7 +2230,7 @@ Binary stream or null
 
 ## Related Entities
 * [Country](../sys/country.md)
-* [SimpleTimeZone](./sys/simpletimezone.md)
+* [SimpleTimeZone](../sys/simpletimezone.md)
 * [Business](../sys/business.md)
 * [Country](../sys/country.md)
 * [SimpleTimeZone](../sys/simpletimezone.md)
