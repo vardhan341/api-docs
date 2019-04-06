@@ -2013,6 +2013,63 @@ Commands allow to perform actions against one or more coworker records. Some com
 > }
 > ```
 
+{% api-method method="get" host="https://spaces.nexudus.com/api" path="/spaces/coworkers/commands" %}
+{% api-method-summary %}
+Commands
+{% endapi-method-summary %}
+
+{% api-method-description %}
+Get all commands available to run for coworker records.
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+Basic Authentication token. Base64 encoding of 'username:password'.
+{% endapi-method-parameter %}
+{% api-method-parameter name="Content" type="string" required=true %}
+application/json
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+_This response is an example._  
+{% endapi-method-response-example-description %}
+
+```javascript
+[
+    {
+        "Key": "COMMAND_KEY_1",
+        "Name": "Command English Description",
+        "AppliesOnlyToMultipleEntities": false,
+        "AppliesOnlyToOneEntity": false,
+        "AppliesOnlyToTwoEntities": false,
+        "NeedsEntitiesToRun": true,
+        "Order": 1,
+        "RequiresParameters": []
+    },
+    {
+        "Key": "COMMAND_KEY_2",
+        "Name": "Command 2 English Description",
+        "AppliesOnlyToMultipleEntities": true
+        "AppliesOnlyToOneEntity": false,
+        "AppliesOnlyToTwoEntities": false,
+        "NeedsEntitiesToRun": true,
+        "Order": 2,
+        "RequiresParameters": []
+    },
+    ...
+]
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
 
 {% api-method method="get" host="https://spaces.nexudus.com/api" path="/spaces/coworkers/runcommand" %}
 {% api-method-summary %}
@@ -2054,6 +2111,7 @@ A list of object with the structure below. The parameters required for each comm
 
 {% api-method-parameter name="Ids" type="array" required=true %}
 A list of integer IDs for each of the records to run this command for.  
+  
 `[987654321, 123565978]`
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
@@ -2080,7 +2138,6 @@ _Commands also return a status 200 when they fail to process one or more of the 
 {% endapi-method %}
 
 > 🔒 Requires user role `coworker-edit`
-
 
 ## Binary files
 
