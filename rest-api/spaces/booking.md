@@ -1262,6 +1262,6 @@ The following endpoints return binary data. Check the `ContentType` header to un
 
 
 ## Related Entities
-* [Resource](/rest-api/spaces/resource.md)
-* [Coworker](/rest-api/spaces/coworker.md)
-* [ExtraService](/rest-api/billing/extraservice.md)
+* [Resource](../spaces/resource.md)
+* [Coworker](../spaces/coworker.md)
+* [ExtraService](../billing/extraservice.md)

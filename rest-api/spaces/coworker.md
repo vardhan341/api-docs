@@ -2229,9 +2229,9 @@ Binary stream or null
 
 
 ## Related Entities
-* [Country](/rest-api/sys/country.md)
-* [SimpleTimeZone](/rest-api/sys/simpletimezone.md)
-* [Business](/rest-api/sys/business.md)
-* [Country](/rest-api/sys/country.md)
-* [SimpleTimeZone](/rest-api/sys/simpletimezone.md)
-* [User](/rest-api/sys/user.md)
+* [Country](../sys/country.md)
+* [SimpleTimeZone](./sys/simpletimezone.md)
+* [Business](../sys/business.md)
+* [Country](../sys/country.md)
+* [SimpleTimeZone](../sys/simpletimezone.md)
+* [User](../sys/user.md)
