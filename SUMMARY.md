@@ -1,9 +1,21 @@
 # Table of contents
 
-* [Initial page](README.md)
+* [Getting Started](README.md)
+* [Request Limits](request-limits.md)
+* [Authentication \(internal apps\)](authentication-internal-apps.md)
+* [Authentication \(published apps\)](authentication-published-apps.md)
+* [Access Rights and Roles](access-rights-and-roles.md)
 * [REST API](rest-api/README.md)
+  * [Billing](rest-api/billing/README.md)
+    * [BusinessCharge](rest-api/billing/businesscharge.md)
+  * [Community](rest-api/community.md)
+  * [Content](rest-api/content.md)
+  * [MRM](rest-api/mrm.md)
   * [Spaces](rest-api/spaces/README.md)
     * [Booking](rest-api/spaces/booking.md)
     * [Coworker](rest-api/spaces/coworker.md)
+* [Support](support.md)
+* [Sys](sys.md)
 * [Public API](public-api.md)
+* [SDK](sdk.md)
 
