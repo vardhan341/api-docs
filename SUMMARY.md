@@ -50,7 +50,7 @@
     * [NewsLetterSubscriber](rest-api/content/newslettersubscriber.md)
     * [SubscriberActivity](rest-api/content/subscriberactivity.md)
     * [NewsLetter](rest-api/content/newsletter.md)
-  * [MRM](rest-api/mrm/README.md)
+  * [CRM](rest-api/mrm/README.md)
     * [CrmBoard](rest-api/mrm/crmboard.md)
     * [CrmOpportunity](rest-api/mrm/crmopportunity.md)
     * [CannedResponse](rest-api/mrm/cannedresponse.md)
