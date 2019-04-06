@@ -17,11 +17,11 @@ This means that your application must be available on the Internet for users to 
 
 The API is divided in 7 main areas. You can get details about the resources in each of them by using the menu on the left.
 
-* **Billing**: data related to the items you sell, invoices and payments. 
-* **Community**: data related to the community boards. 
-* **Content**: data related to the articles, events and newsletters. 
-* **CRM**: data related to your CRM boards, custom fields, reminders and tasks. 
-* **Spaces**: data related to a space, like members profiles, bookings or resources. 
-* **Support**: data related to the support features, like chats and help messages. 
-* **Sys**: data related to your Nexudus account configuration, floor plans and core entities like taxes, currencies and timezones.
+* \*\*\*\*[**Billing**](rest-api/billing/): data related to the items you sell, invoices and payments. 
+* \*\*\*\*[**Community**](rest-api/community/): data related to the community boards. 
+* \*\*\*\*[**Content**](rest-api/content/): data related to the articles, events and newsletters. 
+* \*\*\*\*[**CRM**](rest-api/mrm/): data related to your CRM boards, custom fields, reminders and tasks. 
+* \*\*\*\*[**Spaces**](rest-api/spaces/): data related to a space, like members profiles, bookings or resources. 
+* \*\*\*\*[**Support**](rest-api/support/): data related to the support features, like chats and help messages. 
+* \*\*\*\*[**Sys**](rest-api/sys/): data related to your Nexudus account configuration, floor plans and core entities like taxes, currencies and timezones.
 
