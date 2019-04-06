@@ -2000,8 +2000,6 @@ _This response is an example, errors and messages will follow this structure but
 > 🔒 Requires user role `coworker-edit`
 
 
-> 🔒 Requires user role `coworker-delete`
-
 ## Commands
 
 Commands allow to perform actions against one or more coworker records. Some commands accept only one record while others can run an action for a number of records at the same time.  Each command has metadata with information about how it can be used and the amount of records, if any, it needs to run.
@@ -2021,7 +2019,7 @@ Commands
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Get all command available to run for coworker records.
+Get all commands available to run for coworker records.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -2039,7 +2037,7 @@ application/json
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
 {% api-method-response-example-description %}
-_This response is an example, commands are regularly added to different entities._  
+_This response is an example._  
 {% endapi-method-response-example-description %}
 
 ```javascript
@@ -2095,9 +2093,7 @@ application/json
 
 {% api-method-body-parameters %}
 {% api-method-parameter name="Key" type="string" required=true %}
-The command Key defining the command to run.  
-  
-`"COMMAND_KEY_1"`
+The command Key defining the command to run. `"COMMAND_KEY_1"`
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Parameters" type="array" required=false %}
