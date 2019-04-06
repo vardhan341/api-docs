@@ -17,11 +17,11 @@ This means that your application must be available on the Internet for users to 
 
 The API is divided in 7 main areas. You can get details about the resources in each of them by using the menu on the left.
 
-* Billing: data related to charges from us to your account or from other apps.
-* Community: data related to the community boards.
-* Content: data related to the blog and newsletters.
-* MRM: stands for Member Relationship Management and it relates to functions and data regarding members and the information you store about them.
-* Spaces: data related to a space, like members profiles, bookings or resources.
-* Support: data related to the support feactures, like chats and help messages.
-* System: data related to Nexudus Spaces core services.
+* **Billing**: data related to the items you sell, invoices and payments. 
+* **Community**: data related to the community boards. 
+* **Content**: data related to the articles, events and newsletters. 
+* **MRM**: stands for Member Relationship Management and it relates to functions and data regarding members and the information you store about them. 
+* **Spaces**: data related to a space, like members profiles, bookings or resources. 
+* **Support**: data related to the support features, like chats and help messages. 
+* **Sys**: data related to your Nexudus account configuration, floor plans and core entities like taxes, currencies and timezones.
 
