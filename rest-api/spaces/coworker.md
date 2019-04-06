@@ -960,6 +960,7 @@ size=25 \(maximum=1000\)
 
 {% hint style="info" %}
 You can also get a list of records based when they were created or updated. This is useful if you want to get a list of records created after or before a particular point in time. 
+You can also use range query parameters for all date, integer and decimal properties.
 {% endhint %}
 
 {% api-method method="get" host="https://spaces.nexudus.com/api" path="/spaces/coworkers" %}
@@ -1008,18 +1009,6 @@ application/json
 {% api-method-parameter name="TaxRate" type="decimal" required=false %}
 ?to\_Coworker\_TaxRate=...
 {% endapi-method-parameter %}
-{% api-method-parameter name="LastOverDueInvoiceReminder" type="datetime" required=false %}
-?from\_Coworker\_LastOverDueInvoiceReminder=...
-{% endapi-method-parameter %}
-{% api-method-parameter name="LastOverDueInvoiceReminder" type="datetime" required=false %}
-?to\_Coworker\_LastOverDueInvoiceReminder=...
-{% endapi-method-parameter %}
-{% api-method-parameter name="LastLowCreditReminder" type="datetime" required=false %}
-?from\_Coworker\_LastLowCreditReminder=...
-{% endapi-method-parameter %}
-{% api-method-parameter name="LastLowCreditReminder" type="datetime" required=false %}
-?to\_Coworker\_LastLowCreditReminder=...
-{% endapi-method-parameter %}
 {% api-method-parameter name="CheckinSinceLastRenewal" type="decimal" required=false %}
 ?from\_Coworker\_CheckinSinceLastRenewal=...
 {% endapi-method-parameter %}
@@ -1049,42 +1038,6 @@ application/json
 {% endapi-method-parameter %}
 {% api-method-parameter name="RegistrationDate" type="datetime" required=false %}
 ?to\_Coworker\_RegistrationDate=...
-{% endapi-method-parameter %}
-{% api-method-parameter name="LastRenewal" type="datetime" required=false %}
-?from\_Coworker\_LastRenewal=...
-{% endapi-method-parameter %}
-{% api-method-parameter name="LastRenewal" type="datetime" required=false %}
-?to\_Coworker\_LastRenewal=...
-{% endapi-method-parameter %}
-{% api-method-parameter name="LastInvoiceAttempt" type="datetime" required=false %}
-?from\_Coworker\_LastInvoiceAttempt=...
-{% endapi-method-parameter %}
-{% api-method-parameter name="LastInvoiceAttempt" type="datetime" required=false %}
-?to\_Coworker\_LastInvoiceAttempt=...
-{% endapi-method-parameter %}
-{% api-method-parameter name="NextInvoiceLocal" type="datetime" required=false %}
-?from\_Coworker\_NextInvoiceLocal=...
-{% endapi-method-parameter %}
-{% api-method-parameter name="NextInvoiceLocal" type="datetime" required=false %}
-?to\_Coworker\_NextInvoiceLocal=...
-{% endapi-method-parameter %}
-{% api-method-parameter name="NextAutoInvoiceLocal" type="datetime" required=false %}
-?from\_Coworker\_NextAutoInvoiceLocal=...
-{% endapi-method-parameter %}
-{% api-method-parameter name="NextAutoInvoiceLocal" type="datetime" required=false %}
-?to\_Coworker\_NextAutoInvoiceLocal=...
-{% endapi-method-parameter %}
-{% api-method-parameter name="RegistrationDateLocal" type="datetime" required=false %}
-?from\_Coworker\_RegistrationDateLocal=...
-{% endapi-method-parameter %}
-{% api-method-parameter name="RegistrationDateLocal" type="datetime" required=false %}
-?to\_Coworker\_RegistrationDateLocal=...
-{% endapi-method-parameter %}
-{% api-method-parameter name="AccessControlDebounceTime" type="datetime" required=false %}
-?from\_Coworker\_AccessControlDebounceTime=...
-{% endapi-method-parameter %}
-{% api-method-parameter name="AccessControlDebounceTime" type="datetime" required=false %}
-?to\_Coworker\_AccessControlDebounceTime=...
 {% endapi-method-parameter %}
 
 {% endapi-method-query-parameters %}
