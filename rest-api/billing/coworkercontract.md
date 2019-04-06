@@ -1,6 +1,4 @@
-# CoworkerContract
-
-{% api-method method="get" host="https://spaces.nexudus.com/api" path="/billing/coworkercontracts" %}
+﻿{% api-method method="get" host="https://spaces.nexudus.com/api" path="/billing/coworkercontracts" %}
 {% api-method-summary %}
 Find
 {% endapi-method-summary %}
@@ -11,17 +9,18 @@ This endpoint allows you to GET a list of coworkercontracts based on one or more
 
 {% api-method-spec %}
 {% api-method-request %}
+
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
 {% api-method-query-parameters %}
+
 {% api-method-parameter name="Id" type="int" %}
 ?Id=...
 {% endapi-method-parameter %}
@@ -34,177 +33,218 @@ application/json
 ?CoworkerContract\_SystemId=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="IssuedBy" type="Business" %}
 ?CoworkerContract\_IssuedBy=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="Coworker" type="Coworker" %}
 ?CoworkerContract\_Coworker=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="Tariff" type="Tariff" %}
 ?CoworkerContract\_Tariff=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="NextTariff" type="Tariff" %}
 ?CoworkerContract\_NextTariff=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="Notes" type="string" %}
 ?CoworkerContract\_Notes=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="StartDate" type="DateTime?" %}
 ?CoworkerContract\_StartDate=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="BillingDay" type="int" %}
 ?CoworkerContract\_BillingDay=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="RenewalDate" type="DateTime?" %}
 ?CoworkerContract\_RenewalDate=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="InvoicedPeriod" type="DateTime?" %}
 ?CoworkerContract\_InvoicedPeriod=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="ContractTerm" type="DateTime?" %}
 ?CoworkerContract\_ContractTerm=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="Price" type="decimal?" %}
 ?CoworkerContract\_Price=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="Value" type="decimal?" %}
 ?CoworkerContract\_Value=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="Quantity" type="int" %}
 ?CoworkerContract\_Quantity=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="Active" type="bool" %}
 ?CoworkerContract\_Active=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="MainContract" type="bool" %}
 ?CoworkerContract\_MainContract=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="Cancelled" type="bool" %}
 ?CoworkerContract\_Cancelled=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="IncludeSignupFee" type="bool" %}
 ?CoworkerContract\_IncludeSignupFee=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="InvoiceAdvancedCycles" type="bool" %}
 ?CoworkerContract\_InvoiceAdvancedCycles=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="ApplyProRating" type="bool" %}
 ?CoworkerContract\_ApplyProRating=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="NextAutoInvoice" type="DateTime?" %}
 ?CoworkerContract\_NextAutoInvoice=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="PricePlanTermsAccepted" type="bool" %}
 ?CoworkerContract\_PricePlanTermsAccepted=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="PricePlanTermsAcceptedOn" type="DateTime?" %}
 ?CoworkerContract\_PricePlanTermsAcceptedOn=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="CancellationDate" type="DateTime?" %}
 ?CoworkerContract\_CancellationDate=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="CancellationLimitDays" type="int?" %}
 ?CoworkerContract\_CancellationLimitDays=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="ProRateCancellation" type="bool" %}
 ?CoworkerContract\_ProRateCancellation=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="CancelTeamContracts" type="bool" %}
 ?CoworkerContract\_CancelTeamContracts=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="CancellationReason" type="enum" %}
 ?CoworkerContract\_CancellationReason=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="CancellationNotes" type="string" %}
 ?CoworkerContract\_CancellationNotes=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="FloorPlanDeskIds" type="string" %}
 ?CoworkerContract\_FloorPlanDeskIds=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="FloorPlanDeskNames" type="string" %}
 ?CoworkerContract\_FloorPlanDeskNames=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="IssuedBy\_Name" type="string" %}
 ?CoworkerContract\_IssuedBy\_Name=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="Coworker\_FullName" type="string" %}
 ?CoworkerContract\_Coworker\_FullName=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="Coworker\_CompanyName" type="string" %}
 ?CoworkerContract\_Coworker\_CompanyName=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="Coworker\_BillingName" type="string" %}
 ?CoworkerContract\_Coworker\_BillingName=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="Coworker\_Email" type="string" %}
 ?CoworkerContract\_Coworker\_Email=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="Tariff\_Name" type="string" %}
 ?CoworkerContract\_Tariff\_Name=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="Tariff\_InvoiceEvery" type="string" %}
 ?CoworkerContract\_Tariff\_InvoiceEvery=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="Tariff\_InvoiceEveryWeeks" type="string" %}
 ?CoworkerContract\_Tariff\_InvoiceEveryWeeks=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="Tariff\_Price" type="string" %}
 ?CoworkerContract\_Tariff\_Price=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="Tariff\_Currency\_Code" type="string" %}
-?CoworkerContract\_Tariff\_Currency\_Code=...
+
+{% api-method-parameter name="Tariff\_Currency_Code" type="string" %}
+?CoworkerContract\_Tariff\_Currency_Code=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="NextTariff\_Name" type="string" %}
 ?CoworkerContract\_NextTariff\_Name=...
 {% endapi-method-parameter %}
+
+
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
 
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
 
-{% endapi-method-response-example-description %}
 
 ```javascript
 {
@@ -253,6 +293,7 @@ application/json
     "TotalItems": 60,
     "TotalPages": 3
 }
+
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}
@@ -272,11 +313,11 @@ This endpoint allows you to GET a list of coworkercontracts.
 
 {% api-method-spec %}
 {% api-method-request %}
+
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
@@ -364,7 +405,8 @@ size=25 \(maximum=1000\)
 > 🔒 Requires user role `coworkercontract-list`
 
 {% hint style="info" %}
-You can also get a list of records based when they were created or updated. This is useful if you want to get a list of records created after or before a particular point in time. You can also use range query parameters for all date, integer and decimal properties.
+You can also get a list of records based when they were created or updated. This is useful if you want to get a list of records created after or before a particular point in time. 
+You can also use range query parameters for all date, integer and decimal properties.
 {% endhint %}
 
 {% api-method method="get" host="https://spaces.nexudus.com/api" path="/billing/coworkercontracts" %}
@@ -378,11 +420,11 @@ Gets a list of coworkercontracts based on the date when they were created or upd
 
 {% api-method-spec %}
 {% api-method-request %}
+
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
@@ -404,98 +446,76 @@ application/json
 {% api-method-parameter name="StartDate" type="datetime" required=false %}
 ?from\_CoworkerContract\_StartDate=...
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="StartDate" type="datetime" required=false %}
 ?to\_CoworkerContract\_StartDate=...
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="BillingDay" type="decimal" required=false %}
 ?from\_CoworkerContract\_BillingDay=...
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="BillingDay" type="decimal" required=false %}
 ?to\_CoworkerContract\_BillingDay=...
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="RenewalDate" type="datetime" required=false %}
 ?from\_CoworkerContract\_RenewalDate=...
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="RenewalDate" type="datetime" required=false %}
 ?to\_CoworkerContract\_RenewalDate=...
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="InvoicedPeriod" type="datetime" required=false %}
 ?from\_CoworkerContract\_InvoicedPeriod=...
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="InvoicedPeriod" type="datetime" required=false %}
 ?to\_CoworkerContract\_InvoicedPeriod=...
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="ContractTerm" type="datetime" required=false %}
 ?from\_CoworkerContract\_ContractTerm=...
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="ContractTerm" type="datetime" required=false %}
 ?to\_CoworkerContract\_ContractTerm=...
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Price" type="decimal" required=false %}
 ?from\_CoworkerContract\_Price=...
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Price" type="decimal" required=false %}
 ?to\_CoworkerContract\_Price=...
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Value" type="decimal" required=false %}
 ?from\_CoworkerContract\_Value=...
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Value" type="decimal" required=false %}
 ?to\_CoworkerContract\_Value=...
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Quantity" type="decimal" required=false %}
 ?from\_CoworkerContract\_Quantity=...
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Quantity" type="decimal" required=false %}
 ?to\_CoworkerContract\_Quantity=...
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="NextAutoInvoice" type="datetime" required=false %}
 ?from\_CoworkerContract\_NextAutoInvoice=...
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="NextAutoInvoice" type="datetime" required=false %}
 ?to\_CoworkerContract\_NextAutoInvoice=...
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="PricePlanTermsAcceptedOn" type="datetime" required=false %}
 ?from\_CoworkerContract\_PricePlanTermsAcceptedOn=...
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="PricePlanTermsAcceptedOn" type="datetime" required=false %}
 ?to\_CoworkerContract\_PricePlanTermsAcceptedOn=...
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="CancellationDate" type="datetime" required=false %}
 ?from\_CoworkerContract\_CancellationDate=...
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="CancellationDate" type="datetime" required=false %}
 ?to\_CoworkerContract\_CancellationDate=...
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="CancellationLimitDays" type="decimal" required=false %}
 ?from\_CoworkerContract\_CancellationLimitDays=...
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="CancellationLimitDays" type="decimal" required=false %}
 ?to\_CoworkerContract\_CancellationLimitDays=...
 {% endapi-method-parameter %}
+
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
 
@@ -572,21 +592,21 @@ Gets one coworkercontract record.
 
 {% api-method-spec %}
 {% api-method-request %}
-{% api-method-path-parameters %}
-{% api-method-parameter name="id" type="integer" required=true %}
-The ID of the coworkercontract to fetch.
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
 
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
+
+{% api-method-path-parameters %}
+{% api-method-parameter name="id" type="integer" required=true %}
+The ID of the coworkercontract to fetch.
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
 {% endapi-method-request %}
 
 {% api-method-response %}
@@ -636,7 +656,7 @@ application/json
 
 {% endapi-method-response-example-description %}
 
-```text
+```
 "Not found"
 ```
 {% endapi-method-response-example %}
@@ -657,11 +677,11 @@ Creates a new coworkercontract.
 
 {% api-method-spec %}
 {% api-method-request %}
+
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
@@ -669,125 +689,67 @@ application/json
 
 {% api-method-body-parameters %}
 {% api-method-parameter name="IssuedById" type="int" required=true %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="CoworkerId" type="int" required=true %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="TariffId" type="int" required=true %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="NextTariffId" type="int" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Notes" type="string" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="StartDate" type="DateTime?" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="BillingDay" type="int" required=true %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="RenewalDate" type="DateTime?" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="InvoicedPeriod" type="DateTime?" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="ContractTerm" type="DateTime?" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Price" type="decimal?" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Value" type="decimal?" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Quantity" type="int" required=true %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Active" type="bool" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="MainContract" type="bool" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Cancelled" type="bool" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="IncludeSignupFee" type="bool" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="InvoiceAdvancedCycles" type="bool" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="ApplyProRating" type="bool" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="NextAutoInvoice" type="DateTime?" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="PricePlanTermsAccepted" type="bool" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="PricePlanTermsAcceptedOn" type="DateTime?" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="CancellationDate" type="DateTime?" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="CancellationLimitDays" type="int?" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="ProRateCancellation" type="bool" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="CancelTeamContracts" type="bool" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="CancellationReason" type="enum" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="CancellationNotes" type="string" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="FloorPlanDeskIds" type="string" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="FloorPlanDeskNames" type="string" required=false %}
-
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
+
 {% endapi-method-request %}
 
 {% api-method-response %}
@@ -810,7 +772,7 @@ application/json
 
 {% api-method-response-example httpCode=400 %}
 {% api-method-response-example-description %}
-_This response is an example, errors and messages will follow this structure but keys and descriptions may be different for each record._
+_This response is an example, errors and messages will follow this structure but keys and descriptions may be different for each record._  
 {% endapi-method-response-example-description %}
 
 ```javascript
@@ -868,130 +830,81 @@ Update
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Updates and existing coworkercontract.Required User Role: `coworkercontract-edit`
+Updates and existing coworkercontract.
+  
+Required User Role: `coworkercontract-edit`
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
+
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+Basic Authentication token. Base64 encoding of 'username:password'.
+{% endapi-method-parameter %}
+{% api-method-parameter name="Content" type="string" required=true %}
+application/json
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+
 {% api-method-path-parameters %}
 {% api-method-parameter name="Id" type="integer" required=true %}
 The id of the coworkercontract to update
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
 
-{% api-method-headers %}
-{% api-method-parameter name="Authorization" type="string" required=true %}
-Basic Authentication token. Base64 encoding of 'username:password'.
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="Content" type="string" required=true %}
-application/json
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
-
 {% api-method-body-parameters %}
 {% api-method-parameter name="IssuedById" type="int" required=true %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="CoworkerId" type="int" required=true %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="TariffId" type="int" required=true %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="NextTariffId" type="int" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Notes" type="string" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="StartDate" type="DateTime?" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="BillingDay" type="int" required=true %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="RenewalDate" type="DateTime?" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="InvoicedPeriod" type="DateTime?" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="ContractTerm" type="DateTime?" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Price" type="decimal?" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Value" type="decimal?" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Quantity" type="int" required=true %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="IncludeSignupFee" type="bool" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="InvoiceAdvancedCycles" type="bool" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="ApplyProRating" type="bool" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="NextAutoInvoice" type="DateTime?" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="PricePlanTermsAccepted" type="bool" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="CancellationDate" type="DateTime?" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="CancellationLimitDays" type="int?" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="ProRateCancellation" type="bool" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="CancelTeamContracts" type="bool" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="CancellationReason" type="enum" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="CancellationNotes" type="string" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="FloorPlanDeskIds" type="string" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="FloorPlanDeskNames" type="string" required=false %}
-
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
@@ -1018,7 +931,7 @@ application/json
 
 {% api-method-response-example httpCode=400 %}
 {% api-method-response-example-description %}
-_This response is an example, errors and messages will follow this structure but keys and descriptions may be different for each record._
+_This response is an example, errors and messages will follow this structure but keys and descriptions may be different for each record._  
 {% endapi-method-response-example-description %}
 
 ```javascript
@@ -1070,9 +983,10 @@ _This response is an example, errors and messages will follow this structure but
 
 > 🔒 Requires user role `coworkercontract-edit`
 
+
 ## Commands
 
-Commands allow to perform actions against one or more coworkercontract records. Some commands accept only one record while others can run an action for a number of records at the same time. Each command has metadata with information about how it can be used and the amount of records, if any, it needs to run.
+Commands allow to perform actions against one or more coworkercontract records. Some commands accept only one record while others can run an action for a number of records at the same time.  Each command has metadata with information about how it can be used and the amount of records, if any, it needs to run.
 
 > ```javascript
 > {
@@ -1094,11 +1008,11 @@ Get all commands available to run for coworkercontract records.
 
 {% api-method-spec %}
 {% api-method-request %}
+
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
@@ -1108,7 +1022,7 @@ application/json
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
 {% api-method-response-example-description %}
-_This response is an example._
+_This response is an example._  
 {% endapi-method-response-example-description %}
 
 ```javascript
@@ -1152,11 +1066,11 @@ Run Command
 
 {% api-method-spec %}
 {% api-method-request %}
+
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
@@ -1168,17 +1082,21 @@ The command Key defining the command to run. `"COMMAND_KEY_1"`
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Parameters" type="array" required=false %}
-A list of object with the structure below. The parameters required for each command are returned in the "RequiresParameters" array return by the "commands" endpoint.`[    
-{    
-"Name": "Name",    
-"Type":"Type",    
-"Value":recordId    
-}    
+A list of object with the structure below. The parameters required for each command are returned in the "RequiresParameters" array return by the "commands" endpoint.  
+  
+`[  
+   {  
+      "Name": "Name",   
+      "Type":"Type",   
+      "Value":recordId  
+    }  
 ]`
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Ids" type="array" required=true %}
-A list of integer IDs for each of the records to run this command for.`[987654321, 123565978]`
+A list of integer IDs for each of the records to run this command for.  
+  
+`[987654321, 123565978]`
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
@@ -1186,7 +1104,7 @@ A list of integer IDs for each of the records to run this command for.`[98765432
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
 {% api-method-response-example-description %}
-_Commands also return a status 200 when they fail to process one or more of the records. Use the 'WasSuccessful' property to know if the command run succeeded._
+_Commands also return a status 200 when they fail to process one or more of the records. Use the 'WasSuccessful'  property to know if the command run succeeded._  
 {% endapi-method-response-example-description %}
 
 ```javascript
@@ -1209,10 +1127,9 @@ _Commands also return a status 200 when they fail to process one or more of the 
 
 The following endpoints return binary data. Check the `ContentType` header to understand the type of file being returned in the response stream.
 
-## Related Entities
 
+## Related Entities
 * [Business](../sys/business.md)
 * [Coworker](../spaces/coworker.md)
-* [Tariff](tariff.md)
-* [Tariff](tariff.md)
-
+* [Tariff](../billing/tariff.md)
+* [Tariff](../billing/tariff.md)

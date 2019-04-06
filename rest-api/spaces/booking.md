@@ -1,6 +1,4 @@
-# Booking
-
-{% api-method method="get" host="https://spaces.nexudus.com/api" path="/spaces/bookings" %}
+﻿{% api-method method="get" host="https://spaces.nexudus.com/api" path="/spaces/bookings" %}
 {% api-method-summary %}
 Find
 {% endapi-method-summary %}
@@ -11,17 +9,18 @@ This endpoint allows you to GET a list of bookings based on one or more filter q
 
 {% api-method-spec %}
 {% api-method-request %}
+
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
 {% api-method-query-parameters %}
+
 {% api-method-parameter name="Id" type="int" %}
 ?Id=...
 {% endapi-method-parameter %}
@@ -34,181 +33,223 @@ application/json
 ?Booking\_SystemId=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="Resource" type="Resource" %}
 ?Booking\_Resource=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="Coworker" type="Coworker" %}
 ?Booking\_Coworker=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="ExtraService" type="ExtraService" %}
 ?Booking\_ExtraService=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="FromTime" type="DateTime" %}
 ?Booking\_FromTime=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="ToTime" type="DateTime" %}
 ?Booking\_ToTime=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="Notes" type="string" %}
 ?Booking\_Notes=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="InternalNotes" type="string" %}
 ?Booking\_InternalNotes=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="ChargeNow" type="bool" %}
 ?Booking\_ChargeNow=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="InvoiceNow" type="bool" %}
 ?Booking\_InvoiceNow=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="DoNotUseBookingCredit" type="bool" %}
 ?Booking\_DoNotUseBookingCredit=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="PurchaseOrder" type="string" %}
 ?Booking\_PurchaseOrder=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="DiscountCode" type="string" %}
 ?Booking\_DiscountCode=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="Tentative" type="bool" %}
 ?Booking\_Tentative=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="Online" type="bool" %}
 ?Booking\_Online=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="TeamsAtTheTimeOfBooking" type="string" %}
 ?Booking\_TeamsAtTheTimeOfBooking=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="TariffAtTheTimeOfBooking" type="string" %}
 ?Booking\_TariffAtTheTimeOfBooking=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="RepeatSeriesUniqueId" type="Guid?" %}
 ?Booking\_RepeatSeriesUniqueId=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="RepeatBooking" type="bool" %}
 ?Booking\_RepeatBooking=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="Repeats" type="enum" %}
 ?Booking\_Repeats=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="WhichBookingsToUpdate" type="enum" %}
 ?Booking\_WhichBookingsToUpdate=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="RepeatEvery" type="int?" %}
 ?Booking\_RepeatEvery=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="RepeatUntil" type="DateTime?" %}
 ?Booking\_RepeatUntil=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="RepeatOnMondays" type="bool" %}
 ?Booking\_RepeatOnMondays=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="RepeatOnTuesdays" type="bool" %}
 ?Booking\_RepeatOnTuesdays=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="RepeatOnWednesdays" type="bool" %}
 ?Booking\_RepeatOnWednesdays=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="RepeatOnThursdays" type="bool" %}
 ?Booking\_RepeatOnThursdays=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="RepeatOnFridays" type="bool" %}
 ?Booking\_RepeatOnFridays=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="RepeatOnSaturdays" type="bool" %}
 ?Booking\_RepeatOnSaturdays=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="RepeatOnSundays" type="bool" %}
 ?Booking\_RepeatOnSundays=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="Invoiced" type="bool" %}
 ?Booking\_Invoiced=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="InvoiceDate" type="DateTime?" %}
 ?Booking\_InvoiceDate=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="CoworkerInvoiceId" type="int?" %}
 ?Booking\_CoworkerInvoiceId=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="CoworkerInvoiceNumber" type="string" %}
 ?Booking\_CoworkerInvoiceNumber=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="CoworkerInvoicePaid" type="bool" %}
 ?Booking\_CoworkerInvoicePaid=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="CoworkerExtraServiceIds" type="string" %}
 ?Booking\_CoworkerExtraServiceIds=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="CoworkerExtraServicePrice" type="decimal?" %}
 ?Booking\_CoworkerExtraServicePrice=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="CoworkerExtraServiceCurrencyCode" type="string" %}
 ?Booking\_CoworkerExtraServiceCurrencyCode=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="CoworkerExtraServiceChargePeriod" type="int?" %}
 ?Booking\_CoworkerExtraServiceChargePeriod=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="CoworkerExtraServiceTotalUses" type="int?" %}
 ?Booking\_CoworkerExtraServiceTotalUses=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="Resource\_Name" type="string" %}
 ?Booking\_Resource\_Name=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="Coworker\_FullName" type="string" %}
 ?Booking\_Coworker\_FullName=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="ExtraService\_Name" type="string" %}
 ?Booking\_ExtraService\_Name=...
 {% endapi-method-parameter %}
+
+
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
 
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
 
-{% endapi-method-response-example-description %}
 
 ```javascript
 {
@@ -266,6 +307,7 @@ application/json
     "TotalItems": 60,
     "TotalPages": 3
 }
+
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}
@@ -285,11 +327,11 @@ This endpoint allows you to GET a list of bookings.
 
 {% api-method-spec %}
 {% api-method-request %}
+
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
@@ -386,7 +428,8 @@ size=25 \(maximum=1000\)
 > 🔒 Requires user role `booking-list`
 
 {% hint style="info" %}
-You can also get a list of records based when they were created or updated. This is useful if you want to get a list of records created after or before a particular point in time. You can also use range query parameters for all date, integer and decimal properties.
+You can also get a list of records based when they were created or updated. This is useful if you want to get a list of records created after or before a particular point in time. 
+You can also use range query parameters for all date, integer and decimal properties.
 {% endhint %}
 
 {% api-method method="get" host="https://spaces.nexudus.com/api" path="/spaces/bookings" %}
@@ -400,11 +443,11 @@ Gets a list of bookings based on the date when they were created or updated.
 
 {% api-method-spec %}
 {% api-method-request %}
+
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
@@ -426,74 +469,58 @@ application/json
 {% api-method-parameter name="FromTime" type="datetime" required=false %}
 ?from\_Booking\_FromTime=...
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="FromTime" type="datetime" required=false %}
 ?to\_Booking\_FromTime=...
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="ToTime" type="datetime" required=false %}
 ?from\_Booking\_ToTime=...
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="ToTime" type="datetime" required=false %}
 ?to\_Booking\_ToTime=...
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="RepeatEvery" type="decimal" required=false %}
 ?from\_Booking\_RepeatEvery=...
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="RepeatEvery" type="decimal" required=false %}
 ?to\_Booking\_RepeatEvery=...
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="RepeatUntil" type="datetime" required=false %}
 ?from\_Booking\_RepeatUntil=...
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="RepeatUntil" type="datetime" required=false %}
 ?to\_Booking\_RepeatUntil=...
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="InvoiceDate" type="datetime" required=false %}
 ?from\_Booking\_InvoiceDate=...
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="InvoiceDate" type="datetime" required=false %}
 ?to\_Booking\_InvoiceDate=...
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="CoworkerInvoiceId" type="decimal" required=false %}
 ?from\_Booking\_CoworkerInvoiceId=...
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="CoworkerInvoiceId" type="decimal" required=false %}
 ?to\_Booking\_CoworkerInvoiceId=...
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="CoworkerExtraServicePrice" type="decimal" required=false %}
 ?from\_Booking\_CoworkerExtraServicePrice=...
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="CoworkerExtraServicePrice" type="decimal" required=false %}
 ?to\_Booking\_CoworkerExtraServicePrice=...
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="CoworkerExtraServiceChargePeriod" type="decimal" required=false %}
 ?from\_Booking\_CoworkerExtraServiceChargePeriod=...
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="CoworkerExtraServiceChargePeriod" type="decimal" required=false %}
 ?to\_Booking\_CoworkerExtraServiceChargePeriod=...
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="CoworkerExtraServiceTotalUses" type="decimal" required=false %}
 ?from\_Booking\_CoworkerExtraServiceTotalUses=...
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="CoworkerExtraServiceTotalUses" type="decimal" required=false %}
 ?to\_Booking\_CoworkerExtraServiceTotalUses=...
 {% endapi-method-parameter %}
+
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
 
@@ -579,21 +606,21 @@ Gets one booking record.
 
 {% api-method-spec %}
 {% api-method-request %}
-{% api-method-path-parameters %}
-{% api-method-parameter name="id" type="integer" required=true %}
-The ID of the booking to fetch.
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
 
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
+
+{% api-method-path-parameters %}
+{% api-method-parameter name="id" type="integer" required=true %}
+The ID of the booking to fetch.
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
 {% endapi-method-request %}
 
 {% api-method-response %}
@@ -652,7 +679,7 @@ application/json
 
 {% endapi-method-response-example-description %}
 
-```text
+```
 "Not found"
 ```
 {% endapi-method-response-example %}
@@ -673,11 +700,11 @@ Creates a new booking.
 
 {% api-method-spec %}
 {% api-method-request %}
+
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
@@ -685,161 +712,85 @@ application/json
 
 {% api-method-body-parameters %}
 {% api-method-parameter name="ResourceId" type="int" required=true %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="CoworkerId" type="int" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="ExtraServiceId" type="int" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="FromTime" type="DateTime" required=true %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="ToTime" type="DateTime" required=true %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Notes" type="string" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="InternalNotes" type="string" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="ChargeNow" type="bool" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="InvoiceNow" type="bool" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="DoNotUseBookingCredit" type="bool" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="PurchaseOrder" type="string" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="DiscountCode" type="string" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Tentative" type="bool" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Online" type="bool" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="TeamsAtTheTimeOfBooking" type="string" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="TariffAtTheTimeOfBooking" type="string" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="RepeatSeriesUniqueId" type="Guid?" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="RepeatBooking" type="bool" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Repeats" type="enum" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="WhichBookingsToUpdate" type="enum" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="RepeatEvery" type="int?" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="RepeatUntil" type="DateTime?" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="RepeatOnMondays" type="bool" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="RepeatOnTuesdays" type="bool" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="RepeatOnWednesdays" type="bool" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="RepeatOnThursdays" type="bool" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="RepeatOnFridays" type="bool" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="RepeatOnSaturdays" type="bool" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="RepeatOnSundays" type="bool" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Invoiced" type="bool" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="InvoiceDate" type="DateTime?" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="CoworkerInvoiceId" type="int?" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="CoworkerInvoiceNumber" type="string" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="CoworkerInvoicePaid" type="bool" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="CoworkerExtraServiceIds" type="string" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="CoworkerExtraServicePrice" type="decimal?" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="CoworkerExtraServiceCurrencyCode" type="string" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="CoworkerExtraServiceChargePeriod" type="int?" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="CoworkerExtraServiceTotalUses" type="int?" required=false %}
-
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
+
 {% endapi-method-request %}
 
 {% api-method-response %}
@@ -862,7 +813,7 @@ application/json
 
 {% api-method-response-example httpCode=400 %}
 {% api-method-response-example-description %}
-_This response is an example, errors and messages will follow this structure but keys and descriptions may be different for each record._
+_This response is an example, errors and messages will follow this structure but keys and descriptions may be different for each record._  
 {% endapi-method-response-example-description %}
 
 ```javascript
@@ -920,154 +871,93 @@ Update
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Updates and existing booking.Required User Role: `booking-edit`
+Updates and existing booking.
+  
+Required User Role: `booking-edit`
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
+
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+Basic Authentication token. Base64 encoding of 'username:password'.
+{% endapi-method-parameter %}
+{% api-method-parameter name="Content" type="string" required=true %}
+application/json
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+
 {% api-method-path-parameters %}
 {% api-method-parameter name="Id" type="integer" required=true %}
 The id of the booking to update
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
 
-{% api-method-headers %}
-{% api-method-parameter name="Authorization" type="string" required=true %}
-Basic Authentication token. Base64 encoding of 'username:password'.
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="Content" type="string" required=true %}
-application/json
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
-
 {% api-method-body-parameters %}
 {% api-method-parameter name="ResourceId" type="int" required=true %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="CoworkerId" type="int" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="ExtraServiceId" type="int" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="FromTime" type="DateTime" required=true %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="ToTime" type="DateTime" required=true %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Notes" type="string" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="ChargeNow" type="bool" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="InvoiceNow" type="bool" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="DoNotUseBookingCredit" type="bool" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="PurchaseOrder" type="string" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="DiscountCode" type="string" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Tentative" type="bool" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="TeamsAtTheTimeOfBooking" type="string" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="TariffAtTheTimeOfBooking" type="string" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="RepeatSeriesUniqueId" type="Guid?" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Repeats" type="enum" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="WhichBookingsToUpdate" type="enum" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="RepeatOnMondays" type="bool" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="RepeatOnTuesdays" type="bool" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="RepeatOnWednesdays" type="bool" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="RepeatOnThursdays" type="bool" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="RepeatOnFridays" type="bool" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="RepeatOnSaturdays" type="bool" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="RepeatOnSundays" type="bool" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="CoworkerInvoiceId" type="int?" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="CoworkerInvoiceNumber" type="string" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="CoworkerInvoicePaid" type="bool" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="CoworkerExtraServiceIds" type="string" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="CoworkerExtraServicePrice" type="decimal?" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="CoworkerExtraServiceCurrencyCode" type="string" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="CoworkerExtraServiceChargePeriod" type="int?" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="CoworkerExtraServiceTotalUses" type="int?" required=false %}
-
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
@@ -1094,7 +984,7 @@ application/json
 
 {% api-method-response-example httpCode=400 %}
 {% api-method-response-example-description %}
-_This response is an example, errors and messages will follow this structure but keys and descriptions may be different for each record._
+_This response is an example, errors and messages will follow this structure but keys and descriptions may be different for each record._  
 {% endapi-method-response-example-description %}
 
 ```javascript
@@ -1146,32 +1036,35 @@ _This response is an example, errors and messages will follow this structure but
 
 > 🔒 Requires user role `booking-edit`
 
+
 {% api-method method="delete" host="https://spaces.nexudus.com/api" path="/spaces/bookings/:id" %}
 {% api-method-summary %}
 Delete
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Deletes a booking.Required User Roles: `booking-delete`
+Deletes a booking.  
+  
+Required User Roles: `booking-delete`
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
-{% api-method-path-parameters %}
-{% api-method-parameter name="Id" type="integer" required=false %}
-
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
 
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
+
+{% api-method-path-parameters %}
+{% api-method-parameter name="Id" type="integer" required=false %}
+
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
 {% endapi-method-request %}
 
 {% api-method-response %}
@@ -1199,7 +1092,7 @@ application/json
 
 {% endapi-method-response-example-description %}
 
-```text
+```
 "Not found"
 ```
 {% endapi-method-response-example %}
@@ -1219,11 +1112,14 @@ application/json
 {% endapi-method-spec %}
 {% endapi-method %}
 
+
+
 > 🔒 Requires user role `booking-delete`
+
 
 ## Commands
 
-Commands allow to perform actions against one or more booking records. Some commands accept only one record while others can run an action for a number of records at the same time. Each command has metadata with information about how it can be used and the amount of records, if any, it needs to run.
+Commands allow to perform actions against one or more booking records. Some commands accept only one record while others can run an action for a number of records at the same time.  Each command has metadata with information about how it can be used and the amount of records, if any, it needs to run.
 
 > ```javascript
 > {
@@ -1245,11 +1141,11 @@ Get all commands available to run for booking records.
 
 {% api-method-spec %}
 {% api-method-request %}
+
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
@@ -1259,7 +1155,7 @@ application/json
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
 {% api-method-response-example-description %}
-_This response is an example._
+_This response is an example._  
 {% endapi-method-response-example-description %}
 
 ```javascript
@@ -1303,11 +1199,11 @@ Run Command
 
 {% api-method-spec %}
 {% api-method-request %}
+
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
@@ -1319,17 +1215,21 @@ The command Key defining the command to run. `"COMMAND_KEY_1"`
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Parameters" type="array" required=false %}
-A list of object with the structure below. The parameters required for each command are returned in the "RequiresParameters" array return by the "commands" endpoint.`[    
-{    
-"Name": "Name",    
-"Type":"Type",    
-"Value":recordId    
-}    
+A list of object with the structure below. The parameters required for each command are returned in the "RequiresParameters" array return by the "commands" endpoint.  
+  
+`[  
+   {  
+      "Name": "Name",   
+      "Type":"Type",   
+      "Value":recordId  
+    }  
 ]`
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Ids" type="array" required=true %}
-A list of integer IDs for each of the records to run this command for.`[987654321, 123565978]`
+A list of integer IDs for each of the records to run this command for.  
+  
+`[987654321, 123565978]`
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
@@ -1337,7 +1237,7 @@ A list of integer IDs for each of the records to run this command for.`[98765432
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
 {% api-method-response-example-description %}
-_Commands also return a status 200 when they fail to process one or more of the records. Use the 'WasSuccessful' property to know if the command run succeeded._
+_Commands also return a status 200 when they fail to process one or more of the records. Use the 'WasSuccessful'  property to know if the command run succeeded._  
 {% endapi-method-response-example-description %}
 
 ```javascript
@@ -1360,9 +1260,8 @@ _Commands also return a status 200 when they fail to process one or more of the 
 
 The following endpoints return binary data. Check the `ContentType` header to understand the type of file being returned in the response stream.
 
+
 ## Related Entities
-
-* [Resource](resource.md)
-* [Coworker](coworker.md)
+* [Resource](../spaces/resource.md)
+* [Coworker](../spaces/coworker.md)
 * [ExtraService](../billing/extraservice.md)
-
