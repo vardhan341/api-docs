@@ -1,10 +1,10 @@
-﻿{% api-method method="get" host="https://spaces.nexudus.com/api" path="/content/subscribergroups" %}
+﻿{% api-method method="get" host="https://spaces.nexudus.com/api" path="/crm/crmboardcolumns" %}
 {% api-method-summary %}
 Find
 {% endapi-method-summary %}
 
 {% api-method-description %}
-This endpoint allows you to GET a list of subscribergroups based on one or more filter querystring parameters.
+This endpoint allows you to GET a list of crmboardcolumns based on one or more filter querystring parameters.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -30,52 +30,127 @@ application/json
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="SystemId" type="string" %}
-?SubscriberGroup\_SystemId=...
+?CrmBoardColumn\_SystemId=...
 {% endapi-method-parameter %}
 
 
-{% api-method-parameter name="Business" type="Business" %}
-?SubscriberGroup\_Business=...
+{% api-method-parameter name="CrmBoard" type="CrmBoard" %}
+?CrmBoardColumn\_CrmBoard=...
 {% endapi-method-parameter %}
 
 
 {% api-method-parameter name="Name" type="string" %}
-?SubscriberGroup\_Name=...
+?CrmBoardColumn\_Name=...
 {% endapi-method-parameter %}
 
 
-{% api-method-parameter name="AutoAddMembers" type="bool" %}
-?SubscriberGroup\_AutoAddMembers=...
+{% api-method-parameter name="Position" type="int" %}
+?CrmBoardColumn\_Position=...
 {% endapi-method-parameter %}
 
 
-{% api-method-parameter name="AutoAddContacts" type="bool" %}
-?SubscriberGroup\_AutoAddContacts=...
+{% api-method-parameter name="TourRequests" type="bool" %}
+?CrmBoardColumn\_TourRequests=...
 {% endapi-method-parameter %}
 
 
-{% api-method-parameter name="AutoAddBookings" type="bool" %}
-?SubscriberGroup\_AutoAddBookings=...
+{% api-method-parameter name="ToursConfirmed" type="bool" %}
+?CrmBoardColumn\_ToursConfirmed=...
 {% endapi-method-parameter %}
 
 
-{% api-method-parameter name="AutoAddEvents" type="bool" %}
-?SubscriberGroup\_AutoAddEvents=...
+{% api-method-parameter name="TourCompleted" type="bool" %}
+?CrmBoardColumn\_TourCompleted=...
 {% endapi-method-parameter %}
 
 
-{% api-method-parameter name="AutoAddVisitors" type="bool" %}
-?SubscriberGroup\_AutoAddVisitors=...
+{% api-method-parameter name="SignUps" type="bool" %}
+?CrmBoardColumn\_SignUps=...
 {% endapi-method-parameter %}
 
 
-{% api-method-parameter name="AutoAddPayingMembers" type="bool" %}
-?SubscriberGroup\_AutoAddPayingMembers=...
+{% api-method-parameter name="Bookings" type="bool" %}
+?CrmBoardColumn\_Bookings=...
 {% endapi-method-parameter %}
 
 
-{% api-method-parameter name="Business\_Name" type="string" %}
-?SubscriberGroup\_Business\_Name=...
+{% api-method-parameter name="Cancellations" type="bool" %}
+?CrmBoardColumn\_Cancellations=...
+{% endapi-method-parameter %}
+
+
+{% api-method-parameter name="ProposalsSent" type="bool" %}
+?CrmBoardColumn\_ProposalsSent=...
+{% endapi-method-parameter %}
+
+
+{% api-method-parameter name="ProposalsAccepted" type="bool" %}
+?CrmBoardColumn\_ProposalsAccepted=...
+{% endapi-method-parameter %}
+
+
+{% api-method-parameter name="DocumentsSigned" type="bool" %}
+?CrmBoardColumn\_DocumentsSigned=...
+{% endapi-method-parameter %}
+
+
+{% api-method-parameter name="EventRegistrations" type="bool" %}
+?CrmBoardColumn\_EventRegistrations=...
+{% endapi-method-parameter %}
+
+
+{% api-method-parameter name="ContactMessages" type="bool" %}
+?CrmBoardColumn\_ContactMessages=...
+{% endapi-method-parameter %}
+
+
+{% api-method-parameter name="CannedResponse" type="CannedResponse" %}
+?CrmBoardColumn\_CannedResponse=...
+{% endapi-method-parameter %}
+
+
+{% api-method-parameter name="TaskList" type="TaskList" %}
+?CrmBoardColumn\_TaskList=...
+{% endapi-method-parameter %}
+
+
+{% api-method-parameter name="ActivateAccount" type="bool" %}
+?CrmBoardColumn\_ActivateAccount=...
+{% endapi-method-parameter %}
+
+
+{% api-method-parameter name="DeactivateAccount" type="bool" %}
+?CrmBoardColumn\_DeactivateAccount=...
+{% endapi-method-parameter %}
+
+
+{% api-method-parameter name="ConfirmTour" type="bool" %}
+?CrmBoardColumn\_ConfirmTour=...
+{% endapi-method-parameter %}
+
+
+{% api-method-parameter name="CrmBoard\_Name" type="string" %}
+?CrmBoardColumn\_CrmBoard\_Name=...
+{% endapi-method-parameter %}
+
+
+{% api-method-parameter name="CrmBoard\_Business_Id" type="string" %}
+?CrmBoardColumn\_CrmBoard\_Business_Id=...
+{% endapi-method-parameter %}
+
+
+{% api-method-parameter name="CrmBoard\_Business_Name" type="string" %}
+?CrmBoardColumn\_CrmBoard\_Business_Name=...
+{% endapi-method-parameter %}
+
+
+{% api-method-parameter name="CrmBoard\_Business_Currency_Id" type="string" %}
+?CrmBoardColumn\_CrmBoard\_Business_Currency_Id=...
+{% endapi-method-parameter %}
+
+
+{% api-method-parameter name="CrmBoard\_Business_Currency_Code" type="string" %}
+?CrmBoardColumn\_CrmBoard\_Business_Currency_Code=...
 {% endapi-method-parameter %}
 
 
@@ -89,14 +164,25 @@ application/json
 ```javascript
 {
     "Records": [{
-        "Business": null,
-        "Name": "00001",
-        "AutoAddMembers": true,
-        "AutoAddContacts": true,
-        "AutoAddBookings": true,
-        "AutoAddEvents": true,
-        "AutoAddVisitors": true,
-        "AutoAddPayingMembers": true,
+        "CrmBoard": null,
+        "Name": "Joe",
+        "Position": 1,
+        "TourRequests": true,
+        "ToursConfirmed": true,
+        "TourCompleted": true,
+        "SignUps": true,
+        "Bookings": true,
+        "Cancellations": true,
+        "ProposalsSent": true,
+        "ProposalsAccepted": true,
+        "DocumentsSigned": true,
+        "EventRegistrations": true,
+        "ContactMessages": true,
+        "CannedResponse": null,
+        "TaskList": null,
+        "ActivateAccount": true,
+        "DeactivateAccount": false,
+        "ConfirmTour": false,
     }],
     "CurrentPageSize": 25,
     "CurrentPage": 1,
@@ -118,15 +204,15 @@ application/json
 {% endapi-method-spec %}
 {% endapi-method %}
 
-> 🔒 Requires user role `subscribergroup-list`
+> 🔒 Requires user role `crmboardcolumn-list`
 
-{% api-method method="get" host="https://spaces.nexudus.com/api" path="/content/subscribergroups" %}
+{% api-method method="get" host="https://spaces.nexudus.com/api" path="/crm/crmboardcolumns" %}
 {% api-method-summary %}
 List
 {% endapi-method-summary %}
 
 {% api-method-description %}
-This endpoint allows you to GET a list of subscribergroups.
+This endpoint allows you to GET a list of crmboardcolumns.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -169,14 +255,25 @@ size=25 \(maximum=1000\)
 ```javascript
 {
     "Records": [{
-        "Business": null,
-        "Name": "00001",
-        "AutoAddMembers": true,
-        "AutoAddContacts": true,
-        "AutoAddBookings": true,
-        "AutoAddEvents": true,
-        "AutoAddVisitors": true,
-        "AutoAddPayingMembers": true,
+        "CrmBoard": null,
+        "Name": "Joe",
+        "Position": 1,
+        "TourRequests": true,
+        "ToursConfirmed": true,
+        "TourCompleted": true,
+        "SignUps": true,
+        "Bookings": true,
+        "Cancellations": true,
+        "ProposalsSent": true,
+        "ProposalsAccepted": true,
+        "DocumentsSigned": true,
+        "EventRegistrations": true,
+        "ContactMessages": true,
+        "CannedResponse": null,
+        "TaskList": null,
+        "ActivateAccount": true,
+        "DeactivateAccount": false,
+        "ConfirmTour": false,
     }],
     }],
     "CurrentPageSize": 25,
@@ -198,20 +295,20 @@ size=25 \(maximum=1000\)
 {% endapi-method-spec %}
 {% endapi-method %}
 
-> 🔒 Requires user role `subscribergroup-list`
+> 🔒 Requires user role `crmboardcolumn-list`
 
 {% hint style="info" %}
 You can also get a list of records based when they were created or updated. This is useful if you want to get a list of records created after or before a particular point in time. 
 You can also use range query parameters for all date, integer and decimal properties.
 {% endhint %}
 
-{% api-method method="get" host="https://spaces.nexudus.com/api" path="/content/subscribergroups" %}
+{% api-method method="get" host="https://spaces.nexudus.com/api" path="/crm/crmboardcolumns" %}
 {% api-method-summary %}
 By date range
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Gets a list of subscribergroups based on the date when they were created or updated.
+Gets a list of crmboardcolumns based on the date when they were created or updated.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -228,17 +325,23 @@ application/json
 
 {% api-method-query-parameters %}
 {% api-method-parameter name="CreatedOn" type="object" required=false %}
-?to\_SubscriberGroup\_CreatedOn=...
+?to\_CrmBoardColumn\_CreatedOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="UpdatedOn" type="object" required=false %}
-?from\_SubscriberGroup\_CreatedOn=...
+?from\_CrmBoardColumn\_CreatedOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="CreatedOn" type="object" required=false %}
-?from\_SubscriberGroup\_CreatedOn=...
+?from\_CrmBoardColumn\_CreatedOn=...
 {% endapi-method-parameter %}
 
+{% api-method-parameter name="Position" type="decimal" required=false %}
+?from\_CrmBoardColumn\_Position=...
+{% endapi-method-parameter %}
+{% api-method-parameter name="Position" type="decimal" required=false %}
+?to\_CrmBoardColumn\_Position=...
+{% endapi-method-parameter %}
 
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
@@ -252,14 +355,25 @@ application/json
 ```javascript
 {
     "Records": [{
-        "Business": null,
-        "Name": "00001",
-        "AutoAddMembers": true,
-        "AutoAddContacts": true,
-        "AutoAddBookings": true,
-        "AutoAddEvents": true,
-        "AutoAddVisitors": true,
-        "AutoAddPayingMembers": true,
+        "CrmBoard": null,
+        "Name": "Joe",
+        "Position": 1,
+        "TourRequests": true,
+        "ToursConfirmed": true,
+        "TourCompleted": true,
+        "SignUps": true,
+        "Bookings": true,
+        "Cancellations": true,
+        "ProposalsSent": true,
+        "ProposalsAccepted": true,
+        "DocumentsSigned": true,
+        "EventRegistrations": true,
+        "ContactMessages": true,
+        "CannedResponse": null,
+        "TaskList": null,
+        "ActivateAccount": true,
+        "DeactivateAccount": false,
+        "ConfirmTour": false,
     }],
     }],
     "CurrentPageSize": 25,
@@ -281,15 +395,15 @@ application/json
 {% endapi-method-spec %}
 {% endapi-method %}
 
-> 🔒 Requires user role `subscribergroup-list`
+> 🔒 Requires user role `crmboardcolumn-list`
 
-{% api-method method="get" host="https://spaces.nexudus.com/api" path="/content/subscribergroups/:id" %}
+{% api-method method="get" host="https://spaces.nexudus.com/api" path="/crm/crmboardcolumns/:id" %}
 {% api-method-summary %}
 One by Id
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Gets one subscribergroup record.
+Gets one crmboardcolumn record.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -306,7 +420,7 @@ application/json
 
 {% api-method-path-parameters %}
 {% api-method-parameter name="id" type="integer" required=true %}
-The ID of the subscribergroup to fetch.
+The ID of the crmboardcolumn to fetch.
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
 {% endapi-method-request %}
@@ -319,14 +433,25 @@ The ID of the subscribergroup to fetch.
 
 ```javascript
 {
-        "Business": null,
-        "Name": "00001",
-        "AutoAddMembers": true,
-        "AutoAddContacts": true,
-        "AutoAddBookings": true,
-        "AutoAddEvents": true,
-        "AutoAddVisitors": true,
-        "AutoAddPayingMembers": true,
+        "CrmBoard": null,
+        "Name": "Joe",
+        "Position": 1,
+        "TourRequests": true,
+        "ToursConfirmed": true,
+        "TourCompleted": true,
+        "SignUps": true,
+        "Bookings": true,
+        "Cancellations": true,
+        "ProposalsSent": true,
+        "ProposalsAccepted": true,
+        "DocumentsSigned": true,
+        "EventRegistrations": true,
+        "ContactMessages": true,
+        "CannedResponse": null,
+        "TaskList": null,
+        "ActivateAccount": true,
+        "DeactivateAccount": false,
+        "ConfirmTour": false,
 }
 ```
 {% endapi-method-response-example %}
@@ -344,15 +469,15 @@ The ID of the subscribergroup to fetch.
 {% endapi-method-spec %}
 {% endapi-method %}
 
-> 🔒 Requires user role `subscribergroup-read`
+> 🔒 Requires user role `crmboardcolumn-read`
 
-{% api-method method="post" host="https://spaces.nexudus.com/api" path="/content/subscribergroups" %}
+{% api-method method="post" host="https://spaces.nexudus.com/api" path="/crm/crmboardcolumns" %}
 {% api-method-summary %}
 Create
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Creates a new subscribergroup.
+Creates a new crmboardcolumn.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -368,21 +493,43 @@ application/json
 {% endapi-method-headers %}
 
 {% api-method-body-parameters %}
-{% api-method-parameter name="BusinessId" type="int" required=true %}
+{% api-method-parameter name="CrmBoardId" type="int" required=true %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="Name" type="string" required=true %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="AutoAddMembers" type="bool" required=false %}
+{% api-method-parameter name="Position" type="int" required=true %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="AutoAddContacts" type="bool" required=false %}
+{% api-method-parameter name="TourRequests" type="bool" required=false %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="AutoAddBookings" type="bool" required=false %}
+{% api-method-parameter name="ToursConfirmed" type="bool" required=false %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="AutoAddEvents" type="bool" required=false %}
+{% api-method-parameter name="TourCompleted" type="bool" required=false %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="AutoAddVisitors" type="bool" required=false %}
+{% api-method-parameter name="SignUps" type="bool" required=false %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="AutoAddPayingMembers" type="bool" required=false %}
+{% api-method-parameter name="Bookings" type="bool" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Cancellations" type="bool" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="ProposalsSent" type="bool" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="ProposalsAccepted" type="bool" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="DocumentsSigned" type="bool" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="EventRegistrations" type="bool" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="ContactMessages" type="bool" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="CannedResponseId" type="int" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="TaskListId" type="int" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="ActivateAccount" type="bool" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="DeactivateAccount" type="bool" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="ConfirmTour" type="bool" required=false %}
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 
@@ -458,17 +605,17 @@ _This response is an example, errors and messages will follow this structure but
 {% endapi-method-spec %}
 {% endapi-method %}
 
-> 🔒 Requires user role `subscribergroup-create`
+> 🔒 Requires user role `crmboardcolumn-create`
 
-{% api-method method="put" host="https://spaces.nexudus.com/api" path="/content/subscribergroups" %}
+{% api-method method="put" host="https://spaces.nexudus.com/api" path="/crm/crmboardcolumns" %}
 {% api-method-summary %}
 Update
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Updates and existing subscribergroup.
+Updates and existing crmboardcolumn.
   
-Required User Role: `subscribergroup-edit`
+Required User Role: `crmboardcolumn-edit`
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -485,26 +632,48 @@ application/json
 
 {% api-method-path-parameters %}
 {% api-method-parameter name="Id" type="integer" required=true %}
-The id of the subscribergroup to update
+The id of the crmboardcolumn to update
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
 
 {% api-method-body-parameters %}
-{% api-method-parameter name="BusinessId" type="int" required=true %}
+{% api-method-parameter name="CrmBoardId" type="int" required=true %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="Name" type="string" required=true %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="AutoAddMembers" type="bool" required=false %}
+{% api-method-parameter name="Position" type="int" required=true %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="AutoAddContacts" type="bool" required=false %}
+{% api-method-parameter name="TourRequests" type="bool" required=false %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="AutoAddBookings" type="bool" required=false %}
+{% api-method-parameter name="ToursConfirmed" type="bool" required=false %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="AutoAddEvents" type="bool" required=false %}
+{% api-method-parameter name="TourCompleted" type="bool" required=false %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="AutoAddVisitors" type="bool" required=false %}
+{% api-method-parameter name="SignUps" type="bool" required=false %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="AutoAddPayingMembers" type="bool" required=false %}
+{% api-method-parameter name="Bookings" type="bool" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Cancellations" type="bool" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="ProposalsSent" type="bool" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="ProposalsAccepted" type="bool" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="DocumentsSigned" type="bool" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="EventRegistrations" type="bool" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="ContactMessages" type="bool" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="CannedResponseId" type="int" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="TaskListId" type="int" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="ActivateAccount" type="bool" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="DeactivateAccount" type="bool" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="ConfirmTour" type="bool" required=false %}
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
@@ -581,18 +750,18 @@ _This response is an example, errors and messages will follow this structure but
 {% endapi-method-spec %}
 {% endapi-method %}
 
-> 🔒 Requires user role `subscribergroup-edit`
+> 🔒 Requires user role `crmboardcolumn-edit`
 
 
-{% api-method method="delete" host="https://spaces.nexudus.com/api" path="/content/subscribergroups/:id" %}
+{% api-method method="delete" host="https://spaces.nexudus.com/api" path="/crm/crmboardcolumns/:id" %}
 {% api-method-summary %}
 Delete
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Deletes a subscribergroup.  
+Deletes a crmboardcolumn.  
   
-Required User Roles: `subscribergroup-delete`
+Required User Roles: `crmboardcolumn-delete`
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -661,12 +830,12 @@ application/json
 
 
 
-> 🔒 Requires user role `subscribergroup-delete`
+> 🔒 Requires user role `crmboardcolumn-delete`
 
 
 ## Commands
 
-Commands allow to perform actions against one or more subscribergroup records. Some commands accept only one record while others can run an action for a number of records at the same time.  Each command has metadata with information about how it can be used and the amount of records, if any, it needs to run.
+Commands allow to perform actions against one or more crmboardcolumn records. Some commands accept only one record while others can run an action for a number of records at the same time.  Each command has metadata with information about how it can be used and the amount of records, if any, it needs to run.
 
 > ```javascript
 > {
@@ -677,13 +846,13 @@ Commands allow to perform actions against one or more subscribergroup records. S
 > }
 > ```
 
-{% api-method method="get" host="https://spaces.nexudus.com/api" path="/content/subscribergroups/commands" %}
+{% api-method method="get" host="https://spaces.nexudus.com/api" path="/crm/crmboardcolumns/commands" %}
 {% api-method-summary %}
 Commands
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Get all commands available to run for subscribergroup records.
+Get all commands available to run for crmboardcolumn records.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -735,7 +904,7 @@ _This response is an example._
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="get" host="https://spaces.nexudus.com/api" path="/content/subscribergroups/runcommand" %}
+{% api-method method="get" host="https://spaces.nexudus.com/api" path="/crm/crmboardcolumns/runcommand" %}
 {% api-method-summary %}
 Run Command
 {% endapi-method-summary %}
@@ -801,7 +970,7 @@ _Commands also return a status 200 when they fail to process one or more of the 
 {% endapi-method-spec %}
 {% endapi-method %}
 
-> 🔒 Requires user role `subscribergroup-edit`
+> 🔒 Requires user role `crmboardcolumn-edit`
 
 ## Binary files
 
@@ -809,4 +978,6 @@ The following endpoints return binary data. Check the `ContentType` header to un
 
 
 ## Related Entities
-* [Business](../sys/business.md)
+* [CrmBoard](../crm/crmboard.md)
+* [CannedResponse](../crm/cannedresponse.md)
+* [TaskList](../crm/tasklist.md)

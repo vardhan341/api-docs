@@ -1,10 +1,10 @@
-﻿{% api-method method="get" host="https://spaces.nexudus.com/api" path="/content/subscribergroups" %}
+﻿{% api-method method="get" host="https://spaces.nexudus.com/api" path="/crm/crmopportunityimportfiles" %}
 {% api-method-summary %}
 Find
 {% endapi-method-summary %}
 
 {% api-method-description %}
-This endpoint allows you to GET a list of subscribergroups based on one or more filter querystring parameters.
+This endpoint allows you to GET a list of crmopportunityimportfiles based on one or more filter querystring parameters.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -30,52 +30,22 @@ application/json
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="SystemId" type="string" %}
-?SubscriberGroup\_SystemId=...
+?CrmOpportunityImportFile\_SystemId=...
 {% endapi-method-parameter %}
 
 
 {% api-method-parameter name="Business" type="Business" %}
-?SubscriberGroup\_Business=...
+?CrmOpportunityImportFile\_Business=...
 {% endapi-method-parameter %}
 
 
 {% api-method-parameter name="Name" type="string" %}
-?SubscriberGroup\_Name=...
+?CrmOpportunityImportFile\_Name=...
 {% endapi-method-parameter %}
 
 
-{% api-method-parameter name="AutoAddMembers" type="bool" %}
-?SubscriberGroup\_AutoAddMembers=...
-{% endapi-method-parameter %}
-
-
-{% api-method-parameter name="AutoAddContacts" type="bool" %}
-?SubscriberGroup\_AutoAddContacts=...
-{% endapi-method-parameter %}
-
-
-{% api-method-parameter name="AutoAddBookings" type="bool" %}
-?SubscriberGroup\_AutoAddBookings=...
-{% endapi-method-parameter %}
-
-
-{% api-method-parameter name="AutoAddEvents" type="bool" %}
-?SubscriberGroup\_AutoAddEvents=...
-{% endapi-method-parameter %}
-
-
-{% api-method-parameter name="AutoAddVisitors" type="bool" %}
-?SubscriberGroup\_AutoAddVisitors=...
-{% endapi-method-parameter %}
-
-
-{% api-method-parameter name="AutoAddPayingMembers" type="bool" %}
-?SubscriberGroup\_AutoAddPayingMembers=...
-{% endapi-method-parameter %}
-
-
-{% api-method-parameter name="Business\_Name" type="string" %}
-?SubscriberGroup\_Business\_Name=...
+{% api-method-parameter name="Imported" type="bool" %}
+?CrmOpportunityImportFile\_Imported=...
 {% endapi-method-parameter %}
 
 
@@ -90,13 +60,8 @@ application/json
 {
     "Records": [{
         "Business": null,
-        "Name": "00001",
-        "AutoAddMembers": true,
-        "AutoAddContacts": true,
-        "AutoAddBookings": true,
-        "AutoAddEvents": true,
-        "AutoAddVisitors": true,
-        "AutoAddPayingMembers": true,
+        "Name": "Joe",
+        "Imported": false,
     }],
     "CurrentPageSize": 25,
     "CurrentPage": 1,
@@ -118,15 +83,15 @@ application/json
 {% endapi-method-spec %}
 {% endapi-method %}
 
-> 🔒 Requires user role `subscribergroup-list`
+> 🔒 Requires user role `crmopportunityimportfile-list`
 
-{% api-method method="get" host="https://spaces.nexudus.com/api" path="/content/subscribergroups" %}
+{% api-method method="get" host="https://spaces.nexudus.com/api" path="/crm/crmopportunityimportfiles" %}
 {% api-method-summary %}
 List
 {% endapi-method-summary %}
 
 {% api-method-description %}
-This endpoint allows you to GET a list of subscribergroups.
+This endpoint allows you to GET a list of crmopportunityimportfiles.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -170,13 +135,8 @@ size=25 \(maximum=1000\)
 {
     "Records": [{
         "Business": null,
-        "Name": "00001",
-        "AutoAddMembers": true,
-        "AutoAddContacts": true,
-        "AutoAddBookings": true,
-        "AutoAddEvents": true,
-        "AutoAddVisitors": true,
-        "AutoAddPayingMembers": true,
+        "Name": "Joe",
+        "Imported": false,
     }],
     }],
     "CurrentPageSize": 25,
@@ -198,20 +158,20 @@ size=25 \(maximum=1000\)
 {% endapi-method-spec %}
 {% endapi-method %}
 
-> 🔒 Requires user role `subscribergroup-list`
+> 🔒 Requires user role `crmopportunityimportfile-list`
 
 {% hint style="info" %}
 You can also get a list of records based when they were created or updated. This is useful if you want to get a list of records created after or before a particular point in time. 
 You can also use range query parameters for all date, integer and decimal properties.
 {% endhint %}
 
-{% api-method method="get" host="https://spaces.nexudus.com/api" path="/content/subscribergroups" %}
+{% api-method method="get" host="https://spaces.nexudus.com/api" path="/crm/crmopportunityimportfiles" %}
 {% api-method-summary %}
 By date range
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Gets a list of subscribergroups based on the date when they were created or updated.
+Gets a list of crmopportunityimportfiles based on the date when they were created or updated.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -228,15 +188,15 @@ application/json
 
 {% api-method-query-parameters %}
 {% api-method-parameter name="CreatedOn" type="object" required=false %}
-?to\_SubscriberGroup\_CreatedOn=...
+?to\_CrmOpportunityImportFile\_CreatedOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="UpdatedOn" type="object" required=false %}
-?from\_SubscriberGroup\_CreatedOn=...
+?from\_CrmOpportunityImportFile\_CreatedOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="CreatedOn" type="object" required=false %}
-?from\_SubscriberGroup\_CreatedOn=...
+?from\_CrmOpportunityImportFile\_CreatedOn=...
 {% endapi-method-parameter %}
 
 
@@ -253,13 +213,8 @@ application/json
 {
     "Records": [{
         "Business": null,
-        "Name": "00001",
-        "AutoAddMembers": true,
-        "AutoAddContacts": true,
-        "AutoAddBookings": true,
-        "AutoAddEvents": true,
-        "AutoAddVisitors": true,
-        "AutoAddPayingMembers": true,
+        "Name": "Joe",
+        "Imported": false,
     }],
     }],
     "CurrentPageSize": 25,
@@ -281,15 +236,15 @@ application/json
 {% endapi-method-spec %}
 {% endapi-method %}
 
-> 🔒 Requires user role `subscribergroup-list`
+> 🔒 Requires user role `crmopportunityimportfile-list`
 
-{% api-method method="get" host="https://spaces.nexudus.com/api" path="/content/subscribergroups/:id" %}
+{% api-method method="get" host="https://spaces.nexudus.com/api" path="/crm/crmopportunityimportfiles/:id" %}
 {% api-method-summary %}
 One by Id
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Gets one subscribergroup record.
+Gets one crmopportunityimportfile record.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -306,7 +261,7 @@ application/json
 
 {% api-method-path-parameters %}
 {% api-method-parameter name="id" type="integer" required=true %}
-The ID of the subscribergroup to fetch.
+The ID of the crmopportunityimportfile to fetch.
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
 {% endapi-method-request %}
@@ -320,13 +275,8 @@ The ID of the subscribergroup to fetch.
 ```javascript
 {
         "Business": null,
-        "Name": "00001",
-        "AutoAddMembers": true,
-        "AutoAddContacts": true,
-        "AutoAddBookings": true,
-        "AutoAddEvents": true,
-        "AutoAddVisitors": true,
-        "AutoAddPayingMembers": true,
+        "Name": "Joe",
+        "Imported": false,
 }
 ```
 {% endapi-method-response-example %}
@@ -344,15 +294,15 @@ The ID of the subscribergroup to fetch.
 {% endapi-method-spec %}
 {% endapi-method %}
 
-> 🔒 Requires user role `subscribergroup-read`
+> 🔒 Requires user role `crmopportunityimportfile-read`
 
-{% api-method method="post" host="https://spaces.nexudus.com/api" path="/content/subscribergroups" %}
+{% api-method method="post" host="https://spaces.nexudus.com/api" path="/crm/crmopportunityimportfiles" %}
 {% api-method-summary %}
 Create
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Creates a new subscribergroup.
+Creates a new crmopportunityimportfile.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -372,17 +322,7 @@ application/json
 {% endapi-method-parameter %}
 {% api-method-parameter name="Name" type="string" required=true %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="AutoAddMembers" type="bool" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="AutoAddContacts" type="bool" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="AutoAddBookings" type="bool" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="AutoAddEvents" type="bool" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="AutoAddVisitors" type="bool" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="AutoAddPayingMembers" type="bool" required=false %}
+{% api-method-parameter name="Imported" type="bool" required=false %}
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 
@@ -458,17 +398,17 @@ _This response is an example, errors and messages will follow this structure but
 {% endapi-method-spec %}
 {% endapi-method %}
 
-> 🔒 Requires user role `subscribergroup-create`
+> 🔒 Requires user role `crmopportunityimportfile-create`
 
-{% api-method method="put" host="https://spaces.nexudus.com/api" path="/content/subscribergroups" %}
+{% api-method method="put" host="https://spaces.nexudus.com/api" path="/crm/crmopportunityimportfiles" %}
 {% api-method-summary %}
 Update
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Updates and existing subscribergroup.
+Updates and existing crmopportunityimportfile.
   
-Required User Role: `subscribergroup-edit`
+Required User Role: `crmopportunityimportfile-edit`
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -485,7 +425,7 @@ application/json
 
 {% api-method-path-parameters %}
 {% api-method-parameter name="Id" type="integer" required=true %}
-The id of the subscribergroup to update
+The id of the crmopportunityimportfile to update
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
 
@@ -494,17 +434,7 @@ The id of the subscribergroup to update
 {% endapi-method-parameter %}
 {% api-method-parameter name="Name" type="string" required=true %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="AutoAddMembers" type="bool" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="AutoAddContacts" type="bool" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="AutoAddBookings" type="bool" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="AutoAddEvents" type="bool" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="AutoAddVisitors" type="bool" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="AutoAddPayingMembers" type="bool" required=false %}
+{% api-method-parameter name="Imported" type="bool" required=false %}
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
@@ -581,18 +511,18 @@ _This response is an example, errors and messages will follow this structure but
 {% endapi-method-spec %}
 {% endapi-method %}
 
-> 🔒 Requires user role `subscribergroup-edit`
+> 🔒 Requires user role `crmopportunityimportfile-edit`
 
 
-{% api-method method="delete" host="https://spaces.nexudus.com/api" path="/content/subscribergroups/:id" %}
+{% api-method method="delete" host="https://spaces.nexudus.com/api" path="/crm/crmopportunityimportfiles/:id" %}
 {% api-method-summary %}
 Delete
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Deletes a subscribergroup.  
+Deletes a crmopportunityimportfile.  
   
-Required User Roles: `subscribergroup-delete`
+Required User Roles: `crmopportunityimportfile-delete`
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -661,12 +591,12 @@ application/json
 
 
 
-> 🔒 Requires user role `subscribergroup-delete`
+> 🔒 Requires user role `crmopportunityimportfile-delete`
 
 
 ## Commands
 
-Commands allow to perform actions against one or more subscribergroup records. Some commands accept only one record while others can run an action for a number of records at the same time.  Each command has metadata with information about how it can be used and the amount of records, if any, it needs to run.
+Commands allow to perform actions against one or more crmopportunityimportfile records. Some commands accept only one record while others can run an action for a number of records at the same time.  Each command has metadata with information about how it can be used and the amount of records, if any, it needs to run.
 
 > ```javascript
 > {
@@ -677,13 +607,13 @@ Commands allow to perform actions against one or more subscribergroup records. S
 > }
 > ```
 
-{% api-method method="get" host="https://spaces.nexudus.com/api" path="/content/subscribergroups/commands" %}
+{% api-method method="get" host="https://spaces.nexudus.com/api" path="/crm/crmopportunityimportfiles/commands" %}
 {% api-method-summary %}
 Commands
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Get all commands available to run for subscribergroup records.
+Get all commands available to run for crmopportunityimportfile records.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -735,7 +665,7 @@ _This response is an example._
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="get" host="https://spaces.nexudus.com/api" path="/content/subscribergroups/runcommand" %}
+{% api-method method="get" host="https://spaces.nexudus.com/api" path="/crm/crmopportunityimportfiles/runcommand" %}
 {% api-method-summary %}
 Run Command
 {% endapi-method-summary %}
@@ -801,11 +731,53 @@ _Commands also return a status 200 when they fail to process one or more of the 
 {% endapi-method-spec %}
 {% endapi-method %}
 
-> 🔒 Requires user role `subscribergroup-edit`
+> 🔒 Requires user role `crmopportunityimportfile-edit`
 
 ## Binary files
 
 The following endpoints return binary data. Check the `ContentType` header to understand the type of file being returned in the response stream.
+
+{% api-method method="get" host="https://spaces.nexudus.com/api" path="/crm/crmopportunityimportfiles/getfiledata/:id" %}
+{% api-method-summary %}
+FileData
+{% endapi-method-summary %}
+
+{% api-method-description %}
+
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+Basic Authentication token. Base64 encoding of 'username:password'.
+{% endapi-method-parameter %}
+{% api-method-parameter name="Content" type="string" required=true %}
+application/json
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+
+{% api-method-path-parameters %}
+{% api-method-parameter name="id" type="integer" required=true %}
+The id of the CrmOpportunityImportFile to get the filedata for.
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```javascript
+Binary stream or null
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
 
 
 ## Related Entities
