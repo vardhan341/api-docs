@@ -1,4 +1,6 @@
-﻿{% api-method method="get" host="https://spaces.nexudus.com/api" path="/billing/discountcodes" %}
+# DiscountCode
+
+{% api-method method="get" host="https://spaces.nexudus.com/api" path="/billing/discountcodes" %}
 {% api-method-summary %}
 Find
 {% endapi-method-summary %}
@@ -9,18 +11,17 @@ This endpoint allows you to GET a list of discountcodes based on one or more fil
 
 {% api-method-spec %}
 {% api-method-request %}
-
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
 {% api-method-query-parameters %}
-
 {% api-method-parameter name="Id" type="int" %}
 ?Id=...
 {% endapi-method-parameter %}
@@ -33,128 +34,105 @@ application/json
 ?DiscountCode\_SystemId=...
 {% endapi-method-parameter %}
 
-
 {% api-method-parameter name="Business" type="Business" %}
 ?DiscountCode\_Business=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="Code" type="string" %}
 ?DiscountCode\_Code=...
 {% endapi-method-parameter %}
 
-
 {% api-method-parameter name="Description" type="string" %}
 ?DiscountCode\_Description=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="Active" type="bool" %}
 ?DiscountCode\_Active=...
 {% endapi-method-parameter %}
 
-
 {% api-method-parameter name="PublishFrom" type="DateTime?" %}
 ?DiscountCode\_PublishFrom=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="PublishTo" type="DateTime?" %}
 ?DiscountCode\_PublishTo=...
 {% endapi-method-parameter %}
 
-
 {% api-method-parameter name="DiscountPercentage" type="decimal?" %}
 ?DiscountCode\_DiscountPercentage=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="DiscountAmount" type="decimal?" %}
 ?DiscountCode\_DiscountAmount=...
 {% endapi-method-parameter %}
 
-
 {% api-method-parameter name="ReferralDiscount" type="bool" %}
 ?DiscountCode\_ReferralDiscount=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="DiscountPricePlans" type="bool" %}
 ?DiscountCode\_DiscountPricePlans=...
 {% endapi-method-parameter %}
 
-
 {% api-method-parameter name="DiscountBookings" type="bool" %}
 ?DiscountCode\_DiscountBookings=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="DiscountProducts" type="bool" %}
 ?DiscountCode\_DiscountProducts=...
 {% endapi-method-parameter %}
 
-
 {% api-method-parameter name="DiscountEvents" type="bool" %}
 ?DiscountCode\_DiscountEvents=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="MaxUsesPerUser" type="int?" %}
 ?DiscountCode\_MaxUsesPerUser=...
 {% endapi-method-parameter %}
 
-
 {% api-method-parameter name="MaxUses" type="int?" %}
 ?DiscountCode\_MaxUses=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="OnlyForContacts" type="bool" %}
 ?DiscountCode\_OnlyForContacts=...
 {% endapi-method-parameter %}
 
-
 {% api-method-parameter name="OnlyForMembers" type="bool" %}
 ?DiscountCode\_OnlyForMembers=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="ValidFrom" type="DateTime?" %}
 ?DiscountCode\_ValidFrom=...
 {% endapi-method-parameter %}
 
-
 {% api-method-parameter name="ValidTo" type="DateTime?" %}
 ?DiscountCode\_ValidTo=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="ExpirationType" type="enum" %}
 ?DiscountCode\_ExpirationType=...
 {% endapi-method-parameter %}
 
-
 {% api-method-parameter name="ExpiresIn" type="int?" %}
 ?DiscountCode\_ExpiresIn=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="Business\_Name" type="string" %}
 ?DiscountCode\_Business\_Name=...
 {% endapi-method-parameter %}
 
-
-{% api-method-parameter name="Business\_Currency_Code" type="string" %}
-?DiscountCode\_Business\_Currency_Code=...
+{% api-method-parameter name="Business\_Currency\_Code" type="string" %}
+?DiscountCode\_Business\_Currency\_Code=...
 {% endapi-method-parameter %}
-
-
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
 
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
 
+{% endapi-method-response-example-description %}
 
 ```javascript
 {
@@ -194,7 +172,6 @@ application/json
     "TotalItems": 60,
     "TotalPages": 3
 }
-
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}
@@ -214,11 +191,11 @@ This endpoint allows you to GET a list of discountcodes.
 
 {% api-method-spec %}
 {% api-method-request %}
-
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
@@ -297,8 +274,7 @@ size=25 \(maximum=1000\)
 > 🔒 Requires user role `discountcode-list`
 
 {% hint style="info" %}
-You can also get a list of records based when they were created or updated. This is useful if you want to get a list of records created after or before a particular point in time. 
-You can also use range query parameters for all date, integer and decimal properties.
+You can also get a list of records based when they were created or updated. This is useful if you want to get a list of records created after or before a particular point in time. You can also use range query parameters for all date, integer and decimal properties.
 {% endhint %}
 
 {% api-method method="get" host="https://spaces.nexudus.com/api" path="/billing/discountcodes" %}
@@ -312,11 +288,11 @@ Gets a list of discountcodes based on the date when they were created or updated
 
 {% api-method-spec %}
 {% api-method-request %}
-
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
@@ -338,58 +314,74 @@ application/json
 {% api-method-parameter name="PublishFrom" type="datetime" required=false %}
 ?from\_DiscountCode\_PublishFrom=...
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="PublishFrom" type="datetime" required=false %}
 ?to\_DiscountCode\_PublishFrom=...
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="PublishTo" type="datetime" required=false %}
 ?from\_DiscountCode\_PublishTo=...
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="PublishTo" type="datetime" required=false %}
 ?to\_DiscountCode\_PublishTo=...
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="DiscountPercentage" type="decimal" required=false %}
 ?from\_DiscountCode\_DiscountPercentage=...
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="DiscountPercentage" type="decimal" required=false %}
 ?to\_DiscountCode\_DiscountPercentage=...
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="DiscountAmount" type="decimal" required=false %}
 ?from\_DiscountCode\_DiscountAmount=...
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="DiscountAmount" type="decimal" required=false %}
 ?to\_DiscountCode\_DiscountAmount=...
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="MaxUsesPerUser" type="decimal" required=false %}
 ?from\_DiscountCode\_MaxUsesPerUser=...
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="MaxUsesPerUser" type="decimal" required=false %}
 ?to\_DiscountCode\_MaxUsesPerUser=...
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="MaxUses" type="decimal" required=false %}
 ?from\_DiscountCode\_MaxUses=...
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="MaxUses" type="decimal" required=false %}
 ?to\_DiscountCode\_MaxUses=...
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="ValidFrom" type="datetime" required=false %}
 ?from\_DiscountCode\_ValidFrom=...
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="ValidFrom" type="datetime" required=false %}
 ?to\_DiscountCode\_ValidFrom=...
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="ValidTo" type="datetime" required=false %}
 ?from\_DiscountCode\_ValidTo=...
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="ValidTo" type="datetime" required=false %}
 ?to\_DiscountCode\_ValidTo=...
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="ExpiresIn" type="decimal" required=false %}
 ?from\_DiscountCode\_ExpiresIn=...
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="ExpiresIn" type="decimal" required=false %}
 ?to\_DiscountCode\_ExpiresIn=...
 {% endapi-method-parameter %}
-
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
 
@@ -457,21 +449,21 @@ Gets one discountcode record.
 
 {% api-method-spec %}
 {% api-method-request %}
-
-{% api-method-headers %}
-{% api-method-parameter name="Authorization" type="string" required=true %}
-Basic Authentication token. Base64 encoding of 'username:password'.
-{% endapi-method-parameter %}
-{% api-method-parameter name="Content" type="string" required=true %}
-application/json
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
-
 {% api-method-path-parameters %}
 {% api-method-parameter name="id" type="integer" required=true %}
 The ID of the discountcode to fetch.
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
+
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+Basic Authentication token. Base64 encoding of 'username:password'.
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="Content" type="string" required=true %}
+application/json
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
 {% endapi-method-request %}
 
 {% api-method-response %}
@@ -512,7 +504,7 @@ The ID of the discountcode to fetch.
 
 {% endapi-method-response-example-description %}
 
-```
+```text
 "Not found"
 ```
 {% endapi-method-response-example %}
@@ -533,11 +525,11 @@ Creates a new discountcode.
 
 {% api-method-spec %}
 {% api-method-request %}
-
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
@@ -545,49 +537,89 @@ application/json
 
 {% api-method-body-parameters %}
 {% api-method-parameter name="BusinessId" type="int" required=true %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Code" type="string" required=true %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Description" type="string" required=true %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Active" type="bool" required=false %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="PublishFrom" type="DateTime?" required=false %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="PublishTo" type="DateTime?" required=false %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="DiscountPercentage" type="decimal?" required=false %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="DiscountAmount" type="decimal?" required=false %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="ReferralDiscount" type="bool" required=false %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="DiscountPricePlans" type="bool" required=false %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="DiscountBookings" type="bool" required=false %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="DiscountProducts" type="bool" required=false %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="DiscountEvents" type="bool" required=false %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="MaxUsesPerUser" type="int?" required=false %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="MaxUses" type="int?" required=false %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="OnlyForContacts" type="bool" required=false %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="OnlyForMembers" type="bool" required=false %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="ValidFrom" type="DateTime?" required=false %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="ValidTo" type="DateTime?" required=false %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="ExpirationType" type="enum" required=false %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="ExpiresIn" type="int?" required=false %}
+
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
-
 {% endapi-method-request %}
 
 {% api-method-response %}
@@ -610,7 +642,7 @@ application/json
 
 {% api-method-response-example httpCode=400 %}
 {% api-method-response-example-description %}
-_This response is an example, errors and messages will follow this structure but keys and descriptions may be different for each record._  
+_This response is an example, errors and messages will follow this structure but keys and descriptions may be different for each record._
 {% endapi-method-response-example-description %}
 
 ```javascript
@@ -668,71 +700,110 @@ Update
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Updates and existing discountcode.
-  
-Required User Role: `discountcode-edit`
+Updates and existing discountcode.Required User Role: `discountcode-edit`
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
-
-{% api-method-headers %}
-{% api-method-parameter name="Authorization" type="string" required=true %}
-Basic Authentication token. Base64 encoding of 'username:password'.
-{% endapi-method-parameter %}
-{% api-method-parameter name="Content" type="string" required=true %}
-application/json
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
-
 {% api-method-path-parameters %}
 {% api-method-parameter name="Id" type="integer" required=true %}
 The id of the discountcode to update
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
 
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+Basic Authentication token. Base64 encoding of 'username:password'.
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="Content" type="string" required=true %}
+application/json
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+
 {% api-method-body-parameters %}
 {% api-method-parameter name="BusinessId" type="int" required=true %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Code" type="string" required=true %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Description" type="string" required=true %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Active" type="bool" required=false %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="PublishFrom" type="DateTime?" required=false %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="PublishTo" type="DateTime?" required=false %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="DiscountPercentage" type="decimal?" required=false %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="DiscountAmount" type="decimal?" required=false %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="ReferralDiscount" type="bool" required=false %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="DiscountPricePlans" type="bool" required=false %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="DiscountBookings" type="bool" required=false %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="DiscountProducts" type="bool" required=false %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="DiscountEvents" type="bool" required=false %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="MaxUsesPerUser" type="int?" required=false %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="MaxUses" type="int?" required=false %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="OnlyForContacts" type="bool" required=false %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="OnlyForMembers" type="bool" required=false %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="ValidFrom" type="DateTime?" required=false %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="ValidTo" type="DateTime?" required=false %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="ExpirationType" type="enum" required=false %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="ExpiresIn" type="int?" required=false %}
+
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
@@ -759,7 +830,7 @@ The id of the discountcode to update
 
 {% api-method-response-example httpCode=400 %}
 {% api-method-response-example-description %}
-_This response is an example, errors and messages will follow this structure but keys and descriptions may be different for each record._  
+_This response is an example, errors and messages will follow this structure but keys and descriptions may be different for each record._
 {% endapi-method-response-example-description %}
 
 ```javascript
@@ -811,35 +882,32 @@ _This response is an example, errors and messages will follow this structure but
 
 > 🔒 Requires user role `discountcode-edit`
 
-
 {% api-method method="delete" host="https://spaces.nexudus.com/api" path="/billing/discountcodes/:id" %}
 {% api-method-summary %}
 Delete
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Deletes a discountcode.  
-  
-Required User Roles: `discountcode-delete`
+Deletes a discountcode.Required User Roles: `discountcode-delete`
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
-
-{% api-method-headers %}
-{% api-method-parameter name="Authorization" type="string" required=true %}
-Basic Authentication token. Base64 encoding of 'username:password'.
-{% endapi-method-parameter %}
-{% api-method-parameter name="Content" type="string" required=true %}
-application/json
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
-
 {% api-method-path-parameters %}
 {% api-method-parameter name="Id" type="integer" required=false %}
 
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
+
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+Basic Authentication token. Base64 encoding of 'username:password'.
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="Content" type="string" required=true %}
+application/json
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
 {% endapi-method-request %}
 
 {% api-method-response %}
@@ -867,7 +935,7 @@ application/json
 
 {% endapi-method-response-example-description %}
 
-```
+```text
 "Not found"
 ```
 {% endapi-method-response-example %}
@@ -887,14 +955,11 @@ application/json
 {% endapi-method-spec %}
 {% endapi-method %}
 
-
-
 > 🔒 Requires user role `discountcode-delete`
-
 
 ## Commands
 
-Commands allow to perform actions against one or more discountcode records. Some commands accept only one record while others can run an action for a number of records at the same time.  Each command has metadata with information about how it can be used and the amount of records, if any, it needs to run.
+Commands allow to perform actions against one or more discountcode records. Some commands accept only one record while others can run an action for a number of records at the same time. Each command has metadata with information about how it can be used and the amount of records, if any, it needs to run.
 
 > ```javascript
 > {
@@ -916,11 +981,11 @@ Get all commands available to run for discountcode records.
 
 {% api-method-spec %}
 {% api-method-request %}
-
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
@@ -930,7 +995,7 @@ application/json
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
 {% api-method-response-example-description %}
-_This response is an example._  
+_This response is an example._
 {% endapi-method-response-example-description %}
 
 ```javascript
@@ -974,11 +1039,11 @@ Run Command
 
 {% api-method-spec %}
 {% api-method-request %}
-
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
@@ -990,21 +1055,17 @@ The command Key defining the command to run. `"COMMAND_KEY_1"`
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Parameters" type="array" required=false %}
-A list of object with the structure below. The parameters required for each command are returned in the "RequiresParameters" array return by the "commands" endpoint.  
-  
-`[  
-   {  
-      "Name": "Name",   
-      "Type":"Type",   
-      "Value":recordId  
-    }  
+A list of object with the structure below. The parameters required for each command are returned in the "RequiresParameters" array return by the "commands" endpoint.`[    
+{    
+"Name": "Name",    
+"Type":"Type",    
+"Value":recordId    
+}    
 ]`
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Ids" type="array" required=true %}
-A list of integer IDs for each of the records to run this command for.  
-  
-`[987654321, 123565978]`
+A list of integer IDs for each of the records to run this command for.`[987654321, 123565978]`
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
@@ -1012,7 +1073,7 @@ A list of integer IDs for each of the records to run this command for.
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
 {% api-method-response-example-description %}
-_Commands also return a status 200 when they fail to process one or more of the records. Use the 'WasSuccessful'  property to know if the command run succeeded._  
+_Commands also return a status 200 when they fail to process one or more of the records. Use the 'WasSuccessful' property to know if the command run succeeded._
 {% endapi-method-response-example-description %}
 
 ```javascript
@@ -1035,6 +1096,7 @@ _Commands also return a status 200 when they fail to process one or more of the 
 
 The following endpoints return binary data. Check the `ContentType` header to understand the type of file being returned in the response stream.
 
-
 ## Related Entities
+
 * [Business](../sys/business.md)
+

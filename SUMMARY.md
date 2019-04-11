@@ -87,6 +87,10 @@
     * [HelpDeskDepartment](rest-api/support/helpdeskdepartment.md)
     * [HelpDeskComment](rest-api/support/helpdeskcomment.md)
     * [HelpDeskMessage](rest-api/support/helpdeskmessage.md)
-* [Public API](public-api.md)
+* [Public API](public-api/README.md)
+  * [Object Graph Depth](public-api/object-graph-depth/README.md)
+    * [About Page](public-api/object-graph-depth/about-page.md)
+    * [Allowances](public-api/object-graph-depth/allowances.md)
+    * [Blog](public-api/object-graph-depth/blog.md)
 * [SDK](sdk.md)
 
