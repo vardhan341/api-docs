@@ -11,7 +11,7 @@ The PUBLIC API always returns JSON formatted data. By default, we will return da
 }
 ```
 
-In these cases, you can use the \_depth parameter to request a specific number of levels.
+In these cases, you can use the`?_depth` parameter to request a specific number of levels.
 
 {% hint style="warning" %}
 Use this with caution as additional levels of data will require additional processing and more data, which will basically degrade performance and make your requests hit the rate limits quicker.
