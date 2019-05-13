@@ -2,8 +2,8 @@
 
 * [Getting Started](README.md)
 * [Request Limits](request-limits.md)
-* [Basic Authentication](authentication-internal-apps.md)
 * [Token Authentication \(oauth\)](token-authentication-oauth.md)
+* [Basic Authentication](authentication-internal-apps.md)
 * [Authentication \(published apps\)](authentication-published-apps.md)
 * [Access Rights and Roles](access-rights-and-roles.md)
 * [REST API](rest-api/README.md)

@@ -73,6 +73,19 @@ your password
 }
 ```
 {% endapi-method-response-example %}
+
+{% api-method-response-example httpCode=400 %}
+{% api-method-response-example-description %}
+If you submit an invalid username and/or password
+{% endapi-method-response-example-description %}
+
+```javascript
+{
+    "error": "invalid_grant",
+    "error_description": "The user name or password is incorrect."
+}
+```
+{% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
@@ -123,6 +136,18 @@ refresh\_token
     "token_type": "bearer",
     "expires_in": 604799,
     "refresh_token": "c3c14715..."
+}    
+```
+{% endapi-method-response-example %}
+
+{% api-method-response-example httpCode=400 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```javascript
+{
+    "error": "invalid_grant"
 }
 ```
 {% endapi-method-response-example %}
