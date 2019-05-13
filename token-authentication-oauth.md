@@ -34,8 +34,8 @@ client_id=demoaccount@nexudus.com`
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-headers %}
-{% api-method-parameter name="client\_id" type="string" required=false %}
-
+{% api-method-parameter type="string" %}
+A unique identifier for the client making these requests. A single refresh tokens will be created per client.
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Accept" type="string" required=true %}
@@ -44,10 +44,6 @@ application/json
 {% endapi-method-headers %}
 
 {% api-method-body-parameters %}
-{% api-method-parameter name="client\_id" type="string" required=false %}
-A unique identifier for the client making these requests. A single refresh tokens will be created per client.
-{% endapi-method-parameter %}
-
 {% api-method-parameter name="grant\_type" required=true type="string" %}
 password
 {% endapi-method-parameter %}
