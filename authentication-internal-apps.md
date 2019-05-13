@@ -5,7 +5,7 @@ description: >-
   authentication.
 ---
 
-# Authentication \(internal apps\)
+# Basic Authentication
 
 Instead of using the application key and the secret key, you can use your regular username and password. Any API calls using this authentication method will run in the context of the user making the call, and therefore inherit all the roles of that user.
 
