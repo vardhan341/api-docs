@@ -1,26 +1,27 @@
-﻿{% api-method method="get" host="https://spaces.nexudus.com/api" path="/crm/crmopportunities" %}
+# Reminder
+
+{% api-method method="get" host="https://spaces.nexudus.com/api" path="/crm/reminders" %}
 {% api-method-summary %}
 Find
 {% endapi-method-summary %}
 
 {% api-method-description %}
-This endpoint allows you to GET a list of crmopportunities based on one or more filter querystring parameters.
+This endpoint allows you to GET a list of reminders based on one or more filter querystring parameters.
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
-
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
 {% api-method-query-parameters %}
-
 {% api-method-parameter name="Id" type="int" %}
 ?Id=...
 {% endapi-method-parameter %}
@@ -30,202 +31,90 @@ application/json
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="SystemId" type="string" %}
-?CrmOpportunity\_SystemId=...
+?Reminder\_SystemId=...
 {% endapi-method-parameter %}
 
-
-{% api-method-parameter name="CrmBoardColumn" type="CrmBoardColumn" %}
-?CrmOpportunity\_CrmBoardColumn=...
+{% api-method-parameter name="Business" type="Business" %}
+?Reminder\_Business=...
 {% endapi-method-parameter %}
 
+{% api-method-parameter name="Name" type="string" %}
+?Reminder\_Name=...
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="ForAllContacts" type="bool" %}
+?Reminder\_ForAllContacts=...
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="ForAllMembers" type="bool" %}
+?Reminder\_ForAllMembers=...
+{% endapi-method-parameter %}
 
 {% api-method-parameter name="Coworker" type="Coworker" %}
-?CrmOpportunity\_Coworker=...
+?Reminder\_Coworker=...
 {% endapi-method-parameter %}
 
-
-{% api-method-parameter name="Team" type="Team" %}
-?CrmOpportunity\_Team=...
+{% api-method-parameter name="ReminderType" type="enum" %}
+?Reminder\_ReminderType=...
 {% endapi-method-parameter %}
 
-
-{% api-method-parameter name="OpportunityType" type="OpportunityType" %}
-?CrmOpportunity\_OpportunityType=...
+{% api-method-parameter name="ReminderDate" type="DateTime?" %}
+?Reminder\_ReminderDate=...
 {% endapi-method-parameter %}
 
-
-{% api-method-parameter name="Responsible" type="User" %}
-?CrmOpportunity\_Responsible=...
+{% api-method-parameter name="DaysAfterSignup" type="int?" %}
+?Reminder\_DaysAfterSignup=...
 {% endapi-method-parameter %}
 
-
-{% api-method-parameter name="Referrer" type="Coworker" %}
-?CrmOpportunity\_Referrer=...
+{% api-method-parameter name="Product" type="Product" %}
+?Reminder\_Product=...
 {% endapi-method-parameter %}
 
-
-{% api-method-parameter name="Agent" type="Coworker" %}
-?CrmOpportunity\_Agent=...
+{% api-method-parameter name="DaysAfterRenewal" type="int?" %}
+?Reminder\_DaysAfterRenewal=...
 {% endapi-method-parameter %}
 
-
-{% api-method-parameter name="Notes" type="string" %}
-?CrmOpportunity\_Notes=...
+{% api-method-parameter name="DaysBeforeRenewal" type="int?" %}
+?Reminder\_DaysBeforeRenewal=...
 {% endapi-method-parameter %}
 
-
-{% api-method-parameter name="Completed" type="bool" %}
-?CrmOpportunity\_Completed=...
+{% api-method-parameter name="ReminderAction" type="enum" %}
+?Reminder\_ReminderAction=...
 {% endapi-method-parameter %}
 
-
-{% api-method-parameter name="DueDate" type="DateTime?" %}
-?CrmOpportunity\_DueDate=...
+{% api-method-parameter name="Email" type="string" %}
+?Reminder\_Email=...
 {% endapi-method-parameter %}
 
-
-{% api-method-parameter name="Value" type="decimal?" %}
-?CrmOpportunity\_Value=...
+{% api-method-parameter name="CannedResponse" type="CannedResponse" %}
+?Reminder\_CannedResponse=...
 {% endapi-method-parameter %}
-
-
-{% api-method-parameter name="LeadSource" type="enum" %}
-?CrmOpportunity\_LeadSource=...
-{% endapi-method-parameter %}
-
-
-{% api-method-parameter name="LossReason" type="enum" %}
-?CrmOpportunity\_LossReason=...
-{% endapi-method-parameter %}
-
-
-{% api-method-parameter name="Status" type="enum" %}
-?CrmOpportunity\_Status=...
-{% endapi-method-parameter %}
-
-
-{% api-method-parameter name="WonOn" type="DateTime?" %}
-?CrmOpportunity\_WonOn=...
-{% endapi-method-parameter %}
-
-
-{% api-method-parameter name="LostOn" type="DateTime?" %}
-?CrmOpportunity\_LostOn=...
-{% endapi-method-parameter %}
-
-
-{% api-method-parameter name="Position" type="int" %}
-?CrmOpportunity\_Position=...
-{% endapi-method-parameter %}
-
-
-{% api-method-parameter name="CrmBoardColumn\_Name" type="string" %}
-?CrmOpportunity\_CrmBoardColumn\_Name=...
-{% endapi-method-parameter %}
-
-
-{% api-method-parameter name="CrmBoardColumn\_CrmBoard_Id" type="string" %}
-?CrmOpportunity\_CrmBoardColumn\_CrmBoard_Id=...
-{% endapi-method-parameter %}
-
-
-{% api-method-parameter name="CrmBoardColumn\_CrmBoard_Name" type="string" %}
-?CrmOpportunity\_CrmBoardColumn\_CrmBoard_Name=...
-{% endapi-method-parameter %}
-
-
-{% api-method-parameter name="CrmBoardColumn\_CrmBoard_Business_Id" type="string" %}
-?CrmOpportunity\_CrmBoardColumn\_CrmBoard_Business_Id=...
-{% endapi-method-parameter %}
-
-
-{% api-method-parameter name="CrmBoardColumn\_CrmBoard_Business_Name" type="string" %}
-?CrmOpportunity\_CrmBoardColumn\_CrmBoard_Business_Name=...
-{% endapi-method-parameter %}
-
-
-{% api-method-parameter name="CrmBoardColumn\_CrmBoard_Business_Currency_Id" type="string" %}
-?CrmOpportunity\_CrmBoardColumn\_CrmBoard_Business_Currency_Id=...
-{% endapi-method-parameter %}
-
-
-{% api-method-parameter name="CrmBoardColumn\_CrmBoard_Business_Currency_Code" type="string" %}
-?CrmOpportunity\_CrmBoardColumn\_CrmBoard_Business_Currency_Code=...
-{% endapi-method-parameter %}
-
-
-{% api-method-parameter name="Coworker\_FullName" type="string" %}
-?CrmOpportunity\_Coworker\_FullName=...
-{% endapi-method-parameter %}
-
-
-{% api-method-parameter name="Coworker\_CoworkerType" type="string" %}
-?CrmOpportunity\_Coworker\_CoworkerType=...
-{% endapi-method-parameter %}
-
-
-{% api-method-parameter name="Coworker\_CompanyName" type="string" %}
-?CrmOpportunity\_Coworker\_CompanyName=...
-{% endapi-method-parameter %}
-
-
-{% api-method-parameter name="Coworker\_Email" type="string" %}
-?CrmOpportunity\_Coworker\_Email=...
-{% endapi-method-parameter %}
-
-
-{% api-method-parameter name="Team\_Name" type="string" %}
-?CrmOpportunity\_Team\_Name=...
-{% endapi-method-parameter %}
-
-
-{% api-method-parameter name="Team\_Description" type="string" %}
-?CrmOpportunity\_Team\_Description=...
-{% endapi-method-parameter %}
-
-
-{% api-method-parameter name="Team\_ProfileWebsite" type="string" %}
-?CrmOpportunity\_Team\_ProfileWebsite=...
-{% endapi-method-parameter %}
-
-
-{% api-method-parameter name="OpportunityType\_Name" type="string" %}
-?CrmOpportunity\_OpportunityType\_Name=...
-{% endapi-method-parameter %}
-
-
-{% api-method-parameter name="Responsible\_FullName" type="string" %}
-?CrmOpportunity\_Responsible\_FullName=...
-{% endapi-method-parameter %}
-
-
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
 
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
 
+{% endapi-method-response-example-description %}
 
 ```javascript
 {
     "Records": [{
-        "CrmBoardColumn": null,
+        "Business": null,
+        "Name": "Joe",
+        "ForAllContacts": false,
+        "ForAllMembers": false,
         "Coworker": null,
-        "Team": null,
-        "OpportunityType": null,
-        "Responsible": null,
-        "Referrer": null,
-        "Agent": null,
-        "Notes": "Notes",
-        "Completed": true,
-        "DueDate": null,
-        "Value": null,
-        "LeadSource": Nexudus.Coworking.Core.Enums.eCrmOpportunitySource.Other,
-        "LossReason": Nexudus.Coworking.Core.Enums.eCrmOpportunityLossReason.Other,
-        "Status": Nexudus.Coworking.Core.Enums.eCrmOpportunityStatus.InProgress,
-        "WonOn": null,
-        "LostOn": null,
-        "Position": 1,
+        "ReminderType": eReminderType.FixedDate,
+        "ReminderDate": null,
+        "DaysAfterSignup": null,
+        "Product": null,
+        "DaysAfterRenewal": null,
+        "DaysBeforeRenewal": null,
+        "ReminderAction": eReminderAction.SendEmail,
+        "Email": "joe@nexudus.com",
+        "CannedResponse": null,
     }],
     "CurrentPageSize": 25,
     "CurrentPage": 1,
@@ -240,31 +129,30 @@ application/json
     "TotalItems": 60,
     "TotalPages": 3
 }
-
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
 
-> 🔒 Requires user role `crmopportunity-list`
+> 🔒 Requires user role `reminder-list`
 
-{% api-method method="get" host="https://spaces.nexudus.com/api" path="/crm/crmopportunities" %}
+{% api-method method="get" host="https://spaces.nexudus.com/api" path="/crm/reminders" %}
 {% api-method-summary %}
 List
 {% endapi-method-summary %}
 
 {% api-method-description %}
-This endpoint allows you to GET a list of crmopportunities.
+This endpoint allows you to GET a list of reminders.
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
-
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
@@ -298,23 +186,20 @@ size=25 \(maximum=1000\)
 ```javascript
 {
     "Records": [{
-        "CrmBoardColumn": null,
+        "Business": null,
+        "Name": "Joe",
+        "ForAllContacts": false,
+        "ForAllMembers": false,
         "Coworker": null,
-        "Team": null,
-        "OpportunityType": null,
-        "Responsible": null,
-        "Referrer": null,
-        "Agent": null,
-        "Notes": "Notes",
-        "Completed": true,
-        "DueDate": null,
-        "Value": null,
-        "LeadSource": Nexudus.Coworking.Core.Enums.eCrmOpportunitySource.Other,
-        "LossReason": Nexudus.Coworking.Core.Enums.eCrmOpportunityLossReason.Other,
-        "Status": Nexudus.Coworking.Core.Enums.eCrmOpportunityStatus.InProgress,
-        "WonOn": null,
-        "LostOn": null,
-        "Position": 1,
+        "ReminderType": eReminderType.FixedDate,
+        "ReminderDate": null,
+        "DaysAfterSignup": null,
+        "Product": null,
+        "DaysAfterRenewal": null,
+        "DaysBeforeRenewal": null,
+        "ReminderAction": eReminderAction.SendEmail,
+        "Email": "joe@nexudus.com",
+        "CannedResponse": null,
     }],
     }],
     "CurrentPageSize": 25,
@@ -336,29 +221,28 @@ size=25 \(maximum=1000\)
 {% endapi-method-spec %}
 {% endapi-method %}
 
-> 🔒 Requires user role `crmopportunity-list`
+> 🔒 Requires user role `reminder-list`
 
 {% hint style="info" %}
-You can also get a list of records based when they were created or updated. This is useful if you want to get a list of records created after or before a particular point in time. 
-You can also use range query parameters for all date, integer and decimal properties.
+You can also get a list of records based when they were created or updated. This is useful if you want to get a list of records created after or before a particular point in time. You can also use range query parameters for all date, integer and decimal properties.
 {% endhint %}
 
-{% api-method method="get" host="https://spaces.nexudus.com/api" path="/crm/crmopportunities" %}
+{% api-method method="get" host="https://spaces.nexudus.com/api" path="/crm/reminders" %}
 {% api-method-summary %}
 By date range
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Gets a list of crmopportunities based on the date when they were created or updated.
+Gets a list of reminders based on the date when they were created or updated.
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
-
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
@@ -366,48 +250,48 @@ application/json
 
 {% api-method-query-parameters %}
 {% api-method-parameter name="CreatedOn" type="object" required=false %}
-?to\_CrmOpportunity\_CreatedOn=...
+?to\_Reminder\_CreatedOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="UpdatedOn" type="object" required=false %}
-?from\_CrmOpportunity\_CreatedOn=...
+?from\_Reminder\_CreatedOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="CreatedOn" type="object" required=false %}
-?from\_CrmOpportunity\_CreatedOn=...
+?from\_Reminder\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="DueDate" type="datetime" required=false %}
-?from\_CrmOpportunity\_DueDate=...
-{% endapi-method-parameter %}
-{% api-method-parameter name="DueDate" type="datetime" required=false %}
-?to\_CrmOpportunity\_DueDate=...
-{% endapi-method-parameter %}
-{% api-method-parameter name="Value" type="decimal" required=false %}
-?from\_CrmOpportunity\_Value=...
-{% endapi-method-parameter %}
-{% api-method-parameter name="Value" type="decimal" required=false %}
-?to\_CrmOpportunity\_Value=...
-{% endapi-method-parameter %}
-{% api-method-parameter name="WonOn" type="datetime" required=false %}
-?from\_CrmOpportunity\_WonOn=...
-{% endapi-method-parameter %}
-{% api-method-parameter name="WonOn" type="datetime" required=false %}
-?to\_CrmOpportunity\_WonOn=...
-{% endapi-method-parameter %}
-{% api-method-parameter name="LostOn" type="datetime" required=false %}
-?from\_CrmOpportunity\_LostOn=...
-{% endapi-method-parameter %}
-{% api-method-parameter name="LostOn" type="datetime" required=false %}
-?to\_CrmOpportunity\_LostOn=...
-{% endapi-method-parameter %}
-{% api-method-parameter name="Position" type="decimal" required=false %}
-?from\_CrmOpportunity\_Position=...
-{% endapi-method-parameter %}
-{% api-method-parameter name="Position" type="decimal" required=false %}
-?to\_CrmOpportunity\_Position=...
+{% api-method-parameter name="ReminderDate" type="datetime" required=false %}
+?from\_Reminder\_ReminderDate=...
 {% endapi-method-parameter %}
 
+{% api-method-parameter name="ReminderDate" type="datetime" required=false %}
+?to\_Reminder\_ReminderDate=...
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="DaysAfterSignup" type="decimal" required=false %}
+?from\_Reminder\_DaysAfterSignup=...
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="DaysAfterSignup" type="decimal" required=false %}
+?to\_Reminder\_DaysAfterSignup=...
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="DaysAfterRenewal" type="decimal" required=false %}
+?from\_Reminder\_DaysAfterRenewal=...
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="DaysAfterRenewal" type="decimal" required=false %}
+?to\_Reminder\_DaysAfterRenewal=...
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="DaysBeforeRenewal" type="decimal" required=false %}
+?from\_Reminder\_DaysBeforeRenewal=...
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="DaysBeforeRenewal" type="decimal" required=false %}
+?to\_Reminder\_DaysBeforeRenewal=...
+{% endapi-method-parameter %}
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
 
@@ -420,23 +304,20 @@ application/json
 ```javascript
 {
     "Records": [{
-        "CrmBoardColumn": null,
+        "Business": null,
+        "Name": "Joe",
+        "ForAllContacts": false,
+        "ForAllMembers": false,
         "Coworker": null,
-        "Team": null,
-        "OpportunityType": null,
-        "Responsible": null,
-        "Referrer": null,
-        "Agent": null,
-        "Notes": "Notes",
-        "Completed": true,
-        "DueDate": null,
-        "Value": null,
-        "LeadSource": Nexudus.Coworking.Core.Enums.eCrmOpportunitySource.Other,
-        "LossReason": Nexudus.Coworking.Core.Enums.eCrmOpportunityLossReason.Other,
-        "Status": Nexudus.Coworking.Core.Enums.eCrmOpportunityStatus.InProgress,
-        "WonOn": null,
-        "LostOn": null,
-        "Position": 1,
+        "ReminderType": eReminderType.FixedDate,
+        "ReminderDate": null,
+        "DaysAfterSignup": null,
+        "Product": null,
+        "DaysAfterRenewal": null,
+        "DaysBeforeRenewal": null,
+        "ReminderAction": eReminderAction.SendEmail,
+        "Email": "joe@nexudus.com",
+        "CannedResponse": null,
     }],
     }],
     "CurrentPageSize": 25,
@@ -458,34 +339,34 @@ application/json
 {% endapi-method-spec %}
 {% endapi-method %}
 
-> 🔒 Requires user role `crmopportunity-list`
+> 🔒 Requires user role `reminder-list`
 
-{% api-method method="get" host="https://spaces.nexudus.com/api" path="/crm/crmopportunities/:id" %}
+{% api-method method="get" host="https://spaces.nexudus.com/api" path="/crm/reminders/:id" %}
 {% api-method-summary %}
 One by Id
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Gets one crmopportunity record.
+Gets one reminder record.
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="id" type="integer" required=true %}
+The ID of the reminder to fetch.
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
 
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
-
-{% api-method-path-parameters %}
-{% api-method-parameter name="id" type="integer" required=true %}
-The ID of the crmopportunity to fetch.
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
 {% endapi-method-request %}
 
 {% api-method-response %}
@@ -496,23 +377,20 @@ The ID of the crmopportunity to fetch.
 
 ```javascript
 {
-        "CrmBoardColumn": null,
+        "Business": null,
+        "Name": "Joe",
+        "ForAllContacts": false,
+        "ForAllMembers": false,
         "Coworker": null,
-        "Team": null,
-        "OpportunityType": null,
-        "Responsible": null,
-        "Referrer": null,
-        "Agent": null,
-        "Notes": "Notes",
-        "Completed": true,
-        "DueDate": null,
-        "Value": null,
-        "LeadSource": Nexudus.Coworking.Core.Enums.eCrmOpportunitySource.Other,
-        "LossReason": Nexudus.Coworking.Core.Enums.eCrmOpportunityLossReason.Other,
-        "Status": Nexudus.Coworking.Core.Enums.eCrmOpportunityStatus.InProgress,
-        "WonOn": null,
-        "LostOn": null,
-        "Position": 1,
+        "ReminderType": eReminderType.FixedDate,
+        "ReminderDate": null,
+        "DaysAfterSignup": null,
+        "Product": null,
+        "DaysAfterRenewal": null,
+        "DaysBeforeRenewal": null,
+        "ReminderAction": eReminderAction.SendEmail,
+        "Email": "joe@nexudus.com",
+        "CannedResponse": null,
 }
 ```
 {% endapi-method-response-example %}
@@ -522,7 +400,7 @@ The ID of the crmopportunity to fetch.
 
 {% endapi-method-response-example-description %}
 
-```
+```text
 "Not found"
 ```
 {% endapi-method-response-example %}
@@ -530,66 +408,86 @@ The ID of the crmopportunity to fetch.
 {% endapi-method-spec %}
 {% endapi-method %}
 
-> 🔒 Requires user role `crmopportunity-read`
+> 🔒 Requires user role `reminder-read`
 
-{% api-method method="post" host="https://spaces.nexudus.com/api" path="/crm/crmopportunities" %}
+{% api-method method="post" host="https://spaces.nexudus.com/api" path="/crm/reminders" %}
 {% api-method-summary %}
 Create
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Creates a new crmopportunity.
+Creates a new reminder.
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
-
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
 {% api-method-body-parameters %}
-{% api-method-parameter name="CrmBoardColumnId" type="int" required=true %}
+{% api-method-parameter name="BusinessId" type="int" required=true %}
+
 {% endapi-method-parameter %}
-{% api-method-parameter name="CoworkerId" type="int" required=true %}
+
+{% api-method-parameter name="Name" type="string" required=true %}
+
 {% endapi-method-parameter %}
-{% api-method-parameter name="TeamId" type="int" required=false %}
+
+{% api-method-parameter name="ForAllContacts" type="bool" required=false %}
+
 {% endapi-method-parameter %}
-{% api-method-parameter name="OpportunityTypeId" type="int" required=false %}
+
+{% api-method-parameter name="ForAllMembers" type="bool" required=false %}
+
 {% endapi-method-parameter %}
-{% api-method-parameter name="ResponsibleId" type="int" required=false %}
+
+{% api-method-parameter name="CoworkerId" type="int" required=false %}
+
 {% endapi-method-parameter %}
-{% api-method-parameter name="ReferrerId" type="int" required=false %}
+
+{% api-method-parameter name="ReminderType" type="enum" required=false %}
+
 {% endapi-method-parameter %}
-{% api-method-parameter name="AgentId" type="int" required=false %}
+
+{% api-method-parameter name="ReminderDate" type="DateTime?" required=false %}
+
 {% endapi-method-parameter %}
-{% api-method-parameter name="Notes" type="string" required=false %}
+
+{% api-method-parameter name="DaysAfterSignup" type="int?" required=false %}
+
 {% endapi-method-parameter %}
-{% api-method-parameter name="Completed" type="bool" required=false %}
+
+{% api-method-parameter name="ProductId" type="int" required=false %}
+
 {% endapi-method-parameter %}
-{% api-method-parameter name="DueDate" type="DateTime?" required=false %}
+
+{% api-method-parameter name="DaysAfterRenewal" type="int?" required=false %}
+
 {% endapi-method-parameter %}
-{% api-method-parameter name="Value" type="decimal?" required=false %}
+
+{% api-method-parameter name="DaysBeforeRenewal" type="int?" required=false %}
+
 {% endapi-method-parameter %}
-{% api-method-parameter name="LeadSource" type="enum" required=false %}
+
+{% api-method-parameter name="ReminderAction" type="enum" required=false %}
+
 {% endapi-method-parameter %}
-{% api-method-parameter name="LossReason" type="enum" required=false %}
+
+{% api-method-parameter name="Email" type="string" required=false %}
+
 {% endapi-method-parameter %}
-{% api-method-parameter name="Status" type="enum" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="WonOn" type="DateTime?" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="LostOn" type="DateTime?" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="Position" type="int" required=true %}
+
+{% api-method-parameter name="CannedResponseId" type="int" required=false %}
+
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
-
 {% endapi-method-request %}
 
 {% api-method-response %}
@@ -612,7 +510,7 @@ application/json
 
 {% api-method-response-example httpCode=400 %}
 {% api-method-response-example-description %}
-_This response is an example, errors and messages will follow this structure but keys and descriptions may be different for each record._  
+_This response is an example, errors and messages will follow this structure but keys and descriptions may be different for each record._
 {% endapi-method-response-example-description %}
 
 ```javascript
@@ -662,71 +560,90 @@ _This response is an example, errors and messages will follow this structure but
 {% endapi-method-spec %}
 {% endapi-method %}
 
-> 🔒 Requires user role `crmopportunity-create`
+> 🔒 Requires user role `reminder-create`
 
-{% api-method method="put" host="https://spaces.nexudus.com/api" path="/crm/crmopportunities" %}
+{% api-method method="put" host="https://spaces.nexudus.com/api" path="/crm/reminders" %}
 {% api-method-summary %}
 Update
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Updates and existing crmopportunity.
-  
-Required User Role: `crmopportunity-edit`
+Updates and existing reminder.Required User Role: `reminder-edit`
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="Id" type="integer" required=true %}
+The id of the reminder to update
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
 
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
-{% api-method-path-parameters %}
-{% api-method-parameter name="Id" type="integer" required=true %}
-The id of the crmopportunity to update
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
-
 {% api-method-body-parameters %}
-{% api-method-parameter name="CrmBoardColumnId" type="int" required=true %}
+{% api-method-parameter name="BusinessId" type="int" required=true %}
+
 {% endapi-method-parameter %}
-{% api-method-parameter name="CoworkerId" type="int" required=true %}
+
+{% api-method-parameter name="Name" type="string" required=true %}
+
 {% endapi-method-parameter %}
-{% api-method-parameter name="TeamId" type="int" required=false %}
+
+{% api-method-parameter name="ForAllContacts" type="bool" required=false %}
+
 {% endapi-method-parameter %}
-{% api-method-parameter name="OpportunityTypeId" type="int" required=false %}
+
+{% api-method-parameter name="ForAllMembers" type="bool" required=false %}
+
 {% endapi-method-parameter %}
-{% api-method-parameter name="ResponsibleId" type="int" required=false %}
+
+{% api-method-parameter name="CoworkerId" type="int" required=false %}
+
 {% endapi-method-parameter %}
-{% api-method-parameter name="ReferrerId" type="int" required=false %}
+
+{% api-method-parameter name="ReminderType" type="enum" required=false %}
+
 {% endapi-method-parameter %}
-{% api-method-parameter name="AgentId" type="int" required=false %}
+
+{% api-method-parameter name="ReminderDate" type="DateTime?" required=false %}
+
 {% endapi-method-parameter %}
-{% api-method-parameter name="Notes" type="string" required=false %}
+
+{% api-method-parameter name="DaysAfterSignup" type="int?" required=false %}
+
 {% endapi-method-parameter %}
-{% api-method-parameter name="Completed" type="bool" required=false %}
+
+{% api-method-parameter name="ProductId" type="int" required=false %}
+
 {% endapi-method-parameter %}
-{% api-method-parameter name="DueDate" type="DateTime?" required=false %}
+
+{% api-method-parameter name="DaysAfterRenewal" type="int?" required=false %}
+
 {% endapi-method-parameter %}
-{% api-method-parameter name="Value" type="decimal?" required=false %}
+
+{% api-method-parameter name="DaysBeforeRenewal" type="int?" required=false %}
+
 {% endapi-method-parameter %}
-{% api-method-parameter name="LeadSource" type="enum" required=false %}
+
+{% api-method-parameter name="ReminderAction" type="enum" required=false %}
+
 {% endapi-method-parameter %}
-{% api-method-parameter name="LossReason" type="enum" required=false %}
+
+{% api-method-parameter name="Email" type="string" required=false %}
+
 {% endapi-method-parameter %}
-{% api-method-parameter name="Status" type="enum" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="WonOn" type="DateTime?" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="LostOn" type="DateTime?" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="Position" type="int" required=true %}
+
+{% api-method-parameter name="CannedResponseId" type="int" required=false %}
+
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
@@ -753,7 +670,7 @@ The id of the crmopportunity to update
 
 {% api-method-response-example httpCode=400 %}
 {% api-method-response-example-description %}
-_This response is an example, errors and messages will follow this structure but keys and descriptions may be different for each record._  
+_This response is an example, errors and messages will follow this structure but keys and descriptions may be different for each record._
 {% endapi-method-response-example-description %}
 
 ```javascript
@@ -803,37 +720,34 @@ _This response is an example, errors and messages will follow this structure but
 {% endapi-method-spec %}
 {% endapi-method %}
 
-> 🔒 Requires user role `crmopportunity-edit`
+> 🔒 Requires user role `reminder-edit`
 
-
-{% api-method method="delete" host="https://spaces.nexudus.com/api" path="/crm/crmopportunities/:id" %}
+{% api-method method="delete" host="https://spaces.nexudus.com/api" path="/crm/reminders/:id" %}
 {% api-method-summary %}
 Delete
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Deletes a crmopportunity.  
-  
-Required User Roles: `crmopportunity-delete`
+Deletes a reminder.Required User Roles: `reminder-delete`
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
-
-{% api-method-headers %}
-{% api-method-parameter name="Authorization" type="string" required=true %}
-Basic Authentication token. Base64 encoding of 'username:password'.
-{% endapi-method-parameter %}
-{% api-method-parameter name="Content" type="string" required=true %}
-application/json
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
-
 {% api-method-path-parameters %}
 {% api-method-parameter name="Id" type="integer" required=false %}
 
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
+
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+Basic Authentication token. Base64 encoding of 'username:password'.
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="Content" type="string" required=true %}
+application/json
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
 {% endapi-method-request %}
 
 {% api-method-response %}
@@ -861,7 +775,7 @@ application/json
 
 {% endapi-method-response-example-description %}
 
-```
+```text
 "Not found"
 ```
 {% endapi-method-response-example %}
@@ -881,14 +795,11 @@ application/json
 {% endapi-method-spec %}
 {% endapi-method %}
 
-
-
-> 🔒 Requires user role `crmopportunity-delete`
-
+> 🔒 Requires user role `reminder-delete`
 
 ## Commands
 
-Commands allow to perform actions against one or more crmopportunity records. Some commands accept only one record while others can run an action for a number of records at the same time.  Each command has metadata with information about how it can be used and the amount of records, if any, it needs to run.
+Commands allow to perform actions against one or more reminder records. Some commands accept only one record while others can run an action for a number of records at the same time. Each command has metadata with information about how it can be used and the amount of records, if any, it needs to run.
 
 > ```javascript
 > {
@@ -899,22 +810,22 @@ Commands allow to perform actions against one or more crmopportunity records. So
 > }
 > ```
 
-{% api-method method="get" host="https://spaces.nexudus.com/api" path="/crm/crmopportunities/commands" %}
+{% api-method method="get" host="https://spaces.nexudus.com/api" path="/crm/reminders/commands" %}
 {% api-method-summary %}
 Commands
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Get all commands available to run for crmopportunity records.
+Get all commands available to run for reminder records.
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
-
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
@@ -924,7 +835,7 @@ application/json
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
 {% api-method-response-example-description %}
-_This response is an example._  
+_This response is an example._
 {% endapi-method-response-example-description %}
 
 ```javascript
@@ -957,7 +868,7 @@ _This response is an example._
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="get" host="https://spaces.nexudus.com/api" path="/crm/crmopportunities/runcommand" %}
+{% api-method method="get" host="https://spaces.nexudus.com/api" path="/crm/reminders/runcommand" %}
 {% api-method-summary %}
 Run Command
 {% endapi-method-summary %}
@@ -968,11 +879,11 @@ Run Command
 
 {% api-method-spec %}
 {% api-method-request %}
-
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
@@ -984,21 +895,17 @@ The command Key defining the command to run. `"COMMAND_KEY_1"`
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Parameters" type="array" required=false %}
-A list of object with the structure below. The parameters required for each command are returned in the "RequiresParameters" array return by the "commands" endpoint.  
-  
-`[  
-   {  
-      "Name": "Name",   
-      "Type":"Type",   
-      "Value":recordId  
-    }  
+A list of object with the structure below. The parameters required for each command are returned in the "RequiresParameters" array return by the "commands" endpoint.`[    
+{    
+"Name": "Name",    
+"Type":"Type",    
+"Value":recordId    
+}    
 ]`
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Ids" type="array" required=true %}
-A list of integer IDs for each of the records to run this command for.  
-  
-`[987654321, 123565978]`
+A list of integer IDs for each of the records to run this command for.`[987654321, 123565978]`
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
@@ -1006,7 +913,7 @@ A list of integer IDs for each of the records to run this command for.
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
 {% api-method-response-example-description %}
-_Commands also return a status 200 when they fail to process one or more of the records. Use the 'WasSuccessful'  property to know if the command run succeeded._  
+_Commands also return a status 200 when they fail to process one or more of the records. Use the 'WasSuccessful' property to know if the command run succeeded._
 {% endapi-method-response-example-description %}
 
 ```javascript
@@ -1023,18 +930,16 @@ _Commands also return a status 200 when they fail to process one or more of the 
 {% endapi-method-spec %}
 {% endapi-method %}
 
-> 🔒 Requires user role `crmopportunity-edit`
+> 🔒 Requires user role `reminder-edit`
 
 ## Binary files
 
 The following endpoints return binary data. Check the `ContentType` header to understand the type of file being returned in the response stream.
 
-
 ## Related Entities
-* [CrmBoardColumn](../crm/crmboardcolumn.md)
+
+* [Business](../sys/business.md)
 * [Coworker](../spaces/coworker.md)
-* [Team](../spaces/team.md)
-* [OpportunityType](../crm/opportunitytype.md)
-* [User](../sys/user.md)
-* [Coworker](../spaces/coworker.md)
-* [Coworker](../spaces/coworker.md)
+* [Product](../billing/product.md)
+* [CannedResponse](cannedresponse.md)
+

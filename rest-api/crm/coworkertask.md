@@ -1,26 +1,27 @@
-﻿{% api-method method="get" host="https://spaces.nexudus.com/api" path="/crm/emailaccounts" %}
+# CoworkerTask
+
+{% api-method method="get" host="https://spaces.nexudus.com/api" path="/crm/coworkertasks" %}
 {% api-method-summary %}
 Find
 {% endapi-method-summary %}
 
 {% api-method-description %}
-This endpoint allows you to GET a list of emailaccounts based on one or more filter querystring parameters.
+This endpoint allows you to GET a list of coworkertasks based on one or more filter querystring parameters.
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
-
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
 {% api-method-query-parameters %}
-
 {% api-method-parameter name="Id" type="int" %}
 ?Id=...
 {% endapi-method-parameter %}
@@ -30,134 +31,78 @@ application/json
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="SystemId" type="string" %}
-?EmailAccount\_SystemId=...
+?CoworkerTask\_SystemId=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="Business" type="Business" %}
-?EmailAccount\_Business=...
+?CoworkerTask\_Business=...
 {% endapi-method-parameter %}
 
-
-{% api-method-parameter name="DisplayName" type="string" %}
-?EmailAccount\_DisplayName=...
+{% api-method-parameter name="Coworker" type="Coworker" %}
+?CoworkerTask\_Coworker=...
 {% endapi-method-parameter %}
 
-
-{% api-method-parameter name="EmailAddress" type="string" %}
-?EmailAccount\_EmailAddress=...
+{% api-method-parameter name="Name" type="string" %}
+?CoworkerTask\_Name=...
 {% endapi-method-parameter %}
 
-
-{% api-method-parameter name="Active" type="bool" %}
-?EmailAccount\_Active=...
+{% api-method-parameter name="Notes" type="string" %}
+?CoworkerTask\_Notes=...
 {% endapi-method-parameter %}
 
-
-{% api-method-parameter name="SendNotificationOnNewMessages" type="bool" %}
-?EmailAccount\_SendNotificationOnNewMessages=...
+{% api-method-parameter name="TaskListName" type="string" %}
+?CoworkerTask\_TaskListName=...
 {% endapi-method-parameter %}
 
-
-{% api-method-parameter name="NotificationEmailAddress" type="string" %}
-?EmailAccount\_NotificationEmailAddress=...
+{% api-method-parameter name="Completed" type="bool" %}
+?CoworkerTask\_Completed=...
 {% endapi-method-parameter %}
 
-
-{% api-method-parameter name="IncomingServer" type="string" %}
-?EmailAccount\_IncomingServer=...
+{% api-method-parameter name="DueDate" type="DateTime?" %}
+?CoworkerTask\_DueDate=...
 {% endapi-method-parameter %}
 
-
-{% api-method-parameter name="IncomingServerType" type="enum" %}
-?EmailAccount\_IncomingServerType=...
+{% api-method-parameter name="Responsible" type="User" %}
+?CoworkerTask\_Responsible=...
 {% endapi-method-parameter %}
 
-
-{% api-method-parameter name="IncomingServerPort" type="int" %}
-?EmailAccount\_IncomingServerPort=...
+{% api-method-parameter name="NotifyByEmail" type="bool" %}
+?CoworkerTask\_NotifyByEmail=...
 {% endapi-method-parameter %}
 
-
-{% api-method-parameter name="IncomingServerSSL" type="bool" %}
-?EmailAccount\_IncomingServerSSL=...
+{% api-method-parameter name="DisplayToEveryone" type="bool" %}
+?CoworkerTask\_DisplayToEveryone=...
 {% endapi-method-parameter %}
 
-
-{% api-method-parameter name="IncomingServerUsername" type="string" %}
-?EmailAccount\_IncomingServerUsername=...
+{% api-method-parameter name="Coworker\_FullName" type="string" %}
+?CoworkerTask\_Coworker\_FullName=...
 {% endapi-method-parameter %}
 
-
-{% api-method-parameter name="IncomingServerPassword" type="string" %}
-?EmailAccount\_IncomingServerPassword=...
+{% api-method-parameter name="Responsible\_FullName" type="string" %}
+?CoworkerTask\_Responsible\_FullName=...
 {% endapi-method-parameter %}
-
-
-{% api-method-parameter name="DeleteMessageSettings" type="enum" %}
-?EmailAccount\_DeleteMessageSettings=...
-{% endapi-method-parameter %}
-
-
-{% api-method-parameter name="OutgoingServer" type="string" %}
-?EmailAccount\_OutgoingServer=...
-{% endapi-method-parameter %}
-
-
-{% api-method-parameter name="OutgoingServerPort" type="int" %}
-?EmailAccount\_OutgoingServerPort=...
-{% endapi-method-parameter %}
-
-
-{% api-method-parameter name="OutgoingServerSSL" type="bool" %}
-?EmailAccount\_OutgoingServerSSL=...
-{% endapi-method-parameter %}
-
-
-{% api-method-parameter name="OutgoingServerUsername" type="string" %}
-?EmailAccount\_OutgoingServerUsername=...
-{% endapi-method-parameter %}
-
-
-{% api-method-parameter name="OutgoingServerPassword" type="string" %}
-?EmailAccount\_OutgoingServerPassword=...
-{% endapi-method-parameter %}
-
-
-{% api-method-parameter name="ReplyToEmail" type="string" %}
-?EmailAccount\_ReplyToEmail=...
-{% endapi-method-parameter %}
-
-
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
 
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
 
+{% endapi-method-response-example-description %}
 
 ```javascript
 {
     "Records": [{
         "Business": null,
-        "DisplayName": "Joe",
-        "EmailAddress": "joe@example.com",
-        "Active": true,
-        "SendNotificationOnNewMessages": true,
-        "NotificationEmailAddress": "joe@example.com",
-        "IncomingServer": "mail.example.com",
-        "IncomingServerType": Nexudus.Coworking.Core.Enums.eEmailServerType.Imap,
-        "IncomingServerPort": 995,
-        "IncomingServerSSL": true,
-        "IncomingServerUsername": "username",
-        "IncomingServerPassword": "password",
-        "DeleteMessageSettings": Nexudus.Coworking.Core.Enums.eMessageDeletionPolicy.DontDelete,
-        "OutgoingServer": "mail.example.com",
-        "OutgoingServerPort": 995,
-        "OutgoingServerSSL": true,
-        "OutgoingServerUsername": "username",
-        "OutgoingServerPassword": "password",
-        "ReplyToEmail": "mail.example.com",
+        "Coworker": null,
+        "Name": "00001",
+        "Notes": "Notes",
+        "TaskListName": "null",
+        "Completed": true,
+        "DueDate": null,
+        "Responsible": null,
+        "NotifyByEmail": true,
+        "DisplayToEveryone": true,
     }],
     "CurrentPageSize": 25,
     "CurrentPage": 1,
@@ -172,31 +117,30 @@ application/json
     "TotalItems": 60,
     "TotalPages": 3
 }
-
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
 
-> 🔒 Requires user role `emailaccount-list`
+> 🔒 Requires user role `coworkertask-list`
 
-{% api-method method="get" host="https://spaces.nexudus.com/api" path="/crm/emailaccounts" %}
+{% api-method method="get" host="https://spaces.nexudus.com/api" path="/crm/coworkertasks" %}
 {% api-method-summary %}
 List
 {% endapi-method-summary %}
 
 {% api-method-description %}
-This endpoint allows you to GET a list of emailaccounts.
+This endpoint allows you to GET a list of coworkertasks.
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
-
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
@@ -231,24 +175,15 @@ size=25 \(maximum=1000\)
 {
     "Records": [{
         "Business": null,
-        "DisplayName": "Joe",
-        "EmailAddress": "joe@example.com",
-        "Active": true,
-        "SendNotificationOnNewMessages": true,
-        "NotificationEmailAddress": "joe@example.com",
-        "IncomingServer": "mail.example.com",
-        "IncomingServerType": Nexudus.Coworking.Core.Enums.eEmailServerType.Imap,
-        "IncomingServerPort": 995,
-        "IncomingServerSSL": true,
-        "IncomingServerUsername": "username",
-        "IncomingServerPassword": "password",
-        "DeleteMessageSettings": Nexudus.Coworking.Core.Enums.eMessageDeletionPolicy.DontDelete,
-        "OutgoingServer": "mail.example.com",
-        "OutgoingServerPort": 995,
-        "OutgoingServerSSL": true,
-        "OutgoingServerUsername": "username",
-        "OutgoingServerPassword": "password",
-        "ReplyToEmail": "mail.example.com",
+        "Coworker": null,
+        "Name": "00001",
+        "Notes": "Notes",
+        "TaskListName": "null",
+        "Completed": true,
+        "DueDate": null,
+        "Responsible": null,
+        "NotifyByEmail": true,
+        "DisplayToEveryone": true,
     }],
     }],
     "CurrentPageSize": 25,
@@ -270,29 +205,28 @@ size=25 \(maximum=1000\)
 {% endapi-method-spec %}
 {% endapi-method %}
 
-> 🔒 Requires user role `emailaccount-list`
+> 🔒 Requires user role `coworkertask-list`
 
 {% hint style="info" %}
-You can also get a list of records based when they were created or updated. This is useful if you want to get a list of records created after or before a particular point in time. 
-You can also use range query parameters for all date, integer and decimal properties.
+You can also get a list of records based when they were created or updated. This is useful if you want to get a list of records created after or before a particular point in time. You can also use range query parameters for all date, integer and decimal properties.
 {% endhint %}
 
-{% api-method method="get" host="https://spaces.nexudus.com/api" path="/crm/emailaccounts" %}
+{% api-method method="get" host="https://spaces.nexudus.com/api" path="/crm/coworkertasks" %}
 {% api-method-summary %}
 By date range
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Gets a list of emailaccounts based on the date when they were created or updated.
+Gets a list of coworkertasks based on the date when they were created or updated.
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
-
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
@@ -300,30 +234,24 @@ application/json
 
 {% api-method-query-parameters %}
 {% api-method-parameter name="CreatedOn" type="object" required=false %}
-?to\_EmailAccount\_CreatedOn=...
+?to\_CoworkerTask\_CreatedOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="UpdatedOn" type="object" required=false %}
-?from\_EmailAccount\_CreatedOn=...
+?from\_CoworkerTask\_CreatedOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="CreatedOn" type="object" required=false %}
-?from\_EmailAccount\_CreatedOn=...
+?from\_CoworkerTask\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="IncomingServerPort" type="decimal" required=false %}
-?from\_EmailAccount\_IncomingServerPort=...
-{% endapi-method-parameter %}
-{% api-method-parameter name="IncomingServerPort" type="decimal" required=false %}
-?to\_EmailAccount\_IncomingServerPort=...
-{% endapi-method-parameter %}
-{% api-method-parameter name="OutgoingServerPort" type="decimal" required=false %}
-?from\_EmailAccount\_OutgoingServerPort=...
-{% endapi-method-parameter %}
-{% api-method-parameter name="OutgoingServerPort" type="decimal" required=false %}
-?to\_EmailAccount\_OutgoingServerPort=...
+{% api-method-parameter name="DueDate" type="datetime" required=false %}
+?from\_CoworkerTask\_DueDate=...
 {% endapi-method-parameter %}
 
+{% api-method-parameter name="DueDate" type="datetime" required=false %}
+?to\_CoworkerTask\_DueDate=...
+{% endapi-method-parameter %}
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
 
@@ -337,24 +265,15 @@ application/json
 {
     "Records": [{
         "Business": null,
-        "DisplayName": "Joe",
-        "EmailAddress": "joe@example.com",
-        "Active": true,
-        "SendNotificationOnNewMessages": true,
-        "NotificationEmailAddress": "joe@example.com",
-        "IncomingServer": "mail.example.com",
-        "IncomingServerType": Nexudus.Coworking.Core.Enums.eEmailServerType.Imap,
-        "IncomingServerPort": 995,
-        "IncomingServerSSL": true,
-        "IncomingServerUsername": "username",
-        "IncomingServerPassword": "password",
-        "DeleteMessageSettings": Nexudus.Coworking.Core.Enums.eMessageDeletionPolicy.DontDelete,
-        "OutgoingServer": "mail.example.com",
-        "OutgoingServerPort": 995,
-        "OutgoingServerSSL": true,
-        "OutgoingServerUsername": "username",
-        "OutgoingServerPassword": "password",
-        "ReplyToEmail": "mail.example.com",
+        "Coworker": null,
+        "Name": "00001",
+        "Notes": "Notes",
+        "TaskListName": "null",
+        "Completed": true,
+        "DueDate": null,
+        "Responsible": null,
+        "NotifyByEmail": true,
+        "DisplayToEveryone": true,
     }],
     }],
     "CurrentPageSize": 25,
@@ -376,34 +295,34 @@ application/json
 {% endapi-method-spec %}
 {% endapi-method %}
 
-> 🔒 Requires user role `emailaccount-list`
+> 🔒 Requires user role `coworkertask-list`
 
-{% api-method method="get" host="https://spaces.nexudus.com/api" path="/crm/emailaccounts/:id" %}
+{% api-method method="get" host="https://spaces.nexudus.com/api" path="/crm/coworkertasks/:id" %}
 {% api-method-summary %}
 One by Id
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Gets one emailaccount record.
+Gets one coworkertask record.
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="id" type="integer" required=true %}
+The ID of the coworkertask to fetch.
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
 
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
-
-{% api-method-path-parameters %}
-{% api-method-parameter name="id" type="integer" required=true %}
-The ID of the emailaccount to fetch.
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
 {% endapi-method-request %}
 
 {% api-method-response %}
@@ -415,24 +334,15 @@ The ID of the emailaccount to fetch.
 ```javascript
 {
         "Business": null,
-        "DisplayName": "Joe",
-        "EmailAddress": "joe@example.com",
-        "Active": true,
-        "SendNotificationOnNewMessages": true,
-        "NotificationEmailAddress": "joe@example.com",
-        "IncomingServer": "mail.example.com",
-        "IncomingServerType": Nexudus.Coworking.Core.Enums.eEmailServerType.Imap,
-        "IncomingServerPort": 995,
-        "IncomingServerSSL": true,
-        "IncomingServerUsername": "username",
-        "IncomingServerPassword": "password",
-        "DeleteMessageSettings": Nexudus.Coworking.Core.Enums.eMessageDeletionPolicy.DontDelete,
-        "OutgoingServer": "mail.example.com",
-        "OutgoingServerPort": 995,
-        "OutgoingServerSSL": true,
-        "OutgoingServerUsername": "username",
-        "OutgoingServerPassword": "password",
-        "ReplyToEmail": "mail.example.com",
+        "Coworker": null,
+        "Name": "00001",
+        "Notes": "Notes",
+        "TaskListName": "null",
+        "Completed": true,
+        "DueDate": null,
+        "Responsible": null,
+        "NotifyByEmail": true,
+        "DisplayToEveryone": true,
 }
 ```
 {% endapi-method-response-example %}
@@ -442,7 +352,7 @@ The ID of the emailaccount to fetch.
 
 {% endapi-method-response-example-description %}
 
-```
+```text
 "Not found"
 ```
 {% endapi-method-response-example %}
@@ -450,24 +360,24 @@ The ID of the emailaccount to fetch.
 {% endapi-method-spec %}
 {% endapi-method %}
 
-> 🔒 Requires user role `emailaccount-read`
+> 🔒 Requires user role `coworkertask-read`
 
-{% api-method method="post" host="https://spaces.nexudus.com/api" path="/crm/emailaccounts" %}
+{% api-method method="post" host="https://spaces.nexudus.com/api" path="/crm/coworkertasks" %}
 {% api-method-summary %}
 Create
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Creates a new emailaccount.
+Creates a new coworkertask.
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
-
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
@@ -475,45 +385,45 @@ application/json
 
 {% api-method-body-parameters %}
 {% api-method-parameter name="BusinessId" type="int" required=true %}
+
 {% endapi-method-parameter %}
-{% api-method-parameter name="DisplayName" type="string" required=true %}
+
+{% api-method-parameter name="CoworkerId" type="int" required=true %}
+
 {% endapi-method-parameter %}
-{% api-method-parameter name="EmailAddress" type="string" required=true %}
+
+{% api-method-parameter name="Name" type="string" required=true %}
+
 {% endapi-method-parameter %}
-{% api-method-parameter name="Active" type="bool" required=false %}
+
+{% api-method-parameter name="Notes" type="string" required=false %}
+
 {% endapi-method-parameter %}
-{% api-method-parameter name="SendNotificationOnNewMessages" type="bool" required=false %}
+
+{% api-method-parameter name="TaskListName" type="string" required=false %}
+
 {% endapi-method-parameter %}
-{% api-method-parameter name="NotificationEmailAddress" type="string" required=false %}
+
+{% api-method-parameter name="Completed" type="bool" required=false %}
+
 {% endapi-method-parameter %}
-{% api-method-parameter name="IncomingServer" type="string" required=true %}
+
+{% api-method-parameter name="DueDate" type="DateTime?" required=false %}
+
 {% endapi-method-parameter %}
-{% api-method-parameter name="IncomingServerType" type="enum" required=false %}
+
+{% api-method-parameter name="ResponsibleId" type="int" required=true %}
+
 {% endapi-method-parameter %}
-{% api-method-parameter name="IncomingServerPort" type="int" required=true %}
+
+{% api-method-parameter name="NotifyByEmail" type="bool" required=false %}
+
 {% endapi-method-parameter %}
-{% api-method-parameter name="IncomingServerSSL" type="bool" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="IncomingServerUsername" type="string" required=true %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="IncomingServerPassword" type="string" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="DeleteMessageSettings" type="enum" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="OutgoingServer" type="string" required=true %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="OutgoingServerPort" type="int" required=true %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="OutgoingServerSSL" type="bool" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="OutgoingServerUsername" type="string" required=true %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="OutgoingServerPassword" type="string" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="ReplyToEmail" type="string" required=false %}
+
+{% api-method-parameter name="DisplayToEveryone" type="bool" required=false %}
+
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
-
 {% endapi-method-request %}
 
 {% api-method-response %}
@@ -536,7 +446,7 @@ application/json
 
 {% api-method-response-example httpCode=400 %}
 {% api-method-response-example-description %}
-_This response is an example, errors and messages will follow this structure but keys and descriptions may be different for each record._  
+_This response is an example, errors and messages will follow this structure but keys and descriptions may be different for each record._
 {% endapi-method-response-example-description %}
 
 ```javascript
@@ -586,75 +496,70 @@ _This response is an example, errors and messages will follow this structure but
 {% endapi-method-spec %}
 {% endapi-method %}
 
-> 🔒 Requires user role `emailaccount-create`
+> 🔒 Requires user role `coworkertask-create`
 
-{% api-method method="put" host="https://spaces.nexudus.com/api" path="/crm/emailaccounts" %}
+{% api-method method="put" host="https://spaces.nexudus.com/api" path="/crm/coworkertasks" %}
 {% api-method-summary %}
 Update
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Updates and existing emailaccount.
-  
-Required User Role: `emailaccount-edit`
+Updates and existing coworkertask.Required User Role: `coworkertask-edit`
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="Id" type="integer" required=true %}
+The id of the coworkertask to update
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
 
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
-{% api-method-path-parameters %}
-{% api-method-parameter name="Id" type="integer" required=true %}
-The id of the emailaccount to update
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
-
 {% api-method-body-parameters %}
 {% api-method-parameter name="BusinessId" type="int" required=true %}
+
 {% endapi-method-parameter %}
-{% api-method-parameter name="DisplayName" type="string" required=true %}
+
+{% api-method-parameter name="CoworkerId" type="int" required=true %}
+
 {% endapi-method-parameter %}
-{% api-method-parameter name="EmailAddress" type="string" required=true %}
+
+{% api-method-parameter name="Name" type="string" required=true %}
+
 {% endapi-method-parameter %}
-{% api-method-parameter name="Active" type="bool" required=false %}
+
+{% api-method-parameter name="Notes" type="string" required=false %}
+
 {% endapi-method-parameter %}
-{% api-method-parameter name="SendNotificationOnNewMessages" type="bool" required=false %}
+
+{% api-method-parameter name="Completed" type="bool" required=false %}
+
 {% endapi-method-parameter %}
-{% api-method-parameter name="NotificationEmailAddress" type="string" required=false %}
+
+{% api-method-parameter name="DueDate" type="DateTime?" required=false %}
+
 {% endapi-method-parameter %}
-{% api-method-parameter name="IncomingServer" type="string" required=true %}
+
+{% api-method-parameter name="ResponsibleId" type="int" required=true %}
+
 {% endapi-method-parameter %}
-{% api-method-parameter name="IncomingServerType" type="enum" required=false %}
+
+{% api-method-parameter name="NotifyByEmail" type="bool" required=false %}
+
 {% endapi-method-parameter %}
-{% api-method-parameter name="IncomingServerPort" type="int" required=true %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="IncomingServerSSL" type="bool" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="IncomingServerUsername" type="string" required=true %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="IncomingServerPassword" type="string" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="DeleteMessageSettings" type="enum" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="OutgoingServer" type="string" required=true %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="OutgoingServerPort" type="int" required=true %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="OutgoingServerSSL" type="bool" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="OutgoingServerUsername" type="string" required=true %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="OutgoingServerPassword" type="string" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="ReplyToEmail" type="string" required=false %}
+
+{% api-method-parameter name="DisplayToEveryone" type="bool" required=false %}
+
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
@@ -681,7 +586,7 @@ The id of the emailaccount to update
 
 {% api-method-response-example httpCode=400 %}
 {% api-method-response-example-description %}
-_This response is an example, errors and messages will follow this structure but keys and descriptions may be different for each record._  
+_This response is an example, errors and messages will follow this structure but keys and descriptions may be different for each record._
 {% endapi-method-response-example-description %}
 
 ```javascript
@@ -731,37 +636,34 @@ _This response is an example, errors and messages will follow this structure but
 {% endapi-method-spec %}
 {% endapi-method %}
 
-> 🔒 Requires user role `emailaccount-edit`
+> 🔒 Requires user role `coworkertask-edit`
 
-
-{% api-method method="delete" host="https://spaces.nexudus.com/api" path="/crm/emailaccounts/:id" %}
+{% api-method method="delete" host="https://spaces.nexudus.com/api" path="/crm/coworkertasks/:id" %}
 {% api-method-summary %}
 Delete
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Deletes a emailaccount.  
-  
-Required User Roles: `emailaccount-delete`
+Deletes a coworkertask.Required User Roles: `coworkertask-delete`
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
-
-{% api-method-headers %}
-{% api-method-parameter name="Authorization" type="string" required=true %}
-Basic Authentication token. Base64 encoding of 'username:password'.
-{% endapi-method-parameter %}
-{% api-method-parameter name="Content" type="string" required=true %}
-application/json
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
-
 {% api-method-path-parameters %}
 {% api-method-parameter name="Id" type="integer" required=false %}
 
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
+
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+Basic Authentication token. Base64 encoding of 'username:password'.
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="Content" type="string" required=true %}
+application/json
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
 {% endapi-method-request %}
 
 {% api-method-response %}
@@ -789,7 +691,7 @@ application/json
 
 {% endapi-method-response-example-description %}
 
-```
+```text
 "Not found"
 ```
 {% endapi-method-response-example %}
@@ -809,14 +711,11 @@ application/json
 {% endapi-method-spec %}
 {% endapi-method %}
 
-
-
-> 🔒 Requires user role `emailaccount-delete`
-
+> 🔒 Requires user role `coworkertask-delete`
 
 ## Commands
 
-Commands allow to perform actions against one or more emailaccount records. Some commands accept only one record while others can run an action for a number of records at the same time.  Each command has metadata with information about how it can be used and the amount of records, if any, it needs to run.
+Commands allow to perform actions against one or more coworkertask records. Some commands accept only one record while others can run an action for a number of records at the same time. Each command has metadata with information about how it can be used and the amount of records, if any, it needs to run.
 
 > ```javascript
 > {
@@ -827,22 +726,22 @@ Commands allow to perform actions against one or more emailaccount records. Some
 > }
 > ```
 
-{% api-method method="get" host="https://spaces.nexudus.com/api" path="/crm/emailaccounts/commands" %}
+{% api-method method="get" host="https://spaces.nexudus.com/api" path="/crm/coworkertasks/commands" %}
 {% api-method-summary %}
 Commands
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Get all commands available to run for emailaccount records.
+Get all commands available to run for coworkertask records.
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
-
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
@@ -852,7 +751,7 @@ application/json
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
 {% api-method-response-example-description %}
-_This response is an example._  
+_This response is an example._
 {% endapi-method-response-example-description %}
 
 ```javascript
@@ -885,7 +784,7 @@ _This response is an example._
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="get" host="https://spaces.nexudus.com/api" path="/crm/emailaccounts/runcommand" %}
+{% api-method method="get" host="https://spaces.nexudus.com/api" path="/crm/coworkertasks/runcommand" %}
 {% api-method-summary %}
 Run Command
 {% endapi-method-summary %}
@@ -896,11 +795,11 @@ Run Command
 
 {% api-method-spec %}
 {% api-method-request %}
-
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
@@ -912,21 +811,17 @@ The command Key defining the command to run. `"COMMAND_KEY_1"`
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Parameters" type="array" required=false %}
-A list of object with the structure below. The parameters required for each command are returned in the "RequiresParameters" array return by the "commands" endpoint.  
-  
-`[  
-   {  
-      "Name": "Name",   
-      "Type":"Type",   
-      "Value":recordId  
-    }  
+A list of object with the structure below. The parameters required for each command are returned in the "RequiresParameters" array return by the "commands" endpoint.`[    
+{    
+"Name": "Name",    
+"Type":"Type",    
+"Value":recordId    
+}    
 ]`
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Ids" type="array" required=true %}
-A list of integer IDs for each of the records to run this command for.  
-  
-`[987654321, 123565978]`
+A list of integer IDs for each of the records to run this command for.`[987654321, 123565978]`
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
@@ -934,7 +829,7 @@ A list of integer IDs for each of the records to run this command for.
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
 {% api-method-response-example-description %}
-_Commands also return a status 200 when they fail to process one or more of the records. Use the 'WasSuccessful'  property to know if the command run succeeded._  
+_Commands also return a status 200 when they fail to process one or more of the records. Use the 'WasSuccessful' property to know if the command run succeeded._
 {% endapi-method-response-example-description %}
 
 ```javascript
@@ -951,12 +846,15 @@ _Commands also return a status 200 when they fail to process one or more of the 
 {% endapi-method-spec %}
 {% endapi-method %}
 
-> 🔒 Requires user role `emailaccount-edit`
+> 🔒 Requires user role `coworkertask-edit`
 
 ## Binary files
 
 The following endpoints return binary data. Check the `ContentType` header to understand the type of file being returned in the response stream.
 
-
 ## Related Entities
+
 * [Business](../sys/business.md)
+* [Coworker](../spaces/coworker.md)
+* [User](../sys/user.md)
+

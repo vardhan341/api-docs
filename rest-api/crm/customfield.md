@@ -1,26 +1,27 @@
-﻿{% api-method method="get" host="https://spaces.nexudus.com/api" path="/crm/reminders" %}
+# CustomField
+
+{% api-method method="get" host="https://spaces.nexudus.com/api" path="/crm/customfields" %}
 {% api-method-summary %}
 Find
 {% endapi-method-summary %}
 
 {% api-method-description %}
-This endpoint allows you to GET a list of reminders based on one or more filter querystring parameters.
+This endpoint allows you to GET a list of customfields based on one or more filter querystring parameters.
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
-
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
 {% api-method-query-parameters %}
-
 {% api-method-parameter name="Id" type="int" %}
 ?Id=...
 {% endapi-method-parameter %}
@@ -30,104 +31,105 @@ application/json
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="SystemId" type="string" %}
-?Reminder\_SystemId=...
+?CustomField\_SystemId=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="Business" type="Business" %}
-?Reminder\_Business=...
+?CustomField\_Business=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="Name" type="string" %}
-?Reminder\_Name=...
+?CustomField\_Name=...
 {% endapi-method-parameter %}
 
-
-{% api-method-parameter name="ForAllContacts" type="bool" %}
-?Reminder\_ForAllContacts=...
+{% api-method-parameter name="DisplayOrder" type="int" %}
+?CustomField\_DisplayOrder=...
 {% endapi-method-parameter %}
 
-
-{% api-method-parameter name="ForAllMembers" type="bool" %}
-?Reminder\_ForAllMembers=...
+{% api-method-parameter name="RecordType" type="enum" %}
+?CustomField\_RecordType=...
 {% endapi-method-parameter %}
 
-
-{% api-method-parameter name="Coworker" type="Coworker" %}
-?Reminder\_Coworker=...
+{% api-method-parameter name="FieldType" type="enum" %}
+?CustomField\_FieldType=...
 {% endapi-method-parameter %}
 
-
-{% api-method-parameter name="ReminderType" type="enum" %}
-?Reminder\_ReminderType=...
+{% api-method-parameter name="CoworkerFieldPosition" type="enum" %}
+?CustomField\_CoworkerFieldPosition=...
 {% endapi-method-parameter %}
 
-
-{% api-method-parameter name="ReminderDate" type="DateTime?" %}
-?Reminder\_ReminderDate=...
+{% api-method-parameter name="AvailableOptions" type="string" %}
+?CustomField\_AvailableOptions=...
 {% endapi-method-parameter %}
 
-
-{% api-method-parameter name="DaysAfterSignup" type="int?" %}
-?Reminder\_DaysAfterSignup=...
+{% api-method-parameter name="AllowMultipleOptions" type="bool" %}
+?CustomField\_AllowMultipleOptions=...
 {% endapi-method-parameter %}
 
-
-{% api-method-parameter name="Product" type="Product" %}
-?Reminder\_Product=...
+{% api-method-parameter name="CustomFieldIndex" type="int" %}
+?CustomField\_CustomFieldIndex=...
 {% endapi-method-parameter %}
 
-
-{% api-method-parameter name="DaysAfterRenewal" type="int?" %}
-?Reminder\_DaysAfterRenewal=...
+{% api-method-parameter name="Required" type="bool" %}
+?CustomField\_Required=...
 {% endapi-method-parameter %}
 
-
-{% api-method-parameter name="DaysBeforeRenewal" type="int?" %}
-?Reminder\_DaysBeforeRenewal=...
+{% api-method-parameter name="DisplayInSignUpForm" type="bool" %}
+?CustomField\_DisplayInSignUpForm=...
 {% endapi-method-parameter %}
 
-
-{% api-method-parameter name="ReminderAction" type="enum" %}
-?Reminder\_ReminderAction=...
+{% api-method-parameter name="DisplayInProfileForm" type="bool" %}
+?CustomField\_DisplayInProfileForm=...
 {% endapi-method-parameter %}
 
-
-{% api-method-parameter name="Email" type="string" %}
-?Reminder\_Email=...
+{% api-method-parameter name="DisplayInTourForm" type="bool" %}
+?CustomField\_DisplayInTourForm=...
 {% endapi-method-parameter %}
 
-
-{% api-method-parameter name="CannedResponse" type="CannedResponse" %}
-?Reminder\_CannedResponse=...
+{% api-method-parameter name="GroupName" type="string" %}
+?CustomField\_GroupName=...
 {% endapi-method-parameter %}
 
+{% api-method-parameter name="DisplayInPublicProfile" type="bool" %}
+?CustomField\_DisplayInPublicProfile=...
+{% endapi-method-parameter %}
 
+{% api-method-parameter name="DisplayInDirectorySearch" type="bool" %}
+?CustomField\_DisplayInDirectorySearch=...
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="NameInSearch" type="string" %}
+?CustomField\_NameInSearch=...
+{% endapi-method-parameter %}
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
 
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
 
+{% endapi-method-response-example-description %}
 
 ```javascript
 {
     "Records": [{
         "Business": null,
         "Name": "Joe",
-        "ForAllContacts": false,
-        "ForAllMembers": false,
-        "Coworker": null,
-        "ReminderType": eReminderType.FixedDate,
-        "ReminderDate": null,
-        "DaysAfterSignup": null,
-        "Product": null,
-        "DaysAfterRenewal": null,
-        "DaysBeforeRenewal": null,
-        "ReminderAction": eReminderAction.SendEmail,
-        "Email": "joe@nexudus.com",
-        "CannedResponse": null,
+        "DisplayOrder": Joe,
+        "RecordType": eCustomFieldRecordType.Coworker,
+        "FieldType": eFieldType.Text,
+        "CoworkerFieldPosition": eCoworkerFieldPosition.General,
+        "AvailableOptions": "Joe",
+        "AllowMultipleOptions": ,
+        "CustomFieldIndex": Joe,
+        "Required": ,
+        "DisplayInSignUpForm": ,
+        "DisplayInProfileForm": ,
+        "DisplayInTourForm": ,
+        "GroupName": "Short",
+        "DisplayInPublicProfile": ,
+        "DisplayInDirectorySearch": ,
+        "NameInSearch": "Short",
     }],
     "CurrentPageSize": 25,
     "CurrentPage": 1,
@@ -142,31 +144,30 @@ application/json
     "TotalItems": 60,
     "TotalPages": 3
 }
-
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
 
-> 🔒 Requires user role `reminder-list`
+> 🔒 Requires user role `customfield-list`
 
-{% api-method method="get" host="https://spaces.nexudus.com/api" path="/crm/reminders" %}
+{% api-method method="get" host="https://spaces.nexudus.com/api" path="/crm/customfields" %}
 {% api-method-summary %}
 List
 {% endapi-method-summary %}
 
 {% api-method-description %}
-This endpoint allows you to GET a list of reminders.
+This endpoint allows you to GET a list of customfields.
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
-
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
@@ -202,18 +203,21 @@ size=25 \(maximum=1000\)
     "Records": [{
         "Business": null,
         "Name": "Joe",
-        "ForAllContacts": false,
-        "ForAllMembers": false,
-        "Coworker": null,
-        "ReminderType": eReminderType.FixedDate,
-        "ReminderDate": null,
-        "DaysAfterSignup": null,
-        "Product": null,
-        "DaysAfterRenewal": null,
-        "DaysBeforeRenewal": null,
-        "ReminderAction": eReminderAction.SendEmail,
-        "Email": "joe@nexudus.com",
-        "CannedResponse": null,
+        "DisplayOrder": Joe,
+        "RecordType": eCustomFieldRecordType.Coworker,
+        "FieldType": eFieldType.Text,
+        "CoworkerFieldPosition": eCoworkerFieldPosition.General,
+        "AvailableOptions": "Joe",
+        "AllowMultipleOptions": ,
+        "CustomFieldIndex": Joe,
+        "Required": ,
+        "DisplayInSignUpForm": ,
+        "DisplayInProfileForm": ,
+        "DisplayInTourForm": ,
+        "GroupName": "Short",
+        "DisplayInPublicProfile": ,
+        "DisplayInDirectorySearch": ,
+        "NameInSearch": "Short",
     }],
     }],
     "CurrentPageSize": 25,
@@ -235,29 +239,28 @@ size=25 \(maximum=1000\)
 {% endapi-method-spec %}
 {% endapi-method %}
 
-> 🔒 Requires user role `reminder-list`
+> 🔒 Requires user role `customfield-list`
 
 {% hint style="info" %}
-You can also get a list of records based when they were created or updated. This is useful if you want to get a list of records created after or before a particular point in time. 
-You can also use range query parameters for all date, integer and decimal properties.
+You can also get a list of records based when they were created or updated. This is useful if you want to get a list of records created after or before a particular point in time. You can also use range query parameters for all date, integer and decimal properties.
 {% endhint %}
 
-{% api-method method="get" host="https://spaces.nexudus.com/api" path="/crm/reminders" %}
+{% api-method method="get" host="https://spaces.nexudus.com/api" path="/crm/customfields" %}
 {% api-method-summary %}
 By date range
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Gets a list of reminders based on the date when they were created or updated.
+Gets a list of customfields based on the date when they were created or updated.
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
-
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
@@ -265,42 +268,32 @@ application/json
 
 {% api-method-query-parameters %}
 {% api-method-parameter name="CreatedOn" type="object" required=false %}
-?to\_Reminder\_CreatedOn=...
+?to\_CustomField\_CreatedOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="UpdatedOn" type="object" required=false %}
-?from\_Reminder\_CreatedOn=...
+?from\_CustomField\_CreatedOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="CreatedOn" type="object" required=false %}
-?from\_Reminder\_CreatedOn=...
+?from\_CustomField\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="ReminderDate" type="datetime" required=false %}
-?from\_Reminder\_ReminderDate=...
-{% endapi-method-parameter %}
-{% api-method-parameter name="ReminderDate" type="datetime" required=false %}
-?to\_Reminder\_ReminderDate=...
-{% endapi-method-parameter %}
-{% api-method-parameter name="DaysAfterSignup" type="decimal" required=false %}
-?from\_Reminder\_DaysAfterSignup=...
-{% endapi-method-parameter %}
-{% api-method-parameter name="DaysAfterSignup" type="decimal" required=false %}
-?to\_Reminder\_DaysAfterSignup=...
-{% endapi-method-parameter %}
-{% api-method-parameter name="DaysAfterRenewal" type="decimal" required=false %}
-?from\_Reminder\_DaysAfterRenewal=...
-{% endapi-method-parameter %}
-{% api-method-parameter name="DaysAfterRenewal" type="decimal" required=false %}
-?to\_Reminder\_DaysAfterRenewal=...
-{% endapi-method-parameter %}
-{% api-method-parameter name="DaysBeforeRenewal" type="decimal" required=false %}
-?from\_Reminder\_DaysBeforeRenewal=...
-{% endapi-method-parameter %}
-{% api-method-parameter name="DaysBeforeRenewal" type="decimal" required=false %}
-?to\_Reminder\_DaysBeforeRenewal=...
+{% api-method-parameter name="DisplayOrder" type="decimal" required=false %}
+?from\_CustomField\_DisplayOrder=...
 {% endapi-method-parameter %}
 
+{% api-method-parameter name="DisplayOrder" type="decimal" required=false %}
+?to\_CustomField\_DisplayOrder=...
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="CustomFieldIndex" type="decimal" required=false %}
+?from\_CustomField\_CustomFieldIndex=...
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="CustomFieldIndex" type="decimal" required=false %}
+?to\_CustomField\_CustomFieldIndex=...
+{% endapi-method-parameter %}
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
 
@@ -315,18 +308,21 @@ application/json
     "Records": [{
         "Business": null,
         "Name": "Joe",
-        "ForAllContacts": false,
-        "ForAllMembers": false,
-        "Coworker": null,
-        "ReminderType": eReminderType.FixedDate,
-        "ReminderDate": null,
-        "DaysAfterSignup": null,
-        "Product": null,
-        "DaysAfterRenewal": null,
-        "DaysBeforeRenewal": null,
-        "ReminderAction": eReminderAction.SendEmail,
-        "Email": "joe@nexudus.com",
-        "CannedResponse": null,
+        "DisplayOrder": Joe,
+        "RecordType": eCustomFieldRecordType.Coworker,
+        "FieldType": eFieldType.Text,
+        "CoworkerFieldPosition": eCoworkerFieldPosition.General,
+        "AvailableOptions": "Joe",
+        "AllowMultipleOptions": ,
+        "CustomFieldIndex": Joe,
+        "Required": ,
+        "DisplayInSignUpForm": ,
+        "DisplayInProfileForm": ,
+        "DisplayInTourForm": ,
+        "GroupName": "Short",
+        "DisplayInPublicProfile": ,
+        "DisplayInDirectorySearch": ,
+        "NameInSearch": "Short",
     }],
     }],
     "CurrentPageSize": 25,
@@ -348,34 +344,34 @@ application/json
 {% endapi-method-spec %}
 {% endapi-method %}
 
-> 🔒 Requires user role `reminder-list`
+> 🔒 Requires user role `customfield-list`
 
-{% api-method method="get" host="https://spaces.nexudus.com/api" path="/crm/reminders/:id" %}
+{% api-method method="get" host="https://spaces.nexudus.com/api" path="/crm/customfields/:id" %}
 {% api-method-summary %}
 One by Id
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Gets one reminder record.
+Gets one customfield record.
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="id" type="integer" required=true %}
+The ID of the customfield to fetch.
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
 
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
-
-{% api-method-path-parameters %}
-{% api-method-parameter name="id" type="integer" required=true %}
-The ID of the reminder to fetch.
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
 {% endapi-method-request %}
 
 {% api-method-response %}
@@ -388,18 +384,21 @@ The ID of the reminder to fetch.
 {
         "Business": null,
         "Name": "Joe",
-        "ForAllContacts": false,
-        "ForAllMembers": false,
-        "Coworker": null,
-        "ReminderType": eReminderType.FixedDate,
-        "ReminderDate": null,
-        "DaysAfterSignup": null,
-        "Product": null,
-        "DaysAfterRenewal": null,
-        "DaysBeforeRenewal": null,
-        "ReminderAction": eReminderAction.SendEmail,
-        "Email": "joe@nexudus.com",
-        "CannedResponse": null,
+        "DisplayOrder": Joe,
+        "RecordType": eCustomFieldRecordType.Coworker,
+        "FieldType": eFieldType.Text,
+        "CoworkerFieldPosition": eCoworkerFieldPosition.General,
+        "AvailableOptions": "Joe",
+        "AllowMultipleOptions": ,
+        "CustomFieldIndex": Joe,
+        "Required": ,
+        "DisplayInSignUpForm": ,
+        "DisplayInProfileForm": ,
+        "DisplayInTourForm": ,
+        "GroupName": "Short",
+        "DisplayInPublicProfile": ,
+        "DisplayInDirectorySearch": ,
+        "NameInSearch": "Short",
 }
 ```
 {% endapi-method-response-example %}
@@ -409,7 +408,7 @@ The ID of the reminder to fetch.
 
 {% endapi-method-response-example-description %}
 
-```
+```text
 "Not found"
 ```
 {% endapi-method-response-example %}
@@ -417,24 +416,24 @@ The ID of the reminder to fetch.
 {% endapi-method-spec %}
 {% endapi-method %}
 
-> 🔒 Requires user role `reminder-read`
+> 🔒 Requires user role `customfield-read`
 
-{% api-method method="post" host="https://spaces.nexudus.com/api" path="/crm/reminders" %}
+{% api-method method="post" host="https://spaces.nexudus.com/api" path="/crm/customfields" %}
 {% api-method-summary %}
 Create
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Creates a new reminder.
+Creates a new customfield.
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
-
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
@@ -442,35 +441,73 @@ application/json
 
 {% api-method-body-parameters %}
 {% api-method-parameter name="BusinessId" type="int" required=true %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Name" type="string" required=true %}
+
 {% endapi-method-parameter %}
-{% api-method-parameter name="ForAllContacts" type="bool" required=false %}
+
+{% api-method-parameter name="DisplayOrder" type="int" required=true %}
+
 {% endapi-method-parameter %}
-{% api-method-parameter name="ForAllMembers" type="bool" required=false %}
+
+{% api-method-parameter name="RecordType" type="enum" required=false %}
+
 {% endapi-method-parameter %}
-{% api-method-parameter name="CoworkerId" type="int" required=false %}
+
+{% api-method-parameter name="FieldType" type="enum" required=false %}
+
 {% endapi-method-parameter %}
-{% api-method-parameter name="ReminderType" type="enum" required=false %}
+
+{% api-method-parameter name="CoworkerFieldPosition" type="enum" required=false %}
+
 {% endapi-method-parameter %}
-{% api-method-parameter name="ReminderDate" type="DateTime?" required=false %}
+
+{% api-method-parameter name="AvailableOptions" type="string" required=false %}
+
 {% endapi-method-parameter %}
-{% api-method-parameter name="DaysAfterSignup" type="int?" required=false %}
+
+{% api-method-parameter name="AllowMultipleOptions" type="bool" required=false %}
+
 {% endapi-method-parameter %}
-{% api-method-parameter name="ProductId" type="int" required=false %}
+
+{% api-method-parameter name="CustomFieldIndex" type="int" required=true %}
+
 {% endapi-method-parameter %}
-{% api-method-parameter name="DaysAfterRenewal" type="int?" required=false %}
+
+{% api-method-parameter name="Required" type="bool" required=false %}
+
 {% endapi-method-parameter %}
-{% api-method-parameter name="DaysBeforeRenewal" type="int?" required=false %}
+
+{% api-method-parameter name="DisplayInSignUpForm" type="bool" required=false %}
+
 {% endapi-method-parameter %}
-{% api-method-parameter name="ReminderAction" type="enum" required=false %}
+
+{% api-method-parameter name="DisplayInProfileForm" type="bool" required=false %}
+
 {% endapi-method-parameter %}
-{% api-method-parameter name="Email" type="string" required=false %}
+
+{% api-method-parameter name="DisplayInTourForm" type="bool" required=false %}
+
 {% endapi-method-parameter %}
-{% api-method-parameter name="CannedResponseId" type="int" required=false %}
+
+{% api-method-parameter name="GroupName" type="string" required=false %}
+
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="DisplayInPublicProfile" type="bool" required=false %}
+
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="DisplayInDirectorySearch" type="bool" required=false %}
+
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="NameInSearch" type="string" required=false %}
+
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
-
 {% endapi-method-request %}
 
 {% api-method-response %}
@@ -493,7 +530,7 @@ application/json
 
 {% api-method-response-example httpCode=400 %}
 {% api-method-response-example-description %}
-_This response is an example, errors and messages will follow this structure but keys and descriptions may be different for each record._  
+_This response is an example, errors and messages will follow this structure but keys and descriptions may be different for each record._
 {% endapi-method-response-example-description %}
 
 ```javascript
@@ -543,65 +580,102 @@ _This response is an example, errors and messages will follow this structure but
 {% endapi-method-spec %}
 {% endapi-method %}
 
-> 🔒 Requires user role `reminder-create`
+> 🔒 Requires user role `customfield-create`
 
-{% api-method method="put" host="https://spaces.nexudus.com/api" path="/crm/reminders" %}
+{% api-method method="put" host="https://spaces.nexudus.com/api" path="/crm/customfields" %}
 {% api-method-summary %}
 Update
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Updates and existing reminder.
-  
-Required User Role: `reminder-edit`
+Updates and existing customfield.Required User Role: `customfield-edit`
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="Id" type="integer" required=true %}
+The id of the customfield to update
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
 
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
-{% api-method-path-parameters %}
-{% api-method-parameter name="Id" type="integer" required=true %}
-The id of the reminder to update
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
-
 {% api-method-body-parameters %}
 {% api-method-parameter name="BusinessId" type="int" required=true %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Name" type="string" required=true %}
+
 {% endapi-method-parameter %}
-{% api-method-parameter name="ForAllContacts" type="bool" required=false %}
+
+{% api-method-parameter name="DisplayOrder" type="int" required=true %}
+
 {% endapi-method-parameter %}
-{% api-method-parameter name="ForAllMembers" type="bool" required=false %}
+
+{% api-method-parameter name="RecordType" type="enum" required=false %}
+
 {% endapi-method-parameter %}
-{% api-method-parameter name="CoworkerId" type="int" required=false %}
+
+{% api-method-parameter name="FieldType" type="enum" required=false %}
+
 {% endapi-method-parameter %}
-{% api-method-parameter name="ReminderType" type="enum" required=false %}
+
+{% api-method-parameter name="CoworkerFieldPosition" type="enum" required=false %}
+
 {% endapi-method-parameter %}
-{% api-method-parameter name="ReminderDate" type="DateTime?" required=false %}
+
+{% api-method-parameter name="AvailableOptions" type="string" required=false %}
+
 {% endapi-method-parameter %}
-{% api-method-parameter name="DaysAfterSignup" type="int?" required=false %}
+
+{% api-method-parameter name="AllowMultipleOptions" type="bool" required=false %}
+
 {% endapi-method-parameter %}
-{% api-method-parameter name="ProductId" type="int" required=false %}
+
+{% api-method-parameter name="CustomFieldIndex" type="int" required=true %}
+
 {% endapi-method-parameter %}
-{% api-method-parameter name="DaysAfterRenewal" type="int?" required=false %}
+
+{% api-method-parameter name="Required" type="bool" required=false %}
+
 {% endapi-method-parameter %}
-{% api-method-parameter name="DaysBeforeRenewal" type="int?" required=false %}
+
+{% api-method-parameter name="DisplayInSignUpForm" type="bool" required=false %}
+
 {% endapi-method-parameter %}
-{% api-method-parameter name="ReminderAction" type="enum" required=false %}
+
+{% api-method-parameter name="DisplayInProfileForm" type="bool" required=false %}
+
 {% endapi-method-parameter %}
-{% api-method-parameter name="Email" type="string" required=false %}
+
+{% api-method-parameter name="DisplayInTourForm" type="bool" required=false %}
+
 {% endapi-method-parameter %}
-{% api-method-parameter name="CannedResponseId" type="int" required=false %}
+
+{% api-method-parameter name="GroupName" type="string" required=false %}
+
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="DisplayInPublicProfile" type="bool" required=false %}
+
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="DisplayInDirectorySearch" type="bool" required=false %}
+
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="NameInSearch" type="string" required=false %}
+
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
@@ -628,7 +702,7 @@ The id of the reminder to update
 
 {% api-method-response-example httpCode=400 %}
 {% api-method-response-example-description %}
-_This response is an example, errors and messages will follow this structure but keys and descriptions may be different for each record._  
+_This response is an example, errors and messages will follow this structure but keys and descriptions may be different for each record._
 {% endapi-method-response-example-description %}
 
 ```javascript
@@ -678,37 +752,34 @@ _This response is an example, errors and messages will follow this structure but
 {% endapi-method-spec %}
 {% endapi-method %}
 
-> 🔒 Requires user role `reminder-edit`
+> 🔒 Requires user role `customfield-edit`
 
-
-{% api-method method="delete" host="https://spaces.nexudus.com/api" path="/crm/reminders/:id" %}
+{% api-method method="delete" host="https://spaces.nexudus.com/api" path="/crm/customfields/:id" %}
 {% api-method-summary %}
 Delete
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Deletes a reminder.  
-  
-Required User Roles: `reminder-delete`
+Deletes a customfield.Required User Roles: `customfield-delete`
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
-
-{% api-method-headers %}
-{% api-method-parameter name="Authorization" type="string" required=true %}
-Basic Authentication token. Base64 encoding of 'username:password'.
-{% endapi-method-parameter %}
-{% api-method-parameter name="Content" type="string" required=true %}
-application/json
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
-
 {% api-method-path-parameters %}
 {% api-method-parameter name="Id" type="integer" required=false %}
 
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
+
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+Basic Authentication token. Base64 encoding of 'username:password'.
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="Content" type="string" required=true %}
+application/json
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
 {% endapi-method-request %}
 
 {% api-method-response %}
@@ -736,7 +807,7 @@ application/json
 
 {% endapi-method-response-example-description %}
 
-```
+```text
 "Not found"
 ```
 {% endapi-method-response-example %}
@@ -756,14 +827,11 @@ application/json
 {% endapi-method-spec %}
 {% endapi-method %}
 
-
-
-> 🔒 Requires user role `reminder-delete`
-
+> 🔒 Requires user role `customfield-delete`
 
 ## Commands
 
-Commands allow to perform actions against one or more reminder records. Some commands accept only one record while others can run an action for a number of records at the same time.  Each command has metadata with information about how it can be used and the amount of records, if any, it needs to run.
+Commands allow to perform actions against one or more customfield records. Some commands accept only one record while others can run an action for a number of records at the same time. Each command has metadata with information about how it can be used and the amount of records, if any, it needs to run.
 
 > ```javascript
 > {
@@ -774,22 +842,22 @@ Commands allow to perform actions against one or more reminder records. Some com
 > }
 > ```
 
-{% api-method method="get" host="https://spaces.nexudus.com/api" path="/crm/reminders/commands" %}
+{% api-method method="get" host="https://spaces.nexudus.com/api" path="/crm/customfields/commands" %}
 {% api-method-summary %}
 Commands
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Get all commands available to run for reminder records.
+Get all commands available to run for customfield records.
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
-
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
@@ -799,7 +867,7 @@ application/json
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
 {% api-method-response-example-description %}
-_This response is an example._  
+_This response is an example._
 {% endapi-method-response-example-description %}
 
 ```javascript
@@ -832,7 +900,7 @@ _This response is an example._
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="get" host="https://spaces.nexudus.com/api" path="/crm/reminders/runcommand" %}
+{% api-method method="get" host="https://spaces.nexudus.com/api" path="/crm/customfields/runcommand" %}
 {% api-method-summary %}
 Run Command
 {% endapi-method-summary %}
@@ -843,11 +911,11 @@ Run Command
 
 {% api-method-spec %}
 {% api-method-request %}
-
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
@@ -859,21 +927,17 @@ The command Key defining the command to run. `"COMMAND_KEY_1"`
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Parameters" type="array" required=false %}
-A list of object with the structure below. The parameters required for each command are returned in the "RequiresParameters" array return by the "commands" endpoint.  
-  
-`[  
-   {  
-      "Name": "Name",   
-      "Type":"Type",   
-      "Value":recordId  
-    }  
+A list of object with the structure below. The parameters required for each command are returned in the "RequiresParameters" array return by the "commands" endpoint.`[    
+{    
+"Name": "Name",    
+"Type":"Type",    
+"Value":recordId    
+}    
 ]`
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Ids" type="array" required=true %}
-A list of integer IDs for each of the records to run this command for.  
-  
-`[987654321, 123565978]`
+A list of integer IDs for each of the records to run this command for.`[987654321, 123565978]`
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
@@ -881,7 +945,7 @@ A list of integer IDs for each of the records to run this command for.
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
 {% api-method-response-example-description %}
-_Commands also return a status 200 when they fail to process one or more of the records. Use the 'WasSuccessful'  property to know if the command run succeeded._  
+_Commands also return a status 200 when they fail to process one or more of the records. Use the 'WasSuccessful' property to know if the command run succeeded._
 {% endapi-method-response-example-description %}
 
 ```javascript
@@ -898,15 +962,13 @@ _Commands also return a status 200 when they fail to process one or more of the 
 {% endapi-method-spec %}
 {% endapi-method %}
 
-> 🔒 Requires user role `reminder-edit`
+> 🔒 Requires user role `customfield-edit`
 
 ## Binary files
 
 The following endpoints return binary data. Check the `ContentType` header to understand the type of file being returned in the response stream.
 
-
 ## Related Entities
+
 * [Business](../sys/business.md)
-* [Coworker](../spaces/coworker.md)
-* [Product](../billing/product.md)
-* [CannedResponse](../crm/cannedresponse.md)
+
