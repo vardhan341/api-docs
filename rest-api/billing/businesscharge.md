@@ -240,12 +240,16 @@ application/json
 ?to\_BusinessCharge\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+{% api-method-parameter name="CreatedOn" type="object" required=false %}
 ?from\_BusinessCharge\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="CreatedOn" type="object" required=false %}
-?from\_BusinessCharge\_CreatedOn=...
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?to\_BusinessCharge\_UpdatedOn=...
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?from\_BusinessCharge\_UpdatedOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="DueDate" type="datetime" required=false %}

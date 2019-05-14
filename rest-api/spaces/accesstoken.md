@@ -233,12 +233,16 @@ application/json
 ?to\_AccessToken\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+{% api-method-parameter name="CreatedOn" type="object" required=false %}
 ?from\_AccessToken\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="CreatedOn" type="object" required=false %}
-?from\_AccessToken\_CreatedOn=...
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?to\_AccessToken\_UpdatedOn=...
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?from\_AccessToken\_UpdatedOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="MinutesIncluded" type="decimal" required=false %}

@@ -220,12 +220,16 @@ application/json
 ?to\_ProductExtraService\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+{% api-method-parameter name="CreatedOn" type="object" required=false %}
 ?from\_ProductExtraService\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="CreatedOn" type="object" required=false %}
-?from\_ProductExtraService\_CreatedOn=...
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?to\_ProductExtraService\_UpdatedOn=...
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?from\_ProductExtraService\_UpdatedOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="UsesIncluded" type="decimal" required=false %}

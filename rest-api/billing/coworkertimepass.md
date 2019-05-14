@@ -114,6 +114,11 @@ application/json
 {% endapi-method-parameter %}
 
 
+{% api-method-parameter name="CoworkerProductUniqueId" type="Guid?" %}
+?CoworkerTimePass\_CoworkerProductUniqueId=...
+{% endapi-method-parameter %}
+
+
 {% api-method-parameter name="TimePass\_Name" type="string" %}
 ?CoworkerTimePass\_TimePass\_Name=...
 {% endapi-method-parameter %}
@@ -150,6 +155,7 @@ application/json
         "Invoiced": false,
         "InvoiceDate": ,
         "IsFromTariff": false,
+        "CoworkerProductUniqueId": null,
     }],
     "CurrentPageSize": 25,
     "CurrentPage": 1,
@@ -238,6 +244,7 @@ size=25 \(maximum=1000\)
         "Invoiced": false,
         "InvoiceDate": ,
         "IsFromTariff": false,
+        "CoworkerProductUniqueId": null,
     }],
     }],
     "CurrentPageSize": 25,
@@ -292,12 +299,16 @@ application/json
 ?to\_CoworkerTimePass\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+{% api-method-parameter name="CreatedOn" type="object" required=false %}
 ?from\_CoworkerTimePass\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="CreatedOn" type="object" required=false %}
-?from\_CoworkerTimePass\_CreatedOn=...
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?to\_CoworkerTimePass\_UpdatedOn=...
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?from\_CoworkerTimePass\_UpdatedOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="UsedDate" type="datetime" required=false %}
@@ -371,6 +382,7 @@ application/json
         "Invoiced": false,
         "InvoiceDate": ,
         "IsFromTariff": false,
+        "CoworkerProductUniqueId": null,
     }],
     }],
     "CurrentPageSize": 25,
@@ -446,6 +458,7 @@ The ID of the coworkertimepass to fetch.
         "Invoiced": false,
         "InvoiceDate": ,
         "IsFromTariff": false,
+        "CoworkerProductUniqueId": null,
 }
 ```
 {% endapi-method-response-example %}
@@ -518,6 +531,8 @@ application/json
 {% api-method-parameter name="InvoiceDate" type="DateTime?" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="IsFromTariff" type="bool" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="CoworkerProductUniqueId" type="Guid?" required=false %}
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 
@@ -640,6 +655,8 @@ The id of the coworkertimepass to update
 {% api-method-parameter name="Price" type="decimal?" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="ExpireDate" type="DateTime?" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="CoworkerProductUniqueId" type="Guid?" required=false %}
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}

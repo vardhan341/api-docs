@@ -241,12 +241,16 @@ application/json
 ?to\_ProposalProduct\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+{% api-method-parameter name="CreatedOn" type="object" required=false %}
 ?from\_ProposalProduct\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="CreatedOn" type="object" required=false %}
-?from\_ProposalProduct\_CreatedOn=...
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?to\_ProposalProduct\_UpdatedOn=...
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?from\_ProposalProduct\_UpdatedOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Quantity" type="decimal" required=false %}

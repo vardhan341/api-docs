@@ -229,6 +229,11 @@ application/json
 {% endapi-method-parameter %}
 
 
+{% api-method-parameter name="Archived" type="bool" %}
+?Resource\_Archived=...
+{% endapi-method-parameter %}
+
+
 {% api-method-parameter name="ResourceType\_Name" type="string" %}
 ?Resource\_ResourceType\_Name=...
 {% endapi-method-parameter %}
@@ -283,6 +288,7 @@ application/json
         "Longitude": 1,
         "Latitude": 1,
         "HideInCalendar": true,
+        "Archived": true,
     }],
     "CurrentPageSize": 25,
     "CurrentPage": 1,
@@ -394,6 +400,7 @@ size=25 \(maximum=1000\)
         "Longitude": 1,
         "Latitude": 1,
         "HideInCalendar": true,
+        "Archived": true,
     }],
     }],
     "CurrentPageSize": 25,
@@ -448,12 +455,16 @@ application/json
 ?to\_Resource\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+{% api-method-parameter name="CreatedOn" type="object" required=false %}
 ?from\_Resource\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="CreatedOn" type="object" required=false %}
-?from\_Resource\_CreatedOn=...
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?to\_Resource\_UpdatedOn=...
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?from\_Resource\_UpdatedOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="DisplayOrder" type="decimal" required=false %}
@@ -586,6 +597,7 @@ application/json
         "Longitude": 1,
         "Latitude": 1,
         "HideInCalendar": true,
+        "Archived": true,
     }],
     }],
     "CurrentPageSize": 25,
@@ -684,6 +696,7 @@ The ID of the resource to fetch.
         "Longitude": 1,
         "Latitude": 1,
         "HideInCalendar": true,
+        "Archived": true,
 }
 ```
 {% endapi-method-response-example %}
@@ -802,6 +815,8 @@ application/json
 {% api-method-parameter name="Latitude" type="decimal?" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="HideInCalendar" type="bool" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Archived" type="bool" required=false %}
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 
@@ -986,6 +1001,8 @@ The id of the resource to update
 {% api-method-parameter name="Latitude" type="decimal?" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="HideInCalendar" type="bool" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Archived" type="bool" required=false %}
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}

@@ -198,12 +198,16 @@ application/json
 ?to\_TimePassTimeSlot\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+{% api-method-parameter name="CreatedOn" type="object" required=false %}
 ?from\_TimePassTimeSlot\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="CreatedOn" type="object" required=false %}
-?from\_TimePassTimeSlot\_CreatedOn=...
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?to\_TimePassTimeSlot\_UpdatedOn=...
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?from\_TimePassTimeSlot\_UpdatedOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="FromTime" type="datetime" required=false %}

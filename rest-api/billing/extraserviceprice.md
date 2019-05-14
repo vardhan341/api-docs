@@ -208,12 +208,16 @@ application/json
 ?to\_ExtraServicePrice\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+{% api-method-parameter name="CreatedOn" type="object" required=false %}
 ?from\_ExtraServicePrice\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="CreatedOn" type="object" required=false %}
-?from\_ExtraServicePrice\_CreatedOn=...
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?to\_ExtraServicePrice\_UpdatedOn=...
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?from\_ExtraServicePrice\_UpdatedOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Price" type="decimal" required=false %}

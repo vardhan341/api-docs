@@ -208,12 +208,16 @@ application/json
 ?to\_TariffTimePass\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+{% api-method-parameter name="CreatedOn" type="object" required=false %}
 ?from\_TariffTimePass\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="CreatedOn" type="object" required=false %}
-?from\_TariffTimePass\_CreatedOn=...
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?to\_TariffTimePass\_UpdatedOn=...
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?from\_TariffTimePass\_UpdatedOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="PassesIncluded" type="decimal" required=false %}

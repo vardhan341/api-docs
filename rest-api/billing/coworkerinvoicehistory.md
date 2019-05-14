@@ -258,12 +258,16 @@ application/json
 ?to\_CoworkerInvoiceHistory\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+{% api-method-parameter name="CreatedOn" type="object" required=false %}
 ?from\_CoworkerInvoiceHistory\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="CreatedOn" type="object" required=false %}
-?from\_CoworkerInvoiceHistory\_CreatedOn=...
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?to\_CoworkerInvoiceHistory\_UpdatedOn=...
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?from\_CoworkerInvoiceHistory\_UpdatedOn=...
 {% endapi-method-parameter %}
 
 

@@ -134,6 +134,11 @@ application/json
 {% endapi-method-parameter %}
 
 
+{% api-method-parameter name="ContractDepositUniqueId" type="Guid?" %}
+?CoworkerProduct\_ContractDepositUniqueId=...
+{% endapi-method-parameter %}
+
+
 {% api-method-parameter name="Product\_Name" type="string" %}
 ?CoworkerProduct\_Product\_Name=...
 {% endapi-method-parameter %}
@@ -179,6 +184,7 @@ application/json
         "Invoiced": false,
         "InvoicedOn": null,
         "FromTariff": false,
+        "ContractDepositUniqueId": ,
     }],
     "CurrentPageSize": 25,
     "CurrentPage": 1,
@@ -271,6 +277,7 @@ size=25 \(maximum=1000\)
         "Invoiced": false,
         "InvoicedOn": null,
         "FromTariff": false,
+        "ContractDepositUniqueId": ,
     }],
     }],
     "CurrentPageSize": 25,
@@ -325,12 +332,16 @@ application/json
 ?to\_CoworkerProduct\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+{% api-method-parameter name="CreatedOn" type="object" required=false %}
 ?from\_CoworkerProduct\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="CreatedOn" type="object" required=false %}
-?from\_CoworkerProduct\_CreatedOn=...
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?to\_CoworkerProduct\_UpdatedOn=...
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?from\_CoworkerProduct\_UpdatedOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Price" type="decimal" required=false %}
@@ -414,6 +425,7 @@ application/json
         "Invoiced": false,
         "InvoicedOn": null,
         "FromTariff": false,
+        "ContractDepositUniqueId": ,
     }],
     }],
     "CurrentPageSize": 25,
@@ -493,6 +505,7 @@ The ID of the coworkerproduct to fetch.
         "Invoiced": false,
         "InvoicedOn": null,
         "FromTariff": false,
+        "ContractDepositUniqueId": ,
 }
 ```
 {% endapi-method-response-example %}
@@ -573,6 +586,8 @@ application/json
 {% api-method-parameter name="InvoicedOn" type="DateTime?" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="FromTariff" type="bool" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="ContractDepositUniqueId" type="Guid?" required=false %}
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 

@@ -215,12 +215,16 @@ application/json
 ?to\_TariffBookingCredit\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+{% api-method-parameter name="CreatedOn" type="object" required=false %}
 ?from\_TariffBookingCredit\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="CreatedOn" type="object" required=false %}
-?from\_TariffBookingCredit\_CreatedOn=...
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?to\_TariffBookingCredit\_UpdatedOn=...
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?from\_TariffBookingCredit\_UpdatedOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Credit" type="decimal" required=false %}

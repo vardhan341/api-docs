@@ -213,12 +213,16 @@ application/json
 ?to\_TariffExtraService\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+{% api-method-parameter name="CreatedOn" type="object" required=false %}
 ?from\_TariffExtraService\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="CreatedOn" type="object" required=false %}
-?from\_TariffExtraService\_CreatedOn=...
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?to\_TariffExtraService\_UpdatedOn=...
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?from\_TariffExtraService\_UpdatedOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="UsesIncluded" type="decimal" required=false %}

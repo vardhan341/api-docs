@@ -198,12 +198,16 @@ application/json
 ?to\_ResourceAccessRuleEligibleTimeSlot\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+{% api-method-parameter name="CreatedOn" type="object" required=false %}
 ?from\_ResourceAccessRuleEligibleTimeSlot\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="CreatedOn" type="object" required=false %}
-?from\_ResourceAccessRuleEligibleTimeSlot\_CreatedOn=...
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?to\_ResourceAccessRuleEligibleTimeSlot\_UpdatedOn=...
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?from\_ResourceAccessRuleEligibleTimeSlot\_UpdatedOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="FromTime" type="datetime" required=false %}

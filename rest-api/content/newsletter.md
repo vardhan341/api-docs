@@ -205,12 +205,16 @@ application/json
 ?to\_NewsLetter\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+{% api-method-parameter name="CreatedOn" type="object" required=false %}
 ?from\_NewsLetter\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="CreatedOn" type="object" required=false %}
-?from\_NewsLetter\_CreatedOn=...
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?to\_NewsLetter\_UpdatedOn=...
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?from\_NewsLetter\_UpdatedOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="LastSent" type="datetime" required=false %}

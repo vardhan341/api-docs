@@ -233,12 +233,16 @@ application/json
 ?to\_CoworkerPricePlanHistory\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+{% api-method-parameter name="CreatedOn" type="object" required=false %}
 ?from\_CoworkerPricePlanHistory\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="CreatedOn" type="object" required=false %}
-?from\_CoworkerPricePlanHistory\_CreatedOn=...
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?to\_CoworkerPricePlanHistory\_UpdatedOn=...
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?from\_CoworkerPricePlanHistory\_UpdatedOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="OldValue" type="decimal" required=false %}

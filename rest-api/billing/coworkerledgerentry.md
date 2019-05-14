@@ -314,12 +314,16 @@ application/json
 ?to\_CoworkerLedgerEntry\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+{% api-method-parameter name="CreatedOn" type="object" required=false %}
 ?from\_CoworkerLedgerEntry\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="CreatedOn" type="object" required=false %}
-?from\_CoworkerLedgerEntry\_CreatedOn=...
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?to\_CoworkerLedgerEntry\_UpdatedOn=...
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?from\_CoworkerLedgerEntry\_UpdatedOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Debit" type="decimal" required=false %}

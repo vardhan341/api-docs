@@ -174,6 +174,11 @@ application/json
 {% endapi-method-parameter %}
 
 
+{% api-method-parameter name="ProposalUniqueId" type="Guid?" %}
+?CoworkerContract\_ProposalUniqueId=...
+{% endapi-method-parameter %}
+
+
 {% api-method-parameter name="FloorPlanDeskIds" type="string" %}
 ?CoworkerContract\_FloorPlanDeskIds=...
 {% endapi-method-parameter %}
@@ -277,6 +282,7 @@ application/json
         "CancelTeamContracts": true,
         "CancellationReason": Nexudus.Coworking.Core.Enums.eCancellationReason.Price,
         "CancellationNotes": "Notes",
+        "ProposalUniqueId": null,
         "FloorPlanDeskIds": "",
         "FloorPlanDeskNames": "",
     }],
@@ -379,6 +385,7 @@ size=25 \(maximum=1000\)
         "CancelTeamContracts": true,
         "CancellationReason": Nexudus.Coworking.Core.Enums.eCancellationReason.Price,
         "CancellationNotes": "Notes",
+        "ProposalUniqueId": null,
         "FloorPlanDeskIds": "",
         "FloorPlanDeskNames": "",
     }],
@@ -435,12 +442,16 @@ application/json
 ?to\_CoworkerContract\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+{% api-method-parameter name="CreatedOn" type="object" required=false %}
 ?from\_CoworkerContract\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="CreatedOn" type="object" required=false %}
-?from\_CoworkerContract\_CreatedOn=...
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?to\_CoworkerContract\_UpdatedOn=...
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?from\_CoworkerContract\_UpdatedOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="StartDate" type="datetime" required=false %}
@@ -556,6 +567,7 @@ application/json
         "CancelTeamContracts": true,
         "CancellationReason": Nexudus.Coworking.Core.Enums.eCancellationReason.Price,
         "CancellationNotes": "Notes",
+        "ProposalUniqueId": null,
         "FloorPlanDeskIds": "",
         "FloorPlanDeskNames": "",
     }],
@@ -645,6 +657,7 @@ The ID of the coworkercontract to fetch.
         "CancelTeamContracts": true,
         "CancellationReason": Nexudus.Coworking.Core.Enums.eCancellationReason.Price,
         "CancellationNotes": "Notes",
+        "ProposalUniqueId": null,
         "FloorPlanDeskIds": "",
         "FloorPlanDeskNames": "",
 }
@@ -743,6 +756,8 @@ application/json
 {% api-method-parameter name="CancellationReason" type="enum" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="CancellationNotes" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="ProposalUniqueId" type="Guid?" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="FloorPlanDeskIds" type="string" required=false %}
 {% endapi-method-parameter %}
@@ -901,6 +916,8 @@ The id of the coworkercontract to update
 {% api-method-parameter name="CancellationReason" type="enum" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="CancellationNotes" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="ProposalUniqueId" type="Guid?" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="FloorPlanDeskIds" type="string" required=false %}
 {% endapi-method-parameter %}

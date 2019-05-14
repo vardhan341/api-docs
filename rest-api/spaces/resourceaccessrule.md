@@ -268,12 +268,16 @@ application/json
 ?to\_ResourceAccessRule\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+{% api-method-parameter name="CreatedOn" type="object" required=false %}
 ?from\_ResourceAccessRule\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="CreatedOn" type="object" required=false %}
-?from\_ResourceAccessRule\_CreatedOn=...
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?to\_ResourceAccessRule\_UpdatedOn=...
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?from\_ResourceAccessRule\_UpdatedOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="BookInAdvanceLimit" type="decimal" required=false %}

@@ -233,12 +233,16 @@ application/json
 ?to\_PaymentGateway\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+{% api-method-parameter name="CreatedOn" type="object" required=false %}
 ?from\_PaymentGateway\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="CreatedOn" type="object" required=false %}
-?from\_PaymentGateway\_CreatedOn=...
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?to\_PaymentGateway\_UpdatedOn=...
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?from\_PaymentGateway\_UpdatedOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="TransactionFee" type="decimal" required=false %}

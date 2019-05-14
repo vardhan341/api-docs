@@ -59,6 +59,41 @@ application/json
 {% endapi-method-parameter %}
 
 
+{% api-method-parameter name="Booking\_FromTime" type="string" %}
+?CoworkerBookingCreditUseHistory\_Booking\_FromTime=...
+{% endapi-method-parameter %}
+
+
+{% api-method-parameter name="Booking\_ToTime" type="string" %}
+?CoworkerBookingCreditUseHistory\_Booking\_ToTime=...
+{% endapi-method-parameter %}
+
+
+{% api-method-parameter name="Booking\_Resource_Name" type="string" %}
+?CoworkerBookingCreditUseHistory\_Booking\_Resource_Name=...
+{% endapi-method-parameter %}
+
+
+{% api-method-parameter name="EventAttendee\_CalendarEvent_Name" type="string" %}
+?CoworkerBookingCreditUseHistory\_EventAttendee\_CalendarEvent_Name=...
+{% endapi-method-parameter %}
+
+
+{% api-method-parameter name="EventAttendee\_EventProduct_Name" type="string" %}
+?CoworkerBookingCreditUseHistory\_EventAttendee\_EventProduct_Name=...
+{% endapi-method-parameter %}
+
+
+{% api-method-parameter name="EventAttendee\_FullName" type="string" %}
+?CoworkerBookingCreditUseHistory\_EventAttendee\_FullName=...
+{% endapi-method-parameter %}
+
+
+{% api-method-parameter name="EventAttendee\_Email" type="string" %}
+?CoworkerBookingCreditUseHistory\_EventAttendee\_Email=...
+{% endapi-method-parameter %}
+
+
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
 
@@ -205,12 +240,16 @@ application/json
 ?to\_CoworkerBookingCreditUseHistory\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+{% api-method-parameter name="CreatedOn" type="object" required=false %}
 ?from\_CoworkerBookingCreditUseHistory\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="CreatedOn" type="object" required=false %}
-?from\_CoworkerBookingCreditUseHistory\_CreatedOn=...
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?to\_CoworkerBookingCreditUseHistory\_UpdatedOn=...
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?from\_CoworkerBookingCreditUseHistory\_UpdatedOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="CreditUsed" type="decimal" required=false %}
