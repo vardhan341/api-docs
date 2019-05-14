@@ -1184,7 +1184,7 @@ Binary stream or null
 
 ## Related Entities
 
-* [Language](https://github.com/Nexudus/api-docs/tree/78ef243df78d3929c8752ea05100356cedc138f4/rest-api/sys/language.md)
-* [Application](https://github.com/Nexudus/api-docs/tree/78ef243df78d3929c8752ea05100356cedc138f4/rest-api/apps/application.md)
+* [Language](https://github.com/Nexudus/api-docs/tree/2e2814b15bdd5d4d053cccba6121ef9679021ec9/rest-api/sys/language.md)
+* [Application](https://github.com/Nexudus/api-docs/tree/2e2814b15bdd5d4d053cccba6121ef9679021ec9/rest-api/apps/application.md)
 * [Business](business.md)
 
