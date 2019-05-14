@@ -161,16 +161,16 @@ Making a Request
 {% endapi-method-summary %}
 
 {% api-method-description %}
-
+This is an example of passing a access token to any requests to the REST API.
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
-{% api-method-path-parameters %}
-{% api-method-parameter name="" type="string" required=false %}
-
+{% api-method-headers %}
+{% api-method-parameter name="Bearer" type="string" %}
+v8hNJebN2...
 {% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
+{% endapi-method-headers %}
 {% endapi-method-request %}
 
 {% api-method-response %}
