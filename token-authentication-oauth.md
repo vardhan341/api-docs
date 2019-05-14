@@ -27,15 +27,14 @@ Authentication and Refresh Token
 Gets a short-lived access token and a long-lived refresh token.  
   
 `grant_ype=password&username=EMAIL_ADDRESS&  
-password=Demo1234&  
-client_id=demoaccount@nexudus.com`
+password=Demo1234`
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-headers %}
-{% api-method-parameter type="string" %}
-A unique identifier for the client making these requests. A single refresh tokens will be created per client.
+{% api-method-parameter type="string" name="client\_id" %}
+A unique identifier for the client making these requests. A single refresh tokens will be created per client. If no client ID is passed, the client id would be set to your email.
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Accept" type="string" required=true %}
