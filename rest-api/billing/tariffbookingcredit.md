@@ -68,6 +68,12 @@ application/json
 ?TariffBookingCredit\_Tariff\_Business_Currency_Code=...
 {% endapi-method-parameter %}
 
+{% api-method-parameter name="ElegibleResourceTypes" type="int" required=false %}
+?TariffBookingCredit\_ElegibleResourceTypes=...
+{% endapi-method-parameter %}
+{% api-method-parameter name="EventCategories" type="int" required=false %}
+?TariffBookingCredit\_EventCategories=...
+{% endapi-method-parameter %}
 
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}

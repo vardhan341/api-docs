@@ -93,6 +93,9 @@ application/json
 ?ProposalContract\_Tariff\_Business_Currency_Code=...
 {% endapi-method-parameter %}
 
+{% api-method-parameter name="Desks" type="int" required=false %}
+?ProposalContract\_Desks=...
+{% endapi-method-parameter %}
 
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
@@ -280,16 +283,16 @@ application/json
 {% api-method-parameter name="CancellationDate" type="datetime" required=false %}
 ?to\_ProposalContract\_CancellationDate=...
 {% endapi-method-parameter %}
-{% api-method-parameter name="BillingDay" type="decimal" required=false %}
+{% api-method-parameter name="BillingDay" type="int" required=false %}
 ?from\_ProposalContract\_BillingDay=...
 {% endapi-method-parameter %}
-{% api-method-parameter name="BillingDay" type="decimal" required=false %}
+{% api-method-parameter name="BillingDay" type="int" required=false %}
 ?to\_ProposalContract\_BillingDay=...
 {% endapi-method-parameter %}
-{% api-method-parameter name="Quantity" type="decimal" required=false %}
+{% api-method-parameter name="Quantity" type="int" required=false %}
 ?from\_ProposalContract\_Quantity=...
 {% endapi-method-parameter %}
-{% api-method-parameter name="Quantity" type="decimal" required=false %}
+{% api-method-parameter name="Quantity" type="int" required=false %}
 ?to\_ProposalContract\_Quantity=...
 {% endapi-method-parameter %}
 

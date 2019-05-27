@@ -43,6 +43,9 @@ application/json
 ?CalendarEventCategory\_Title=...
 {% endapi-method-parameter %}
 
+{% api-method-parameter name="CalendarEvents" type="int" required=false %}
+?CalendarEventCategory\_CalendarEvents=...
+{% endapi-method-parameter %}
 
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}

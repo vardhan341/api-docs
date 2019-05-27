@@ -48,6 +48,12 @@ application/json
 ?UserRole\_Business\_Name=...
 {% endapi-method-parameter %}
 
+{% api-method-parameter name="Roles" type="int" required=false %}
+?UserRole\_Roles=...
+{% endapi-method-parameter %}
+{% api-method-parameter name="Users" type="int" required=false %}
+?UserRole\_Users=...
+{% endapi-method-parameter %}
 
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}

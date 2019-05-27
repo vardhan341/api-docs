@@ -242,16 +242,16 @@ application/json
 ?from\_ProductExtraService\_UpdatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="UsesIncluded" type="decimal" required=false %}
+{% api-method-parameter name="UsesIncluded" type="int" required=false %}
 ?from\_ProductExtraService\_UsesIncluded=...
 {% endapi-method-parameter %}
-{% api-method-parameter name="UsesIncluded" type="decimal" required=false %}
+{% api-method-parameter name="UsesIncluded" type="int" required=false %}
 ?to\_ProductExtraService\_UsesIncluded=...
 {% endapi-method-parameter %}
-{% api-method-parameter name="ExpiresIn" type="decimal" required=false %}
+{% api-method-parameter name="ExpiresIn" type="int" required=false %}
 ?from\_ProductExtraService\_ExpiresIn=...
 {% endapi-method-parameter %}
-{% api-method-parameter name="ExpiresIn" type="decimal" required=false %}
+{% api-method-parameter name="ExpiresIn" type="int" required=false %}
 ?to\_ProductExtraService\_ExpiresIn=...
 {% endapi-method-parameter %}
 

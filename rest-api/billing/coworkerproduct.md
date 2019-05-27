@@ -350,16 +350,16 @@ application/json
 {% api-method-parameter name="Price" type="decimal" required=false %}
 ?to\_CoworkerProduct\_Price=...
 {% endapi-method-parameter %}
-{% api-method-parameter name="Quantity" type="decimal" required=false %}
+{% api-method-parameter name="Quantity" type="int" required=false %}
 ?from\_CoworkerProduct\_Quantity=...
 {% endapi-method-parameter %}
-{% api-method-parameter name="Quantity" type="decimal" required=false %}
+{% api-method-parameter name="Quantity" type="int" required=false %}
 ?to\_CoworkerProduct\_Quantity=...
 {% endapi-method-parameter %}
-{% api-method-parameter name="RepeatUnit" type="decimal" required=false %}
+{% api-method-parameter name="RepeatUnit" type="int" required=false %}
 ?from\_CoworkerProduct\_RepeatUnit=...
 {% endapi-method-parameter %}
-{% api-method-parameter name="RepeatUnit" type="decimal" required=false %}
+{% api-method-parameter name="RepeatUnit" type="int" required=false %}
 ?to\_CoworkerProduct\_RepeatUnit=...
 {% endapi-method-parameter %}
 {% api-method-parameter name="InvoiceOn" type="datetime" required=false %}

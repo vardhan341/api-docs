@@ -210,10 +210,10 @@ application/json
 ?from\_UserBookmark\_UpdatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="EntityId" type="decimal" required=false %}
+{% api-method-parameter name="EntityId" type="int" required=false %}
 ?from\_UserBookmark\_EntityId=...
 {% endapi-method-parameter %}
-{% api-method-parameter name="EntityId" type="decimal" required=false %}
+{% api-method-parameter name="EntityId" type="int" required=false %}
 ?to\_UserBookmark\_EntityId=...
 {% endapi-method-parameter %}
 

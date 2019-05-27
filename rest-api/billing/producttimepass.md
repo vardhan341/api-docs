@@ -227,16 +227,16 @@ application/json
 ?from\_ProductTimePass\_UpdatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="PassesIncluded" type="decimal" required=false %}
+{% api-method-parameter name="PassesIncluded" type="int" required=false %}
 ?from\_ProductTimePass\_PassesIncluded=...
 {% endapi-method-parameter %}
-{% api-method-parameter name="PassesIncluded" type="decimal" required=false %}
+{% api-method-parameter name="PassesIncluded" type="int" required=false %}
 ?to\_ProductTimePass\_PassesIncluded=...
 {% endapi-method-parameter %}
-{% api-method-parameter name="ExpiresIn" type="decimal" required=false %}
+{% api-method-parameter name="ExpiresIn" type="int" required=false %}
 ?from\_ProductTimePass\_ExpiresIn=...
 {% endapi-method-parameter %}
-{% api-method-parameter name="ExpiresIn" type="decimal" required=false %}
+{% api-method-parameter name="ExpiresIn" type="int" required=false %}
 ?to\_ProductTimePass\_ExpiresIn=...
 {% endapi-method-parameter %}
 

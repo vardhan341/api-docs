@@ -63,6 +63,9 @@ application/json
 ?Application\_InstallUrl=...
 {% endapi-method-parameter %}
 
+{% api-method-parameter name="RequiredRoles" type="int" required=false %}
+?Application\_RequiredRoles=...
+{% endapi-method-parameter %}
 
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}

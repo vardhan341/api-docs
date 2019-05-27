@@ -243,6 +243,9 @@ application/json
 ?CoworkerContract\_NextTariff\_Name=...
 {% endapi-method-parameter %}
 
+{% api-method-parameter name="Desks" type="int" required=false %}
+?CoworkerContract\_Desks=...
+{% endapi-method-parameter %}
 
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
@@ -460,10 +463,10 @@ application/json
 {% api-method-parameter name="StartDate" type="datetime" required=false %}
 ?to\_CoworkerContract\_StartDate=...
 {% endapi-method-parameter %}
-{% api-method-parameter name="BillingDay" type="decimal" required=false %}
+{% api-method-parameter name="BillingDay" type="int" required=false %}
 ?from\_CoworkerContract\_BillingDay=...
 {% endapi-method-parameter %}
-{% api-method-parameter name="BillingDay" type="decimal" required=false %}
+{% api-method-parameter name="BillingDay" type="int" required=false %}
 ?to\_CoworkerContract\_BillingDay=...
 {% endapi-method-parameter %}
 {% api-method-parameter name="RenewalDate" type="datetime" required=false %}
@@ -496,10 +499,10 @@ application/json
 {% api-method-parameter name="Value" type="decimal" required=false %}
 ?to\_CoworkerContract\_Value=...
 {% endapi-method-parameter %}
-{% api-method-parameter name="Quantity" type="decimal" required=false %}
+{% api-method-parameter name="Quantity" type="int" required=false %}
 ?from\_CoworkerContract\_Quantity=...
 {% endapi-method-parameter %}
-{% api-method-parameter name="Quantity" type="decimal" required=false %}
+{% api-method-parameter name="Quantity" type="int" required=false %}
 ?to\_CoworkerContract\_Quantity=...
 {% endapi-method-parameter %}
 {% api-method-parameter name="NextAutoInvoice" type="datetime" required=false %}
@@ -520,10 +523,10 @@ application/json
 {% api-method-parameter name="CancellationDate" type="datetime" required=false %}
 ?to\_CoworkerContract\_CancellationDate=...
 {% endapi-method-parameter %}
-{% api-method-parameter name="CancellationLimitDays" type="decimal" required=false %}
+{% api-method-parameter name="CancellationLimitDays" type="int" required=false %}
 ?from\_CoworkerContract\_CancellationLimitDays=...
 {% endapi-method-parameter %}
-{% api-method-parameter name="CancellationLimitDays" type="decimal" required=false %}
+{% api-method-parameter name="CancellationLimitDays" type="int" required=false %}
 ?to\_CoworkerContract\_CancellationLimitDays=...
 {% endapi-method-parameter %}
 

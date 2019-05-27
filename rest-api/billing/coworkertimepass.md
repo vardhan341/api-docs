@@ -317,16 +317,16 @@ application/json
 {% api-method-parameter name="UsedDate" type="datetime" required=false %}
 ?to\_CoworkerTimePass\_UsedDate=...
 {% endapi-method-parameter %}
-{% api-method-parameter name="RemainingUses" type="decimal" required=false %}
+{% api-method-parameter name="RemainingUses" type="int" required=false %}
 ?from\_CoworkerTimePass\_RemainingUses=...
 {% endapi-method-parameter %}
-{% api-method-parameter name="RemainingUses" type="decimal" required=false %}
+{% api-method-parameter name="RemainingUses" type="int" required=false %}
 ?to\_CoworkerTimePass\_RemainingUses=...
 {% endapi-method-parameter %}
-{% api-method-parameter name="TotalUses" type="decimal" required=false %}
+{% api-method-parameter name="TotalUses" type="int" required=false %}
 ?from\_CoworkerTimePass\_TotalUses=...
 {% endapi-method-parameter %}
-{% api-method-parameter name="TotalUses" type="decimal" required=false %}
+{% api-method-parameter name="TotalUses" type="int" required=false %}
 ?to\_CoworkerTimePass\_TotalUses=...
 {% endapi-method-parameter %}
 {% api-method-parameter name="Price" type="decimal" required=false %}
@@ -335,10 +335,10 @@ application/json
 {% api-method-parameter name="Price" type="decimal" required=false %}
 ?to\_CoworkerTimePass\_Price=...
 {% endapi-method-parameter %}
-{% api-method-parameter name="CreateMultiple" type="decimal" required=false %}
+{% api-method-parameter name="CreateMultiple" type="int" required=false %}
 ?from\_CoworkerTimePass\_CreateMultiple=...
 {% endapi-method-parameter %}
-{% api-method-parameter name="CreateMultiple" type="decimal" required=false %}
+{% api-method-parameter name="CreateMultiple" type="int" required=false %}
 ?to\_CoworkerTimePass\_CreateMultiple=...
 {% endapi-method-parameter %}
 {% api-method-parameter name="ExpireDate" type="datetime" required=false %}

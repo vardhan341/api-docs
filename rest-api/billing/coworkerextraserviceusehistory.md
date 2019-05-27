@@ -218,10 +218,10 @@ application/json
 ?from\_CoworkerExtraServiceUseHistory\_UpdatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="CreditUsed" type="decimal" required=false %}
+{% api-method-parameter name="CreditUsed" type="int" required=false %}
 ?from\_CoworkerExtraServiceUseHistory\_CreditUsed=...
 {% endapi-method-parameter %}
-{% api-method-parameter name="CreditUsed" type="decimal" required=false %}
+{% api-method-parameter name="CreditUsed" type="int" required=false %}
 ?to\_CoworkerExtraServiceUseHistory\_CreditUsed=...
 {% endapi-method-parameter %}
 

@@ -94,7 +94,7 @@ application/json
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="BlogCategories" type="int" required=false %}
-?from\_BlogPost\_BlogCategories=...
+?BlogPost\_BlogCategories=...
 {% endapi-method-parameter %}
 
 {% endapi-method-query-parameters %}

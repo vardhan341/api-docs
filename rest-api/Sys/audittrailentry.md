@@ -245,10 +245,10 @@ application/json
 ?from\_AuditTrailEntry\_UpdatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="EntityId" type="decimal" required=false %}
+{% api-method-parameter name="EntityId" type="int" required=false %}
 ?from\_AuditTrailEntry\_EntityId=...
 {% endapi-method-parameter %}
-{% api-method-parameter name="EntityId" type="decimal" required=false %}
+{% api-method-parameter name="EntityId" type="int" required=false %}
 ?to\_AuditTrailEntry\_EntityId=...
 {% endapi-method-parameter %}
 

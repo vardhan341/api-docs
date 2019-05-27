@@ -238,6 +238,12 @@ application/json
 ?Resource\_ResourceType\_Name=...
 {% endapi-method-parameter %}
 
+{% api-method-parameter name="Tariffs" type="int" required=false %}
+?Resource\_Tariffs=...
+{% endapi-method-parameter %}
+{% api-method-parameter name="LinkedResources" type="int" required=false %}
+?Resource\_LinkedResources=...
+{% endapi-method-parameter %}
 
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
@@ -467,70 +473,70 @@ application/json
 ?from\_Resource\_UpdatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="DisplayOrder" type="decimal" required=false %}
+{% api-method-parameter name="DisplayOrder" type="int" required=false %}
 ?from\_Resource\_DisplayOrder=...
 {% endapi-method-parameter %}
-{% api-method-parameter name="DisplayOrder" type="decimal" required=false %}
+{% api-method-parameter name="DisplayOrder" type="int" required=false %}
 ?to\_Resource\_DisplayOrder=...
 {% endapi-method-parameter %}
-{% api-method-parameter name="Allocation" type="decimal" required=false %}
+{% api-method-parameter name="Allocation" type="int" required=false %}
 ?from\_Resource\_Allocation=...
 {% endapi-method-parameter %}
-{% api-method-parameter name="Allocation" type="decimal" required=false %}
+{% api-method-parameter name="Allocation" type="int" required=false %}
 ?to\_Resource\_Allocation=...
 {% endapi-method-parameter %}
-{% api-method-parameter name="BookInAdvanceLimit" type="decimal" required=false %}
+{% api-method-parameter name="BookInAdvanceLimit" type="int" required=false %}
 ?from\_Resource\_BookInAdvanceLimit=...
 {% endapi-method-parameter %}
-{% api-method-parameter name="BookInAdvanceLimit" type="decimal" required=false %}
+{% api-method-parameter name="BookInAdvanceLimit" type="int" required=false %}
 ?to\_Resource\_BookInAdvanceLimit=...
 {% endapi-method-parameter %}
-{% api-method-parameter name="LateBookingLimit" type="decimal" required=false %}
+{% api-method-parameter name="LateBookingLimit" type="int" required=false %}
 ?from\_Resource\_LateBookingLimit=...
 {% endapi-method-parameter %}
-{% api-method-parameter name="LateBookingLimit" type="decimal" required=false %}
+{% api-method-parameter name="LateBookingLimit" type="int" required=false %}
 ?to\_Resource\_LateBookingLimit=...
 {% endapi-method-parameter %}
-{% api-method-parameter name="LateCancellationLimit" type="decimal" required=false %}
+{% api-method-parameter name="LateCancellationLimit" type="int" required=false %}
 ?from\_Resource\_LateCancellationLimit=...
 {% endapi-method-parameter %}
-{% api-method-parameter name="LateCancellationLimit" type="decimal" required=false %}
+{% api-method-parameter name="LateCancellationLimit" type="int" required=false %}
 ?to\_Resource\_LateCancellationLimit=...
 {% endapi-method-parameter %}
-{% api-method-parameter name="IntervalLimit" type="decimal" required=false %}
+{% api-method-parameter name="IntervalLimit" type="int" required=false %}
 ?from\_Resource\_IntervalLimit=...
 {% endapi-method-parameter %}
-{% api-method-parameter name="IntervalLimit" type="decimal" required=false %}
+{% api-method-parameter name="IntervalLimit" type="int" required=false %}
 ?to\_Resource\_IntervalLimit=...
 {% endapi-method-parameter %}
-{% api-method-parameter name="NoReturnPolicy" type="decimal" required=false %}
+{% api-method-parameter name="NoReturnPolicy" type="int" required=false %}
 ?from\_Resource\_NoReturnPolicy=...
 {% endapi-method-parameter %}
-{% api-method-parameter name="NoReturnPolicy" type="decimal" required=false %}
+{% api-method-parameter name="NoReturnPolicy" type="int" required=false %}
 ?to\_Resource\_NoReturnPolicy=...
 {% endapi-method-parameter %}
-{% api-method-parameter name="NoReturnPolicyAllResources" type="decimal" required=false %}
+{% api-method-parameter name="NoReturnPolicyAllResources" type="int" required=false %}
 ?from\_Resource\_NoReturnPolicyAllResources=...
 {% endapi-method-parameter %}
-{% api-method-parameter name="NoReturnPolicyAllResources" type="decimal" required=false %}
+{% api-method-parameter name="NoReturnPolicyAllResources" type="int" required=false %}
 ?to\_Resource\_NoReturnPolicyAllResources=...
 {% endapi-method-parameter %}
-{% api-method-parameter name="NoReturnPolicyAllUsers" type="decimal" required=false %}
+{% api-method-parameter name="NoReturnPolicyAllUsers" type="int" required=false %}
 ?from\_Resource\_NoReturnPolicyAllUsers=...
 {% endapi-method-parameter %}
-{% api-method-parameter name="NoReturnPolicyAllUsers" type="decimal" required=false %}
+{% api-method-parameter name="NoReturnPolicyAllUsers" type="int" required=false %}
 ?to\_Resource\_NoReturnPolicyAllUsers=...
 {% endapi-method-parameter %}
-{% api-method-parameter name="MaxBookingLength" type="decimal" required=false %}
+{% api-method-parameter name="MaxBookingLength" type="int" required=false %}
 ?from\_Resource\_MaxBookingLength=...
 {% endapi-method-parameter %}
-{% api-method-parameter name="MaxBookingLength" type="decimal" required=false %}
+{% api-method-parameter name="MaxBookingLength" type="int" required=false %}
 ?to\_Resource\_MaxBookingLength=...
 {% endapi-method-parameter %}
-{% api-method-parameter name="MinBookingLength" type="decimal" required=false %}
+{% api-method-parameter name="MinBookingLength" type="int" required=false %}
 ?from\_Resource\_MinBookingLength=...
 {% endapi-method-parameter %}
-{% api-method-parameter name="MinBookingLength" type="decimal" required=false %}
+{% api-method-parameter name="MinBookingLength" type="int" required=false %}
 ?to\_Resource\_MinBookingLength=...
 {% endapi-method-parameter %}
 {% api-method-parameter name="Longitude" type="decimal" required=false %}

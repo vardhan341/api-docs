@@ -63,6 +63,9 @@ application/json
 ?UserMessage\_IsRead=...
 {% endapi-method-parameter %}
 
+{% api-method-parameter name="ToUsers" type="int" required=false %}
+?UserMessage\_ToUsers=...
+{% endapi-method-parameter %}
 
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}

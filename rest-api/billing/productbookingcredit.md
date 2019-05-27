@@ -73,6 +73,12 @@ application/json
 ?ProductBookingCredit\_Product\_Business_Currency_Code=...
 {% endapi-method-parameter %}
 
+{% api-method-parameter name="ElegibleResourceTypes" type="int" required=false %}
+?ProductBookingCredit\_ElegibleResourceTypes=...
+{% endapi-method-parameter %}
+{% api-method-parameter name="EventCategories" type="int" required=false %}
+?ProductBookingCredit\_EventCategories=...
+{% endapi-method-parameter %}
 
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
@@ -240,10 +246,10 @@ application/json
 {% api-method-parameter name="Credit" type="decimal" required=false %}
 ?to\_ProductBookingCredit\_Credit=...
 {% endapi-method-parameter %}
-{% api-method-parameter name="ExpiresIn" type="decimal" required=false %}
+{% api-method-parameter name="ExpiresIn" type="int" required=false %}
 ?from\_ProductBookingCredit\_ExpiresIn=...
 {% endapi-method-parameter %}
-{% api-method-parameter name="ExpiresIn" type="decimal" required=false %}
+{% api-method-parameter name="ExpiresIn" type="int" required=false %}
 ?to\_ProductBookingCredit\_ExpiresIn=...
 {% endapi-method-parameter %}
 

@@ -222,10 +222,10 @@ application/json
 ?from\_Language\_UpdatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="DisplayOrder" type="decimal" required=false %}
+{% api-method-parameter name="DisplayOrder" type="int" required=false %}
 ?from\_Language\_DisplayOrder=...
 {% endapi-method-parameter %}
-{% api-method-parameter name="DisplayOrder" type="decimal" required=false %}
+{% api-method-parameter name="DisplayOrder" type="int" required=false %}
 ?to\_Language\_DisplayOrder=...
 {% endapi-method-parameter %}
 

@@ -68,6 +68,9 @@ application/json
 ?Workspace\_Description=...
 {% endapi-method-parameter %}
 
+{% api-method-parameter name="Members" type="int" required=false %}
+?Workspace\_Members=...
+{% endapi-method-parameter %}
 
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}

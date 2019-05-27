@@ -30,54 +30,76 @@ application/json
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="SystemId" type="string" %}
-?ResellerPayout_SystemId=...
+?ResellerPayout\_SystemId=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="Reseller" type="Reseller" %}
-?ResellerPayout_Reseller=...
+?ResellerPayout\_Reseller=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="Approved" type="bool" %}
-?ResellerPayout_Approved=...
+?ResellerPayout\_Approved=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="PaidOut" type="bool" %}
-?ResellerPayout_PaidOut=...
+?ResellerPayout\_PaidOut=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="PaidOutDate" type="DateTime?" %}
-?ResellerPayout_PaidOutDate=...
+?ResellerPayout\_PaidOutDate=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="PaidOutReference" type="string" %}
-?ResellerPayout_PaidOutReference=...
+?ResellerPayout\_PaidOutReference=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="Amount" type="decimal" %}
-?ResellerPayout_Amount=...
+?ResellerPayout\_Amount=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="ErrorDescription" type="string" %}
-?ResellerPayout_ErrorDescription=...
+?ResellerPayout\_ErrorDescription=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="LastPaymentAttempt" type="DateTime?" %}
-?ResellerPayout_LastPaymentAttempt=...
+?ResellerPayout\_LastPaymentAttempt=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="Reseller\_User_Id" type="string" %}
-?ResellerPayout_Reseller_User_Id=...
+?ResellerPayout\_Reseller\_User_Id=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="Reseller\_User_FullName" type="string" %}
-?ResellerPayout_Reseller_User_FullName=...
+?ResellerPayout\_Reseller\_User_FullName=...
 {% endapi-method-parameter %}
+
+
+{% api-method-parameter name="Reseller\_Currency_Id" type="string" %}
+?ResellerPayout\_Reseller\_Currency_Id=...
+{% endapi-method-parameter %}
+
+
+{% api-method-parameter name="Reseller\_Currency_Code" type="string" %}
+?ResellerPayout\_Reseller\_Currency_Code=...
+{% endapi-method-parameter %}
+
 
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
 
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
+
 
 ```javascript
 {
@@ -106,7 +128,6 @@ application/json
 }
 
 ```
-
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
@@ -187,7 +208,6 @@ size=25 \(maximum=1000\)
     "TotalPages": 3
 }
 ```
-
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
@@ -196,7 +216,7 @@ size=25 \(maximum=1000\)
 > 🔒 Requires user role `resellerpayout-list`
 
 {% hint style="info" %}
-You can also get a list of records based when they were created or updated. This is useful if you want to get a list of records created after or before a particular point in time.
+You can also get a list of records based when they were created or updated. This is useful if you want to get a list of records created after or before a particular point in time. 
 You can also use range query parameters for all date, integer and decimal properties.
 {% endhint %}
 
@@ -223,38 +243,38 @@ application/json
 
 {% api-method-query-parameters %}
 {% api-method-parameter name="CreatedOn" type="object" required=false %}
-?to_ResellerPayout_CreatedOn=...
+?to\_ResellerPayout\_CreatedOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="CreatedOn" type="object" required=false %}
-?from_ResellerPayout_CreatedOn=...
+?from\_ResellerPayout\_CreatedOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="UpdatedOn" type="object" required=false %}
-?to_ResellerPayout_UpdatedOn=...
+?to\_ResellerPayout\_UpdatedOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="UpdatedOn" type="object" required=false %}
-?from_ResellerPayout_UpdatedOn=...
+?from\_ResellerPayout\_UpdatedOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="PaidOutDate" type="datetime" required=false %}
-?from_ResellerPayout_PaidOutDate=...
+?from\_ResellerPayout\_PaidOutDate=...
 {% endapi-method-parameter %}
 {% api-method-parameter name="PaidOutDate" type="datetime" required=false %}
-?to_ResellerPayout_PaidOutDate=...
+?to\_ResellerPayout\_PaidOutDate=...
 {% endapi-method-parameter %}
 {% api-method-parameter name="Amount" type="decimal" required=false %}
-?from_ResellerPayout_Amount=...
+?from\_ResellerPayout\_Amount=...
 {% endapi-method-parameter %}
 {% api-method-parameter name="Amount" type="decimal" required=false %}
-?to_ResellerPayout_Amount=...
+?to\_ResellerPayout\_Amount=...
 {% endapi-method-parameter %}
 {% api-method-parameter name="LastPaymentAttempt" type="datetime" required=false %}
-?from_ResellerPayout_LastPaymentAttempt=...
+?from\_ResellerPayout\_LastPaymentAttempt=...
 {% endapi-method-parameter %}
 {% api-method-parameter name="LastPaymentAttempt" type="datetime" required=false %}
-?to_ResellerPayout_LastPaymentAttempt=...
+?to\_ResellerPayout\_LastPaymentAttempt=...
 {% endapi-method-parameter %}
 
 {% endapi-method-query-parameters %}
@@ -293,7 +313,6 @@ application/json
     "TotalPages": 3
 }
 ```
-
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
@@ -347,7 +366,6 @@ The ID of the resellerpayout to fetch.
         "LastPaymentAttempt": 2019-01-01,
 }
 ```
-
 {% endapi-method-response-example %}
 
 {% api-method-response-example httpCode=404 %}
@@ -358,7 +376,6 @@ The ID of the resellerpayout to fetch.
 ```
 "Not found"
 ```
-
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
@@ -424,7 +441,6 @@ application/json
     }
 }
 ```
-
 {% endapi-method-response-example %}
 
 {% api-method-response-example httpCode=400 %}
@@ -462,7 +478,6 @@ _This response is an example, errors and messages will follow this structure but
     ]
 }
 ```
-
 {% endapi-method-response-example %}
 
 {% api-method-response-example httpCode=500 %}
@@ -475,7 +490,6 @@ _This response is an example, errors and messages will follow this structure but
     "Message": "An error has occurred."
 }
 ```
-
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
@@ -490,7 +504,7 @@ Update
 
 {% api-method-description %}
 Updates and existing resellerpayout.
-
+  
 Required User Role: `resellerpayout-edit`
 {% endapi-method-description %}
 
@@ -534,7 +548,6 @@ The id of the resellerpayout to update
     "Errors": null
 }
 ```
-
 {% endapi-method-response-example %}
 
 {% api-method-response-example httpCode=400 %}
@@ -572,7 +585,6 @@ _This response is an example, errors and messages will follow this structure but
     ]
 }
 ```
-
 {% endapi-method-response-example %}
 
 {% api-method-response-example httpCode=500 %}
@@ -585,7 +597,6 @@ _This response is an example, errors and messages will follow this structure but
     "Message": "An error has occurred."
 }
 ```
-
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
@@ -593,14 +604,15 @@ _This response is an example, errors and messages will follow this structure but
 
 > 🔒 Requires user role `resellerpayout-edit`
 
+
 {% api-method method="delete" host="https://spaces.nexudus.com/api" path="/sys/resellerpayouts/:id" %}
 {% api-method-summary %}
 Delete
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Deletes a resellerpayout.
-
+Deletes a resellerpayout.  
+  
 Required User Roles: `resellerpayout-delete`
 {% endapi-method-description %}
 
@@ -641,7 +653,6 @@ application/json
     "Errors": null
 }
 ```
-
 {% endapi-method-response-example %}
 
 {% api-method-response-example httpCode=404 %}
@@ -652,7 +663,6 @@ application/json
 ```
 "Not found"
 ```
-
 {% endapi-method-response-example %}
 
 {% api-method-response-example httpCode=500 %}
@@ -665,17 +675,19 @@ application/json
     "Message": "An error has occurred."
 }
 ```
-
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
 
+
+
 > 🔒 Requires user role `resellerpayout-delete`
+
 
 ## Commands
 
-Commands allow to perform actions against one or more resellerpayout records. Some commands accept only one record while others can run an action for a number of records at the same time. Each command has metadata with information about how it can be used and the amount of records, if any, it needs to run.
+Commands allow to perform actions against one or more resellerpayout records. Some commands accept only one record while others can run an action for a number of records at the same time.  Each command has metadata with information about how it can be used and the amount of records, if any, it needs to run.
 
 > ```javascript
 > {
@@ -739,7 +751,6 @@ _This response is an example._
     ...
 ]
 ```
-
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
@@ -772,14 +783,20 @@ The command Key defining the command to run. `"COMMAND_KEY_1"`
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Parameters" type="array" required=false %}
-A list of object with the structure below. The parameters required for each command are returned in the "RequiresParameters" array return by the "commands" endpoint.
-
-`[ { "Name": "Name", "Type":"Type", "Value":recordId } ]`
+A list of object with the structure below. The parameters required for each command are returned in the "RequiresParameters" array return by the "commands" endpoint.  
+  
+`[  
+   {  
+      "Name": "Name",   
+      "Type":"Type",   
+      "Value":recordId  
+    }  
+]`
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Ids" type="array" required=true %}
-A list of integer IDs for each of the records to run this command for.
-
+A list of integer IDs for each of the records to run this command for.  
+  
 `[987654321, 123565978]`
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
@@ -788,11 +805,11 @@ A list of integer IDs for each of the records to run this command for.
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
 {% api-method-response-example-description %}
-_Commands also return a status 200 when they fail to process one or more of the records. Use the 'WasSuccessful' property to know if the command run succeeded._  
+_Commands also return a status 200 when they fail to process one or more of the records. Use the 'WasSuccessful'  property to know if the command run succeeded._  
 {% endapi-method-response-example-description %}
 
 ```javascript
-{
+{  
    "Status":500 or 200,
    "Message":"Command error description",
    "Value":null,
@@ -800,7 +817,6 @@ _Commands also return a status 200 when they fail to process one or more of the 
    "WasSuccessful":false
 }
 ```
-
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
@@ -849,12 +865,11 @@ The id of the ResellerPayout to get the resellerinvoicedata for.
 ```javascript
 Binary stream or null
 ```
-
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
 
-## Related Entities
 
-- [Reseller](../sys/reseller.md)
+## Related Entities
+* [Reseller](../sys/reseller.md)

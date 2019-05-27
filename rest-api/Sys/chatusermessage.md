@@ -48,6 +48,9 @@ application/json
 ?ChatUserMessage\_Delievered=...
 {% endapi-method-parameter %}
 
+{% api-method-parameter name="ToUsers" type="int" required=false %}
+?ChatUserMessage\_ToUsers=...
+{% endapi-method-parameter %}
 
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}

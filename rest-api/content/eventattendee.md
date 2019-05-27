@@ -317,10 +317,10 @@ application/json
 {% api-method-parameter name="DueDate" type="datetime" required=false %}
 ?to\_EventAttendee\_DueDate=...
 {% endapi-method-parameter %}
-{% api-method-parameter name="CoworkerInvoiceId" type="decimal" required=false %}
+{% api-method-parameter name="CoworkerInvoiceId" type="int" required=false %}
 ?from\_EventAttendee\_CoworkerInvoiceId=...
 {% endapi-method-parameter %}
-{% api-method-parameter name="CoworkerInvoiceId" type="decimal" required=false %}
+{% api-method-parameter name="CoworkerInvoiceId" type="int" required=false %}
 ?to\_EventAttendee\_CoworkerInvoiceId=...
 {% endapi-method-parameter %}
 

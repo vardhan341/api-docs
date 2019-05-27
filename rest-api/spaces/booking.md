@@ -487,10 +487,10 @@ application/json
 {% api-method-parameter name="ToTime" type="datetime" required=false %}
 ?to\_Booking\_ToTime=...
 {% endapi-method-parameter %}
-{% api-method-parameter name="RepeatEvery" type="decimal" required=false %}
+{% api-method-parameter name="RepeatEvery" type="int" required=false %}
 ?from\_Booking\_RepeatEvery=...
 {% endapi-method-parameter %}
-{% api-method-parameter name="RepeatEvery" type="decimal" required=false %}
+{% api-method-parameter name="RepeatEvery" type="int" required=false %}
 ?to\_Booking\_RepeatEvery=...
 {% endapi-method-parameter %}
 {% api-method-parameter name="RepeatUntil" type="datetime" required=false %}
@@ -505,10 +505,10 @@ application/json
 {% api-method-parameter name="InvoiceDate" type="datetime" required=false %}
 ?to\_Booking\_InvoiceDate=...
 {% endapi-method-parameter %}
-{% api-method-parameter name="CoworkerInvoiceId" type="decimal" required=false %}
+{% api-method-parameter name="CoworkerInvoiceId" type="int" required=false %}
 ?from\_Booking\_CoworkerInvoiceId=...
 {% endapi-method-parameter %}
-{% api-method-parameter name="CoworkerInvoiceId" type="decimal" required=false %}
+{% api-method-parameter name="CoworkerInvoiceId" type="int" required=false %}
 ?to\_Booking\_CoworkerInvoiceId=...
 {% endapi-method-parameter %}
 {% api-method-parameter name="CoworkerExtraServicePrice" type="decimal" required=false %}
@@ -517,16 +517,16 @@ application/json
 {% api-method-parameter name="CoworkerExtraServicePrice" type="decimal" required=false %}
 ?to\_Booking\_CoworkerExtraServicePrice=...
 {% endapi-method-parameter %}
-{% api-method-parameter name="CoworkerExtraServiceChargePeriod" type="decimal" required=false %}
+{% api-method-parameter name="CoworkerExtraServiceChargePeriod" type="int" required=false %}
 ?from\_Booking\_CoworkerExtraServiceChargePeriod=...
 {% endapi-method-parameter %}
-{% api-method-parameter name="CoworkerExtraServiceChargePeriod" type="decimal" required=false %}
+{% api-method-parameter name="CoworkerExtraServiceChargePeriod" type="int" required=false %}
 ?to\_Booking\_CoworkerExtraServiceChargePeriod=...
 {% endapi-method-parameter %}
-{% api-method-parameter name="CoworkerExtraServiceTotalUses" type="decimal" required=false %}
+{% api-method-parameter name="CoworkerExtraServiceTotalUses" type="int" required=false %}
 ?from\_Booking\_CoworkerExtraServiceTotalUses=...
 {% endapi-method-parameter %}
-{% api-method-parameter name="CoworkerExtraServiceTotalUses" type="decimal" required=false %}
+{% api-method-parameter name="CoworkerExtraServiceTotalUses" type="int" required=false %}
 ?to\_Booking\_CoworkerExtraServiceTotalUses=...
 {% endapi-method-parameter %}
 

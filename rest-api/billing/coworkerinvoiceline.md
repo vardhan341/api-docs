@@ -385,10 +385,10 @@ application/json
 ?from\_CoworkerInvoiceLine\_UpdatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="Quantity" type="decimal" required=false %}
+{% api-method-parameter name="Quantity" type="int" required=false %}
 ?from\_CoworkerInvoiceLine\_Quantity=...
 {% endapi-method-parameter %}
-{% api-method-parameter name="Quantity" type="decimal" required=false %}
+{% api-method-parameter name="Quantity" type="int" required=false %}
 ?to\_CoworkerInvoiceLine\_Quantity=...
 {% endapi-method-parameter %}
 {% api-method-parameter name="SubTotal" type="decimal" required=false %}
@@ -433,10 +433,10 @@ application/json
 {% api-method-parameter name="DiscountAmount" type="decimal" required=false %}
 ?to\_CoworkerInvoiceLine\_DiscountAmount=...
 {% endapi-method-parameter %}
-{% api-method-parameter name="Position" type="decimal" required=false %}
+{% api-method-parameter name="Position" type="int" required=false %}
 ?from\_CoworkerInvoiceLine\_Position=...
 {% endapi-method-parameter %}
-{% api-method-parameter name="Position" type="decimal" required=false %}
+{% api-method-parameter name="Position" type="int" required=false %}
 ?to\_CoworkerInvoiceLine\_Position=...
 {% endapi-method-parameter %}
 

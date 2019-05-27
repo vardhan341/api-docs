@@ -38,6 +38,9 @@ application/json
 ?Role\_Name=...
 {% endapi-method-parameter %}
 
+{% api-method-parameter name="UserRoles" type="int" required=false %}
+?Role\_UserRoles=...
+{% endapi-method-parameter %}
 
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}

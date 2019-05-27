@@ -53,6 +53,9 @@ application/json
 ?ChatRoom\_LastAgentVisit=...
 {% endapi-method-parameter %}
 
+{% api-method-parameter name="Users" type="int" required=false %}
+?ChatRoom\_Users=...
+{% endapi-method-parameter %}
 
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
