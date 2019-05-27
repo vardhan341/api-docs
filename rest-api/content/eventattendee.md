@@ -89,6 +89,21 @@ application/json
 {% endapi-method-parameter %}
 
 
+{% api-method-parameter name="CoworkerInvoiceId" type="int?" %}
+?EventAttendee\_CoworkerInvoiceId=...
+{% endapi-method-parameter %}
+
+
+{% api-method-parameter name="CoworkerInvoiceNumber" type="string" %}
+?EventAttendee\_CoworkerInvoiceNumber=...
+{% endapi-method-parameter %}
+
+
+{% api-method-parameter name="CoworkerInvoicePaid" type="bool" %}
+?EventAttendee\_CoworkerInvoicePaid=...
+{% endapi-method-parameter %}
+
+
 {% api-method-parameter name="CalendarEvent\_Name" type="string" %}
 ?EventAttendee\_CalendarEvent\_Name=...
 {% endapi-method-parameter %}
@@ -135,6 +150,9 @@ application/json
         "CheckedInDate": ,
         "Invoiced": false,
         "DueDate": false,
+        "CoworkerInvoiceId": ,
+        "CoworkerInvoiceNumber": "",
+        "CoworkerInvoicePaid": ,
     }],
     "CurrentPageSize": 25,
     "CurrentPage": 1,
@@ -218,6 +236,9 @@ size=25 \(maximum=1000\)
         "CheckedInDate": ,
         "Invoiced": false,
         "DueDate": false,
+        "CoworkerInvoiceId": ,
+        "CoworkerInvoiceNumber": "",
+        "CoworkerInvoicePaid": ,
     }],
     }],
     "CurrentPageSize": 25,
@@ -272,12 +293,16 @@ application/json
 ?to\_EventAttendee\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+{% api-method-parameter name="CreatedOn" type="object" required=false %}
 ?from\_EventAttendee\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="CreatedOn" type="object" required=false %}
-?from\_EventAttendee\_CreatedOn=...
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?to\_EventAttendee\_UpdatedOn=...
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?from\_EventAttendee\_UpdatedOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="CheckedInDate" type="datetime" required=false %}
@@ -291,6 +316,12 @@ application/json
 {% endapi-method-parameter %}
 {% api-method-parameter name="DueDate" type="datetime" required=false %}
 ?to\_EventAttendee\_DueDate=...
+{% endapi-method-parameter %}
+{% api-method-parameter name="CoworkerInvoiceId" type="decimal" required=false %}
+?from\_EventAttendee\_CoworkerInvoiceId=...
+{% endapi-method-parameter %}
+{% api-method-parameter name="CoworkerInvoiceId" type="decimal" required=false %}
+?to\_EventAttendee\_CoworkerInvoiceId=...
 {% endapi-method-parameter %}
 
 {% endapi-method-query-parameters %}
@@ -316,6 +347,9 @@ application/json
         "CheckedInDate": ,
         "Invoiced": false,
         "DueDate": false,
+        "CoworkerInvoiceId": ,
+        "CoworkerInvoiceNumber": "",
+        "CoworkerInvoicePaid": ,
     }],
     }],
     "CurrentPageSize": 25,
@@ -386,6 +420,9 @@ The ID of the eventattendee to fetch.
         "CheckedInDate": ,
         "Invoiced": false,
         "DueDate": false,
+        "CoworkerInvoiceId": ,
+        "CoworkerInvoiceNumber": "",
+        "CoworkerInvoicePaid": ,
 }
 ```
 {% endapi-method-response-example %}
@@ -448,6 +485,12 @@ application/json
 {% api-method-parameter name="Invoiced" type="bool" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="DueDate" type="DateTime?" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="CoworkerInvoiceId" type="int?" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="CoworkerInvoiceNumber" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="CoworkerInvoicePaid" type="bool" required=false %}
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 
@@ -570,6 +613,12 @@ The id of the eventattendee to update
 {% api-method-parameter name="CheckedIn" type="bool" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="CheckedInDate" type="DateTime?" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="CoworkerInvoiceId" type="int?" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="CoworkerInvoiceNumber" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="CoworkerInvoicePaid" type="bool" required=false %}
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}

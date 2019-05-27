@@ -252,12 +252,16 @@ application/json
 ?to\_BlogPost\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+{% api-method-parameter name="CreatedOn" type="object" required=false %}
 ?from\_BlogPost\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="CreatedOn" type="object" required=false %}
-?from\_BlogPost\_CreatedOn=...
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?to\_BlogPost\_UpdatedOn=...
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?from\_BlogPost\_UpdatedOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="PublishDate" type="datetime" required=false %}
@@ -271,6 +275,9 @@ application/json
 {% endapi-method-parameter %}
 {% api-method-parameter name="CommentsCount" type="decimal" required=false %}
 ?to\_BlogPost\_CommentsCount=...
+{% endapi-method-parameter %}
+{% api-method-parameter name="BlogCategories" type="int" required=false %}
+?from\_BlogPost\_BlogCategories=...
 {% endapi-method-parameter %}
 
 {% endapi-method-query-parameters %}

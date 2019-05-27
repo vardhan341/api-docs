@@ -184,12 +184,16 @@ application/json
 ?to\_CalendarEventCategory\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+{% api-method-parameter name="CreatedOn" type="object" required=false %}
 ?from\_CalendarEventCategory\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="CreatedOn" type="object" required=false %}
-?from\_CalendarEventCategory\_CreatedOn=...
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?to\_CalendarEventCategory\_UpdatedOn=...
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?from\_CalendarEventCategory\_UpdatedOn=...
 {% endapi-method-parameter %}
 
 

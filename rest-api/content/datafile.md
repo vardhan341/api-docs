@@ -191,12 +191,16 @@ application/json
 ?to\_DataFile\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+{% api-method-parameter name="CreatedOn" type="object" required=false %}
 ?from\_DataFile\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="CreatedOn" type="object" required=false %}
-?from\_DataFile\_CreatedOn=...
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?to\_DataFile\_UpdatedOn=...
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?from\_DataFile\_UpdatedOn=...
 {% endapi-method-parameter %}
 
 

@@ -208,12 +208,16 @@ application/json
 ?to\_ImageFile\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+{% api-method-parameter name="CreatedOn" type="object" required=false %}
 ?from\_ImageFile\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="CreatedOn" type="object" required=false %}
-?from\_ImageFile\_CreatedOn=...
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?to\_ImageFile\_UpdatedOn=...
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?from\_ImageFile\_UpdatedOn=...
 {% endapi-method-parameter %}
 
 
