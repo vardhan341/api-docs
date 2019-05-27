@@ -93,6 +93,9 @@ application/json
 ?BlogPost\_PostedBy\_FullName=...
 {% endapi-method-parameter %}
 
+{% api-method-parameter name="BlogCategories" type="int" required=false %}
+?from\_BlogPost\_BlogCategories=...
+{% endapi-method-parameter %}
 
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
@@ -270,14 +273,11 @@ application/json
 {% api-method-parameter name="PublishDate" type="datetime" required=false %}
 ?to\_BlogPost\_PublishDate=...
 {% endapi-method-parameter %}
-{% api-method-parameter name="CommentsCount" type="decimal" required=false %}
+{% api-method-parameter name="CommentsCount" type="int" required=false %}
 ?from\_BlogPost\_CommentsCount=...
 {% endapi-method-parameter %}
-{% api-method-parameter name="CommentsCount" type="decimal" required=false %}
+{% api-method-parameter name="CommentsCount" type="int" required=false %}
 ?to\_BlogPost\_CommentsCount=...
-{% endapi-method-parameter %}
-{% api-method-parameter name="BlogCategories" type="int" required=false %}
-?from\_BlogPost\_BlogCategories=...
 {% endapi-method-parameter %}
 
 {% endapi-method-query-parameters %}
