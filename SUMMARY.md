@@ -2,7 +2,8 @@
 
 * [Getting Started](README.md)
 * [Request Limits](request-limits.md)
-* [Authentication \(internal apps\)](authentication-internal-apps.md)
+* [Token Authentication \(oauth\)](token-authentication-oauth.md)
+* [Basic Authentication](authentication-internal-apps.md)
 * [Authentication \(published apps\)](authentication-published-apps.md)
 * [Access Rights and Roles](access-rights-and-roles.md)
 * [REST API](rest-api/README.md)
@@ -87,6 +88,10 @@
     * [HelpDeskDepartment](rest-api/support/helpdeskdepartment.md)
     * [HelpDeskComment](rest-api/support/helpdeskcomment.md)
     * [HelpDeskMessage](rest-api/support/helpdeskmessage.md)
-* [Public API](public-api.md)
+* [Public API](public-api/README.md)
+  * [Object Graph Depth](public-api/object-graph-depth.md)
+  * [About Page](public-api/about-page.md)
+  * [Allowances](public-api/allowances.md)
+  * [Blog](public-api/blog.md)
 * [SDK](sdk.md)
 
