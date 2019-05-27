@@ -1,8 +1,7 @@
 ---
 description: >-
   The Nexudus Spaces API allows you to develop Apps and modules that extend the
-  Nexudus Spaces platform. You can implment features that your business may
-  require or even create solutions that can be sol
+  Nexudus Spaces platform.
 ---
 
 # Getting Started
