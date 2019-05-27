@@ -119,6 +119,16 @@ application/json
 {% endapi-method-parameter %}
 
 
+{% api-method-parameter name="InvoiceFromDate" type="DateTime?" %}
+?Charge\_InvoiceFromDate=...
+{% endapi-method-parameter %}
+
+
+{% api-method-parameter name="InvoiceToDate" type="DateTime?" %}
+?Charge\_InvoiceToDate=...
+{% endapi-method-parameter %}
+
+
 {% api-method-parameter name="Business\_Name" type="string" %}
 ?Charge\_Business\_Name=...
 {% endapi-method-parameter %}
@@ -156,6 +166,8 @@ application/json
         "CoworkerTimePassUniqueId": ,
         "CoworkerChargeUniqueId": ,
         "EventAttendeeUniqueId": ,
+        "InvoiceFromDate": ,
+        "InvoiceToDate": ,
     }],
     "CurrentPageSize": 25,
     "CurrentPage": 1,
@@ -245,6 +257,8 @@ size=25 \(maximum=1000\)
         "CoworkerTimePassUniqueId": ,
         "CoworkerChargeUniqueId": ,
         "EventAttendeeUniqueId": ,
+        "InvoiceFromDate": ,
+        "InvoiceToDate": ,
     }],
     }],
     "CurrentPageSize": 25,
@@ -299,12 +313,16 @@ application/json
 ?to\_Charge\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+{% api-method-parameter name="CreatedOn" type="object" required=false %}
 ?from\_Charge\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="CreatedOn" type="object" required=false %}
-?from\_Charge\_CreatedOn=...
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?to\_Charge\_UpdatedOn=...
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?from\_Charge\_UpdatedOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="DiscountAmount" type="decimal" required=false %}
@@ -330,6 +348,18 @@ application/json
 {% endapi-method-parameter %}
 {% api-method-parameter name="InvoicedOn" type="datetime" required=false %}
 ?to\_Charge\_InvoicedOn=...
+{% endapi-method-parameter %}
+{% api-method-parameter name="InvoiceFromDate" type="datetime" required=false %}
+?from\_Charge\_InvoiceFromDate=...
+{% endapi-method-parameter %}
+{% api-method-parameter name="InvoiceFromDate" type="datetime" required=false %}
+?to\_Charge\_InvoiceFromDate=...
+{% endapi-method-parameter %}
+{% api-method-parameter name="InvoiceToDate" type="datetime" required=false %}
+?from\_Charge\_InvoiceToDate=...
+{% endapi-method-parameter %}
+{% api-method-parameter name="InvoiceToDate" type="datetime" required=false %}
+?to\_Charge\_InvoiceToDate=...
 {% endapi-method-parameter %}
 
 {% endapi-method-query-parameters %}
@@ -361,6 +391,8 @@ application/json
         "CoworkerTimePassUniqueId": ,
         "CoworkerChargeUniqueId": ,
         "EventAttendeeUniqueId": ,
+        "InvoiceFromDate": ,
+        "InvoiceToDate": ,
     }],
     }],
     "CurrentPageSize": 25,
@@ -437,6 +469,8 @@ The ID of the charge to fetch.
         "CoworkerTimePassUniqueId": ,
         "CoworkerChargeUniqueId": ,
         "EventAttendeeUniqueId": ,
+        "InvoiceFromDate": ,
+        "InvoiceToDate": ,
 }
 ```
 {% endapi-method-response-example %}
@@ -511,6 +545,10 @@ application/json
 {% api-method-parameter name="CoworkerChargeUniqueId" type="Guid?" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="EventAttendeeUniqueId" type="Guid?" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="InvoiceFromDate" type="DateTime?" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="InvoiceToDate" type="DateTime?" required=false %}
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 

@@ -74,6 +74,11 @@ application/json
 {% endapi-method-parameter %}
 
 
+{% api-method-parameter name="ContractDepositUniqueId" type="Guid?" %}
+?CoworkerInvoiceLine\_ContractDepositUniqueId=...
+{% endapi-method-parameter %}
+
+
 {% api-method-parameter name="BookingUniqueId" type="Guid?" %}
 ?CoworkerInvoiceLine\_BookingUniqueId=...
 {% endapi-method-parameter %}
@@ -169,6 +174,11 @@ application/json
 {% endapi-method-parameter %}
 
 
+{% api-method-parameter name="Position" type="int" %}
+?CoworkerInvoiceLine\_Position=...
+{% endapi-method-parameter %}
+
+
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
 
@@ -187,6 +197,7 @@ application/json
         "TaxAmount": 0,
         "TaxRate": 0,
         "CoworkerContractUniqueId": ,
+        "ContractDepositUniqueId": ,
         "BookingUniqueId": ,
         "CoworkerExtraServiceUniqueId": ,
         "CoworkerTimePassUniqueId": ,
@@ -206,6 +217,7 @@ application/json
         "TariffName": "",
         "FinancialAccountCode": "",
         "FinancialAccountName": "",
+        "Position": 0,
     }],
     "CurrentPageSize": 25,
     "CurrentPage": 1,
@@ -286,6 +298,7 @@ size=25 \(maximum=1000\)
         "TaxAmount": 0,
         "TaxRate": 0,
         "CoworkerContractUniqueId": ,
+        "ContractDepositUniqueId": ,
         "BookingUniqueId": ,
         "CoworkerExtraServiceUniqueId": ,
         "CoworkerTimePassUniqueId": ,
@@ -305,6 +318,7 @@ size=25 \(maximum=1000\)
         "TariffName": "",
         "FinancialAccountCode": "",
         "FinancialAccountName": "",
+        "Position": 0,
     }],
     }],
     "CurrentPageSize": 25,
@@ -359,12 +373,16 @@ application/json
 ?to\_CoworkerInvoiceLine\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+{% api-method-parameter name="CreatedOn" type="object" required=false %}
 ?from\_CoworkerInvoiceLine\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="CreatedOn" type="object" required=false %}
-?from\_CoworkerInvoiceLine\_CreatedOn=...
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?to\_CoworkerInvoiceLine\_UpdatedOn=...
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?from\_CoworkerInvoiceLine\_UpdatedOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Quantity" type="decimal" required=false %}
@@ -415,6 +433,12 @@ application/json
 {% api-method-parameter name="DiscountAmount" type="decimal" required=false %}
 ?to\_CoworkerInvoiceLine\_DiscountAmount=...
 {% endapi-method-parameter %}
+{% api-method-parameter name="Position" type="decimal" required=false %}
+?from\_CoworkerInvoiceLine\_Position=...
+{% endapi-method-parameter %}
+{% api-method-parameter name="Position" type="decimal" required=false %}
+?to\_CoworkerInvoiceLine\_Position=...
+{% endapi-method-parameter %}
 
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
@@ -436,6 +460,7 @@ application/json
         "TaxAmount": 0,
         "TaxRate": 0,
         "CoworkerContractUniqueId": ,
+        "ContractDepositUniqueId": ,
         "BookingUniqueId": ,
         "CoworkerExtraServiceUniqueId": ,
         "CoworkerTimePassUniqueId": ,
@@ -455,6 +480,7 @@ application/json
         "TariffName": "",
         "FinancialAccountCode": "",
         "FinancialAccountName": "",
+        "Position": 0,
     }],
     }],
     "CurrentPageSize": 25,
@@ -522,6 +548,7 @@ The ID of the coworkerinvoiceline to fetch.
         "TaxAmount": 0,
         "TaxRate": 0,
         "CoworkerContractUniqueId": ,
+        "ContractDepositUniqueId": ,
         "BookingUniqueId": ,
         "CoworkerExtraServiceUniqueId": ,
         "CoworkerTimePassUniqueId": ,
@@ -541,6 +568,7 @@ The ID of the coworkerinvoiceline to fetch.
         "TariffName": "",
         "FinancialAccountCode": "",
         "FinancialAccountName": "",
+        "Position": 0,
 }
 ```
 {% endapi-method-response-example %}
@@ -598,6 +626,8 @@ application/json
 {% endapi-method-parameter %}
 {% api-method-parameter name="CoworkerContractUniqueId" type="Guid?" required=false %}
 {% endapi-method-parameter %}
+{% api-method-parameter name="ContractDepositUniqueId" type="Guid?" required=false %}
+{% endapi-method-parameter %}
 {% api-method-parameter name="BookingUniqueId" type="Guid?" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="CoworkerExtraServiceUniqueId" type="Guid?" required=false %}
@@ -635,6 +665,8 @@ application/json
 {% api-method-parameter name="FinancialAccountCode" type="string" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="FinancialAccountName" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Position" type="int" required=true %}
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 

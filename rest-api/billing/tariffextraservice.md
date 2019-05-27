@@ -69,6 +69,16 @@ application/json
 {% endapi-method-parameter %}
 
 
+{% api-method-parameter name="ExtraService\_IsBookingCredit" type="string" %}
+?TariffExtraService\_ExtraService\_IsBookingCredit=...
+{% endapi-method-parameter %}
+
+
+{% api-method-parameter name="ExtraService\_IsPrintingCredit" type="string" %}
+?TariffExtraService\_ExtraService\_IsPrintingCredit=...
+{% endapi-method-parameter %}
+
+
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
 
@@ -213,12 +223,16 @@ application/json
 ?to\_TariffExtraService\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+{% api-method-parameter name="CreatedOn" type="object" required=false %}
 ?from\_TariffExtraService\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="CreatedOn" type="object" required=false %}
-?from\_TariffExtraService\_CreatedOn=...
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?to\_TariffExtraService\_UpdatedOn=...
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?from\_TariffExtraService\_UpdatedOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="UsesIncluded" type="decimal" required=false %}

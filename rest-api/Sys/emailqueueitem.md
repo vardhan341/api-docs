@@ -253,12 +253,16 @@ application/json
 ?to\_EmailQueueItem\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+{% api-method-parameter name="CreatedOn" type="object" required=false %}
 ?from\_EmailQueueItem\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="CreatedOn" type="object" required=false %}
-?from\_EmailQueueItem\_CreatedOn=...
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?to\_EmailQueueItem\_UpdatedOn=...
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?from\_EmailQueueItem\_UpdatedOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="SentAttempts" type="decimal" required=false %}
@@ -848,6 +852,6 @@ The following endpoints return binary data. Check the `ContentType` header to un
 ## Related Entities
 
 * [Business](business.md)
-* [EmailAccount](https://github.com/Nexudus/api-docs/tree/78ef243df78d3929c8752ea05100356cedc138f4/rest-api/crm/emailaccount.md)
+* [EmailAccount](../crm/emailaccount.md)
 * [User](user.md)
 

@@ -74,6 +74,11 @@ application/json
 {% endapi-method-parameter %}
 
 
+{% api-method-parameter name="Notes" type="string" %}
+?FloorPlanDesk\_Notes=...
+{% endapi-method-parameter %}
+
+
 {% api-method-parameter name="Available" type="bool" %}
 ?FloorPlanDesk\_Available=...
 {% endapi-method-parameter %}
@@ -152,6 +157,7 @@ application/json
         "Capacity": 00001,
         "Price": 00001,
         "Area": "00001",
+        "Notes": "00001",
         "Available": true,
         "PositionX": 1,
         "PositionY": 1,
@@ -240,6 +246,7 @@ size=25 \(maximum=1000\)
         "Capacity": 00001,
         "Price": 00001,
         "Area": "00001",
+        "Notes": "00001",
         "Available": true,
         "PositionX": 1,
         "PositionY": 1,
@@ -302,12 +309,16 @@ application/json
 ?to\_FloorPlanDesk\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+{% api-method-parameter name="CreatedOn" type="object" required=false %}
 ?from\_FloorPlanDesk\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="CreatedOn" type="object" required=false %}
-?from\_FloorPlanDesk\_CreatedOn=...
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?to\_FloorPlanDesk\_UpdatedOn=...
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?from\_FloorPlanDesk\_UpdatedOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Size" type="decimal" required=false %}
@@ -367,6 +378,7 @@ application/json
         "Capacity": 00001,
         "Price": 00001,
         "Area": "00001",
+        "Notes": "00001",
         "Available": true,
         "PositionX": 1,
         "PositionY": 1,
@@ -442,6 +454,7 @@ The ID of the floorplandesk to fetch.
         "Capacity": 00001,
         "Price": 00001,
         "Area": "00001",
+        "Notes": "00001",
         "Available": true,
         "PositionX": 1,
         "PositionY": 1,
@@ -506,6 +519,8 @@ application/json
 {% api-method-parameter name="Price" type="decimal" required=true %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="Area" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Notes" type="string" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="Available" type="bool" required=false %}
 {% endapi-method-parameter %}
@@ -644,6 +659,8 @@ The id of the floorplandesk to update
 {% api-method-parameter name="Price" type="decimal" required=true %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="Area" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Notes" type="string" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="Available" type="bool" required=false %}
 {% endapi-method-parameter %}

@@ -44,6 +44,21 @@ application/json
 {% endapi-method-parameter %}
 
 
+{% api-method-parameter name="PaidOut" type="bool" %}
+?ResellerPayout\_PaidOut=...
+{% endapi-method-parameter %}
+
+
+{% api-method-parameter name="PaidOutDate" type="DateTime?" %}
+?ResellerPayout\_PaidOutDate=...
+{% endapi-method-parameter %}
+
+
+{% api-method-parameter name="PaidOutReference" type="string" %}
+?ResellerPayout\_PaidOutReference=...
+{% endapi-method-parameter %}
+
+
 {% api-method-parameter name="Amount" type="decimal" %}
 ?ResellerPayout\_Amount=...
 {% endapi-method-parameter %}
@@ -59,6 +74,26 @@ application/json
 {% endapi-method-parameter %}
 
 
+{% api-method-parameter name="Reseller\_User_Id" type="string" %}
+?ResellerPayout\_Reseller\_User_Id=...
+{% endapi-method-parameter %}
+
+
+{% api-method-parameter name="Reseller\_User_FullName" type="string" %}
+?ResellerPayout\_Reseller\_User_FullName=...
+{% endapi-method-parameter %}
+
+
+{% api-method-parameter name="Reseller\_Currency_Id" type="string" %}
+?ResellerPayout\_Reseller\_Currency_Id=...
+{% endapi-method-parameter %}
+
+
+{% api-method-parameter name="Reseller\_Currency_Code" type="string" %}
+?ResellerPayout\_Reseller\_Currency_Code=...
+{% endapi-method-parameter %}
+
+
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
 
@@ -71,6 +106,9 @@ application/json
     "Records": [{
         "Reseller": null,
         "Approved": false,
+        "PaidOut": false,
+        "PaidOutDate": false,
+        "PaidOutReference": "false",
         "Amount": 0,
         "ErrorDescription": "0",
         "LastPaymentAttempt": 2019-01-01,
@@ -148,6 +186,9 @@ size=25 \(maximum=1000\)
     "Records": [{
         "Reseller": null,
         "Approved": false,
+        "PaidOut": false,
+        "PaidOutDate": false,
+        "PaidOutReference": "false",
         "Amount": 0,
         "ErrorDescription": "0",
         "LastPaymentAttempt": 2019-01-01,
@@ -205,14 +246,24 @@ application/json
 ?to\_ResellerPayout\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="UpdatedOn" type="object" required=false %}
-?from\_ResellerPayout\_CreatedOn=...
-{% endapi-method-parameter %}
-
 {% api-method-parameter name="CreatedOn" type="object" required=false %}
 ?from\_ResellerPayout\_CreatedOn=...
 {% endapi-method-parameter %}
 
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?to\_ResellerPayout\_UpdatedOn=...
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?from\_ResellerPayout\_UpdatedOn=...
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="PaidOutDate" type="datetime" required=false %}
+?from\_ResellerPayout\_PaidOutDate=...
+{% endapi-method-parameter %}
+{% api-method-parameter name="PaidOutDate" type="datetime" required=false %}
+?to\_ResellerPayout\_PaidOutDate=...
+{% endapi-method-parameter %}
 {% api-method-parameter name="Amount" type="decimal" required=false %}
 ?from\_ResellerPayout\_Amount=...
 {% endapi-method-parameter %}
@@ -240,6 +291,9 @@ application/json
     "Records": [{
         "Reseller": null,
         "Approved": false,
+        "PaidOut": false,
+        "PaidOutDate": false,
+        "PaidOutReference": "false",
         "Amount": 0,
         "ErrorDescription": "0",
         "LastPaymentAttempt": 2019-01-01,
@@ -304,6 +358,9 @@ The ID of the resellerpayout to fetch.
 {
         "Reseller": null,
         "Approved": false,
+        "PaidOut": false,
+        "PaidOutDate": false,
+        "PaidOutReference": "false",
         "Amount": 0,
         "ErrorDescription": "0",
         "LastPaymentAttempt": 2019-01-01,
@@ -351,6 +408,12 @@ application/json
 {% api-method-parameter name="ResellerId" type="int" required=true %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="Approved" type="bool" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="PaidOut" type="bool" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="PaidOutDate" type="DateTime?" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="PaidOutReference" type="string" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="Amount" type="decimal" required=true %}
 {% endapi-method-parameter %}

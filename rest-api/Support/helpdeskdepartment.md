@@ -763,5 +763,5 @@ The following endpoints return binary data. Check the `ContentType` header to un
 ## Related Entities
 
 * [Business](../sys/business.md)
-* [TaskList](https://github.com/Nexudus/api-docs/tree/78ef243df78d3929c8752ea05100356cedc138f4/rest-api/crm/tasklist.md)
+* [TaskList](../crm/tasklist.md)
 

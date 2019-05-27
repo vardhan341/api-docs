@@ -184,12 +184,16 @@ application/json
 ?to\_EmailQueueItemAttachment\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+{% api-method-parameter name="CreatedOn" type="object" required=false %}
 ?from\_EmailQueueItemAttachment\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="CreatedOn" type="object" required=false %}
-?from\_EmailQueueItemAttachment\_CreatedOn=...
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?to\_EmailQueueItemAttachment\_UpdatedOn=...
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?from\_EmailQueueItemAttachment\_UpdatedOn=...
 {% endapi-method-parameter %}
 
 

@@ -198,12 +198,16 @@ application/json
 ?to\_UserBookmark\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+{% api-method-parameter name="CreatedOn" type="object" required=false %}
 ?from\_UserBookmark\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="CreatedOn" type="object" required=false %}
-?from\_UserBookmark\_CreatedOn=...
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?to\_UserBookmark\_UpdatedOn=...
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?from\_UserBookmark\_UpdatedOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="EntityId" type="decimal" required=false %}

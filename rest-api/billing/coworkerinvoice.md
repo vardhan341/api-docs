@@ -214,6 +214,21 @@ application/json
 {% endapi-method-parameter %}
 
 
+{% api-method-parameter name="ReceivedAmount" type="decimal?" %}
+?CoworkerInvoice\_ReceivedAmount=...
+{% endapi-method-parameter %}
+
+
+{% api-method-parameter name="CreditedAmount" type="decimal?" %}
+?CoworkerInvoice\_CreditedAmount=...
+{% endapi-method-parameter %}
+
+
+{% api-method-parameter name="RefundedAmount" type="decimal?" %}
+?CoworkerInvoice\_RefundedAmount=...
+{% endapi-method-parameter %}
+
+
 {% api-method-parameter name="Coworker\_FullName" type="string" %}
 ?CoworkerInvoice\_Coworker\_FullName=...
 {% endapi-method-parameter %}
@@ -274,8 +289,13 @@ application/json
 {% endapi-method-parameter %}
 
 
-{% api-method-parameter name="Business\_Currency_Code" type="string" %}
-?CoworkerInvoice\_Business\_Currency_Code=...
+{% api-method-parameter name="BillToCountry\_Name" type="string" %}
+?CoworkerInvoice\_BillToCountry\_Name=...
+{% endapi-method-parameter %}
+
+
+{% api-method-parameter name="BillToCountry\_TwoDigitsCode" type="string" %}
+?CoworkerInvoice\_BillToCountry\_TwoDigitsCode=...
 {% endapi-method-parameter %}
 
 
@@ -335,6 +355,9 @@ application/json
         "OriginalInvoiceGuid": false,
         "ContractGuid": false,
         "CustomData": "null",
+        "ReceivedAmount": ,
+        "CreditedAmount": ,
+        "RefundedAmount": ,
     }],
     "CurrentPageSize": 25,
     "CurrentPage": 1,
@@ -443,6 +466,9 @@ size=25 \(maximum=1000\)
         "OriginalInvoiceGuid": false,
         "ContractGuid": false,
         "CustomData": "null",
+        "ReceivedAmount": ,
+        "CreditedAmount": ,
+        "RefundedAmount": ,
     }],
     }],
     "CurrentPageSize": 25,
@@ -497,12 +523,16 @@ application/json
 ?to\_CoworkerInvoice\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+{% api-method-parameter name="CreatedOn" type="object" required=false %}
 ?from\_CoworkerInvoice\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="CreatedOn" type="object" required=false %}
-?from\_CoworkerInvoice\_CreatedOn=...
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?to\_CoworkerInvoice\_UpdatedOn=...
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?from\_CoworkerInvoice\_UpdatedOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="DiscountAmount" type="decimal" required=false %}
@@ -565,6 +595,24 @@ application/json
 {% api-method-parameter name="RefundedOn" type="datetime" required=false %}
 ?to\_CoworkerInvoice\_RefundedOn=...
 {% endapi-method-parameter %}
+{% api-method-parameter name="ReceivedAmount" type="decimal" required=false %}
+?from\_CoworkerInvoice\_ReceivedAmount=...
+{% endapi-method-parameter %}
+{% api-method-parameter name="ReceivedAmount" type="decimal" required=false %}
+?to\_CoworkerInvoice\_ReceivedAmount=...
+{% endapi-method-parameter %}
+{% api-method-parameter name="CreditedAmount" type="decimal" required=false %}
+?from\_CoworkerInvoice\_CreditedAmount=...
+{% endapi-method-parameter %}
+{% api-method-parameter name="CreditedAmount" type="decimal" required=false %}
+?to\_CoworkerInvoice\_CreditedAmount=...
+{% endapi-method-parameter %}
+{% api-method-parameter name="RefundedAmount" type="decimal" required=false %}
+?from\_CoworkerInvoice\_RefundedAmount=...
+{% endapi-method-parameter %}
+{% api-method-parameter name="RefundedAmount" type="decimal" required=false %}
+?to\_CoworkerInvoice\_RefundedAmount=...
+{% endapi-method-parameter %}
 
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
@@ -614,6 +662,9 @@ application/json
         "OriginalInvoiceGuid": false,
         "ContractGuid": false,
         "CustomData": "null",
+        "ReceivedAmount": ,
+        "CreditedAmount": ,
+        "RefundedAmount": ,
     }],
     }],
     "CurrentPageSize": 25,
@@ -709,6 +760,9 @@ The ID of the coworkerinvoice to fetch.
         "OriginalInvoiceGuid": false,
         "ContractGuid": false,
         "CustomData": "null",
+        "ReceivedAmount": ,
+        "CreditedAmount": ,
+        "RefundedAmount": ,
 }
 ```
 {% endapi-method-response-example %}
@@ -821,6 +875,12 @@ application/json
 {% api-method-parameter name="ContractGuid" type="Guid?" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="CustomData" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="ReceivedAmount" type="decimal?" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="CreditedAmount" type="decimal?" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="RefundedAmount" type="decimal?" required=false %}
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 

@@ -585,12 +585,16 @@ application/json
 ?to\_Business\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+{% api-method-parameter name="CreatedOn" type="object" required=false %}
 ?from\_Business\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="CreatedOn" type="object" required=false %}
-?from\_Business\_CreatedOn=...
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?to\_Business\_UpdatedOn=...
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?from\_Business\_UpdatedOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="NextInvoice" type="datetime" required=false %}
@@ -1973,10 +1977,10 @@ Binary stream or null
 
 ## Related Entities
 
-* [Language](https://github.com/Nexudus/api-docs/tree/78ef243df78d3929c8752ea05100356cedc138f4/rest-api/sys/language.md)
+* [Language](https://github.com/Nexudus/api-docs/tree/2e2814b15bdd5d4d053cccba6121ef9679021ec9/rest-api/sys/language.md)
 * [Business](business.md)
-* [PaymentGateway](https://github.com/Nexudus/api-docs/tree/78ef243df78d3929c8752ea05100356cedc138f4/rest-api/billing/paymentgateway.md)
-* [Country](https://github.com/Nexudus/api-docs/tree/78ef243df78d3929c8752ea05100356cedc138f4/rest-api/sys/country.md)
+* [PaymentGateway](https://github.com/Nexudus/api-docs/tree/2e2814b15bdd5d4d053cccba6121ef9679021ec9/rest-api/billing/paymentgateway.md)
+* [Country](https://github.com/Nexudus/api-docs/tree/2e2814b15bdd5d4d053cccba6121ef9679021ec9/rest-api/sys/country.md)
 * [Currency](currency.md)
 * [SimpleTimeZone](simpletimezone.md)
 

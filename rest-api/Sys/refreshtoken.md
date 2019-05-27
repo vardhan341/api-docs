@@ -212,12 +212,16 @@ application/json
 ?to\_RefreshToken\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+{% api-method-parameter name="CreatedOn" type="object" required=false %}
 ?from\_RefreshToken\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="CreatedOn" type="object" required=false %}
-?from\_RefreshToken\_CreatedOn=...
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?to\_RefreshToken\_UpdatedOn=...
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?from\_RefreshToken\_UpdatedOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="ExpiresOn" type="datetime" required=false %}

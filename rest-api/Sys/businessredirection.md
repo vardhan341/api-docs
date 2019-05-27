@@ -212,12 +212,16 @@ application/json
 ?to\_BusinessRedirection\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+{% api-method-parameter name="CreatedOn" type="object" required=false %}
 ?from\_BusinessRedirection\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="CreatedOn" type="object" required=false %}
-?from\_BusinessRedirection\_CreatedOn=...
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?to\_BusinessRedirection\_UpdatedOn=...
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?from\_BusinessRedirection\_UpdatedOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="ActiveFrom" type="datetime" required=false %}

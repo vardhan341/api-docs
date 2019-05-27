@@ -54,13 +54,28 @@ application/json
 {% endapi-method-parameter %}
 
 
-{% api-method-parameter name="StripeAccountId" type="string" %}
-?ResellerAccount\_StripeAccountId=...
+{% api-method-parameter name="NextPayoutDate" type="DateTime?" %}
+?ResellerAccount\_NextPayoutDate=...
 {% endapi-method-parameter %}
 
 
-{% api-method-parameter name="NextPayoutDate" type="DateTime?" %}
-?ResellerAccount\_NextPayoutDate=...
+{% api-method-parameter name="ExpirationDate" type="DateTime?" %}
+?ResellerAccount\_ExpirationDate=...
+{% endapi-method-parameter %}
+
+
+{% api-method-parameter name="Reseller\_Currency_Id" type="string" %}
+?ResellerAccount\_Reseller\_Currency_Id=...
+{% endapi-method-parameter %}
+
+
+{% api-method-parameter name="Reseller\_Currency_Code" type="string" %}
+?ResellerAccount\_Reseller\_Currency_Code=...
+{% endapi-method-parameter %}
+
+
+{% api-method-parameter name="Business\_Name" type="string" %}
+?ResellerAccount\_Business\_Name=...
 {% endapi-method-parameter %}
 
 
@@ -78,8 +93,8 @@ application/json
         "Business": null,
         "Approved": false,
         "ComissionPercentage": 0,
-        "StripeAccountId": "false",
         "NextPayoutDate": 2019-01-01,
+        "ExpirationDate": 2019-01-01,
     }],
     "CurrentPageSize": 25,
     "CurrentPage": 1,
@@ -156,8 +171,8 @@ size=25 \(maximum=1000\)
         "Business": null,
         "Approved": false,
         "ComissionPercentage": 0,
-        "StripeAccountId": "false",
         "NextPayoutDate": 2019-01-01,
+        "ExpirationDate": 2019-01-01,
     }],
     }],
     "CurrentPageSize": 25,
@@ -212,12 +227,16 @@ application/json
 ?to\_ResellerAccount\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+{% api-method-parameter name="CreatedOn" type="object" required=false %}
 ?from\_ResellerAccount\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="CreatedOn" type="object" required=false %}
-?from\_ResellerAccount\_CreatedOn=...
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?to\_ResellerAccount\_UpdatedOn=...
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?from\_ResellerAccount\_UpdatedOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="ComissionPercentage" type="decimal" required=false %}
@@ -231,6 +250,12 @@ application/json
 {% endapi-method-parameter %}
 {% api-method-parameter name="NextPayoutDate" type="datetime" required=false %}
 ?to\_ResellerAccount\_NextPayoutDate=...
+{% endapi-method-parameter %}
+{% api-method-parameter name="ExpirationDate" type="datetime" required=false %}
+?from\_ResellerAccount\_ExpirationDate=...
+{% endapi-method-parameter %}
+{% api-method-parameter name="ExpirationDate" type="datetime" required=false %}
+?to\_ResellerAccount\_ExpirationDate=...
 {% endapi-method-parameter %}
 
 {% endapi-method-query-parameters %}
@@ -249,8 +274,8 @@ application/json
         "Business": null,
         "Approved": false,
         "ComissionPercentage": 0,
-        "StripeAccountId": "false",
         "NextPayoutDate": 2019-01-01,
+        "ExpirationDate": 2019-01-01,
     }],
     }],
     "CurrentPageSize": 25,
@@ -314,8 +339,8 @@ The ID of the reselleraccount to fetch.
         "Business": null,
         "Approved": false,
         "ComissionPercentage": 0,
-        "StripeAccountId": "false",
         "NextPayoutDate": 2019-01-01,
+        "ExpirationDate": 2019-01-01,
 }
 ```
 {% endapi-method-response-example %}
@@ -365,9 +390,9 @@ application/json
 {% endapi-method-parameter %}
 {% api-method-parameter name="ComissionPercentage" type="decimal" required=true %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="StripeAccountId" type="string" required=false %}
-{% endapi-method-parameter %}
 {% api-method-parameter name="NextPayoutDate" type="DateTime?" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="ExpirationDate" type="DateTime?" required=false %}
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 

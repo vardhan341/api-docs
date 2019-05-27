@@ -1,4 +1,6 @@
-﻿{% api-method method="get" host="https://spaces.nexudus.com/api" path="/crm/tasklists" %}
+# TaskList
+
+{% api-method method="get" host="https://spaces.nexudus.com/api" path="/crm/tasklists" %}
 {% api-method-summary %}
 Find
 {% endapi-method-summary %}
@@ -9,18 +11,17 @@ This endpoint allows you to GET a list of tasklists based on one or more filter 
 
 {% api-method-spec %}
 {% api-method-request %}
-
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
 {% api-method-query-parameters %}
-
 {% api-method-parameter name="Id" type="int" %}
 ?Id=...
 {% endapi-method-parameter %}
@@ -33,43 +34,37 @@ application/json
 ?TaskList\_SystemId=...
 {% endapi-method-parameter %}
 
-
 {% api-method-parameter name="Business" type="Business" %}
 ?TaskList\_Business=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="Name" type="string" %}
 ?TaskList\_Name=...
 {% endapi-method-parameter %}
 
-
 {% api-method-parameter name="Active" type="bool" %}
 ?TaskList\_Active=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="AssignToNewContacts" type="bool" %}
 ?TaskList\_AssignToNewContacts=...
 {% endapi-method-parameter %}
 
-
 {% api-method-parameter name="AssignToNewMembers" type="bool" %}
 ?TaskList\_AssignToNewMembers=...
 {% endapi-method-parameter %}
 
-
 {% api-method-parameter name="AssignToCancellations" type="bool" %}
 ?TaskList\_AssignToCancellations=...
 {% endapi-method-parameter %}
-
-
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
 
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
 
+{% endapi-method-response-example-description %}
 
 ```javascript
 {
@@ -94,7 +89,6 @@ application/json
     "TotalItems": 60,
     "TotalPages": 3
 }
-
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}
@@ -114,11 +108,11 @@ This endpoint allows you to GET a list of tasklists.
 
 {% api-method-spec %}
 {% api-method-request %}
-
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
@@ -182,8 +176,7 @@ size=25 \(maximum=1000\)
 > 🔒 Requires user role `tasklist-list`
 
 {% hint style="info" %}
-You can also get a list of records based when they were created or updated. This is useful if you want to get a list of records created after or before a particular point in time. 
-You can also use range query parameters for all date, integer and decimal properties.
+You can also get a list of records based when they were created or updated. This is useful if you want to get a list of records created after or before a particular point in time. You can also use range query parameters for all date, integer and decimal properties.
 {% endhint %}
 
 {% api-method method="get" host="https://spaces.nexudus.com/api" path="/crm/tasklists" %}
@@ -197,11 +190,11 @@ Gets a list of tasklists based on the date when they were created or updated.
 
 {% api-method-spec %}
 {% api-method-request %}
-
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
@@ -219,8 +212,6 @@ application/json
 {% api-method-parameter name="CreatedOn" type="object" required=false %}
 ?from\_TaskList\_CreatedOn=...
 {% endapi-method-parameter %}
-
-
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
 
@@ -273,21 +264,21 @@ Gets one tasklist record.
 
 {% api-method-spec %}
 {% api-method-request %}
-
-{% api-method-headers %}
-{% api-method-parameter name="Authorization" type="string" required=true %}
-Basic Authentication token. Base64 encoding of 'username:password'.
-{% endapi-method-parameter %}
-{% api-method-parameter name="Content" type="string" required=true %}
-application/json
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
-
 {% api-method-path-parameters %}
 {% api-method-parameter name="id" type="integer" required=true %}
 The ID of the tasklist to fetch.
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
+
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+Basic Authentication token. Base64 encoding of 'username:password'.
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="Content" type="string" required=true %}
+application/json
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
 {% endapi-method-request %}
 
 {% api-method-response %}
@@ -313,7 +304,7 @@ The ID of the tasklist to fetch.
 
 {% endapi-method-response-example-description %}
 
-```
+```text
 "Not found"
 ```
 {% endapi-method-response-example %}
@@ -334,11 +325,11 @@ Creates a new tasklist.
 
 {% api-method-spec %}
 {% api-method-request %}
-
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
@@ -346,19 +337,29 @@ application/json
 
 {% api-method-body-parameters %}
 {% api-method-parameter name="BusinessId" type="int" required=true %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Name" type="string" required=true %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Active" type="bool" required=false %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="AssignToNewContacts" type="bool" required=false %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="AssignToNewMembers" type="bool" required=false %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="AssignToCancellations" type="bool" required=false %}
+
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
-
 {% endapi-method-request %}
 
 {% api-method-response %}
@@ -381,7 +382,7 @@ application/json
 
 {% api-method-response-example httpCode=400 %}
 {% api-method-response-example-description %}
-_This response is an example, errors and messages will follow this structure but keys and descriptions may be different for each record._  
+_This response is an example, errors and messages will follow this structure but keys and descriptions may be different for each record._
 {% endapi-method-response-example-description %}
 
 ```javascript
@@ -439,41 +440,50 @@ Update
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Updates and existing tasklist.
-  
-Required User Role: `tasklist-edit`
+Updates and existing tasklist.Required User Role: `tasklist-edit`
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
-
-{% api-method-headers %}
-{% api-method-parameter name="Authorization" type="string" required=true %}
-Basic Authentication token. Base64 encoding of 'username:password'.
-{% endapi-method-parameter %}
-{% api-method-parameter name="Content" type="string" required=true %}
-application/json
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
-
 {% api-method-path-parameters %}
 {% api-method-parameter name="Id" type="integer" required=true %}
 The id of the tasklist to update
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
 
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+Basic Authentication token. Base64 encoding of 'username:password'.
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="Content" type="string" required=true %}
+application/json
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+
 {% api-method-body-parameters %}
 {% api-method-parameter name="BusinessId" type="int" required=true %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Name" type="string" required=true %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Active" type="bool" required=false %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="AssignToNewContacts" type="bool" required=false %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="AssignToNewMembers" type="bool" required=false %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="AssignToCancellations" type="bool" required=false %}
+
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
@@ -500,7 +510,7 @@ The id of the tasklist to update
 
 {% api-method-response-example httpCode=400 %}
 {% api-method-response-example-description %}
-_This response is an example, errors and messages will follow this structure but keys and descriptions may be different for each record._  
+_This response is an example, errors and messages will follow this structure but keys and descriptions may be different for each record._
 {% endapi-method-response-example-description %}
 
 ```javascript
@@ -552,35 +562,32 @@ _This response is an example, errors and messages will follow this structure but
 
 > 🔒 Requires user role `tasklist-edit`
 
-
 {% api-method method="delete" host="https://spaces.nexudus.com/api" path="/crm/tasklists/:id" %}
 {% api-method-summary %}
 Delete
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Deletes a tasklist.  
-  
-Required User Roles: `tasklist-delete`
+Deletes a tasklist.Required User Roles: `tasklist-delete`
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
-
-{% api-method-headers %}
-{% api-method-parameter name="Authorization" type="string" required=true %}
-Basic Authentication token. Base64 encoding of 'username:password'.
-{% endapi-method-parameter %}
-{% api-method-parameter name="Content" type="string" required=true %}
-application/json
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
-
 {% api-method-path-parameters %}
 {% api-method-parameter name="Id" type="integer" required=false %}
 
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
+
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+Basic Authentication token. Base64 encoding of 'username:password'.
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="Content" type="string" required=true %}
+application/json
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
 {% endapi-method-request %}
 
 {% api-method-response %}
@@ -608,7 +615,7 @@ application/json
 
 {% endapi-method-response-example-description %}
 
-```
+```text
 "Not found"
 ```
 {% endapi-method-response-example %}
@@ -628,14 +635,11 @@ application/json
 {% endapi-method-spec %}
 {% endapi-method %}
 
-
-
 > 🔒 Requires user role `tasklist-delete`
-
 
 ## Commands
 
-Commands allow to perform actions against one or more tasklist records. Some commands accept only one record while others can run an action for a number of records at the same time.  Each command has metadata with information about how it can be used and the amount of records, if any, it needs to run.
+Commands allow to perform actions against one or more tasklist records. Some commands accept only one record while others can run an action for a number of records at the same time. Each command has metadata with information about how it can be used and the amount of records, if any, it needs to run.
 
 > ```javascript
 > {
@@ -657,11 +661,11 @@ Get all commands available to run for tasklist records.
 
 {% api-method-spec %}
 {% api-method-request %}
-
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
@@ -671,7 +675,7 @@ application/json
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
 {% api-method-response-example-description %}
-_This response is an example._  
+_This response is an example._
 {% endapi-method-response-example-description %}
 
 ```javascript
@@ -715,11 +719,11 @@ Run Command
 
 {% api-method-spec %}
 {% api-method-request %}
-
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
@@ -731,21 +735,17 @@ The command Key defining the command to run. `"COMMAND_KEY_1"`
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Parameters" type="array" required=false %}
-A list of object with the structure below. The parameters required for each command are returned in the "RequiresParameters" array return by the "commands" endpoint.  
-  
-`[  
-   {  
-      "Name": "Name",   
-      "Type":"Type",   
-      "Value":recordId  
-    }  
+A list of object with the structure below. The parameters required for each command are returned in the "RequiresParameters" array return by the "commands" endpoint.`[    
+{    
+"Name": "Name",    
+"Type":"Type",    
+"Value":recordId    
+}    
 ]`
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Ids" type="array" required=true %}
-A list of integer IDs for each of the records to run this command for.  
-  
-`[987654321, 123565978]`
+A list of integer IDs for each of the records to run this command for.`[987654321, 123565978]`
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
@@ -753,7 +753,7 @@ A list of integer IDs for each of the records to run this command for.
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
 {% api-method-response-example-description %}
-_Commands also return a status 200 when they fail to process one or more of the records. Use the 'WasSuccessful'  property to know if the command run succeeded._  
+_Commands also return a status 200 when they fail to process one or more of the records. Use the 'WasSuccessful' property to know if the command run succeeded._
 {% endapi-method-response-example-description %}
 
 ```javascript
@@ -776,6 +776,7 @@ _Commands also return a status 200 when they fail to process one or more of the 
 
 The following endpoints return binary data. Check the `ContentType` header to understand the type of file being returned in the response stream.
 
-
 ## Related Entities
+
 * [Business](../sys/business.md)
+

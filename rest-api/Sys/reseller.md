@@ -59,8 +59,33 @@ application/json
 {% endapi-method-parameter %}
 
 
+{% api-method-parameter name="NextPayoutDate" type="DateTime?" %}
+?Reseller\_NextPayoutDate=...
+{% endapi-method-parameter %}
+
+
 {% api-method-parameter name="ProfileIsPublic" type="bool" %}
 ?Reseller\_ProfileIsPublic=...
+{% endapi-method-parameter %}
+
+
+{% api-method-parameter name="Area" type="string" %}
+?Reseller\_Area=...
+{% endapi-method-parameter %}
+
+
+{% api-method-parameter name="OperatesIn" type="string" %}
+?Reseller\_OperatesIn=...
+{% endapi-method-parameter %}
+
+
+{% api-method-parameter name="WebAddress" type="string" %}
+?Reseller\_WebAddress=...
+{% endapi-method-parameter %}
+
+
+{% api-method-parameter name="Email" type="string" %}
+?Reseller\_Email=...
 {% endapi-method-parameter %}
 
 
@@ -69,13 +94,33 @@ application/json
 {% endapi-method-parameter %}
 
 
+{% api-method-parameter name="PhoneNumber" type="string" %}
+?Reseller\_PhoneNumber=...
+{% endapi-method-parameter %}
+
+
 {% api-method-parameter name="Testimonial1" type="string" %}
 ?Reseller\_Testimonial1=...
 {% endapi-method-parameter %}
 
 
+{% api-method-parameter name="Testimonial1Author" type="string" %}
+?Reseller\_Testimonial1Author=...
+{% endapi-method-parameter %}
+
+
 {% api-method-parameter name="Testimonial2" type="string" %}
 ?Reseller\_Testimonial2=...
+{% endapi-method-parameter %}
+
+
+{% api-method-parameter name="Testimonial2Author" type="string" %}
+?Reseller\_Testimonial2Author=...
+{% endapi-method-parameter %}
+
+
+{% api-method-parameter name="StripeAccountId" type="string" %}
+?Reseller\_StripeAccountId=...
 {% endapi-method-parameter %}
 
 
@@ -109,10 +154,19 @@ application/json
         "Currency": null,
         "AgreedTermsOn": false,
         "Approved": false,
+        "NextPayoutDate": false,
         "ProfileIsPublic": false,
+        "Area": "00001",
+        "OperatesIn": "00001",
+        "WebAddress": "00001",
+        "Email": "00001",
         "ProfileSummary": "BusinessArea",
+        "PhoneNumber": "BusinessArea",
         "Testimonial1": "BusinessArea",
+        "Testimonial1Author": "BusinessArea",
         "Testimonial2": "BusinessArea",
+        "Testimonial2Author": "BusinessArea",
+        "StripeAccountId": "false",
     }],
     "CurrentPageSize": 25,
     "CurrentPage": 1,
@@ -190,10 +244,19 @@ size=25 \(maximum=1000\)
         "Currency": null,
         "AgreedTermsOn": false,
         "Approved": false,
+        "NextPayoutDate": false,
         "ProfileIsPublic": false,
+        "Area": "00001",
+        "OperatesIn": "00001",
+        "WebAddress": "00001",
+        "Email": "00001",
         "ProfileSummary": "BusinessArea",
+        "PhoneNumber": "BusinessArea",
         "Testimonial1": "BusinessArea",
+        "Testimonial1Author": "BusinessArea",
         "Testimonial2": "BusinessArea",
+        "Testimonial2Author": "BusinessArea",
+        "StripeAccountId": "false",
     }],
     }],
     "CurrentPageSize": 25,
@@ -248,12 +311,16 @@ application/json
 ?to\_Reseller\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+{% api-method-parameter name="CreatedOn" type="object" required=false %}
 ?from\_Reseller\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="CreatedOn" type="object" required=false %}
-?from\_Reseller\_CreatedOn=...
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?to\_Reseller\_UpdatedOn=...
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?from\_Reseller\_UpdatedOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="AgreedTermsOn" type="datetime" required=false %}
@@ -261,6 +328,12 @@ application/json
 {% endapi-method-parameter %}
 {% api-method-parameter name="AgreedTermsOn" type="datetime" required=false %}
 ?to\_Reseller\_AgreedTermsOn=...
+{% endapi-method-parameter %}
+{% api-method-parameter name="NextPayoutDate" type="datetime" required=false %}
+?from\_Reseller\_NextPayoutDate=...
+{% endapi-method-parameter %}
+{% api-method-parameter name="NextPayoutDate" type="datetime" required=false %}
+?to\_Reseller\_NextPayoutDate=...
 {% endapi-method-parameter %}
 
 {% endapi-method-query-parameters %}
@@ -280,10 +353,19 @@ application/json
         "Currency": null,
         "AgreedTermsOn": false,
         "Approved": false,
+        "NextPayoutDate": false,
         "ProfileIsPublic": false,
+        "Area": "00001",
+        "OperatesIn": "00001",
+        "WebAddress": "00001",
+        "Email": "00001",
         "ProfileSummary": "BusinessArea",
+        "PhoneNumber": "BusinessArea",
         "Testimonial1": "BusinessArea",
+        "Testimonial1Author": "BusinessArea",
         "Testimonial2": "BusinessArea",
+        "Testimonial2Author": "BusinessArea",
+        "StripeAccountId": "false",
     }],
     }],
     "CurrentPageSize": 25,
@@ -348,10 +430,19 @@ The ID of the reseller to fetch.
         "Currency": null,
         "AgreedTermsOn": false,
         "Approved": false,
+        "NextPayoutDate": false,
         "ProfileIsPublic": false,
+        "Area": "00001",
+        "OperatesIn": "00001",
+        "WebAddress": "00001",
+        "Email": "00001",
         "ProfileSummary": "BusinessArea",
+        "PhoneNumber": "BusinessArea",
         "Testimonial1": "BusinessArea",
+        "Testimonial1Author": "BusinessArea",
         "Testimonial2": "BusinessArea",
+        "Testimonial2Author": "BusinessArea",
+        "StripeAccountId": "false",
 }
 ```
 {% endapi-method-response-example %}
@@ -403,13 +494,31 @@ application/json
 {% endapi-method-parameter %}
 {% api-method-parameter name="Approved" type="bool" required=false %}
 {% endapi-method-parameter %}
+{% api-method-parameter name="NextPayoutDate" type="DateTime?" required=false %}
+{% endapi-method-parameter %}
 {% api-method-parameter name="ProfileIsPublic" type="bool" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Area" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="OperatesIn" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="WebAddress" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Email" type="string" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="ProfileSummary" type="string" required=false %}
 {% endapi-method-parameter %}
+{% api-method-parameter name="PhoneNumber" type="string" required=false %}
+{% endapi-method-parameter %}
 {% api-method-parameter name="Testimonial1" type="string" required=false %}
 {% endapi-method-parameter %}
+{% api-method-parameter name="Testimonial1Author" type="string" required=false %}
+{% endapi-method-parameter %}
 {% api-method-parameter name="Testimonial2" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Testimonial2Author" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="StripeAccountId" type="string" required=false %}
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 
@@ -519,17 +628,27 @@ The id of the reseller to update
 {% api-method-body-parameters %}
 {% api-method-parameter name="Name" type="string" required=true %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="AgreedTermsOn" type="DateTime?" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="Approved" type="bool" required=false %}
-{% endapi-method-parameter %}
 {% api-method-parameter name="ProfileIsPublic" type="bool" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Area" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="OperatesIn" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="WebAddress" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Email" type="string" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="ProfileSummary" type="string" required=false %}
 {% endapi-method-parameter %}
+{% api-method-parameter name="PhoneNumber" type="string" required=false %}
+{% endapi-method-parameter %}
 {% api-method-parameter name="Testimonial1" type="string" required=false %}
 {% endapi-method-parameter %}
+{% api-method-parameter name="Testimonial1Author" type="string" required=false %}
+{% endapi-method-parameter %}
 {% api-method-parameter name="Testimonial2" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Testimonial2Author" type="string" required=false %}
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}

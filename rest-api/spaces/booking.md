@@ -234,6 +234,11 @@ application/json
 {% endapi-method-parameter %}
 
 
+{% api-method-parameter name="Resource\_HideInCalendar" type="string" %}
+?Booking\_Resource\_HideInCalendar=...
+{% endapi-method-parameter %}
+
+
 {% api-method-parameter name="Coworker\_FullName" type="string" %}
 ?Booking\_Coworker\_FullName=...
 {% endapi-method-parameter %}
@@ -458,12 +463,16 @@ application/json
 ?to\_Booking\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+{% api-method-parameter name="CreatedOn" type="object" required=false %}
 ?from\_Booking\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="CreatedOn" type="object" required=false %}
-?from\_Booking\_CreatedOn=...
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?to\_Booking\_UpdatedOn=...
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?from\_Booking\_UpdatedOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="FromTime" type="datetime" required=false %}

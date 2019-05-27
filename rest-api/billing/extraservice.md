@@ -144,6 +144,21 @@ application/json
 {% endapi-method-parameter %}
 
 
+{% api-method-parameter name="IsBookingCredit" type="bool" %}
+?ExtraService\_IsBookingCredit=...
+{% endapi-method-parameter %}
+
+
+{% api-method-parameter name="IsPrintingCredit" type="bool" %}
+?ExtraService\_IsPrintingCredit=...
+{% endapi-method-parameter %}
+
+
+{% api-method-parameter name="ResourceTypeNames" type="string" %}
+?ExtraService\_ResourceTypeNames=...
+{% endapi-method-parameter %}
+
+
 {% api-method-parameter name="Currency\_Code" type="string" %}
 ?ExtraService\_Currency\_Code=...
 {% endapi-method-parameter %}
@@ -181,6 +196,9 @@ application/json
         "FixedCostPrice": null,
         "OnlyForContacts": true,
         "OnlyForMembers": true,
+        "IsBookingCredit": true,
+        "IsPrintingCredit": true,
+        "ResourceTypeNames": "",
     }],
     "CurrentPageSize": 25,
     "CurrentPage": 1,
@@ -275,6 +293,9 @@ size=25 \(maximum=1000\)
         "FixedCostPrice": null,
         "OnlyForContacts": true,
         "OnlyForMembers": true,
+        "IsBookingCredit": true,
+        "IsPrintingCredit": true,
+        "ResourceTypeNames": "",
     }],
     }],
     "CurrentPageSize": 25,
@@ -329,12 +350,16 @@ application/json
 ?to\_ExtraService\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+{% api-method-parameter name="CreatedOn" type="object" required=false %}
 ?from\_ExtraService\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="CreatedOn" type="object" required=false %}
-?from\_ExtraService\_CreatedOn=...
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?to\_ExtraService\_UpdatedOn=...
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?from\_ExtraService\_UpdatedOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="DisplayOrder" type="decimal" required=false %}
@@ -432,6 +457,9 @@ application/json
         "FixedCostPrice": null,
         "OnlyForContacts": true,
         "OnlyForMembers": true,
+        "IsBookingCredit": true,
+        "IsPrintingCredit": true,
+        "ResourceTypeNames": "",
     }],
     }],
     "CurrentPageSize": 25,
@@ -513,6 +541,9 @@ The ID of the extraservice to fetch.
         "FixedCostPrice": null,
         "OnlyForContacts": true,
         "OnlyForMembers": true,
+        "IsBookingCredit": true,
+        "IsPrintingCredit": true,
+        "ResourceTypeNames": "",
 }
 ```
 {% endapi-method-response-example %}
@@ -597,6 +628,12 @@ application/json
 {% api-method-parameter name="OnlyForContacts" type="bool" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="OnlyForMembers" type="bool" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="IsBookingCredit" type="bool" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="IsPrintingCredit" type="bool" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="ResourceTypeNames" type="string" required=false %}
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 
@@ -747,6 +784,12 @@ The id of the extraservice to update
 {% api-method-parameter name="OnlyForContacts" type="bool" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="OnlyForMembers" type="bool" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="IsBookingCredit" type="bool" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="IsPrintingCredit" type="bool" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="ResourceTypeNames" type="string" required=false %}
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}

@@ -222,12 +222,16 @@ application/json
 ?to\_ProductBookingCredit\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+{% api-method-parameter name="CreatedOn" type="object" required=false %}
 ?from\_ProductBookingCredit\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="CreatedOn" type="object" required=false %}
-?from\_ProductBookingCredit\_CreatedOn=...
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?to\_ProductBookingCredit\_UpdatedOn=...
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?from\_ProductBookingCredit\_UpdatedOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Credit" type="decimal" required=false %}

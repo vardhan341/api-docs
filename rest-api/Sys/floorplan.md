@@ -219,12 +219,16 @@ application/json
 ?to\_FloorPlan\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+{% api-method-parameter name="CreatedOn" type="object" required=false %}
 ?from\_FloorPlan\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="CreatedOn" type="object" required=false %}
-?from\_FloorPlan\_CreatedOn=...
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?to\_FloorPlan\_UpdatedOn=...
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?from\_FloorPlan\_UpdatedOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="BackgroundScale" type="decimal" required=false %}

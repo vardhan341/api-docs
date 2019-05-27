@@ -49,6 +49,21 @@ application/json
 {% endapi-method-parameter %}
 
 
+{% api-method-parameter name="Booking\_FromTime" type="string" %}
+?CoworkerExtraServiceUseHistory\_Booking\_FromTime=...
+{% endapi-method-parameter %}
+
+
+{% api-method-parameter name="Booking\_ToTime" type="string" %}
+?CoworkerExtraServiceUseHistory\_Booking\_ToTime=...
+{% endapi-method-parameter %}
+
+
+{% api-method-parameter name="Booking\_Resource_Name" type="string" %}
+?CoworkerExtraServiceUseHistory\_Booking\_Resource_Name=...
+{% endapi-method-parameter %}
+
+
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
 
@@ -191,12 +206,16 @@ application/json
 ?to\_CoworkerExtraServiceUseHistory\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+{% api-method-parameter name="CreatedOn" type="object" required=false %}
 ?from\_CoworkerExtraServiceUseHistory\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="CreatedOn" type="object" required=false %}
-?from\_CoworkerExtraServiceUseHistory\_CreatedOn=...
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?to\_CoworkerExtraServiceUseHistory\_UpdatedOn=...
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?from\_CoworkerExtraServiceUseHistory\_UpdatedOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="CreditUsed" type="decimal" required=false %}
@@ -326,7 +345,7 @@ application/json
 {% api-method-body-parameters %}
 {% api-method-parameter name="CoworkerExtraServiceId" type="int" required=true %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="BookingId" type="int" required=true %}
+{% api-method-parameter name="BookingId" type="int" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="CreditUsed" type="int?" required=false %}
 {% endapi-method-parameter %}
@@ -438,7 +457,7 @@ The id of the coworkerextraserviceusehistory to update
 {% api-method-body-parameters %}
 {% api-method-parameter name="CoworkerExtraServiceId" type="int" required=true %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="BookingId" type="int" required=true %}
+{% api-method-parameter name="BookingId" type="int" required=false %}
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
