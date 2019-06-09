@@ -488,13 +488,8 @@ application/json
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
-{% api-method-path-parameters %}
-{% api-method-parameter name="Id" type="integer" required=true %}
-The id of the productbookingcredit to update
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
-
 {% api-method-body-parameters %}
+The id of the productbookingcredit to update
 {% api-method-parameter name="Name" type="string" required=true %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="ProductId" type="int" required=true %}

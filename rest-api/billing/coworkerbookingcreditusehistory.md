@@ -490,13 +490,8 @@ application/json
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
-{% api-method-path-parameters %}
-{% api-method-parameter name="Id" type="integer" required=true %}
-The id of the coworkerbookingcreditusehistory to update
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
-
 {% api-method-body-parameters %}
+The id of the coworkerbookingcreditusehistory to update
 {% api-method-parameter name="Description" type="string" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="CoworkerBookingCreditId" type="int" required=true %}

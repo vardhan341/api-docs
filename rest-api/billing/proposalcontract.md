@@ -547,13 +547,8 @@ application/json
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
-{% api-method-path-parameters %}
-{% api-method-parameter name="Id" type="integer" required=true %}
-The id of the proposalcontract to update
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
-
 {% api-method-body-parameters %}
+The id of the proposalcontract to update
 {% api-method-parameter name="ProposalId" type="int" required=true %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="TariffId" type="int" required=true %}
