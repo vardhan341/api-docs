@@ -93,5 +93,6 @@
   * [About Page](public-api/about-page.md)
   * [Allowances](public-api/allowances.md)
   * [Blog](public-api/blog.md)
+  * [Bookings](public-api/bookings.md)
 * [SDK](sdk.md)
 
