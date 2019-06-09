@@ -64,6 +64,26 @@ application/json
 {% endapi-method-parameter %}
 
 
+{% api-method-parameter name="LastAccess" type="DateTime?" %}
+?ResellerAccount\_LastAccess=...
+{% endapi-method-parameter %}
+
+
+{% api-method-parameter name="LastInvoiceAmount" type="decimal?" %}
+?ResellerAccount\_LastInvoiceAmount=...
+{% endapi-method-parameter %}
+
+
+{% api-method-parameter name="AverageInvoiceAmount" type="decimal?" %}
+?ResellerAccount\_AverageInvoiceAmount=...
+{% endapi-method-parameter %}
+
+
+{% api-method-parameter name="CanManageAccount" type="bool" %}
+?ResellerAccount\_CanManageAccount=...
+{% endapi-method-parameter %}
+
+
 {% api-method-parameter name="Reseller\_Currency_Id" type="string" %}
 ?ResellerAccount\_Reseller\_Currency_Id=...
 {% endapi-method-parameter %}
@@ -76,6 +96,36 @@ application/json
 
 {% api-method-parameter name="Business\_Name" type="string" %}
 ?ResellerAccount\_Business\_Name=...
+{% endapi-method-parameter %}
+
+
+{% api-method-parameter name="Business\_PreAuthId" type="string" %}
+?ResellerAccount\_Business\_PreAuthId=...
+{% endapi-method-parameter %}
+
+
+{% api-method-parameter name="Business\_Last4Digits" type="string" %}
+?ResellerAccount\_Business\_Last4Digits=...
+{% endapi-method-parameter %}
+
+
+{% api-method-parameter name="Business\_PreAuthLastError" type="string" %}
+?ResellerAccount\_Business\_PreAuthLastError=...
+{% endapi-method-parameter %}
+
+
+{% api-method-parameter name="Business\_Suspended" type="string" %}
+?ResellerAccount\_Business\_Suspended=...
+{% endapi-method-parameter %}
+
+
+{% api-method-parameter name="Business\_NextInvoice" type="string" %}
+?ResellerAccount\_Business\_NextInvoice=...
+{% endapi-method-parameter %}
+
+
+{% api-method-parameter name="Business\_TrialExpireDate" type="string" %}
+?ResellerAccount\_Business\_TrialExpireDate=...
 {% endapi-method-parameter %}
 
 
@@ -95,6 +145,10 @@ application/json
         "ComissionPercentage": 0,
         "NextPayoutDate": 2019-01-01,
         "ExpirationDate": 2019-01-01,
+        "LastAccess": ,
+        "LastInvoiceAmount": ,
+        "AverageInvoiceAmount": ,
+        "CanManageAccount": false,
     }],
     "CurrentPageSize": 25,
     "CurrentPage": 1,
@@ -173,6 +227,10 @@ size=25 \(maximum=1000\)
         "ComissionPercentage": 0,
         "NextPayoutDate": 2019-01-01,
         "ExpirationDate": 2019-01-01,
+        "LastAccess": ,
+        "LastInvoiceAmount": ,
+        "AverageInvoiceAmount": ,
+        "CanManageAccount": false,
     }],
     }],
     "CurrentPageSize": 25,
@@ -257,6 +315,24 @@ application/json
 {% api-method-parameter name="ExpirationDate" type="datetime" required=false %}
 ?to\_ResellerAccount\_ExpirationDate=...
 {% endapi-method-parameter %}
+{% api-method-parameter name="LastAccess" type="datetime" required=false %}
+?from\_ResellerAccount\_LastAccess=...
+{% endapi-method-parameter %}
+{% api-method-parameter name="LastAccess" type="datetime" required=false %}
+?to\_ResellerAccount\_LastAccess=...
+{% endapi-method-parameter %}
+{% api-method-parameter name="LastInvoiceAmount" type="decimal" required=false %}
+?from\_ResellerAccount\_LastInvoiceAmount=...
+{% endapi-method-parameter %}
+{% api-method-parameter name="LastInvoiceAmount" type="decimal" required=false %}
+?to\_ResellerAccount\_LastInvoiceAmount=...
+{% endapi-method-parameter %}
+{% api-method-parameter name="AverageInvoiceAmount" type="decimal" required=false %}
+?from\_ResellerAccount\_AverageInvoiceAmount=...
+{% endapi-method-parameter %}
+{% api-method-parameter name="AverageInvoiceAmount" type="decimal" required=false %}
+?to\_ResellerAccount\_AverageInvoiceAmount=...
+{% endapi-method-parameter %}
 
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
@@ -276,6 +352,10 @@ application/json
         "ComissionPercentage": 0,
         "NextPayoutDate": 2019-01-01,
         "ExpirationDate": 2019-01-01,
+        "LastAccess": ,
+        "LastInvoiceAmount": ,
+        "AverageInvoiceAmount": ,
+        "CanManageAccount": false,
     }],
     }],
     "CurrentPageSize": 25,
@@ -341,6 +421,10 @@ The ID of the reselleraccount to fetch.
         "ComissionPercentage": 0,
         "NextPayoutDate": 2019-01-01,
         "ExpirationDate": 2019-01-01,
+        "LastAccess": ,
+        "LastInvoiceAmount": ,
+        "AverageInvoiceAmount": ,
+        "CanManageAccount": false,
 }
 ```
 {% endapi-method-response-example %}
@@ -393,6 +477,14 @@ application/json
 {% api-method-parameter name="NextPayoutDate" type="DateTime?" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="ExpirationDate" type="DateTime?" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="LastAccess" type="DateTime?" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="LastInvoiceAmount" type="decimal?" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="AverageInvoiceAmount" type="decimal?" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="CanManageAccount" type="bool" required=false %}
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 

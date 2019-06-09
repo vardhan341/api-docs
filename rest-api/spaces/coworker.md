@@ -594,6 +594,11 @@ application/json
 {% endapi-method-parameter %}
 
 
+{% api-method-parameter name="PurchaseOrder" type="string" %}
+?Coworker\_PurchaseOrder=...
+{% endapi-method-parameter %}
+
+
 {% api-method-parameter name="InvoicingBusiness\_Name" type="string" %}
 ?Coworker\_InvoicingBusiness\_Name=...
 {% endapi-method-parameter %}
@@ -757,6 +762,7 @@ application/json
         "Custom28": "Custom1",
         "Custom29": "Custom1",
         "Custom30": "Custom1",
+        "PurchaseOrder": "false",
     }],
     "CurrentPageSize": 25,
     "CurrentPage": 1,
@@ -941,6 +947,7 @@ size=25 \(maximum=1000\)
         "Custom28": "Custom1",
         "Custom29": "Custom1",
         "Custom30": "Custom1",
+        "PurchaseOrder": "false",
     }],
     }],
     "CurrentPageSize": 25,
@@ -1174,6 +1181,7 @@ application/json
         "Custom28": "Custom1",
         "Custom29": "Custom1",
         "Custom30": "Custom1",
+        "PurchaseOrder": "false",
     }],
     }],
     "CurrentPageSize": 25,
@@ -1345,6 +1353,7 @@ The ID of the coworker to fetch.
         "Custom28": "Custom1",
         "Custom29": "Custom1",
         "Custom30": "Custom1",
+        "PurchaseOrder": "false",
 }
 ```
 {% endapi-method-response-example %}
@@ -1609,6 +1618,8 @@ application/json
 {% api-method-parameter name="Custom29" type="string" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="Custom30" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="PurchaseOrder" type="string" required=false %}
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 
@@ -1931,6 +1942,8 @@ The id of the coworker to update
 {% api-method-parameter name="Custom29" type="string" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="Custom30" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="PurchaseOrder" type="string" required=false %}
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}

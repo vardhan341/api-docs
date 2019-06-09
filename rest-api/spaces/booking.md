@@ -239,6 +239,16 @@ application/json
 {% endapi-method-parameter %}
 
 
+{% api-method-parameter name="Resource\_ResourceType_Id" type="string" %}
+?Booking\_Resource\_ResourceType_Id=...
+{% endapi-method-parameter %}
+
+
+{% api-method-parameter name="Resource\_ResourceType_Name" type="string" %}
+?Booking\_Resource\_ResourceType_Name=...
+{% endapi-method-parameter %}
+
+
 {% api-method-parameter name="Coworker\_FullName" type="string" %}
 ?Booking\_Coworker\_FullName=...
 {% endapi-method-parameter %}

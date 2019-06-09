@@ -59,6 +59,11 @@ application/json
 {% endapi-method-parameter %}
 
 
+{% api-method-parameter name="CheckedInAt" type="string" %}
+?Visitor\_CheckedInAt=...
+{% endapi-method-parameter %}
+
+
 {% api-method-parameter name="Notes" type="string" %}
 ?Visitor\_Notes=...
 {% endapi-method-parameter %}
@@ -109,6 +114,7 @@ application/json
         "Email": "email@email.com",
         "Coworker": null,
         "VisitorCode": "012345",
+        "CheckedInAt": "CheckedInAt",
         "Notes": "Description",
         "ExpectedArrival": null,
         "Arrived": true,
@@ -192,6 +198,7 @@ size=25 \(maximum=1000\)
         "Email": "email@email.com",
         "Coworker": null,
         "VisitorCode": "012345",
+        "CheckedInAt": "CheckedInAt",
         "Notes": "Description",
         "ExpectedArrival": null,
         "Arrived": true,
@@ -294,6 +301,7 @@ application/json
         "Email": "email@email.com",
         "Coworker": null,
         "VisitorCode": "012345",
+        "CheckedInAt": "CheckedInAt",
         "Notes": "Description",
         "ExpectedArrival": null,
         "Arrived": true,
@@ -364,6 +372,7 @@ The ID of the visitor to fetch.
         "Email": "email@email.com",
         "Coworker": null,
         "VisitorCode": "012345",
+        "CheckedInAt": "CheckedInAt",
         "Notes": "Description",
         "ExpectedArrival": null,
         "Arrived": true,
@@ -420,6 +429,8 @@ application/json
 {% api-method-parameter name="CoworkerId" type="int" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="VisitorCode" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="CheckedInAt" type="string" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="Notes" type="string" required=false %}
 {% endapi-method-parameter %}
@@ -546,6 +557,8 @@ The id of the visitor to update
 {% api-method-parameter name="Email" type="string" required=true %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="CoworkerId" type="int" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="CheckedInAt" type="string" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="Notes" type="string" required=false %}
 {% endapi-method-parameter %}

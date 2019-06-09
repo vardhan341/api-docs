@@ -205,6 +205,7 @@
     <None Include="rest-api\sys\user.md" />
     <None Include="rest-api\sys\userbookmark.md" />
     <None Include="rest-api\sys\usermessage.md" />
+    <None Include="rest-api\sys\validationrule.md" />
     <None Include="rest-api\sys\webhook.md" />
     <None Include="SUMMARY.md" />
   </ItemGroup>
