@@ -94,5 +94,6 @@
   * [Blog](public-api/blog.md)
   * [Bookings](public-api/bookings.md)
   * [Business](public-api/business.md)
+  * [Contact](public-api/contact.md)
 * [SDK](sdk.md)
 

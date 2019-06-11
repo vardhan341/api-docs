@@ -1,3 +1,7 @@
+---
+description: Gets logos and banners
+---
+
 # Business
 
 {% api-method method="get" host="https://xyz.spaces.nexudus.com" path="/:langauge/business/getlogo" %}
@@ -199,4 +203,6 @@ The width of the image to return
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
+
+
 
