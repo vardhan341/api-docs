@@ -1,4 +1,6 @@
-﻿{% api-method method="get" host="https://spaces.nexudus.com/api" path="/billing/coworkertimepasses" %}
+# CoworkerTimePass
+
+{% api-method method="get" host="https://spaces.nexudus.com/api" path="/billing/coworkertimepasses" %}
 {% api-method-summary %}
 Find
 {% endapi-method-summary %}
@@ -9,18 +11,17 @@ This endpoint allows you to GET a list of coworkertimepasses based on one or mor
 
 {% api-method-spec %}
 {% api-method-request %}
-
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
 {% api-method-query-parameters %}
-
 {% api-method-parameter name="Id" type="int" %}
 ?Id=...
 {% endapi-method-parameter %}
@@ -33,108 +34,89 @@ application/json
 ?CoworkerTimePass\_SystemId=...
 {% endapi-method-parameter %}
 
-
 {% api-method-parameter name="Coworker" type="Coworker" %}
 ?CoworkerTimePass\_Coworker=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="Business" type="Business" %}
 ?CoworkerTimePass\_Business=...
 {% endapi-method-parameter %}
 
-
 {% api-method-parameter name="TimePass" type="TimePass" %}
 ?CoworkerTimePass\_TimePass=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="Notes" type="string" %}
 ?CoworkerTimePass\_Notes=...
 {% endapi-method-parameter %}
 
-
 {% api-method-parameter name="Used" type="bool" %}
 ?CoworkerTimePass\_Used=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="CheckedIn" type="bool" %}
 ?CoworkerTimePass\_CheckedIn=...
 {% endapi-method-parameter %}
 
-
 {% api-method-parameter name="UsedDate" type="DateTime?" %}
 ?CoworkerTimePass\_UsedDate=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="RemainingUses" type="int?" %}
 ?CoworkerTimePass\_RemainingUses=...
 {% endapi-method-parameter %}
 
-
 {% api-method-parameter name="TotalUses" type="int?" %}
 ?CoworkerTimePass\_TotalUses=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="Free" type="bool" %}
 ?CoworkerTimePass\_Free=...
 {% endapi-method-parameter %}
 
-
 {% api-method-parameter name="Price" type="decimal?" %}
 ?CoworkerTimePass\_Price=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="CreateMultiple" type="int" %}
 ?CoworkerTimePass\_CreateMultiple=...
 {% endapi-method-parameter %}
 
-
 {% api-method-parameter name="ExpireDate" type="DateTime?" %}
 ?CoworkerTimePass\_ExpireDate=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="Invoiced" type="bool" %}
 ?CoworkerTimePass\_Invoiced=...
 {% endapi-method-parameter %}
 
-
 {% api-method-parameter name="InvoiceDate" type="DateTime?" %}
 ?CoworkerTimePass\_InvoiceDate=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="IsFromTariff" type="bool" %}
 ?CoworkerTimePass\_IsFromTariff=...
 {% endapi-method-parameter %}
 
-
 {% api-method-parameter name="CoworkerProductUniqueId" type="Guid?" %}
 ?CoworkerTimePass\_CoworkerProductUniqueId=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="TimePass\_Name" type="string" %}
 ?CoworkerTimePass\_TimePass\_Name=...
 {% endapi-method-parameter %}
 
-
-{% api-method-parameter name="TimePass\_Currency_Code" type="string" %}
-?CoworkerTimePass\_TimePass\_Currency_Code=...
+{% api-method-parameter name="TimePass\_Currency\_Code" type="string" %}
+?CoworkerTimePass\_TimePass\_Currency\_Code=...
 {% endapi-method-parameter %}
-
-
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
 
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
 
+{% endapi-method-response-example-description %}
 
 ```javascript
 {
@@ -170,7 +152,6 @@ application/json
     "TotalItems": 60,
     "TotalPages": 3
 }
-
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}
@@ -190,11 +171,11 @@ This endpoint allows you to GET a list of coworkertimepasses.
 
 {% api-method-spec %}
 {% api-method-request %}
-
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
@@ -269,8 +250,7 @@ size=25 \(maximum=1000\)
 > 🔒 Requires user role `coworkertimepass-list`
 
 {% hint style="info" %}
-You can also get a list of records based when they were created or updated. This is useful if you want to get a list of records created after or before a particular point in time. 
-You can also use range query parameters for all date, integer and decimal properties.
+You can also get a list of records based when they were created or updated. This is useful if you want to get a list of records created after or before a particular point in time. You can also use range query parameters for all date, integer and decimal properties.
 {% endhint %}
 
 {% api-method method="get" host="https://spaces.nexudus.com/api" path="/billing/coworkertimepasses" %}
@@ -284,11 +264,11 @@ Gets a list of coworkertimepasses based on the date when they were created or up
 
 {% api-method-spec %}
 {% api-method-request %}
-
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
@@ -314,46 +294,58 @@ application/json
 {% api-method-parameter name="UsedDate" type="datetime" required=false %}
 ?from\_CoworkerTimePass\_UsedDate=...
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="UsedDate" type="datetime" required=false %}
 ?to\_CoworkerTimePass\_UsedDate=...
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="RemainingUses" type="int" required=false %}
 ?from\_CoworkerTimePass\_RemainingUses=...
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="RemainingUses" type="int" required=false %}
 ?to\_CoworkerTimePass\_RemainingUses=...
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="TotalUses" type="int" required=false %}
 ?from\_CoworkerTimePass\_TotalUses=...
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="TotalUses" type="int" required=false %}
 ?to\_CoworkerTimePass\_TotalUses=...
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Price" type="decimal" required=false %}
 ?from\_CoworkerTimePass\_Price=...
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Price" type="decimal" required=false %}
 ?to\_CoworkerTimePass\_Price=...
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="CreateMultiple" type="int" required=false %}
 ?from\_CoworkerTimePass\_CreateMultiple=...
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="CreateMultiple" type="int" required=false %}
 ?to\_CoworkerTimePass\_CreateMultiple=...
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="ExpireDate" type="datetime" required=false %}
 ?from\_CoworkerTimePass\_ExpireDate=...
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="ExpireDate" type="datetime" required=false %}
 ?to\_CoworkerTimePass\_ExpireDate=...
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="InvoiceDate" type="datetime" required=false %}
 ?from\_CoworkerTimePass\_InvoiceDate=...
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="InvoiceDate" type="datetime" required=false %}
 ?to\_CoworkerTimePass\_InvoiceDate=...
 {% endapi-method-parameter %}
-
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
 
@@ -417,21 +409,21 @@ Gets one coworkertimepass record.
 
 {% api-method-spec %}
 {% api-method-request %}
-
-{% api-method-headers %}
-{% api-method-parameter name="Authorization" type="string" required=true %}
-Basic Authentication token. Base64 encoding of 'username:password'.
-{% endapi-method-parameter %}
-{% api-method-parameter name="Content" type="string" required=true %}
-application/json
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
-
 {% api-method-path-parameters %}
 {% api-method-parameter name="id" type="integer" required=true %}
 The ID of the coworkertimepass to fetch.
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
+
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+Basic Authentication token. Base64 encoding of 'username:password'.
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="Content" type="string" required=true %}
+application/json
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
 {% endapi-method-request %}
 
 {% api-method-response %}
@@ -468,7 +460,7 @@ The ID of the coworkertimepass to fetch.
 
 {% endapi-method-response-example-description %}
 
-```
+```text
 "Not found"
 ```
 {% endapi-method-response-example %}
@@ -489,11 +481,11 @@ Creates a new coworkertimepass.
 
 {% api-method-spec %}
 {% api-method-request %}
-
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
@@ -501,41 +493,73 @@ application/json
 
 {% api-method-body-parameters %}
 {% api-method-parameter name="CoworkerId" type="int" required=true %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="BusinessId" type="int" required=true %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="TimePassId" type="int" required=true %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Notes" type="string" required=false %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Used" type="bool" required=false %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="CheckedIn" type="bool" required=false %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="UsedDate" type="DateTime?" required=false %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="RemainingUses" type="int?" required=false %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="TotalUses" type="int?" required=false %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Free" type="bool" required=false %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Price" type="decimal?" required=false %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="CreateMultiple" type="int" required=true %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="ExpireDate" type="DateTime?" required=false %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Invoiced" type="bool" required=false %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="InvoiceDate" type="DateTime?" required=false %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="IsFromTariff" type="bool" required=false %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="CoworkerProductUniqueId" type="Guid?" required=false %}
+
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
-
 {% endapi-method-request %}
 
 {% api-method-response %}
@@ -558,7 +582,7 @@ application/json
 
 {% api-method-response-example httpCode=400 %}
 {% api-method-response-example-description %}
-_This response is an example, errors and messages will follow this structure but keys and descriptions may be different for each record._  
+_This response is an example, errors and messages will follow this structure but keys and descriptions may be different for each record._
 {% endapi-method-response-example-description %}
 
 ```javascript
@@ -616,42 +640,56 @@ Update
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Updates and existing coworkertimepass.
-  
-Required User Role: `coworkertimepass-edit`
+Updates and existing coworkertimepass.Required User Role: `coworkertimepass-edit`
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
-
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
 {% api-method-body-parameters %}
-The id of the coworkertimepass to update
 {% api-method-parameter name="CoworkerId" type="int" required=true %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="BusinessId" type="int" required=true %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="TimePassId" type="int" required=true %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Notes" type="string" required=false %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Used" type="bool" required=false %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Free" type="bool" required=false %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Price" type="decimal?" required=false %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="ExpireDate" type="DateTime?" required=false %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="CoworkerProductUniqueId" type="Guid?" required=false %}
+
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
@@ -678,7 +716,7 @@ The id of the coworkertimepass to update
 
 {% api-method-response-example httpCode=400 %}
 {% api-method-response-example-description %}
-_This response is an example, errors and messages will follow this structure but keys and descriptions may be different for each record._  
+_This response is an example, errors and messages will follow this structure but keys and descriptions may be different for each record._
 {% endapi-method-response-example-description %}
 
 ```javascript
@@ -730,35 +768,32 @@ _This response is an example, errors and messages will follow this structure but
 
 > 🔒 Requires user role `coworkertimepass-edit`
 
-
 {% api-method method="delete" host="https://spaces.nexudus.com/api" path="/billing/coworkertimepasses/:id" %}
 {% api-method-summary %}
 Delete
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Deletes a coworkertimepass.  
-  
-Required User Roles: `coworkertimepass-delete`
+Deletes a coworkertimepass.Required User Roles: `coworkertimepass-delete`
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
-
-{% api-method-headers %}
-{% api-method-parameter name="Authorization" type="string" required=true %}
-Basic Authentication token. Base64 encoding of 'username:password'.
-{% endapi-method-parameter %}
-{% api-method-parameter name="Content" type="string" required=true %}
-application/json
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
-
 {% api-method-path-parameters %}
 {% api-method-parameter name="Id" type="integer" required=false %}
 
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
+
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+Basic Authentication token. Base64 encoding of 'username:password'.
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="Content" type="string" required=true %}
+application/json
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
 {% endapi-method-request %}
 
 {% api-method-response %}
@@ -786,7 +821,7 @@ application/json
 
 {% endapi-method-response-example-description %}
 
-```
+```text
 "Not found"
 ```
 {% endapi-method-response-example %}
@@ -806,14 +841,11 @@ application/json
 {% endapi-method-spec %}
 {% endapi-method %}
 
-
-
 > 🔒 Requires user role `coworkertimepass-delete`
-
 
 ## Commands
 
-Commands allow to perform actions against one or more coworkertimepass records. Some commands accept only one record while others can run an action for a number of records at the same time.  Each command has metadata with information about how it can be used and the amount of records, if any, it needs to run.
+Commands allow to perform actions against one or more coworkertimepass records. Some commands accept only one record while others can run an action for a number of records at the same time. Each command has metadata with information about how it can be used and the amount of records, if any, it needs to run.
 
 > ```javascript
 > {
@@ -835,11 +867,11 @@ Get all commands available to run for coworkertimepass records.
 
 {% api-method-spec %}
 {% api-method-request %}
-
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
@@ -849,7 +881,7 @@ application/json
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
 {% api-method-response-example-description %}
-_This response is an example._  
+_This response is an example._
 {% endapi-method-response-example-description %}
 
 ```javascript
@@ -893,11 +925,11 @@ Run Command
 
 {% api-method-spec %}
 {% api-method-request %}
-
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
@@ -909,21 +941,17 @@ The command Key defining the command to run. `"COMMAND_KEY_1"`
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Parameters" type="array" required=false %}
-A list of object with the structure below. The parameters required for each command are returned in the "RequiresParameters" array return by the "commands" endpoint.  
-  
-`[  
-   {  
-      "Name": "Name",   
-      "Type":"Type",   
-      "Value":recordId  
-    }  
+A list of object with the structure below. The parameters required for each command are returned in the "RequiresParameters" array return by the "commands" endpoint.`[    
+{    
+"Name": "Name",    
+"Type":"Type",    
+"Value":recordId    
+}    
 ]`
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Ids" type="array" required=true %}
-A list of integer IDs for each of the records to run this command for.  
-  
-`[987654321, 123565978]`
+A list of integer IDs for each of the records to run this command for.`[987654321, 123565978]`
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
@@ -931,7 +959,7 @@ A list of integer IDs for each of the records to run this command for.
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
 {% api-method-response-example-description %}
-_Commands also return a status 200 when they fail to process one or more of the records. Use the 'WasSuccessful'  property to know if the command run succeeded._  
+_Commands also return a status 200 when they fail to process one or more of the records. Use the 'WasSuccessful' property to know if the command run succeeded._
 {% endapi-method-response-example-description %}
 
 ```javascript
@@ -954,8 +982,9 @@ _Commands also return a status 200 when they fail to process one or more of the 
 
 The following endpoints return binary data. Check the `ContentType` header to understand the type of file being returned in the response stream.
 
-
 ## Related Entities
+
 * [Coworker](../spaces/coworker.md)
 * [Business](../sys/business.md)
-* [TimePass](../billing/timepass.md)
+* [TimePass](timepass.md)
+
