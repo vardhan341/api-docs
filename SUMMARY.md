@@ -93,5 +93,6 @@
   * [Allowances](public-api/allowances.md)
   * [Blog](public-api/blog.md)
   * [Bookings](public-api/bookings.md)
+  * [Business](public-api/business.md)
 * [SDK](sdk.md)
 
