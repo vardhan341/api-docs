@@ -95,5 +95,6 @@
   * [Bookings](public-api/bookings.md)
   * [Business](public-api/business.md)
   * [Contact](public-api/contact.md)
+  * [Content](public-api/content.md)
 * [SDK](sdk.md)
 
