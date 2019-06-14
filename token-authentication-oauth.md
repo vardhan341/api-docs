@@ -97,7 +97,7 @@ Refresh Access Token
 {% api-method-description %}
 Gets a new short-lived access token based on a refresh token. Refreshing a token for a client ID will invalidate all previous refresh tokens for that client ID but not existing Access Tokens that may not have expired.  
   
-Refresh Tokens are valid for 15 days. If you refresh token has expired, you will need to use a username and password to create a new access token.
+Refresh Tokens are valid for 15 days. If your refresh token has expired, you will need to use a username and password to create a new access token.
 {% endapi-method-description %}
 
 {% api-method-spec %}
