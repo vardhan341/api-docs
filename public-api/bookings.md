@@ -952,7 +952,7 @@ Booking Cost
 {% endapi-method-summary %}
 
 {% api-method-description %}
-
+Gets the price for a booking as well as availability information for the requested resource and dates.
 {% endapi-method-description %}
 
 {% api-method-spec %}
