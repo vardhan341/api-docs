@@ -34,7 +34,7 @@ password=Demo1234`
 {% api-method-request %}
 {% api-method-headers %}
 {% api-method-parameter type="string" name="client\_id" %}
-A unique identifier for the client making these requests. A single refresh tokens will be created per client. If no client ID is passed, the client id would be set to your email.
+A unique identifier for the client making these requests. A single refresh token will be created per client, existing tokens for a given client\_id are invalidated when a new token is requested for that client\_id. If no client\_id header is passed, the client id would be set to your email.
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Accept" type="string" required=true %}
@@ -107,8 +107,8 @@ Refresh Tokens are valid for 15 days. If you refresh token has expired, you will
 application/json
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="client\_id" type="string" required=false %}
-The client id to refresh the access token for. This must the same as the client id you passed in when creating the access token.
+{% api-method-parameter name="client\_id" type="string" required=true %}
+The client id to refresh the access token for. This must the same as the client id you passed in when creating the access token. If you did not pass a client\_id header to get the initial token, you must pass the email used to obtain the initial token as the client\_id header to refresh it.
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
