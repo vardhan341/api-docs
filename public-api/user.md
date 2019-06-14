@@ -87,12 +87,32 @@ or
   "Status": 500,
   "Message": "The email address or password you entered is not valid.",
   "WasSuccessful": false
-}#
+}
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
+
+**Request Body**
+
+```javascript
+{ 
+  email: "..@..", 
+  password: "xyz",
+  validityInMinutes: 30
+}
+```
+
+**Request Body**
+
+```javascript
+{ 
+  email: "..@..", 
+  password: "xyz",
+  validityInMinutes: 30
+}
+```
 
 {% api-method method="get" host="https://xyz.spaces.nexudus.com" path="/:langauge/user/login" %}
 {% api-method-summary %}
