@@ -166,7 +166,7 @@ This is an example of passing a access token to any requests to the REST API.
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-headers %}
-{% api-method-parameter name="Bearer" type="string" %}
+{% api-method-parameter name="Bearer" type="string" required=true %}
 v8hNJebN2...
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
