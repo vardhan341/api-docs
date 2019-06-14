@@ -96,5 +96,6 @@
   * [Business](public-api/business.md)
   * [Contact](public-api/contact.md)
   * [Content](public-api/content.md)
+  * [User](public-api/user.md)
 * [SDK](sdk.md)
 
