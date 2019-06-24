@@ -49,6 +49,11 @@ application/json
 {% endapi-method-parameter %}
 
 
+{% api-method-parameter name="Internal" type="bool" %}
+?HelpDeskComment\_Internal=...
+{% endapi-method-parameter %}
+
+
 {% api-method-parameter name="Coworker\_FullName" type="string" %}
 ?HelpDeskComment\_Coworker\_FullName=...
 {% endapi-method-parameter %}
@@ -67,6 +72,7 @@ application/json
         "HelpDeskMessage": null,
         "Coworker": null,
         "MessageText": "MessageText",
+        "Internal": false,
     }],
     "CurrentPageSize": 25,
     "CurrentPage": 1,
@@ -142,6 +148,7 @@ size=25 \(maximum=1000\)
         "HelpDeskMessage": null,
         "Coworker": null,
         "MessageText": "MessageText",
+        "Internal": false,
     }],
     }],
     "CurrentPageSize": 25,
@@ -224,6 +231,7 @@ application/json
         "HelpDeskMessage": null,
         "Coworker": null,
         "MessageText": "MessageText",
+        "Internal": false,
     }],
     }],
     "CurrentPageSize": 25,
@@ -286,6 +294,7 @@ The ID of the helpdeskcomment to fetch.
         "HelpDeskMessage": null,
         "Coworker": null,
         "MessageText": "MessageText",
+        "Internal": false,
 }
 ```
 {% endapi-method-response-example %}
@@ -332,6 +341,8 @@ application/json
 {% api-method-parameter name="CoworkerId" type="int" required=true %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="MessageText" type="string" required=true %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Internal" type="bool" required=false %}
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 
@@ -439,6 +450,8 @@ The id of the helpdeskcomment to update
 {% api-method-parameter name="CoworkerId" type="int" required=true %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="MessageText" type="string" required=true %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Internal" type="bool" required=false %}
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}

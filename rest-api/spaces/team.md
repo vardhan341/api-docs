@@ -69,6 +69,16 @@ application/json
 {% endapi-method-parameter %}
 
 
+{% api-method-parameter name="DefaultMemberTariff" type="Tariff" %}
+?Team\_DefaultMemberTariff=...
+{% endapi-method-parameter %}
+
+
+{% api-method-parameter name="MaxTeamMemberCount" type="decimal?" %}
+?Team\_MaxTeamMemberCount=...
+{% endapi-method-parameter %}
+
+
 {% api-method-parameter name="TransferCreditsToPayingMember" type="bool" %}
 ?Team\_TransferCreditsToPayingMember=...
 {% endapi-method-parameter %}
@@ -178,6 +188,11 @@ application/json
 ?Team\_PayingMember\_FullName=...
 {% endapi-method-parameter %}
 
+
+{% api-method-parameter name="DefaultMemberTariff\_Name" type="string" %}
+?Team\_DefaultMemberTariff\_Name=...
+{% endapi-method-parameter %}
+
 {% api-method-parameter name="TeamMembers" type="int" required=false %}
 ?Team\_TeamMembers=...
 {% endapi-method-parameter %}
@@ -199,6 +214,8 @@ application/json
         "CreateSingleInvoiceForTeam": true,
         "UseSpecialPrices": true,
         "PayingMember": null,
+        "DefaultMemberTariff": null,
+        "MaxTeamMemberCount": null,
         "TransferCreditsToPayingMember": true,
         "ShareTimePasses": true,
         "ShareExtraServices": true,
@@ -299,6 +316,8 @@ size=25 \(maximum=1000\)
         "CreateSingleInvoiceForTeam": true,
         "UseSpecialPrices": true,
         "PayingMember": null,
+        "DefaultMemberTariff": null,
+        "MaxTeamMemberCount": null,
         "TransferCreditsToPayingMember": true,
         "ShareTimePasses": true,
         "ShareExtraServices": true,
@@ -386,6 +405,12 @@ application/json
 ?from\_Team\_UpdatedOn=...
 {% endapi-method-parameter %}
 
+{% api-method-parameter name="MaxTeamMemberCount" type="decimal" required=false %}
+?from\_Team\_MaxTeamMemberCount=...
+{% endapi-method-parameter %}
+{% api-method-parameter name="MaxTeamMemberCount" type="decimal" required=false %}
+?to\_Team\_MaxTeamMemberCount=...
+{% endapi-method-parameter %}
 {% api-method-parameter name="DiscountExtraServices" type="decimal" required=false %}
 ?from\_Team\_DiscountExtraServices=...
 {% endapi-method-parameter %}
@@ -436,6 +461,8 @@ application/json
         "CreateSingleInvoiceForTeam": true,
         "UseSpecialPrices": true,
         "PayingMember": null,
+        "DefaultMemberTariff": null,
+        "MaxTeamMemberCount": null,
         "TransferCreditsToPayingMember": true,
         "ShareTimePasses": true,
         "ShareExtraServices": true,
@@ -523,6 +550,8 @@ The ID of the team to fetch.
         "CreateSingleInvoiceForTeam": true,
         "UseSpecialPrices": true,
         "PayingMember": null,
+        "DefaultMemberTariff": null,
+        "MaxTeamMemberCount": null,
         "TransferCreditsToPayingMember": true,
         "ShareTimePasses": true,
         "ShareExtraServices": true,
@@ -598,6 +627,10 @@ application/json
 {% api-method-parameter name="UseSpecialPrices" type="bool" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="PayingMemberId" type="int" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="DefaultMemberTariffId" type="int" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="MaxTeamMemberCount" type="decimal?" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="TransferCreditsToPayingMember" type="bool" required=false %}
 {% endapi-method-parameter %}
@@ -755,6 +788,10 @@ The id of the team to update
 {% api-method-parameter name="UseSpecialPrices" type="bool" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="PayingMemberId" type="int" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="DefaultMemberTariffId" type="int" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="MaxTeamMemberCount" type="decimal?" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="TransferCreditsToPayingMember" type="bool" required=false %}
 {% endapi-method-parameter %}
@@ -1271,3 +1308,4 @@ Binary stream or null
 ## Related Entities
 * [Business](../sys/business.md)
 * [Coworker](../spaces/coworker.md)
+* [Tariff](../billing/tariff.md)

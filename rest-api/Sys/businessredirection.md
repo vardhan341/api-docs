@@ -212,16 +212,12 @@ application/json
 ?to\_BusinessRedirection\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="CreatedOn" type="object" required=false %}
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
 ?from\_BusinessRedirection\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="UpdatedOn" type="object" required=false %}
-?to\_BusinessRedirection\_UpdatedOn=...
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="UpdatedOn" type="object" required=false %}
-?from\_BusinessRedirection\_UpdatedOn=...
+{% api-method-parameter name="CreatedOn" type="object" required=false %}
+?from\_BusinessRedirection\_CreatedOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="ActiveFrom" type="datetime" required=false %}
@@ -472,8 +468,13 @@ application/json
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
-{% api-method-body-parameters %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="Id" type="integer" required=true %}
 The id of the businessredirection to update
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+
+{% api-method-body-parameters %}
 {% api-method-parameter name="BusinessId" type="int" required=true %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="SourceURL" type="string" required=true %}

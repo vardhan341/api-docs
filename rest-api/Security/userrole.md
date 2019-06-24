@@ -48,12 +48,6 @@ application/json
 ?UserRole\_Business\_Name=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="Roles" type="int" required=false %}
-?UserRole\_Roles=...
-{% endapi-method-parameter %}
-{% api-method-parameter name="Users" type="int" required=false %}
-?UserRole\_Users=...
-{% endapi-method-parameter %}
 
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
@@ -195,16 +189,12 @@ application/json
 ?to\_UserRole\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="CreatedOn" type="object" required=false %}
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
 ?from\_UserRole\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="UpdatedOn" type="object" required=false %}
-?to\_UserRole\_UpdatedOn=...
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="UpdatedOn" type="object" required=false %}
-?from\_UserRole\_UpdatedOn=...
+{% api-method-parameter name="CreatedOn" type="object" required=false %}
+?from\_UserRole\_CreatedOn=...
 {% endapi-method-parameter %}
 
 
@@ -427,8 +417,13 @@ application/json
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
-{% api-method-body-parameters %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="Id" type="integer" required=true %}
 The id of the userrole to update
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+
+{% api-method-body-parameters %}
 {% api-method-parameter name="BusinessId" type="int" required=true %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="Name" type="string" required=true %}

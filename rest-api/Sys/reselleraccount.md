@@ -79,11 +79,6 @@ application/json
 {% endapi-method-parameter %}
 
 
-{% api-method-parameter name="CanManageAccount" type="bool" %}
-?ResellerAccount\_CanManageAccount=...
-{% endapi-method-parameter %}
-
-
 {% api-method-parameter name="Reseller\_Currency_Id" type="string" %}
 ?ResellerAccount\_Reseller\_Currency_Id=...
 {% endapi-method-parameter %}
@@ -96,36 +91,6 @@ application/json
 
 {% api-method-parameter name="Business\_Name" type="string" %}
 ?ResellerAccount\_Business\_Name=...
-{% endapi-method-parameter %}
-
-
-{% api-method-parameter name="Business\_PreAuthId" type="string" %}
-?ResellerAccount\_Business\_PreAuthId=...
-{% endapi-method-parameter %}
-
-
-{% api-method-parameter name="Business\_Last4Digits" type="string" %}
-?ResellerAccount\_Business\_Last4Digits=...
-{% endapi-method-parameter %}
-
-
-{% api-method-parameter name="Business\_PreAuthLastError" type="string" %}
-?ResellerAccount\_Business\_PreAuthLastError=...
-{% endapi-method-parameter %}
-
-
-{% api-method-parameter name="Business\_Suspended" type="string" %}
-?ResellerAccount\_Business\_Suspended=...
-{% endapi-method-parameter %}
-
-
-{% api-method-parameter name="Business\_NextInvoice" type="string" %}
-?ResellerAccount\_Business\_NextInvoice=...
-{% endapi-method-parameter %}
-
-
-{% api-method-parameter name="Business\_TrialExpireDate" type="string" %}
-?ResellerAccount\_Business\_TrialExpireDate=...
 {% endapi-method-parameter %}
 
 
@@ -148,7 +113,6 @@ application/json
         "LastAccess": ,
         "LastInvoiceAmount": ,
         "AverageInvoiceAmount": ,
-        "CanManageAccount": false,
     }],
     "CurrentPageSize": 25,
     "CurrentPage": 1,
@@ -230,7 +194,6 @@ size=25 \(maximum=1000\)
         "LastAccess": ,
         "LastInvoiceAmount": ,
         "AverageInvoiceAmount": ,
-        "CanManageAccount": false,
     }],
     }],
     "CurrentPageSize": 25,
@@ -355,7 +318,6 @@ application/json
         "LastAccess": ,
         "LastInvoiceAmount": ,
         "AverageInvoiceAmount": ,
-        "CanManageAccount": false,
     }],
     }],
     "CurrentPageSize": 25,
@@ -424,7 +386,6 @@ The ID of the reselleraccount to fetch.
         "LastAccess": ,
         "LastInvoiceAmount": ,
         "AverageInvoiceAmount": ,
-        "CanManageAccount": false,
 }
 ```
 {% endapi-method-response-example %}
@@ -483,8 +444,6 @@ application/json
 {% api-method-parameter name="LastInvoiceAmount" type="decimal?" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="AverageInvoiceAmount" type="decimal?" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="CanManageAccount" type="bool" required=false %}
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 
@@ -585,8 +544,13 @@ application/json
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
-{% api-method-body-parameters %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="Id" type="integer" required=true %}
 The id of the reselleraccount to update
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+
+{% api-method-body-parameters %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
 

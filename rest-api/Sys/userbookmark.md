@@ -198,22 +198,18 @@ application/json
 ?to\_UserBookmark\_CreatedOn=...
 {% endapi-method-parameter %}
 
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?from\_UserBookmark\_CreatedOn=...
+{% endapi-method-parameter %}
+
 {% api-method-parameter name="CreatedOn" type="object" required=false %}
 ?from\_UserBookmark\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="UpdatedOn" type="object" required=false %}
-?to\_UserBookmark\_UpdatedOn=...
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="UpdatedOn" type="object" required=false %}
-?from\_UserBookmark\_UpdatedOn=...
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="EntityId" type="int" required=false %}
+{% api-method-parameter name="EntityId" type="decimal" required=false %}
 ?from\_UserBookmark\_EntityId=...
 {% endapi-method-parameter %}
-{% api-method-parameter name="EntityId" type="int" required=false %}
+{% api-method-parameter name="EntityId" type="decimal" required=false %}
 ?to\_UserBookmark\_EntityId=...
 {% endapi-method-parameter %}
 
@@ -444,8 +440,13 @@ application/json
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
-{% api-method-body-parameters %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="Id" type="integer" required=true %}
 The id of the userbookmark to update
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+
+{% api-method-body-parameters %}
 {% api-method-parameter name="UserId" type="int" required=true %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="EntityId" type="int" required=true %}

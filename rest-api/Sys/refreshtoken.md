@@ -212,16 +212,12 @@ application/json
 ?to\_RefreshToken\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="CreatedOn" type="object" required=false %}
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
 ?from\_RefreshToken\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="UpdatedOn" type="object" required=false %}
-?to\_RefreshToken\_UpdatedOn=...
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="UpdatedOn" type="object" required=false %}
-?from\_RefreshToken\_UpdatedOn=...
+{% api-method-parameter name="CreatedOn" type="object" required=false %}
+?from\_RefreshToken\_CreatedOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="ExpiresOn" type="datetime" required=false %}
@@ -466,8 +462,13 @@ application/json
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
-{% api-method-body-parameters %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="Id" type="integer" required=true %}
 The id of the refreshtoken to update
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+
+{% api-method-body-parameters %}
 {% api-method-parameter name="Subject" type="string" required=true %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="ClientId" type="string" required=true %}

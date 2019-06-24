@@ -212,16 +212,12 @@ application/json
 ?to\_EmailTemplateFile\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="CreatedOn" type="object" required=false %}
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
 ?from\_EmailTemplateFile\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="UpdatedOn" type="object" required=false %}
-?to\_EmailTemplateFile\_UpdatedOn=...
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="UpdatedOn" type="object" required=false %}
-?from\_EmailTemplateFile\_UpdatedOn=...
+{% api-method-parameter name="CreatedOn" type="object" required=false %}
+?from\_EmailTemplateFile\_CreatedOn=...
 {% endapi-method-parameter %}
 
 
@@ -460,8 +456,13 @@ application/json
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
-{% api-method-body-parameters %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="Id" type="integer" required=true %}
 The id of the emailtemplatefile to update
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+
+{% api-method-body-parameters %}
 {% api-method-parameter name="BusinessId" type="int" required=true %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="FileLanguageId" type="int" required=false %}

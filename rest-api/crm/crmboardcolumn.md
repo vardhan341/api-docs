@@ -328,22 +328,18 @@ application/json
 ?to\_CrmBoardColumn\_CreatedOn=...
 {% endapi-method-parameter %}
 
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?from\_CrmBoardColumn\_CreatedOn=...
+{% endapi-method-parameter %}
+
 {% api-method-parameter name="CreatedOn" type="object" required=false %}
 ?from\_CrmBoardColumn\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="UpdatedOn" type="object" required=false %}
-?to\_CrmBoardColumn\_UpdatedOn=...
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="UpdatedOn" type="object" required=false %}
-?from\_CrmBoardColumn\_UpdatedOn=...
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="Position" type="int" required=false %}
+{% api-method-parameter name="Position" type="decimal" required=false %}
 ?from\_CrmBoardColumn\_Position=...
 {% endapi-method-parameter %}
-{% api-method-parameter name="Position" type="int" required=false %}
+{% api-method-parameter name="Position" type="decimal" required=false %}
 ?to\_CrmBoardColumn\_Position=...
 {% endapi-method-parameter %}
 
@@ -634,8 +630,13 @@ application/json
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
-{% api-method-body-parameters %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="Id" type="integer" required=true %}
 The id of the crmboardcolumn to update
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+
+{% api-method-body-parameters %}
 {% api-method-parameter name="CrmBoardId" type="int" required=true %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="Name" type="string" required=true %}
