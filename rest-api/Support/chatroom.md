@@ -53,6 +53,9 @@ application/json
 ?ChatRoom\_LastAgentVisit=...
 {% endapi-method-parameter %}
 
+{% api-method-parameter name="Users" type="int" required=false %}
+?ChatRoom\_Users=...
+{% endapi-method-parameter %}
 
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
@@ -198,12 +201,16 @@ application/json
 ?to\_ChatRoom\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+{% api-method-parameter name="CreatedOn" type="object" required=false %}
 ?from\_ChatRoom\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="CreatedOn" type="object" required=false %}
-?from\_ChatRoom\_CreatedOn=...
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?to\_ChatRoom\_UpdatedOn=...
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?from\_ChatRoom\_UpdatedOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="LastAgentVisit" type="datetime" required=false %}
@@ -440,13 +447,8 @@ application/json
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
-{% api-method-path-parameters %}
-{% api-method-parameter name="Id" type="integer" required=true %}
-The id of the chatroom to update
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
-
 {% api-method-body-parameters %}
+The id of the chatroom to update
 {% api-method-parameter name="BusinessId" type="int" required=true %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="Name" type="string" required=false %}

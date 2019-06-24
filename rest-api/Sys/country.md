@@ -191,12 +191,16 @@ application/json
 ?to\_Country\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+{% api-method-parameter name="CreatedOn" type="object" required=false %}
 ?from\_Country\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="CreatedOn" type="object" required=false %}
-?from\_Country\_CreatedOn=...
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?to\_Country\_UpdatedOn=...
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?from\_Country\_UpdatedOn=...
 {% endapi-method-parameter %}
 
 
@@ -423,13 +427,8 @@ application/json
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
-{% api-method-path-parameters %}
-{% api-method-parameter name="Id" type="integer" required=true %}
-The id of the country to update
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
-
 {% api-method-body-parameters %}
+The id of the country to update
 {% api-method-parameter name="Name" type="string" required=true %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="TwoDigitsCode" type="string" required=true %}

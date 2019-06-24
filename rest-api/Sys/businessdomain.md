@@ -219,12 +219,16 @@ application/json
 ?to\_BusinessDomain\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+{% api-method-parameter name="CreatedOn" type="object" required=false %}
 ?from\_BusinessDomain\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="CreatedOn" type="object" required=false %}
-?from\_BusinessDomain\_CreatedOn=...
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?to\_BusinessDomain\_UpdatedOn=...
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?from\_BusinessDomain\_UpdatedOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="ActiveFrom" type="datetime" required=false %}
@@ -479,13 +483,8 @@ application/json
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
-{% api-method-path-parameters %}
-{% api-method-parameter name="Id" type="integer" required=true %}
-The id of the businessdomain to update
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
-
 {% api-method-body-parameters %}
+The id of the businessdomain to update
 {% api-method-parameter name="BusinessId" type="int" required=true %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="Name" type="string" required=true %}

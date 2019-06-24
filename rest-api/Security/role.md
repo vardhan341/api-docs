@@ -38,6 +38,9 @@ application/json
 ?Role\_Name=...
 {% endapi-method-parameter %}
 
+{% api-method-parameter name="UserRoles" type="int" required=false %}
+?Role\_UserRoles=...
+{% endapi-method-parameter %}
 
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
@@ -177,12 +180,16 @@ application/json
 ?to\_Role\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+{% api-method-parameter name="CreatedOn" type="object" required=false %}
 ?from\_Role\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="CreatedOn" type="object" required=false %}
-?from\_Role\_CreatedOn=...
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?to\_Role\_UpdatedOn=...
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?from\_Role\_UpdatedOn=...
 {% endapi-method-parameter %}
 
 
@@ -401,13 +408,8 @@ application/json
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
-{% api-method-path-parameters %}
-{% api-method-parameter name="Id" type="integer" required=true %}
-The id of the role to update
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
-
 {% api-method-body-parameters %}
+The id of the role to update
 {% api-method-parameter name="Name" type="string" required=true %}
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}

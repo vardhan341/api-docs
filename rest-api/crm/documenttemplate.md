@@ -49,6 +49,11 @@ application/json
 {% endapi-method-parameter %}
 
 
+{% api-method-parameter name="TemplateOutputFormat" type="enum" %}
+?DocumentTemplate\_TemplateOutputFormat=...
+{% endapi-method-parameter %}
+
+
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
 
@@ -62,6 +67,7 @@ application/json
         "Business": null,
         "Name": "Joe",
         "Document": "",
+        "TemplateOutputFormat": Nexudus.Coworking.Core.Enums.eDocumentTemplateFormat.Html,
     }],
     "CurrentPageSize": 25,
     "CurrentPage": 1,
@@ -137,6 +143,7 @@ size=25 \(maximum=1000\)
         "Business": null,
         "Name": "Joe",
         "Document": "",
+        "TemplateOutputFormat": Nexudus.Coworking.Core.Enums.eDocumentTemplateFormat.Html,
     }],
     }],
     "CurrentPageSize": 25,
@@ -191,12 +198,16 @@ application/json
 ?to\_DocumentTemplate\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+{% api-method-parameter name="CreatedOn" type="object" required=false %}
 ?from\_DocumentTemplate\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="CreatedOn" type="object" required=false %}
-?from\_DocumentTemplate\_CreatedOn=...
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?to\_DocumentTemplate\_UpdatedOn=...
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?from\_DocumentTemplate\_UpdatedOn=...
 {% endapi-method-parameter %}
 
 
@@ -215,6 +226,7 @@ application/json
         "Business": null,
         "Name": "Joe",
         "Document": "",
+        "TemplateOutputFormat": Nexudus.Coworking.Core.Enums.eDocumentTemplateFormat.Html,
     }],
     }],
     "CurrentPageSize": 25,
@@ -277,6 +289,7 @@ The ID of the documenttemplate to fetch.
         "Business": null,
         "Name": "Joe",
         "Document": "",
+        "TemplateOutputFormat": Nexudus.Coworking.Core.Enums.eDocumentTemplateFormat.Html,
 }
 ```
 {% endapi-method-response-example %}
@@ -323,6 +336,8 @@ application/json
 {% api-method-parameter name="Name" type="string" required=true %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="Document" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="TemplateOutputFormat" type="enum" required=false %}
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 
@@ -423,18 +438,15 @@ application/json
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
-{% api-method-path-parameters %}
-{% api-method-parameter name="Id" type="integer" required=true %}
-The id of the documenttemplate to update
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
-
 {% api-method-body-parameters %}
+The id of the documenttemplate to update
 {% api-method-parameter name="BusinessId" type="int" required=true %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="Name" type="string" required=true %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="Document" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="TemplateOutputFormat" type="enum" required=false %}
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}

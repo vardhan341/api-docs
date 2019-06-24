@@ -233,18 +233,22 @@ application/json
 ?to\_AuditTrailEntry\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="UpdatedOn" type="object" required=false %}
-?from\_AuditTrailEntry\_CreatedOn=...
-{% endapi-method-parameter %}
-
 {% api-method-parameter name="CreatedOn" type="object" required=false %}
 ?from\_AuditTrailEntry\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="EntityId" type="decimal" required=false %}
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?to\_AuditTrailEntry\_UpdatedOn=...
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?from\_AuditTrailEntry\_UpdatedOn=...
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="EntityId" type="int" required=false %}
 ?from\_AuditTrailEntry\_EntityId=...
 {% endapi-method-parameter %}
-{% api-method-parameter name="EntityId" type="decimal" required=false %}
+{% api-method-parameter name="EntityId" type="int" required=false %}
 ?to\_AuditTrailEntry\_EntityId=...
 {% endapi-method-parameter %}
 
@@ -495,13 +499,8 @@ application/json
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
-{% api-method-path-parameters %}
-{% api-method-parameter name="Id" type="integer" required=true %}
-The id of the audittrailentry to update
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
-
 {% api-method-body-parameters %}
+The id of the audittrailentry to update
 {% api-method-parameter name="BusinessId" type="int" required=true %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="EntityShortName" type="string" required=true %}

@@ -1,6 +1,4 @@
-# Reminder
-
-{% api-method method="get" host="https://spaces.nexudus.com/api" path="/crm/reminders" %}
+﻿{% api-method method="get" host="https://spaces.nexudus.com/api" path="/crm/reminders" %}
 {% api-method-summary %}
 Find
 {% endapi-method-summary %}
@@ -11,17 +9,18 @@ This endpoint allows you to GET a list of reminders based on one or more filter 
 
 {% api-method-spec %}
 {% api-method-request %}
+
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
 {% api-method-query-parameters %}
+
 {% api-method-parameter name="Id" type="int" %}
 ?Id=...
 {% endapi-method-parameter %}
@@ -34,69 +33,86 @@ application/json
 ?Reminder\_SystemId=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="Business" type="Business" %}
 ?Reminder\_Business=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="Name" type="string" %}
 ?Reminder\_Name=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="ForAllContacts" type="bool" %}
 ?Reminder\_ForAllContacts=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="ForAllMembers" type="bool" %}
 ?Reminder\_ForAllMembers=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="Coworker" type="Coworker" %}
 ?Reminder\_Coworker=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="ReminderType" type="enum" %}
 ?Reminder\_ReminderType=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="ReminderDate" type="DateTime?" %}
 ?Reminder\_ReminderDate=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="DaysAfterSignup" type="int?" %}
 ?Reminder\_DaysAfterSignup=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="Product" type="Product" %}
 ?Reminder\_Product=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="DaysAfterRenewal" type="int?" %}
 ?Reminder\_DaysAfterRenewal=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="DaysBeforeRenewal" type="int?" %}
 ?Reminder\_DaysBeforeRenewal=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="ReminderAction" type="enum" %}
 ?Reminder\_ReminderAction=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="Email" type="string" %}
 ?Reminder\_Email=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="CannedResponse" type="CannedResponse" %}
 ?Reminder\_CannedResponse=...
 {% endapi-method-parameter %}
+
+{% api-method-parameter name="Tariffs" type="int" required=false %}
+?Reminder\_Tariffs=...
+{% endapi-method-parameter %}
+
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
 
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
 
-{% endapi-method-response-example-description %}
 
 ```javascript
 {
@@ -129,6 +145,7 @@ application/json
     "TotalItems": 60,
     "TotalPages": 3
 }
+
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}
@@ -148,11 +165,11 @@ This endpoint allows you to GET a list of reminders.
 
 {% api-method-spec %}
 {% api-method-request %}
+
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
@@ -224,7 +241,8 @@ size=25 \(maximum=1000\)
 > 🔒 Requires user role `reminder-list`
 
 {% hint style="info" %}
-You can also get a list of records based when they were created or updated. This is useful if you want to get a list of records created after or before a particular point in time. You can also use range query parameters for all date, integer and decimal properties.
+You can also get a list of records based when they were created or updated. This is useful if you want to get a list of records created after or before a particular point in time. 
+You can also use range query parameters for all date, integer and decimal properties.
 {% endhint %}
 
 {% api-method method="get" host="https://spaces.nexudus.com/api" path="/crm/reminders" %}
@@ -238,11 +256,11 @@ Gets a list of reminders based on the date when they were created or updated.
 
 {% api-method-spec %}
 {% api-method-request %}
+
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
@@ -253,45 +271,43 @@ application/json
 ?to\_Reminder\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+{% api-method-parameter name="CreatedOn" type="object" required=false %}
 ?from\_Reminder\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="CreatedOn" type="object" required=false %}
-?from\_Reminder\_CreatedOn=...
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?to\_Reminder\_UpdatedOn=...
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?from\_Reminder\_UpdatedOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="ReminderDate" type="datetime" required=false %}
 ?from\_Reminder\_ReminderDate=...
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="ReminderDate" type="datetime" required=false %}
 ?to\_Reminder\_ReminderDate=...
 {% endapi-method-parameter %}
-
-{% api-method-parameter name="DaysAfterSignup" type="decimal" required=false %}
+{% api-method-parameter name="DaysAfterSignup" type="int" required=false %}
 ?from\_Reminder\_DaysAfterSignup=...
 {% endapi-method-parameter %}
-
-{% api-method-parameter name="DaysAfterSignup" type="decimal" required=false %}
+{% api-method-parameter name="DaysAfterSignup" type="int" required=false %}
 ?to\_Reminder\_DaysAfterSignup=...
 {% endapi-method-parameter %}
-
-{% api-method-parameter name="DaysAfterRenewal" type="decimal" required=false %}
+{% api-method-parameter name="DaysAfterRenewal" type="int" required=false %}
 ?from\_Reminder\_DaysAfterRenewal=...
 {% endapi-method-parameter %}
-
-{% api-method-parameter name="DaysAfterRenewal" type="decimal" required=false %}
+{% api-method-parameter name="DaysAfterRenewal" type="int" required=false %}
 ?to\_Reminder\_DaysAfterRenewal=...
 {% endapi-method-parameter %}
-
-{% api-method-parameter name="DaysBeforeRenewal" type="decimal" required=false %}
+{% api-method-parameter name="DaysBeforeRenewal" type="int" required=false %}
 ?from\_Reminder\_DaysBeforeRenewal=...
 {% endapi-method-parameter %}
-
-{% api-method-parameter name="DaysBeforeRenewal" type="decimal" required=false %}
+{% api-method-parameter name="DaysBeforeRenewal" type="int" required=false %}
 ?to\_Reminder\_DaysBeforeRenewal=...
 {% endapi-method-parameter %}
+
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
 
@@ -352,21 +368,21 @@ Gets one reminder record.
 
 {% api-method-spec %}
 {% api-method-request %}
-{% api-method-path-parameters %}
-{% api-method-parameter name="id" type="integer" required=true %}
-The ID of the reminder to fetch.
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
 
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
+
+{% api-method-path-parameters %}
+{% api-method-parameter name="id" type="integer" required=true %}
+The ID of the reminder to fetch.
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
 {% endapi-method-request %}
 
 {% api-method-response %}
@@ -400,7 +416,7 @@ application/json
 
 {% endapi-method-response-example-description %}
 
-```text
+```
 "Not found"
 ```
 {% endapi-method-response-example %}
@@ -421,11 +437,11 @@ Creates a new reminder.
 
 {% api-method-spec %}
 {% api-method-request %}
+
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
@@ -433,61 +449,35 @@ application/json
 
 {% api-method-body-parameters %}
 {% api-method-parameter name="BusinessId" type="int" required=true %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Name" type="string" required=true %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="ForAllContacts" type="bool" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="ForAllMembers" type="bool" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="CoworkerId" type="int" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="ReminderType" type="enum" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="ReminderDate" type="DateTime?" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="DaysAfterSignup" type="int?" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="ProductId" type="int" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="DaysAfterRenewal" type="int?" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="DaysBeforeRenewal" type="int?" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="ReminderAction" type="enum" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Email" type="string" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="CannedResponseId" type="int" required=false %}
-
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
+
 {% endapi-method-request %}
 
 {% api-method-response %}
@@ -510,7 +500,7 @@ application/json
 
 {% api-method-response-example httpCode=400 %}
 {% api-method-response-example-description %}
-_This response is an example, errors and messages will follow this structure but keys and descriptions may be different for each record._
+_This response is an example, errors and messages will follow this structure but keys and descriptions may be different for each record._  
 {% endapi-method-response-example-description %}
 
 ```javascript
@@ -568,82 +558,52 @@ Update
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Updates and existing reminder.Required User Role: `reminder-edit`
+Updates and existing reminder.
+  
+Required User Role: `reminder-edit`
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
-{% api-method-path-parameters %}
-{% api-method-parameter name="Id" type="integer" required=true %}
-The id of the reminder to update
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
 
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
 {% api-method-body-parameters %}
+The id of the reminder to update
 {% api-method-parameter name="BusinessId" type="int" required=true %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Name" type="string" required=true %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="ForAllContacts" type="bool" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="ForAllMembers" type="bool" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="CoworkerId" type="int" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="ReminderType" type="enum" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="ReminderDate" type="DateTime?" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="DaysAfterSignup" type="int?" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="ProductId" type="int" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="DaysAfterRenewal" type="int?" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="DaysBeforeRenewal" type="int?" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="ReminderAction" type="enum" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Email" type="string" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="CannedResponseId" type="int" required=false %}
-
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
@@ -670,7 +630,7 @@ application/json
 
 {% api-method-response-example httpCode=400 %}
 {% api-method-response-example-description %}
-_This response is an example, errors and messages will follow this structure but keys and descriptions may be different for each record._
+_This response is an example, errors and messages will follow this structure but keys and descriptions may be different for each record._  
 {% endapi-method-response-example-description %}
 
 ```javascript
@@ -722,32 +682,35 @@ _This response is an example, errors and messages will follow this structure but
 
 > 🔒 Requires user role `reminder-edit`
 
+
 {% api-method method="delete" host="https://spaces.nexudus.com/api" path="/crm/reminders/:id" %}
 {% api-method-summary %}
 Delete
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Deletes a reminder.Required User Roles: `reminder-delete`
+Deletes a reminder.  
+  
+Required User Roles: `reminder-delete`
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
-{% api-method-path-parameters %}
-{% api-method-parameter name="Id" type="integer" required=false %}
-
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
 
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
+
+{% api-method-path-parameters %}
+{% api-method-parameter name="Id" type="integer" required=false %}
+
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
 {% endapi-method-request %}
 
 {% api-method-response %}
@@ -775,7 +738,7 @@ application/json
 
 {% endapi-method-response-example-description %}
 
-```text
+```
 "Not found"
 ```
 {% endapi-method-response-example %}
@@ -795,11 +758,14 @@ application/json
 {% endapi-method-spec %}
 {% endapi-method %}
 
+
+
 > 🔒 Requires user role `reminder-delete`
+
 
 ## Commands
 
-Commands allow to perform actions against one or more reminder records. Some commands accept only one record while others can run an action for a number of records at the same time. Each command has metadata with information about how it can be used and the amount of records, if any, it needs to run.
+Commands allow to perform actions against one or more reminder records. Some commands accept only one record while others can run an action for a number of records at the same time.  Each command has metadata with information about how it can be used and the amount of records, if any, it needs to run.
 
 > ```javascript
 > {
@@ -821,11 +787,11 @@ Get all commands available to run for reminder records.
 
 {% api-method-spec %}
 {% api-method-request %}
+
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
@@ -835,7 +801,7 @@ application/json
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
 {% api-method-response-example-description %}
-_This response is an example._
+_This response is an example._  
 {% endapi-method-response-example-description %}
 
 ```javascript
@@ -879,11 +845,11 @@ Run Command
 
 {% api-method-spec %}
 {% api-method-request %}
+
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
@@ -895,17 +861,21 @@ The command Key defining the command to run. `"COMMAND_KEY_1"`
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Parameters" type="array" required=false %}
-A list of object with the structure below. The parameters required for each command are returned in the "RequiresParameters" array return by the "commands" endpoint.`[    
-{    
-"Name": "Name",    
-"Type":"Type",    
-"Value":recordId    
-}    
+A list of object with the structure below. The parameters required for each command are returned in the "RequiresParameters" array return by the "commands" endpoint.  
+  
+`[  
+   {  
+      "Name": "Name",   
+      "Type":"Type",   
+      "Value":recordId  
+    }  
 ]`
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Ids" type="array" required=true %}
-A list of integer IDs for each of the records to run this command for.`[987654321, 123565978]`
+A list of integer IDs for each of the records to run this command for.  
+  
+`[987654321, 123565978]`
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
@@ -913,7 +883,7 @@ A list of integer IDs for each of the records to run this command for.`[98765432
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
 {% api-method-response-example-description %}
-_Commands also return a status 200 when they fail to process one or more of the records. Use the 'WasSuccessful' property to know if the command run succeeded._
+_Commands also return a status 200 when they fail to process one or more of the records. Use the 'WasSuccessful'  property to know if the command run succeeded._  
 {% endapi-method-response-example-description %}
 
 ```javascript
@@ -936,10 +906,9 @@ _Commands also return a status 200 when they fail to process one or more of the 
 
 The following endpoints return binary data. Check the `ContentType` header to understand the type of file being returned in the response stream.
 
-## Related Entities
 
+## Related Entities
 * [Business](../sys/business.md)
 * [Coworker](../spaces/coworker.md)
 * [Product](../billing/product.md)
-* [CannedResponse](cannedresponse.md)
-
+* [CannedResponse](../crm/cannedresponse.md)

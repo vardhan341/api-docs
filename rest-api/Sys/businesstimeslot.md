@@ -198,12 +198,16 @@ application/json
 ?to\_BusinessTimeSlot\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+{% api-method-parameter name="CreatedOn" type="object" required=false %}
 ?from\_BusinessTimeSlot\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="CreatedOn" type="object" required=false %}
-?from\_BusinessTimeSlot\_CreatedOn=...
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?to\_BusinessTimeSlot\_UpdatedOn=...
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?from\_BusinessTimeSlot\_UpdatedOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="FromTime" type="datetime" required=false %}
@@ -446,13 +450,8 @@ application/json
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
-{% api-method-path-parameters %}
-{% api-method-parameter name="Id" type="integer" required=true %}
-The id of the businesstimeslot to update
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
-
 {% api-method-body-parameters %}
+The id of the businesstimeslot to update
 {% api-method-parameter name="BusinessId" type="int" required=true %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="FromTime" type="DateTime" required=true %}

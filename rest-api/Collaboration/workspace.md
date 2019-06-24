@@ -68,6 +68,9 @@ application/json
 ?Workspace\_Description=...
 {% endapi-method-parameter %}
 
+{% api-method-parameter name="Members" type="int" required=false %}
+?Workspace\_Members=...
+{% endapi-method-parameter %}
 
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
@@ -219,12 +222,16 @@ application/json
 ?to\_Workspace\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+{% api-method-parameter name="CreatedOn" type="object" required=false %}
 ?from\_Workspace\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="CreatedOn" type="object" required=false %}
-?from\_Workspace\_CreatedOn=...
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?to\_Workspace\_UpdatedOn=...
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?from\_Workspace\_UpdatedOn=...
 {% endapi-method-parameter %}
 
 
@@ -467,13 +474,8 @@ application/json
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
-{% api-method-path-parameters %}
-{% api-method-parameter name="Id" type="integer" required=true %}
-The id of the workspace to update
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
-
 {% api-method-body-parameters %}
+The id of the workspace to update
 {% api-method-parameter name="BusinessId" type="int" required=true %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="AdministratorId" type="int" required=true %}

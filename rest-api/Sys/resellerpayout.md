@@ -84,6 +84,16 @@ application/json
 {% endapi-method-parameter %}
 
 
+{% api-method-parameter name="Reseller\_Currency_Id" type="string" %}
+?ResellerPayout\_Reseller\_Currency_Id=...
+{% endapi-method-parameter %}
+
+
+{% api-method-parameter name="Reseller\_Currency_Code" type="string" %}
+?ResellerPayout\_Reseller\_Currency_Code=...
+{% endapi-method-parameter %}
+
+
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
 
@@ -510,13 +520,8 @@ application/json
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
-{% api-method-path-parameters %}
-{% api-method-parameter name="Id" type="integer" required=true %}
-The id of the resellerpayout to update
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
-
 {% api-method-body-parameters %}
+The id of the resellerpayout to update
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
 

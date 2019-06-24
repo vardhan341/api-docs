@@ -946,6 +946,153 @@ Return events ending before the passed in date.
 {% endapi-method-spec %}
 {% endapi-method %}
 
+{% api-method method="post" host="https://xyz.spaces.nexudus.com" path="/:language/bookings/getbookingprice" %}
+{% api-method-summary %}
+Booking Cost
+{% endapi-method-summary %}
+
+{% api-method-description %}
+Gets the price for a booking as well as availability information for the requested resource and dates.
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="langugage" type="string" required=true %}
+'en' or any other valid langauge in your account
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+
+{% api-method-headers %}
+{% api-method-parameter name="Content-Type" type="string" required=true %}
+application/json
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```javascript
+{
+    "Resource": {
+        "Name": "Thebe Meeting Room",
+        "GroupName": "Small",
+        "Description": "<p>This meeting room includes:</p>\r\n<ul>\r\n<li>Projector</li>\r\n<li>Conference phone</li>\r\n<li>Catering</li>\r\n<li>Coffee and Tea</li>\r\n<li>A/A</li>\r\n</ul>\r\n<p>Capacity <strong>10 people</strong>.</p>\r\n<p>&nbsp;</p>\r\n<p>\"Bookings with MyOffice 985 are non-refundable but may be converted to credits if changes to bookings must be made. This will be handled on a case-by-case basis. Please call for details.\"</p>",
+        "ResourceTypeName": "Large Meeting Rooms (hourly)",
+        "ResourceType": {
+            "Name": "Large Meeting Rooms (hourly)",
+            "Id": 287951665,
+            "IdString": "287951665",
+            "UpdatedOn": "2017-01-27T10:30:17Z",
+            "CreatedOn": "2017-01-27T10:30:17Z",
+            "UniqueId": "0e841048-d59f-421d-bf3f-5fd5e5422eef",
+            "IsNull": false,
+            "Context": null
+        },
+        "HasImage": true,
+        "Projector": true,
+        "Internet": true,
+        "ConferencePhone": true,
+        "StandardPhone": false,
+        "WhiteBoard": false,
+        "LargeDisplay": false,
+        "Catering": true,
+        "TeaAndCoffee": true,
+        "Drinks": false,
+        "SecurityLock": false,
+        "CCTV": false,
+        "VoiceRecorder": false,
+        "AirConditioning": false,
+        "Heating": false,
+        "NaturalLight": false,
+        "AllowMultipleBookings": false,
+        "Allocation": null,
+        "Shifts": [],
+        "IsAvailable": false,
+        "AvailableUnits": 0,
+        "Message": null,
+        "Price": 0,
+        "DisplayOrder": 1,
+        "PriceFormatted": null,
+        "ErrorCode": null,
+        "Id": 287977692,
+        "IdString": "287977692",
+        "UpdatedOn": "2019-05-14T00:34:19Z",
+        "CreatedOn": "2017-01-27T15:30:07Z",
+        "UniqueId": "e9180734-9a34-4429-9346-47af763532c3",
+        "IsNull": false,
+        "Context": null
+    },
+    "IsAvailable": true | false,
+    "Message": null,
+    "Price": "£97.83",
+    "PriceDecimal": 97.8261,
+    "discountCode": {
+        "discountMessage": null,
+        "code": null,
+        "description": null
+    }
+}
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+**Request Body:**
+
+```javascript
+{  
+   "Booking":{  
+      "Resource":{  
+         "Id":287977692
+      },
+      "Tentative":false,
+	   "Id":0,
+	   "DiscountCode": null,
+	   "FromTime":"2019-06-13T20:30Z",
+	   "ToTime":"2019-06-13T22:00Z"
+   },
+   "Coworker":{  
+      "FullName":"John Doe",
+      "Email":"dasd@asdasd.com",
+      "MobilePhone":"+1 555 555 555",
+      "Address":"London Road",
+      "PostCode":"90210",
+      "CityName":"Los Angeles",
+      "State":"California"
+   },
+   "Products":[  
+      {  
+         "ProductId":294480188,
+         "Quantity":0,
+         "Selected":true
+      }
+   ]
+}
+```
+
+**Error Codes**
+
+**NO\_RESOURCE  
+NOT\_REGISTERED  
+BOOKING\_CONFLICT  
+EVENT\_CONFLICT  
+RESOURCE\_FULL  
+INVALID\_SHIFT  
+NO\_PAST\_BOOKINGS  
+HARD\_LIMIT\_WEEK  
+HARD\_LIMIT\_MONTH  
+START\_TIME\_TOO\_EARLY  
+START\_TIME\_TOO\_LATE  
+TOO\_LONG  
+TOO\_SHORT  
+INVALID\_INTERVAL**
+
 {% api-method method="post" host="https://xyz.spaces.nexudus.com" path="/:language/bookings/newBookingJson" %}
 {% api-method-summary %}
 Create

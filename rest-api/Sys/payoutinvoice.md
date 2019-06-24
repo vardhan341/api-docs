@@ -49,6 +49,21 @@ application/json
 {% endapi-method-parameter %}
 
 
+{% api-method-parameter name="Invoice\_InvoiceNumber" type="string" %}
+?PayoutInvoice\_Invoice\_InvoiceNumber=...
+{% endapi-method-parameter %}
+
+
+{% api-method-parameter name="Invoice\_Business_Id" type="string" %}
+?PayoutInvoice\_Invoice\_Business_Id=...
+{% endapi-method-parameter %}
+
+
+{% api-method-parameter name="Invoice\_Business_Name" type="string" %}
+?PayoutInvoice\_Invoice\_Business_Name=...
+{% endapi-method-parameter %}
+
+
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
 
@@ -191,12 +206,16 @@ application/json
 ?to\_PayoutInvoice\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+{% api-method-parameter name="CreatedOn" type="object" required=false %}
 ?from\_PayoutInvoice\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="CreatedOn" type="object" required=false %}
-?from\_PayoutInvoice\_CreatedOn=...
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?to\_PayoutInvoice\_UpdatedOn=...
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?from\_PayoutInvoice\_UpdatedOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Amount" type="decimal" required=false %}
@@ -429,13 +448,8 @@ application/json
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
-{% api-method-path-parameters %}
-{% api-method-parameter name="Id" type="integer" required=true %}
-The id of the payoutinvoice to update
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
-
 {% api-method-body-parameters %}
+The id of the payoutinvoice to update
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
 

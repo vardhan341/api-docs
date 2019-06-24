@@ -232,12 +232,16 @@ application/json
 ?to\_CrmOpportunityHistory\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+{% api-method-parameter name="CreatedOn" type="object" required=false %}
 ?from\_CrmOpportunityHistory\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="CreatedOn" type="object" required=false %}
-?from\_CrmOpportunityHistory\_CreatedOn=...
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?to\_CrmOpportunityHistory\_UpdatedOn=...
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="UpdatedOn" type="object" required=false %}
+?from\_CrmOpportunityHistory\_UpdatedOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="FromTime" type="datetime" required=false %}
@@ -488,13 +492,8 @@ application/json
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
-{% api-method-path-parameters %}
-{% api-method-parameter name="Id" type="integer" required=true %}
-The id of the crmopportunityhistory to update
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
-
 {% api-method-body-parameters %}
+The id of the crmopportunityhistory to update
 {% api-method-parameter name="CrmOpportunityId" type="int" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="OldCrmBoardColumnId" type="int" required=false %}
