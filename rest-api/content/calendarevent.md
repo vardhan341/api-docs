@@ -819,7 +819,7 @@ _This response is an example, errors and messages will follow this structure but
 	"TicketsPage": "TicketsPage",
 	"RepeatSeriesUniqueId": ,
 	"RepeatEvent": false,
-	"Repeats": Nexudus.Coworking.Core.Enums.eCalendarEventRepeatCycle.Weekly,
+	"Repeats": 1 (check Enumerated values section below),
 	"RepeatEvery": ,
 	"RepeatUntil": ,
 	"RepeatOnMondays": false,
@@ -1024,8 +1024,8 @@ _This response is an example, errors and messages will follow this structure but
 	"FacebookPage": "TicketsPage",
 	"TicketsPage": "TicketsPage",
 	"RepeatSeriesUniqueId": ,
-	"Repeats": Nexudus.Coworking.Core.Enums.eCalendarEventRepeatCycle.Weekly,
-	"WhichEventsToUpdate": Nexudus.Coworking.Core.Enums.eRepeatedCalendarEventUpdateAction.UpdateThisEventOnly,
+	"Repeats": 1 (check Enumerated values section below),
+	"WhichEventsToUpdate": 1 (check Enumerated values section below),
 	"RepeatOnMondays": false,
 	"RepeatOnTuesdays": false,
 	"RepeatOnWednesdays": false,
@@ -1036,6 +1036,8 @@ _This response is an example, errors and messages will follow this structure but
 }
 
 ```
+
+
 
 
 {% api-method method="delete" host="https://spaces.nexudus.com/api" path="/content/calendarevents/:id" %}
@@ -1256,6 +1258,14 @@ _Commands also return a status 200 when they fail to process one or more of the 
 {% endapi-method %}
 
 > 🔒 Requires user role `calendarevent-edit`
+
+## Enumerated values
+
+##### Repeats:
+> GET /api/utils/enums?name=eCalendarEventRepeatCycle
+
+##### WhichEventsToUpdate:
+> GET /api/utils/enums?name=eRepeatedCalendarEventUpdateAction
 
 ## Binary files
 

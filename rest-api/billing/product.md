@@ -639,7 +639,7 @@ _This response is an example, errors and messages will follow this structure but
 	"Currency": 12345678,
 	"TaxRate": 12345678,
 	"FinancialAccount": 12345678,
-	"AvailableAs": Nexudus.Coworking.Core.Enums.eRecurrentProductOptions.RecurrentOrOneOff,
+	"AvailableAs": 1 (check Enumerated values section below),
 	"OnlyForContacts": true,
 	"OnlyForMembers": true,
 	"Archived": true,
@@ -804,7 +804,7 @@ _This response is an example, errors and messages will follow this structure but
 	"Currency": 12345678,
 	"TaxRate": 12345678,
 	"FinancialAccount": 12345678,
-	"AvailableAs": Nexudus.Coworking.Core.Enums.eRecurrentProductOptions.RecurrentOrOneOff,
+	"AvailableAs": 1 (check Enumerated values section below),
 	"OnlyForContacts": true,
 	"OnlyForMembers": true,
 	"Archived": true,
@@ -815,6 +815,8 @@ _This response is an example, errors and messages will follow this structure but
 }
 
 ```
+
+
 
 
 {% api-method method="delete" host="https://spaces.nexudus.com/api" path="/billing/products/:id" %}
@@ -1035,6 +1037,11 @@ _Commands also return a status 200 when they fail to process one or more of the 
 {% endapi-method %}
 
 > 🔒 Requires user role `product-edit`
+
+## Enumerated values
+
+##### AvailableAs:
+> GET /api/utils/enums?name=eRecurrentProductOptions
 
 ## Binary files
 

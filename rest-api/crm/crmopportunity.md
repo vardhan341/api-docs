@@ -681,9 +681,9 @@ _This response is an example, errors and messages will follow this structure but
 	"Completed": true,
 	"DueDate": null,
 	"Value": null,
-	"LeadSource": Nexudus.Coworking.Core.Enums.eCrmOpportunitySource.Other,
-	"LossReason": Nexudus.Coworking.Core.Enums.eCrmOpportunityLossReason.Other,
-	"Status": Nexudus.Coworking.Core.Enums.eCrmOpportunityStatus.InProgress,
+	"LeadSource": 1 (check Enumerated values section below),
+	"LossReason": 1 (check Enumerated values section below),
+	"Status": 1 (check Enumerated values section below),
 	"WonOn": null,
 	"LostOn": null,
 	"Position": 1,
@@ -840,15 +840,17 @@ _This response is an example, errors and messages will follow this structure but
 	"Completed": true,
 	"DueDate": null,
 	"Value": null,
-	"LeadSource": Nexudus.Coworking.Core.Enums.eCrmOpportunitySource.Other,
-	"LossReason": Nexudus.Coworking.Core.Enums.eCrmOpportunityLossReason.Other,
-	"Status": Nexudus.Coworking.Core.Enums.eCrmOpportunityStatus.InProgress,
+	"LeadSource": 1 (check Enumerated values section below),
+	"LossReason": 1 (check Enumerated values section below),
+	"Status": 1 (check Enumerated values section below),
 	"WonOn": null,
 	"LostOn": null,
 	"Position": 1,
 }
 
 ```
+
+
 
 
 {% api-method method="delete" host="https://spaces.nexudus.com/api" path="/crm/crmopportunities/:id" %}
@@ -1069,6 +1071,17 @@ _Commands also return a status 200 when they fail to process one or more of the 
 {% endapi-method %}
 
 > 🔒 Requires user role `crmopportunity-edit`
+
+## Enumerated values
+
+##### LeadSource:
+> GET /api/utils/enums?name=eCrmOpportunitySource
+
+##### LossReason:
+> GET /api/utils/enums?name=eCrmOpportunityLossReason
+
+##### Status:
+> GET /api/utils/enums?name=eCrmOpportunityStatus
 
 ## Binary files
 

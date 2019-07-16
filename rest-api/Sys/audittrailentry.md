@@ -482,7 +482,7 @@ _This response is an example, errors and messages will follow this structure but
 	"EntityShortName": "00001",
 	"Description": "00001",
 	"PropertyName": "00001",
-	"AuditType": Nexudus.Coworking.Core.Enums.eAuditType.Update,
+	"AuditType": 1 (check Enumerated values section below),
 	"OldValue": "0",
 	"NewValue": "0",
 	"ActionBy": "0",
@@ -617,7 +617,7 @@ _This response is an example, errors and messages will follow this structure but
 	"EntityShortName": "00001",
 	"Description": "00001",
 	"PropertyName": "00001",
-	"AuditType": Nexudus.Coworking.Core.Enums.eAuditType.Update,
+	"AuditType": 1 (check Enumerated values section below),
 	"OldValue": "0",
 	"NewValue": "0",
 	"ActionBy": "0",
@@ -625,6 +625,8 @@ _This response is an example, errors and messages will follow this structure but
 }
 
 ```
+
+
 
 
 ## Commands
@@ -765,6 +767,11 @@ _Commands also return a status 200 when they fail to process one or more of the 
 {% endapi-method %}
 
 > 🔒 Requires user role `audittrailentry-edit`
+
+## Enumerated values
+
+##### AuditType:
+> GET /api/utils/enums?name=eAuditType
 
 ## Binary files
 

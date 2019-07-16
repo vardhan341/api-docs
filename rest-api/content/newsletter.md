@@ -437,7 +437,7 @@ _This response is an example, errors and messages will follow this structure but
 	"Business": 12345678,
 	"Name": "00001",
 	"LastSent": null,
-	"Language": Nexudus.Coworking.Core.Enums.eLanguage.Spanish,
+	"Language": 1 (check Enumerated values section below),
 	"NewsLetterContents": "NewsLetterContents",
 }
 
@@ -560,11 +560,13 @@ _This response is an example, errors and messages will follow this structure but
 	"Business": 12345678,
 	"Name": "00001",
 	"LastSent": null,
-	"Language": Nexudus.Coworking.Core.Enums.eLanguage.Spanish,
+	"Language": 1 (check Enumerated values section below),
 	"NewsLetterContents": "NewsLetterContents",
 }
 
 ```
+
+
 
 
 {% api-method method="delete" host="https://spaces.nexudus.com/api" path="/content/newsletters/:id" %}
@@ -785,6 +787,11 @@ _Commands also return a status 200 when they fail to process one or more of the 
 {% endapi-method %}
 
 > 🔒 Requires user role `newsletter-edit`
+
+## Enumerated values
+
+##### Language:
+> GET /api/utils/enums?name=eLanguage
 
 ## Binary files
 

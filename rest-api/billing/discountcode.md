@@ -699,7 +699,7 @@ _This response is an example, errors and messages will follow this structure but
 	"OnlyForMembers": true,
 	"ValidFrom": null,
 	"ValidTo": null,
-	"ExpirationType": Nexudus.Coworking.Core.Enums.eDiscountExpirePeriod.Day,
+	"ExpirationType": 1 (check Enumerated values section below),
 	"ExpiresIn": 0,
 }
 
@@ -870,11 +870,13 @@ _This response is an example, errors and messages will follow this structure but
 	"OnlyForMembers": true,
 	"ValidFrom": null,
 	"ValidTo": null,
-	"ExpirationType": Nexudus.Coworking.Core.Enums.eDiscountExpirePeriod.Day,
+	"ExpirationType": 1 (check Enumerated values section below),
 	"ExpiresIn": 0,
 }
 
 ```
+
+
 
 
 {% api-method method="delete" host="https://spaces.nexudus.com/api" path="/billing/discountcodes/:id" %}
@@ -1095,6 +1097,11 @@ _Commands also return a status 200 when they fail to process one or more of the 
 {% endapi-method %}
 
 > 🔒 Requires user role `discountcode-edit`
+
+## Enumerated values
+
+##### ExpirationType:
+> GET /api/utils/enums?name=eDiscountExpirePeriod
 
 ## Binary files
 

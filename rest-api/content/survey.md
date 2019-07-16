@@ -477,7 +477,7 @@ _This response is an example, errors and messages will follow this structure but
 	"Active": ,
 	"NextDeliveryDate": DateTime.Parse(""),
 	"DeliveryRate": ,
-	"DeliveryFrequency": Nexudus.Coworking.Core.Enums.eSurveyDeliveryFrequency.Weeks,
+	"DeliveryFrequency": 1 (check Enumerated values section below),
 }
 
 ```
@@ -606,10 +606,12 @@ _This response is an example, errors and messages will follow this structure but
 	"Active": ,
 	"NextDeliveryDate": DateTime.Parse(""),
 	"DeliveryRate": ,
-	"DeliveryFrequency": Nexudus.Coworking.Core.Enums.eSurveyDeliveryFrequency.Weeks,
+	"DeliveryFrequency": 1 (check Enumerated values section below),
 }
 
 ```
+
+
 
 
 {% api-method method="delete" host="https://spaces.nexudus.com/api" path="/content/surveys/:id" %}
@@ -830,6 +832,11 @@ _Commands also return a status 200 when they fail to process one or more of the 
 {% endapi-method %}
 
 > 🔒 Requires user role `survey-edit`
+
+## Enumerated values
+
+##### DeliveryFrequency:
+> GET /api/utils/enums?name=eSurveyDeliveryFrequency
 
 ## Binary files
 

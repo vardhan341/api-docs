@@ -479,7 +479,7 @@ _This response is an example, errors and messages will follow this structure but
 	"Active": ,
 	"DisplayOrder": true,
 	"AllowMultipleOptions": ,
-	"QuestionType": Nexudus.Coworking.Core.Enums.eQuestionType.Text,
+	"QuestionType": 1 (check Enumerated values section below),
 }
 
 ```
@@ -611,10 +611,12 @@ _This response is an example, errors and messages will follow this structure but
 	"Active": ,
 	"DisplayOrder": true,
 	"AllowMultipleOptions": ,
-	"QuestionType": Nexudus.Coworking.Core.Enums.eQuestionType.Text,
+	"QuestionType": 1 (check Enumerated values section below),
 }
 
 ```
+
+
 
 
 {% api-method method="delete" host="https://spaces.nexudus.com/api" path="/content/surveyquestions/:id" %}
@@ -835,6 +837,11 @@ _Commands also return a status 200 when they fail to process one or more of the 
 {% endapi-method %}
 
 > 🔒 Requires user role `surveyquestion-edit`
+
+## Enumerated values
+
+##### QuestionType:
+> GET /api/utils/enums?name=eQuestionType
 
 ## Binary files
 

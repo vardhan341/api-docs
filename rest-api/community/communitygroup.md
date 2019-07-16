@@ -435,7 +435,7 @@ _This response is an example, errors and messages will follow this structure but
 	"User": 12345678,
 	"Name": "00001",
 	"Description": "Descripción",
-	"GroupAccess": Nexudus.Coworking.Core.Enums.eCommunityThreadVisibility.Restricted,
+	"GroupAccess": 1 (check Enumerated values section below),
 }
 
 ```
@@ -558,10 +558,12 @@ _This response is an example, errors and messages will follow this structure but
 	"User": 12345678,
 	"Name": "00001",
 	"Description": "Descripción",
-	"GroupAccess": Nexudus.Coworking.Core.Enums.eCommunityThreadVisibility.Restricted,
+	"GroupAccess": 1 (check Enumerated values section below),
 }
 
 ```
+
+
 
 
 {% api-method method="delete" host="https://spaces.nexudus.com/api" path="/community/communitygroups/:id" %}
@@ -782,6 +784,11 @@ _Commands also return a status 200 when they fail to process one or more of the 
 {% endapi-method %}
 
 > 🔒 Requires user role `communitygroup-edit`
+
+## Enumerated values
+
+##### GroupAccess:
+> GET /api/utils/enums?name=eCommunityThreadVisibility
 
 ## Binary files
 

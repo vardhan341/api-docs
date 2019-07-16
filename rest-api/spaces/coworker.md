@@ -1689,10 +1689,10 @@ _This response is an example, errors and messages will follow this structure but
 
 ```javascript
 {
-	"CoworkerType": Nexudus.Coworking.Core.Enums.eCoworkerRecordType.Individual,
+	"CoworkerType": 1 (check Enumerated values section below),
 	"FullName": "Name",
 	"Salutation": "Name",
-	"Gender": Nexudus.Coworking.Core.Enums.eGender.NotSet,
+	"Gender": 1 (check Enumerated values section below),
 	"Email": "email@email.com",
 	"CreateUser": true,
 	"Address": "Address",
@@ -1745,7 +1745,7 @@ _This response is an example, errors and messages will follow this structure but
 	"ShowPayingMemberInvoices": true,
 	"EnableGoCardlessPayments": false,
 	"GoCardlessContractNumber": "false",
-	"RegularPaymentProvider": Nexudus.Coworking.Core.Enums.eRegularPaymentProvider.Manual,
+	"RegularPaymentProvider": 1 (check Enumerated values section below),
 	"RegularPaymentContractNumber": "false",
 	"DoNotProcessInvoicesAutomatically": false,
 	"AllowNetworkCheckin": false,
@@ -2123,10 +2123,10 @@ _This response is an example, errors and messages will follow this structure but
 
 ```javascript
 {
-	"CoworkerType": Nexudus.Coworking.Core.Enums.eCoworkerRecordType.Individual,
+	"CoworkerType": 1 (check Enumerated values section below),
 	"FullName": "Name",
 	"Salutation": "Name",
-	"Gender": Nexudus.Coworking.Core.Enums.eGender.NotSet,
+	"Gender": 1 (check Enumerated values section below),
 	"Email": "email@email.com",
 	"Address": "Address",
 	"PostCode": "PostCode",
@@ -2178,7 +2178,7 @@ _This response is an example, errors and messages will follow this structure but
 	"ShowPayingMemberInvoices": true,
 	"EnableGoCardlessPayments": false,
 	"GoCardlessContractNumber": "false",
-	"RegularPaymentProvider": Nexudus.Coworking.Core.Enums.eRegularPaymentProvider.Manual,
+	"RegularPaymentProvider": 1 (check Enumerated values section below),
 	"RegularPaymentContractNumber": "false",
 	"DoNotProcessInvoicesAutomatically": false,
 	"AllowNetworkCheckin": false,
@@ -2235,6 +2235,8 @@ _This response is an example, errors and messages will follow this structure but
 }
 
 ```
+
+
 
 
 ## Commands
@@ -2375,6 +2377,17 @@ _Commands also return a status 200 when they fail to process one or more of the 
 {% endapi-method %}
 
 > 🔒 Requires user role `coworker-edit`
+
+## Enumerated values
+
+##### CoworkerType:
+> GET /api/utils/enums?name=eCoworkerRecordType
+
+##### Gender:
+> GET /api/utils/enums?name=eGender
+
+##### RegularPaymentProvider:
+> GET /api/utils/enums?name=eRegularPaymentProvider
 
 ## Binary files
 

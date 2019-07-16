@@ -573,6 +573,8 @@ _This response is an example, errors and messages will follow this structure but
 ```
 
 
+
+
 ## Commands
 
 Commands allow to perform actions against one or more ledgerentry records. Some commands accept only one record while others can run an action for a number of records at the same time.  Each command has metadata with information about how it can be used and the amount of records, if any, it needs to run.
@@ -711,6 +713,8 @@ _Commands also return a status 200 when they fail to process one or more of the 
 {% endapi-method %}
 
 > 🔒 Requires user role `ledgerentry-edit`
+
+## Enumerated values
 
 ## Binary files
 

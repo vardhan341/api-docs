@@ -575,9 +575,9 @@ _This response is an example, errors and messages will follow this structure but
 	"Business": 12345678,
 	"Name": "Joe",
 	"DisplayOrder": Joe,
-	"RecordType": eCustomFieldRecordType.Coworker,
-	"FieldType": eFieldType.Text,
-	"CoworkerFieldPosition": eCoworkerFieldPosition.General,
+	"RecordType": 1 (check Enumerated values section below),
+	"FieldType": 1 (check Enumerated values section below),
+	"CoworkerFieldPosition": 1 (check Enumerated values section below),
 	"AvailableOptions": "Joe",
 	"AllowMultipleOptions": ,
 	"CustomFieldIndex": Joe,
@@ -734,9 +734,9 @@ _This response is an example, errors and messages will follow this structure but
 	"Business": 12345678,
 	"Name": "Joe",
 	"DisplayOrder": Joe,
-	"RecordType": eCustomFieldRecordType.Coworker,
-	"FieldType": eFieldType.Text,
-	"CoworkerFieldPosition": eCoworkerFieldPosition.General,
+	"RecordType": 1 (check Enumerated values section below),
+	"FieldType": 1 (check Enumerated values section below),
+	"CoworkerFieldPosition": 1 (check Enumerated values section below),
 	"AvailableOptions": "Joe",
 	"AllowMultipleOptions": ,
 	"CustomFieldIndex": Joe,
@@ -751,6 +751,8 @@ _This response is an example, errors and messages will follow this structure but
 }
 
 ```
+
+
 
 
 {% api-method method="delete" host="https://spaces.nexudus.com/api" path="/crm/customfields/:id" %}
@@ -971,6 +973,17 @@ _Commands also return a status 200 when they fail to process one or more of the 
 {% endapi-method %}
 
 > 🔒 Requires user role `customfield-edit`
+
+## Enumerated values
+
+##### RecordType:
+> GET /api/utils/enums?name=eCustomFieldRecordType
+
+##### FieldType:
+> GET /api/utils/enums?name=eFieldType
+
+##### CoworkerFieldPosition:
+> GET /api/utils/enums?name=eCoworkerFieldPosition
 
 ## Binary files
 

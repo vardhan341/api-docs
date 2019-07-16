@@ -474,7 +474,7 @@ _This response is an example, errors and messages will follow this structure but
 	"Business": 12345678,
 	"Name": "00001",
 	"CompanyName": "00001",
-	"Language": Nexudus.Coworking.Core.Enums.eLanguage.Spanish,
+	"Language": 1 (check Enumerated values section below),
 	"Email": "test@example.com",
 	"VisitReason": "00001",
 	"Active": ,
@@ -603,13 +603,15 @@ _This response is an example, errors and messages will follow this structure but
 	"Business": 12345678,
 	"Name": "00001",
 	"CompanyName": "00001",
-	"Language": Nexudus.Coworking.Core.Enums.eLanguage.Spanish,
+	"Language": 1 (check Enumerated values section below),
 	"Email": "test@example.com",
 	"VisitReason": "00001",
 	"Active": ,
 }
 
 ```
+
+
 
 
 {% api-method method="delete" host="https://spaces.nexudus.com/api" path="/content/newslettersubscribers/:id" %}
@@ -830,6 +832,11 @@ _Commands also return a status 200 when they fail to process one or more of the 
 {% endapi-method %}
 
 > 🔒 Requires user role `newslettersubscriber-edit`
+
+## Enumerated values
+
+##### Language:
+> GET /api/utils/enums?name=eLanguage
 
 ## Binary files
 

@@ -653,7 +653,7 @@ _This response is an example, errors and messages will follow this structure but
 	"Coworker": 12345678,
 	"Reference": "00001",
 	"Notes": "Notes",
-	"ProposalStatus": Nexudus.Coworking.Core.Enums.eProposalStatus.Draft,
+	"ProposalStatus": 1 (check Enumerated values section below),
 	"DocumentToSend": 12345678,
 	"DocumentToSign": 12345678,
 	"DocumentToSignHtml": "",
@@ -798,7 +798,7 @@ _This response is an example, errors and messages will follow this structure but
 	"Coworker": 12345678,
 	"Reference": "00001",
 	"Notes": "Notes",
-	"ProposalStatus": Nexudus.Coworking.Core.Enums.eProposalStatus.Draft,
+	"ProposalStatus": 1 (check Enumerated values section below),
 	"DocumentToSend": 12345678,
 	"DocumentToSign": 12345678,
 	"DocumentToSignHtml": "",
@@ -806,6 +806,8 @@ _This response is an example, errors and messages will follow this structure but
 }
 
 ```
+
+
 
 
 {% api-method method="delete" host="https://spaces.nexudus.com/api" path="/billing/proposals/:id" %}
@@ -1026,6 +1028,11 @@ _Commands also return a status 200 when they fail to process one or more of the 
 {% endapi-method %}
 
 > 🔒 Requires user role `proposal-edit`
+
+## Enumerated values
+
+##### ProposalStatus:
+> GET /api/utils/enums?name=eProposalStatus
 
 ## Binary files
 

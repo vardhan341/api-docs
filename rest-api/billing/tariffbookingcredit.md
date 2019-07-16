@@ -454,7 +454,7 @@ _This response is an example, errors and messages will follow this structure but
 	"Tariff": 12345678,
 	"Credit": 0,
 	"CaneBeUsedForEvents": false,
-	"ServiceRenewalTime": 0,
+	"ServiceRenewalTime": 1 (check Enumerated values section below),
 }
 
 ```
@@ -577,10 +577,12 @@ _This response is an example, errors and messages will follow this structure but
 	"Tariff": 12345678,
 	"Credit": 0,
 	"CaneBeUsedForEvents": false,
-	"ServiceRenewalTime": 0,
+	"ServiceRenewalTime": 1 (check Enumerated values section below),
 }
 
 ```
+
+
 
 
 {% api-method method="delete" host="https://spaces.nexudus.com/api" path="/billing/tariffbookingcredits/:id" %}
@@ -801,6 +803,11 @@ _Commands also return a status 200 when they fail to process one or more of the 
 {% endapi-method %}
 
 > 🔒 Requires user role `tariffbookingcredit-edit`
+
+## Enumerated values
+
+##### ServiceRenewalTime:
+> GET /api/utils/enums?name=eTimeSpanWeekMonth
 
 ## Binary files
 

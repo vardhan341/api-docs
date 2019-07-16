@@ -511,7 +511,7 @@ _This response is an example, errors and messages will follow this structure but
 {
 	"Business": 12345678,
 	"Name": "00001",
-	"Vendor": Nexudus.Coworking.Core.Enums.eRadiusServerVendor.Other,
+	"Vendor": 1 (check Enumerated values section below),
 	"Active": true,
 	"Description": "Description",
 }
@@ -634,12 +634,14 @@ _This response is an example, errors and messages will follow this structure but
 {
 	"Business": 12345678,
 	"Name": "00001",
-	"Vendor": Nexudus.Coworking.Core.Enums.eRadiusServerVendor.Other,
+	"Vendor": 1 (check Enumerated values section below),
 	"Active": true,
 	"Description": "Description",
 }
 
 ```
+
+
 
 
 {% api-method method="delete" host="https://spaces.nexudus.com/api" path="/sys/radiusservers/:id" %}
@@ -860,6 +862,11 @@ _Commands also return a status 200 when they fail to process one or more of the 
 {% endapi-method %}
 
 > 🔒 Requires user role `radiusserver-edit`
+
+## Enumerated values
+
+##### Vendor:
+> GET /api/utils/enums?name=eRadiusServerVendor
 
 ## Binary files
 

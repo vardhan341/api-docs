@@ -511,7 +511,7 @@ _This response is an example, errors and messages will follow this structure but
 	"Permalink": "Permalink",
 	"FileLanguage": 12345678,
 	"Published": false,
-	"Visibility": Nexudus.Coworking.Core.Enums.eTemplateFileVisibility.Public,
+	"Visibility": 1 (check Enumerated values section below),
 	"Password": "False",
 	"FileContents": "FileContent",
 }
@@ -652,12 +652,14 @@ _This response is an example, errors and messages will follow this structure but
 	"Permalink": "Permalink",
 	"FileLanguage": 12345678,
 	"Published": false,
-	"Visibility": Nexudus.Coworking.Core.Enums.eTemplateFileVisibility.Public,
+	"Visibility": 1 (check Enumerated values section below),
 	"Password": "False",
 	"FileContents": "FileContent",
 }
 
 ```
+
+
 
 
 {% api-method method="delete" host="https://spaces.nexudus.com/api" path="/sys/templatefiles/:id" %}
@@ -878,6 +880,11 @@ _Commands also return a status 200 when they fail to process one or more of the 
 {% endapi-method %}
 
 > 🔒 Requires user role `templatefile-edit`
+
+## Enumerated values
+
+##### Visibility:
+> GET /api/utils/enums?name=eTemplateFileVisibility
 
 ## Binary files
 

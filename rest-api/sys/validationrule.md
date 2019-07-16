@@ -452,7 +452,7 @@ _This response is an example, errors and messages will follow this structure but
 {
 	"Business": 12345678,
 	"Name": "00001",
-	"RecordType": Nexudus.Coworking.Core.Enums.eValidationRuleEntity.Coworker,
+	"RecordType": 1 (check Enumerated values section below),
 	"Active": true,
 	"Formula": "",
 	"Description": "",
@@ -581,7 +581,7 @@ _This response is an example, errors and messages will follow this structure but
 {
 	"Business": 12345678,
 	"Name": "00001",
-	"RecordType": Nexudus.Coworking.Core.Enums.eValidationRuleEntity.Coworker,
+	"RecordType": 1 (check Enumerated values section below),
 	"Active": true,
 	"Formula": "",
 	"Description": "",
@@ -589,6 +589,8 @@ _This response is an example, errors and messages will follow this structure but
 }
 
 ```
+
+
 
 
 {% api-method method="delete" host="https://spaces.nexudus.com/api" path="/sys/validationrules/:id" %}
@@ -809,6 +811,11 @@ _Commands also return a status 200 when they fail to process one or more of the 
 {% endapi-method %}
 
 > 🔒 Requires user role `validationrule-edit`
+
+## Enumerated values
+
+##### RecordType:
+> GET /api/utils/enums?name=eValidationRuleEntity
 
 ## Binary files
 

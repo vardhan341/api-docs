@@ -717,7 +717,7 @@ _This response is an example, errors and messages will follow this structure but
 	"ExpireDate": null,
 	"DueDate": null,
 	"PurchaseOrder": "PurchaseOrder",
-	"ChargePeriod": Nexudus.Coworking.Core.Enums.eChargePeriod.Minutes,
+	"ChargePeriod": 1 (check Enumerated values section below),
 	"BookingId": ,
 	"BookingFromTime": ,
 	"BookingToTime": ,
@@ -870,7 +870,7 @@ _This response is an example, errors and messages will follow this structure but
 	"ExpireDate": null,
 	"DueDate": null,
 	"PurchaseOrder": "PurchaseOrder",
-	"ChargePeriod": Nexudus.Coworking.Core.Enums.eChargePeriod.Minutes,
+	"ChargePeriod": 1 (check Enumerated values section below),
 	"BookingId": ,
 	"BookingFromTime": ,
 	"BookingToTime": ,
@@ -878,6 +878,8 @@ _This response is an example, errors and messages will follow this structure but
 }
 
 ```
+
+
 
 
 {% api-method method="delete" host="https://spaces.nexudus.com/api" path="/billing/coworkerextraservices/:id" %}
@@ -1098,6 +1100,11 @@ _Commands also return a status 200 when they fail to process one or more of the 
 {% endapi-method %}
 
 > 🔒 Requires user role `coworkerextraservice-edit`
+
+## Enumerated values
+
+##### ChargePeriod:
+> GET /api/utils/enums?name=eChargePeriod
 
 ## Binary files
 

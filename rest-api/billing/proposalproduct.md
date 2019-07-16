@@ -494,7 +494,7 @@ _This response is an example, errors and messages will follow this structure but
 	"Price": false,
 	"IsDeposit": false,
 	"RegularCharge": false,
-	"RepeatCycle": Nexudus.Coworking.Core.Enums.eRecurrentChargePattern.PricePlan,
+	"RepeatCycle": 1 (check Enumerated values section below),
 	"Notes": "Notes",
 }
 
@@ -626,11 +626,13 @@ _This response is an example, errors and messages will follow this structure but
 	"Price": false,
 	"IsDeposit": false,
 	"RegularCharge": false,
-	"RepeatCycle": Nexudus.Coworking.Core.Enums.eRecurrentChargePattern.PricePlan,
+	"RepeatCycle": 1 (check Enumerated values section below),
 	"Notes": "Notes",
 }
 
 ```
+
+
 
 
 {% api-method method="delete" host="https://spaces.nexudus.com/api" path="/billing/proposalproducts/:id" %}
@@ -851,6 +853,11 @@ _Commands also return a status 200 when they fail to process one or more of the 
 {% endapi-method %}
 
 > 🔒 Requires user role `proposalproduct-edit`
+
+## Enumerated values
+
+##### RepeatCycle:
+> GET /api/utils/enums?name=eRecurrentChargePattern
 
 ## Binary files
 

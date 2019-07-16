@@ -432,7 +432,7 @@ _This response is an example, errors and messages will follow this structure but
 	"ResourceAccessRule": 12345678,
 	"FromTime": DateTime.Parse("FromTime"),
 	"ToTime": DateTime.Parse("FromTime"),
-	"DayOfWeek": DayOfWeek.Monday,
+	"DayOfWeek": 1 (check Enumerated values section below),
 }
 
 ```
@@ -552,10 +552,12 @@ _This response is an example, errors and messages will follow this structure but
 	"ResourceAccessRule": 12345678,
 	"FromTime": DateTime.Parse("FromTime"),
 	"ToTime": DateTime.Parse("FromTime"),
-	"DayOfWeek": DayOfWeek.Monday,
+	"DayOfWeek": 1 (check Enumerated values section below),
 }
 
 ```
+
+
 
 
 {% api-method method="delete" host="https://spaces.nexudus.com/api" path="/spaces/resourceaccessruletimeslots/:id" %}
@@ -776,6 +778,11 @@ _Commands also return a status 200 when they fail to process one or more of the 
 {% endapi-method %}
 
 > 🔒 Requires user role `resourceaccessruletimeslot-edit`
+
+## Enumerated values
+
+##### DayOfWeek:
+> GET /api/utils/enums?name=DayOfWeek
 
 ## Binary files
 

@@ -1242,7 +1242,7 @@ _This response is an example, errors and messages will follow this structure but
 ```javascript
 {
 	"Name": "Joe",
-	"DefaultLanguage": Nexudus.Coworking.Core.Enums.eLanguage.Spanish,
+	"DefaultLanguage": 1 (check Enumerated values section below),
 	"SpaceWebsiteLanguage": 12345678,
 	"WebAddress": "url",
 	"DefaultPaymentGateway": 12345678,
@@ -1266,11 +1266,11 @@ _This response is an example, errors and messages will follow this structure but
 	"PassportPublished": null,
 	"PassportSpaceName": "null",
 	"PassportTagLine": "null",
-	"VenueType": Nexudus.Coworking.Core.Enums.eVenueType.CoworkingSpace,
+	"VenueType": 1 (check Enumerated values section below),
 	"Tags": "null",
 	"NumberOfFloors": 1,
 	"FloorSpace": 1,
-	"FloorSpaceUnit": Nexudus.Coworking.Core.Enums.eFloorUnit.SqFt,
+	"FloorSpaceUnit": 1 (check Enumerated values section below),
 	"Longitude": 1,
 	"Latitude": 1,
 	"PassportDescription": "Joe",
@@ -1281,10 +1281,10 @@ _This response is an example, errors and messages will follow this structure but
 	"Neighborhood": "",
 	"ContactPhoneNumber": "",
 	"ContactEmail": "",
-	"PassportMembersAccess": Nexudus.Coworking.Core.Enums.ePassportAccess.Everyone,
-	"PassportEventsAccess": Nexudus.Coworking.Core.Enums.ePassportAccess.Everyone,
-	"PassportCommunityAccess": Nexudus.Coworking.Core.Enums.ePassportAccess.Everyone,
-	"PassportBlogPostsAccess": Nexudus.Coworking.Core.Enums.ePassportAccess.Everyone,
+	"PassportMembersAccess": 1 (check Enumerated values section below),
+	"PassportEventsAccess": 1 (check Enumerated values section below),
+	"PassportCommunityAccess": 1 (check Enumerated values section below),
+	"PassportBlogPostsAccess": 1 (check Enumerated values section below),
 	"MondayOpenTime": null,
 	"MondayCloseTime": null,
 	"TuesdayOpenTime": null,
@@ -1548,7 +1548,7 @@ _This response is an example, errors and messages will follow this structure but
 ```javascript
 {
 	"Name": "Joe",
-	"DefaultLanguage": Nexudus.Coworking.Core.Enums.eLanguage.Spanish,
+	"DefaultLanguage": 1 (check Enumerated values section below),
 	"SpaceWebsiteLanguage": 12345678,
 	"WebAddress": "url",
 	"DefaultPaymentGateway": 12345678,
@@ -1572,11 +1572,11 @@ _This response is an example, errors and messages will follow this structure but
 	"PassportPublished": null,
 	"PassportSpaceName": "null",
 	"PassportTagLine": "null",
-	"VenueType": Nexudus.Coworking.Core.Enums.eVenueType.CoworkingSpace,
+	"VenueType": 1 (check Enumerated values section below),
 	"Tags": "null",
 	"NumberOfFloors": 1,
 	"FloorSpace": 1,
-	"FloorSpaceUnit": Nexudus.Coworking.Core.Enums.eFloorUnit.SqFt,
+	"FloorSpaceUnit": 1 (check Enumerated values section below),
 	"Longitude": 1,
 	"Latitude": 1,
 	"PassportDescription": "Joe",
@@ -1587,10 +1587,10 @@ _This response is an example, errors and messages will follow this structure but
 	"Neighborhood": "",
 	"ContactPhoneNumber": "",
 	"ContactEmail": "",
-	"PassportMembersAccess": Nexudus.Coworking.Core.Enums.ePassportAccess.Everyone,
-	"PassportEventsAccess": Nexudus.Coworking.Core.Enums.ePassportAccess.Everyone,
-	"PassportCommunityAccess": Nexudus.Coworking.Core.Enums.ePassportAccess.Everyone,
-	"PassportBlogPostsAccess": Nexudus.Coworking.Core.Enums.ePassportAccess.Everyone,
+	"PassportMembersAccess": 1 (check Enumerated values section below),
+	"PassportEventsAccess": 1 (check Enumerated values section below),
+	"PassportCommunityAccess": 1 (check Enumerated values section below),
+	"PassportBlogPostsAccess": 1 (check Enumerated values section below),
 	"MondayOpenTime": null,
 	"MondayCloseTime": null,
 	"TuesdayOpenTime": null,
@@ -1616,6 +1616,8 @@ _This response is an example, errors and messages will follow this structure but
 }
 
 ```
+
+
 
 
 ## Commands
@@ -1756,6 +1758,32 @@ _Commands also return a status 200 when they fail to process one or more of the 
 {% endapi-method %}
 
 > 🔒 Requires user role `business-edit`
+
+## Enumerated values
+
+##### VisitedHelpItems:
+> GET /api/utils/enums?name=eHelpItemFlag
+
+##### DefaultLanguage:
+> GET /api/utils/enums?name=eLanguage
+
+##### VenueType:
+> GET /api/utils/enums?name=eVenueType
+
+##### FloorSpaceUnit:
+> GET /api/utils/enums?name=eFloorUnit
+
+##### PassportMembersAccess:
+> GET /api/utils/enums?name=ePassportAccess
+
+##### PassportEventsAccess:
+> GET /api/utils/enums?name=ePassportAccess
+
+##### PassportCommunityAccess:
+> GET /api/utils/enums?name=ePassportAccess
+
+##### PassportBlogPostsAccess:
+> GET /api/utils/enums?name=ePassportAccess
 
 ## Binary files
 

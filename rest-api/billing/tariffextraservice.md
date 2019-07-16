@@ -451,7 +451,7 @@ _This response is an example, errors and messages will follow this structure but
 	"Tariff": 12345678,
 	"ExtraService": 12345678,
 	"UsesIncluded": 0,
-	"ServiceRenewalTime": 0,
+	"ServiceRenewalTime": 1 (check Enumerated values section below),
 }
 
 ```
@@ -571,10 +571,12 @@ _This response is an example, errors and messages will follow this structure but
 	"Tariff": 12345678,
 	"ExtraService": 12345678,
 	"UsesIncluded": 0,
-	"ServiceRenewalTime": 0,
+	"ServiceRenewalTime": 1 (check Enumerated values section below),
 }
 
 ```
+
+
 
 
 {% api-method method="delete" host="https://spaces.nexudus.com/api" path="/billing/tariffextraservices/:id" %}
@@ -795,6 +797,11 @@ _Commands also return a status 200 when they fail to process one or more of the 
 {% endapi-method %}
 
 > 🔒 Requires user role `tariffextraservice-edit`
+
+## Enumerated values
+
+##### ServiceRenewalTime:
+> GET /api/utils/enums?name=eTimeSpanWeekMonth
 
 ## Binary files
 

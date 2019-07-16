@@ -419,7 +419,7 @@ _This response is an example, errors and messages will follow this structure but
 {
 	"NewsLetterSubscriber": 12345678,
 	"NewsLetter": 12345678,
-	"ActiviyType": Nexudus.Coworking.Core.Enums.eActiviyType.Open,
+	"ActiviyType": 1 (check Enumerated values section below),
 	"Data": "Joe",
 }
 
@@ -539,11 +539,13 @@ _This response is an example, errors and messages will follow this structure but
 {
 	"NewsLetterSubscriber": 12345678,
 	"NewsLetter": 12345678,
-	"ActiviyType": Nexudus.Coworking.Core.Enums.eActiviyType.Open,
+	"ActiviyType": 1 (check Enumerated values section below),
 	"Data": "Joe",
 }
 
 ```
+
+
 
 
 {% api-method method="delete" host="https://spaces.nexudus.com/api" path="/content/subscriberactivities/:id" %}
@@ -764,6 +766,11 @@ _Commands also return a status 200 when they fail to process one or more of the 
 {% endapi-method %}
 
 > 🔒 Requires user role `subscriberactivity-edit`
+
+## Enumerated values
+
+##### ActiviyType:
+> GET /api/utils/enums?name=eActiviyType
 
 ## Binary files
 

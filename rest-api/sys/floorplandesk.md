@@ -619,7 +619,7 @@ _This response is an example, errors and messages will follow this structure but
 	"FloorPlan": 12345678,
 	"Coworker": 12345678,
 	"Name": "00001",
-	"ItemType": Nexudus.Coworking.Core.Enums.eFloorPlanItemType.Office,
+	"ItemType": 1 (check Enumerated values section below),
 	"Size": 00001,
 	"Capacity": 00001,
 	"Price": 00001,
@@ -778,7 +778,7 @@ _This response is an example, errors and messages will follow this structure but
 	"FloorPlan": 12345678,
 	"Coworker": 12345678,
 	"Name": "00001",
-	"ItemType": Nexudus.Coworking.Core.Enums.eFloorPlanItemType.Office,
+	"ItemType": 1 (check Enumerated values section below),
 	"Size": 00001,
 	"Capacity": 00001,
 	"Price": 00001,
@@ -795,6 +795,8 @@ _This response is an example, errors and messages will follow this structure but
 }
 
 ```
+
+
 
 
 {% api-method method="delete" host="https://spaces.nexudus.com/api" path="/sys/floorplandesks/:id" %}
@@ -1015,6 +1017,11 @@ _Commands also return a status 200 when they fail to process one or more of the 
 {% endapi-method %}
 
 > 🔒 Requires user role `floorplandesk-edit`
+
+## Enumerated values
+
+##### ItemType:
+> GET /api/utils/enums?name=eFloorPlanItemType
 
 ## Binary files
 

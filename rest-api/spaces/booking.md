@@ -895,7 +895,7 @@ _This response is an example, errors and messages will follow this structure but
 	"TariffAtTheTimeOfBooking": "false",
 	"RepeatSeriesUniqueId": ,
 	"RepeatBooking": false,
-	"Repeats": Nexudus.Coworking.Core.Enums.eBookingRepeatCycle.Weekly,
+	"Repeats": 1 (check Enumerated values section below),
 	"RepeatEvery": ,
 	"RepeatUntil": ,
 	"RepeatOnMondays": false,
@@ -1100,8 +1100,8 @@ _This response is an example, errors and messages will follow this structure but
 	"TeamsAtTheTimeOfBooking": "false",
 	"TariffAtTheTimeOfBooking": "false",
 	"RepeatSeriesUniqueId": ,
-	"Repeats": Nexudus.Coworking.Core.Enums.eBookingRepeatCycle.Weekly,
-	"WhichBookingsToUpdate": Nexudus.Coworking.Core.Enums.eRepeatedBookingUpdateAction.UpdateThisBookingOnly,
+	"Repeats": 1 (check Enumerated values section below),
+	"WhichBookingsToUpdate": 1 (check Enumerated values section below),
 	"RepeatOnMondays": false,
 	"RepeatOnTuesdays": false,
 	"RepeatOnWednesdays": false,
@@ -1120,6 +1120,8 @@ _This response is an example, errors and messages will follow this structure but
 }
 
 ```
+
+
 
 
 {% api-method method="delete" host="https://spaces.nexudus.com/api" path="/spaces/bookings/:id" %}
@@ -1340,6 +1342,14 @@ _Commands also return a status 200 when they fail to process one or more of the 
 {% endapi-method %}
 
 > 🔒 Requires user role `booking-edit`
+
+## Enumerated values
+
+##### Repeats:
+> GET /api/utils/enums?name=eBookingRepeatCycle
+
+##### WhichBookingsToUpdate:
+> GET /api/utils/enums?name=eRepeatedBookingUpdateAction
 
 ## Binary files
 

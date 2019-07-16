@@ -726,7 +726,7 @@ _This response is an example, errors and messages will follow this structure but
 	"DisplayOrder": true,
 	"Price": 0,
 	"CreditPrice": ,
-	"ChargePeriod": Nexudus.Coworking.Core.Enums.eChargePeriod.Minutes,
+	"ChargePeriod": 1 (check Enumerated values section below),
 	"MaximumPrice": null,
 	"IsDefaultPrice": true,
 	"Currency": 12345678,
@@ -909,7 +909,7 @@ _This response is an example, errors and messages will follow this structure but
 	"DisplayOrder": true,
 	"Price": 0,
 	"CreditPrice": ,
-	"ChargePeriod": Nexudus.Coworking.Core.Enums.eChargePeriod.Minutes,
+	"ChargePeriod": 1 (check Enumerated values section below),
 	"MaximumPrice": null,
 	"IsDefaultPrice": true,
 	"Currency": 12345678,
@@ -930,6 +930,8 @@ _This response is an example, errors and messages will follow this structure but
 }
 
 ```
+
+
 
 
 {% api-method method="delete" host="https://spaces.nexudus.com/api" path="/billing/extraservices/:id" %}
@@ -1150,6 +1152,11 @@ _Commands also return a status 200 when they fail to process one or more of the 
 {% endapi-method %}
 
 > 🔒 Requires user role `extraservice-edit`
+
+## Enumerated values
+
+##### ChargePeriod:
+> GET /api/utils/enums?name=eChargePeriod
 
 ## Binary files
 

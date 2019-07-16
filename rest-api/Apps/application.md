@@ -573,6 +573,8 @@ _This response is an example, errors and messages will follow this structure but
 ```
 
 
+
+
 {% api-method method="delete" host="https://spaces.nexudus.com/api" path="/apps/applications/:id" %}
 {% api-method-summary %}
 Delete
@@ -791,6 +793,8 @@ _Commands also return a status 200 when they fail to process one or more of the 
 {% endapi-method %}
 
 > 🔒 Requires user role `application-edit`
+
+## Enumerated values
 
 ## Binary files
 

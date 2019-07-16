@@ -465,7 +465,7 @@ _This response is an example, errors and messages will follow this structure but
 	"HelpDeskDepartment": 12345678,
 	"Subject": "Name",
 	"MessageText": "MessageText",
-	"Priority": Nexudus.Coworking.Core.Enums.eHelpDeskMessagePriority.Normal,
+	"Priority": 1 (check Enumerated values section below),
 	"Closed": false,
 }
 
@@ -594,11 +594,13 @@ _This response is an example, errors and messages will follow this structure but
 	"HelpDeskDepartment": 12345678,
 	"Subject": "Name",
 	"MessageText": "MessageText",
-	"Priority": Nexudus.Coworking.Core.Enums.eHelpDeskMessagePriority.Normal,
+	"Priority": 1 (check Enumerated values section below),
 	"Closed": false,
 }
 
 ```
+
+
 
 
 {% api-method method="delete" host="https://spaces.nexudus.com/api" path="/support/helpdeskmessages/:id" %}
@@ -819,6 +821,11 @@ _Commands also return a status 200 when they fail to process one or more of the 
 {% endapi-method %}
 
 > 🔒 Requires user role `helpdeskmessage-edit`
+
+## Enumerated values
+
+##### Priority:
+> GET /api/utils/enums?name=eHelpDeskMessagePriority
 
 ## Binary files
 

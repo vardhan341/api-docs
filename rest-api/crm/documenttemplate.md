@@ -420,7 +420,7 @@ _This response is an example, errors and messages will follow this structure but
 	"Business": 12345678,
 	"Name": "Joe",
 	"Document": "",
-	"TemplateOutputFormat": Nexudus.Coworking.Core.Enums.eDocumentTemplateFormat.Html,
+	"TemplateOutputFormat": 1 (check Enumerated values section below),
 }
 
 ```
@@ -540,10 +540,12 @@ _This response is an example, errors and messages will follow this structure but
 	"Business": 12345678,
 	"Name": "Joe",
 	"Document": "",
-	"TemplateOutputFormat": Nexudus.Coworking.Core.Enums.eDocumentTemplateFormat.Html,
+	"TemplateOutputFormat": 1 (check Enumerated values section below),
 }
 
 ```
+
+
 
 
 {% api-method method="delete" host="https://spaces.nexudus.com/api" path="/crm/documenttemplates/:id" %}
@@ -764,6 +766,11 @@ _Commands also return a status 200 when they fail to process one or more of the 
 {% endapi-method %}
 
 > 🔒 Requires user role `documenttemplate-edit`
+
+## Enumerated values
+
+##### TemplateOutputFormat:
+> GET /api/utils/enums?name=eDocumentTemplateFormat
 
 ## Binary files
 

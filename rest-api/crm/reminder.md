@@ -559,13 +559,13 @@ _This response is an example, errors and messages will follow this structure but
 	"ForAllContacts": false,
 	"ForAllMembers": false,
 	"Coworker": 12345678,
-	"ReminderType": eReminderType.FixedDate,
+	"ReminderType": 1 (check Enumerated values section below),
 	"ReminderDate": null,
 	"DaysAfterSignup": null,
 	"Product": 12345678,
 	"DaysAfterRenewal": null,
 	"DaysBeforeRenewal": null,
-	"ReminderAction": eReminderAction.SendEmail,
+	"ReminderAction": 1 (check Enumerated values section below),
 	"Email": "joe@nexudus.com",
 	"CannedResponse": 12345678,
 }
@@ -709,18 +709,20 @@ _This response is an example, errors and messages will follow this structure but
 	"ForAllContacts": false,
 	"ForAllMembers": false,
 	"Coworker": 12345678,
-	"ReminderType": eReminderType.FixedDate,
+	"ReminderType": 1 (check Enumerated values section below),
 	"ReminderDate": null,
 	"DaysAfterSignup": null,
 	"Product": 12345678,
 	"DaysAfterRenewal": null,
 	"DaysBeforeRenewal": null,
-	"ReminderAction": eReminderAction.SendEmail,
+	"ReminderAction": 1 (check Enumerated values section below),
 	"Email": "joe@nexudus.com",
 	"CannedResponse": 12345678,
 }
 
 ```
+
+
 
 
 {% api-method method="delete" host="https://spaces.nexudus.com/api" path="/crm/reminders/:id" %}
@@ -941,6 +943,14 @@ _Commands also return a status 200 when they fail to process one or more of the 
 {% endapi-method %}
 
 > 🔒 Requires user role `reminder-edit`
+
+## Enumerated values
+
+##### ReminderType:
+> GET /api/utils/enums?name=eReminderType
+
+##### ReminderAction:
+> GET /api/utils/enums?name=eReminderAction
 
 ## Binary files
 

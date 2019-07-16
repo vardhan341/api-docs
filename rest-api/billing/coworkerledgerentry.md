@@ -970,7 +970,7 @@ _Commands also return a status 200 when they fail to process one or more of the 
 
 ## Enumerated values
 
-##### PaymentGatewayName: ePaymentProvider
+##### PaymentGatewayName:
 > GET /api/utils/enums?name=ePaymentProvider
 
 ## Binary files

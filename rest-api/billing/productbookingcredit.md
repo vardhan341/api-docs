@@ -471,7 +471,7 @@ _This response is an example, errors and messages will follow this structure but
 	"Product": 12345678,
 	"Credit": 0,
 	"CaneBeUsedForEvents": false,
-	"ExpirationType": Nexudus.Coworking.Core.Enums.eRecurrentChargePattern.PricePlan,
+	"ExpirationType": 1 (check Enumerated values section below),
 	"ExpiresIn": 0,
 }
 
@@ -597,11 +597,13 @@ _This response is an example, errors and messages will follow this structure but
 	"Product": 12345678,
 	"Credit": 0,
 	"CaneBeUsedForEvents": false,
-	"ExpirationType": Nexudus.Coworking.Core.Enums.eRecurrentChargePattern.PricePlan,
+	"ExpirationType": 1 (check Enumerated values section below),
 	"ExpiresIn": 0,
 }
 
 ```
+
+
 
 
 {% api-method method="delete" host="https://spaces.nexudus.com/api" path="/billing/productbookingcredits/:id" %}
@@ -822,6 +824,11 @@ _Commands also return a status 200 when they fail to process one or more of the 
 {% endapi-method %}
 
 > 🔒 Requires user role `productbookingcredit-edit`
+
+## Enumerated values
+
+##### ExpirationType:
+> GET /api/utils/enums?name=eRecurrentChargePattern
 
 ## Binary files
 

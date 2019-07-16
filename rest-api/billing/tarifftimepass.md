@@ -436,7 +436,7 @@ _This response is an example, errors and messages will follow this structure but
 	"Tariff": 12345678,
 	"TimePass": 12345678,
 	"PassesIncluded": 0,
-	"PassRenewalTime": 0,
+	"PassRenewalTime": 1 (check Enumerated values section below),
 }
 
 ```
@@ -556,10 +556,12 @@ _This response is an example, errors and messages will follow this structure but
 	"Tariff": 12345678,
 	"TimePass": 12345678,
 	"PassesIncluded": 0,
-	"PassRenewalTime": 0,
+	"PassRenewalTime": 1 (check Enumerated values section below),
 }
 
 ```
+
+
 
 
 {% api-method method="delete" host="https://spaces.nexudus.com/api" path="/billing/tarifftimepasses/:id" %}
@@ -780,6 +782,11 @@ _Commands also return a status 200 when they fail to process one or more of the 
 {% endapi-method %}
 
 > 🔒 Requires user role `tarifftimepass-edit`
+
+## Enumerated values
+
+##### PassRenewalTime:
+> GET /api/utils/enums?name=eTimeSpanWeekMonth
 
 ## Binary files
 

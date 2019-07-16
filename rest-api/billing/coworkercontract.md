@@ -840,7 +840,7 @@ _This response is an example, errors and messages will follow this structure but
 	"CancellationLimitDays": null,
 	"ProRateCancellation": true,
 	"CancelTeamContracts": true,
-	"CancellationReason": Nexudus.Coworking.Core.Enums.eCancellationReason.Price,
+	"CancellationReason": 1 (check Enumerated values section below),
 	"CancellationNotes": "Notes",
 	"ProposalUniqueId": null,
 	"FloorPlanDeskIds": "",
@@ -1029,7 +1029,7 @@ _This response is an example, errors and messages will follow this structure but
 	"CancellationLimitDays": null,
 	"ProRateCancellation": true,
 	"CancelTeamContracts": true,
-	"CancellationReason": Nexudus.Coworking.Core.Enums.eCancellationReason.Price,
+	"CancellationReason": 1 (check Enumerated values section below),
 	"CancellationNotes": "Notes",
 	"ProposalUniqueId": null,
 	"FloorPlanDeskIds": "",
@@ -1037,6 +1037,8 @@ _This response is an example, errors and messages will follow this structure but
 }
 
 ```
+
+
 
 
 ## Commands
@@ -1177,6 +1179,11 @@ _Commands also return a status 200 when they fail to process one or more of the 
 {% endapi-method %}
 
 > 🔒 Requires user role `coworkercontract-edit`
+
+## Enumerated values
+
+##### CancellationReason:
+> GET /api/utils/enums?name=eCancellationReason
 
 ## Binary files
 

@@ -431,7 +431,7 @@ _This response is an example, errors and messages will follow this structure but
 	"Business": 12345678,
 	"Name": "Name",
 	"Folder": "Name",
-	"ReportType": Nexudus.Coworking.Core.Enums.eReportType.Checkins,
+	"ReportType": 1 (check Enumerated values section below),
 	"ReportXml": "ReportXml",
 }
 
@@ -554,11 +554,13 @@ _This response is an example, errors and messages will follow this structure but
 	"Business": 12345678,
 	"Name": "Name",
 	"Folder": "Name",
-	"ReportType": Nexudus.Coworking.Core.Enums.eReportType.Checkins,
+	"ReportType": 1 (check Enumerated values section below),
 	"ReportXml": "ReportXml",
 }
 
 ```
+
+
 
 
 {% api-method method="delete" host="https://spaces.nexudus.com/api" path="/sys/reports/:id" %}
@@ -779,6 +781,11 @@ _Commands also return a status 200 when they fail to process one or more of the 
 {% endapi-method %}
 
 > 🔒 Requires user role `report-edit`
+
+## Enumerated values
+
+##### ReportType:
+> GET /api/utils/enums?name=eReportType
 
 ## Binary files
 

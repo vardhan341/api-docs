@@ -432,7 +432,7 @@ _This response is an example, errors and messages will follow this structure but
 	"Name": "Name",
 	"Code": "Code",
 	"Description": "Description",
-	"AccountType": eFinancialAccountType.Sales,
+	"AccountType": 1 (check Enumerated values section below),
 }
 
 ```
@@ -555,10 +555,12 @@ _This response is an example, errors and messages will follow this structure but
 	"Name": "Name",
 	"Code": "Code",
 	"Description": "Description",
-	"AccountType": eFinancialAccountType.Sales,
+	"AccountType": 1 (check Enumerated values section below),
 }
 
 ```
+
+
 
 
 {% api-method method="delete" host="https://spaces.nexudus.com/api" path="/billing/financialaccounts/:id" %}
@@ -779,6 +781,11 @@ _Commands also return a status 200 when they fail to process one or more of the 
 {% endapi-method %}
 
 > 🔒 Requires user role `financialaccount-edit`
+
+## Enumerated values
+
+##### AccountType:
+> GET /api/utils/enums?name=eFinancialAccountType
 
 ## Binary files
 
