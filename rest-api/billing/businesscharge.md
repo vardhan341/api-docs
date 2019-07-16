@@ -507,7 +507,7 @@ _This response is an example, errors and messages will follow this structure but
 
 ```javascript
 {
-	"Business": null,
+	"Business": 12345678,
 	"Description": "Descripción",
 	"CallBackUrl": "Callback",
 	"DueDate": null,
@@ -626,6 +626,22 @@ _This response is an example, errors and messages will follow this structure but
 {% endapi-method %}
 
 > 🔒 Requires user role `businesscharge-edit`
+
+```javascript
+{
+	"Business": 12345678,
+	"Description": "Descripción",
+	"CallBackUrl": "Callback",
+	"DueDate": null,
+	"TotalAmount": 0,
+	"TaxAmount": 0,
+	"Invoiced": false,
+	"InvoicedOn": null,
+	"ApprovedByBusiness": false,
+	"ApprovedBySender": false,
+}
+
+```
 
 
 ## Commands
