@@ -970,8 +970,8 @@ _Commands also return a status 200 when they fail to process one or more of the 
 
 ## Enumerated values
 
-#### PaymentGatewayName: Nexudus.Coworking.Core.Enums.ePaymentProvider?
-> GET /api/utils/enums?name=ePaymentProvider?
+##### PaymentGatewayName: ePaymentProvider
+> GET /api/utils/enums?name=ePaymentProvider
 
 ## Binary files
 
