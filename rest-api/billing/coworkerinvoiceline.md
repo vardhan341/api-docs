@@ -349,11 +349,11 @@ You can also use range query parameters for all date, integer and decimal proper
 
 {% api-method method="get" host="https://spaces.nexudus.com/api" path="/billing/coworkerinvoicelines" %}
 {% api-method-summary %}
-By date range
+By date or number range
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Gets a list of coworkerinvoicelines based on the date when they were created or updated.
+Gets a list of coworkerinvoicelines based on a range of dates, integer or decimal properties.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -624,49 +624,9 @@ application/json
 {% endapi-method-parameter %}
 {% api-method-parameter name="TaxRate" type="decimal" required=true %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="CoworkerContractUniqueId" type="Guid?" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="ContractDepositUniqueId" type="Guid?" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="BookingUniqueId" type="Guid?" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="CoworkerExtraServiceUniqueId" type="Guid?" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="CoworkerTimePassUniqueId" type="Guid?" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="CoworkerChargeUniqueId" type="Guid?" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="CoworkerProductUniqueId" type="Guid?" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="EventAttendeeUniqueId" type="Guid?" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="RefundedAmount" type="decimal?" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="Refunded" type="bool" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="RefundedOn" type="DateTime?" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="SaleDate" type="DateTime?" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="DiscountCode" type="string" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="DiscountAmount" type="decimal?" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="CoworkerExtraServiceName" type="string" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="CoworkerTimePassName" type="string" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="CoworkerProductName" type="string" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="EventAttendeeProductName" type="string" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="TariffName" type="string" required=false %}
-{% endapi-method-parameter %}
 {% api-method-parameter name="FinancialAccountCode" type="string" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="FinancialAccountName" type="string" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="Position" type="int" required=true %}
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 
@@ -743,6 +703,21 @@ _This response is an example, errors and messages will follow this structure but
 {% endapi-method %}
 
 > 🔒 Requires user role `coworkerinvoiceline-create`
+
+```javascript
+{
+	"CoworkerInvoice": 12345678,
+	"Description": "BillToName",
+	"TaxCategoryName": "Joe",
+	"Quantity": 1,
+	"SubTotal": 0,
+	"TaxAmount": 0,
+	"TaxRate": 0,
+	"FinancialAccountCode": "",
+	"FinancialAccountName": "",
+}
+
+```
 
 {% api-method method="put" host="https://spaces.nexudus.com/api" path="/billing/coworkerinvoicelines" %}
 {% api-method-summary %}
@@ -863,6 +838,21 @@ _This response is an example, errors and messages will follow this structure but
 {% endapi-method %}
 
 > 🔒 Requires user role `coworkerinvoiceline-edit`
+
+```javascript
+{
+	"CoworkerInvoice": 12345678,
+	"Description": "BillToName",
+	"TaxCategoryName": "Joe",
+	"Quantity": 1,
+	"SubTotal": 0,
+	"TaxAmount": 0,
+	"TaxRate": 0,
+	"FinancialAccountCode": "",
+	"FinancialAccountName": "",
+}
+
+```
 
 
 ## Commands

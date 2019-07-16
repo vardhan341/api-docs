@@ -289,11 +289,11 @@ You can also use range query parameters for all date, integer and decimal proper
 
 {% api-method method="get" host="https://spaces.nexudus.com/api" path="/billing/charges" %}
 {% api-method-summary %}
-By date range
+By date or number range
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Gets a list of charges based on the date when they were created or updated.
+Gets a list of charges based on a range of dates, integer or decimal properties.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -516,8 +516,6 @@ application/json
 {% endapi-method-parameter %}
 {% api-method-parameter name="BusinessId" type="int" required=true %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="ChargeNumber" type="string" required=false %}
-{% endapi-method-parameter %}
 {% api-method-parameter name="Description" type="string" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="RegularCharge" type="bool" required=false %}
@@ -533,22 +531,6 @@ application/json
 {% api-method-parameter name="FinancialAccountId" type="int" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="Invoiced" type="bool" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="InvoicedOn" type="DateTime?" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="CoworkerContractUniqueId" type="Guid?" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="CoworkerExtraServiceUniqueId" type="Guid?" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="CoworkerTimePassUniqueId" type="Guid?" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="CoworkerChargeUniqueId" type="Guid?" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="EventAttendeeUniqueId" type="Guid?" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="InvoiceFromDate" type="DateTime?" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="InvoiceToDate" type="DateTime?" required=false %}
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 
@@ -625,6 +607,22 @@ _This response is an example, errors and messages will follow this structure but
 {% endapi-method %}
 
 > 🔒 Requires user role `charge-create`
+
+```javascript
+{
+	"Coworker": 12345678,
+	"Business": 12345678,
+	"Description": "[DataType(DataType.MultilineText)]",
+	"RegularCharge": false,
+	"DiscountAmount": 0,
+	"DueDate": null,
+	"TotalAmount": 0,
+	"TaxRate": 12345678,
+	"FinancialAccount": 12345678,
+	"Invoiced": false,
+}
+
+```
 
 {% api-method method="put" host="https://spaces.nexudus.com/api" path="/billing/charges" %}
 {% api-method-summary %}
@@ -747,6 +745,22 @@ _This response is an example, errors and messages will follow this structure but
 {% endapi-method %}
 
 > 🔒 Requires user role `charge-edit`
+
+```javascript
+{
+	"Coworker": 12345678,
+	"Business": 12345678,
+	"Description": "[DataType(DataType.MultilineText)]",
+	"RegularCharge": false,
+	"DiscountAmount": 0,
+	"DueDate": null,
+	"TotalAmount": 0,
+	"TaxRate": 12345678,
+	"FinancialAccount": 12345678,
+	"Invoiced": false,
+}
+
+```
 
 
 {% api-method method="delete" host="https://spaces.nexudus.com/api" path="/billing/charges/:id" %}

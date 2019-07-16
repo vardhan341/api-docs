@@ -404,6 +404,14 @@ _This response is an example, errors and messages will follow this structure but
 
 > 🔒 Requires user role `userrole-create`
 
+```javascript
+{
+	"Business": 12345678,
+	"Name": "Name",
+}
+
+```
+
 {% api-method method="put" host="https://spaces.nexudus.com/api" path="/security/userroles" %}
 {% api-method-summary %}
 Update
@@ -509,6 +517,14 @@ _This response is an example, errors and messages will follow this structure but
 {% endapi-method %}
 
 > 🔒 Requires user role `userrole-edit`
+
+```javascript
+{
+	"Business": 12345678,
+	"Name": "Name",
+}
+
+```
 
 
 {% api-method method="delete" host="https://spaces.nexudus.com/api" path="/security/userroles/:id" %}

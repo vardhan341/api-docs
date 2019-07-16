@@ -345,11 +345,11 @@ You can also use range query parameters for all date, integer and decimal proper
 
 {% api-method method="get" host="https://spaces.nexudus.com/api" path="/crm/crmopportunities" %}
 {% api-method-summary %}
-By date range
+By date or number range
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Gets a list of crmopportunities based on the date when they were created or updated.
+Gets a list of crmopportunities based on a range of dates, integer or decimal properties.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -668,6 +668,29 @@ _This response is an example, errors and messages will follow this structure but
 
 > 🔒 Requires user role `crmopportunity-create`
 
+```javascript
+{
+	"CrmBoardColumn": 12345678,
+	"Coworker": 12345678,
+	"Team": 12345678,
+	"OpportunityType": 12345678,
+	"Responsible": 12345678,
+	"Referrer": 12345678,
+	"Agent": 12345678,
+	"Notes": "Notes",
+	"Completed": true,
+	"DueDate": null,
+	"Value": null,
+	"LeadSource": Nexudus.Coworking.Core.Enums.eCrmOpportunitySource.Other,
+	"LossReason": Nexudus.Coworking.Core.Enums.eCrmOpportunityLossReason.Other,
+	"Status": Nexudus.Coworking.Core.Enums.eCrmOpportunityStatus.InProgress,
+	"WonOn": null,
+	"LostOn": null,
+	"Position": 1,
+}
+
+```
+
 {% api-method method="put" host="https://spaces.nexudus.com/api" path="/crm/crmopportunities" %}
 {% api-method-summary %}
 Update
@@ -803,6 +826,29 @@ _This response is an example, errors and messages will follow this structure but
 {% endapi-method %}
 
 > 🔒 Requires user role `crmopportunity-edit`
+
+```javascript
+{
+	"CrmBoardColumn": 12345678,
+	"Coworker": 12345678,
+	"Team": 12345678,
+	"OpportunityType": 12345678,
+	"Responsible": 12345678,
+	"Referrer": 12345678,
+	"Agent": 12345678,
+	"Notes": "Notes",
+	"Completed": true,
+	"DueDate": null,
+	"Value": null,
+	"LeadSource": Nexudus.Coworking.Core.Enums.eCrmOpportunitySource.Other,
+	"LossReason": Nexudus.Coworking.Core.Enums.eCrmOpportunityLossReason.Other,
+	"Status": Nexudus.Coworking.Core.Enums.eCrmOpportunityStatus.InProgress,
+	"WonOn": null,
+	"LostOn": null,
+	"Position": 1,
+}
+
+```
 
 
 {% api-method method="delete" host="https://spaces.nexudus.com/api" path="/crm/crmopportunities/:id" %}

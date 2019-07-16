@@ -247,11 +247,11 @@ You can also use range query parameters for all date, integer and decimal proper
 
 {% api-method method="get" host="https://spaces.nexudus.com/api" path="/crm/reminders" %}
 {% api-method-summary %}
-By date range
+By date or number range
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Gets a list of reminders based on the date when they were created or updated.
+Gets a list of reminders based on a range of dates, integer or decimal properties.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -552,6 +552,26 @@ _This response is an example, errors and messages will follow this structure but
 
 > 🔒 Requires user role `reminder-create`
 
+```javascript
+{
+	"Business": 12345678,
+	"Name": "Joe",
+	"ForAllContacts": false,
+	"ForAllMembers": false,
+	"Coworker": 12345678,
+	"ReminderType": eReminderType.FixedDate,
+	"ReminderDate": null,
+	"DaysAfterSignup": null,
+	"Product": 12345678,
+	"DaysAfterRenewal": null,
+	"DaysBeforeRenewal": null,
+	"ReminderAction": eReminderAction.SendEmail,
+	"Email": "joe@nexudus.com",
+	"CannedResponse": 12345678,
+}
+
+```
+
 {% api-method method="put" host="https://spaces.nexudus.com/api" path="/crm/reminders" %}
 {% api-method-summary %}
 Update
@@ -681,6 +701,26 @@ _This response is an example, errors and messages will follow this structure but
 {% endapi-method %}
 
 > 🔒 Requires user role `reminder-edit`
+
+```javascript
+{
+	"Business": 12345678,
+	"Name": "Joe",
+	"ForAllContacts": false,
+	"ForAllMembers": false,
+	"Coworker": 12345678,
+	"ReminderType": eReminderType.FixedDate,
+	"ReminderDate": null,
+	"DaysAfterSignup": null,
+	"Product": 12345678,
+	"DaysAfterRenewal": null,
+	"DaysBeforeRenewal": null,
+	"ReminderAction": eReminderAction.SendEmail,
+	"Email": "joe@nexudus.com",
+	"CannedResponse": 12345678,
+}
+
+```
 
 
 {% api-method method="delete" host="https://spaces.nexudus.com/api" path="/crm/reminders/:id" %}

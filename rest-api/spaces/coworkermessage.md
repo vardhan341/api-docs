@@ -218,11 +218,11 @@ You can also use range query parameters for all date, integer and decimal proper
 
 {% api-method method="get" host="https://spaces.nexudus.com/api" path="/spaces/coworkermessages" %}
 {% api-method-summary %}
-By date range
+By date or number range
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Gets a list of coworkermessages based on the date when they were created or updated.
+Gets a list of coworkermessages based on a range of dates, integer or decimal properties.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -387,10 +387,6 @@ application/json
 {% endapi-method-parameter %}
 {% api-method-parameter name="Body" type="string" required=false %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="IsNewMessage" type="bool" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="Incoming" type="bool" required=false %}
-{% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 
 {% endapi-method-request %}
@@ -466,6 +462,16 @@ _This response is an example, errors and messages will follow this structure but
 {% endapi-method %}
 
 > 🔒 Requires user role `coworkermessage-create`
+
+```javascript
+{
+	"Coworker": 12345678,
+	"EmailAccount": 12345678,
+	"Subject": "Subject",
+	"Body": "Body",
+}
+
+```
 
 {% api-method method="put" host="https://spaces.nexudus.com/api" path="/spaces/coworkermessages" %}
 {% api-method-summary %}
@@ -576,6 +582,16 @@ _This response is an example, errors and messages will follow this structure but
 {% endapi-method %}
 
 > 🔒 Requires user role `coworkermessage-edit`
+
+```javascript
+{
+	"Coworker": 12345678,
+	"EmailAccount": 12345678,
+	"Subject": "Subject",
+	"Body": "Body",
+}
+
+```
 
 
 {% api-method method="delete" host="https://spaces.nexudus.com/api" path="/spaces/coworkermessages/:id" %}

@@ -414,6 +414,15 @@ _This response is an example, errors and messages will follow this structure but
 
 > 🔒 Requires user role `surveyanswer-create`
 
+```javascript
+{
+	"SurveyRun": 12345678,
+	"SurveyQuestion": 12345678,
+	"Value": "",
+}
+
+```
+
 {% api-method method="put" host="https://spaces.nexudus.com/api" path="/content/surveyanswers" %}
 {% api-method-summary %}
 Update
@@ -521,6 +530,15 @@ _This response is an example, errors and messages will follow this structure but
 {% endapi-method %}
 
 > 🔒 Requires user role `surveyanswer-edit`
+
+```javascript
+{
+	"SurveyRun": 12345678,
+	"SurveyQuestion": 12345678,
+	"Value": "",
+}
+
+```
 
 
 {% api-method method="delete" host="https://spaces.nexudus.com/api" path="/content/surveyanswers/:id" %}

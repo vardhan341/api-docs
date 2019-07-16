@@ -184,11 +184,11 @@ You can also use range query parameters for all date, integer and decimal proper
 
 {% api-method method="get" host="https://spaces.nexudus.com/api" path="/billing/tariffsignupproducts" %}
 {% api-method-summary %}
-By date range
+By date or number range
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Gets a list of tariffsignupproducts based on the date when they were created or updated.
+Gets a list of tariffsignupproducts based on a range of dates, integer or decimal properties.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -431,6 +431,16 @@ _This response is an example, errors and messages will follow this structure but
 
 > 🔒 Requires user role `tariffsignupproduct-create`
 
+```javascript
+{
+	"Tariff": 12345678,
+	"Product": 12345678,
+	"Price": false,
+	"Refundable": false,
+}
+
+```
+
 {% api-method method="put" host="https://spaces.nexudus.com/api" path="/billing/tariffsignupproducts" %}
 {% api-method-summary %}
 Update
@@ -540,6 +550,16 @@ _This response is an example, errors and messages will follow this structure but
 {% endapi-method %}
 
 > 🔒 Requires user role `tariffsignupproduct-edit`
+
+```javascript
+{
+	"Tariff": 12345678,
+	"Product": 12345678,
+	"Price": false,
+	"Refundable": false,
+}
+
+```
 
 
 {% api-method method="delete" host="https://spaces.nexudus.com/api" path="/billing/tariffsignupproducts/:id" %}

@@ -269,11 +269,11 @@ You can also use range query parameters for all date, integer and decimal proper
 
 {% api-method method="get" host="https://spaces.nexudus.com/api" path="/content/eventattendees" %}
 {% api-method-summary %}
-By date range
+By date or number range
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Gets a list of eventattendees based on the date when they were created or updated.
+Gets a list of eventattendees based on a range of dates, integer or decimal properties.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -476,15 +476,11 @@ application/json
 {% endapi-method-parameter %}
 {% api-method-parameter name="Email" type="string" required=true %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="AttendeeCode" type="string" required=false %}
-{% endapi-method-parameter %}
 {% api-method-parameter name="CheckedIn" type="bool" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="CheckedInDate" type="DateTime?" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="Invoiced" type="bool" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="DueDate" type="DateTime?" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="CoworkerInvoiceId" type="int?" required=false %}
 {% endapi-method-parameter %}
@@ -567,6 +563,24 @@ _This response is an example, errors and messages will follow this structure but
 {% endapi-method %}
 
 > 🔒 Requires user role `eventattendee-create`
+
+```javascript
+{
+	"Business": 12345678,
+	"CalendarEvent": 12345678,
+	"EventProduct": 12345678,
+	"Coworker": 12345678,
+	"FullName": "Attendee FullName",
+	"Email": "Attendee Email",
+	"CheckedIn": false,
+	"CheckedInDate": ,
+	"Invoiced": false,
+	"CoworkerInvoiceId": ,
+	"CoworkerInvoiceNumber": "",
+	"CoworkerInvoicePaid": ,
+}
+
+```
 
 {% api-method method="put" host="https://spaces.nexudus.com/api" path="/content/eventattendees" %}
 {% api-method-summary %}
@@ -691,6 +705,23 @@ _This response is an example, errors and messages will follow this structure but
 {% endapi-method %}
 
 > 🔒 Requires user role `eventattendee-edit`
+
+```javascript
+{
+	"Business": 12345678,
+	"CalendarEvent": 12345678,
+	"EventProduct": 12345678,
+	"Coworker": 12345678,
+	"FullName": "Attendee FullName",
+	"Email": "Attendee Email",
+	"CheckedIn": false,
+	"CheckedInDate": ,
+	"CoworkerInvoiceId": ,
+	"CoworkerInvoiceNumber": "",
+	"CoworkerInvoicePaid": ,
+}
+
+```
 
 
 {% api-method method="delete" host="https://spaces.nexudus.com/api" path="/content/eventattendees/:id" %}

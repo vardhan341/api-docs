@@ -369,11 +369,11 @@ You can also use range query parameters for all date, integer and decimal proper
 
 {% api-method method="get" host="https://spaces.nexudus.com/api" path="/spaces/teams" %}
 {% api-method-summary %}
-By date range
+By date or number range
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Gets a list of teams based on the date when they were created or updated.
+Gets a list of teams based on a range of dates, integer or decimal properties.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -750,6 +750,42 @@ _This response is an example, errors and messages will follow this structure but
 
 > 🔒 Requires user role `team-create`
 
+```javascript
+{
+	"Business": 12345678,
+	"Name": "Name",
+	"Description": "Descripción",
+	"TunnelPrivateGroupId": "",
+	"CreateSingleInvoiceForTeam": true,
+	"UseSpecialPrices": true,
+	"PayingMember": 12345678,
+	"DefaultMemberTariff": 12345678,
+	"MaxTeamMemberCount": null,
+	"TransferCreditsToPayingMember": true,
+	"ShareTimePasses": true,
+	"ShareExtraServices": true,
+	"ShareBookingCredit": true,
+	"DiscountExtraServices": null,
+	"DiscountTimePasses": null,
+	"DiscountCharges": null,
+	"DiscountTariffs": null,
+	"ProfileSummary": "null",
+	"ProfileTags": "BusinessArea",
+	"ProfileWebsite": "ProfileWebsite",
+	"GoogleMapsLink": "GoogleMapsLink",
+	"ProfileIsPublic": true,
+	"Twitter": "Twitter",
+	"Facebook": "Facebook",
+	"Linkedin": "Linkedin",
+	"Skype": "Skype",
+	"CoworkerIds": "",
+	"CoworkerFullNames": "",
+	"CoworkerBillingNames": "",
+	"ActiveContracts": ,
+}
+
+```
+
 {% api-method method="put" host="https://spaces.nexudus.com/api" path="/spaces/teams" %}
 {% api-method-summary %}
 Update
@@ -911,6 +947,42 @@ _This response is an example, errors and messages will follow this structure but
 {% endapi-method %}
 
 > 🔒 Requires user role `team-edit`
+
+```javascript
+{
+	"Business": 12345678,
+	"Name": "Name",
+	"Description": "Descripción",
+	"TunnelPrivateGroupId": "",
+	"CreateSingleInvoiceForTeam": true,
+	"UseSpecialPrices": true,
+	"PayingMember": 12345678,
+	"DefaultMemberTariff": 12345678,
+	"MaxTeamMemberCount": null,
+	"TransferCreditsToPayingMember": true,
+	"ShareTimePasses": true,
+	"ShareExtraServices": true,
+	"ShareBookingCredit": true,
+	"DiscountExtraServices": null,
+	"DiscountTimePasses": null,
+	"DiscountCharges": null,
+	"DiscountTariffs": null,
+	"ProfileSummary": "null",
+	"ProfileTags": "BusinessArea",
+	"ProfileWebsite": "ProfileWebsite",
+	"GoogleMapsLink": "GoogleMapsLink",
+	"ProfileIsPublic": true,
+	"Twitter": "Twitter",
+	"Facebook": "Facebook",
+	"Linkedin": "Linkedin",
+	"Skype": "Skype",
+	"CoworkerIds": "",
+	"CoworkerFullNames": "",
+	"CoworkerBillingNames": "",
+	"ActiveContracts": ,
+}
+
+```
 
 
 {% api-method method="delete" host="https://spaces.nexudus.com/api" path="/spaces/teams/:id" %}

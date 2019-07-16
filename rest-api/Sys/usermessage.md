@@ -191,11 +191,11 @@ You can also use range query parameters for all date, integer and decimal proper
 
 {% api-method method="get" host="https://spaces.nexudus.com/api" path="/sys/usermessages" %}
 {% api-method-summary %}
-By date range
+By date or number range
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Gets a list of usermessages based on the date when they were created or updated.
+Gets a list of usermessages based on a range of dates, integer or decimal properties.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -354,15 +354,9 @@ application/json
 {% api-method-body-parameters %}
 {% api-method-parameter name="BusinessId" type="int" required=true %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="FromName" type="string" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="FromUserId" type="int" required=false %}
-{% endapi-method-parameter %}
 {% api-method-parameter name="Header" type="string" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="Body" type="string" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="IsRead" type="bool" required=false %}
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 
@@ -439,6 +433,15 @@ _This response is an example, errors and messages will follow this structure but
 {% endapi-method %}
 
 > 🔒 Requires user role `usermessage-create`
+
+```javascript
+{
+	"Business": 12345678,
+	"Header": "Header",
+	"Body": "Body",
+}
+
+```
 
 {% api-method method="put" host="https://spaces.nexudus.com/api" path="/sys/usermessages" %}
 {% api-method-summary %}
@@ -547,6 +550,15 @@ _This response is an example, errors and messages will follow this structure but
 {% endapi-method %}
 
 > 🔒 Requires user role `usermessage-edit`
+
+```javascript
+{
+	"Business": 12345678,
+	"Header": "Header",
+	"Body": "Body",
+}
+
+```
 
 
 {% api-method method="delete" host="https://spaces.nexudus.com/api" path="/sys/usermessages/:id" %}

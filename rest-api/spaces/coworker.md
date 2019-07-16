@@ -978,11 +978,11 @@ You can also use range query parameters for all date, integer and decimal proper
 
 {% api-method method="get" host="https://spaces.nexudus.com/api" path="/spaces/coworkers" %}
 {% api-method-summary %}
-By date range
+By date or number range
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Gets a list of coworkers based on the date when they were created or updated.
+Gets a list of coworkers based on a range of dates, integer or decimal properties.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -1511,15 +1511,9 @@ application/json
 {% endapi-method-parameter %}
 {% api-method-parameter name="RegularPaymentContractNumber" type="string" required=false %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="CardNumber" type="string" required=false %}
-{% endapi-method-parameter %}
 {% api-method-parameter name="DoNotProcessInvoicesAutomatically" type="bool" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="AllowNetworkCheckin" type="bool" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="CheckinSinceLastRenewal" type="int" required=true %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="MinutesSinceLastRenewal" type="int" required=true %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="AccessCardId" type="string" required=false %}
 {% endapi-method-parameter %}
@@ -1547,11 +1541,7 @@ application/json
 {% endapi-method-parameter %}
 {% api-method-parameter name="AlertNote" type="string" required=false %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="UserId" type="int" required=false %}
-{% endapi-method-parameter %}
 {% api-method-parameter name="Active" type="bool" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="NextAutoInvoice" type="DateTime?" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="InvoiceDueDatePeriod" type="int?" required=false %}
 {% endapi-method-parameter %}
@@ -1696,6 +1686,120 @@ _This response is an example, errors and messages will follow this structure but
 {% endapi-method %}
 
 > 🔒 Requires user role `coworker-create`
+
+```javascript
+{
+	"CoworkerType": Nexudus.Coworking.Core.Enums.eCoworkerRecordType.Individual,
+	"FullName": "Name",
+	"Salutation": "Name",
+	"Gender": Nexudus.Coworking.Core.Enums.eGender.NotSet,
+	"Email": "email@email.com",
+	"CreateUser": true,
+	"Address": "Address",
+	"PostCode": "PostCode",
+	"CityName": "CityName",
+	"State": "State",
+	"Country": 12345678,
+	"SimpleTimeZone": 12345678,
+	"MobilePhone": "MobilePhone",
+	"LandLine": "LandLine",
+	"DateOfBirth": null,
+	"NickName": "NickName",
+	"BusinessArea": "BusinessArea",
+	"Position": "Position",
+	"CompanyName": "CompanyName",
+	"ProfileWebsite": "ProfileWebsite",
+	"ProfileTags": "BusinessArea",
+	"ProfileSummary": "BusinessArea",
+	"Twitter": "Twitter",
+	"Facebook": "Facebook",
+	"Google": "Google",
+	"Telegram": "Telegram",
+	"Linkedin": "Linkedin",
+	"Skype": "Skype",
+	"Github": "Github",
+	"Pinterest": "Pinterest",
+	"Flickr": "Flickr",
+	"Instagram": "Instagram",
+	"Vimeo": "Vimeo",
+	"Tumblr": "Tumblr",
+	"Blogger": "Blogger",
+	"ProfileIsPublic": true,
+	"InvoicingBusiness": 12345678,
+	"BillingEmail": "Address",
+	"BillingName": "Address",
+	"BillingAddress": "Address",
+	"BillingPostCode": "PostCode",
+	"BillingCityName": "CityName",
+	"BillingState": "State",
+	"BillingCountry": 12345678,
+	"BillingSimpleTimeZone": 12345678,
+	"TaxRate": 0,
+	"TaxIDNumber": "State",
+	"BankName": "Bank Name",
+	"BankAccount": "Bank Account #",
+	"BankBranch": "Branch / Sort Code",
+	"NotifyOnNewInvoice": true,
+	"NotifyOnNewPayment": true,
+	"NotifyOnFailedPayment": true,
+	"ShowPayingMemberInvoices": true,
+	"EnableGoCardlessPayments": false,
+	"GoCardlessContractNumber": "false",
+	"RegularPaymentProvider": Nexudus.Coworking.Core.Enums.eRegularPaymentProvider.Manual,
+	"RegularPaymentContractNumber": "false",
+	"DoNotProcessInvoicesAutomatically": false,
+	"AllowNetworkCheckin": false,
+	"AccessCardId": "Notes",
+	"AccessPincode": "Notes",
+	"KeyFobNumber": "Notes",
+	"NotifyOnDelivery": null,
+	"EzeepUserId": null,
+	"EzeepFreePrinting": null,
+	"PaperCutPayAsYouPrint": false,
+	"PaperCutFreePrinting": null,
+	"ReferenceNumber": "ReferenceNumber",
+	"Tag": "Tag",
+	"Notes": "Notes",
+	"ShowAlert": false,
+	"AlertNote": "Tag",
+	"Active": true,
+	"InvoiceDueDatePeriod": null,
+	"RegistrationDate": null,
+	"GeneralTermsAccepted": true,
+	"Custom1": "Custom1",
+	"Custom2": "Custom1",
+	"Custom3": "Custom1",
+	"Custom4": "Custom1",
+	"Custom5": "Custom1",
+	"Custom6": "Custom1",
+	"Custom7": "Custom1",
+	"Custom8": "Custom1",
+	"Custom9": "Custom1",
+	"Custom10": "Custom1",
+	"Custom11": "Custom1",
+	"Custom12": "Custom1",
+	"Custom13": "Custom1",
+	"Custom14": "Custom1",
+	"Custom15": "Custom1",
+	"Custom16": "Custom1",
+	"Custom17": "Custom1",
+	"Custom18": "Custom1",
+	"Custom19": "Custom1",
+	"Custom20": "Custom1",
+	"Custom21": "Custom1",
+	"Custom22": "Custom1",
+	"Custom23": "Custom1",
+	"Custom24": "Custom1",
+	"Custom25": "Custom1",
+	"Custom26": "Custom1",
+	"Custom27": "Custom1",
+	"Custom28": "Custom1",
+	"Custom29": "Custom1",
+	"Custom30": "Custom1",
+	"PurchaseOrder": "false",
+}
+
+```
 
 {% api-method method="put" host="https://spaces.nexudus.com/api" path="/spaces/coworkers" %}
 {% api-method-summary %}
@@ -2016,6 +2120,121 @@ _This response is an example, errors and messages will follow this structure but
 {% endapi-method %}
 
 > 🔒 Requires user role `coworker-edit`
+
+```javascript
+{
+	"CoworkerType": Nexudus.Coworking.Core.Enums.eCoworkerRecordType.Individual,
+	"FullName": "Name",
+	"Salutation": "Name",
+	"Gender": Nexudus.Coworking.Core.Enums.eGender.NotSet,
+	"Email": "email@email.com",
+	"Address": "Address",
+	"PostCode": "PostCode",
+	"CityName": "CityName",
+	"State": "State",
+	"Country": 12345678,
+	"SimpleTimeZone": 12345678,
+	"MobilePhone": "MobilePhone",
+	"LandLine": "LandLine",
+	"DateOfBirth": null,
+	"NickName": "NickName",
+	"BusinessArea": "BusinessArea",
+	"Position": "Position",
+	"CompanyName": "CompanyName",
+	"ProfileWebsite": "ProfileWebsite",
+	"ProfileTags": "BusinessArea",
+	"ProfileSummary": "BusinessArea",
+	"Twitter": "Twitter",
+	"Facebook": "Facebook",
+	"Google": "Google",
+	"Telegram": "Telegram",
+	"Linkedin": "Linkedin",
+	"Skype": "Skype",
+	"Github": "Github",
+	"Pinterest": "Pinterest",
+	"Flickr": "Flickr",
+	"Instagram": "Instagram",
+	"Vimeo": "Vimeo",
+	"Tumblr": "Tumblr",
+	"Blogger": "Blogger",
+	"ProfileIsPublic": true,
+	"InvoicingBusiness": 12345678,
+	"BillingEmail": "Address",
+	"BillingName": "Address",
+	"BillingAddress": "Address",
+	"BillingPostCode": "PostCode",
+	"BillingCityName": "CityName",
+	"BillingState": "State",
+	"BillingCountry": 12345678,
+	"BillingSimpleTimeZone": 12345678,
+	"TaxRate": 0,
+	"TaxIDNumber": "State",
+	"BankName": "Bank Name",
+	"BankAccount": "Bank Account #",
+	"BankBranch": "Branch / Sort Code",
+	"NotifyOnNewInvoice": true,
+	"NotifyOnNewPayment": true,
+	"NotifyOnFailedPayment": true,
+	"ShowPayingMemberInvoices": true,
+	"EnableGoCardlessPayments": false,
+	"GoCardlessContractNumber": "false",
+	"RegularPaymentProvider": Nexudus.Coworking.Core.Enums.eRegularPaymentProvider.Manual,
+	"RegularPaymentContractNumber": "false",
+	"DoNotProcessInvoicesAutomatically": false,
+	"AllowNetworkCheckin": false,
+	"AccessCardId": "Notes",
+	"AccessPincode": "Notes",
+	"KeyFobNumber": "Notes",
+	"NotifyOnDelivery": null,
+	"EzeepUserId": null,
+	"EzeepFreePrinting": null,
+	"PaperCutPayAsYouPrint": false,
+	"PaperCutFreePrinting": null,
+	"ReferenceNumber": "ReferenceNumber",
+	"Tag": "Tag",
+	"Notes": "Notes",
+	"ShowAlert": false,
+	"AlertNote": "Tag",
+	"User": 12345678,
+	"Active": true,
+	"NextAutoInvoice": null,
+	"InvoiceDueDatePeriod": null,
+	"RegistrationDate": null,
+	"GeneralTermsAccepted": true,
+	"Custom1": "Custom1",
+	"Custom2": "Custom1",
+	"Custom3": "Custom1",
+	"Custom4": "Custom1",
+	"Custom5": "Custom1",
+	"Custom6": "Custom1",
+	"Custom7": "Custom1",
+	"Custom8": "Custom1",
+	"Custom9": "Custom1",
+	"Custom10": "Custom1",
+	"Custom11": "Custom1",
+	"Custom12": "Custom1",
+	"Custom13": "Custom1",
+	"Custom14": "Custom1",
+	"Custom15": "Custom1",
+	"Custom16": "Custom1",
+	"Custom17": "Custom1",
+	"Custom18": "Custom1",
+	"Custom19": "Custom1",
+	"Custom20": "Custom1",
+	"Custom21": "Custom1",
+	"Custom22": "Custom1",
+	"Custom23": "Custom1",
+	"Custom24": "Custom1",
+	"Custom25": "Custom1",
+	"Custom26": "Custom1",
+	"Custom27": "Custom1",
+	"Custom28": "Custom1",
+	"Custom29": "Custom1",
+	"Custom30": "Custom1",
+	"PurchaseOrder": "false",
+}
+
+```
 
 
 ## Commands

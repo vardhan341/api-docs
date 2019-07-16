@@ -484,26 +484,6 @@ application/json
 {% endapi-method-headers %}
 
 {% api-method-body-parameters %}
-{% api-method-parameter name="ResellerId" type="int" required=true %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="BusinessId" type="int" required=true %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="Approved" type="bool" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="ComissionPercentage" type="decimal" required=true %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="NextPayoutDate" type="DateTime?" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="ExpirationDate" type="DateTime?" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="LastAccess" type="DateTime?" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="LastInvoiceAmount" type="decimal?" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="AverageInvoiceAmount" type="decimal?" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="CanManageAccount" type="bool" required=false %}
-{% endapi-method-parameter %}
 {% api-method-parameter name="Notes" type="string" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="ScopeOfWork" type="string" required=false %}
@@ -583,6 +563,14 @@ _This response is an example, errors and messages will follow this structure but
 {% endapi-method %}
 
 > 🔒 Requires user role `reselleraccount-create`
+
+```javascript
+{
+	"Notes": "Joe",
+	"ScopeOfWork": "Joe",
+}
+
+```
 
 {% api-method method="put" host="https://spaces.nexudus.com/api" path="/sys/reselleraccounts" %}
 {% api-method-summary %}
@@ -689,6 +677,14 @@ _This response is an example, errors and messages will follow this structure but
 {% endapi-method %}
 
 > 🔒 Requires user role `reselleraccount-edit`
+
+```javascript
+{
+	"Notes": "Joe",
+	"ScopeOfWork": "Joe",
+}
+
+```
 
 
 {% api-method method="delete" host="https://spaces.nexudus.com/api" path="/sys/reselleraccounts/:id" %}

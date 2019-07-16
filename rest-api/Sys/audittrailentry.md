@@ -209,11 +209,11 @@ You can also use range query parameters for all date, integer and decimal proper
 
 {% api-method method="get" host="https://spaces.nexudus.com/api" path="/sys/audittrailentries" %}
 {% api-method-summary %}
-By date range
+By date or number range
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Gets a list of audittrailentries based on the date when they were created or updated.
+Gets a list of audittrailentries based on a range of dates, integer or decimal properties.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -476,6 +476,21 @@ _This response is an example, errors and messages will follow this structure but
 
 > 🔒 Requires user role `audittrailentry-create`
 
+```javascript
+{
+	"Business": 12345678,
+	"EntityShortName": "00001",
+	"Description": "00001",
+	"PropertyName": "00001",
+	"AuditType": Nexudus.Coworking.Core.Enums.eAuditType.Update,
+	"OldValue": "0",
+	"NewValue": "0",
+	"ActionBy": "0",
+	"EntityId": 0,
+}
+
+```
+
 {% api-method method="put" host="https://spaces.nexudus.com/api" path="/sys/audittrailentries" %}
 {% api-method-summary %}
 Update
@@ -595,6 +610,21 @@ _This response is an example, errors and messages will follow this structure but
 {% endapi-method %}
 
 > 🔒 Requires user role `audittrailentry-edit`
+
+```javascript
+{
+	"Business": 12345678,
+	"EntityShortName": "00001",
+	"Description": "00001",
+	"PropertyName": "00001",
+	"AuditType": Nexudus.Coworking.Core.Enums.eAuditType.Update,
+	"OldValue": "0",
+	"NewValue": "0",
+	"ActionBy": "0",
+	"EntityId": 0,
+}
+
+```
 
 
 ## Commands

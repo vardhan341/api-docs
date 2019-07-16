@@ -191,11 +191,11 @@ You can also use range query parameters for all date, integer and decimal proper
 
 {% api-method method="get" host="https://spaces.nexudus.com/api" path="/billing/producttimepasses" %}
 {% api-method-summary %}
-By date range
+By date or number range
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Gets a list of producttimepasses based on the date when they were created or updated.
+Gets a list of producttimepasses based on a range of dates, integer or decimal properties.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -448,6 +448,17 @@ _This response is an example, errors and messages will follow this structure but
 
 > 🔒 Requires user role `producttimepass-create`
 
+```javascript
+{
+	"Product": 12345678,
+	"TimePass": 12345678,
+	"PassesIncluded": 0,
+	"ExpirationType": Nexudus.Coworking.Core.Enums.eRecurrentChargePattern.PricePlan,
+	"ExpiresIn": 0,
+}
+
+```
+
 {% api-method method="put" host="https://spaces.nexudus.com/api" path="/billing/producttimepasses" %}
 {% api-method-summary %}
 Update
@@ -559,6 +570,17 @@ _This response is an example, errors and messages will follow this structure but
 {% endapi-method %}
 
 > 🔒 Requires user role `producttimepass-edit`
+
+```javascript
+{
+	"Product": 12345678,
+	"TimePass": 12345678,
+	"PassesIncluded": 0,
+	"ExpirationType": Nexudus.Coworking.Core.Enums.eRecurrentChargePattern.PricePlan,
+	"ExpiresIn": 0,
+}
+
+```
 
 
 {% api-method method="delete" host="https://spaces.nexudus.com/api" path="/billing/producttimepasses/:id" %}

@@ -244,11 +244,11 @@ You can also use range query parameters for all date, integer and decimal proper
 
 {% api-method method="get" host="https://spaces.nexudus.com/api" path="/sys/radiusservers" %}
 {% api-method-summary %}
-By date range
+By date or number range
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Gets a list of radiusservers based on the date when they were created or updated.
+Gets a list of radiusservers based on a range of dates, integer or decimal properties.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -431,24 +431,6 @@ application/json
 {% endapi-method-parameter %}
 {% api-method-parameter name="Description" type="string" required=false %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="CustomerId" type="string" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="NetworkId" type="string" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="CaptivePortalId" type="string" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="SplashPageId" type="string" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="RadiusIp1" type="string" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="RadiusIp2" type="string" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="AccountPort" type="string" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="AuthPort" type="string" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="SharedSecret" type="string" required=false %}
-{% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 
 {% endapi-method-request %}
@@ -524,6 +506,17 @@ _This response is an example, errors and messages will follow this structure but
 {% endapi-method %}
 
 > 🔒 Requires user role `radiusserver-create`
+
+```javascript
+{
+	"Business": 12345678,
+	"Name": "00001",
+	"Vendor": Nexudus.Coworking.Core.Enums.eRadiusServerVendor.Other,
+	"Active": true,
+	"Description": "Description",
+}
+
+```
 
 {% api-method method="put" host="https://spaces.nexudus.com/api" path="/sys/radiusservers" %}
 {% api-method-summary %}
@@ -636,6 +629,17 @@ _This response is an example, errors and messages will follow this structure but
 {% endapi-method %}
 
 > 🔒 Requires user role `radiusserver-edit`
+
+```javascript
+{
+	"Business": 12345678,
+	"Name": "00001",
+	"Vendor": Nexudus.Coworking.Core.Enums.eRadiusServerVendor.Other,
+	"Active": true,
+	"Description": "Description",
+}
+
+```
 
 
 {% api-method method="delete" host="https://spaces.nexudus.com/api" path="/sys/radiusservers/:id" %}

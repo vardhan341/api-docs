@@ -553,8 +553,6 @@ application/json
 {% api-method-body-parameters %}
 {% api-method-parameter name="BusinessId" type="int" required=true %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="InvoiceNumber" type="string" required=true %}
-{% endapi-method-parameter %}
 {% api-method-parameter name="BillToName" type="string" required=true %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="BillToAddress" type="string" required=true %}
@@ -570,30 +568,6 @@ application/json
 {% api-method-parameter name="BillToFax" type="string" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="BillToCountryId" type="int" required=true %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="Description" type="string" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="DiscountAmount" type="decimal" required=true %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="DueDate" type="DateTime?" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="InvoiceFromDate" type="DateTime?" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="InvoiceToDate" type="DateTime?" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="TotalAmount" type="decimal" required=true %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="CurrencyId" type="int" required=true %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="TaxAmount" type="decimal" required=true %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="Paid" type="bool" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="PaidOn" type="DateTime?" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="CustomData" type="string" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="PaymentAttemptsCount" type="int" required=true %}
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 
@@ -670,6 +644,21 @@ _This response is an example, errors and messages will follow this structure but
 {% endapi-method %}
 
 > 🔒 Requires user role `invoice-create`
+
+```javascript
+{
+	"Business": 12345678,
+	"BillToName": "BillToName",
+	"BillToAddress": "BillToAddress",
+	"BillToCity": "BillToCity",
+	"BillToTaxIDNumber": "123456",
+	"BillToPostCode": "BillToPostCode",
+	"BillToPhone": "BillToPhone",
+	"BillToFax": "BillToFax",
+	"BillToCountry": 12345678,
+}
+
+```
 
 {% api-method method="put" host="https://spaces.nexudus.com/api" path="/billing/invoices" %}
 {% api-method-summary %}
@@ -790,6 +779,21 @@ _This response is an example, errors and messages will follow this structure but
 {% endapi-method %}
 
 > 🔒 Requires user role `invoice-edit`
+
+```javascript
+{
+	"Business": 12345678,
+	"BillToName": "BillToName",
+	"BillToAddress": "BillToAddress",
+	"BillToCity": "BillToCity",
+	"BillToTaxIDNumber": "123456",
+	"BillToPostCode": "BillToPostCode",
+	"BillToPhone": "BillToPhone",
+	"BillToFax": "BillToFax",
+	"BillToCountry": 12345678,
+}
+
+```
 
 
 ## Commands

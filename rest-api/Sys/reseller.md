@@ -287,11 +287,11 @@ You can also use range query parameters for all date, integer and decimal proper
 
 {% api-method method="get" host="https://spaces.nexudus.com/api" path="/sys/resellers" %}
 {% api-method-summary %}
-By date range
+By date or number range
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Gets a list of resellers based on the date when they were created or updated.
+Gets a list of resellers based on a range of dates, integer or decimal properties.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -486,16 +486,6 @@ application/json
 {% api-method-body-parameters %}
 {% api-method-parameter name="Name" type="string" required=true %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="UserId" type="int" required=true %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="CurrencyId" type="int" required=true %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="AgreedTermsOn" type="DateTime?" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="Approved" type="bool" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="NextPayoutDate" type="DateTime?" required=false %}
-{% endapi-method-parameter %}
 {% api-method-parameter name="ProfileIsPublic" type="bool" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="Area" type="string" required=false %}
@@ -517,8 +507,6 @@ application/json
 {% api-method-parameter name="Testimonial2" type="string" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="Testimonial2Author" type="string" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="StripeAccountId" type="string" required=false %}
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 
@@ -595,6 +583,24 @@ _This response is an example, errors and messages will follow this structure but
 {% endapi-method %}
 
 > 🔒 Requires user role `reseller-create`
+
+```javascript
+{
+	"Name": "00001",
+	"ProfileIsPublic": false,
+	"Area": "00001",
+	"OperatesIn": "00001",
+	"WebAddress": "00001",
+	"Email": "00001",
+	"ProfileSummary": "BusinessArea",
+	"PhoneNumber": "BusinessArea",
+	"Testimonial1": "BusinessArea",
+	"Testimonial1Author": "BusinessArea",
+	"Testimonial2": "BusinessArea",
+	"Testimonial2Author": "BusinessArea",
+}
+
+```
 
 {% api-method method="put" host="https://spaces.nexudus.com/api" path="/sys/resellers" %}
 {% api-method-summary %}
@@ -721,6 +727,24 @@ _This response is an example, errors and messages will follow this structure but
 {% endapi-method %}
 
 > 🔒 Requires user role `reseller-edit`
+
+```javascript
+{
+	"Name": "00001",
+	"ProfileIsPublic": false,
+	"Area": "00001",
+	"OperatesIn": "00001",
+	"WebAddress": "00001",
+	"Email": "00001",
+	"ProfileSummary": "BusinessArea",
+	"PhoneNumber": "BusinessArea",
+	"Testimonial1": "BusinessArea",
+	"Testimonial1Author": "BusinessArea",
+	"Testimonial2": "BusinessArea",
+	"Testimonial2Author": "BusinessArea",
+}
+
+```
 
 
 {% api-method method="delete" host="https://spaces.nexudus.com/api" path="/sys/resellers/:id" %}

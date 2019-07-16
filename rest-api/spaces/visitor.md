@@ -235,11 +235,11 @@ You can also use range query parameters for all date, integer and decimal proper
 
 {% api-method method="get" host="https://spaces.nexudus.com/api" path="/spaces/visitors" %}
 {% api-method-summary %}
-By date range
+By date or number range
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Gets a list of visitors based on the date when they were created or updated.
+Gets a list of visitors based on a range of dates, integer or decimal properties.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -428,17 +428,11 @@ application/json
 {% endapi-method-parameter %}
 {% api-method-parameter name="CoworkerId" type="int" required=false %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="VisitorCode" type="string" required=false %}
-{% endapi-method-parameter %}
 {% api-method-parameter name="CheckedInAt" type="string" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="Notes" type="string" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="ExpectedArrival" type="DateTime?" required=true %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="Arrived" type="bool" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="ArrivalDate" type="DateTime?" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="IsTour" type="bool" required=false %}
 {% endapi-method-parameter %}
@@ -519,6 +513,21 @@ _This response is an example, errors and messages will follow this structure but
 {% endapi-method %}
 
 > 🔒 Requires user role `visitor-create`
+
+```javascript
+{
+	"Business": 12345678,
+	"FullName": "Jon Doe",
+	"Email": "email@email.com",
+	"Coworker": 12345678,
+	"CheckedInAt": "CheckedInAt",
+	"Notes": "Description",
+	"ExpectedArrival": null,
+	"IsTour": null,
+	"TourConfirmed": null,
+}
+
+```
 
 {% api-method method="put" host="https://spaces.nexudus.com/api" path="/spaces/visitors" %}
 {% api-method-summary %}
@@ -643,6 +652,23 @@ _This response is an example, errors and messages will follow this structure but
 {% endapi-method %}
 
 > 🔒 Requires user role `visitor-edit`
+
+```javascript
+{
+	"Business": 12345678,
+	"FullName": "Jon Doe",
+	"Email": "email@email.com",
+	"Coworker": 12345678,
+	"CheckedInAt": "CheckedInAt",
+	"Notes": "Description",
+	"ExpectedArrival": null,
+	"Arrived": true,
+	"ArrivalDate": null,
+	"IsTour": null,
+	"TourConfirmed": null,
+}
+
+```
 
 
 {% api-method method="delete" host="https://spaces.nexudus.com/api" path="/spaces/visitors/:id" %}

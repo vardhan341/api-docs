@@ -174,11 +174,11 @@ You can also use range query parameters for all date, integer and decimal proper
 
 {% api-method method="get" host="https://spaces.nexudus.com/api" path="/sys/simpletimezones" %}
 {% api-method-summary %}
-By date range
+By date or number range
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Gets a list of simpletimezones based on the date when they were created or updated.
+Gets a list of simpletimezones based on a range of dates, integer or decimal properties.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -415,6 +415,16 @@ _This response is an example, errors and messages will follow this structure but
 
 > 🔒 Requires user role `simpletimezone-create`
 
+```javascript
+{
+	"Name": "GMT Standard Time",
+	"Description": "(UTC) Dublin, Edinburgh, Lisbon, London",
+	"TimeOffset": "0:00",
+	"UsesSummerTime": true,
+}
+
+```
+
 {% api-method method="put" host="https://spaces.nexudus.com/api" path="/sys/simpletimezones" %}
 {% api-method-summary %}
 Update
@@ -524,6 +534,16 @@ _This response is an example, errors and messages will follow this structure but
 {% endapi-method %}
 
 > 🔒 Requires user role `simpletimezone-edit`
+
+```javascript
+{
+	"Name": "GMT Standard Time",
+	"Description": "(UTC) Dublin, Edinburgh, Lisbon, London",
+	"TimeOffset": "0:00",
+	"UsesSummerTime": true,
+}
+
+```
 
 
 ## Commands

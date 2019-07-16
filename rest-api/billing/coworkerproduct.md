@@ -308,11 +308,11 @@ You can also use range query parameters for all date, integer and decimal proper
 
 {% api-method method="get" host="https://spaces.nexudus.com/api" path="/billing/coworkerproducts" %}
 {% api-method-summary %}
-By date range
+By date or number range
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Gets a list of coworkerproducts based on the date when they were created or updated.
+Gets a list of coworkerproducts based on a range of dates, integer or decimal properties.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -555,10 +555,6 @@ application/json
 {% endapi-method-parameter %}
 {% api-method-parameter name="Notes" type="string" required=false %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="OrderNumber" type="string" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="Activated" type="bool" required=false %}
-{% endapi-method-parameter %}
 {% api-method-parameter name="ActivateNow" type="bool" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="InvoiceThisCoworker" type="bool" required=false %}
@@ -582,12 +578,6 @@ application/json
 {% api-method-parameter name="DueDate" type="DateTime?" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="Invoiced" type="bool" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="InvoicedOn" type="DateTime?" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="FromTariff" type="bool" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="ContractDepositUniqueId" type="Guid?" required=false %}
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 
@@ -664,6 +654,28 @@ _This response is an example, errors and messages will follow this structure but
 {% endapi-method %}
 
 > 🔒 Requires user role `coworkerproduct-create`
+
+```javascript
+{
+	"Coworker": 12345678,
+	"Business": 12345678,
+	"Product": 12345678,
+	"Notes": "Notes",
+	"ActivateNow": true,
+	"InvoiceThisCoworker": false,
+	"Price": false,
+	"Quantity": 1,
+	"RegularCharge": false,
+	"RepeatCycle": Nexudus.Coworking.Core.Enums.eRecurrentChargePattern.PricePlan,
+	"RepeatUnit": 1,
+	"InvoiceOn": null,
+	"RepeatFrom": null,
+	"RepeatUntil": null,
+	"DueDate": null,
+	"Invoiced": false,
+}
+
+```
 
 {% api-method method="put" host="https://spaces.nexudus.com/api" path="/billing/coworkerproducts" %}
 {% api-method-summary %}
@@ -796,6 +808,27 @@ _This response is an example, errors and messages will follow this structure but
 {% endapi-method %}
 
 > 🔒 Requires user role `coworkerproduct-edit`
+
+```javascript
+{
+	"Coworker": 12345678,
+	"Business": 12345678,
+	"Product": 12345678,
+	"Notes": "Notes",
+	"InvoiceThisCoworker": false,
+	"Price": false,
+	"Quantity": 1,
+	"RegularCharge": false,
+	"RepeatCycle": Nexudus.Coworking.Core.Enums.eRecurrentChargePattern.PricePlan,
+	"RepeatUnit": 1,
+	"InvoiceOn": null,
+	"RepeatFrom": null,
+	"RepeatUntil": null,
+	"DueDate": null,
+	"Invoiced": false,
+}
+
+```
 
 
 {% api-method method="delete" host="https://spaces.nexudus.com/api" path="/billing/coworkerproducts/:id" %}

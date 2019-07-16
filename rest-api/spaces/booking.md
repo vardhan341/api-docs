@@ -449,11 +449,11 @@ You can also use range query parameters for all date, integer and decimal proper
 
 {% api-method method="get" host="https://spaces.nexudus.com/api" path="/spaces/bookings" %}
 {% api-method-summary %}
-By date range
+By date or number range
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Gets a list of bookings based on the date when they were created or updated.
+Gets a list of bookings based on a range of dates, integer or decimal properties.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -756,8 +756,6 @@ application/json
 {% endapi-method-parameter %}
 {% api-method-parameter name="Tentative" type="bool" required=false %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="Online" type="bool" required=false %}
-{% endapi-method-parameter %}
 {% api-method-parameter name="TeamsAtTheTimeOfBooking" type="string" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="TariffAtTheTimeOfBooking" type="string" required=false %}
@@ -767,8 +765,6 @@ application/json
 {% api-method-parameter name="RepeatBooking" type="bool" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="Repeats" type="enum" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="WhichBookingsToUpdate" type="enum" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="RepeatEvery" type="int?" required=false %}
 {% endapi-method-parameter %}
@@ -787,10 +783,6 @@ application/json
 {% api-method-parameter name="RepeatOnSaturdays" type="bool" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="RepeatOnSundays" type="bool" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="Invoiced" type="bool" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="InvoiceDate" type="DateTime?" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="CoworkerInvoiceId" type="int?" required=false %}
 {% endapi-method-parameter %}
@@ -883,6 +875,47 @@ _This response is an example, errors and messages will follow this structure but
 {% endapi-method %}
 
 > 🔒 Requires user role `booking-create`
+
+```javascript
+{
+	"Resource": 12345678,
+	"Coworker": 12345678,
+	"ExtraService": 12345678,
+	"FromTime": DateTime.Parse("FromTime"),
+	"ToTime": DateTime.Parse("FromTime"),
+	"Notes": "Notes",
+	"InternalNotes": "Notes",
+	"ChargeNow": false,
+	"InvoiceNow": false,
+	"DoNotUseBookingCredit": false,
+	"PurchaseOrder": "PurchaseOrder",
+	"DiscountCode": "DiscountCode",
+	"Tentative": false,
+	"TeamsAtTheTimeOfBooking": "false",
+	"TariffAtTheTimeOfBooking": "false",
+	"RepeatSeriesUniqueId": ,
+	"RepeatBooking": false,
+	"Repeats": Nexudus.Coworking.Core.Enums.eBookingRepeatCycle.Weekly,
+	"RepeatEvery": ,
+	"RepeatUntil": ,
+	"RepeatOnMondays": false,
+	"RepeatOnTuesdays": false,
+	"RepeatOnWednesdays": false,
+	"RepeatOnThursdays": false,
+	"RepeatOnFridays": false,
+	"RepeatOnSaturdays": false,
+	"RepeatOnSundays": false,
+	"CoworkerInvoiceId": ,
+	"CoworkerInvoiceNumber": "",
+	"CoworkerInvoicePaid": ,
+	"CoworkerExtraServiceIds": "",
+	"CoworkerExtraServicePrice": ,
+	"CoworkerExtraServiceCurrencyCode": "",
+	"CoworkerExtraServiceChargePeriod": ,
+	"CoworkerExtraServiceTotalUses": ,
+}
+
+```
 
 {% api-method method="put" host="https://spaces.nexudus.com/api" path="/spaces/bookings" %}
 {% api-method-summary %}
@@ -1049,6 +1082,44 @@ _This response is an example, errors and messages will follow this structure but
 {% endapi-method %}
 
 > 🔒 Requires user role `booking-edit`
+
+```javascript
+{
+	"Resource": 12345678,
+	"Coworker": 12345678,
+	"ExtraService": 12345678,
+	"FromTime": DateTime.Parse("FromTime"),
+	"ToTime": DateTime.Parse("FromTime"),
+	"Notes": "Notes",
+	"ChargeNow": false,
+	"InvoiceNow": false,
+	"DoNotUseBookingCredit": false,
+	"PurchaseOrder": "PurchaseOrder",
+	"DiscountCode": "DiscountCode",
+	"Tentative": false,
+	"TeamsAtTheTimeOfBooking": "false",
+	"TariffAtTheTimeOfBooking": "false",
+	"RepeatSeriesUniqueId": ,
+	"Repeats": Nexudus.Coworking.Core.Enums.eBookingRepeatCycle.Weekly,
+	"WhichBookingsToUpdate": Nexudus.Coworking.Core.Enums.eRepeatedBookingUpdateAction.UpdateThisBookingOnly,
+	"RepeatOnMondays": false,
+	"RepeatOnTuesdays": false,
+	"RepeatOnWednesdays": false,
+	"RepeatOnThursdays": false,
+	"RepeatOnFridays": false,
+	"RepeatOnSaturdays": false,
+	"RepeatOnSundays": false,
+	"CoworkerInvoiceId": ,
+	"CoworkerInvoiceNumber": "",
+	"CoworkerInvoicePaid": ,
+	"CoworkerExtraServiceIds": "",
+	"CoworkerExtraServicePrice": ,
+	"CoworkerExtraServiceCurrencyCode": "",
+	"CoworkerExtraServiceChargePeriod": ,
+	"CoworkerExtraServiceTotalUses": ,
+}
+
+```
 
 
 {% api-method method="delete" host="https://spaces.nexudus.com/api" path="/spaces/bookings/:id" %}

@@ -315,11 +315,11 @@ You can also use range query parameters for all date, integer and decimal proper
 
 {% api-method method="get" host="https://spaces.nexudus.com/api" path="/billing/discountcodes" %}
 {% api-method-summary %}
-By date range
+By date or number range
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Gets a list of discountcodes based on the date when they were created or updated.
+Gets a list of discountcodes based on a range of dates, integer or decimal properties.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -678,6 +678,33 @@ _This response is an example, errors and messages will follow this structure but
 
 > 🔒 Requires user role `discountcode-create`
 
+```javascript
+{
+	"Business": 12345678,
+	"Code": "Code",
+	"Description": "Description",
+	"Active": true,
+	"PublishFrom": null,
+	"PublishTo": null,
+	"DiscountPercentage": 0,
+	"DiscountAmount": 0,
+	"ReferralDiscount": true,
+	"DiscountPricePlans": true,
+	"DiscountBookings": true,
+	"DiscountProducts": true,
+	"DiscountEvents": true,
+	"MaxUsesPerUser": 1,
+	"MaxUses": 1,
+	"OnlyForContacts": true,
+	"OnlyForMembers": true,
+	"ValidFrom": null,
+	"ValidTo": null,
+	"ExpirationType": Nexudus.Coworking.Core.Enums.eDiscountExpirePeriod.Day,
+	"ExpiresIn": 0,
+}
+
+```
+
 {% api-method method="put" host="https://spaces.nexudus.com/api" path="/billing/discountcodes" %}
 {% api-method-summary %}
 Update
@@ -821,6 +848,33 @@ _This response is an example, errors and messages will follow this structure but
 {% endapi-method %}
 
 > 🔒 Requires user role `discountcode-edit`
+
+```javascript
+{
+	"Business": 12345678,
+	"Code": "Code",
+	"Description": "Description",
+	"Active": true,
+	"PublishFrom": null,
+	"PublishTo": null,
+	"DiscountPercentage": 0,
+	"DiscountAmount": 0,
+	"ReferralDiscount": true,
+	"DiscountPricePlans": true,
+	"DiscountBookings": true,
+	"DiscountProducts": true,
+	"DiscountEvents": true,
+	"MaxUsesPerUser": 1,
+	"MaxUses": 1,
+	"OnlyForContacts": true,
+	"OnlyForMembers": true,
+	"ValidFrom": null,
+	"ValidTo": null,
+	"ExpirationType": Nexudus.Coworking.Core.Enums.eDiscountExpirePeriod.Day,
+	"ExpiresIn": 0,
+}
+
+```
 
 
 {% api-method method="delete" host="https://spaces.nexudus.com/api" path="/billing/discountcodes/:id" %}

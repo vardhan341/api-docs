@@ -299,11 +299,11 @@ You can also use range query parameters for all date, integer and decimal proper
 
 {% api-method method="get" host="https://spaces.nexudus.com/api" path="/billing/products" %}
 {% api-method-summary %}
-By date range
+By date or number range
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Gets a list of products based on the date when they were created or updated.
+Gets a list of products based on a range of dates, integer or decimal properties.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -548,8 +548,6 @@ application/json
 {% endapi-method-parameter %}
 {% api-method-parameter name="AllowNegativeStock" type="bool" required=false %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="CurrentStock" type="int?" required=false %}
-{% endapi-method-parameter %}
 {% api-method-parameter name="StockAlertLevel" type="int?" required=false %}
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
@@ -627,6 +625,31 @@ _This response is an example, errors and messages will follow this structure but
 {% endapi-method %}
 
 > 🔒 Requires user role `product-create`
+
+```javascript
+{
+	"Business": 12345678,
+	"Name": "Name",
+	"Description": "Description",
+	"Sku": "SKU",
+	"Tags": "Tags",
+	"DisplayOrder": true,
+	"Price": 0,
+	"Visible": true,
+	"Currency": 12345678,
+	"TaxRate": 12345678,
+	"FinancialAccount": 12345678,
+	"AvailableAs": Nexudus.Coworking.Core.Enums.eRecurrentProductOptions.RecurrentOrOneOff,
+	"OnlyForContacts": true,
+	"OnlyForMembers": true,
+	"Archived": true,
+	"Starred": true,
+	"TrackStock": false,
+	"AllowNegativeStock": false,
+	"StockAlertLevel": false,
+}
+
+```
 
 {% api-method method="put" host="https://spaces.nexudus.com/api" path="/billing/products" %}
 {% api-method-summary %}
@@ -767,6 +790,31 @@ _This response is an example, errors and messages will follow this structure but
 {% endapi-method %}
 
 > 🔒 Requires user role `product-edit`
+
+```javascript
+{
+	"Business": 12345678,
+	"Name": "Name",
+	"Description": "Description",
+	"Sku": "SKU",
+	"Tags": "Tags",
+	"DisplayOrder": true,
+	"Price": 0,
+	"Visible": true,
+	"Currency": 12345678,
+	"TaxRate": 12345678,
+	"FinancialAccount": 12345678,
+	"AvailableAs": Nexudus.Coworking.Core.Enums.eRecurrentProductOptions.RecurrentOrOneOff,
+	"OnlyForContacts": true,
+	"OnlyForMembers": true,
+	"Archived": true,
+	"Starred": true,
+	"TrackStock": false,
+	"AllowNegativeStock": false,
+	"StockAlertLevel": false,
+}
+
+```
 
 
 {% api-method method="delete" host="https://spaces.nexudus.com/api" path="/billing/products/:id" %}

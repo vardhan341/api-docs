@@ -222,11 +222,11 @@ You can also use range query parameters for all date, integer and decimal proper
 
 {% api-method method="get" host="https://spaces.nexudus.com/api" path="/sys/resellerpayouts" %}
 {% api-method-summary %}
-By date range
+By date or number range
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Gets a list of resellerpayouts based on the date when they were created or updated.
+Gets a list of resellerpayouts based on a range of dates, integer or decimal properties.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -405,22 +405,6 @@ application/json
 {% endapi-method-headers %}
 
 {% api-method-body-parameters %}
-{% api-method-parameter name="ResellerId" type="int" required=true %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="Approved" type="bool" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="PaidOut" type="bool" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="PaidOutDate" type="DateTime?" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="PaidOutReference" type="string" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="Amount" type="decimal" required=true %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="ErrorDescription" type="string" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="LastPaymentAttempt" type="DateTime?" required=false %}
-{% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 
 {% endapi-method-request %}
@@ -496,6 +480,12 @@ _This response is an example, errors and messages will follow this structure but
 {% endapi-method %}
 
 > 🔒 Requires user role `resellerpayout-create`
+
+```javascript
+{
+}
+
+```
 
 {% api-method method="put" host="https://spaces.nexudus.com/api" path="/sys/resellerpayouts" %}
 {% api-method-summary %}
@@ -598,6 +588,12 @@ _This response is an example, errors and messages will follow this structure but
 {% endapi-method %}
 
 > 🔒 Requires user role `resellerpayout-edit`
+
+```javascript
+{
+}
+
+```
 
 
 {% api-method method="delete" host="https://spaces.nexudus.com/api" path="/sys/resellerpayouts/:id" %}

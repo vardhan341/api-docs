@@ -244,11 +244,11 @@ You can also use range query parameters for all date, integer and decimal proper
 
 {% api-method method="get" host="https://spaces.nexudus.com/api" path="/sys/emailqueueitems" %}
 {% api-method-summary %}
-By date range
+By date or number range
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Gets a list of emailqueueitems based on the date when they were created or updated.
+Gets a list of emailqueueitems based on a range of dates, integer or decimal properties.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -537,6 +537,26 @@ _This response is an example, errors and messages will follow this structure but
 
 > 🔒 Requires user role `emailqueueitem-create`
 
+```javascript
+{
+	"Business": 12345678,
+	"EmailAccount": 12345678,
+	"FromUser": 12345678,
+	"Header": "Header",
+	"Body": "Body",
+	"FromEmail": "FromEmails",
+	"ToEmails": "ToEmails",
+	"CCEmails": "CCEmails",
+	"CCOEmails": "CCOEmails",
+	"Sent": false,
+	"SentAttempts": 0,
+	"Delivered": false,
+	"LastSendError": "",
+	"SendDate": null,
+}
+
+```
+
 {% api-method method="put" host="https://spaces.nexudus.com/api" path="/sys/emailqueueitems" %}
 {% api-method-summary %}
 Update
@@ -666,6 +686,26 @@ _This response is an example, errors and messages will follow this structure but
 {% endapi-method %}
 
 > 🔒 Requires user role `emailqueueitem-edit`
+
+```javascript
+{
+	"Business": 12345678,
+	"EmailAccount": 12345678,
+	"FromUser": 12345678,
+	"Header": "Header",
+	"Body": "Body",
+	"FromEmail": "FromEmails",
+	"ToEmails": "ToEmails",
+	"CCEmails": "CCEmails",
+	"CCOEmails": "CCOEmails",
+	"Sent": false,
+	"SentAttempts": 0,
+	"Delivered": false,
+	"LastSendError": "",
+	"SendDate": null,
+}
+
+```
 
 
 ## Commands

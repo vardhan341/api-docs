@@ -632,11 +632,11 @@ You can also use range query parameters for all date, integer and decimal proper
 
 {% api-method method="get" host="https://spaces.nexudus.com/api" path="/sys/businesses" %}
 {% api-method-summary %}
-By date range
+By date or number range
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Gets a list of businesses based on the date when they were created or updated.
+Gets a list of businesses based on a range of dates, integer or decimal properties.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -1037,13 +1037,9 @@ application/json
 {% endapi-method-parameter %}
 {% api-method-parameter name="SpaceWebsiteLanguageId" type="int" required=false %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="RootLocationId" type="int" required=false %}
-{% endapi-method-parameter %}
 {% api-method-parameter name="WebAddress" type="string" required=true %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="DefaultPaymentGatewayId" type="int" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="NextInvoice" type="DateTime?" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="TermsAndConditions" type="string" required=false %}
 {% endapi-method-parameter %}
@@ -1242,6 +1238,78 @@ _This response is an example, errors and messages will follow this structure but
 {% endapi-method %}
 
 > 🔒 Requires user role `business-create`
+
+```javascript
+{
+	"Name": "Joe",
+	"DefaultLanguage": Nexudus.Coworking.Core.Enums.eLanguage.Spanish,
+	"SpaceWebsiteLanguage": 12345678,
+	"WebAddress": "url",
+	"DefaultPaymentGateway": 12345678,
+	"TermsAndConditions": "TermsAndConditions",
+	"ShortIntroduction": "",
+	"AboutUs": "",
+	"Quote": "Joe",
+	"PrivacyPolicyUrl": "Joe",
+	"CookiePolicyUrl": "Joe",
+	"WebContact": "www.example.com",
+	"Address": "Joe",
+	"Phone": "0207768885828",
+	"Fax": "0207768885828",
+	"EmailContact": "me@example.com",
+	"Country": 12345678,
+	"Currency": 12345678,
+	"SimpleTimeZone": 12345678,
+	"Last4Digits": "0",
+	"PreAuthLastError": "0",
+	"PassportChannels": "null",
+	"PassportPublished": null,
+	"PassportSpaceName": "null",
+	"PassportTagLine": "null",
+	"VenueType": Nexudus.Coworking.Core.Enums.eVenueType.CoworkingSpace,
+	"Tags": "null",
+	"NumberOfFloors": 1,
+	"FloorSpace": 1,
+	"FloorSpaceUnit": Nexudus.Coworking.Core.Enums.eFloorUnit.SqFt,
+	"Longitude": 1,
+	"Latitude": 1,
+	"PassportDescription": "Joe",
+	"TownCity": "",
+	"PostalCode": "",
+	"StreetName": "",
+	"StreetNumber": "",
+	"Neighborhood": "",
+	"ContactPhoneNumber": "",
+	"ContactEmail": "",
+	"PassportMembersAccess": Nexudus.Coworking.Core.Enums.ePassportAccess.Everyone,
+	"PassportEventsAccess": Nexudus.Coworking.Core.Enums.ePassportAccess.Everyone,
+	"PassportCommunityAccess": Nexudus.Coworking.Core.Enums.ePassportAccess.Everyone,
+	"PassportBlogPostsAccess": Nexudus.Coworking.Core.Enums.ePassportAccess.Everyone,
+	"MondayOpenTime": null,
+	"MondayCloseTime": null,
+	"TuesdayOpenTime": null,
+	"TuesdayCloseTime": null,
+	"WednesdayOpenTime": null,
+	"WednesdayCloseTime": null,
+	"ThursdayOpenTime": null,
+	"ThursdayCloseTime": null,
+	"FridayOpenTime": null,
+	"FridayCloseTime": null,
+	"SaturdayOpenTime": null,
+	"SaturdayCloseTime": null,
+	"SundayOpenTime": null,
+	"SundayCloseTime": null,
+	"MondayClosed": null,
+	"TuesdayClosed": null,
+	"WednesdayClosed": null,
+	"ThursdayClosed": null,
+	"FridayClosed": null,
+	"SaturdayClosed": null,
+	"SundayClosed": null,
+	"SameOpeningTimes": null,
+}
+
+```
 
 {% api-method method="put" host="https://spaces.nexudus.com/api" path="/sys/businesses" %}
 {% api-method-summary %}
@@ -1476,6 +1544,78 @@ _This response is an example, errors and messages will follow this structure but
 {% endapi-method %}
 
 > 🔒 Requires user role `business-edit`
+
+```javascript
+{
+	"Name": "Joe",
+	"DefaultLanguage": Nexudus.Coworking.Core.Enums.eLanguage.Spanish,
+	"SpaceWebsiteLanguage": 12345678,
+	"WebAddress": "url",
+	"DefaultPaymentGateway": 12345678,
+	"TermsAndConditions": "TermsAndConditions",
+	"ShortIntroduction": "",
+	"AboutUs": "",
+	"Quote": "Joe",
+	"PrivacyPolicyUrl": "Joe",
+	"CookiePolicyUrl": "Joe",
+	"WebContact": "www.example.com",
+	"Address": "Joe",
+	"Phone": "0207768885828",
+	"Fax": "0207768885828",
+	"EmailContact": "me@example.com",
+	"Country": 12345678,
+	"Currency": 12345678,
+	"SimpleTimeZone": 12345678,
+	"Last4Digits": "0",
+	"PreAuthLastError": "0",
+	"PassportChannels": "null",
+	"PassportPublished": null,
+	"PassportSpaceName": "null",
+	"PassportTagLine": "null",
+	"VenueType": Nexudus.Coworking.Core.Enums.eVenueType.CoworkingSpace,
+	"Tags": "null",
+	"NumberOfFloors": 1,
+	"FloorSpace": 1,
+	"FloorSpaceUnit": Nexudus.Coworking.Core.Enums.eFloorUnit.SqFt,
+	"Longitude": 1,
+	"Latitude": 1,
+	"PassportDescription": "Joe",
+	"TownCity": "",
+	"PostalCode": "",
+	"StreetName": "",
+	"StreetNumber": "",
+	"Neighborhood": "",
+	"ContactPhoneNumber": "",
+	"ContactEmail": "",
+	"PassportMembersAccess": Nexudus.Coworking.Core.Enums.ePassportAccess.Everyone,
+	"PassportEventsAccess": Nexudus.Coworking.Core.Enums.ePassportAccess.Everyone,
+	"PassportCommunityAccess": Nexudus.Coworking.Core.Enums.ePassportAccess.Everyone,
+	"PassportBlogPostsAccess": Nexudus.Coworking.Core.Enums.ePassportAccess.Everyone,
+	"MondayOpenTime": null,
+	"MondayCloseTime": null,
+	"TuesdayOpenTime": null,
+	"TuesdayCloseTime": null,
+	"WednesdayOpenTime": null,
+	"WednesdayCloseTime": null,
+	"ThursdayOpenTime": null,
+	"ThursdayCloseTime": null,
+	"FridayOpenTime": null,
+	"FridayCloseTime": null,
+	"SaturdayOpenTime": null,
+	"SaturdayCloseTime": null,
+	"SundayOpenTime": null,
+	"SundayCloseTime": null,
+	"MondayClosed": null,
+	"TuesdayClosed": null,
+	"WednesdayClosed": null,
+	"ThursdayClosed": null,
+	"FridayClosed": null,
+	"SaturdayClosed": null,
+	"SundayClosed": null,
+	"SameOpeningTimes": null,
+}
+
+```
 
 
 ## Commands

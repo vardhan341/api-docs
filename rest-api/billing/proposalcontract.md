@@ -229,11 +229,11 @@ You can also use range query parameters for all date, integer and decimal proper
 
 {% api-method method="get" host="https://spaces.nexudus.com/api" path="/billing/proposalcontracts" %}
 {% api-method-summary %}
-By date range
+By date or number range
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Gets a list of proposalcontracts based on the date when they were created or updated.
+Gets a list of proposalcontracts based on a range of dates, integer or decimal properties.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -524,6 +524,22 @@ _This response is an example, errors and messages will follow this structure but
 
 > 🔒 Requires user role `proposalcontract-create`
 
+```javascript
+{
+	"Proposal": 12345678,
+	"Tariff": 12345678,
+	"Price": false,
+	"StartDate": null,
+	"CancellationDate": null,
+	"BillingDay": 1,
+	"Quantity": 1,
+	"DiscountCode": 12345678,
+	"FloorPlanDeskIds": "",
+	"FloorPlanDeskNames": "",
+}
+
+```
+
 {% api-method method="put" host="https://spaces.nexudus.com/api" path="/billing/proposalcontracts" %}
 {% api-method-summary %}
 Update
@@ -645,6 +661,22 @@ _This response is an example, errors and messages will follow this structure but
 {% endapi-method %}
 
 > 🔒 Requires user role `proposalcontract-edit`
+
+```javascript
+{
+	"Proposal": 12345678,
+	"Tariff": 12345678,
+	"Price": false,
+	"StartDate": null,
+	"CancellationDate": null,
+	"BillingDay": 1,
+	"Quantity": 1,
+	"DiscountCode": 12345678,
+	"FloorPlanDeskIds": "",
+	"FloorPlanDeskNames": "",
+}
+
+```
 
 
 {% api-method method="delete" host="https://spaces.nexudus.com/api" path="/billing/proposalcontracts/:id" %}

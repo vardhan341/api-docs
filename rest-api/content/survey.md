@@ -393,8 +393,6 @@ application/json
 {% endapi-method-parameter %}
 {% api-method-parameter name="DeliveryFrequency" type="enum" required=false %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="ScheduledJobId" type="string" required=false %}
-{% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 
 {% endapi-method-request %}
@@ -470,6 +468,19 @@ _This response is an example, errors and messages will follow this structure but
 {% endapi-method %}
 
 > 🔒 Requires user role `survey-create`
+
+```javascript
+{
+	"Business": 12345678,
+	"Name": "00001",
+	"Description": "",
+	"Active": ,
+	"NextDeliveryDate": DateTime.Parse(""),
+	"DeliveryRate": ,
+	"DeliveryFrequency": Nexudus.Coworking.Core.Enums.eSurveyDeliveryFrequency.Weeks,
+}
+
+```
 
 {% api-method method="put" host="https://spaces.nexudus.com/api" path="/content/surveys" %}
 {% api-method-summary %}
@@ -586,6 +597,19 @@ _This response is an example, errors and messages will follow this structure but
 {% endapi-method %}
 
 > 🔒 Requires user role `survey-edit`
+
+```javascript
+{
+	"Business": 12345678,
+	"Name": "00001",
+	"Description": "",
+	"Active": ,
+	"NextDeliveryDate": DateTime.Parse(""),
+	"DeliveryRate": ,
+	"DeliveryFrequency": Nexudus.Coworking.Core.Enums.eSurveyDeliveryFrequency.Weeks,
+}
+
+```
 
 
 {% api-method method="delete" host="https://spaces.nexudus.com/api" path="/content/surveys/:id" %}

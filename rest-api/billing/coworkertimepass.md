@@ -275,11 +275,11 @@ You can also use range query parameters for all date, integer and decimal proper
 
 {% api-method method="get" host="https://spaces.nexudus.com/api" path="/billing/coworkertimepasses" %}
 {% api-method-summary %}
-By date range
+By date or number range
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Gets a list of coworkertimepasses based on the date when they were created or updated.
+Gets a list of coworkertimepasses based on a range of dates, integer or decimal properties.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -508,16 +508,6 @@ application/json
 {% endapi-method-parameter %}
 {% api-method-parameter name="Notes" type="string" required=false %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="Used" type="bool" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="CheckedIn" type="bool" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="UsedDate" type="DateTime?" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="RemainingUses" type="int?" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="TotalUses" type="int?" required=false %}
-{% endapi-method-parameter %}
 {% api-method-parameter name="Free" type="bool" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="Price" type="decimal?" required=false %}
@@ -525,12 +515,6 @@ application/json
 {% api-method-parameter name="CreateMultiple" type="int" required=true %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="ExpireDate" type="DateTime?" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="Invoiced" type="bool" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="InvoiceDate" type="DateTime?" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="IsFromTariff" type="bool" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="CoworkerProductUniqueId" type="Guid?" required=false %}
 {% endapi-method-parameter %}
@@ -609,6 +593,21 @@ _This response is an example, errors and messages will follow this structure but
 {% endapi-method %}
 
 > 🔒 Requires user role `coworkertimepass-create`
+
+```javascript
+{
+	"Coworker": 12345678,
+	"Business": 12345678,
+	"TimePass": 12345678,
+	"Notes": "Notes",
+	"Free": false,
+	"Price": 15.25,
+	"CreateMultiple": 0,
+	"ExpireDate": ,
+	"CoworkerProductUniqueId": null,
+}
+
+```
 
 {% api-method method="put" host="https://spaces.nexudus.com/api" path="/billing/coworkertimepasses" %}
 {% api-method-summary %}
@@ -729,6 +728,21 @@ _This response is an example, errors and messages will follow this structure but
 {% endapi-method %}
 
 > 🔒 Requires user role `coworkertimepass-edit`
+
+```javascript
+{
+	"Coworker": 12345678,
+	"Business": 12345678,
+	"TimePass": 12345678,
+	"Notes": "Notes",
+	"Used": false,
+	"Free": false,
+	"Price": 15.25,
+	"ExpireDate": ,
+	"CoworkerProductUniqueId": null,
+}
+
+```
 
 
 {% api-method method="delete" host="https://spaces.nexudus.com/api" path="/billing/coworkertimepasses/:id" %}

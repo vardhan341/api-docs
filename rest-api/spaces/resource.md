@@ -437,11 +437,11 @@ You can also use range query parameters for all date, integer and decimal proper
 
 {% api-method method="get" host="https://spaces.nexudus.com/api" path="/spaces/resources" %}
 {% api-method-summary %}
-By date range
+By date or number range
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Gets a list of resources based on the date when they were created or updated.
+Gets a list of resources based on a range of dates, integer or decimal properties.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -900,6 +900,52 @@ _This response is an example, errors and messages will follow this structure but
 
 > 🔒 Requires user role `resource-create`
 
+```javascript
+{
+	"Business": 12345678,
+	"Name": "Name",
+	"ResourceType": 12345678,
+	"Description": "Descripción",
+	"EmailConfirmationContent": "Descripción",
+	"Visible": true,
+	"RequiresConfirmation": true,
+	"DisplayOrder": true,
+	"GroupName": "GroupName",
+	"Projector": true,
+	"Internet": true,
+	"ConferencePhone": true,
+	"StandardPhone": true,
+	"WhiteBoard": true,
+	"LargeDisplay": true,
+	"Catering": true,
+	"TeaAndCoffee": true,
+	"Drinks": true,
+	"SecurityLock": true,
+	"CCTV": true,
+	"VoiceRecorder": true,
+	"AirConditioning": true,
+	"Heating": true,
+	"NaturalLight": true,
+	"AllowMultipleBookings": true,
+	"Allocation": 0,
+	"BookInAdvanceLimit": 0,
+	"LateBookingLimit": 0,
+	"LateCancellationLimit": 0,
+	"IntervalLimit": 0,
+	"NoReturnPolicy": 0,
+	"NoReturnPolicyAllResources": 0,
+	"NoReturnPolicyAllUsers": 0,
+	"MaxBookingLength": 0,
+	"MinBookingLength": 0,
+	"Shifts": "null",
+	"Longitude": 1,
+	"Latitude": 1,
+	"HideInCalendar": true,
+	"Archived": true,
+}
+
+```
+
 {% api-method method="put" host="https://spaces.nexudus.com/api" path="/spaces/resources" %}
 {% api-method-summary %}
 Update
@@ -1081,6 +1127,52 @@ _This response is an example, errors and messages will follow this structure but
 {% endapi-method %}
 
 > 🔒 Requires user role `resource-edit`
+
+```javascript
+{
+	"Business": 12345678,
+	"Name": "Name",
+	"ResourceType": 12345678,
+	"Description": "Descripción",
+	"EmailConfirmationContent": "Descripción",
+	"Visible": true,
+	"RequiresConfirmation": true,
+	"DisplayOrder": true,
+	"GroupName": "GroupName",
+	"Projector": true,
+	"Internet": true,
+	"ConferencePhone": true,
+	"StandardPhone": true,
+	"WhiteBoard": true,
+	"LargeDisplay": true,
+	"Catering": true,
+	"TeaAndCoffee": true,
+	"Drinks": true,
+	"SecurityLock": true,
+	"CCTV": true,
+	"VoiceRecorder": true,
+	"AirConditioning": true,
+	"Heating": true,
+	"NaturalLight": true,
+	"AllowMultipleBookings": true,
+	"Allocation": 0,
+	"BookInAdvanceLimit": 0,
+	"LateBookingLimit": 0,
+	"LateCancellationLimit": 0,
+	"IntervalLimit": 0,
+	"NoReturnPolicy": 0,
+	"NoReturnPolicyAllResources": 0,
+	"NoReturnPolicyAllUsers": 0,
+	"MaxBookingLength": 0,
+	"MinBookingLength": 0,
+	"Shifts": "null",
+	"Longitude": 1,
+	"Latitude": 1,
+	"HideInCalendar": true,
+	"Archived": true,
+}
+
+```
 
 
 {% api-method method="delete" host="https://spaces.nexudus.com/api" path="/spaces/resources/:id" %}

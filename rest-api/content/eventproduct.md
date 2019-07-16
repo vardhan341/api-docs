@@ -259,11 +259,11 @@ You can also use range query parameters for all date, integer and decimal proper
 
 {% api-method method="get" host="https://spaces.nexudus.com/api" path="/content/eventproducts" %}
 {% api-method-summary %}
-By date range
+By date or number range
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Gets a list of eventproducts based on the date when they were created or updated.
+Gets a list of eventproducts based on a range of dates, integer or decimal properties.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -500,8 +500,6 @@ application/json
 {% endapi-method-parameter %}
 {% api-method-parameter name="MaxTicketsPerAttendee" type="int?" required=false %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="Sales" type="int?" required=false %}
-{% endapi-method-parameter %}
 {% api-method-parameter name="Price" type="decimal" required=true %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="CurrencyId" type="int" required=true %}
@@ -585,6 +583,26 @@ _This response is an example, errors and messages will follow this structure but
 {% endapi-method %}
 
 > 🔒 Requires user role `eventproduct-create`
+
+```javascript
+{
+	"CalendarEvent": 12345678,
+	"Name": "Name",
+	"Description": "Description",
+	"TicketNotes": "TicketNotes",
+	"Visible": true,
+	"DisplayOrder": true,
+	"StartDate": DateTime.Parse("2001-01-01"),
+	"EndDate": DateTime.Parse("2001-01-01"),
+	"Allocation": 0,
+	"MaxTicketsPerAttendee": 0,
+	"Price": 0,
+	"Currency": 12345678,
+	"TaxRate": 12345678,
+	"FinancialAccount": 12345678,
+}
+
+```
 
 {% api-method method="put" host="https://spaces.nexudus.com/api" path="/content/eventproducts" %}
 {% api-method-summary %}
@@ -715,6 +733,26 @@ _This response is an example, errors and messages will follow this structure but
 {% endapi-method %}
 
 > 🔒 Requires user role `eventproduct-edit`
+
+```javascript
+{
+	"CalendarEvent": 12345678,
+	"Name": "Name",
+	"Description": "Description",
+	"TicketNotes": "TicketNotes",
+	"Visible": true,
+	"DisplayOrder": true,
+	"StartDate": DateTime.Parse("2001-01-01"),
+	"EndDate": DateTime.Parse("2001-01-01"),
+	"Allocation": 0,
+	"MaxTicketsPerAttendee": 0,
+	"Price": 0,
+	"Currency": 12345678,
+	"TaxRate": 12345678,
+	"FinancialAccount": 12345678,
+}
+
+```
 
 
 {% api-method method="delete" host="https://spaces.nexudus.com/api" path="/content/eventproducts/:id" %}

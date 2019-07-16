@@ -421,11 +421,11 @@ You can also use range query parameters for all date, integer and decimal proper
 
 {% api-method method="get" host="https://spaces.nexudus.com/api" path="/billing/coworkercontracts" %}
 {% api-method-summary %}
-By date range
+By date or number range
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Gets a list of coworkercontracts based on the date when they were created or updated.
+Gets a list of coworkercontracts based on a range of dates, integer or decimal properties.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -710,19 +710,11 @@ application/json
 {% endapi-method-parameter %}
 {% api-method-parameter name="TariffId" type="int" required=true %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="NextTariffId" type="int" required=false %}
-{% endapi-method-parameter %}
 {% api-method-parameter name="Notes" type="string" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="StartDate" type="DateTime?" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="BillingDay" type="int" required=true %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="RenewalDate" type="DateTime?" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="InvoicedPeriod" type="DateTime?" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="ContractTerm" type="DateTime?" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="Price" type="decimal?" required=false %}
 {% endapi-method-parameter %}
@@ -730,23 +722,11 @@ application/json
 {% endapi-method-parameter %}
 {% api-method-parameter name="Quantity" type="int" required=true %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="Active" type="bool" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="MainContract" type="bool" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="Cancelled" type="bool" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="IncludeSignupFee" type="bool" required=false %}
-{% endapi-method-parameter %}
 {% api-method-parameter name="InvoiceAdvancedCycles" type="bool" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="ApplyProRating" type="bool" required=false %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="NextAutoInvoice" type="DateTime?" required=false %}
-{% endapi-method-parameter %}
 {% api-method-parameter name="PricePlanTermsAccepted" type="bool" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="PricePlanTermsAcceptedOn" type="DateTime?" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="CancellationDate" type="DateTime?" required=false %}
 {% endapi-method-parameter %}
@@ -841,6 +821,33 @@ _This response is an example, errors and messages will follow this structure but
 {% endapi-method %}
 
 > 🔒 Requires user role `coworkercontract-create`
+
+```javascript
+{
+	"IssuedBy": 12345678,
+	"Coworker": 12345678,
+	"Tariff": 12345678,
+	"Notes": "Notes",
+	"StartDate": null,
+	"BillingDay": 1,
+	"Price": false,
+	"Value": false,
+	"Quantity": 1,
+	"InvoiceAdvancedCycles": true,
+	"ApplyProRating": true,
+	"PricePlanTermsAccepted": true,
+	"CancellationDate": null,
+	"CancellationLimitDays": null,
+	"ProRateCancellation": true,
+	"CancelTeamContracts": true,
+	"CancellationReason": Nexudus.Coworking.Core.Enums.eCancellationReason.Price,
+	"CancellationNotes": "Notes",
+	"ProposalUniqueId": null,
+	"FloorPlanDeskIds": "",
+	"FloorPlanDeskNames": "",
+}
+
+```
 
 {% api-method method="put" host="https://spaces.nexudus.com/api" path="/billing/coworkercontracts" %}
 {% api-method-summary %}
@@ -997,6 +1004,39 @@ _This response is an example, errors and messages will follow this structure but
 {% endapi-method %}
 
 > 🔒 Requires user role `coworkercontract-edit`
+
+```javascript
+{
+	"IssuedBy": 12345678,
+	"Coworker": 12345678,
+	"Tariff": 12345678,
+	"NextTariff": 12345678,
+	"Notes": "Notes",
+	"StartDate": null,
+	"BillingDay": 1,
+	"RenewalDate": null,
+	"InvoicedPeriod": null,
+	"ContractTerm": null,
+	"Price": false,
+	"Value": false,
+	"Quantity": 1,
+	"IncludeSignupFee": true,
+	"InvoiceAdvancedCycles": true,
+	"ApplyProRating": true,
+	"NextAutoInvoice": null,
+	"PricePlanTermsAccepted": true,
+	"CancellationDate": null,
+	"CancellationLimitDays": null,
+	"ProRateCancellation": true,
+	"CancelTeamContracts": true,
+	"CancellationReason": Nexudus.Coworking.Core.Enums.eCancellationReason.Price,
+	"CancellationNotes": "Notes",
+	"ProposalUniqueId": null,
+	"FloorPlanDeskIds": "",
+	"FloorPlanDeskNames": "",
+}
+
+```
 
 
 ## Commands

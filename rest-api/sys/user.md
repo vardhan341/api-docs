@@ -358,11 +358,11 @@ You can also use range query parameters for all date, integer and decimal proper
 
 {% api-method method="get" host="https://spaces.nexudus.com/api" path="/sys/users" %}
 {% api-method-summary %}
-By date range
+By date or number range
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Gets a list of users based on the date when they were created or updated.
+Gets a list of users based on a range of dates, integer or decimal properties.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -579,14 +579,6 @@ application/json
 {% endapi-method-parameter %}
 {% api-method-parameter name="PreferredLanguageId" type="int" required=false %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="NewPassword" type="string" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="PassportNumber" type="string" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="PassportCardNumber" type="string" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="EnablePassportAccess" type="bool" required=false %}
-{% endapi-method-parameter %}
 {% api-method-parameter name="Active" type="bool" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="IsAdmin" type="bool" required=false %}
@@ -704,6 +696,37 @@ _This response is an example, errors and messages will follow this structure but
 {% endapi-method %}
 
 > 🔒 Requires user role `user-create`
+
+```javascript
+{
+	"FullName": "Full Name",
+	"Email": "email@email.com",
+	"AccessToken": "hush",
+	"PreferredLanguage": 12345678,
+	"Active": true,
+	"IsAdmin": false,
+	"APIAccess": false,
+	"Validated": true,
+	"MustResetPassword": true,
+	"LastAccess": false,
+	"Devices": "Devices",
+	"OnNewEmail": true,
+	"OnHelpDeskMsg": true,
+	"OnNewWallPost": true,
+	"OnNewMember": true,
+	"OnProfileChanges": true,
+	"OnNewBlogComment": true,
+	"OnNewEventComment": true,
+	"OnTariffChange": true,
+	"OnBookingChange": true,
+	"OnPurchases": true,
+	"OnVisitorRegistration": true,
+	"OnPlaformInvoices": true,
+	"ReceiveCommunityDigest": true,
+	"ReceiveEveryMessage": true,
+}
+
+```
 
 {% api-method method="put" host="https://spaces.nexudus.com/api" path="/sys/users" %}
 {% api-method-summary %}
@@ -858,6 +881,38 @@ _This response is an example, errors and messages will follow this structure but
 {% endapi-method %}
 
 > 🔒 Requires user role `user-edit`
+
+```javascript
+{
+	"FullName": "Full Name",
+	"Email": "email@email.com",
+	"AccessToken": "hush",
+	"PreferredLanguage": 12345678,
+	"NewPassword": "password",
+	"Active": true,
+	"IsAdmin": false,
+	"APIAccess": false,
+	"Validated": true,
+	"MustResetPassword": true,
+	"LastAccess": false,
+	"Devices": "Devices",
+	"OnNewEmail": true,
+	"OnHelpDeskMsg": true,
+	"OnNewWallPost": true,
+	"OnNewMember": true,
+	"OnProfileChanges": true,
+	"OnNewBlogComment": true,
+	"OnNewEventComment": true,
+	"OnTariffChange": true,
+	"OnBookingChange": true,
+	"OnPurchases": true,
+	"OnVisitorRegistration": true,
+	"OnPlaformInvoices": true,
+	"ReceiveCommunityDigest": true,
+	"ReceiveEveryMessage": true,
+}
+
+```
 
 
 {% api-method method="delete" host="https://spaces.nexudus.com/api" path="/sys/users/:id" %}

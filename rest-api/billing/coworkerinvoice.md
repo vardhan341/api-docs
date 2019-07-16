@@ -499,11 +499,11 @@ You can also use range query parameters for all date, integer and decimal proper
 
 {% api-method method="get" host="https://spaces.nexudus.com/api" path="/billing/coworkerinvoices" %}
 {% api-method-summary %}
-By date range
+By date or number range
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Gets a list of coworkerinvoices based on the date when they were created or updated.
+Gets a list of coworkerinvoices based on a range of dates, integer or decimal properties.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -832,55 +832,19 @@ application/json
 {% endapi-method-parameter %}
 {% api-method-parameter name="PurchaseOrder" type="string" required=false %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="Description" type="string" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="DiscountAmount" type="decimal" required=true %}
-{% endapi-method-parameter %}
 {% api-method-parameter name="DueDate" type="DateTime?" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="InvoiceFromDate" type="DateTime?" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="InvoiceToDate" type="DateTime?" required=false %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="TotalAmount" type="decimal" required=true %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="PaidAmount" type="decimal?" required=false %}
-{% endapi-method-parameter %}
 {% api-method-parameter name="CurrencyId" type="int" required=true %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="TaxAmount" type="decimal" required=true %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="Draft" type="bool" required=false %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="Paid" type="bool" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="Sent" type="bool" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="SentOn" type="DateTime?" required=false %}
-{% endapi-method-parameter %}
 {% api-method-parameter name="PaidOn" type="DateTime?" required=false %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="Refunded" type="bool" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="XeroInvoiceTransfered" type="bool" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="XeroPaymentTransfered" type="bool" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="RefundedOn" type="DateTime?" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="CreditNote" type="bool" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="OriginalInvoiceGuid" type="Guid?" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="ContractGuid" type="Guid?" required=false %}
-{% endapi-method-parameter %}
 {% api-method-parameter name="CustomData" type="string" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="ReceivedAmount" type="decimal?" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="CreditedAmount" type="decimal?" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="RefundedAmount" type="decimal?" required=false %}
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 
@@ -957,6 +921,33 @@ _This response is an example, errors and messages will follow this structure but
 {% endapi-method %}
 
 > 🔒 Requires user role `coworkerinvoice-create`
+
+```javascript
+{
+	"Coworker": 12345678,
+	"Business": 12345678,
+	"InvoiceNumber": "00001",
+	"PaymentReference": "00001",
+	"BillToName": "BillToName",
+	"BillToAddress": "BillToAddress",
+	"BillToCity": "BillToCity",
+	"BillToPostCode": "BillToPostCode",
+	"BillToPhone": "BillToPhone",
+	"BillToFax": "BillToFax",
+	"BillToCountry": 12345678,
+	"BillToBankAccount": "123456",
+	"BillToTaxIDNumber": "123456",
+	"PurchaseOrder": "PurchaseOrder",
+	"DueDate": null,
+	"InvoiceFromDate": null,
+	"InvoiceToDate": null,
+	"Currency": 12345678,
+	"Draft": false,
+	"PaidOn": null,
+	"CustomData": "null",
+}
+
+```
 
 {% api-method method="put" host="https://spaces.nexudus.com/api" path="/billing/coworkerinvoices" %}
 {% api-method-summary %}
@@ -1101,6 +1092,33 @@ _This response is an example, errors and messages will follow this structure but
 {% endapi-method %}
 
 > 🔒 Requires user role `coworkerinvoice-edit`
+
+```javascript
+{
+	"Coworker": 12345678,
+	"Business": 12345678,
+	"InvoiceNumber": "00001",
+	"PaymentReference": "00001",
+	"BillToName": "BillToName",
+	"BillToAddress": "BillToAddress",
+	"BillToCity": "BillToCity",
+	"BillToPostCode": "BillToPostCode",
+	"BillToPhone": "BillToPhone",
+	"BillToFax": "BillToFax",
+	"BillToCountry": 12345678,
+	"BillToBankAccount": "123456",
+	"BillToTaxIDNumber": "123456",
+	"PurchaseOrder": "PurchaseOrder",
+	"DueDate": null,
+	"InvoiceFromDate": null,
+	"InvoiceToDate": null,
+	"Currency": 12345678,
+	"Draft": false,
+	"PaidOn": null,
+	"CustomData": "null",
+}
+
+```
 
 
 ## Commands

@@ -457,11 +457,11 @@ You can also use range query parameters for all date, integer and decimal proper
 
 {% api-method method="get" host="https://spaces.nexudus.com/api" path="/billing/tariffs" %}
 {% api-method-summary %}
-By date range
+By date or number range
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Gets a list of tariffs based on the date when they were created or updated.
+Gets a list of tariffs based on a range of dates, integer or decimal properties.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -1028,6 +1028,55 @@ _This response is an example, errors and messages will follow this structure but
 
 > 🔒 Requires user role `tariff-create`
 
+```javascript
+{
+	"Business": 12345678,
+	"Name": "Name",
+	"Price": 0,
+	"DefaultInvoicingDay": ,
+	"Visible": true,
+	"UseTimePasses": true,
+	"Description": "Descripción",
+	"SignUpFee": 0,
+	"Currency": 12345678,
+	"TaxRate": 12345678,
+	"FinancialAccount": 12345678,
+	"TermsAndConditions": "TermsAndConditions",
+	"CancellationPeriod": 0,
+	"DisplayOrder": true,
+	"GroupName": "GroupName",
+	"SubscribersLimit": null,
+	"CancellationLimitDays": null,
+	"DefaultContractTerm": null,
+	"CancelMemeberAccountAfter": null,
+	"CheckinPricePlanLimit": null,
+	"CheckinMonthLimit": null,
+	"CheckinWeekLimit": null,
+	"HoursPricePlanLimit": null,
+	"HoursMonthLimit": null,
+	"HoursWeekLimit": null,
+	"BookingMinuteWeekLimit": null,
+	"BookingMinuteMonthLimit": null,
+	"DiscountExtraServices": null,
+	"DiscountTimePasses": null,
+	"DiscountCharges": null,
+	"InvoiceEvery": 1,
+	"InvoiceEveryWeeks": 0,
+	"AutoCancelAfter": Cancel Contract After # renewals,
+	"AdvanceInvoiceCycles": Invoice # renewals in Advance,
+	"ProrateDayOfMonth": 0,
+	"ProrateDaysBefore": 0,
+	"ProrateCancellations": true,
+	"ChargeAndExtend": 0,
+	"AutoRaiseInvoices": false,
+	"RaiseInvoiceEvery": 0,
+	"RaiseInvoiceEveryWeeks": 0,
+	"Archived": true,
+	"Starred": true,
+}
+
+```
+
 {% api-method method="put" host="https://spaces.nexudus.com/api" path="/billing/tariffs" %}
 {% api-method-summary %}
 Update
@@ -1215,6 +1264,55 @@ _This response is an example, errors and messages will follow this structure but
 {% endapi-method %}
 
 > 🔒 Requires user role `tariff-edit`
+
+```javascript
+{
+	"Business": 12345678,
+	"Name": "Name",
+	"Price": 0,
+	"DefaultInvoicingDay": ,
+	"Visible": true,
+	"UseTimePasses": true,
+	"Description": "Descripción",
+	"SignUpFee": 0,
+	"Currency": 12345678,
+	"TaxRate": 12345678,
+	"FinancialAccount": 12345678,
+	"TermsAndConditions": "TermsAndConditions",
+	"CancellationPeriod": 0,
+	"DisplayOrder": true,
+	"GroupName": "GroupName",
+	"SubscribersLimit": null,
+	"CancellationLimitDays": null,
+	"DefaultContractTerm": null,
+	"CancelMemeberAccountAfter": null,
+	"CheckinPricePlanLimit": null,
+	"CheckinMonthLimit": null,
+	"CheckinWeekLimit": null,
+	"HoursPricePlanLimit": null,
+	"HoursMonthLimit": null,
+	"HoursWeekLimit": null,
+	"BookingMinuteWeekLimit": null,
+	"BookingMinuteMonthLimit": null,
+	"DiscountExtraServices": null,
+	"DiscountTimePasses": null,
+	"DiscountCharges": null,
+	"InvoiceEvery": 1,
+	"InvoiceEveryWeeks": 0,
+	"AutoCancelAfter": Cancel Contract After # renewals,
+	"AdvanceInvoiceCycles": Invoice # renewals in Advance,
+	"ProrateDayOfMonth": 0,
+	"ProrateDaysBefore": 0,
+	"ProrateCancellations": true,
+	"ChargeAndExtend": 0,
+	"AutoRaiseInvoices": false,
+	"RaiseInvoiceEvery": 0,
+	"RaiseInvoiceEveryWeeks": 0,
+	"Archived": true,
+	"Starred": true,
+}
+
+```
 
 
 {% api-method method="delete" host="https://spaces.nexudus.com/api" path="/billing/tariffs/:id" %}

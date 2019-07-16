@@ -338,11 +338,11 @@ You can also use range query parameters for all date, integer and decimal proper
 
 {% api-method method="get" host="https://spaces.nexudus.com/api" path="/billing/coworkerextraservices" %}
 {% api-method-summary %}
-By date range
+By date or number range
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Gets a list of coworkerextraservices based on the date when they were created or updated.
+Gets a list of coworkerextraservices based on a range of dates, integer or decimal properties.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -605,11 +605,7 @@ application/json
 {% endapi-method-parameter %}
 {% api-method-parameter name="ExtraServiceId" type="int" required=true %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="Description" type="string" required=false %}
-{% endapi-method-parameter %}
 {% api-method-parameter name="Notes" type="string" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="RemainingUses" type="int" required=true %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="TotalUses" type="int" required=true %}
 {% endapi-method-parameter %}
@@ -624,24 +620,6 @@ application/json
 {% api-method-parameter name="PurchaseOrder" type="string" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="ChargePeriod" type="enum" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="Invoiced" type="bool" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="InvoiceDate" type="DateTime?" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="IsFromTariff" type="bool" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="TariffTimePassUniqueId" type="Guid?" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="CoworkerProductUniqueId" type="Guid?" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="BookingUniqueId" type="Guid?" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="AutomaticallyAdded" type="bool" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="DiscountCode" type="string" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="DiscountAmount" type="decimal?" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="BookingId" type="int?" required=false %}
 {% endapi-method-parameter %}
@@ -726,6 +704,27 @@ _This response is an example, errors and messages will follow this structure but
 {% endapi-method %}
 
 > 🔒 Requires user role `coworkerextraservice-create`
+
+```javascript
+{
+	"Coworker": 12345678,
+	"Business": 12345678,
+	"ExtraService": 12345678,
+	"Notes": "Notes",
+	"TotalUses": false,
+	"Free": false,
+	"Price": false,
+	"ExpireDate": null,
+	"DueDate": null,
+	"PurchaseOrder": "PurchaseOrder",
+	"ChargePeriod": Nexudus.Coworking.Core.Enums.eChargePeriod.Minutes,
+	"BookingId": ,
+	"BookingFromTime": ,
+	"BookingToTime": ,
+	"BookingResourceName": "",
+}
+
+```
 
 {% api-method method="put" host="https://spaces.nexudus.com/api" path="/billing/coworkerextraservices" %}
 {% api-method-summary %}
@@ -858,6 +857,27 @@ _This response is an example, errors and messages will follow this structure but
 {% endapi-method %}
 
 > 🔒 Requires user role `coworkerextraservice-edit`
+
+```javascript
+{
+	"Coworker": 12345678,
+	"Business": 12345678,
+	"ExtraService": 12345678,
+	"Notes": "Notes",
+	"TotalUses": false,
+	"Free": false,
+	"Price": false,
+	"ExpireDate": null,
+	"DueDate": null,
+	"PurchaseOrder": "PurchaseOrder",
+	"ChargePeriod": Nexudus.Coworking.Core.Enums.eChargePeriod.Minutes,
+	"BookingId": ,
+	"BookingFromTime": ,
+	"BookingToTime": ,
+	"BookingResourceName": "",
+}
+
+```
 
 
 {% api-method method="delete" host="https://spaces.nexudus.com/api" path="/billing/coworkerextraservices/:id" %}

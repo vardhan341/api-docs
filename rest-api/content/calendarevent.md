@@ -394,11 +394,11 @@ You can also use range query parameters for all date, integer and decimal proper
 
 {% api-method method="get" host="https://spaces.nexudus.com/api" path="/content/calendarevents" %}
 {% api-method-summary %}
-By date range
+By date or number range
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Gets a list of calendarevents based on the date when they were created or updated.
+Gets a list of calendarevents based on a range of dates, integer or decimal properties.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -699,8 +699,6 @@ application/json
 {% endapi-method-parameter %}
 {% api-method-parameter name="Repeats" type="enum" required=false %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="WhichEventsToUpdate" type="enum" required=false %}
-{% endapi-method-parameter %}
 {% api-method-parameter name="RepeatEvery" type="int?" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="RepeatUntil" type="DateTime?" required=false %}
@@ -794,6 +792,46 @@ _This response is an example, errors and messages will follow this structure but
 {% endapi-method %}
 
 > 🔒 Requires user role `calendarevent-create`
+
+```javascript
+{
+	"Business": 12345678,
+	"Name": "Name",
+	"ShortDescription": "Description",
+	"LongDescription": "Description",
+	"TicketNotes": "TicketNotes",
+	"AskBuyerAddress": ask buyer address,
+	"ShowEventAttendees": show event attendees,
+	"Location": "Location",
+	"VenueAddress": "Location",
+	"Resource": 12345678,
+	"StartDate": DateTime.Parse("2001-01-01"),
+	"EndDate": DateTime.Parse("2001-01-01"),
+	"Allocation": 0,
+	"PublishDate": null,
+	"ShowInHomeBanner": true,
+	"ShowInHomePage": true,
+	"AllowComments": true,
+	"OnlyForContacts": true,
+	"OnlyForMembers": true,
+	"WebAddress": "WebAddress",
+	"FacebookPage": "TicketsPage",
+	"TicketsPage": "TicketsPage",
+	"RepeatSeriesUniqueId": ,
+	"RepeatEvent": false,
+	"Repeats": Nexudus.Coworking.Core.Enums.eCalendarEventRepeatCycle.Weekly,
+	"RepeatEvery": ,
+	"RepeatUntil": ,
+	"RepeatOnMondays": false,
+	"RepeatOnTuesdays": false,
+	"RepeatOnWednesdays": false,
+	"RepeatOnThursdays": false,
+	"RepeatOnFridays": false,
+	"RepeatOnSaturdays": false,
+	"RepeatOnSundays": false,
+}
+
+```
 
 {% api-method method="put" host="https://spaces.nexudus.com/api" path="/content/calendarevents" %}
 {% api-method-summary %}
@@ -960,6 +998,44 @@ _This response is an example, errors and messages will follow this structure but
 {% endapi-method %}
 
 > 🔒 Requires user role `calendarevent-edit`
+
+```javascript
+{
+	"Business": 12345678,
+	"Name": "Name",
+	"ShortDescription": "Description",
+	"LongDescription": "Description",
+	"TicketNotes": "TicketNotes",
+	"AskBuyerAddress": ask buyer address,
+	"ShowEventAttendees": show event attendees,
+	"Location": "Location",
+	"VenueAddress": "Location",
+	"Resource": 12345678,
+	"StartDate": DateTime.Parse("2001-01-01"),
+	"EndDate": DateTime.Parse("2001-01-01"),
+	"Allocation": 0,
+	"PublishDate": null,
+	"ShowInHomeBanner": true,
+	"ShowInHomePage": true,
+	"AllowComments": true,
+	"OnlyForContacts": true,
+	"OnlyForMembers": true,
+	"WebAddress": "WebAddress",
+	"FacebookPage": "TicketsPage",
+	"TicketsPage": "TicketsPage",
+	"RepeatSeriesUniqueId": ,
+	"Repeats": Nexudus.Coworking.Core.Enums.eCalendarEventRepeatCycle.Weekly,
+	"WhichEventsToUpdate": Nexudus.Coworking.Core.Enums.eRepeatedCalendarEventUpdateAction.UpdateThisEventOnly,
+	"RepeatOnMondays": false,
+	"RepeatOnTuesdays": false,
+	"RepeatOnWednesdays": false,
+	"RepeatOnThursdays": false,
+	"RepeatOnFridays": false,
+	"RepeatOnSaturdays": false,
+	"RepeatOnSundays": false,
+}
+
+```
 
 
 {% api-method method="delete" host="https://spaces.nexudus.com/api" path="/content/calendarevents/:id" %}

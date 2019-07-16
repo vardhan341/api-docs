@@ -206,11 +206,11 @@ You can also use range query parameters for all date, integer and decimal proper
 
 {% api-method method="get" host="https://spaces.nexudus.com/api" path="/billing/productextraservices" %}
 {% api-method-summary %}
-By date range
+By date or number range
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Gets a list of productextraservices based on the date when they were created or updated.
+Gets a list of productextraservices based on a range of dates, integer or decimal properties.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -463,6 +463,17 @@ _This response is an example, errors and messages will follow this structure but
 
 > 🔒 Requires user role `productextraservice-create`
 
+```javascript
+{
+	"Product": 12345678,
+	"ExtraService": 12345678,
+	"UsesIncluded": 0,
+	"ExpirationType": Nexudus.Coworking.Core.Enums.eRecurrentChargePattern.PricePlan,
+	"ExpiresIn": 0,
+}
+
+```
+
 {% api-method method="put" host="https://spaces.nexudus.com/api" path="/billing/productextraservices" %}
 {% api-method-summary %}
 Update
@@ -574,6 +585,17 @@ _This response is an example, errors and messages will follow this structure but
 {% endapi-method %}
 
 > 🔒 Requires user role `productextraservice-edit`
+
+```javascript
+{
+	"Product": 12345678,
+	"ExtraService": 12345678,
+	"UsesIncluded": 0,
+	"ExpirationType": Nexudus.Coworking.Core.Enums.eRecurrentChargePattern.PricePlan,
+	"ExpiresIn": 0,
+}
+
+```
 
 
 {% api-method method="delete" host="https://spaces.nexudus.com/api" path="/billing/productextraservices/:id" %}

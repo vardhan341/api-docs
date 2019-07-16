@@ -285,11 +285,11 @@ You can also use range query parameters for all date, integer and decimal proper
 
 {% api-method method="get" host="https://spaces.nexudus.com/api" path="/sys/floorplandesks" %}
 {% api-method-summary %}
-By date range
+By date or number range
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Gets a list of floorplandesks based on the date when they were created or updated.
+Gets a list of floorplandesks based on a range of dates, integer or decimal properties.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -614,6 +614,29 @@ _This response is an example, errors and messages will follow this structure but
 
 > 🔒 Requires user role `floorplandesk-create`
 
+```javascript
+{
+	"FloorPlan": 12345678,
+	"Coworker": 12345678,
+	"Name": "00001",
+	"ItemType": Nexudus.Coworking.Core.Enums.eFloorPlanItemType.Office,
+	"Size": 00001,
+	"Capacity": 00001,
+	"Price": 00001,
+	"Area": "00001",
+	"Notes": "00001",
+	"Available": true,
+	"PositionX": 1,
+	"PositionY": 1,
+	"PositionZ": 1,
+	"TunnelPrivateGroupId": "",
+	"CoworkerContractIds": "",
+	"CoworkerContractFullNames": "",
+	"CoworkerContractStartDates": "",
+}
+
+```
+
 {% api-method method="put" host="https://spaces.nexudus.com/api" path="/sys/floorplandesks" %}
 {% api-method-summary %}
 Update
@@ -749,6 +772,29 @@ _This response is an example, errors and messages will follow this structure but
 {% endapi-method %}
 
 > 🔒 Requires user role `floorplandesk-edit`
+
+```javascript
+{
+	"FloorPlan": 12345678,
+	"Coworker": 12345678,
+	"Name": "00001",
+	"ItemType": Nexudus.Coworking.Core.Enums.eFloorPlanItemType.Office,
+	"Size": 00001,
+	"Capacity": 00001,
+	"Price": 00001,
+	"Area": "00001",
+	"Notes": "00001",
+	"Available": true,
+	"PositionX": 1,
+	"PositionY": 1,
+	"PositionZ": 1,
+	"TunnelPrivateGroupId": "",
+	"CoworkerContractIds": "",
+	"CoworkerContractFullNames": "",
+	"CoworkerContractStartDates": "",
+}
+
+```
 
 
 {% api-method method="delete" host="https://spaces.nexudus.com/api" path="/sys/floorplandesks/:id" %}

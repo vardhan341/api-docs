@@ -182,11 +182,11 @@ You can also use range query parameters for all date, integer and decimal proper
 
 {% api-method method="get" host="https://spaces.nexudus.com/api" path="/billing/coworkerextraserviceusehistories" %}
 {% api-method-summary %}
-By date range
+By date or number range
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Gets a list of coworkerextraserviceusehistories based on the date when they were created or updated.
+Gets a list of coworkerextraserviceusehistories based on a range of dates, integer or decimal properties.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -347,8 +347,6 @@ application/json
 {% endapi-method-parameter %}
 {% api-method-parameter name="BookingId" type="int" required=false %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="CreditUsed" type="int?" required=false %}
-{% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 
 {% endapi-method-request %}
@@ -424,6 +422,14 @@ _This response is an example, errors and messages will follow this structure but
 {% endapi-method %}
 
 > 🔒 Requires user role `coworkerextraserviceusehistory-create`
+
+```javascript
+{
+	"CoworkerExtraService": 12345678,
+	"Booking": 12345678,
+}
+
+```
 
 {% api-method method="put" host="https://spaces.nexudus.com/api" path="/billing/coworkerextraserviceusehistories" %}
 {% api-method-summary %}
@@ -530,6 +536,14 @@ _This response is an example, errors and messages will follow this structure but
 {% endapi-method %}
 
 > 🔒 Requires user role `coworkerextraserviceusehistory-edit`
+
+```javascript
+{
+	"CoworkerExtraService": 12345678,
+	"Booking": 12345678,
+}
+
+```
 
 
 {% api-method method="delete" host="https://spaces.nexudus.com/api" path="/billing/coworkerextraserviceusehistories/:id" %}

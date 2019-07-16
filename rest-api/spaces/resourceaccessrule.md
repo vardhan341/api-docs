@@ -250,11 +250,11 @@ You can also use range query parameters for all date, integer and decimal proper
 
 {% api-method method="get" host="https://spaces.nexudus.com/api" path="/spaces/resourceaccessrules" %}
 {% api-method-summary %}
-By date range
+By date or number range
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Gets a list of resourceaccessrules based on the date when they were created or updated.
+Gets a list of resourceaccessrules based on a range of dates, integer or decimal properties.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -579,6 +579,26 @@ _This response is an example, errors and messages will follow this structure but
 
 > 🔒 Requires user role `resourceaccessrule-create`
 
+```javascript
+{
+	"Resource": 12345678,
+	"Name": "Rule Name",
+	"Active": true,
+	"OnlyForContacts": true,
+	"BookInAdvanceLimit": 0,
+	"LateBookingLimit": 0,
+	"LateCancellationLimit": 0,
+	"MaxBookingLength": 0,
+	"MinBookingLength": 0,
+	"NoReturnPolicy": 0,
+	"NoReturnPolicyAllResources": 0,
+	"NoReturnPolicyAllUsers": 0,
+	"RejectWithMessage": "0",
+	"OnlyForMembers": true,
+}
+
+```
+
 {% api-method method="put" host="https://spaces.nexudus.com/api" path="/spaces/resourceaccessrules" %}
 {% api-method-summary %}
 Update
@@ -708,6 +728,26 @@ _This response is an example, errors and messages will follow this structure but
 {% endapi-method %}
 
 > 🔒 Requires user role `resourceaccessrule-edit`
+
+```javascript
+{
+	"Resource": 12345678,
+	"Name": "Rule Name",
+	"Active": true,
+	"OnlyForContacts": true,
+	"BookInAdvanceLimit": 0,
+	"LateBookingLimit": 0,
+	"LateCancellationLimit": 0,
+	"MaxBookingLength": 0,
+	"MinBookingLength": 0,
+	"NoReturnPolicy": 0,
+	"NoReturnPolicyAllResources": 0,
+	"NoReturnPolicyAllUsers": 0,
+	"RejectWithMessage": "0",
+	"OnlyForMembers": true,
+}
+
+```
 
 
 {% api-method method="delete" host="https://spaces.nexudus.com/api" path="/spaces/resourceaccessrules/:id" %}

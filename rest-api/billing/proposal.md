@@ -315,11 +315,11 @@ You can also use range query parameters for all date, integer and decimal proper
 
 {% api-method method="get" host="https://spaces.nexudus.com/api" path="/billing/proposals" %}
 {% api-method-summary %}
-By date range
+By date or number range
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Gets a list of proposals based on the date when they were created or updated.
+Gets a list of proposals based on a range of dates, integer or decimal properties.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -570,8 +570,6 @@ application/json
 {% endapi-method-parameter %}
 {% api-method-parameter name="DiscountCodeId" type="int" required=false %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="SentOn" type="DateTime?" required=false %}
-{% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 
 {% endapi-method-request %}
@@ -647,6 +645,29 @@ _This response is an example, errors and messages will follow this structure but
 {% endapi-method %}
 
 > 🔒 Requires user role `proposal-create`
+
+```javascript
+{
+	"IssuedBy": 12345678,
+	"Responsible": 12345678,
+	"Coworker": 12345678,
+	"Reference": "00001",
+	"Notes": "Notes",
+	"ProposalStatus": Nexudus.Coworking.Core.Enums.eProposalStatus.Draft,
+	"DocumentToSend": 12345678,
+	"DocumentToSign": 12345678,
+	"DocumentToSignHtml": "",
+	"DocumentToSendHtml": "",
+	"Tariff": 12345678,
+	"Price": false,
+	"StartDate": null,
+	"CancellationDate": null,
+	"BillingDay": 1,
+	"Quantity": 1,
+	"DiscountCode": 12345678,
+}
+
+```
 
 {% api-method method="put" host="https://spaces.nexudus.com/api" path="/billing/proposals" %}
 {% api-method-summary %}
@@ -769,6 +790,22 @@ _This response is an example, errors and messages will follow this structure but
 {% endapi-method %}
 
 > 🔒 Requires user role `proposal-edit`
+
+```javascript
+{
+	"IssuedBy": 12345678,
+	"Responsible": 12345678,
+	"Coworker": 12345678,
+	"Reference": "00001",
+	"Notes": "Notes",
+	"ProposalStatus": Nexudus.Coworking.Core.Enums.eProposalStatus.Draft,
+	"DocumentToSend": 12345678,
+	"DocumentToSign": 12345678,
+	"DocumentToSignHtml": "",
+	"DocumentToSendHtml": "",
+}
+
+```
 
 
 {% api-method method="delete" host="https://spaces.nexudus.com/api" path="/billing/proposals/:id" %}

@@ -304,11 +304,11 @@ You can also use range query parameters for all date, integer and decimal proper
 
 {% api-method method="get" host="https://spaces.nexudus.com/api" path="/crm/crmboardcolumns" %}
 {% api-method-summary %}
-By date range
+By date or number range
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Gets a list of crmboardcolumns based on the date when they were created or updated.
+Gets a list of crmboardcolumns based on a range of dates, integer or decimal properties.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -611,6 +611,31 @@ _This response is an example, errors and messages will follow this structure but
 
 > 🔒 Requires user role `crmboardcolumn-create`
 
+```javascript
+{
+	"CrmBoard": 12345678,
+	"Name": "Joe",
+	"Position": 1,
+	"TourRequests": true,
+	"ToursConfirmed": true,
+	"TourCompleted": true,
+	"SignUps": true,
+	"Bookings": true,
+	"Cancellations": true,
+	"ProposalsSent": true,
+	"ProposalsAccepted": true,
+	"DocumentsSigned": true,
+	"EventRegistrations": true,
+	"ContactMessages": true,
+	"CannedResponse": 12345678,
+	"TaskList": 12345678,
+	"ActivateAccount": true,
+	"DeactivateAccount": false,
+	"ConfirmTour": false,
+}
+
+```
+
 {% api-method method="put" host="https://spaces.nexudus.com/api" path="/crm/crmboardcolumns" %}
 {% api-method-summary %}
 Update
@@ -750,6 +775,31 @@ _This response is an example, errors and messages will follow this structure but
 {% endapi-method %}
 
 > 🔒 Requires user role `crmboardcolumn-edit`
+
+```javascript
+{
+	"CrmBoard": 12345678,
+	"Name": "Joe",
+	"Position": 1,
+	"TourRequests": true,
+	"ToursConfirmed": true,
+	"TourCompleted": true,
+	"SignUps": true,
+	"Bookings": true,
+	"Cancellations": true,
+	"ProposalsSent": true,
+	"ProposalsAccepted": true,
+	"DocumentsSigned": true,
+	"EventRegistrations": true,
+	"ContactMessages": true,
+	"CannedResponse": 12345678,
+	"TaskList": 12345678,
+	"ActivateAccount": true,
+	"DeactivateAccount": false,
+	"ConfirmTour": false,
+}
+
+```
 
 
 {% api-method method="delete" host="https://spaces.nexudus.com/api" path="/crm/crmboardcolumns/:id" %}

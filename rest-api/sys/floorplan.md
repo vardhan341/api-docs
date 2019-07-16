@@ -205,11 +205,11 @@ You can also use range query parameters for all date, integer and decimal proper
 
 {% api-method method="get" host="https://spaces.nexudus.com/api" path="/sys/floorplans" %}
 {% api-method-summary %}
-By date range
+By date or number range
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Gets a list of floorplans based on the date when they were created or updated.
+Gets a list of floorplans based on a range of dates, integer or decimal properties.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -482,6 +482,19 @@ _This response is an example, errors and messages will follow this structure but
 
 > 🔒 Requires user role `floorplan-create`
 
+```javascript
+{
+	"Business": 12345678,
+	"Name": "00001",
+	"DisplayBackground": 1,
+	"BackgroundScale": 1,
+	"PositionX": 1,
+	"PositionY": 1,
+	"Scale": 1,
+}
+
+```
+
 {% api-method method="put" host="https://spaces.nexudus.com/api" path="/sys/floorplans" %}
 {% api-method-summary %}
 Update
@@ -597,6 +610,19 @@ _This response is an example, errors and messages will follow this structure but
 {% endapi-method %}
 
 > 🔒 Requires user role `floorplan-edit`
+
+```javascript
+{
+	"Business": 12345678,
+	"Name": "00001",
+	"DisplayBackground": 1,
+	"BackgroundScale": 1,
+	"PositionX": 1,
+	"PositionY": 1,
+	"Scale": 1,
+}
+
+```
 
 
 {% api-method method="delete" host="https://spaces.nexudus.com/api" path="/sys/floorplans/:id" %}

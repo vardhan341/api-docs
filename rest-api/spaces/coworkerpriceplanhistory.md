@@ -209,11 +209,11 @@ You can also use range query parameters for all date, integer and decimal proper
 
 {% api-method method="get" host="https://spaces.nexudus.com/api" path="/spaces/coworkerpriceplanhistories" %}
 {% api-method-summary %}
-By date range
+By date or number range
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Gets a list of coworkerpriceplanhistories based on the date when they were created or updated.
+Gets a list of coworkerpriceplanhistories based on a range of dates, integer or decimal properties.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -494,6 +494,21 @@ _This response is an example, errors and messages will follow this structure but
 
 > 🔒 Requires user role `coworkerpriceplanhistory-create`
 
+```javascript
+{
+	"Coworker": 12345678,
+	"OldTariffName": "Old Price Plan",
+	"NewTariffName": "New Price Plan",
+	"IsUpgrade": is upgrade,
+	"Notes": "Notes",
+	"OldValue": false,
+	"NewValue": false,
+	"OldQuantity": false,
+	"NewQuantity": false,
+}
+
+```
+
 {% api-method method="put" host="https://spaces.nexudus.com/api" path="/spaces/coworkerpriceplanhistories" %}
 {% api-method-summary %}
 Update
@@ -613,6 +628,21 @@ _This response is an example, errors and messages will follow this structure but
 {% endapi-method %}
 
 > 🔒 Requires user role `coworkerpriceplanhistory-edit`
+
+```javascript
+{
+	"Coworker": 12345678,
+	"OldTariffName": "Old Price Plan",
+	"NewTariffName": "New Price Plan",
+	"IsUpgrade": is upgrade,
+	"Notes": "Notes",
+	"OldValue": false,
+	"NewValue": false,
+	"OldQuantity": false,
+	"NewQuantity": false,
+}
+
+```
 
 
 ## Commands

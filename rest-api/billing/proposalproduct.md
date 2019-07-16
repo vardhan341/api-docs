@@ -217,11 +217,11 @@ You can also use range query parameters for all date, integer and decimal proper
 
 {% api-method method="get" host="https://spaces.nexudus.com/api" path="/billing/proposalproducts" %}
 {% api-method-summary %}
-By date range
+By date or number range
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Gets a list of proposalproducts based on the date when they were created or updated.
+Gets a list of proposalproducts based on a range of dates, integer or decimal properties.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -486,6 +486,20 @@ _This response is an example, errors and messages will follow this structure but
 
 > 🔒 Requires user role `proposalproduct-create`
 
+```javascript
+{
+	"Proposal": 12345678,
+	"Product": 12345678,
+	"Quantity": 1,
+	"Price": false,
+	"IsDeposit": false,
+	"RegularCharge": false,
+	"RepeatCycle": Nexudus.Coworking.Core.Enums.eRecurrentChargePattern.PricePlan,
+	"Notes": "Notes",
+}
+
+```
+
 {% api-method method="put" host="https://spaces.nexudus.com/api" path="/billing/proposalproducts" %}
 {% api-method-summary %}
 Update
@@ -603,6 +617,20 @@ _This response is an example, errors and messages will follow this structure but
 {% endapi-method %}
 
 > 🔒 Requires user role `proposalproduct-edit`
+
+```javascript
+{
+	"Proposal": 12345678,
+	"Product": 12345678,
+	"Quantity": 1,
+	"Price": false,
+	"IsDeposit": false,
+	"RegularCharge": false,
+	"RepeatCycle": Nexudus.Coworking.Core.Enums.eRecurrentChargePattern.PricePlan,
+	"Notes": "Notes",
+}
+
+```
 
 
 {% api-method method="delete" host="https://spaces.nexudus.com/api" path="/billing/proposalproducts/:id" %}
