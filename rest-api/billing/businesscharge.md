@@ -513,10 +513,6 @@ _This response is an example, errors and messages will follow this structure but
 	"DueDate": null,
 	"TotalAmount": 0,
 	"TaxAmount": 0,
-	"Invoiced": false,
-	"InvoicedOn": null,
-	"ApprovedByBusiness": false,
-	"ApprovedBySender": false,
 }
 
 ```
@@ -630,15 +626,7 @@ _This response is an example, errors and messages will follow this structure but
 ```javascript
 {
 	"Business": 12345678,
-	"Description": "Descripción",
 	"CallBackUrl": "Callback",
-	"DueDate": null,
-	"TotalAmount": 0,
-	"TaxAmount": 0,
-	"Invoiced": false,
-	"InvoicedOn": null,
-	"ApprovedByBusiness": false,
-	"ApprovedBySender": false,
 }
 
 ```
