@@ -421,14 +421,6 @@ application/json
 {% endapi-method-parameter %}
 {% api-method-parameter name="TaxAmount" type="decimal" required=true %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="Invoiced" type="bool" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="InvoicedOn" type="DateTime?" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="ApprovedByBusiness" type="bool" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="ApprovedBySender" type="bool" required=false %}
-{% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 
 {% endapi-method-request %}
