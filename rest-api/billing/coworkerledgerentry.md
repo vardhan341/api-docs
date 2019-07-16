@@ -596,7 +596,7 @@ _This response is an example, errors and messages will follow this structure but
 	"Code": "00001",
 	"Debit": 0,
 	"Credit": 0,
-	"PaymentGatewayName": Nexudus.Coworking.Core.Enums.ePaymentProvider.Manual,
+	"PaymentGatewayName": 1 (check Enumerated values section below),
 	"PaymentMethodNumber": "0",
 	"TransactionDate": 0,
 	"Balance": 0,
@@ -745,6 +745,8 @@ _This response is an example, errors and messages will follow this structure but
 }
 
 ```
+
+
 
 
 {% api-method method="delete" host="https://spaces.nexudus.com/api" path="/billing/coworkerledgerentries/:id" %}
@@ -965,6 +967,11 @@ _Commands also return a status 200 when they fail to process one or more of the 
 {% endapi-method %}
 
 > 🔒 Requires user role `coworkerledgerentry-edit`
+
+## Enumerated values
+
+#### PaymentGatewayName: Nexudus.Coworking.Core.Enums.ePaymentProvider?
+> GET /api/utils/enums?name=ePaymentProvider?
 
 ## Binary files
 
