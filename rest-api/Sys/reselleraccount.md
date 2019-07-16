@@ -84,6 +84,16 @@ application/json
 {% endapi-method-parameter %}
 
 
+{% api-method-parameter name="Notes" type="string" %}
+?ResellerAccount\_Notes=...
+{% endapi-method-parameter %}
+
+
+{% api-method-parameter name="ScopeOfWork" type="string" %}
+?ResellerAccount\_ScopeOfWork=...
+{% endapi-method-parameter %}
+
+
 {% api-method-parameter name="Reseller\_Currency_Id" type="string" %}
 ?ResellerAccount\_Reseller\_Currency_Id=...
 {% endapi-method-parameter %}
@@ -149,6 +159,8 @@ application/json
         "LastInvoiceAmount": ,
         "AverageInvoiceAmount": ,
         "CanManageAccount": false,
+        "Notes": "Joe",
+        "ScopeOfWork": "Joe",
     }],
     "CurrentPageSize": 25,
     "CurrentPage": 1,
@@ -231,6 +243,8 @@ size=25 \(maximum=1000\)
         "LastInvoiceAmount": ,
         "AverageInvoiceAmount": ,
         "CanManageAccount": false,
+        "Notes": "Joe",
+        "ScopeOfWork": "Joe",
     }],
     }],
     "CurrentPageSize": 25,
@@ -261,11 +275,11 @@ You can also use range query parameters for all date, integer and decimal proper
 
 {% api-method method="get" host="https://spaces.nexudus.com/api" path="/sys/reselleraccounts" %}
 {% api-method-summary %}
-By date range
+By date or number range
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Gets a list of reselleraccounts based on the date when they were created or updated.
+Gets a list of reselleraccounts based on a range of dates, integer or decimal properties.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -356,6 +370,8 @@ application/json
         "LastInvoiceAmount": ,
         "AverageInvoiceAmount": ,
         "CanManageAccount": false,
+        "Notes": "Joe",
+        "ScopeOfWork": "Joe",
     }],
     }],
     "CurrentPageSize": 25,
@@ -425,6 +441,8 @@ The ID of the reselleraccount to fetch.
         "LastInvoiceAmount": ,
         "AverageInvoiceAmount": ,
         "CanManageAccount": false,
+        "Notes": "Joe",
+        "ScopeOfWork": "Joe",
 }
 ```
 {% endapi-method-response-example %}
@@ -485,6 +503,10 @@ application/json
 {% api-method-parameter name="AverageInvoiceAmount" type="decimal?" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="CanManageAccount" type="bool" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Notes" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="ScopeOfWork" type="string" required=false %}
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 
@@ -587,6 +609,10 @@ application/json
 
 {% api-method-body-parameters %}
 The id of the reselleraccount to update
+{% api-method-parameter name="Notes" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="ScopeOfWork" type="string" required=false %}
+{% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
 

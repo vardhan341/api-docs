@@ -114,6 +114,26 @@ application/json
 {% endapi-method-parameter %}
 
 
+{% api-method-parameter name="TrackStock" type="bool" %}
+?Product\_TrackStock=...
+{% endapi-method-parameter %}
+
+
+{% api-method-parameter name="AllowNegativeStock" type="bool" %}
+?Product\_AllowNegativeStock=...
+{% endapi-method-parameter %}
+
+
+{% api-method-parameter name="CurrentStock" type="int?" %}
+?Product\_CurrentStock=...
+{% endapi-method-parameter %}
+
+
+{% api-method-parameter name="StockAlertLevel" type="int?" %}
+?Product\_StockAlertLevel=...
+{% endapi-method-parameter %}
+
+
 {% api-method-parameter name="Business\_Name" type="string" %}
 ?Product\_Business\_Name=...
 {% endapi-method-parameter %}
@@ -153,6 +173,10 @@ application/json
         "OnlyForMembers": true,
         "Archived": true,
         "Starred": true,
+        "TrackStock": false,
+        "AllowNegativeStock": false,
+        "CurrentStock": 0,
+        "StockAlertLevel": false,
     }],
     "CurrentPageSize": 25,
     "CurrentPage": 1,
@@ -241,6 +265,10 @@ size=25 \(maximum=1000\)
         "OnlyForMembers": true,
         "Archived": true,
         "Starred": true,
+        "TrackStock": false,
+        "AllowNegativeStock": false,
+        "CurrentStock": 0,
+        "StockAlertLevel": false,
     }],
     }],
     "CurrentPageSize": 25,
@@ -319,6 +347,18 @@ application/json
 {% api-method-parameter name="Price" type="decimal" required=false %}
 ?to\_Product\_Price=...
 {% endapi-method-parameter %}
+{% api-method-parameter name="CurrentStock" type="int" required=false %}
+?from\_Product\_CurrentStock=...
+{% endapi-method-parameter %}
+{% api-method-parameter name="CurrentStock" type="int" required=false %}
+?to\_Product\_CurrentStock=...
+{% endapi-method-parameter %}
+{% api-method-parameter name="StockAlertLevel" type="int" required=false %}
+?from\_Product\_StockAlertLevel=...
+{% endapi-method-parameter %}
+{% api-method-parameter name="StockAlertLevel" type="int" required=false %}
+?to\_Product\_StockAlertLevel=...
+{% endapi-method-parameter %}
 
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
@@ -348,6 +388,10 @@ application/json
         "OnlyForMembers": true,
         "Archived": true,
         "Starred": true,
+        "TrackStock": false,
+        "AllowNegativeStock": false,
+        "CurrentStock": 0,
+        "StockAlertLevel": false,
     }],
     }],
     "CurrentPageSize": 25,
@@ -423,6 +467,10 @@ The ID of the product to fetch.
         "OnlyForMembers": true,
         "Archived": true,
         "Starred": true,
+        "TrackStock": false,
+        "AllowNegativeStock": false,
+        "CurrentStock": 0,
+        "StockAlertLevel": false,
 }
 ```
 {% endapi-method-response-example %}
@@ -495,6 +543,14 @@ application/json
 {% api-method-parameter name="Archived" type="bool" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="Starred" type="bool" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="TrackStock" type="bool" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="AllowNegativeStock" type="bool" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="CurrentStock" type="int?" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="StockAlertLevel" type="int?" required=false %}
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 
@@ -628,6 +684,12 @@ The id of the product to update
 {% api-method-parameter name="Archived" type="bool" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="Starred" type="bool" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="TrackStock" type="bool" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="AllowNegativeStock" type="bool" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="StockAlertLevel" type="int?" required=false %}
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}

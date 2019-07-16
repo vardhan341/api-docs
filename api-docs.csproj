@@ -115,6 +115,10 @@
     <None Include="rest-api\content\README.md" />
     <None Include="rest-api\content\subscriberactivity.md" />
     <None Include="rest-api\content\subscribergroup.md" />
+    <None Include="rest-api\content\survey.md" />
+    <None Include="rest-api\content\surveyanswer.md" />
+    <None Include="rest-api\content\surveyquestion.md" />
+    <None Include="rest-api\content\surveyrun.md" />
     <None Include="rest-api\content\videofile.md" />
     <None Include="rest-api\crm\cannedresponse.md" />
     <None Include="rest-api\crm\coworkertask.md" />

@@ -64,8 +64,23 @@ application/json
 {% endapi-method-parameter %}
 
 
+{% api-method-parameter name="DocumentToSend" type="DocumentTemplate" %}
+?Proposal\_DocumentToSend=...
+{% endapi-method-parameter %}
+
+
 {% api-method-parameter name="DocumentToSign" type="DocumentTemplate" %}
 ?Proposal\_DocumentToSign=...
+{% endapi-method-parameter %}
+
+
+{% api-method-parameter name="DocumentToSignHtml" type="string" %}
+?Proposal\_DocumentToSignHtml=...
+{% endapi-method-parameter %}
+
+
+{% api-method-parameter name="DocumentToSendHtml" type="string" %}
+?Proposal\_DocumentToSendHtml=...
 {% endapi-method-parameter %}
 
 
@@ -168,7 +183,10 @@ application/json
         "Reference": "00001",
         "Notes": "Notes",
         "ProposalStatus": Nexudus.Coworking.Core.Enums.eProposalStatus.Draft,
+        "DocumentToSend": null,
         "DocumentToSign": null,
+        "DocumentToSignHtml": "",
+        "DocumentToSendHtml": "",
         "Tariff": null,
         "Price": false,
         "StartDate": null,
@@ -255,7 +273,10 @@ size=25 \(maximum=1000\)
         "Reference": "00001",
         "Notes": "Notes",
         "ProposalStatus": Nexudus.Coworking.Core.Enums.eProposalStatus.Draft,
+        "DocumentToSend": null,
         "DocumentToSign": null,
+        "DocumentToSignHtml": "",
+        "DocumentToSendHtml": "",
         "Tariff": null,
         "Price": false,
         "StartDate": null,
@@ -385,7 +406,10 @@ application/json
         "Reference": "00001",
         "Notes": "Notes",
         "ProposalStatus": Nexudus.Coworking.Core.Enums.eProposalStatus.Draft,
+        "DocumentToSend": null,
         "DocumentToSign": null,
+        "DocumentToSignHtml": "",
+        "DocumentToSendHtml": "",
         "Tariff": null,
         "Price": false,
         "StartDate": null,
@@ -459,7 +483,10 @@ The ID of the proposal to fetch.
         "Reference": "00001",
         "Notes": "Notes",
         "ProposalStatus": Nexudus.Coworking.Core.Enums.eProposalStatus.Draft,
+        "DocumentToSend": null,
         "DocumentToSign": null,
+        "DocumentToSignHtml": "",
+        "DocumentToSendHtml": "",
         "Tariff": null,
         "Price": false,
         "StartDate": null,
@@ -521,7 +548,13 @@ application/json
 {% endapi-method-parameter %}
 {% api-method-parameter name="ProposalStatus" type="enum" required=false %}
 {% endapi-method-parameter %}
+{% api-method-parameter name="DocumentToSendId" type="int" required=false %}
+{% endapi-method-parameter %}
 {% api-method-parameter name="DocumentToSignId" type="int" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="DocumentToSignHtml" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="DocumentToSendHtml" type="string" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="TariffId" type="int" required=true %}
 {% endapi-method-parameter %}
@@ -652,7 +685,13 @@ The id of the proposal to update
 {% endapi-method-parameter %}
 {% api-method-parameter name="ProposalStatus" type="enum" required=false %}
 {% endapi-method-parameter %}
+{% api-method-parameter name="DocumentToSendId" type="int" required=false %}
+{% endapi-method-parameter %}
 {% api-method-parameter name="DocumentToSignId" type="int" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="DocumentToSignHtml" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="DocumentToSendHtml" type="string" required=false %}
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
@@ -955,6 +994,90 @@ _Commands also return a status 200 when they fail to process one or more of the 
 
 The following endpoints return binary data. Check the `ContentType` header to understand the type of file being returned in the response stream.
 
+{% api-method method="get" host="https://spaces.nexudus.com/api" path="/billing/proposals/getdocumenttosignbinarydocument/:id" %}
+{% api-method-summary %}
+DocumentToSignBinaryDocument
+{% endapi-method-summary %}
+
+{% api-method-description %}
+
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+Basic Authentication token. Base64 encoding of 'username:password'.
+{% endapi-method-parameter %}
+{% api-method-parameter name="Content" type="string" required=true %}
+application/json
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+
+{% api-method-path-parameters %}
+{% api-method-parameter name="id" type="integer" required=true %}
+The id of the Proposal to get the documenttosignbinarydocument for.
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```javascript
+Binary stream or null
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+{% api-method method="get" host="https://spaces.nexudus.com/api" path="/billing/proposals/getdocumenttosendbinarydocument/:id" %}
+{% api-method-summary %}
+DocumentToSendBinaryDocument
+{% endapi-method-summary %}
+
+{% api-method-description %}
+
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+Basic Authentication token. Base64 encoding of 'username:password'.
+{% endapi-method-parameter %}
+{% api-method-parameter name="Content" type="string" required=true %}
+application/json
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+
+{% api-method-path-parameters %}
+{% api-method-parameter name="id" type="integer" required=true %}
+The id of the Proposal to get the documenttosendbinarydocument for.
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```javascript
+Binary stream or null
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
 {% api-method method="get" host="https://spaces.nexudus.com/api" path="/billing/proposals/getproposalfile/:id" %}
 {% api-method-summary %}
 ProposalFile
@@ -1002,6 +1125,7 @@ Binary stream or null
 * [Business](../sys/business.md)
 * [User](../sys/user.md)
 * [Coworker](../spaces/coworker.md)
+* [DocumentTemplate](../crm/documenttemplate.md)
 * [DocumentTemplate](../crm/documenttemplate.md)
 * [Tariff](../billing/tariff.md)
 * [DiscountCode](../billing/discountcode.md)

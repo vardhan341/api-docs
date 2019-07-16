@@ -1,10 +1,10 @@
-﻿{% api-method method="get" host="https://spaces.nexudus.com/api" path="/billing/invoices" %}
+﻿{% api-method method="get" host="https://spaces.nexudus.com/api" path="/content/surveyanswers" %}
 {% api-method-summary %}
 Find
 {% endapi-method-summary %}
 
 {% api-method-description %}
-This endpoint allows you to GET a list of invoices based on one or more filter querystring parameters.
+This endpoint allows you to GET a list of surveyanswers based on one or more filter querystring parameters.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -30,127 +30,32 @@ application/json
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="SystemId" type="string" %}
-?Invoice\_SystemId=...
+?SurveyAnswer\_SystemId=...
 {% endapi-method-parameter %}
 
 
-{% api-method-parameter name="Business" type="Business" %}
-?Invoice\_Business=...
+{% api-method-parameter name="SurveyRun" type="SurveyRun" %}
+?SurveyAnswer\_SurveyRun=...
 {% endapi-method-parameter %}
 
 
-{% api-method-parameter name="InvoiceNumber" type="string" %}
-?Invoice\_InvoiceNumber=...
+{% api-method-parameter name="SurveyQuestion" type="SurveyQuestion" %}
+?SurveyAnswer\_SurveyQuestion=...
 {% endapi-method-parameter %}
 
 
-{% api-method-parameter name="BillToName" type="string" %}
-?Invoice\_BillToName=...
+{% api-method-parameter name="Value" type="string" %}
+?SurveyAnswer\_Value=...
 {% endapi-method-parameter %}
 
 
-{% api-method-parameter name="BillToAddress" type="string" %}
-?Invoice\_BillToAddress=...
+{% api-method-parameter name="SurveyQuestion\_Text" type="string" %}
+?SurveyAnswer\_SurveyQuestion\_Text=...
 {% endapi-method-parameter %}
 
 
-{% api-method-parameter name="BillToCity" type="string" %}
-?Invoice\_BillToCity=...
-{% endapi-method-parameter %}
-
-
-{% api-method-parameter name="BillToTaxIDNumber" type="string" %}
-?Invoice\_BillToTaxIDNumber=...
-{% endapi-method-parameter %}
-
-
-{% api-method-parameter name="BillToPostCode" type="string" %}
-?Invoice\_BillToPostCode=...
-{% endapi-method-parameter %}
-
-
-{% api-method-parameter name="BillToPhone" type="string" %}
-?Invoice\_BillToPhone=...
-{% endapi-method-parameter %}
-
-
-{% api-method-parameter name="BillToFax" type="string" %}
-?Invoice\_BillToFax=...
-{% endapi-method-parameter %}
-
-
-{% api-method-parameter name="BillToCountry" type="Country" %}
-?Invoice\_BillToCountry=...
-{% endapi-method-parameter %}
-
-
-{% api-method-parameter name="Description" type="string" %}
-?Invoice\_Description=...
-{% endapi-method-parameter %}
-
-
-{% api-method-parameter name="DiscountAmount" type="decimal" %}
-?Invoice\_DiscountAmount=...
-{% endapi-method-parameter %}
-
-
-{% api-method-parameter name="DueDate" type="DateTime?" %}
-?Invoice\_DueDate=...
-{% endapi-method-parameter %}
-
-
-{% api-method-parameter name="InvoiceFromDate" type="DateTime?" %}
-?Invoice\_InvoiceFromDate=...
-{% endapi-method-parameter %}
-
-
-{% api-method-parameter name="InvoiceToDate" type="DateTime?" %}
-?Invoice\_InvoiceToDate=...
-{% endapi-method-parameter %}
-
-
-{% api-method-parameter name="TotalAmount" type="decimal" %}
-?Invoice\_TotalAmount=...
-{% endapi-method-parameter %}
-
-
-{% api-method-parameter name="Currency" type="Currency" %}
-?Invoice\_Currency=...
-{% endapi-method-parameter %}
-
-
-{% api-method-parameter name="TaxAmount" type="decimal" %}
-?Invoice\_TaxAmount=...
-{% endapi-method-parameter %}
-
-
-{% api-method-parameter name="Paid" type="bool" %}
-?Invoice\_Paid=...
-{% endapi-method-parameter %}
-
-
-{% api-method-parameter name="PaidOn" type="DateTime?" %}
-?Invoice\_PaidOn=...
-{% endapi-method-parameter %}
-
-
-{% api-method-parameter name="CustomData" type="string" %}
-?Invoice\_CustomData=...
-{% endapi-method-parameter %}
-
-
-{% api-method-parameter name="PaymentAttemptsCount" type="int" %}
-?Invoice\_PaymentAttemptsCount=...
-{% endapi-method-parameter %}
-
-
-{% api-method-parameter name="BillToCountry\_Name" type="string" %}
-?Invoice\_BillToCountry\_Name=...
-{% endapi-method-parameter %}
-
-
-{% api-method-parameter name="Currency\_Code" type="string" %}
-?Invoice\_Currency\_Code=...
+{% api-method-parameter name="SurveyQuestion\_Survey_Name" type="string" %}
+?SurveyAnswer\_SurveyQuestion\_Survey_Name=...
 {% endapi-method-parameter %}
 
 
@@ -164,28 +69,9 @@ application/json
 ```javascript
 {
     "Records": [{
-        "Business": null,
-        "InvoiceNumber": "00001",
-        "BillToName": "BillToName",
-        "BillToAddress": "BillToAddress",
-        "BillToCity": "BillToCity",
-        "BillToTaxIDNumber": "123456",
-        "BillToPostCode": "BillToPostCode",
-        "BillToPhone": "BillToPhone",
-        "BillToFax": "BillToFax",
-        "BillToCountry": null,
-        "Description": "[DataType(DataType.MultilineText)]",
-        "DiscountAmount": 0,
-        "DueDate": null,
-        "InvoiceFromDate": null,
-        "InvoiceToDate": null,
-        "TotalAmount": 0,
-        "Currency": null,
-        "TaxAmount": 0,
-        "Paid": false,
-        "PaidOn": null,
-        "CustomData": "null",
-        "PaymentAttemptsCount": null,
+        "SurveyRun": null,
+        "SurveyQuestion": null,
+        "Value": "",
     }],
     "CurrentPageSize": 25,
     "CurrentPage": 1,
@@ -207,15 +93,15 @@ application/json
 {% endapi-method-spec %}
 {% endapi-method %}
 
-> 🔒 Requires user role `invoice-list`
+> 🔒 Requires user role `surveyanswer-list`
 
-{% api-method method="get" host="https://spaces.nexudus.com/api" path="/billing/invoices" %}
+{% api-method method="get" host="https://spaces.nexudus.com/api" path="/content/surveyanswers" %}
 {% api-method-summary %}
 List
 {% endapi-method-summary %}
 
 {% api-method-description %}
-This endpoint allows you to GET a list of invoices.
+This endpoint allows you to GET a list of surveyanswers.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -258,28 +144,9 @@ size=25 \(maximum=1000\)
 ```javascript
 {
     "Records": [{
-        "Business": null,
-        "InvoiceNumber": "00001",
-        "BillToName": "BillToName",
-        "BillToAddress": "BillToAddress",
-        "BillToCity": "BillToCity",
-        "BillToTaxIDNumber": "123456",
-        "BillToPostCode": "BillToPostCode",
-        "BillToPhone": "BillToPhone",
-        "BillToFax": "BillToFax",
-        "BillToCountry": null,
-        "Description": "[DataType(DataType.MultilineText)]",
-        "DiscountAmount": 0,
-        "DueDate": null,
-        "InvoiceFromDate": null,
-        "InvoiceToDate": null,
-        "TotalAmount": 0,
-        "Currency": null,
-        "TaxAmount": 0,
-        "Paid": false,
-        "PaidOn": null,
-        "CustomData": "null",
-        "PaymentAttemptsCount": null,
+        "SurveyRun": null,
+        "SurveyQuestion": null,
+        "Value": "",
     }],
     }],
     "CurrentPageSize": 25,
@@ -301,20 +168,20 @@ size=25 \(maximum=1000\)
 {% endapi-method-spec %}
 {% endapi-method %}
 
-> 🔒 Requires user role `invoice-list`
+> 🔒 Requires user role `surveyanswer-list`
 
 {% hint style="info" %}
 You can also get a list of records based when they were created or updated. This is useful if you want to get a list of records created after or before a particular point in time. 
 You can also use range query parameters for all date, integer and decimal properties.
 {% endhint %}
 
-{% api-method method="get" host="https://spaces.nexudus.com/api" path="/billing/invoices" %}
+{% api-method method="get" host="https://spaces.nexudus.com/api" path="/content/surveyanswers" %}
 {% api-method-summary %}
 By date or number range
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Gets a list of invoices based on a range of dates, integer or decimal properties.
+Gets a list of surveyanswers based on a range of dates, integer or decimal properties.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -331,69 +198,21 @@ application/json
 
 {% api-method-query-parameters %}
 {% api-method-parameter name="CreatedOn" type="object" required=false %}
-?to\_Invoice\_CreatedOn=...
+?to\_SurveyAnswer\_CreatedOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="CreatedOn" type="object" required=false %}
-?from\_Invoice\_CreatedOn=...
+?from\_SurveyAnswer\_CreatedOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="UpdatedOn" type="object" required=false %}
-?to\_Invoice\_UpdatedOn=...
+?to\_SurveyAnswer\_UpdatedOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="UpdatedOn" type="object" required=false %}
-?from\_Invoice\_UpdatedOn=...
+?from\_SurveyAnswer\_UpdatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="DiscountAmount" type="decimal" required=false %}
-?from\_Invoice\_DiscountAmount=...
-{% endapi-method-parameter %}
-{% api-method-parameter name="DiscountAmount" type="decimal" required=false %}
-?to\_Invoice\_DiscountAmount=...
-{% endapi-method-parameter %}
-{% api-method-parameter name="DueDate" type="datetime" required=false %}
-?from\_Invoice\_DueDate=...
-{% endapi-method-parameter %}
-{% api-method-parameter name="DueDate" type="datetime" required=false %}
-?to\_Invoice\_DueDate=...
-{% endapi-method-parameter %}
-{% api-method-parameter name="InvoiceFromDate" type="datetime" required=false %}
-?from\_Invoice\_InvoiceFromDate=...
-{% endapi-method-parameter %}
-{% api-method-parameter name="InvoiceFromDate" type="datetime" required=false %}
-?to\_Invoice\_InvoiceFromDate=...
-{% endapi-method-parameter %}
-{% api-method-parameter name="InvoiceToDate" type="datetime" required=false %}
-?from\_Invoice\_InvoiceToDate=...
-{% endapi-method-parameter %}
-{% api-method-parameter name="InvoiceToDate" type="datetime" required=false %}
-?to\_Invoice\_InvoiceToDate=...
-{% endapi-method-parameter %}
-{% api-method-parameter name="TotalAmount" type="decimal" required=false %}
-?from\_Invoice\_TotalAmount=...
-{% endapi-method-parameter %}
-{% api-method-parameter name="TotalAmount" type="decimal" required=false %}
-?to\_Invoice\_TotalAmount=...
-{% endapi-method-parameter %}
-{% api-method-parameter name="TaxAmount" type="decimal" required=false %}
-?from\_Invoice\_TaxAmount=...
-{% endapi-method-parameter %}
-{% api-method-parameter name="TaxAmount" type="decimal" required=false %}
-?to\_Invoice\_TaxAmount=...
-{% endapi-method-parameter %}
-{% api-method-parameter name="PaidOn" type="datetime" required=false %}
-?from\_Invoice\_PaidOn=...
-{% endapi-method-parameter %}
-{% api-method-parameter name="PaidOn" type="datetime" required=false %}
-?to\_Invoice\_PaidOn=...
-{% endapi-method-parameter %}
-{% api-method-parameter name="PaymentAttemptsCount" type="int" required=false %}
-?from\_Invoice\_PaymentAttemptsCount=...
-{% endapi-method-parameter %}
-{% api-method-parameter name="PaymentAttemptsCount" type="int" required=false %}
-?to\_Invoice\_PaymentAttemptsCount=...
-{% endapi-method-parameter %}
 
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
@@ -407,28 +226,9 @@ application/json
 ```javascript
 {
     "Records": [{
-        "Business": null,
-        "InvoiceNumber": "00001",
-        "BillToName": "BillToName",
-        "BillToAddress": "BillToAddress",
-        "BillToCity": "BillToCity",
-        "BillToTaxIDNumber": "123456",
-        "BillToPostCode": "BillToPostCode",
-        "BillToPhone": "BillToPhone",
-        "BillToFax": "BillToFax",
-        "BillToCountry": null,
-        "Description": "[DataType(DataType.MultilineText)]",
-        "DiscountAmount": 0,
-        "DueDate": null,
-        "InvoiceFromDate": null,
-        "InvoiceToDate": null,
-        "TotalAmount": 0,
-        "Currency": null,
-        "TaxAmount": 0,
-        "Paid": false,
-        "PaidOn": null,
-        "CustomData": "null",
-        "PaymentAttemptsCount": null,
+        "SurveyRun": null,
+        "SurveyQuestion": null,
+        "Value": "",
     }],
     }],
     "CurrentPageSize": 25,
@@ -450,15 +250,15 @@ application/json
 {% endapi-method-spec %}
 {% endapi-method %}
 
-> 🔒 Requires user role `invoice-list`
+> 🔒 Requires user role `surveyanswer-list`
 
-{% api-method method="get" host="https://spaces.nexudus.com/api" path="/billing/invoices/:id" %}
+{% api-method method="get" host="https://spaces.nexudus.com/api" path="/content/surveyanswers/:id" %}
 {% api-method-summary %}
 One by Id
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Gets one invoice record.
+Gets one surveyanswer record.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -475,7 +275,7 @@ application/json
 
 {% api-method-path-parameters %}
 {% api-method-parameter name="id" type="integer" required=true %}
-The ID of the invoice to fetch.
+The ID of the surveyanswer to fetch.
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
 {% endapi-method-request %}
@@ -488,28 +288,9 @@ The ID of the invoice to fetch.
 
 ```javascript
 {
-        "Business": null,
-        "InvoiceNumber": "00001",
-        "BillToName": "BillToName",
-        "BillToAddress": "BillToAddress",
-        "BillToCity": "BillToCity",
-        "BillToTaxIDNumber": "123456",
-        "BillToPostCode": "BillToPostCode",
-        "BillToPhone": "BillToPhone",
-        "BillToFax": "BillToFax",
-        "BillToCountry": null,
-        "Description": "[DataType(DataType.MultilineText)]",
-        "DiscountAmount": 0,
-        "DueDate": null,
-        "InvoiceFromDate": null,
-        "InvoiceToDate": null,
-        "TotalAmount": 0,
-        "Currency": null,
-        "TaxAmount": 0,
-        "Paid": false,
-        "PaidOn": null,
-        "CustomData": "null",
-        "PaymentAttemptsCount": null,
+        "SurveyRun": null,
+        "SurveyQuestion": null,
+        "Value": "",
 }
 ```
 {% endapi-method-response-example %}
@@ -527,15 +308,15 @@ The ID of the invoice to fetch.
 {% endapi-method-spec %}
 {% endapi-method %}
 
-> 🔒 Requires user role `invoice-read`
+> 🔒 Requires user role `surveyanswer-read`
 
-{% api-method method="post" host="https://spaces.nexudus.com/api" path="/billing/invoices" %}
+{% api-method method="post" host="https://spaces.nexudus.com/api" path="/content/surveyanswers" %}
 {% api-method-summary %}
 Create
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Creates a new invoice.
+Creates a new surveyanswer.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -551,49 +332,11 @@ application/json
 {% endapi-method-headers %}
 
 {% api-method-body-parameters %}
-{% api-method-parameter name="BusinessId" type="int" required=true %}
+{% api-method-parameter name="SurveyRunId" type="int" required=false %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="InvoiceNumber" type="string" required=true %}
+{% api-method-parameter name="SurveyQuestionId" type="int" required=true %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="BillToName" type="string" required=true %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="BillToAddress" type="string" required=true %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="BillToCity" type="string" required=true %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="BillToTaxIDNumber" type="string" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="BillToPostCode" type="string" required=true %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="BillToPhone" type="string" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="BillToFax" type="string" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="BillToCountryId" type="int" required=true %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="Description" type="string" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="DiscountAmount" type="decimal" required=true %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="DueDate" type="DateTime?" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="InvoiceFromDate" type="DateTime?" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="InvoiceToDate" type="DateTime?" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="TotalAmount" type="decimal" required=true %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="CurrencyId" type="int" required=true %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="TaxAmount" type="decimal" required=true %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="Paid" type="bool" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="PaidOn" type="DateTime?" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="CustomData" type="string" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="PaymentAttemptsCount" type="int" required=true %}
+{% api-method-parameter name="Value" type="string" required=false %}
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 
@@ -669,17 +412,17 @@ _This response is an example, errors and messages will follow this structure but
 {% endapi-method-spec %}
 {% endapi-method %}
 
-> 🔒 Requires user role `invoice-create`
+> 🔒 Requires user role `surveyanswer-create`
 
-{% api-method method="put" host="https://spaces.nexudus.com/api" path="/billing/invoices" %}
+{% api-method method="put" host="https://spaces.nexudus.com/api" path="/content/surveyanswers" %}
 {% api-method-summary %}
 Update
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Updates and existing invoice.
+Updates and existing surveyanswer.
   
-Required User Role: `invoice-edit`
+Required User Role: `surveyanswer-edit`
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -695,24 +438,12 @@ application/json
 {% endapi-method-headers %}
 
 {% api-method-body-parameters %}
-The id of the invoice to update
-{% api-method-parameter name="BusinessId" type="int" required=true %}
+The id of the surveyanswer to update
+{% api-method-parameter name="SurveyRunId" type="int" required=false %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="BillToName" type="string" required=true %}
+{% api-method-parameter name="SurveyQuestionId" type="int" required=true %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="BillToAddress" type="string" required=true %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="BillToCity" type="string" required=true %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="BillToTaxIDNumber" type="string" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="BillToPostCode" type="string" required=true %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="BillToPhone" type="string" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="BillToFax" type="string" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="BillToCountryId" type="int" required=true %}
+{% api-method-parameter name="Value" type="string" required=false %}
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
@@ -789,12 +520,92 @@ _This response is an example, errors and messages will follow this structure but
 {% endapi-method-spec %}
 {% endapi-method %}
 
-> 🔒 Requires user role `invoice-edit`
+> 🔒 Requires user role `surveyanswer-edit`
+
+
+{% api-method method="delete" host="https://spaces.nexudus.com/api" path="/content/surveyanswers/:id" %}
+{% api-method-summary %}
+Delete
+{% endapi-method-summary %}
+
+{% api-method-description %}
+Deletes a surveyanswer.  
+  
+Required User Roles: `surveyanswer-delete`
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+Basic Authentication token. Base64 encoding of 'username:password'.
+{% endapi-method-parameter %}
+{% api-method-parameter name="Content" type="string" required=true %}
+application/json
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+
+{% api-method-path-parameters %}
+{% api-method-parameter name="Id" type="integer" required=false %}
+
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```javascript
+{
+    "Status": 200,
+    "WasSuccessful": true,
+    "Message": "The record was deleted successfully.",
+    "Value": null,
+    "OpenInDialog": false,
+    "RedirectURL": null,
+    "JavaScript": null,
+    "Errors": null
+}
+```
+{% endapi-method-response-example %}
+
+{% api-method-response-example httpCode=404 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```
+"Not found"
+```
+{% endapi-method-response-example %}
+
+{% api-method-response-example httpCode=500 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```javascript
+{
+    "Message": "An error has occurred."
+}
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+
+
+> 🔒 Requires user role `surveyanswer-delete`
 
 
 ## Commands
 
-Commands allow to perform actions against one or more invoice records. Some commands accept only one record while others can run an action for a number of records at the same time.  Each command has metadata with information about how it can be used and the amount of records, if any, it needs to run.
+Commands allow to perform actions against one or more surveyanswer records. Some commands accept only one record while others can run an action for a number of records at the same time.  Each command has metadata with information about how it can be used and the amount of records, if any, it needs to run.
 
 > ```javascript
 > {
@@ -805,13 +616,13 @@ Commands allow to perform actions against one or more invoice records. Some comm
 > }
 > ```
 
-{% api-method method="get" host="https://spaces.nexudus.com/api" path="/billing/invoices/commands" %}
+{% api-method method="get" host="https://spaces.nexudus.com/api" path="/content/surveyanswers/commands" %}
 {% api-method-summary %}
 Commands
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Get all commands available to run for invoice records.
+Get all commands available to run for surveyanswer records.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -863,7 +674,7 @@ _This response is an example._
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="get" host="https://spaces.nexudus.com/api" path="/billing/invoices/runcommand" %}
+{% api-method method="get" host="https://spaces.nexudus.com/api" path="/content/surveyanswers/runcommand" %}
 {% api-method-summary %}
 Run Command
 {% endapi-method-summary %}
@@ -929,7 +740,7 @@ _Commands also return a status 200 when they fail to process one or more of the 
 {% endapi-method-spec %}
 {% endapi-method %}
 
-> 🔒 Requires user role `invoice-edit`
+> 🔒 Requires user role `surveyanswer-edit`
 
 ## Binary files
 
@@ -937,6 +748,5 @@ The following endpoints return binary data. Check the `ContentType` header to un
 
 
 ## Related Entities
-* [Business](../sys/business.md)
-* [Country](../sys/country.md)
-* [Currency](../sys/currency.md)
+* [SurveyRun](../content/surveyrun.md)
+* [SurveyQuestion](../content/surveyquestion.md)
