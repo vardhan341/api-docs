@@ -69,6 +69,11 @@ application/json
 {% endapi-method-parameter %}
 
 
+{% api-method-parameter name="ClosedOn" type="DateTime?" %}
+?HelpDeskMessage\_ClosedOn=...
+{% endapi-method-parameter %}
+
+
 {% api-method-parameter name="Coworker\_FullName" type="string" %}
 ?HelpDeskMessage\_Coworker\_FullName=...
 {% endapi-method-parameter %}
@@ -96,6 +101,7 @@ application/json
         "MessageText": "MessageText",
         "Priority": Nexudus.Coworking.Core.Enums.eHelpDeskMessagePriority.Normal,
         "Closed": false,
+        "ClosedOn": ,
     }],
     "CurrentPageSize": 25,
     "CurrentPage": 1,
@@ -175,6 +181,7 @@ size=25 \(maximum=1000\)
         "MessageText": "MessageText",
         "Priority": Nexudus.Coworking.Core.Enums.eHelpDeskMessagePriority.Normal,
         "Closed": false,
+        "ClosedOn": ,
     }],
     }],
     "CurrentPageSize": 25,
@@ -241,6 +248,12 @@ application/json
 ?from\_HelpDeskMessage\_UpdatedOn=...
 {% endapi-method-parameter %}
 
+{% api-method-parameter name="ClosedOn" type="datetime" required=false %}
+?from\_HelpDeskMessage\_ClosedOn=...
+{% endapi-method-parameter %}
+{% api-method-parameter name="ClosedOn" type="datetime" required=false %}
+?to\_HelpDeskMessage\_ClosedOn=...
+{% endapi-method-parameter %}
 
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
@@ -261,6 +274,7 @@ application/json
         "MessageText": "MessageText",
         "Priority": Nexudus.Coworking.Core.Enums.eHelpDeskMessagePriority.Normal,
         "Closed": false,
+        "ClosedOn": ,
     }],
     }],
     "CurrentPageSize": 25,
@@ -327,6 +341,7 @@ The ID of the helpdeskmessage to fetch.
         "MessageText": "MessageText",
         "Priority": Nexudus.Coworking.Core.Enums.eHelpDeskMessagePriority.Normal,
         "Closed": false,
+        "ClosedOn": ,
 }
 ```
 {% endapi-method-response-example %}
@@ -381,6 +396,8 @@ application/json
 {% api-method-parameter name="Priority" type="enum" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="Closed" type="bool" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="ClosedOn" type="DateTime?" required=false %}
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 
@@ -467,6 +484,7 @@ _This response is an example, errors and messages will follow this structure but
 	"MessageText": "MessageText",
 	"Priority": 1 (check Enumerated values section below),
 	"Closed": false,
+	"ClosedOn": ,
 }
 
 ```
@@ -509,6 +527,8 @@ The id of the helpdeskmessage to update
 {% api-method-parameter name="Priority" type="enum" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="Closed" type="bool" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="ClosedOn" type="DateTime?" required=false %}
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
@@ -596,6 +616,7 @@ _This response is an example, errors and messages will follow this structure but
 	"MessageText": "MessageText",
 	"Priority": 1 (check Enumerated values section below),
 	"Closed": false,
+	"ClosedOn": ,
 }
 
 ```
