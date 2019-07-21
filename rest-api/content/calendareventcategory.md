@@ -400,6 +400,9 @@ _This response is an example, errors and messages will follow this structure but
 {
 	"Business": 12345678,
 	"Title": "Title",
+	"CalendarEvents": [12345678, 87654321] (replaces entire list),
+	"AddedCalendarEvents": [12345678, 87654321] (adds to list),
+	"RemovedCalendarEvents": [12345678, 87654321] (removes from list),
 }
 
 ```
@@ -514,6 +517,9 @@ _This response is an example, errors and messages will follow this structure but
 {
 	"Business": 12345678,
 	"Title": "Title",
+	"CalendarEvents": [12345678, 87654321] (replaces entire list),
+	"AddedCalendarEvents": [12345678, 87654321] (adds to list),
+	"RemovedCalendarEvents": [12345678, 87654321] (removes from list),
 }
 
 ```

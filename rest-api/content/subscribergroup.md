@@ -471,6 +471,9 @@ _This response is an example, errors and messages will follow this structure but
 {
 	"Business": 12345678,
 	"Name": "00001",
+	"NewsLetterSubscribers": [12345678, 87654321] (replaces entire list),
+	"AddedNewsLetterSubscribers": [12345678, 87654321] (adds to list),
+	"RemovedNewsLetterSubscribers": [12345678, 87654321] (removes from list),
 	"AutoAddMembers": true,
 	"AutoAddContacts": true,
 	"AutoAddBookings": true,
@@ -603,6 +606,9 @@ _This response is an example, errors and messages will follow this structure but
 {
 	"Business": 12345678,
 	"Name": "00001",
+	"NewsLetterSubscribers": [12345678, 87654321] (replaces entire list),
+	"AddedNewsLetterSubscribers": [12345678, 87654321] (adds to list),
+	"RemovedNewsLetterSubscribers": [12345678, 87654321] (removes from list),
 	"AutoAddMembers": true,
 	"AutoAddContacts": true,
 	"AutoAddBookings": true,

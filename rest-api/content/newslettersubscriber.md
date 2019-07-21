@@ -478,6 +478,9 @@ _This response is an example, errors and messages will follow this structure but
 	"Email": "test@example.com",
 	"VisitReason": "00001",
 	"Active": ,
+	"Groups": [12345678, 87654321] (replaces entire list),
+	"AddedGroups": [12345678, 87654321] (adds to list),
+	"RemovedGroups": [12345678, 87654321] (removes from list),
 }
 
 ```
@@ -607,6 +610,9 @@ _This response is an example, errors and messages will follow this structure but
 	"Email": "test@example.com",
 	"VisitReason": "00001",
 	"Active": ,
+	"Groups": [12345678, 87654321] (replaces entire list),
+	"AddedGroups": [12345678, 87654321] (adds to list),
+	"RemovedGroups": [12345678, 87654321] (removes from list),
 }
 
 ```

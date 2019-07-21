@@ -724,6 +724,12 @@ _This response is an example, errors and messages will follow this structure but
 	"OnPlaformInvoices": true,
 	"ReceiveCommunityDigest": true,
 	"ReceiveEveryMessage": true,
+	"Businesses": [12345678, 87654321] (replaces entire list),
+	"AddedBusinesses": [12345678, 87654321] (adds to list),
+	"RemovedBusinesses": [12345678, 87654321] (removes from list),
+	"UserRoles": [12345678, 87654321] (replaces entire list),
+	"AddedUserRoles": [12345678, 87654321] (adds to list),
+	"RemovedUserRoles": [12345678, 87654321] (removes from list),
 }
 
 ```
@@ -910,6 +916,12 @@ _This response is an example, errors and messages will follow this structure but
 	"OnPlaformInvoices": true,
 	"ReceiveCommunityDigest": true,
 	"ReceiveEveryMessage": true,
+	"Businesses": [12345678, 87654321] (replaces entire list),
+	"AddedBusinesses": [12345678, 87654321] (adds to list),
+	"RemovedBusinesses": [12345678, 87654321] (removes from list),
+	"UserRoles": [12345678, 87654321] (replaces entire list),
+	"AddedUserRoles": [12345678, 87654321] (adds to list),
+	"RemovedUserRoles": [12345678, 87654321] (removes from list),
 }
 
 ```

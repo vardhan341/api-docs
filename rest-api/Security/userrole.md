@@ -408,6 +408,12 @@ _This response is an example, errors and messages will follow this structure but
 {
 	"Business": 12345678,
 	"Name": "Name",
+	"Roles": [12345678, 87654321] (replaces entire list),
+	"AddedRoles": [12345678, 87654321] (adds to list),
+	"RemovedRoles": [12345678, 87654321] (removes from list),
+	"Users": [12345678, 87654321] (replaces entire list),
+	"AddedUsers": [12345678, 87654321] (adds to list),
+	"RemovedUsers": [12345678, 87654321] (removes from list),
 }
 
 ```
@@ -522,6 +528,12 @@ _This response is an example, errors and messages will follow this structure but
 {
 	"Business": 12345678,
 	"Name": "Name",
+	"Roles": [12345678, 87654321] (replaces entire list),
+	"AddedRoles": [12345678, 87654321] (adds to list),
+	"RemovedRoles": [12345678, 87654321] (removes from list),
+	"Users": [12345678, 87654321] (replaces entire list),
+	"AddedUsers": [12345678, 87654321] (adds to list),
+	"RemovedUsers": [12345678, 87654321] (removes from list),
 }
 
 ```

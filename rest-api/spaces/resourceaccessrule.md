@@ -69,6 +69,11 @@ application/json
 {% endapi-method-parameter %}
 
 
+{% api-method-parameter name="IntervalLimit" type="int?" %}
+?ResourceAccessRule\_IntervalLimit=...
+{% endapi-method-parameter %}
+
+
 {% api-method-parameter name="MaxBookingLength" type="int?" %}
 ?ResourceAccessRule\_MaxBookingLength=...
 {% endapi-method-parameter %}
@@ -127,6 +132,7 @@ application/json
         "BookInAdvanceLimit": 0,
         "LateBookingLimit": 0,
         "LateCancellationLimit": 0,
+        "IntervalLimit": 0,
         "MaxBookingLength": 0,
         "MinBookingLength": 0,
         "NoReturnPolicy": 0,
@@ -213,6 +219,7 @@ size=25 \(maximum=1000\)
         "BookInAdvanceLimit": 0,
         "LateBookingLimit": 0,
         "LateCancellationLimit": 0,
+        "IntervalLimit": 0,
         "MaxBookingLength": 0,
         "MinBookingLength": 0,
         "NoReturnPolicy": 0,
@@ -304,6 +311,12 @@ application/json
 {% api-method-parameter name="LateCancellationLimit" type="int" required=false %}
 ?to\_ResourceAccessRule\_LateCancellationLimit=...
 {% endapi-method-parameter %}
+{% api-method-parameter name="IntervalLimit" type="int" required=false %}
+?from\_ResourceAccessRule\_IntervalLimit=...
+{% endapi-method-parameter %}
+{% api-method-parameter name="IntervalLimit" type="int" required=false %}
+?to\_ResourceAccessRule\_IntervalLimit=...
+{% endapi-method-parameter %}
 {% api-method-parameter name="MaxBookingLength" type="int" required=false %}
 ?from\_ResourceAccessRule\_MaxBookingLength=...
 {% endapi-method-parameter %}
@@ -354,6 +367,7 @@ application/json
         "BookInAdvanceLimit": 0,
         "LateBookingLimit": 0,
         "LateCancellationLimit": 0,
+        "IntervalLimit": 0,
         "MaxBookingLength": 0,
         "MinBookingLength": 0,
         "NoReturnPolicy": 0,
@@ -427,6 +441,7 @@ The ID of the resourceaccessrule to fetch.
         "BookInAdvanceLimit": 0,
         "LateBookingLimit": 0,
         "LateCancellationLimit": 0,
+        "IntervalLimit": 0,
         "MaxBookingLength": 0,
         "MinBookingLength": 0,
         "NoReturnPolicy": 0,
@@ -488,6 +503,8 @@ application/json
 {% api-method-parameter name="LateBookingLimit" type="int?" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="LateCancellationLimit" type="int?" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="IntervalLimit" type="int?" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="MaxBookingLength" type="int?" required=false %}
 {% endapi-method-parameter %}
@@ -588,6 +605,7 @@ _This response is an example, errors and messages will follow this structure but
 	"BookInAdvanceLimit": 0,
 	"LateBookingLimit": 0,
 	"LateCancellationLimit": 0,
+	"IntervalLimit": 0,
 	"MaxBookingLength": 0,
 	"MinBookingLength": 0,
 	"NoReturnPolicy": 0,
@@ -595,6 +613,12 @@ _This response is an example, errors and messages will follow this structure but
 	"NoReturnPolicyAllUsers": 0,
 	"RejectWithMessage": "0",
 	"OnlyForMembers": true,
+	"Tariffs": [12345678, 87654321] (replaces entire list),
+	"AddedTariffs": [12345678, 87654321] (adds to list),
+	"RemovedTariffs": [12345678, 87654321] (removes from list),
+	"Members": [12345678, 87654321] (replaces entire list),
+	"AddedMembers": [12345678, 87654321] (adds to list),
+	"RemovedMembers": [12345678, 87654321] (removes from list),
 }
 
 ```
@@ -637,6 +661,8 @@ The id of the resourceaccessrule to update
 {% api-method-parameter name="LateBookingLimit" type="int?" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="LateCancellationLimit" type="int?" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="IntervalLimit" type="int?" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="MaxBookingLength" type="int?" required=false %}
 {% endapi-method-parameter %}
@@ -738,6 +764,7 @@ _This response is an example, errors and messages will follow this structure but
 	"BookInAdvanceLimit": 0,
 	"LateBookingLimit": 0,
 	"LateCancellationLimit": 0,
+	"IntervalLimit": 0,
 	"MaxBookingLength": 0,
 	"MinBookingLength": 0,
 	"NoReturnPolicy": 0,
@@ -745,6 +772,12 @@ _This response is an example, errors and messages will follow this structure but
 	"NoReturnPolicyAllUsers": 0,
 	"RejectWithMessage": "0",
 	"OnlyForMembers": true,
+	"Tariffs": [12345678, 87654321] (replaces entire list),
+	"AddedTariffs": [12345678, 87654321] (adds to list),
+	"RemovedTariffs": [12345678, 87654321] (removes from list),
+	"Members": [12345678, 87654321] (replaces entire list),
+	"AddedMembers": [12345678, 87654321] (adds to list),
+	"RemovedMembers": [12345678, 87654321] (removes from list),
 }
 
 ```

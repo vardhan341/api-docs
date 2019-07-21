@@ -388,6 +388,9 @@ _This response is an example, errors and messages will follow this structure but
 ```javascript
 {
 	"Name": "Name",
+	"UserRoles": [12345678, 87654321] (replaces entire list),
+	"AddedUserRoles": [12345678, 87654321] (adds to list),
+	"RemovedUserRoles": [12345678, 87654321] (removes from list),
 }
 
 ```
@@ -499,6 +502,9 @@ _This response is an example, errors and messages will follow this structure but
 ```javascript
 {
 	"Name": "Name",
+	"UserRoles": [12345678, 87654321] (replaces entire list),
+	"AddedUserRoles": [12345678, 87654321] (adds to list),
+	"RemovedUserRoles": [12345678, 87654321] (removes from list),
 }
 
 ```

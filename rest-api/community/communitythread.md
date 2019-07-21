@@ -487,6 +487,9 @@ _This response is an example, errors and messages will follow this structure but
 	"InstantDelivery": instant delivery,
 	"Tags": "00001",
 	"Private": false,
+	"Guests": [12345678, 87654321] (replaces entire list),
+	"AddedGuests": [12345678, 87654321] (adds to list),
+	"RemovedGuests": [12345678, 87654321] (removes from list),
 }
 
 ```
@@ -619,6 +622,9 @@ _This response is an example, errors and messages will follow this structure but
 	"InstantDelivery": instant delivery,
 	"Tags": "00001",
 	"Private": false,
+	"Guests": [12345678, 87654321] (replaces entire list),
+	"AddedGuests": [12345678, 87654321] (adds to list),
+	"RemovedGuests": [12345678, 87654321] (removes from list),
 }
 
 ```

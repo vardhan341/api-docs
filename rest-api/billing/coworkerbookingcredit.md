@@ -489,9 +489,15 @@ _This response is an example, errors and messages will follow this structure but
 	"Coworker": 12345678,
 	"Business": 12345678,
 	"Description": "",
+	"ElegibleResourceTypes": [12345678, 87654321] (replaces entire list),
+	"AddedElegibleResourceTypes": [12345678, 87654321] (adds to list),
+	"RemovedElegibleResourceTypes": [12345678, 87654321] (removes from list),
 	"TotalCredit": 0,
 	"ExpireDate": null,
 	"CaneBeUsedForEvents": false,
+	"EventCategories": [12345678, 87654321] (replaces entire list),
+	"AddedEventCategories": [12345678, 87654321] (adds to list),
+	"RemovedEventCategories": [12345678, 87654321] (removes from list),
 }
 
 ```
@@ -615,9 +621,15 @@ _This response is an example, errors and messages will follow this structure but
 	"Coworker": 12345678,
 	"Business": 12345678,
 	"Description": "",
+	"ElegibleResourceTypes": [12345678, 87654321] (replaces entire list),
+	"AddedElegibleResourceTypes": [12345678, 87654321] (adds to list),
+	"RemovedElegibleResourceTypes": [12345678, 87654321] (removes from list),
 	"TotalCredit": 0,
 	"ExpireDate": null,
 	"CaneBeUsedForEvents": false,
+	"EventCategories": [12345678, 87654321] (replaces entire list),
+	"AddedEventCategories": [12345678, 87654321] (adds to list),
+	"RemovedEventCategories": [12345678, 87654321] (removes from list),
 }
 
 ```

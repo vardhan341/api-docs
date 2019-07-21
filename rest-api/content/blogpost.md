@@ -524,6 +524,9 @@ _This response is an example, errors and messages will follow this structure but
 	"ShowInHomeBanner": true,
 	"ShowInHomePage": true,
 	"AllowComments": true,
+	"BlogCategories": [12345678, 87654321] (replaces entire list),
+	"AddedBlogCategories": [12345678, 87654321] (adds to list),
+	"RemovedBlogCategories": [12345678, 87654321] (removes from list),
 	"CommentsCount": 0,
 }
 
@@ -665,6 +668,9 @@ _This response is an example, errors and messages will follow this structure but
 	"ShowInHomeBanner": true,
 	"ShowInHomePage": true,
 	"AllowComments": true,
+	"BlogCategories": [12345678, 87654321] (replaces entire list),
+	"AddedBlogCategories": [12345678, 87654321] (adds to list),
+	"RemovedBlogCategories": [12345678, 87654321] (removes from list),
 	"CommentsCount": 0,
 }
 

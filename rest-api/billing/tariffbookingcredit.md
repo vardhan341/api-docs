@@ -452,8 +452,14 @@ _This response is an example, errors and messages will follow this structure but
 {
 	"Name": "00001",
 	"Tariff": 12345678,
+	"ElegibleResourceTypes": [12345678, 87654321] (replaces entire list),
+	"AddedElegibleResourceTypes": [12345678, 87654321] (adds to list),
+	"RemovedElegibleResourceTypes": [12345678, 87654321] (removes from list),
 	"Credit": 0,
 	"CaneBeUsedForEvents": false,
+	"EventCategories": [12345678, 87654321] (replaces entire list),
+	"AddedEventCategories": [12345678, 87654321] (adds to list),
+	"RemovedEventCategories": [12345678, 87654321] (removes from list),
 	"ServiceRenewalTime": 1 (check Enumerated values section below),
 }
 
@@ -575,8 +581,14 @@ _This response is an example, errors and messages will follow this structure but
 {
 	"Name": "00001",
 	"Tariff": 12345678,
+	"ElegibleResourceTypes": [12345678, 87654321] (replaces entire list),
+	"AddedElegibleResourceTypes": [12345678, 87654321] (adds to list),
+	"RemovedElegibleResourceTypes": [12345678, 87654321] (removes from list),
 	"Credit": 0,
 	"CaneBeUsedForEvents": false,
+	"EventCategories": [12345678, 87654321] (replaces entire list),
+	"AddedEventCategories": [12345678, 87654321] (adds to list),
+	"RemovedEventCategories": [12345678, 87654321] (removes from list),
 	"ServiceRenewalTime": 1 (check Enumerated values section below),
 }
 

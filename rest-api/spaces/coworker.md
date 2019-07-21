@@ -1690,6 +1690,12 @@ _This response is an example, errors and messages will follow this structure but
 ```javascript
 {
 	"CoworkerType": 1 (check Enumerated values section below),
+	"Businesses": [12345678, 87654321] (replaces entire list),
+	"AddedBusinesses": [12345678, 87654321] (adds to list),
+	"RemovedBusinesses": [12345678, 87654321] (removes from list),
+	"Teams": [12345678, 87654321] (replaces entire list),
+	"AddedTeams": [12345678, 87654321] (adds to list),
+	"RemovedTeams": [12345678, 87654321] (removes from list),
 	"FullName": "Name",
 	"Salutation": "Name",
 	"Gender": 1 (check Enumerated values section below),
@@ -2124,6 +2130,12 @@ _This response is an example, errors and messages will follow this structure but
 ```javascript
 {
 	"CoworkerType": 1 (check Enumerated values section below),
+	"Businesses": [12345678, 87654321] (replaces entire list),
+	"AddedBusinesses": [12345678, 87654321] (adds to list),
+	"RemovedBusinesses": [12345678, 87654321] (removes from list),
+	"Teams": [12345678, 87654321] (replaces entire list),
+	"AddedTeams": [12345678, 87654321] (adds to list),
+	"RemovedTeams": [12345678, 87654321] (removes from list),
 	"FullName": "Name",
 	"Salutation": "Name",
 	"Gender": 1 (check Enumerated values section below),

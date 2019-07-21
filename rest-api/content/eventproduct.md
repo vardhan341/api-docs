@@ -600,6 +600,9 @@ _This response is an example, errors and messages will follow this structure but
 	"Currency": 12345678,
 	"TaxRate": 12345678,
 	"FinancialAccount": 12345678,
+	"Tariffs": [12345678, 87654321] (replaces entire list),
+	"AddedTariffs": [12345678, 87654321] (adds to list),
+	"RemovedTariffs": [12345678, 87654321] (removes from list),
 }
 
 ```
@@ -750,6 +753,9 @@ _This response is an example, errors and messages will follow this structure but
 	"Currency": 12345678,
 	"TaxRate": 12345678,
 	"FinancialAccount": 12345678,
+	"Tariffs": [12345678, 87654321] (replaces entire list),
+	"AddedTariffs": [12345678, 87654321] (adds to list),
+	"RemovedTariffs": [12345678, 87654321] (removes from list),
 }
 
 ```

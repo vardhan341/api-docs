@@ -457,6 +457,9 @@ _This response is an example, errors and messages will follow this structure but
 	"VisibleInMySpaces": false,
 	"VisibleByEveryone": false,
 	"Description": "",
+	"Members": [12345678, 87654321] (replaces entire list),
+	"AddedMembers": [12345678, 87654321] (adds to list),
+	"RemovedMembers": [12345678, 87654321] (removes from list),
 }
 
 ```
@@ -586,6 +589,9 @@ _This response is an example, errors and messages will follow this structure but
 	"VisibleByEveryone": false,
 	"Archived": false,
 	"Description": "",
+	"Members": [12345678, 87654321] (replaces entire list),
+	"AddedMembers": [12345678, 87654321] (adds to list),
+	"RemovedMembers": [12345678, 87654321] (removes from list),
 }
 
 ```

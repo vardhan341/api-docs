@@ -436,6 +436,9 @@ _This response is an example, errors and messages will follow this structure but
 	"Name": "00001",
 	"Description": "Descripción",
 	"GroupAccess": 1 (check Enumerated values section below),
+	"Members": [12345678, 87654321] (replaces entire list),
+	"AddedMembers": [12345678, 87654321] (adds to list),
+	"RemovedMembers": [12345678, 87654321] (removes from list),
 }
 
 ```
@@ -559,6 +562,9 @@ _This response is an example, errors and messages will follow this structure but
 	"Name": "00001",
 	"Description": "Descripción",
 	"GroupAccess": 1 (check Enumerated values section below),
+	"Members": [12345678, 87654321] (replaces entire list),
+	"AddedMembers": [12345678, 87654321] (adds to list),
+	"RemovedMembers": [12345678, 87654321] (removes from list),
 }
 
 ```

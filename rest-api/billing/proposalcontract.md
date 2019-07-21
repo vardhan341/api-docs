@@ -528,6 +528,9 @@ _This response is an example, errors and messages will follow this structure but
 {
 	"Proposal": 12345678,
 	"Tariff": 12345678,
+	"Desks": [12345678, 87654321] (replaces entire list),
+	"AddedDesks": [12345678, 87654321] (adds to list),
+	"RemovedDesks": [12345678, 87654321] (removes from list),
 	"Price": false,
 	"StartDate": null,
 	"CancellationDate": null,
@@ -666,6 +669,9 @@ _This response is an example, errors and messages will follow this structure but
 {
 	"Proposal": 12345678,
 	"Tariff": 12345678,
+	"Desks": [12345678, 87654321] (replaces entire list),
+	"AddedDesks": [12345678, 87654321] (adds to list),
+	"RemovedDesks": [12345678, 87654321] (removes from list),
 	"Price": false,
 	"StartDate": null,
 	"CancellationDate": null,

@@ -445,6 +445,9 @@ _This response is an example, errors and messages will follow this structure but
 	"ShortDescription": "ShortDescription",
 	"Description": "Description",
 	"InstallUrl": "InstallUrl",
+	"RequiredRoles": [12345678, 87654321] (replaces entire list),
+	"AddedRequiredRoles": [12345678, 87654321] (adds to list),
+	"RemovedRequiredRoles": [12345678, 87654321] (removes from list),
 }
 
 ```
@@ -568,6 +571,9 @@ _This response is an example, errors and messages will follow this structure but
 	"ShortDescription": "ShortDescription",
 	"Description": "Description",
 	"InstallUrl": "InstallUrl",
+	"RequiredRoles": [12345678, 87654321] (replaces entire list),
+	"AddedRequiredRoles": [12345678, 87654321] (adds to list),
+	"RemovedRequiredRoles": [12345678, 87654321] (removes from list),
 }
 
 ```
