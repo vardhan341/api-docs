@@ -450,6 +450,12 @@ The id of the blogcategory to update
 {% endapi-method-parameter %}
 {% api-method-parameter name="Title" type="string" required=true %}
 {% endapi-method-parameter %}
+{% api-method-parameter name="BlogPosts" type="int[]" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="AddedBlogPosts" type="int[]" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="RemovedBlogPosts" type="int[]" required=false %}
+{% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
 

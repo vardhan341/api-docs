@@ -535,6 +535,12 @@ The id of the communitythread to update
 {% endapi-method-parameter %}
 {% api-method-parameter name="Private" type="bool" required=false %}
 {% endapi-method-parameter %}
+{% api-method-parameter name="Guests" type="int[]" required=true %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="AddedGuests" type="int[]" required=true %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="RemovedGuests" type="int[]" required=true %}
+{% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
 

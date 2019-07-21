@@ -789,6 +789,12 @@ The id of the extraservice to update
 {% endapi-method-parameter %}
 {% api-method-parameter name="DisplayOrder" type="int" required=true %}
 {% endapi-method-parameter %}
+{% api-method-parameter name="ResourceTypes" type="int[]" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="AddedResourceTypes" type="int[]" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="RemovedResourceTypes" type="int[]" required=false %}
+{% endapi-method-parameter %}
 {% api-method-parameter name="Price" type="decimal" required=true %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="CreditPrice" type="decimal?" required=false %}
@@ -818,6 +824,12 @@ The id of the extraservice to update
 {% api-method-parameter name="FixedCostLength" type="int?" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="FixedCostPrice" type="decimal?" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Tariffs" type="int[]" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="AddedTariffs" type="int[]" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="RemovedTariffs" type="int[]" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="OnlyForContacts" type="bool" required=false %}
 {% endapi-method-parameter %}

@@ -660,6 +660,12 @@ The id of the eventproduct to update
 {% endapi-method-parameter %}
 {% api-method-parameter name="FinancialAccountId" type="int" required=false %}
 {% endapi-method-parameter %}
+{% api-method-parameter name="Tariffs" type="int[]" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="AddedTariffs" type="int[]" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="RemovedTariffs" type="int[]" required=false %}
+{% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
 

@@ -678,6 +678,18 @@ The id of the resourceaccessrule to update
 {% endapi-method-parameter %}
 {% api-method-parameter name="OnlyForMembers" type="bool" required=false %}
 {% endapi-method-parameter %}
+{% api-method-parameter name="Tariffs" type="int[]" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="AddedTariffs" type="int[]" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="RemovedTariffs" type="int[]" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Members" type="int[]" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="AddedMembers" type="int[]" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="RemovedMembers" type="int[]" required=false %}
+{% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
 

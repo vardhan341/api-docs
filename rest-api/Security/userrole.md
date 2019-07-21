@@ -447,6 +447,18 @@ The id of the userrole to update
 {% endapi-method-parameter %}
 {% api-method-parameter name="Name" type="string" required=true %}
 {% endapi-method-parameter %}
+{% api-method-parameter name="Roles" type="int[]" required=true %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="AddedRoles" type="int[]" required=true %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="RemovedRoles" type="int[]" required=true %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Users" type="int[]" required=true %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="AddedUsers" type="int[]" required=true %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="RemovedUsers" type="int[]" required=true %}
+{% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
 

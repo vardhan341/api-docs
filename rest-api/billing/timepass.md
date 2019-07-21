@@ -549,6 +549,12 @@ The id of the timepass to update
 {% endapi-method-parameter %}
 {% api-method-parameter name="FinancialAccountId" type="int" required=false %}
 {% endapi-method-parameter %}
+{% api-method-parameter name="Businesses" type="int[]" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="AddedBusinesses" type="int[]" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="RemovedBusinesses" type="int[]" required=false %}
+{% endapi-method-parameter %}
 {% api-method-parameter name="Archived" type="bool" required=false %}
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}

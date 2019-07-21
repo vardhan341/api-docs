@@ -503,6 +503,12 @@ The id of the workspace to update
 {% endapi-method-parameter %}
 {% api-method-parameter name="Description" type="string" required=false %}
 {% endapi-method-parameter %}
+{% api-method-parameter name="Members" type="int[]" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="AddedMembers" type="int[]" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="RemovedMembers" type="int[]" required=false %}
+{% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
 

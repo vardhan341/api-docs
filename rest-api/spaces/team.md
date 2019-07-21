@@ -822,6 +822,12 @@ The id of the team to update
 {% endapi-method-parameter %}
 {% api-method-parameter name="TunnelPrivateGroupId" type="string" required=false %}
 {% endapi-method-parameter %}
+{% api-method-parameter name="TeamMembers" type="int[]" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="AddedTeamMembers" type="int[]" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="RemovedTeamMembers" type="int[]" required=false %}
+{% endapi-method-parameter %}
 {% api-method-parameter name="CreateSingleInvoiceForTeam" type="bool" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="UseSpecialPrices" type="bool" required=false %}

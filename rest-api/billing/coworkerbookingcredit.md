@@ -533,11 +533,23 @@ The id of the coworkerbookingcredit to update
 {% endapi-method-parameter %}
 {% api-method-parameter name="Description" type="string" required=false %}
 {% endapi-method-parameter %}
+{% api-method-parameter name="ElegibleResourceTypes" type="int[]" required=true %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="AddedElegibleResourceTypes" type="int[]" required=true %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="RemovedElegibleResourceTypes" type="int[]" required=true %}
+{% endapi-method-parameter %}
 {% api-method-parameter name="TotalCredit" type="decimal" required=true %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="ExpireDate" type="DateTime?" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="CaneBeUsedForEvents" type="bool" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="EventCategories" type="int[]" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="AddedEventCategories" type="int[]" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="RemovedEventCategories" type="int[]" required=false %}
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}

@@ -707,6 +707,12 @@ The id of the product to update
 {% endapi-method-parameter %}
 {% api-method-parameter name="OnlyForMembers" type="bool" required=false %}
 {% endapi-method-parameter %}
+{% api-method-parameter name="Tariffs" type="int[]" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="AddedTariffs" type="int[]" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="RemovedTariffs" type="int[]" required=false %}
+{% endapi-method-parameter %}
 {% api-method-parameter name="Archived" type="bool" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="Starred" type="bool" required=false %}

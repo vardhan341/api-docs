@@ -436,6 +436,12 @@ The id of the calendareventcategory to update
 {% endapi-method-parameter %}
 {% api-method-parameter name="Title" type="string" required=true %}
 {% endapi-method-parameter %}
+{% api-method-parameter name="CalendarEvents" type="int[]" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="AddedCalendarEvents" type="int[]" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="RemovedCalendarEvents" type="int[]" required=false %}
+{% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
 

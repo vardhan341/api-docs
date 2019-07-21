@@ -524,6 +524,12 @@ The id of the newslettersubscriber to update
 {% endapi-method-parameter %}
 {% api-method-parameter name="Active" type="bool" required=false %}
 {% endapi-method-parameter %}
+{% api-method-parameter name="Groups" type="int[]" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="AddedGroups" type="int[]" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="RemovedGroups" type="int[]" required=false %}
+{% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
 

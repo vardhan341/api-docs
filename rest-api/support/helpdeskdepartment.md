@@ -476,6 +476,12 @@ The id of the helpdeskdepartment to update
 {% endapi-method-parameter %}
 {% api-method-parameter name="Active" type="bool" required=false %}
 {% endapi-method-parameter %}
+{% api-method-parameter name="Managers" type="int[]" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="AddedManagers" type="int[]" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="RemovedManagers" type="int[]" required=false %}
+{% endapi-method-parameter %}
 {% api-method-parameter name="TaskListId" type="int" required=false %}
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}

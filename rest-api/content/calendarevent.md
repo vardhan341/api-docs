@@ -887,6 +887,12 @@ The id of the calendarevent to update
 {% endapi-method-parameter %}
 {% api-method-parameter name="Allocation" type="int?" required=false %}
 {% endapi-method-parameter %}
+{% api-method-parameter name="EventCategories" type="int[]" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="AddedEventCategories" type="int[]" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="RemovedEventCategories" type="int[]" required=false %}
+{% endapi-method-parameter %}
 {% api-method-parameter name="PublishDate" type="DateTime?" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="ShowInHomeBanner" type="bool" required=false %}

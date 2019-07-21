@@ -513,6 +513,12 @@ The id of the subscribergroup to update
 {% endapi-method-parameter %}
 {% api-method-parameter name="Name" type="string" required=true %}
 {% endapi-method-parameter %}
+{% api-method-parameter name="NewsLetterSubscribers" type="int[]" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="AddedNewsLetterSubscribers" type="int[]" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="RemovedNewsLetterSubscribers" type="int[]" required=false %}
+{% endapi-method-parameter %}
 {% api-method-parameter name="AutoAddMembers" type="bool" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="AutoAddContacts" type="bool" required=false %}

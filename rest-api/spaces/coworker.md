@@ -1834,6 +1834,18 @@ application/json
 The id of the coworker to update
 {% api-method-parameter name="CoworkerType" type="enum" required=false %}
 {% endapi-method-parameter %}
+{% api-method-parameter name="Businesses" type="int[]" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="AddedBusinesses" type="int[]" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="RemovedBusinesses" type="int[]" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Teams" type="int[]" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="AddedTeams" type="int[]" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="RemovedTeams" type="int[]" required=false %}
+{% endapi-method-parameter %}
 {% api-method-parameter name="FullName" type="string" required=true %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="Salutation" type="string" required=false %}

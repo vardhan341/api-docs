@@ -1047,7 +1047,19 @@ The id of the resource to update
 {% endapi-method-parameter %}
 {% api-method-parameter name="MinBookingLength" type="int?" required=false %}
 {% endapi-method-parameter %}
+{% api-method-parameter name="Tariffs" type="int[]" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="AddedTariffs" type="int[]" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="RemovedTariffs" type="int[]" required=false %}
+{% endapi-method-parameter %}
 {% api-method-parameter name="Shifts" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="LinkedResources" type="int[]" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="AddedLinkedResources" type="int[]" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="RemovedLinkedResources" type="int[]" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="Longitude" type="decimal?" required=false %}
 {% endapi-method-parameter %}

@@ -762,11 +762,35 @@ The id of the discountcode to update
 {% endapi-method-parameter %}
 {% api-method-parameter name="DiscountPricePlans" type="bool" required=false %}
 {% endapi-method-parameter %}
+{% api-method-parameter name="Tariffs" type="int[]" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="AddedTariffs" type="int[]" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="RemovedTariffs" type="int[]" required=false %}
+{% endapi-method-parameter %}
 {% api-method-parameter name="DiscountBookings" type="bool" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="ResourceTypes" type="int[]" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="AddedResourceTypes" type="int[]" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="RemovedResourceTypes" type="int[]" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="DiscountProducts" type="bool" required=false %}
 {% endapi-method-parameter %}
+{% api-method-parameter name="Products" type="int[]" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="AddedProducts" type="int[]" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="RemovedProducts" type="int[]" required=false %}
+{% endapi-method-parameter %}
 {% api-method-parameter name="DiscountEvents" type="bool" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="EventCategories" type="int[]" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="AddedEventCategories" type="int[]" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="RemovedEventCategories" type="int[]" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="MaxUsesPerUser" type="int?" required=false %}
 {% endapi-method-parameter %}

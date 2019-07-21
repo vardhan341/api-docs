@@ -478,6 +478,12 @@ The id of the communitygroup to update
 {% endapi-method-parameter %}
 {% api-method-parameter name="GroupAccess" type="enum" required=false %}
 {% endapi-method-parameter %}
+{% api-method-parameter name="Members" type="int[]" required=true %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="AddedMembers" type="int[]" required=true %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="RemovedMembers" type="int[]" required=true %}
+{% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
 

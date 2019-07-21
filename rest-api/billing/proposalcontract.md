@@ -572,6 +572,12 @@ The id of the proposalcontract to update
 {% endapi-method-parameter %}
 {% api-method-parameter name="TariffId" type="int" required=true %}
 {% endapi-method-parameter %}
+{% api-method-parameter name="Desks" type="int[]" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="AddedDesks" type="int[]" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="RemovedDesks" type="int[]" required=false %}
+{% endapi-method-parameter %}
 {% api-method-parameter name="Price" type="decimal?" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="StartDate" type="DateTime?" required=false %}

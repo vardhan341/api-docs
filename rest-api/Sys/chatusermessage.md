@@ -446,6 +446,12 @@ application/json
 The id of the chatusermessage to update
 {% api-method-parameter name="FromUserId" type="int" required=true %}
 {% endapi-method-parameter %}
+{% api-method-parameter name="ToUsers" type="int[]" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="AddedToUsers" type="int[]" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="RemovedToUsers" type="int[]" required=false %}
+{% endapi-method-parameter %}
 {% api-method-parameter name="ChatText" type="string" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="Delievered" type="bool" required=false %}

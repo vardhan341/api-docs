@@ -487,6 +487,12 @@ The id of the application to update
 {% endapi-method-parameter %}
 {% api-method-parameter name="InstallUrl" type="string" required=true %}
 {% endapi-method-parameter %}
+{% api-method-parameter name="RequiredRoles" type="int[]" required=true %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="AddedRequiredRoles" type="int[]" required=true %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="RemovedRequiredRoles" type="int[]" required=true %}
+{% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
 

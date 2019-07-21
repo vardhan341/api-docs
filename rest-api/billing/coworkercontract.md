@@ -901,6 +901,12 @@ The id of the coworkercontract to update
 {% endapi-method-parameter %}
 {% api-method-parameter name="Value" type="decimal?" required=false %}
 {% endapi-method-parameter %}
+{% api-method-parameter name="Desks" type="int[]" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="AddedDesks" type="int[]" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="RemovedDesks" type="int[]" required=false %}
+{% endapi-method-parameter %}
 {% api-method-parameter name="Quantity" type="int" required=true %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="IncludeSignupFee" type="bool" required=false %}

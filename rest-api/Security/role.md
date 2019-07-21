@@ -422,6 +422,12 @@ application/json
 The id of the role to update
 {% api-method-parameter name="Name" type="string" required=true %}
 {% endapi-method-parameter %}
+{% api-method-parameter name="UserRoles" type="int[]" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="AddedUserRoles" type="int[]" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="RemovedUserRoles" type="int[]" required=false %}
+{% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
 

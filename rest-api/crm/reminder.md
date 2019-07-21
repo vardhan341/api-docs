@@ -610,6 +610,12 @@ The id of the reminder to update
 {% endapi-method-parameter %}
 {% api-method-parameter name="CoworkerId" type="int" required=false %}
 {% endapi-method-parameter %}
+{% api-method-parameter name="Tariffs" type="int[]" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="AddedTariffs" type="int[]" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="RemovedTariffs" type="int[]" required=false %}
+{% endapi-method-parameter %}
 {% api-method-parameter name="ReminderType" type="enum" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="ReminderDate" type="DateTime?" required=false %}

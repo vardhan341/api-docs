@@ -470,6 +470,12 @@ The id of the chatroom to update
 {% endapi-method-parameter %}
 {% api-method-parameter name="LastAgentVisit" type="DateTime?" required=false %}
 {% endapi-method-parameter %}
+{% api-method-parameter name="Users" type="int[]" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="AddedUsers" type="int[]" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="RemovedUsers" type="int[]" required=false %}
+{% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
 

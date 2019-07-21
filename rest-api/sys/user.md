@@ -811,6 +811,18 @@ The id of the user to update
 {% endapi-method-parameter %}
 {% api-method-parameter name="ReceiveEveryMessage" type="bool" required=false %}
 {% endapi-method-parameter %}
+{% api-method-parameter name="Businesses" type="int[]" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="AddedBusinesses" type="int[]" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="RemovedBusinesses" type="int[]" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="UserRoles" type="int[]" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="AddedUserRoles" type="int[]" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="RemovedUserRoles" type="int[]" required=false %}
+{% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
 

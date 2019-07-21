@@ -494,9 +494,21 @@ The id of the tariffbookingcredit to update
 {% endapi-method-parameter %}
 {% api-method-parameter name="TariffId" type="int" required=true %}
 {% endapi-method-parameter %}
+{% api-method-parameter name="ElegibleResourceTypes" type="int[]" required=true %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="AddedElegibleResourceTypes" type="int[]" required=true %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="RemovedElegibleResourceTypes" type="int[]" required=true %}
+{% endapi-method-parameter %}
 {% api-method-parameter name="Credit" type="decimal" required=true %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="CaneBeUsedForEvents" type="bool" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="EventCategories" type="int[]" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="AddedEventCategories" type="int[]" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="RemovedEventCategories" type="int[]" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="ServiceRenewalTime" type="enum" required=false %}
 {% endapi-method-parameter %}

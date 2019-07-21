@@ -577,6 +577,12 @@ The id of the blogpost to update
 {% endapi-method-parameter %}
 {% api-method-parameter name="AllowComments" type="bool" required=false %}
 {% endapi-method-parameter %}
+{% api-method-parameter name="BlogCategories" type="int[]" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="AddedBlogCategories" type="int[]" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="RemovedBlogCategories" type="int[]" required=false %}
+{% endapi-method-parameter %}
 {% api-method-parameter name="CommentsCount" type="int" required=true %}
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}

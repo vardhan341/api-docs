@@ -486,6 +486,12 @@ The id of the tasklist to update
 {% endapi-method-parameter %}
 {% api-method-parameter name="Active" type="bool" required=false %}
 {% endapi-method-parameter %}
+{% api-method-parameter name="Tariffs" type="int[]" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="AddedTariffs" type="int[]" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="RemovedTariffs" type="int[]" required=false %}
+{% endapi-method-parameter %}
 {% api-method-parameter name="AssignToNewContacts" type="bool" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="AssignToNewMembers" type="bool" required=false %}
