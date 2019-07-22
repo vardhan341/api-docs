@@ -285,11 +285,11 @@ You can also use range query parameters for all date, integer and decimal proper
 
 {% api-method method="get" host="https://spaces.nexudus.com/api" path="/sys/floorplandesks" %}
 {% api-method-summary %}
-By date or number range
+By date range
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Gets a list of floorplandesks based on a range of dates, integer or decimal properties.
+Gets a list of floorplandesks based on the date when they were created or updated.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -339,22 +339,22 @@ application/json
 {% api-method-parameter name="Price" type="decimal" required=false %}
 ?to\_FloorPlanDesk\_Price=...
 {% endapi-method-parameter %}
-{% api-method-parameter name="PositionX" type="int" required=false %}
+{% api-method-parameter name="PositionX" type="decimal" required=false %}
 ?from\_FloorPlanDesk\_PositionX=...
 {% endapi-method-parameter %}
-{% api-method-parameter name="PositionX" type="int" required=false %}
+{% api-method-parameter name="PositionX" type="decimal" required=false %}
 ?to\_FloorPlanDesk\_PositionX=...
 {% endapi-method-parameter %}
-{% api-method-parameter name="PositionY" type="int" required=false %}
+{% api-method-parameter name="PositionY" type="decimal" required=false %}
 ?from\_FloorPlanDesk\_PositionY=...
 {% endapi-method-parameter %}
-{% api-method-parameter name="PositionY" type="int" required=false %}
+{% api-method-parameter name="PositionY" type="decimal" required=false %}
 ?to\_FloorPlanDesk\_PositionY=...
 {% endapi-method-parameter %}
-{% api-method-parameter name="PositionZ" type="int" required=false %}
+{% api-method-parameter name="PositionZ" type="decimal" required=false %}
 ?from\_FloorPlanDesk\_PositionZ=...
 {% endapi-method-parameter %}
-{% api-method-parameter name="PositionZ" type="int" required=false %}
+{% api-method-parameter name="PositionZ" type="decimal" required=false %}
 ?to\_FloorPlanDesk\_PositionZ=...
 {% endapi-method-parameter %}
 
@@ -614,29 +614,6 @@ _This response is an example, errors and messages will follow this structure but
 
 > 🔒 Requires user role `floorplandesk-create`
 
-```javascript
-{
-	"FloorPlan": 12345678,
-	"Coworker": 12345678,
-	"Name": "00001",
-	"ItemType": 1 (check Enumerated values section below),
-	"Size": 00001,
-	"Capacity": 00001,
-	"Price": 00001,
-	"Area": "00001",
-	"Notes": "00001",
-	"Available": true,
-	"PositionX": 1,
-	"PositionY": 1,
-	"PositionZ": 1,
-	"TunnelPrivateGroupId": "",
-	"CoworkerContractIds": "",
-	"CoworkerContractFullNames": "",
-	"CoworkerContractStartDates": "",
-}
-
-```
-
 {% api-method method="put" host="https://spaces.nexudus.com/api" path="/sys/floorplandesks" %}
 {% api-method-summary %}
 Update
@@ -660,8 +637,13 @@ application/json
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
-{% api-method-body-parameters %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="Id" type="integer" required=true %}
 The id of the floorplandesk to update
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+
+{% api-method-body-parameters %}
 {% api-method-parameter name="FloorPlanId" type="int" required=true %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="CoworkerId" type="int" required=false %}
@@ -772,31 +754,6 @@ _This response is an example, errors and messages will follow this structure but
 {% endapi-method %}
 
 > 🔒 Requires user role `floorplandesk-edit`
-
-```javascript
-{
-	"FloorPlan": 12345678,
-	"Coworker": 12345678,
-	"Name": "00001",
-	"ItemType": 1 (check Enumerated values section below),
-	"Size": 00001,
-	"Capacity": 00001,
-	"Price": 00001,
-	"Area": "00001",
-	"Notes": "00001",
-	"Available": true,
-	"PositionX": 1,
-	"PositionY": 1,
-	"PositionZ": 1,
-	"TunnelPrivateGroupId": "",
-	"CoworkerContractIds": "",
-	"CoworkerContractFullNames": "",
-	"CoworkerContractStartDates": "",
-}
-
-```
-
-
 
 
 {% api-method method="delete" host="https://spaces.nexudus.com/api" path="/sys/floorplandesks/:id" %}
@@ -1017,11 +974,6 @@ _Commands also return a status 200 when they fail to process one or more of the 
 {% endapi-method %}
 
 > 🔒 Requires user role `floorplandesk-edit`
-
-## Enumerated values
-
-##### ItemType:
-> GET /api/utils/enums?name=eFloorPlanItemType
 
 ## Binary files
 

@@ -30,76 +30,62 @@ application/json
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="SystemId" type="string" %}
-?TemplateFile\_SystemId=...
+?TemplateFile_SystemId=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="Business" type="Business" %}
-?TemplateFile\_Business=...
+?TemplateFile_Business=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="TemplateVersion" type="TemplateVersion" %}
-?TemplateFile\_TemplateVersion=...
+?TemplateFile_TemplateVersion=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="Name" type="string" %}
-?TemplateFile\_Name=...
+?TemplateFile_Name=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="Title" type="string" %}
-?TemplateFile\_Title=...
+?TemplateFile_Title=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="Description" type="string" %}
-?TemplateFile\_Description=...
+?TemplateFile_Description=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="Permalink" type="string" %}
-?TemplateFile\_Permalink=...
+?TemplateFile_Permalink=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="FileLanguage" type="Language" %}
-?TemplateFile\_FileLanguage=...
+?TemplateFile_FileLanguage=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="Published" type="bool" %}
-?TemplateFile\_Published=...
+?TemplateFile_Published=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="Visibility" type="enum" %}
-?TemplateFile\_Visibility=...
+?TemplateFile_Visibility=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="Password" type="string" %}
-?TemplateFile\_Password=...
+?TemplateFile_Password=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="IsCustom" type="bool" %}
-?TemplateFile\_IsCustom=...
+?TemplateFile_IsCustom=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="FileContents" type="string" %}
-?TemplateFile\_FileContents=...
+?TemplateFile_FileContents=...
 {% endapi-method-parameter %}
-
 
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
 
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
-
 
 ```javascript
 {
@@ -132,6 +118,7 @@ application/json
 }
 
 ```
+
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
@@ -216,6 +203,7 @@ size=25 \(maximum=1000\)
     "TotalPages": 3
 }
 ```
+
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
@@ -224,7 +212,7 @@ size=25 \(maximum=1000\)
 > 🔒 Requires user role `templatefile-list`
 
 {% hint style="info" %}
-You can also get a list of records based when they were created or updated. This is useful if you want to get a list of records created after or before a particular point in time. 
+You can also get a list of records based when they were created or updated. This is useful if you want to get a list of records created after or before a particular point in time.
 You can also use range query parameters for all date, integer and decimal properties.
 {% endhint %}
 
@@ -251,21 +239,20 @@ application/json
 
 {% api-method-query-parameters %}
 {% api-method-parameter name="CreatedOn" type="object" required=false %}
-?to\_TemplateFile\_CreatedOn=...
+?to_TemplateFile_CreatedOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="CreatedOn" type="object" required=false %}
-?from\_TemplateFile\_CreatedOn=...
+?from_TemplateFile_CreatedOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="UpdatedOn" type="object" required=false %}
-?to\_TemplateFile\_UpdatedOn=...
+?to_TemplateFile_UpdatedOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="UpdatedOn" type="object" required=false %}
-?from\_TemplateFile\_UpdatedOn=...
+?from_TemplateFile_UpdatedOn=...
 {% endapi-method-parameter %}
-
 
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
@@ -307,6 +294,7 @@ application/json
     "TotalPages": 3
 }
 ```
+
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
@@ -364,6 +352,7 @@ The ID of the templatefile to fetch.
         "FileContents": "FileContent",
 }
 ```
+
 {% endapi-method-response-example %}
 
 {% api-method-response-example httpCode=404 %}
@@ -374,6 +363,7 @@ The ID of the templatefile to fetch.
 ```
 "Not found"
 ```
+
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
@@ -445,6 +435,7 @@ application/json
     }
 }
 ```
+
 {% endapi-method-response-example %}
 
 {% api-method-response-example httpCode=400 %}
@@ -482,6 +473,7 @@ _This response is an example, errors and messages will follow this structure but
     ]
 }
 ```
+
 {% endapi-method-response-example %}
 
 {% api-method-response-example httpCode=500 %}
@@ -494,6 +486,7 @@ _This response is an example, errors and messages will follow this structure but
     "Message": "An error has occurred."
 }
 ```
+
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
@@ -525,7 +518,7 @@ Update
 
 {% api-method-description %}
 Updates and existing templatefile.
-  
+
 Required User Role: `templatefile-edit`
 {% endapi-method-description %}
 
@@ -586,6 +579,7 @@ The id of the templatefile to update
     "Errors": null
 }
 ```
+
 {% endapi-method-response-example %}
 
 {% api-method-response-example httpCode=400 %}
@@ -623,6 +617,7 @@ _This response is an example, errors and messages will follow this structure but
     ]
 }
 ```
+
 {% endapi-method-response-example %}
 
 {% api-method-response-example httpCode=500 %}
@@ -635,6 +630,7 @@ _This response is an example, errors and messages will follow this structure but
     "Message": "An error has occurred."
 }
 ```
+
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
@@ -659,17 +655,14 @@ _This response is an example, errors and messages will follow this structure but
 
 ```
 
-
-
-
 {% api-method method="delete" host="https://spaces.nexudus.com/api" path="/sys/templatefiles/:id" %}
 {% api-method-summary %}
 Delete
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Deletes a templatefile.  
-  
+Deletes a templatefile.
+
 Required User Roles: `templatefile-delete`
 {% endapi-method-description %}
 
@@ -710,6 +703,7 @@ application/json
     "Errors": null
 }
 ```
+
 {% endapi-method-response-example %}
 
 {% api-method-response-example httpCode=404 %}
@@ -720,6 +714,7 @@ application/json
 ```
 "Not found"
 ```
+
 {% endapi-method-response-example %}
 
 {% api-method-response-example httpCode=500 %}
@@ -732,19 +727,17 @@ application/json
     "Message": "An error has occurred."
 }
 ```
+
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
 
-
-
 > 🔒 Requires user role `templatefile-delete`
-
 
 ## Commands
 
-Commands allow to perform actions against one or more templatefile records. Some commands accept only one record while others can run an action for a number of records at the same time.  Each command has metadata with information about how it can be used and the amount of records, if any, it needs to run.
+Commands allow to perform actions against one or more templatefile records. Some commands accept only one record while others can run an action for a number of records at the same time. Each command has metadata with information about how it can be used and the amount of records, if any, it needs to run.
 
 > ```javascript
 > {
@@ -808,6 +801,7 @@ _This response is an example._
     ...
 ]
 ```
+
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
@@ -840,20 +834,14 @@ The command Key defining the command to run. `"COMMAND_KEY_1"`
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Parameters" type="array" required=false %}
-A list of object with the structure below. The parameters required for each command are returned in the "RequiresParameters" array return by the "commands" endpoint.  
-  
-`[  
-   {  
-      "Name": "Name",   
-      "Type":"Type",   
-      "Value":recordId  
-    }  
-]`
+A list of object with the structure below. The parameters required for each command are returned in the "RequiresParameters" array return by the "commands" endpoint.
+
+`[ { "Name": "Name", "Type":"Type", "Value":recordId } ]`
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Ids" type="array" required=true %}
-A list of integer IDs for each of the records to run this command for.  
-  
+A list of integer IDs for each of the records to run this command for.
+
 `[987654321, 123565978]`
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
@@ -862,11 +850,11 @@ A list of integer IDs for each of the records to run this command for.
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
 {% api-method-response-example-description %}
-_Commands also return a status 200 when they fail to process one or more of the records. Use the 'WasSuccessful'  property to know if the command run succeeded._  
+_Commands also return a status 200 when they fail to process one or more of the records. Use the 'WasSuccessful' property to know if the command run succeeded._  
 {% endapi-method-response-example-description %}
 
 ```javascript
-{  
+{
    "Status":500 or 200,
    "Message":"Command error description",
    "Value":null,
@@ -874,6 +862,7 @@ _Commands also return a status 200 when they fail to process one or more of the 
    "WasSuccessful":false
 }
 ```
+
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
@@ -884,6 +873,7 @@ _Commands also return a status 200 when they fail to process one or more of the 
 ## Enumerated values
 
 ##### Visibility:
+
 > GET /api/utils/enums?name=eTemplateFileVisibility
 
 ## Binary files
@@ -927,13 +917,14 @@ The id of the TemplateFile to get the picture for.
 ```javascript
 Binary stream or null
 ```
+
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
 
-
 ## Related Entities
-* [Business](../sys/business.md)
-* [TemplateVersion](../sys/templateversion.md)
-* [Language](../sys/language.md)
+
+- [Business](../sys/business.md)
+- [TemplateVersion](../sys/templateversion.md)
+- [Language](../sys/language.md)
