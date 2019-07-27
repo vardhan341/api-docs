@@ -30,26 +30,31 @@ application/json
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="SystemId" type="string" %}
-?BusinessSetting_SystemId=...
+?BusinessSetting\_SystemId=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="Business" type="Business" %}
-?BusinessSetting_Business=...
+?BusinessSetting\_Business=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="Name" type="string" %}
-?BusinessSetting_Name=...
+?BusinessSetting\_Name=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="Value" type="string" %}
-?BusinessSetting_Value=...
+?BusinessSetting\_Value=...
 {% endapi-method-parameter %}
+
 
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
 
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
+
 
 ```javascript
 {
@@ -73,7 +78,6 @@ application/json
 }
 
 ```
-
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
@@ -149,7 +153,6 @@ size=25 \(maximum=1000\)
     "TotalPages": 3
 }
 ```
-
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
@@ -158,7 +161,7 @@ size=25 \(maximum=1000\)
 > 🔒 Requires user role `businesssetting-list`
 
 {% hint style="info" %}
-You can also get a list of records based when they were created or updated. This is useful if you want to get a list of records created after or before a particular point in time.
+You can also get a list of records based when they were created or updated. This is useful if you want to get a list of records created after or before a particular point in time. 
 You can also use range query parameters for all date, integer and decimal properties.
 {% endhint %}
 
@@ -185,20 +188,21 @@ application/json
 
 {% api-method-query-parameters %}
 {% api-method-parameter name="CreatedOn" type="object" required=false %}
-?to_BusinessSetting_CreatedOn=...
+?to\_BusinessSetting\_CreatedOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="CreatedOn" type="object" required=false %}
-?from_BusinessSetting_CreatedOn=...
+?from\_BusinessSetting\_CreatedOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="UpdatedOn" type="object" required=false %}
-?to_BusinessSetting_UpdatedOn=...
+?to\_BusinessSetting\_UpdatedOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="UpdatedOn" type="object" required=false %}
-?from_BusinessSetting_UpdatedOn=...
+?from\_BusinessSetting\_UpdatedOn=...
 {% endapi-method-parameter %}
+
 
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
@@ -231,7 +235,65 @@ application/json
     "TotalPages": 3
 }
 ```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
 
+> 🔒 Requires user role `businesssetting-list`
+
+
+{% api-method method="get" host="https://spaces.nexudus.com/api" path="/sys/businesssettings?BusinessSetting_Id=[:id1,:id2,...]" %}
+{% api-method-summary %}
+List by Ids
+{% endapi-method-summary %}
+
+{% api-method-description %}
+Gets one or more businesssetting records based on their Id.
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+Basic Authentication token. Base64 encoding of 'username:password'.
+{% endapi-method-parameter %}
+{% api-method-parameter name="Content" type="string" required=true %}
+application/json
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+
+{% api-method-path-parameters %}
+{% api-method-parameter name="id" type="integer" required=true %}
+Comma-separated list of IDs of every businesssetting to fetch. I.e. [123456,789102,...] 
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```javascript
+{
+        "Business": null,
+        "Name": "Name",
+        "Value": "Header",
+}
+```
+{% endapi-method-response-example %}
+
+{% api-method-response-example httpCode=404 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```
+"Not found"
+```
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
@@ -280,7 +342,6 @@ The ID of the businesssetting to fetch.
         "Value": "Header",
 }
 ```
-
 {% endapi-method-response-example %}
 
 {% api-method-response-example httpCode=404 %}
@@ -291,13 +352,13 @@ The ID of the businesssetting to fetch.
 ```
 "Not found"
 ```
-
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
 
 > 🔒 Requires user role `businesssetting-read`
+
 
 {% api-method method="post" host="https://spaces.nexudus.com/api" path="/sys/businesssettings" %}
 {% api-method-summary %}
@@ -347,7 +408,6 @@ application/json
     }
 }
 ```
-
 {% endapi-method-response-example %}
 
 {% api-method-response-example httpCode=400 %}
@@ -385,7 +445,6 @@ _This response is an example, errors and messages will follow this structure but
     ]
 }
 ```
-
 {% endapi-method-response-example %}
 
 {% api-method-response-example httpCode=500 %}
@@ -398,7 +457,6 @@ _This response is an example, errors and messages will follow this structure but
     "Message": "An error has occurred."
 }
 ```
-
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
@@ -422,7 +480,7 @@ Update
 
 {% api-method-description %}
 Updates and existing businesssetting.
-
+  
 Required User Role: `businesssetting-edit`
 {% endapi-method-description %}
 
@@ -467,7 +525,6 @@ The id of the businesssetting to update
     "Errors": null
 }
 ```
-
 {% endapi-method-response-example %}
 
 {% api-method-response-example httpCode=400 %}
@@ -505,7 +562,6 @@ _This response is an example, errors and messages will follow this structure but
     ]
 }
 ```
-
 {% endapi-method-response-example %}
 
 {% api-method-response-example httpCode=500 %}
@@ -518,7 +574,6 @@ _This response is an example, errors and messages will follow this structure but
     "Message": "An error has occurred."
 }
 ```
-
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
@@ -535,14 +590,17 @@ _This response is an example, errors and messages will follow this structure but
 
 ```
 
+
+
+
 {% api-method method="delete" host="https://spaces.nexudus.com/api" path="/sys/businesssettings/:id" %}
 {% api-method-summary %}
 Delete
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Deletes a businesssetting.
-
+Deletes a businesssetting.  
+  
 Required User Roles: `businesssetting-delete`
 {% endapi-method-description %}
 
@@ -583,7 +641,6 @@ application/json
     "Errors": null
 }
 ```
-
 {% endapi-method-response-example %}
 
 {% api-method-response-example httpCode=404 %}
@@ -594,7 +651,6 @@ application/json
 ```
 "Not found"
 ```
-
 {% endapi-method-response-example %}
 
 {% api-method-response-example httpCode=500 %}
@@ -607,17 +663,19 @@ application/json
     "Message": "An error has occurred."
 }
 ```
-
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
 
+
+
 > 🔒 Requires user role `businesssetting-delete`
+
 
 ## Commands
 
-Commands allow to perform actions against one or more businesssetting records. Some commands accept only one record while others can run an action for a number of records at the same time. Each command has metadata with information about how it can be used and the amount of records, if any, it needs to run.
+Commands allow to perform actions against one or more businesssetting records. Some commands accept only one record while others can run an action for a number of records at the same time.  Each command has metadata with information about how it can be used and the amount of records, if any, it needs to run.
 
 > ```javascript
 > {
@@ -681,7 +739,6 @@ _This response is an example._
     ...
 ]
 ```
-
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
@@ -714,14 +771,20 @@ The command Key defining the command to run. `"COMMAND_KEY_1"`
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Parameters" type="array" required=false %}
-A list of object with the structure below. The parameters required for each command are returned in the "RequiresParameters" array return by the "commands" endpoint.
-
-`[ { "Name": "Name", "Type":"Type", "Value":recordId } ]`
+A list of object with the structure below. The parameters required for each command are returned in the "RequiresParameters" array return by the "commands" endpoint.  
+  
+`[  
+   {  
+      "Name": "Name",   
+      "Type":"Type",   
+      "Value":recordId  
+    }  
+]`
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Ids" type="array" required=true %}
-A list of integer IDs for each of the records to run this command for.
-
+A list of integer IDs for each of the records to run this command for.  
+  
 `[987654321, 123565978]`
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
@@ -730,11 +793,11 @@ A list of integer IDs for each of the records to run this command for.
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
 {% api-method-response-example-description %}
-_Commands also return a status 200 when they fail to process one or more of the records. Use the 'WasSuccessful' property to know if the command run succeeded._  
+_Commands also return a status 200 when they fail to process one or more of the records. Use the 'WasSuccessful'  property to know if the command run succeeded._  
 {% endapi-method-response-example-description %}
 
 ```javascript
-{
+{  
    "Status":500 or 200,
    "Message":"Command error description",
    "Value":null,
@@ -742,7 +805,6 @@ _Commands also return a status 200 when they fail to process one or more of the 
    "WasSuccessful":false
 }
 ```
-
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
@@ -756,6 +818,6 @@ _Commands also return a status 200 when they fail to process one or more of the 
 
 The following endpoints return binary data. Check the `ContentType` header to understand the type of file being returned in the response stream.
 
-## Related Entities
 
-- [Business](../sys/business.md)
+## Related Entities
+* [Business](../sys/business.md)

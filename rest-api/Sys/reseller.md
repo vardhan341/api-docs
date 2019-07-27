@@ -389,6 +389,80 @@ application/json
 
 > 🔒 Requires user role `reseller-list`
 
+
+{% api-method method="get" host="https://spaces.nexudus.com/api" path="/sys/resellers?Reseller_Id=[:id1,:id2,...]" %}
+{% api-method-summary %}
+List by Ids
+{% endapi-method-summary %}
+
+{% api-method-description %}
+Gets one or more reseller records based on their Id.
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+Basic Authentication token. Base64 encoding of 'username:password'.
+{% endapi-method-parameter %}
+{% api-method-parameter name="Content" type="string" required=true %}
+application/json
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+
+{% api-method-path-parameters %}
+{% api-method-parameter name="id" type="integer" required=true %}
+Comma-separated list of IDs of every reseller to fetch. I.e. [123456,789102,...] 
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```javascript
+{
+        "Name": "00001",
+        "User": null,
+        "Currency": null,
+        "AgreedTermsOn": false,
+        "Approved": false,
+        "NextPayoutDate": false,
+        "ProfileIsPublic": false,
+        "Area": "00001",
+        "OperatesIn": "00001",
+        "WebAddress": "00001",
+        "Email": "00001",
+        "ProfileSummary": "BusinessArea",
+        "PhoneNumber": "BusinessArea",
+        "Testimonial1": "BusinessArea",
+        "Testimonial1Author": "BusinessArea",
+        "Testimonial2": "BusinessArea",
+        "Testimonial2Author": "BusinessArea",
+        "StripeAccountId": "false",
+}
+```
+{% endapi-method-response-example %}
+
+{% api-method-response-example httpCode=404 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```
+"Not found"
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+> 🔒 Requires user role `reseller-list`
+
 {% api-method method="get" host="https://spaces.nexudus.com/api" path="/sys/resellers/:id" %}
 {% api-method-summary %}
 One by Id
@@ -461,6 +535,7 @@ The ID of the reseller to fetch.
 {% endapi-method %}
 
 > 🔒 Requires user role `reseller-read`
+
 
 {% api-method method="post" host="https://spaces.nexudus.com/api" path="/sys/resellers" %}
 {% api-method-summary %}

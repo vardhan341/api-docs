@@ -507,6 +507,92 @@ application/json
 
 > 🔒 Requires user role `team-list`
 
+
+{% api-method method="get" host="https://spaces.nexudus.com/api" path="/spaces/teams?Team_Id=[:id1,:id2,...]" %}
+{% api-method-summary %}
+List by Ids
+{% endapi-method-summary %}
+
+{% api-method-description %}
+Gets one or more team records based on their Id.
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+Basic Authentication token. Base64 encoding of 'username:password'.
+{% endapi-method-parameter %}
+{% api-method-parameter name="Content" type="string" required=true %}
+application/json
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+
+{% api-method-path-parameters %}
+{% api-method-parameter name="id" type="integer" required=true %}
+Comma-separated list of IDs of every team to fetch. I.e. [123456,789102,...] 
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```javascript
+{
+        "Business": null,
+        "Name": "Name",
+        "Description": "Descripción",
+        "TunnelPrivateGroupId": "",
+        "CreateSingleInvoiceForTeam": true,
+        "UseSpecialPrices": true,
+        "PayingMember": null,
+        "DefaultMemberTariff": null,
+        "MaxTeamMemberCount": null,
+        "TransferCreditsToPayingMember": true,
+        "ShareTimePasses": true,
+        "ShareExtraServices": true,
+        "ShareBookingCredit": true,
+        "DiscountExtraServices": null,
+        "DiscountTimePasses": null,
+        "DiscountCharges": null,
+        "DiscountTariffs": null,
+        "ProfileSummary": "null",
+        "ProfileTags": "BusinessArea",
+        "ProfileWebsite": "ProfileWebsite",
+        "GoogleMapsLink": "GoogleMapsLink",
+        "ProfileIsPublic": true,
+        "Twitter": "Twitter",
+        "Facebook": "Facebook",
+        "Linkedin": "Linkedin",
+        "Skype": "Skype",
+        "CoworkerIds": "",
+        "CoworkerFullNames": "",
+        "CoworkerBillingNames": "",
+        "ActiveContracts": ,
+}
+```
+{% endapi-method-response-example %}
+
+{% api-method-response-example httpCode=404 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```
+"Not found"
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+> 🔒 Requires user role `team-list`
+
 {% api-method method="get" host="https://spaces.nexudus.com/api" path="/spaces/teams/:id" %}
 {% api-method-summary %}
 One by Id
@@ -591,6 +677,7 @@ The ID of the team to fetch.
 {% endapi-method %}
 
 > 🔒 Requires user role `team-read`
+
 
 {% api-method method="post" host="https://spaces.nexudus.com/api" path="/spaces/teams" %}
 {% api-method-summary %}

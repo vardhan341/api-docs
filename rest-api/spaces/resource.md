@@ -627,6 +627,102 @@ application/json
 
 > 🔒 Requires user role `resource-list`
 
+
+{% api-method method="get" host="https://spaces.nexudus.com/api" path="/spaces/resources?Resource_Id=[:id1,:id2,...]" %}
+{% api-method-summary %}
+List by Ids
+{% endapi-method-summary %}
+
+{% api-method-description %}
+Gets one or more resource records based on their Id.
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+Basic Authentication token. Base64 encoding of 'username:password'.
+{% endapi-method-parameter %}
+{% api-method-parameter name="Content" type="string" required=true %}
+application/json
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+
+{% api-method-path-parameters %}
+{% api-method-parameter name="id" type="integer" required=true %}
+Comma-separated list of IDs of every resource to fetch. I.e. [123456,789102,...] 
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```javascript
+{
+        "Business": null,
+        "Name": "Name",
+        "ResourceType": null,
+        "Description": "Descripción",
+        "EmailConfirmationContent": "Descripción",
+        "Visible": true,
+        "RequiresConfirmation": true,
+        "DisplayOrder": true,
+        "GroupName": "GroupName",
+        "Projector": true,
+        "Internet": true,
+        "ConferencePhone": true,
+        "StandardPhone": true,
+        "WhiteBoard": true,
+        "LargeDisplay": true,
+        "Catering": true,
+        "TeaAndCoffee": true,
+        "Drinks": true,
+        "SecurityLock": true,
+        "CCTV": true,
+        "VoiceRecorder": true,
+        "AirConditioning": true,
+        "Heating": true,
+        "NaturalLight": true,
+        "AllowMultipleBookings": true,
+        "Allocation": 0,
+        "BookInAdvanceLimit": 0,
+        "LateBookingLimit": 0,
+        "LateCancellationLimit": 0,
+        "IntervalLimit": 0,
+        "NoReturnPolicy": 0,
+        "NoReturnPolicyAllResources": 0,
+        "NoReturnPolicyAllUsers": 0,
+        "MaxBookingLength": 0,
+        "MinBookingLength": 0,
+        "Shifts": "null",
+        "Longitude": 1,
+        "Latitude": 1,
+        "HideInCalendar": true,
+        "Archived": true,
+}
+```
+{% endapi-method-response-example %}
+
+{% api-method-response-example httpCode=404 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```
+"Not found"
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+> 🔒 Requires user role `resource-list`
+
 {% api-method method="get" host="https://spaces.nexudus.com/api" path="/spaces/resources/:id" %}
 {% api-method-summary %}
 One by Id
@@ -721,6 +817,7 @@ The ID of the resource to fetch.
 {% endapi-method %}
 
 > 🔒 Requires user role `resource-read`
+
 
 {% api-method method="post" host="https://spaces.nexudus.com/api" path="/spaces/resources" %}
 {% api-method-summary %}

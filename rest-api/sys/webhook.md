@@ -302,6 +302,71 @@ application/json
 
 > 🔒 Requires user role `webhook-list`
 
+
+{% api-method method="get" host="https://spaces.nexudus.com/api" path="/sys/webhooks?WebHook_Id=[:id1,:id2,...]" %}
+{% api-method-summary %}
+List by Ids
+{% endapi-method-summary %}
+
+{% api-method-description %}
+Gets one or more webhook records based on their Id.
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+Basic Authentication token. Base64 encoding of 'username:password'.
+{% endapi-method-parameter %}
+{% api-method-parameter name="Content" type="string" required=true %}
+application/json
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+
+{% api-method-path-parameters %}
+{% api-method-parameter name="id" type="integer" required=true %}
+Comma-separated list of IDs of every webhook to fetch. I.e. [123456,789102,...] 
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```javascript
+{
+        "Business": null,
+        "Name": "00001",
+        "Action": Nexudus.Coworking.Core.Enums.eWebhookAction.None,
+        "Description": "",
+        "URL": "00001",
+        "Active": true,
+        "LastError": "00001",
+        "ErrorCount": 0,
+        "LastTrigger": ,
+}
+```
+{% endapi-method-response-example %}
+
+{% api-method-response-example httpCode=404 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```
+"Not found"
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+> 🔒 Requires user role `webhook-list`
+
 {% api-method method="get" host="https://spaces.nexudus.com/api" path="/sys/webhooks/:id" %}
 {% api-method-summary %}
 One by Id
@@ -365,6 +430,7 @@ The ID of the webhook to fetch.
 {% endapi-method %}
 
 > 🔒 Requires user role `webhook-read`
+
 
 {% api-method method="post" host="https://spaces.nexudus.com/api" path="/sys/webhooks" %}
 {% api-method-summary %}

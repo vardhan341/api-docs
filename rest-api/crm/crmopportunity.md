@@ -464,6 +464,79 @@ application/json
 
 > 🔒 Requires user role `crmopportunity-list`
 
+
+{% api-method method="get" host="https://spaces.nexudus.com/api" path="/crm/crmopportunities?CrmOpportunity_Id=[:id1,:id2,...]" %}
+{% api-method-summary %}
+List by Ids
+{% endapi-method-summary %}
+
+{% api-method-description %}
+Gets one or more crmopportunity records based on their Id.
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+Basic Authentication token. Base64 encoding of 'username:password'.
+{% endapi-method-parameter %}
+{% api-method-parameter name="Content" type="string" required=true %}
+application/json
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+
+{% api-method-path-parameters %}
+{% api-method-parameter name="id" type="integer" required=true %}
+Comma-separated list of IDs of every crmopportunity to fetch. I.e. [123456,789102,...] 
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```javascript
+{
+        "CrmBoardColumn": null,
+        "Coworker": null,
+        "Team": null,
+        "OpportunityType": null,
+        "Responsible": null,
+        "Referrer": null,
+        "Agent": null,
+        "Notes": "Notes",
+        "Completed": true,
+        "DueDate": null,
+        "Value": null,
+        "LeadSource": Nexudus.Coworking.Core.Enums.eCrmOpportunitySource.Other,
+        "LossReason": Nexudus.Coworking.Core.Enums.eCrmOpportunityLossReason.Other,
+        "Status": Nexudus.Coworking.Core.Enums.eCrmOpportunityStatus.InProgress,
+        "WonOn": null,
+        "LostOn": null,
+        "Position": 1,
+}
+```
+{% endapi-method-response-example %}
+
+{% api-method-response-example httpCode=404 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```
+"Not found"
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+> 🔒 Requires user role `crmopportunity-list`
+
 {% api-method method="get" host="https://spaces.nexudus.com/api" path="/crm/crmopportunities/:id" %}
 {% api-method-summary %}
 One by Id
@@ -535,6 +608,7 @@ The ID of the crmopportunity to fetch.
 {% endapi-method %}
 
 > 🔒 Requires user role `crmopportunity-read`
+
 
 {% api-method method="post" host="https://spaces.nexudus.com/api" path="/crm/crmopportunities" %}
 {% api-method-summary %}

@@ -465,6 +465,91 @@ application/json
 
 > 🔒 Requires user role `user-list`
 
+
+{% api-method method="get" host="https://spaces.nexudus.com/api" path="/sys/users?User_Id=[:id1,:id2,...]" %}
+{% api-method-summary %}
+List by Ids
+{% endapi-method-summary %}
+
+{% api-method-description %}
+Gets one or more user records based on their Id.
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+Basic Authentication token. Base64 encoding of 'username:password'.
+{% endapi-method-parameter %}
+{% api-method-parameter name="Content" type="string" required=true %}
+application/json
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+
+{% api-method-path-parameters %}
+{% api-method-parameter name="id" type="integer" required=true %}
+Comma-separated list of IDs of every user to fetch. I.e. [123456,789102,...] 
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```javascript
+{
+        "FullName": "Full Name",
+        "Email": "email@email.com",
+        "AccessToken": "hush",
+        "PreferredLanguage": null,
+        "NewPassword": "password",
+        "PassportNumber": "",
+        "PassportCardNumber": "",
+        "EnablePassportAccess": false,
+        "Active": true,
+        "IsAdmin": false,
+        "APIAccess": false,
+        "Validated": true,
+        "MustResetPassword": true,
+        "LastAccess": false,
+        "Devices": "Devices",
+        "OnNewEmail": true,
+        "OnHelpDeskMsg": true,
+        "OnNewWallPost": true,
+        "OnNewMember": true,
+        "OnProfileChanges": true,
+        "OnNewBlogComment": true,
+        "OnNewEventComment": true,
+        "OnTariffChange": true,
+        "OnBookingChange": true,
+        "OnPurchases": true,
+        "OnVisitorRegistration": true,
+        "OnPlaformInvoices": true,
+        "ReceiveCommunityDigest": true,
+        "ReceiveEveryMessage": true,
+}
+```
+{% endapi-method-response-example %}
+
+{% api-method-response-example httpCode=404 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```
+"Not found"
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+> 🔒 Requires user role `user-list`
+
 {% api-method method="get" host="https://spaces.nexudus.com/api" path="/sys/users/:id" %}
 {% api-method-summary %}
 One by Id
@@ -548,6 +633,7 @@ The ID of the user to fetch.
 {% endapi-method %}
 
 > 🔒 Requires user role `user-read`
+
 
 {% api-method method="post" host="https://spaces.nexudus.com/api" path="/sys/users" %}
 {% api-method-summary %}

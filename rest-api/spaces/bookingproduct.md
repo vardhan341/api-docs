@@ -261,6 +261,66 @@ application/json
 
 > 🔒 Requires user role `bookingproduct-list`
 
+
+{% api-method method="get" host="https://spaces.nexudus.com/api" path="/spaces/bookingproducts?BookingProduct_Id=[:id1,:id2,...]" %}
+{% api-method-summary %}
+List by Ids
+{% endapi-method-summary %}
+
+{% api-method-description %}
+Gets one or more bookingproduct records based on their Id.
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+Basic Authentication token. Base64 encoding of 'username:password'.
+{% endapi-method-parameter %}
+{% api-method-parameter name="Content" type="string" required=true %}
+application/json
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+
+{% api-method-path-parameters %}
+{% api-method-parameter name="id" type="integer" required=true %}
+Comma-separated list of IDs of every bookingproduct to fetch. I.e. [123456,789102,...] 
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```javascript
+{
+        "Booking": null,
+        "Product": null,
+        "InvoiceInMinutes": false,
+        "Quantity": False,
+}
+```
+{% endapi-method-response-example %}
+
+{% api-method-response-example httpCode=404 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```
+"Not found"
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+> 🔒 Requires user role `bookingproduct-list`
+
 {% api-method method="get" host="https://spaces.nexudus.com/api" path="/spaces/bookingproducts/:id" %}
 {% api-method-summary %}
 One by Id
@@ -319,6 +379,7 @@ The ID of the bookingproduct to fetch.
 {% endapi-method %}
 
 > 🔒 Requires user role `bookingproduct-read`
+
 
 {% api-method method="post" host="https://spaces.nexudus.com/api" path="/spaces/bookingproducts" %}
 {% api-method-summary %}

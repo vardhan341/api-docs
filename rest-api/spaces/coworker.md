@@ -1205,6 +1205,175 @@ application/json
 
 > 🔒 Requires user role `coworker-list`
 
+
+{% api-method method="get" host="https://spaces.nexudus.com/api" path="/spaces/coworkers?Coworker_Id=[:id1,:id2,...]" %}
+{% api-method-summary %}
+List by Ids
+{% endapi-method-summary %}
+
+{% api-method-description %}
+Gets one or more coworker records based on their Id.
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+Basic Authentication token. Base64 encoding of 'username:password'.
+{% endapi-method-parameter %}
+{% api-method-parameter name="Content" type="string" required=true %}
+application/json
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+
+{% api-method-path-parameters %}
+{% api-method-parameter name="id" type="integer" required=true %}
+Comma-separated list of IDs of every coworker to fetch. I.e. [123456,789102,...] 
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```javascript
+{
+        "CoworkerType": Nexudus.Coworking.Core.Enums.eCoworkerRecordType.Individual,
+        "FullName": "Name",
+        "Salutation": "Name",
+        "Gender": Nexudus.Coworking.Core.Enums.eGender.NotSet,
+        "Email": "email@email.com",
+        "CreateUser": true,
+        "Address": "Address",
+        "PostCode": "PostCode",
+        "CityName": "CityName",
+        "State": "State",
+        "Country": null,
+        "SimpleTimeZone": null,
+        "MobilePhone": "MobilePhone",
+        "LandLine": "LandLine",
+        "DateOfBirth": null,
+        "NickName": "NickName",
+        "BusinessArea": "BusinessArea",
+        "Position": "Position",
+        "CompanyName": "CompanyName",
+        "ProfileWebsite": "ProfileWebsite",
+        "ProfileTags": "BusinessArea",
+        "ProfileSummary": "BusinessArea",
+        "Twitter": "Twitter",
+        "Facebook": "Facebook",
+        "Google": "Google",
+        "Telegram": "Telegram",
+        "Linkedin": "Linkedin",
+        "Skype": "Skype",
+        "Github": "Github",
+        "Pinterest": "Pinterest",
+        "Flickr": "Flickr",
+        "Instagram": "Instagram",
+        "Vimeo": "Vimeo",
+        "Tumblr": "Tumblr",
+        "Blogger": "Blogger",
+        "ProfileIsPublic": true,
+        "InvoicingBusiness": null,
+        "BillingEmail": "Address",
+        "BillingName": "Address",
+        "BillingAddress": "Address",
+        "BillingPostCode": "PostCode",
+        "BillingCityName": "CityName",
+        "BillingState": "State",
+        "BillingCountry": null,
+        "BillingSimpleTimeZone": null,
+        "TaxRate": 0,
+        "TaxIDNumber": "State",
+        "BankName": "Bank Name",
+        "BankAccount": "Bank Account #",
+        "BankBranch": "Branch / Sort Code",
+        "NotifyOnNewInvoice": true,
+        "NotifyOnNewPayment": true,
+        "NotifyOnFailedPayment": true,
+        "ShowPayingMemberInvoices": true,
+        "EnableGoCardlessPayments": false,
+        "GoCardlessContractNumber": "false",
+        "RegularPaymentProvider": Nexudus.Coworking.Core.Enums.eRegularPaymentProvider.Manual,
+        "RegularPaymentContractNumber": "false",
+        "CardNumber": "",
+        "DoNotProcessInvoicesAutomatically": false,
+        "AllowNetworkCheckin": false,
+        "CheckinSinceLastRenewal": 0,
+        "MinutesSinceLastRenewal": 0,
+        "AccessCardId": "Notes",
+        "AccessPincode": "Notes",
+        "KeyFobNumber": "Notes",
+        "NotifyOnDelivery": null,
+        "EzeepUserId": null,
+        "EzeepFreePrinting": null,
+        "PaperCutPayAsYouPrint": false,
+        "PaperCutFreePrinting": null,
+        "ReferenceNumber": "ReferenceNumber",
+        "Tag": "Tag",
+        "Notes": "Notes",
+        "ShowAlert": false,
+        "AlertNote": "Tag",
+        "User": null,
+        "Active": true,
+        "NextAutoInvoice": null,
+        "InvoiceDueDatePeriod": null,
+        "RegistrationDate": null,
+        "GeneralTermsAccepted": true,
+        "Custom1": "Custom1",
+        "Custom2": "Custom1",
+        "Custom3": "Custom1",
+        "Custom4": "Custom1",
+        "Custom5": "Custom1",
+        "Custom6": "Custom1",
+        "Custom7": "Custom1",
+        "Custom8": "Custom1",
+        "Custom9": "Custom1",
+        "Custom10": "Custom1",
+        "Custom11": "Custom1",
+        "Custom12": "Custom1",
+        "Custom13": "Custom1",
+        "Custom14": "Custom1",
+        "Custom15": "Custom1",
+        "Custom16": "Custom1",
+        "Custom17": "Custom1",
+        "Custom18": "Custom1",
+        "Custom19": "Custom1",
+        "Custom20": "Custom1",
+        "Custom21": "Custom1",
+        "Custom22": "Custom1",
+        "Custom23": "Custom1",
+        "Custom24": "Custom1",
+        "Custom25": "Custom1",
+        "Custom26": "Custom1",
+        "Custom27": "Custom1",
+        "Custom28": "Custom1",
+        "Custom29": "Custom1",
+        "Custom30": "Custom1",
+        "PurchaseOrder": "false",
+}
+```
+{% endapi-method-response-example %}
+
+{% api-method-response-example httpCode=404 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```
+"Not found"
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+> 🔒 Requires user role `coworker-list`
+
 {% api-method method="get" host="https://spaces.nexudus.com/api" path="/spaces/coworkers/:id" %}
 {% api-method-summary %}
 One by Id
@@ -1372,6 +1541,7 @@ The ID of the coworker to fetch.
 {% endapi-method %}
 
 > 🔒 Requires user role `coworker-read`
+
 
 {% api-method method="post" host="https://spaces.nexudus.com/api" path="/spaces/coworkers" %}
 {% api-method-summary %}

@@ -746,6 +746,105 @@ application/json
 
 > 🔒 Requires user role `tariff-list`
 
+
+{% api-method method="get" host="https://spaces.nexudus.com/api" path="/billing/tariffs?Tariff_Id=[:id1,:id2,...]" %}
+{% api-method-summary %}
+List by Ids
+{% endapi-method-summary %}
+
+{% api-method-description %}
+Gets one or more tariff records based on their Id.
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+Basic Authentication token. Base64 encoding of 'username:password'.
+{% endapi-method-parameter %}
+{% api-method-parameter name="Content" type="string" required=true %}
+application/json
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+
+{% api-method-path-parameters %}
+{% api-method-parameter name="id" type="integer" required=true %}
+Comma-separated list of IDs of every tariff to fetch. I.e. [123456,789102,...] 
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```javascript
+{
+        "Business": null,
+        "Name": "Name",
+        "Price": 0,
+        "DefaultInvoicingDay": ,
+        "Visible": true,
+        "UseTimePasses": true,
+        "Description": "Descripción",
+        "SignUpFee": 0,
+        "Currency": null,
+        "TaxRate": null,
+        "FinancialAccount": null,
+        "TermsAndConditions": "TermsAndConditions",
+        "CancellationPeriod": 0,
+        "DisplayOrder": true,
+        "GroupName": "GroupName",
+        "SubscribersLimit": null,
+        "CancellationLimitDays": null,
+        "DefaultContractTerm": null,
+        "CancelMemeberAccountAfter": null,
+        "CheckinPricePlanLimit": null,
+        "CheckinMonthLimit": null,
+        "CheckinWeekLimit": null,
+        "HoursPricePlanLimit": null,
+        "HoursMonthLimit": null,
+        "HoursWeekLimit": null,
+        "BookingMinuteWeekLimit": null,
+        "BookingMinuteMonthLimit": null,
+        "DiscountExtraServices": null,
+        "DiscountTimePasses": null,
+        "DiscountCharges": null,
+        "InvoiceEvery": 1,
+        "InvoiceEveryWeeks": 0,
+        "AutoCancelAfter": Cancel Contract After # renewals,
+        "AdvanceInvoiceCycles": Invoice # renewals in Advance,
+        "ProrateDayOfMonth": 0,
+        "ProrateDaysBefore": 0,
+        "ProrateCancellations": true,
+        "ChargeAndExtend": 0,
+        "AutoRaiseInvoices": false,
+        "RaiseInvoiceEvery": 0,
+        "RaiseInvoiceEveryWeeks": 0,
+        "Archived": true,
+        "Starred": true,
+}
+```
+{% endapi-method-response-example %}
+
+{% api-method-response-example httpCode=404 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```
+"Not found"
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+> 🔒 Requires user role `tariff-list`
+
 {% api-method method="get" host="https://spaces.nexudus.com/api" path="/billing/tariffs/:id" %}
 {% api-method-summary %}
 One by Id
@@ -843,6 +942,7 @@ The ID of the tariff to fetch.
 {% endapi-method %}
 
 > 🔒 Requires user role `tariff-read`
+
 
 {% api-method method="post" host="https://spaces.nexudus.com/api" path="/billing/tariffs" %}
 {% api-method-summary %}

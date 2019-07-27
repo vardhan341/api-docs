@@ -366,6 +366,79 @@ application/json
 
 > 🔒 Requires user role `customfield-list`
 
+
+{% api-method method="get" host="https://spaces.nexudus.com/api" path="/crm/customfields?CustomField_Id=[:id1,:id2,...]" %}
+{% api-method-summary %}
+List by Ids
+{% endapi-method-summary %}
+
+{% api-method-description %}
+Gets one or more customfield records based on their Id.
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+Basic Authentication token. Base64 encoding of 'username:password'.
+{% endapi-method-parameter %}
+{% api-method-parameter name="Content" type="string" required=true %}
+application/json
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+
+{% api-method-path-parameters %}
+{% api-method-parameter name="id" type="integer" required=true %}
+Comma-separated list of IDs of every customfield to fetch. I.e. [123456,789102,...] 
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```javascript
+{
+        "Business": null,
+        "Name": "Joe",
+        "DisplayOrder": Joe,
+        "RecordType": eCustomFieldRecordType.Coworker,
+        "FieldType": eFieldType.Text,
+        "CoworkerFieldPosition": eCoworkerFieldPosition.General,
+        "AvailableOptions": "Joe",
+        "AllowMultipleOptions": ,
+        "CustomFieldIndex": Joe,
+        "Required": ,
+        "DisplayInSignUpForm": ,
+        "DisplayInProfileForm": ,
+        "DisplayInTourForm": ,
+        "GroupName": "Short",
+        "DisplayInPublicProfile": ,
+        "DisplayInDirectorySearch": ,
+        "NameInSearch": "Short",
+}
+```
+{% endapi-method-response-example %}
+
+{% api-method-response-example httpCode=404 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```
+"Not found"
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+> 🔒 Requires user role `customfield-list`
+
 {% api-method method="get" host="https://spaces.nexudus.com/api" path="/crm/customfields/:id" %}
 {% api-method-summary %}
 One by Id
@@ -437,6 +510,7 @@ The ID of the customfield to fetch.
 {% endapi-method %}
 
 > 🔒 Requires user role `customfield-read`
+
 
 {% api-method method="post" host="https://spaces.nexudus.com/api" path="/crm/customfields" %}
 {% api-method-summary %}

@@ -886,6 +886,130 @@ application/json
 
 > 🔒 Requires user role `business-list`
 
+
+{% api-method method="get" host="https://spaces.nexudus.com/api" path="/sys/businesses?Business_Id=[:id1,:id2,...]" %}
+{% api-method-summary %}
+List by Ids
+{% endapi-method-summary %}
+
+{% api-method-description %}
+Gets one or more business records based on their Id.
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+Basic Authentication token. Base64 encoding of 'username:password'.
+{% endapi-method-parameter %}
+{% api-method-parameter name="Content" type="string" required=true %}
+application/json
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+
+{% api-method-path-parameters %}
+{% api-method-parameter name="id" type="integer" required=true %}
+Comma-separated list of IDs of every business to fetch. I.e. [123456,789102,...] 
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```javascript
+{
+        "Name": "Joe",
+        "DefaultLanguage": Nexudus.Coworking.Core.Enums.eLanguage.Spanish,
+        "SpaceWebsiteLanguage": null,
+        "RootLocation": null,
+        "WebAddress": "url",
+        "DefaultPaymentGateway": null,
+        "NextInvoice": null,
+        "TermsAndConditions": "TermsAndConditions",
+        "ShortIntroduction": "",
+        "AboutUs": "",
+        "Quote": "Joe",
+        "PrivacyPolicyUrl": "Joe",
+        "CookiePolicyUrl": "Joe",
+        "WebContact": "www.example.com",
+        "Address": "Joe",
+        "Phone": "0207768885828",
+        "Fax": "0207768885828",
+        "EmailContact": "me@example.com",
+        "Country": null,
+        "Currency": null,
+        "SimpleTimeZone": null,
+        "Last4Digits": "0",
+        "PreAuthLastError": "0",
+        "PassportChannels": "null",
+        "PassportPublished": null,
+        "PassportSpaceName": "null",
+        "PassportTagLine": "null",
+        "VenueType": Nexudus.Coworking.Core.Enums.eVenueType.CoworkingSpace,
+        "Tags": "null",
+        "NumberOfFloors": 1,
+        "FloorSpace": 1,
+        "FloorSpaceUnit": Nexudus.Coworking.Core.Enums.eFloorUnit.SqFt,
+        "Longitude": 1,
+        "Latitude": 1,
+        "PassportDescription": "Joe",
+        "TownCity": "",
+        "PostalCode": "",
+        "StreetName": "",
+        "StreetNumber": "",
+        "Neighborhood": "",
+        "ContactPhoneNumber": "",
+        "ContactEmail": "",
+        "PassportMembersAccess": Nexudus.Coworking.Core.Enums.ePassportAccess.Everyone,
+        "PassportEventsAccess": Nexudus.Coworking.Core.Enums.ePassportAccess.Everyone,
+        "PassportCommunityAccess": Nexudus.Coworking.Core.Enums.ePassportAccess.Everyone,
+        "PassportBlogPostsAccess": Nexudus.Coworking.Core.Enums.ePassportAccess.Everyone,
+        "MondayOpenTime": null,
+        "MondayCloseTime": null,
+        "TuesdayOpenTime": null,
+        "TuesdayCloseTime": null,
+        "WednesdayOpenTime": null,
+        "WednesdayCloseTime": null,
+        "ThursdayOpenTime": null,
+        "ThursdayCloseTime": null,
+        "FridayOpenTime": null,
+        "FridayCloseTime": null,
+        "SaturdayOpenTime": null,
+        "SaturdayCloseTime": null,
+        "SundayOpenTime": null,
+        "SundayCloseTime": null,
+        "MondayClosed": null,
+        "TuesdayClosed": null,
+        "WednesdayClosed": null,
+        "ThursdayClosed": null,
+        "FridayClosed": null,
+        "SaturdayClosed": null,
+        "SundayClosed": null,
+        "SameOpeningTimes": null,
+}
+```
+{% endapi-method-response-example %}
+
+{% api-method-response-example httpCode=404 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```
+"Not found"
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+> 🔒 Requires user role `business-list`
+
 {% api-method method="get" host="https://spaces.nexudus.com/api" path="/sys/businesses/:id" %}
 {% api-method-summary %}
 One by Id
@@ -1008,6 +1132,7 @@ The ID of the business to fetch.
 {% endapi-method %}
 
 > 🔒 Requires user role `business-read`
+
 
 {% api-method method="post" host="https://spaces.nexudus.com/api" path="/sys/businesses" %}
 {% api-method-summary %}
