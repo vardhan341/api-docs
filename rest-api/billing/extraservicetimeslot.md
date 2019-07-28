@@ -307,11 +307,26 @@ Comma-separated list of IDs of every extraservicetimeslot to fetch. I.e. [123456
 
 ```javascript
 {
+    "Records": [{
         "ExtraService": null,
         "FromTime": DateTime.Parse("2013-01-01 10:00"),
         "ToTime": DateTime.Parse("2013-01-01 11:00"),
         "DayOfWeek": DayOfWeek.Monday,
         "Available": true,
+    }],
+    }],
+    "CurrentPageSize": 25,
+    "CurrentPage": 1,
+    "CurrentOrderField": "Id",
+    "CurrentSortDirection": 1,
+    "FirstItem": 1,
+    "HasNextPage": true,
+    "HasPreviousPage": false,
+    "LastItem": 25,
+    "PageNumber": 1,
+    "PageSize": 25,
+    "TotalItems": 60,
+    "TotalPages": 3
 }
 ```
 {% endapi-method-response-example %}

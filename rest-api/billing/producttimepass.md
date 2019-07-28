@@ -317,11 +317,26 @@ Comma-separated list of IDs of every producttimepass to fetch. I.e. [123456,7891
 
 ```javascript
 {
+    "Records": [{
         "Product": null,
         "TimePass": null,
         "PassesIncluded": 0,
         "ExpirationType": Nexudus.Coworking.Core.Enums.eRecurrentChargePattern.PricePlan,
         "ExpiresIn": 0,
+    }],
+    }],
+    "CurrentPageSize": 25,
+    "CurrentPage": 1,
+    "CurrentOrderField": "Id",
+    "CurrentSortDirection": 1,
+    "FirstItem": 1,
+    "HasNextPage": true,
+    "HasPreviousPage": false,
+    "LastItem": 25,
+    "PageNumber": 1,
+    "PageSize": 25,
+    "TotalItems": 60,
+    "TotalPages": 3
 }
 ```
 {% endapi-method-response-example %}

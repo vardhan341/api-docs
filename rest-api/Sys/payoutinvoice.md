@@ -300,9 +300,24 @@ Comma-separated list of IDs of every payoutinvoice to fetch. I.e. [123456,789102
 
 ```javascript
 {
+    "Records": [{
         "Invoice": null,
         "ResellerPayout": null,
         "Amount": 0,
+    }],
+    }],
+    "CurrentPageSize": 25,
+    "CurrentPage": 1,
+    "CurrentOrderField": "Id",
+    "CurrentSortDirection": 1,
+    "FirstItem": 1,
+    "HasNextPage": true,
+    "HasPreviousPage": false,
+    "LastItem": 25,
+    "PageNumber": 1,
+    "PageSize": 25,
+    "TotalItems": 60,
+    "TotalPages": 3
 }
 ```
 {% endapi-method-response-example %}

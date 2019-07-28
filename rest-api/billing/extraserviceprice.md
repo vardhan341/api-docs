@@ -309,10 +309,25 @@ Comma-separated list of IDs of every extraserviceprice to fetch. I.e. [123456,78
 
 ```javascript
 {
+    "Records": [{
         "ExtraService": null,
         "Tariff": null,
         "Price": 0,
         "MaximumPrice": 0,
+    }],
+    }],
+    "CurrentPageSize": 25,
+    "CurrentPage": 1,
+    "CurrentOrderField": "Id",
+    "CurrentSortDirection": 1,
+    "FirstItem": 1,
+    "HasNextPage": true,
+    "HasPreviousPage": false,
+    "LastItem": 25,
+    "PageNumber": 1,
+    "PageSize": 25,
+    "TotalItems": 60,
+    "TotalPages": 3
 }
 ```
 {% endapi-method-response-example %}

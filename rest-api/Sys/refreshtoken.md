@@ -309,12 +309,27 @@ Comma-separated list of IDs of every refreshtoken to fetch. I.e. [123456,789102,
 
 ```javascript
 {
+    "Records": [{
         "Subject": "Subject",
         "ClientId": "Client Id",
         "ExpiresOn": DateTime.Parse("Expires On"),
         "ProtectedTicket": "Protected Ticket",
         "TicketHash": "Ticket Hash",
         "TicketSalt": "Ticket Salt",
+    }],
+    }],
+    "CurrentPageSize": 25,
+    "CurrentPage": 1,
+    "CurrentOrderField": "Id",
+    "CurrentSortDirection": 1,
+    "FirstItem": 1,
+    "HasNextPage": true,
+    "HasPreviousPage": false,
+    "LastItem": 25,
+    "PageNumber": 1,
+    "PageSize": 25,
+    "TotalItems": 60,
+    "TotalPages": 3
 }
 ```
 {% endapi-method-response-example %}
