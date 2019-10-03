@@ -1,6 +1,4 @@
-# EmailQueueItem
-
-{% api-method method="get" host="https://spaces.nexudus.com/api" path="/sys/emailqueueitems" %}
+﻿{% api-method method="get" host="https://spaces.nexudus.com/api" path="/sys/emailqueueitems" %}
 {% api-method-summary %}
 Find
 {% endapi-method-summary %}
@@ -11,17 +9,18 @@ This endpoint allows you to GET a list of emailqueueitems based on one or more f
 
 {% api-method-spec %}
 {% api-method-request %}
+
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
 {% api-method-query-parameters %}
+
 {% api-method-parameter name="Id" type="int" %}
 ?Id=...
 {% endapi-method-parameter %}
@@ -34,69 +33,83 @@ application/json
 ?EmailQueueItem\_SystemId=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="Business" type="Business" %}
 ?EmailQueueItem\_Business=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="EmailAccount" type="EmailAccount" %}
 ?EmailQueueItem\_EmailAccount=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="FromUser" type="User" %}
 ?EmailQueueItem\_FromUser=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="Header" type="string" %}
 ?EmailQueueItem\_Header=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="Body" type="string" %}
 ?EmailQueueItem\_Body=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="FromEmail" type="string" %}
 ?EmailQueueItem\_FromEmail=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="ToEmails" type="string" %}
 ?EmailQueueItem\_ToEmails=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="CCEmails" type="string" %}
 ?EmailQueueItem\_CCEmails=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="CCOEmails" type="string" %}
 ?EmailQueueItem\_CCOEmails=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="Sent" type="bool" %}
 ?EmailQueueItem\_Sent=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="SentAttempts" type="int" %}
 ?EmailQueueItem\_SentAttempts=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="Delivered" type="bool" %}
 ?EmailQueueItem\_Delivered=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="LastSendError" type="string" %}
 ?EmailQueueItem\_LastSendError=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="SendDate" type="DateTime?" %}
 ?EmailQueueItem\_SendDate=...
 {% endapi-method-parameter %}
+
+
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
 
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
 
-{% endapi-method-response-example-description %}
 
 ```javascript
 {
@@ -129,6 +142,7 @@ application/json
     "TotalItems": 60,
     "TotalPages": 3
 }
+
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}
@@ -148,11 +162,11 @@ This endpoint allows you to GET a list of emailqueueitems.
 
 {% api-method-spec %}
 {% api-method-request %}
+
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
@@ -224,25 +238,26 @@ size=25 \(maximum=1000\)
 > 🔒 Requires user role `emailqueueitem-list`
 
 {% hint style="info" %}
-You can also get a list of records based when they were created or updated. This is useful if you want to get a list of records created after or before a particular point in time. You can also use range query parameters for all date, integer and decimal properties.
+You can also get a list of records based when they were created or updated. This is useful if you want to get a list of records created after or before a particular point in time. 
+You can also use range query parameters for all date, integer and decimal properties.
 {% endhint %}
 
 {% api-method method="get" host="https://spaces.nexudus.com/api" path="/sys/emailqueueitems" %}
 {% api-method-summary %}
-By date range
+By date or number range
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Gets a list of emailqueueitems based on the date when they were created or updated.
+Gets a list of emailqueueitems based on a range of dates, integer or decimal properties.
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
+
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
@@ -265,21 +280,19 @@ application/json
 ?from\_EmailQueueItem\_UpdatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="SentAttempts" type="decimal" required=false %}
+{% api-method-parameter name="SentAttempts" type="int" required=false %}
 ?from\_EmailQueueItem\_SentAttempts=...
 {% endapi-method-parameter %}
-
-{% api-method-parameter name="SentAttempts" type="decimal" required=false %}
+{% api-method-parameter name="SentAttempts" type="int" required=false %}
 ?to\_EmailQueueItem\_SentAttempts=...
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="SendDate" type="datetime" required=false %}
 ?from\_EmailQueueItem\_SendDate=...
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="SendDate" type="datetime" required=false %}
 ?to\_EmailQueueItem\_SendDate=...
 {% endapi-method-parameter %}
+
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
 
@@ -329,6 +342,91 @@ application/json
 
 > 🔒 Requires user role `emailqueueitem-list`
 
+
+{% api-method method="get" host="https://spaces.nexudus.com/api" path="/sys/emailqueueitems?EmailQueueItem_Id=[:id1,:id2,...]" %}
+{% api-method-summary %}
+List by Ids
+{% endapi-method-summary %}
+
+{% api-method-description %}
+Gets one or more emailqueueitem records based on their Id.
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+Basic Authentication token. Base64 encoding of 'username:password'.
+{% endapi-method-parameter %}
+{% api-method-parameter name="Content" type="string" required=true %}
+application/json
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+
+{% api-method-path-parameters %}
+{% api-method-parameter name="id" type="integer" required=true %}
+Comma-separated list of IDs of every emailqueueitem to fetch. I.e. [123456,789102,...] 
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```javascript
+{
+    "Records": [{
+        "Business": null,
+        "EmailAccount": null,
+        "FromUser": null,
+        "Header": "Header",
+        "Body": "Body",
+        "FromEmail": "FromEmails",
+        "ToEmails": "ToEmails",
+        "CCEmails": "CCEmails",
+        "CCOEmails": "CCOEmails",
+        "Sent": false,
+        "SentAttempts": 0,
+        "Delivered": false,
+        "LastSendError": "",
+        "SendDate": null,
+    }],
+    }],
+    "CurrentPageSize": 25,
+    "CurrentPage": 1,
+    "CurrentOrderField": "Id",
+    "CurrentSortDirection": 1,
+    "FirstItem": 1,
+    "HasNextPage": true,
+    "HasPreviousPage": false,
+    "LastItem": 25,
+    "PageNumber": 1,
+    "PageSize": 25,
+    "TotalItems": 60,
+    "TotalPages": 3
+}
+```
+{% endapi-method-response-example %}
+
+{% api-method-response-example httpCode=404 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```
+"Not found"
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+> 🔒 Requires user role `emailqueueitem-list`
+
 {% api-method method="get" host="https://spaces.nexudus.com/api" path="/sys/emailqueueitems/:id" %}
 {% api-method-summary %}
 One by Id
@@ -340,21 +438,21 @@ Gets one emailqueueitem record.
 
 {% api-method-spec %}
 {% api-method-request %}
-{% api-method-path-parameters %}
-{% api-method-parameter name="id" type="integer" required=true %}
-The ID of the emailqueueitem to fetch.
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
 
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
+
+{% api-method-path-parameters %}
+{% api-method-parameter name="id" type="integer" required=true %}
+The ID of the emailqueueitem to fetch.
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
 {% endapi-method-request %}
 
 {% api-method-response %}
@@ -388,7 +486,7 @@ application/json
 
 {% endapi-method-response-example-description %}
 
-```text
+```
 "Not found"
 ```
 {% endapi-method-response-example %}
@@ -397,6 +495,7 @@ application/json
 {% endapi-method %}
 
 > 🔒 Requires user role `emailqueueitem-read`
+
 
 {% api-method method="post" host="https://spaces.nexudus.com/api" path="/sys/emailqueueitems" %}
 {% api-method-summary %}
@@ -409,11 +508,11 @@ Creates a new emailqueueitem.
 
 {% api-method-spec %}
 {% api-method-request %}
+
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
@@ -421,61 +520,35 @@ application/json
 
 {% api-method-body-parameters %}
 {% api-method-parameter name="BusinessId" type="int" required=true %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="EmailAccountId" type="int" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="FromUserId" type="int" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Header" type="string" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Body" type="string" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="FromEmail" type="string" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="ToEmails" type="string" required=true %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="CCEmails" type="string" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="CCOEmails" type="string" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Sent" type="bool" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="SentAttempts" type="int" required=true %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Delivered" type="bool" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="LastSendError" type="string" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="SendDate" type="DateTime?" required=false %}
-
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
+
 {% endapi-method-request %}
 
 {% api-method-response %}
@@ -498,7 +571,7 @@ application/json
 
 {% api-method-response-example httpCode=400 %}
 {% api-method-response-example-description %}
-_This response is an example, errors and messages will follow this structure but keys and descriptions may be different for each record._
+_This response is an example, errors and messages will follow this structure but keys and descriptions may be different for each record._  
 {% endapi-method-response-example-description %}
 
 ```javascript
@@ -550,88 +623,78 @@ _This response is an example, errors and messages will follow this structure but
 
 > 🔒 Requires user role `emailqueueitem-create`
 
+```javascript
+{
+	"Business": 12345678,
+	"EmailAccount": 12345678,
+	"FromUser": 12345678,
+	"Header": "Header",
+	"Body": "Body",
+	"FromEmail": "FromEmails",
+	"ToEmails": "ToEmails",
+	"CCEmails": "CCEmails",
+	"CCOEmails": "CCOEmails",
+	"Sent": false,
+	"SentAttempts": 0,
+	"Delivered": false,
+	"LastSendError": "",
+	"SendDate": null,
+}
+
+```
+
 {% api-method method="put" host="https://spaces.nexudus.com/api" path="/sys/emailqueueitems" %}
 {% api-method-summary %}
 Update
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Updates and existing emailqueueitem.Required User Role: `emailqueueitem-edit`
+Updates and existing emailqueueitem.
+  
+Required User Role: `emailqueueitem-edit`
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
-{% api-method-path-parameters %}
-{% api-method-parameter name="Id" type="integer" required=true %}
-The id of the emailqueueitem to update
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
 
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
 {% api-method-body-parameters %}
+The id of the emailqueueitem to update
 {% api-method-parameter name="BusinessId" type="int" required=true %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="EmailAccountId" type="int" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="FromUserId" type="int" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Header" type="string" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Body" type="string" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="FromEmail" type="string" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="ToEmails" type="string" required=true %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="CCEmails" type="string" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="CCOEmails" type="string" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Sent" type="bool" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="SentAttempts" type="int" required=true %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Delivered" type="bool" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="LastSendError" type="string" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="SendDate" type="DateTime?" required=false %}
-
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
@@ -658,7 +721,7 @@ application/json
 
 {% api-method-response-example httpCode=400 %}
 {% api-method-response-example-description %}
-_This response is an example, errors and messages will follow this structure but keys and descriptions may be different for each record._
+_This response is an example, errors and messages will follow this structure but keys and descriptions may be different for each record._  
 {% endapi-method-response-example-description %}
 
 ```javascript
@@ -710,9 +773,32 @@ _This response is an example, errors and messages will follow this structure but
 
 > 🔒 Requires user role `emailqueueitem-edit`
 
+```javascript
+{
+	"Business": 12345678,
+	"EmailAccount": 12345678,
+	"FromUser": 12345678,
+	"Header": "Header",
+	"Body": "Body",
+	"FromEmail": "FromEmails",
+	"ToEmails": "ToEmails",
+	"CCEmails": "CCEmails",
+	"CCOEmails": "CCOEmails",
+	"Sent": false,
+	"SentAttempts": 0,
+	"Delivered": false,
+	"LastSendError": "",
+	"SendDate": null,
+}
+
+```
+
+
+
+
 ## Commands
 
-Commands allow to perform actions against one or more emailqueueitem records. Some commands accept only one record while others can run an action for a number of records at the same time. Each command has metadata with information about how it can be used and the amount of records, if any, it needs to run.
+Commands allow to perform actions against one or more emailqueueitem records. Some commands accept only one record while others can run an action for a number of records at the same time.  Each command has metadata with information about how it can be used and the amount of records, if any, it needs to run.
 
 > ```javascript
 > {
@@ -734,11 +820,11 @@ Get all commands available to run for emailqueueitem records.
 
 {% api-method-spec %}
 {% api-method-request %}
+
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
@@ -748,7 +834,7 @@ application/json
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
 {% api-method-response-example-description %}
-_This response is an example._
+_This response is an example._  
 {% endapi-method-response-example-description %}
 
 ```javascript
@@ -792,11 +878,11 @@ Run Command
 
 {% api-method-spec %}
 {% api-method-request %}
+
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
@@ -808,17 +894,21 @@ The command Key defining the command to run. `"COMMAND_KEY_1"`
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Parameters" type="array" required=false %}
-A list of object with the structure below. The parameters required for each command are returned in the "RequiresParameters" array return by the "commands" endpoint.`[    
-{    
-"Name": "Name",    
-"Type":"Type",    
-"Value":recordId    
-}    
+A list of object with the structure below. The parameters required for each command are returned in the "RequiresParameters" array return by the "commands" endpoint.  
+  
+`[  
+   {  
+      "Name": "Name",   
+      "Type":"Type",   
+      "Value":recordId  
+    }  
 ]`
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Ids" type="array" required=true %}
-A list of integer IDs for each of the records to run this command for.`[987654321, 123565978]`
+A list of integer IDs for each of the records to run this command for.  
+  
+`[987654321, 123565978]`
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
@@ -826,7 +916,7 @@ A list of integer IDs for each of the records to run this command for.`[98765432
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
 {% api-method-response-example-description %}
-_Commands also return a status 200 when they fail to process one or more of the records. Use the 'WasSuccessful' property to know if the command run succeeded._
+_Commands also return a status 200 when they fail to process one or more of the records. Use the 'WasSuccessful'  property to know if the command run succeeded._  
 {% endapi-method-response-example-description %}
 
 ```javascript
@@ -845,13 +935,14 @@ _Commands also return a status 200 when they fail to process one or more of the 
 
 > 🔒 Requires user role `emailqueueitem-edit`
 
+## Enumerated values
+
 ## Binary files
 
 The following endpoints return binary data. Check the `ContentType` header to understand the type of file being returned in the response stream.
 
+
 ## Related Entities
-
-* [Business](business.md)
+* [Business](../sys/business.md)
 * [EmailAccount](../crm/emailaccount.md)
-* [User](user.md)
-
+* [User](../sys/user.md)

@@ -299,6 +299,86 @@ application/json
 
 > 🔒 Requires user role `communitythread-list`
 
+
+{% api-method method="get" host="https://spaces.nexudus.com/api" path="/community/communitythreads?CommunityThread_Id=[:id1,:id2,...]" %}
+{% api-method-summary %}
+List by Ids
+{% endapi-method-summary %}
+
+{% api-method-description %}
+Gets one or more communitythread records based on their Id.
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+Basic Authentication token. Base64 encoding of 'username:password'.
+{% endapi-method-parameter %}
+{% api-method-parameter name="Content" type="string" required=true %}
+application/json
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+
+{% api-method-path-parameters %}
+{% api-method-parameter name="id" type="integer" required=true %}
+Comma-separated list of IDs of every communitythread to fetch. I.e. [123456,789102,...] 
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```javascript
+{
+    "Records": [{
+        "Business": null,
+        "CommunityGroup": null,
+        "User": null,
+        "Subject": "00001",
+        "Message": "Message",
+        "InstantDelivery": instant delivery,
+        "Tags": "00001",
+        "Private": false,
+        "LastMessageDate": null,
+    }],
+    }],
+    "CurrentPageSize": 25,
+    "CurrentPage": 1,
+    "CurrentOrderField": "Id",
+    "CurrentSortDirection": 1,
+    "FirstItem": 1,
+    "HasNextPage": true,
+    "HasPreviousPage": false,
+    "LastItem": 25,
+    "PageNumber": 1,
+    "PageSize": 25,
+    "TotalItems": 60,
+    "TotalPages": 3
+}
+```
+{% endapi-method-response-example %}
+
+{% api-method-response-example httpCode=404 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```
+"Not found"
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+> 🔒 Requires user role `communitythread-list`
+
 {% api-method method="get" host="https://spaces.nexudus.com/api" path="/community/communitythreads/:id" %}
 {% api-method-summary %}
 One by Id
@@ -362,6 +442,7 @@ The ID of the communitythread to fetch.
 {% endapi-method %}
 
 > 🔒 Requires user role `communitythread-read`
+
 
 {% api-method method="post" host="https://spaces.nexudus.com/api" path="/community/communitythreads" %}
 {% api-method-summary %}

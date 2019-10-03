@@ -49,6 +49,11 @@ application/json
 {% endapi-method-parameter %}
 
 
+{% api-method-parameter name="Attempt3dSecure" type="bool" %}
+?PaymentGateway\_Attempt3dSecure=...
+{% endapi-method-parameter %}
+
+
 {% api-method-parameter name="AccessToken" type="string" %}
 ?PaymentGateway\_AccessToken=...
 {% endapi-method-parameter %}
@@ -92,6 +97,7 @@ application/json
         "Business": null,
         "Name": "PayPal",
         "PaymentGatewayType": Nexudus.Coworking.Core.Enums.ePaymentGatewayType.AutorizeNET,
+        "Attempt3dSecure": false,
         "AccessToken": "PayPal",
         "ConfigurationXml": "ConfigurationXml",
         "XmlResponse": "XmlResponse",
@@ -173,6 +179,7 @@ size=25 \(maximum=1000\)
         "Business": null,
         "Name": "PayPal",
         "PaymentGatewayType": Nexudus.Coworking.Core.Enums.ePaymentGatewayType.AutorizeNET,
+        "Attempt3dSecure": false,
         "AccessToken": "PayPal",
         "ConfigurationXml": "ConfigurationXml",
         "XmlResponse": "XmlResponse",
@@ -267,6 +274,7 @@ application/json
         "Business": null,
         "Name": "PayPal",
         "PaymentGatewayType": Nexudus.Coworking.Core.Enums.ePaymentGatewayType.AutorizeNET,
+        "Attempt3dSecure": false,
         "AccessToken": "PayPal",
         "ConfigurationXml": "ConfigurationXml",
         "XmlResponse": "XmlResponse",
@@ -288,6 +296,87 @@ application/json
     "TotalItems": 60,
     "TotalPages": 3
 }
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+> 🔒 Requires user role `paymentgateway-list`
+
+
+{% api-method method="get" host="https://spaces.nexudus.com/api" path="/billing/paymentgateways?PaymentGateway_Id=[:id1,:id2,...]" %}
+{% api-method-summary %}
+List by Ids
+{% endapi-method-summary %}
+
+{% api-method-description %}
+Gets one or more paymentgateway records based on their Id.
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+Basic Authentication token. Base64 encoding of 'username:password'.
+{% endapi-method-parameter %}
+{% api-method-parameter name="Content" type="string" required=true %}
+application/json
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+
+{% api-method-path-parameters %}
+{% api-method-parameter name="id" type="integer" required=true %}
+Comma-separated list of IDs of every paymentgateway to fetch. I.e. [123456,789102,...] 
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```javascript
+{
+    "Records": [{
+        "Business": null,
+        "Name": "PayPal",
+        "PaymentGatewayType": Nexudus.Coworking.Core.Enums.ePaymentGatewayType.AutorizeNET,
+        "Attempt3dSecure": false,
+        "AccessToken": "PayPal",
+        "ConfigurationXml": "ConfigurationXml",
+        "XmlResponse": "XmlResponse",
+        "TransactionFee": 0,
+        "FinancialAccount": null,
+        "TaxRate": null,
+    }],
+    }],
+    "CurrentPageSize": 25,
+    "CurrentPage": 1,
+    "CurrentOrderField": "Id",
+    "CurrentSortDirection": 1,
+    "FirstItem": 1,
+    "HasNextPage": true,
+    "HasPreviousPage": false,
+    "LastItem": 25,
+    "PageNumber": 1,
+    "PageSize": 25,
+    "TotalItems": 60,
+    "TotalPages": 3
+}
+```
+{% endapi-method-response-example %}
+
+{% api-method-response-example httpCode=404 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```
+"Not found"
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}
@@ -335,6 +424,7 @@ The ID of the paymentgateway to fetch.
         "Business": null,
         "Name": "PayPal",
         "PaymentGatewayType": Nexudus.Coworking.Core.Enums.ePaymentGatewayType.AutorizeNET,
+        "Attempt3dSecure": false,
         "AccessToken": "PayPal",
         "ConfigurationXml": "ConfigurationXml",
         "XmlResponse": "XmlResponse",
@@ -359,6 +449,7 @@ The ID of the paymentgateway to fetch.
 {% endapi-method %}
 
 > 🔒 Requires user role `paymentgateway-read`
+
 
 {% api-method method="post" host="https://spaces.nexudus.com/api" path="/billing/paymentgateways" %}
 {% api-method-summary %}
@@ -387,6 +478,8 @@ application/json
 {% api-method-parameter name="Name" type="string" required=true %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="PaymentGatewayType" type="enum" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Attempt3dSecure" type="bool" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="ConfigurationXml" type="string" required=false %}
 {% endapi-method-parameter %}
@@ -477,6 +570,7 @@ _This response is an example, errors and messages will follow this structure but
 	"Business": 12345678,
 	"Name": "PayPal",
 	"PaymentGatewayType": 1 (check Enumerated values section below),
+	"Attempt3dSecure": false,
 	"ConfigurationXml": "ConfigurationXml",
 	"TransactionFee": 0,
 	"FinancialAccount": 12345678,
@@ -513,6 +607,8 @@ The id of the paymentgateway to update
 {% api-method-parameter name="BusinessId" type="int" required=true %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="Name" type="string" required=true %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="Attempt3dSecure" type="bool" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="ConfigurationXml" type="string" required=false %}
 {% endapi-method-parameter %}
@@ -603,6 +699,7 @@ _This response is an example, errors and messages will follow this structure but
 {
 	"Business": 12345678,
 	"Name": "PayPal",
+	"Attempt3dSecure": false,
 	"ConfigurationXml": "ConfigurationXml",
 	"TransactionFee": 0,
 	"FinancialAccount": 12345678,

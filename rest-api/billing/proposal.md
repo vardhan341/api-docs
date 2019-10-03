@@ -99,6 +99,16 @@ application/json
 {% endapi-method-parameter %}
 
 
+{% api-method-parameter name="CancellationLimitDays" type="int?" %}
+?Proposal\_CancellationLimitDays=...
+{% endapi-method-parameter %}
+
+
+{% api-method-parameter name="ContractTerm" type="DateTime?" %}
+?Proposal\_ContractTerm=...
+{% endapi-method-parameter %}
+
+
 {% api-method-parameter name="CancellationDate" type="DateTime?" %}
 ?Proposal\_CancellationDate=...
 {% endapi-method-parameter %}
@@ -190,6 +200,8 @@ application/json
         "Tariff": null,
         "Price": false,
         "StartDate": null,
+        "CancellationLimitDays": null,
+        "ContractTerm": null,
         "CancellationDate": null,
         "BillingDay": 1,
         "Quantity": 1,
@@ -280,6 +292,8 @@ size=25 \(maximum=1000\)
         "Tariff": null,
         "Price": false,
         "StartDate": null,
+        "CancellationLimitDays": null,
+        "ContractTerm": null,
         "CancellationDate": null,
         "BillingDay": 1,
         "Quantity": 1,
@@ -363,6 +377,18 @@ application/json
 {% api-method-parameter name="StartDate" type="datetime" required=false %}
 ?to\_Proposal\_StartDate=...
 {% endapi-method-parameter %}
+{% api-method-parameter name="CancellationLimitDays" type="int" required=false %}
+?from\_Proposal\_CancellationLimitDays=...
+{% endapi-method-parameter %}
+{% api-method-parameter name="CancellationLimitDays" type="int" required=false %}
+?to\_Proposal\_CancellationLimitDays=...
+{% endapi-method-parameter %}
+{% api-method-parameter name="ContractTerm" type="datetime" required=false %}
+?from\_Proposal\_ContractTerm=...
+{% endapi-method-parameter %}
+{% api-method-parameter name="ContractTerm" type="datetime" required=false %}
+?to\_Proposal\_ContractTerm=...
+{% endapi-method-parameter %}
 {% api-method-parameter name="CancellationDate" type="datetime" required=false %}
 ?from\_Proposal\_CancellationDate=...
 {% endapi-method-parameter %}
@@ -413,6 +439,8 @@ application/json
         "Tariff": null,
         "Price": false,
         "StartDate": null,
+        "CancellationLimitDays": null,
+        "ContractTerm": null,
         "CancellationDate": null,
         "BillingDay": 1,
         "Quantity": 1,
@@ -433,6 +461,97 @@ application/json
     "TotalItems": 60,
     "TotalPages": 3
 }
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+> 🔒 Requires user role `proposal-list`
+
+
+{% api-method method="get" host="https://spaces.nexudus.com/api" path="/billing/proposals?Proposal_Id=[:id1,:id2,...]" %}
+{% api-method-summary %}
+List by Ids
+{% endapi-method-summary %}
+
+{% api-method-description %}
+Gets one or more proposal records based on their Id.
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+Basic Authentication token. Base64 encoding of 'username:password'.
+{% endapi-method-parameter %}
+{% api-method-parameter name="Content" type="string" required=true %}
+application/json
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+
+{% api-method-path-parameters %}
+{% api-method-parameter name="id" type="integer" required=true %}
+Comma-separated list of IDs of every proposal to fetch. I.e. [123456,789102,...] 
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```javascript
+{
+    "Records": [{
+        "IssuedBy": null,
+        "Responsible": null,
+        "Coworker": null,
+        "Reference": "00001",
+        "Notes": "Notes",
+        "ProposalStatus": Nexudus.Coworking.Core.Enums.eProposalStatus.Draft,
+        "DocumentToSend": null,
+        "DocumentToSign": null,
+        "DocumentToSignHtml": "",
+        "DocumentToSendHtml": "",
+        "Tariff": null,
+        "Price": false,
+        "StartDate": null,
+        "CancellationLimitDays": null,
+        "ContractTerm": null,
+        "CancellationDate": null,
+        "BillingDay": 1,
+        "Quantity": 1,
+        "DiscountCode": null,
+        "SentOn": false,
+    }],
+    }],
+    "CurrentPageSize": 25,
+    "CurrentPage": 1,
+    "CurrentOrderField": "Id",
+    "CurrentSortDirection": 1,
+    "FirstItem": 1,
+    "HasNextPage": true,
+    "HasPreviousPage": false,
+    "LastItem": 25,
+    "PageNumber": 1,
+    "PageSize": 25,
+    "TotalItems": 60,
+    "TotalPages": 3
+}
+```
+{% endapi-method-response-example %}
+
+{% api-method-response-example httpCode=404 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```
+"Not found"
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}
@@ -490,6 +609,8 @@ The ID of the proposal to fetch.
         "Tariff": null,
         "Price": false,
         "StartDate": null,
+        "CancellationLimitDays": null,
+        "ContractTerm": null,
         "CancellationDate": null,
         "BillingDay": 1,
         "Quantity": 1,
@@ -513,6 +634,7 @@ The ID of the proposal to fetch.
 {% endapi-method %}
 
 > 🔒 Requires user role `proposal-read`
+
 
 {% api-method method="post" host="https://spaces.nexudus.com/api" path="/billing/proposals" %}
 {% api-method-summary %}
@@ -561,6 +683,8 @@ application/json
 {% api-method-parameter name="Price" type="decimal?" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="StartDate" type="DateTime?" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="CancellationLimitDays" type="int?" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="CancellationDate" type="DateTime?" required=false %}
 {% endapi-method-parameter %}
@@ -664,6 +788,7 @@ _This response is an example, errors and messages will follow this structure but
 	"RemovedDesks": [12345678, 87654321] (removes from list),
 	"Price": false,
 	"StartDate": null,
+	"CancellationLimitDays": null,
 	"CancellationDate": null,
 	"BillingDay": 1,
 	"Quantity": 1,
@@ -716,6 +841,10 @@ The id of the proposal to update
 {% api-method-parameter name="DocumentToSignHtml" type="string" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="DocumentToSendHtml" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="CancellationLimitDays" type="int?" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="ContractTerm" type="DateTime?" required=false %}
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
@@ -806,6 +935,8 @@ _This response is an example, errors and messages will follow this structure but
 	"DocumentToSign": 12345678,
 	"DocumentToSignHtml": "",
 	"DocumentToSendHtml": "",
+	"CancellationLimitDays": null,
+	"ContractTerm": null,
 }
 
 ```
