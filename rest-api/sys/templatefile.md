@@ -1,6 +1,6 @@
 ﻿{% api-method method="get" host="https://spaces.nexudus.com/api" path="/sys/templatefiles" %}
 {% api-method-summary %}
-Find 
+Find.
 {% endapi-method-summary %}
 
 {% api-method-description %}
