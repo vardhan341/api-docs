@@ -30,614 +30,510 @@ application/json
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="SystemId" type="string" %}
-?Coworker\_SystemId=...
+?Coworker_SystemId=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="CoworkerType" type="enum" %}
-?Coworker\_CoworkerType=...
+?Coworker_CoworkerType=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="FullName" type="string" %}
-?Coworker\_FullName=...
+?Coworker_FullName=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="Salutation" type="string" %}
-?Coworker\_Salutation=...
+?Coworker_Salutation=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="Gender" type="enum" %}
-?Coworker\_Gender=...
+?Coworker_Gender=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="Email" type="string" %}
-?Coworker\_Email=...
+?Coworker_Email=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="CreateUser" type="bool" %}
-?Coworker\_CreateUser=...
+?Coworker_CreateUser=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="Address" type="string" %}
-?Coworker\_Address=...
+?Coworker_Address=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="PostCode" type="string" %}
-?Coworker\_PostCode=...
+?Coworker_PostCode=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="CityName" type="string" %}
-?Coworker\_CityName=...
+?Coworker_CityName=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="State" type="string" %}
-?Coworker\_State=...
+?Coworker_State=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="Country" type="Country" %}
-?Coworker\_Country=...
+?Coworker_Country=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="SimpleTimeZone" type="SimpleTimeZone" %}
-?Coworker\_SimpleTimeZone=...
+?Coworker_SimpleTimeZone=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="MobilePhone" type="string" %}
-?Coworker\_MobilePhone=...
+?Coworker_MobilePhone=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="LandLine" type="string" %}
-?Coworker\_LandLine=...
+?Coworker_LandLine=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="DateOfBirth" type="DateTime?" %}
-?Coworker\_DateOfBirth=...
+?Coworker_DateOfBirth=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="NickName" type="string" %}
-?Coworker\_NickName=...
+?Coworker_NickName=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="BusinessArea" type="string" %}
-?Coworker\_BusinessArea=...
+?Coworker_BusinessArea=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="Position" type="string" %}
-?Coworker\_Position=...
+?Coworker_Position=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="CompanyName" type="string" %}
-?Coworker\_CompanyName=...
+?Coworker_CompanyName=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="ProfileWebsite" type="string" %}
-?Coworker\_ProfileWebsite=...
+?Coworker_ProfileWebsite=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="ProfileTags" type="string" %}
-?Coworker\_ProfileTags=...
+?Coworker_ProfileTags=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="ProfileSummary" type="string" %}
-?Coworker\_ProfileSummary=...
+?Coworker_ProfileSummary=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="Twitter" type="string" %}
-?Coworker\_Twitter=...
+?Coworker_Twitter=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="Facebook" type="string" %}
-?Coworker\_Facebook=...
+?Coworker_Facebook=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="Google" type="string" %}
-?Coworker\_Google=...
+?Coworker_Google=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="Telegram" type="string" %}
-?Coworker\_Telegram=...
+?Coworker_Telegram=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="Linkedin" type="string" %}
-?Coworker\_Linkedin=...
+?Coworker_Linkedin=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="Skype" type="string" %}
-?Coworker\_Skype=...
+?Coworker_Skype=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="Github" type="string" %}
-?Coworker\_Github=...
+?Coworker_Github=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="Pinterest" type="string" %}
-?Coworker\_Pinterest=...
+?Coworker_Pinterest=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="Flickr" type="string" %}
-?Coworker\_Flickr=...
+?Coworker_Flickr=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="Instagram" type="string" %}
-?Coworker\_Instagram=...
+?Coworker_Instagram=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="Vimeo" type="string" %}
-?Coworker\_Vimeo=...
+?Coworker_Vimeo=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="Tumblr" type="string" %}
-?Coworker\_Tumblr=...
+?Coworker_Tumblr=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="Blogger" type="string" %}
-?Coworker\_Blogger=...
+?Coworker_Blogger=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="ProfileIsPublic" type="bool" %}
-?Coworker\_ProfileIsPublic=...
+?Coworker_ProfileIsPublic=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="InvoicingBusiness" type="Business" %}
-?Coworker\_InvoicingBusiness=...
+?Coworker_InvoicingBusiness=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="BillingEmail" type="string" %}
-?Coworker\_BillingEmail=...
+?Coworker_BillingEmail=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="BillingName" type="string" %}
-?Coworker\_BillingName=...
+?Coworker_BillingName=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="BillingAddress" type="string" %}
-?Coworker\_BillingAddress=...
+?Coworker_BillingAddress=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="BillingPostCode" type="string" %}
-?Coworker\_BillingPostCode=...
+?Coworker_BillingPostCode=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="BillingCityName" type="string" %}
-?Coworker\_BillingCityName=...
+?Coworker_BillingCityName=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="BillingState" type="string" %}
-?Coworker\_BillingState=...
+?Coworker_BillingState=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="BillingCountry" type="Country" %}
-?Coworker\_BillingCountry=...
+?Coworker_BillingCountry=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="BillingSimpleTimeZone" type="SimpleTimeZone" %}
-?Coworker\_BillingSimpleTimeZone=...
+?Coworker_BillingSimpleTimeZone=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="TaxRate" type="decimal?" %}
-?Coworker\_TaxRate=...
+?Coworker_TaxRate=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="TaxIDNumber" type="string" %}
-?Coworker\_TaxIDNumber=...
+?Coworker_TaxIDNumber=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="BankName" type="string" %}
-?Coworker\_BankName=...
+?Coworker_BankName=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="BankAccount" type="string" %}
-?Coworker\_BankAccount=...
+?Coworker_BankAccount=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="BankBranch" type="string" %}
-?Coworker\_BankBranch=...
+?Coworker_BankBranch=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="NotifyOnNewInvoice" type="bool" %}
-?Coworker\_NotifyOnNewInvoice=...
+?Coworker_NotifyOnNewInvoice=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="NotifyOnNewPayment" type="bool" %}
-?Coworker\_NotifyOnNewPayment=...
+?Coworker_NotifyOnNewPayment=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="NotifyOnFailedPayment" type="bool" %}
-?Coworker\_NotifyOnFailedPayment=...
+?Coworker_NotifyOnFailedPayment=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="ShowPayingMemberInvoices" type="bool" %}
-?Coworker\_ShowPayingMemberInvoices=...
+?Coworker_ShowPayingMemberInvoices=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="EnableGoCardlessPayments" type="bool" %}
-?Coworker\_EnableGoCardlessPayments=...
+?Coworker_EnableGoCardlessPayments=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="GoCardlessContractNumber" type="string" %}
-?Coworker\_GoCardlessContractNumber=...
+?Coworker_GoCardlessContractNumber=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="RegularPaymentProvider" type="enum" %}
-?Coworker\_RegularPaymentProvider=...
+?Coworker_RegularPaymentProvider=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="RegularPaymentContractNumber" type="string" %}
-?Coworker\_RegularPaymentContractNumber=...
+?Coworker_RegularPaymentContractNumber=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="CardNumber" type="string" %}
-?Coworker\_CardNumber=...
+?Coworker_CardNumber=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="DoNotProcessInvoicesAutomatically" type="bool" %}
-?Coworker\_DoNotProcessInvoicesAutomatically=...
+?Coworker_DoNotProcessInvoicesAutomatically=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="AllowNetworkCheckin" type="bool" %}
-?Coworker\_AllowNetworkCheckin=...
+?Coworker_AllowNetworkCheckin=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="CheckinSinceLastRenewal" type="int" %}
-?Coworker\_CheckinSinceLastRenewal=...
+?Coworker_CheckinSinceLastRenewal=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="MinutesSinceLastRenewal" type="int" %}
-?Coworker\_MinutesSinceLastRenewal=...
+?Coworker_MinutesSinceLastRenewal=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="AccessCardId" type="string" %}
-?Coworker\_AccessCardId=...
+?Coworker_AccessCardId=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="AccessPincode" type="string" %}
-?Coworker\_AccessPincode=...
+?Coworker_AccessPincode=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="KeyFobNumber" type="string" %}
-?Coworker\_KeyFobNumber=...
+?Coworker_KeyFobNumber=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="NotifyOnDelivery" type="bool" %}
-?Coworker\_NotifyOnDelivery=...
+?Coworker_NotifyOnDelivery=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="EzeepUserId" type="Guid?" %}
-?Coworker\_EzeepUserId=...
+?Coworker_EzeepUserId=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="EzeepFreePrinting" type="bool" %}
-?Coworker\_EzeepFreePrinting=...
+?Coworker_EzeepFreePrinting=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="PaperCutPayAsYouPrint" type="bool" %}
-?Coworker\_PaperCutPayAsYouPrint=...
+?Coworker_PaperCutPayAsYouPrint=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="PaperCutFreePrinting" type="bool" %}
-?Coworker\_PaperCutFreePrinting=...
+?Coworker_PaperCutFreePrinting=...
 {% endapi-method-parameter %}
 
+{% api-method-parameter name="CanMakeBookings" type="bool" %}
+?Coworker_CanMakeBookings=...
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="CanPurchaseProducts" type="bool" %}
+?Coworker_CanPurchaseProducts=...
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="CanPurchaseEvents" type="bool" %}
+?Coworker_CanPurchaseEvents=...
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="CanAccessCommunity" type="bool" %}
+?Coworker_CanAccessCommunity=...
+{% endapi-method-parameter %}
 
 {% api-method-parameter name="ReferenceNumber" type="string" %}
-?Coworker\_ReferenceNumber=...
+?Coworker_ReferenceNumber=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="Tag" type="string" %}
-?Coworker\_Tag=...
+?Coworker_Tag=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="Notes" type="string" %}
-?Coworker\_Notes=...
+?Coworker_Notes=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="ShowAlert" type="bool" %}
-?Coworker\_ShowAlert=...
+?Coworker_ShowAlert=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="AlertNote" type="string" %}
-?Coworker\_AlertNote=...
+?Coworker_AlertNote=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="User" type="User" %}
-?Coworker\_User=...
+?Coworker_User=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="Active" type="bool" %}
-?Coworker\_Active=...
+?Coworker_Active=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="NextAutoInvoice" type="DateTime?" %}
-?Coworker\_NextAutoInvoice=...
+?Coworker_NextAutoInvoice=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="InvoiceDueDatePeriod" type="int?" %}
-?Coworker\_InvoiceDueDatePeriod=...
+?Coworker_InvoiceDueDatePeriod=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="RegistrationDate" type="DateTime?" %}
-?Coworker\_RegistrationDate=...
+?Coworker_RegistrationDate=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="GeneralTermsAccepted" type="bool" %}
-?Coworker\_GeneralTermsAccepted=...
+?Coworker_GeneralTermsAccepted=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="Custom1" type="string" %}
-?Coworker\_Custom1=...
+?Coworker_Custom1=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="Custom2" type="string" %}
-?Coworker\_Custom2=...
+?Coworker_Custom2=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="Custom3" type="string" %}
-?Coworker\_Custom3=...
+?Coworker_Custom3=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="Custom4" type="string" %}
-?Coworker\_Custom4=...
+?Coworker_Custom4=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="Custom5" type="string" %}
-?Coworker\_Custom5=...
+?Coworker_Custom5=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="Custom6" type="string" %}
-?Coworker\_Custom6=...
+?Coworker_Custom6=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="Custom7" type="string" %}
-?Coworker\_Custom7=...
+?Coworker_Custom7=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="Custom8" type="string" %}
-?Coworker\_Custom8=...
+?Coworker_Custom8=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="Custom9" type="string" %}
-?Coworker\_Custom9=...
+?Coworker_Custom9=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="Custom10" type="string" %}
-?Coworker\_Custom10=...
+?Coworker_Custom10=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="Custom11" type="string" %}
-?Coworker\_Custom11=...
+?Coworker_Custom11=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="Custom12" type="string" %}
-?Coworker\_Custom12=...
+?Coworker_Custom12=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="Custom13" type="string" %}
-?Coworker\_Custom13=...
+?Coworker_Custom13=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="Custom14" type="string" %}
-?Coworker\_Custom14=...
+?Coworker_Custom14=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="Custom15" type="string" %}
-?Coworker\_Custom15=...
+?Coworker_Custom15=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="Custom16" type="string" %}
-?Coworker\_Custom16=...
+?Coworker_Custom16=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="Custom17" type="string" %}
-?Coworker\_Custom17=...
+?Coworker_Custom17=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="Custom18" type="string" %}
-?Coworker\_Custom18=...
+?Coworker_Custom18=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="Custom19" type="string" %}
-?Coworker\_Custom19=...
+?Coworker_Custom19=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="Custom20" type="string" %}
-?Coworker\_Custom20=...
+?Coworker_Custom20=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="Custom21" type="string" %}
-?Coworker\_Custom21=...
+?Coworker_Custom21=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="Custom22" type="string" %}
-?Coworker\_Custom22=...
+?Coworker_Custom22=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="Custom23" type="string" %}
-?Coworker\_Custom23=...
+?Coworker_Custom23=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="Custom24" type="string" %}
-?Coworker\_Custom24=...
+?Coworker_Custom24=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="Custom25" type="string" %}
-?Coworker\_Custom25=...
+?Coworker_Custom25=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="Custom26" type="string" %}
-?Coworker\_Custom26=...
+?Coworker_Custom26=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="Custom27" type="string" %}
-?Coworker\_Custom27=...
+?Coworker_Custom27=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="Custom28" type="string" %}
-?Coworker\_Custom28=...
+?Coworker_Custom28=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="Custom29" type="string" %}
-?Coworker\_Custom29=...
+?Coworker_Custom29=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="Custom30" type="string" %}
-?Coworker\_Custom30=...
+?Coworker_Custom30=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="PurchaseOrder" type="string" %}
-?Coworker\_PurchaseOrder=...
+?Coworker_PurchaseOrder=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="InvoicingBusiness\_Name" type="string" %}
-?Coworker\_InvoicingBusiness\_Name=...
+?Coworker_InvoicingBusiness_Name=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="User\_FullName" type="string" %}
-?Coworker\_User\_FullName=...
+?Coworker_User_FullName=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="User\_IsAdmin" type="string" %}
-?Coworker\_User\_IsAdmin=...
+?Coworker_User_IsAdmin=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="User\_LastAccess" type="string" %}
-?Coworker\_User\_LastAccess=...
+?Coworker_User_LastAccess=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="User\_Active" type="string" %}
-?Coworker\_User\_Active=...
+?Coworker_User_Active=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="User\_ReceiveCommunityDigest" type="string" %}
-?Coworker\_User\_ReceiveCommunityDigest=...
+?Coworker_User_ReceiveCommunityDigest=...
 {% endapi-method-parameter %}
 
-
 {% api-method-parameter name="User\_ReceiveEveryMessage" type="string" %}
-?Coworker\_User\_ReceiveEveryMessage=...
+?Coworker_User_ReceiveEveryMessage=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Businesses" type="int" required=false %}
-?Coworker\_Businesses=...
+?Coworker_Businesses=...
 {% endapi-method-parameter %}
 {% api-method-parameter name="Teams" type="int" required=false %}
-?Coworker\_Teams=...
+?Coworker_Teams=...
 {% endapi-method-parameter %}
 
 {% endapi-method-query-parameters %}
@@ -645,7 +541,6 @@ application/json
 
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
-
 
 ```javascript
 {
@@ -721,6 +616,10 @@ application/json
         "EzeepFreePrinting": null,
         "PaperCutPayAsYouPrint": false,
         "PaperCutFreePrinting": null,
+        "CanMakeBookings": false,
+        "CanPurchaseProducts": false,
+        "CanPurchaseEvents": false,
+        "CanAccessCommunity": false,
         "ReferenceNumber": "ReferenceNumber",
         "Tag": "Tag",
         "Notes": "Notes",
@@ -779,6 +678,7 @@ application/json
 }
 
 ```
+
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
@@ -906,6 +806,10 @@ size=25 \(maximum=1000\)
         "EzeepFreePrinting": null,
         "PaperCutPayAsYouPrint": false,
         "PaperCutFreePrinting": null,
+        "CanMakeBookings": false,
+        "CanPurchaseProducts": false,
+        "CanPurchaseEvents": false,
+        "CanAccessCommunity": false,
         "ReferenceNumber": "ReferenceNumber",
         "Tag": "Tag",
         "Notes": "Notes",
@@ -964,6 +868,7 @@ size=25 \(maximum=1000\)
     "TotalPages": 3
 }
 ```
+
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
@@ -972,7 +877,7 @@ size=25 \(maximum=1000\)
 > 🔒 Requires user role `coworker-list`
 
 {% hint style="info" %}
-You can also get a list of records based when they were created or updated. This is useful if you want to get a list of records created after or before a particular point in time. 
+You can also get a list of records based when they were created or updated. This is useful if you want to get a list of records created after or before a particular point in time.
 You can also use range query parameters for all date, integer and decimal properties.
 {% endhint %}
 
@@ -999,62 +904,62 @@ application/json
 
 {% api-method-query-parameters %}
 {% api-method-parameter name="CreatedOn" type="object" required=false %}
-?to\_Coworker\_CreatedOn=...
+?to_Coworker_CreatedOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="CreatedOn" type="object" required=false %}
-?from\_Coworker\_CreatedOn=...
+?from_Coworker_CreatedOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="UpdatedOn" type="object" required=false %}
-?to\_Coworker\_UpdatedOn=...
+?to_Coworker_UpdatedOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="UpdatedOn" type="object" required=false %}
-?from\_Coworker\_UpdatedOn=...
+?from_Coworker_UpdatedOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="DateOfBirth" type="datetime" required=false %}
-?from\_Coworker\_DateOfBirth=...
+?from_Coworker_DateOfBirth=...
 {% endapi-method-parameter %}
 {% api-method-parameter name="DateOfBirth" type="datetime" required=false %}
-?to\_Coworker\_DateOfBirth=...
+?to_Coworker_DateOfBirth=...
 {% endapi-method-parameter %}
 {% api-method-parameter name="TaxRate" type="decimal" required=false %}
-?from\_Coworker\_TaxRate=...
+?from_Coworker_TaxRate=...
 {% endapi-method-parameter %}
 {% api-method-parameter name="TaxRate" type="decimal" required=false %}
-?to\_Coworker\_TaxRate=...
+?to_Coworker_TaxRate=...
 {% endapi-method-parameter %}
 {% api-method-parameter name="CheckinSinceLastRenewal" type="int" required=false %}
-?from\_Coworker\_CheckinSinceLastRenewal=...
+?from_Coworker_CheckinSinceLastRenewal=...
 {% endapi-method-parameter %}
 {% api-method-parameter name="CheckinSinceLastRenewal" type="int" required=false %}
-?to\_Coworker\_CheckinSinceLastRenewal=...
+?to_Coworker_CheckinSinceLastRenewal=...
 {% endapi-method-parameter %}
 {% api-method-parameter name="MinutesSinceLastRenewal" type="int" required=false %}
-?from\_Coworker\_MinutesSinceLastRenewal=...
+?from_Coworker_MinutesSinceLastRenewal=...
 {% endapi-method-parameter %}
 {% api-method-parameter name="MinutesSinceLastRenewal" type="int" required=false %}
-?to\_Coworker\_MinutesSinceLastRenewal=...
+?to_Coworker_MinutesSinceLastRenewal=...
 {% endapi-method-parameter %}
 {% api-method-parameter name="NextAutoInvoice" type="datetime" required=false %}
-?from\_Coworker\_NextAutoInvoice=...
+?from_Coworker_NextAutoInvoice=...
 {% endapi-method-parameter %}
 {% api-method-parameter name="NextAutoInvoice" type="datetime" required=false %}
-?to\_Coworker\_NextAutoInvoice=...
+?to_Coworker_NextAutoInvoice=...
 {% endapi-method-parameter %}
 {% api-method-parameter name="InvoiceDueDatePeriod" type="int" required=false %}
-?from\_Coworker\_InvoiceDueDatePeriod=...
+?from_Coworker_InvoiceDueDatePeriod=...
 {% endapi-method-parameter %}
 {% api-method-parameter name="InvoiceDueDatePeriod" type="int" required=false %}
-?to\_Coworker\_InvoiceDueDatePeriod=...
+?to_Coworker_InvoiceDueDatePeriod=...
 {% endapi-method-parameter %}
 {% api-method-parameter name="RegistrationDate" type="datetime" required=false %}
-?from\_Coworker\_RegistrationDate=...
+?from_Coworker_RegistrationDate=...
 {% endapi-method-parameter %}
 {% api-method-parameter name="RegistrationDate" type="datetime" required=false %}
-?to\_Coworker\_RegistrationDate=...
+?to_Coworker_RegistrationDate=...
 {% endapi-method-parameter %}
 
 {% endapi-method-query-parameters %}
@@ -1140,6 +1045,10 @@ application/json
         "EzeepFreePrinting": null,
         "PaperCutPayAsYouPrint": false,
         "PaperCutFreePrinting": null,
+        "CanMakeBookings": false,
+        "CanPurchaseProducts": false,
+        "CanPurchaseEvents": false,
+        "CanAccessCommunity": false,
         "ReferenceNumber": "ReferenceNumber",
         "Tag": "Tag",
         "Notes": "Notes",
@@ -1198,13 +1107,13 @@ application/json
     "TotalPages": 3
 }
 ```
+
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
 
 > 🔒 Requires user role `coworker-list`
-
 
 {% api-method method="get" host="https://spaces.nexudus.com/api" path="/spaces/coworkers?Coworker_Id=[:id1,:id2,...]" %}
 {% api-method-summary %}
@@ -1229,7 +1138,7 @@ application/json
 
 {% api-method-path-parameters %}
 {% api-method-parameter name="id" type="integer" required=true %}
-Comma-separated list of IDs of every coworker to fetch. I.e. [123456,789102,...] 
+Comma-separated list of IDs of every coworker to fetch. I.e. [123456,789102,...]
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
 {% endapi-method-request %}
@@ -1314,6 +1223,10 @@ Comma-separated list of IDs of every coworker to fetch. I.e. [123456,789102,...]
         "EzeepFreePrinting": null,
         "PaperCutPayAsYouPrint": false,
         "PaperCutFreePrinting": null,
+        "CanMakeBookings": false,
+        "CanPurchaseProducts": false,
+        "CanPurchaseEvents": false,
+        "CanAccessCommunity": false,
         "ReferenceNumber": "ReferenceNumber",
         "Tag": "Tag",
         "Notes": "Notes",
@@ -1372,6 +1285,7 @@ Comma-separated list of IDs of every coworker to fetch. I.e. [123456,789102,...]
     "TotalPages": 3
 }
 ```
+
 {% endapi-method-response-example %}
 
 {% api-method-response-example httpCode=404 %}
@@ -1382,6 +1296,7 @@ Comma-separated list of IDs of every coworker to fetch. I.e. [123456,789102,...]
 ```
 "Not found"
 ```
+
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
@@ -1496,6 +1411,10 @@ The ID of the coworker to fetch.
         "EzeepFreePrinting": null,
         "PaperCutPayAsYouPrint": false,
         "PaperCutFreePrinting": null,
+        "CanMakeBookings": false,
+        "CanPurchaseProducts": false,
+        "CanPurchaseEvents": false,
+        "CanAccessCommunity": false,
         "ReferenceNumber": "ReferenceNumber",
         "Tag": "Tag",
         "Notes": "Notes",
@@ -1540,6 +1459,7 @@ The ID of the coworker to fetch.
         "PurchaseOrder": "false",
 }
 ```
+
 {% endapi-method-response-example %}
 
 {% api-method-response-example httpCode=404 %}
@@ -1550,13 +1470,13 @@ The ID of the coworker to fetch.
 ```
 "Not found"
 ```
+
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
 
 > 🔒 Requires user role `coworker-read`
-
 
 {% api-method method="post" host="https://spaces.nexudus.com/api" path="/spaces/coworkers" %}
 {% api-method-summary %}
@@ -1716,6 +1636,14 @@ application/json
 {% endapi-method-parameter %}
 {% api-method-parameter name="PaperCutFreePrinting" type="bool" required=false %}
 {% endapi-method-parameter %}
+{% api-method-parameter name="CanMakeBookings" type="bool" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="CanPurchaseProducts" type="bool" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="CanPurchaseEvents" type="bool" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="CanAccessCommunity" type="bool" required=false %}
+{% endapi-method-parameter %}
 {% api-method-parameter name="ReferenceNumber" type="string" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="Tag" type="string" required=false %}
@@ -1816,6 +1744,7 @@ application/json
     }
 }
 ```
+
 {% endapi-method-response-example %}
 
 {% api-method-response-example httpCode=400 %}
@@ -1853,6 +1782,7 @@ _This response is an example, errors and messages will follow this structure but
     ]
 }
 ```
+
 {% endapi-method-response-example %}
 
 {% api-method-response-example httpCode=500 %}
@@ -1865,6 +1795,7 @@ _This response is an example, errors and messages will follow this structure but
     "Message": "An error has occurred."
 }
 ```
+
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
@@ -1948,6 +1879,10 @@ _This response is an example, errors and messages will follow this structure but
 	"EzeepFreePrinting": null,
 	"PaperCutPayAsYouPrint": false,
 	"PaperCutFreePrinting": null,
+	"CanMakeBookings": false,
+	"CanPurchaseProducts": false,
+	"CanPurchaseEvents": false,
+	"CanAccessCommunity": false,
 	"ReferenceNumber": "ReferenceNumber",
 	"Tag": "Tag",
 	"Notes": "Notes",
@@ -1999,7 +1934,7 @@ Update
 
 {% api-method-description %}
 Updates and existing coworker.
-  
+
 Required User Role: `coworker-edit`
 {% endapi-method-description %}
 
@@ -2163,6 +2098,14 @@ The id of the coworker to update
 {% endapi-method-parameter %}
 {% api-method-parameter name="PaperCutFreePrinting" type="bool" required=false %}
 {% endapi-method-parameter %}
+{% api-method-parameter name="CanMakeBookings" type="bool" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="CanPurchaseProducts" type="bool" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="CanPurchaseEvents" type="bool" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="CanAccessCommunity" type="bool" required=false %}
+{% endapi-method-parameter %}
 {% api-method-parameter name="ReferenceNumber" type="string" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="Tag" type="string" required=false %}
@@ -2268,6 +2211,7 @@ The id of the coworker to update
     "Errors": null
 }
 ```
+
 {% endapi-method-response-example %}
 
 {% api-method-response-example httpCode=400 %}
@@ -2305,6 +2249,7 @@ _This response is an example, errors and messages will follow this structure but
     ]
 }
 ```
+
 {% endapi-method-response-example %}
 
 {% api-method-response-example httpCode=500 %}
@@ -2317,6 +2262,7 @@ _This response is an example, errors and messages will follow this structure but
     "Message": "An error has occurred."
 }
 ```
+
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
@@ -2399,6 +2345,10 @@ _This response is an example, errors and messages will follow this structure but
 	"EzeepFreePrinting": null,
 	"PaperCutPayAsYouPrint": false,
 	"PaperCutFreePrinting": null,
+	"CanMakeBookings": false,
+	"CanPurchaseProducts": false,
+	"CanPurchaseEvents": false,
+	"CanAccessCommunity": false,
 	"ReferenceNumber": "ReferenceNumber",
 	"Tag": "Tag",
 	"Notes": "Notes",
@@ -2445,12 +2395,9 @@ _This response is an example, errors and messages will follow this structure but
 
 ```
 
-
-
-
 ## Commands
 
-Commands allow to perform actions against one or more coworker records. Some commands accept only one record while others can run an action for a number of records at the same time.  Each command has metadata with information about how it can be used and the amount of records, if any, it needs to run.
+Commands allow to perform actions against one or more coworker records. Some commands accept only one record while others can run an action for a number of records at the same time. Each command has metadata with information about how it can be used and the amount of records, if any, it needs to run.
 
 > ```javascript
 > {
@@ -2514,6 +2461,7 @@ _This response is an example._
     ...
 ]
 ```
+
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
@@ -2546,20 +2494,14 @@ The command Key defining the command to run. `"COMMAND_KEY_1"`
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Parameters" type="array" required=false %}
-A list of object with the structure below. The parameters required for each command are returned in the "RequiresParameters" array return by the "commands" endpoint.  
-  
-`[  
-   {  
-      "Name": "Name",   
-      "Type":"Type",   
-      "Value":recordId  
-    }  
-]`
+A list of object with the structure below. The parameters required for each command are returned in the "RequiresParameters" array return by the "commands" endpoint.
+
+`[ { "Name": "Name", "Type":"Type", "Value":recordId } ]`
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Ids" type="array" required=true %}
-A list of integer IDs for each of the records to run this command for.  
-  
+A list of integer IDs for each of the records to run this command for.
+
 `[987654321, 123565978]`
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
@@ -2568,11 +2510,11 @@ A list of integer IDs for each of the records to run this command for.
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
 {% api-method-response-example-description %}
-_Commands also return a status 200 when they fail to process one or more of the records. Use the 'WasSuccessful'  property to know if the command run succeeded._  
+_Commands also return a status 200 when they fail to process one or more of the records. Use the 'WasSuccessful' property to know if the command run succeeded._  
 {% endapi-method-response-example-description %}
 
 ```javascript
-{  
+{
    "Status":500 or 200,
    "Message":"Command error description",
    "Value":null,
@@ -2580,6 +2522,7 @@ _Commands also return a status 200 when they fail to process one or more of the 
    "WasSuccessful":false
 }
 ```
+
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
@@ -2590,12 +2533,15 @@ _Commands also return a status 200 when they fail to process one or more of the 
 ## Enumerated values
 
 ##### CoworkerType:
+
 > GET /api/utils/enums?name=eCoworkerRecordType
 
 ##### Gender:
+
 > GET /api/utils/enums?name=eGender
 
 ##### RegularPaymentProvider:
+
 > GET /api/utils/enums?name=eRegularPaymentProvider
 
 ## Binary files
@@ -2639,6 +2585,7 @@ The id of the Coworker to get the avatar for.
 ```javascript
 Binary stream or null
 ```
+
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
@@ -2681,16 +2628,17 @@ The id of the Coworker to get the bannerimage for.
 ```javascript
 Binary stream or null
 ```
+
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
 
-
 ## Related Entities
-* [Country](../sys/country.md)
-* [SimpleTimeZone](../sys/simpletimezone.md)
-* [Business](../sys/business.md)
-* [Country](../sys/country.md)
-* [SimpleTimeZone](../sys/simpletimezone.md)
-* [User](../sys/user.md)
+
+- [Country](../sys/country.md)
+- [SimpleTimeZone](../sys/simpletimezone.md)
+- [Business](../sys/business.md)
+- [Country](../sys/country.md)
+- [SimpleTimeZone](../sys/simpletimezone.md)
+- [User](../sys/user.md)

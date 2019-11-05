@@ -54,6 +54,11 @@ application/json
 {% endapi-method-parameter %}
 
 
+{% api-method-parameter name="VisitorSource" type="enum" %}
+?Visitor\_VisitorSource=...
+{% endapi-method-parameter %}
+
+
 {% api-method-parameter name="VisitorCode" type="string" %}
 ?Visitor\_VisitorCode=...
 {% endapi-method-parameter %}
@@ -66,6 +71,16 @@ application/json
 
 {% api-method-parameter name="Notes" type="string" %}
 ?Visitor\_Notes=...
+{% endapi-method-parameter %}
+
+
+{% api-method-parameter name="VisitReason" type="string" %}
+?Visitor\_VisitReason=...
+{% endapi-method-parameter %}
+
+
+{% api-method-parameter name="CompanyName" type="string" %}
+?Visitor\_CompanyName=...
 {% endapi-method-parameter %}
 
 
@@ -113,9 +128,12 @@ application/json
         "FullName": "Jon Doe",
         "Email": "email@email.com",
         "Coworker": null,
+        "VisitorSource": Nexudus.Coworking.Core.Enums.eVisitorSource.Administrator,
         "VisitorCode": "012345",
         "CheckedInAt": "CheckedInAt",
         "Notes": "Description",
+        "VisitReason": "VisitReason",
+        "CompanyName": "CompanyName",
         "ExpectedArrival": null,
         "Arrived": true,
         "ArrivalDate": null,
@@ -197,9 +215,12 @@ size=25 \(maximum=1000\)
         "FullName": "Jon Doe",
         "Email": "email@email.com",
         "Coworker": null,
+        "VisitorSource": Nexudus.Coworking.Core.Enums.eVisitorSource.Administrator,
         "VisitorCode": "012345",
         "CheckedInAt": "CheckedInAt",
         "Notes": "Description",
+        "VisitReason": "VisitReason",
+        "CompanyName": "CompanyName",
         "ExpectedArrival": null,
         "Arrived": true,
         "ArrivalDate": null,
@@ -300,9 +321,12 @@ application/json
         "FullName": "Jon Doe",
         "Email": "email@email.com",
         "Coworker": null,
+        "VisitorSource": Nexudus.Coworking.Core.Enums.eVisitorSource.Administrator,
         "VisitorCode": "012345",
         "CheckedInAt": "CheckedInAt",
         "Notes": "Description",
+        "VisitReason": "VisitReason",
+        "CompanyName": "CompanyName",
         "ExpectedArrival": null,
         "Arrived": true,
         "ArrivalDate": null,
@@ -373,9 +397,12 @@ Comma-separated list of IDs of every visitor to fetch. I.e. [123456,789102,...]
         "FullName": "Jon Doe",
         "Email": "email@email.com",
         "Coworker": null,
+        "VisitorSource": Nexudus.Coworking.Core.Enums.eVisitorSource.Administrator,
         "VisitorCode": "012345",
         "CheckedInAt": "CheckedInAt",
         "Notes": "Description",
+        "VisitReason": "VisitReason",
+        "CompanyName": "CompanyName",
         "ExpectedArrival": null,
         "Arrived": true,
         "ArrivalDate": null,
@@ -454,9 +481,12 @@ The ID of the visitor to fetch.
         "FullName": "Jon Doe",
         "Email": "email@email.com",
         "Coworker": null,
+        "VisitorSource": Nexudus.Coworking.Core.Enums.eVisitorSource.Administrator,
         "VisitorCode": "012345",
         "CheckedInAt": "CheckedInAt",
         "Notes": "Description",
+        "VisitReason": "VisitReason",
+        "CompanyName": "CompanyName",
         "ExpectedArrival": null,
         "Arrived": true,
         "ArrivalDate": null,
@@ -512,9 +542,15 @@ application/json
 {% endapi-method-parameter %}
 {% api-method-parameter name="CoworkerId" type="int" required=false %}
 {% endapi-method-parameter %}
+{% api-method-parameter name="VisitorSource" type="enum" required=false %}
+{% endapi-method-parameter %}
 {% api-method-parameter name="CheckedInAt" type="string" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="Notes" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="VisitReason" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="CompanyName" type="string" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="ExpectedArrival" type="DateTime?" required=true %}
 {% endapi-method-parameter %}
@@ -604,8 +640,11 @@ _This response is an example, errors and messages will follow this structure but
 	"FullName": "Jon Doe",
 	"Email": "email@email.com",
 	"Coworker": 12345678,
+	"VisitorSource": 1 (check Enumerated values section below),
 	"CheckedInAt": "CheckedInAt",
 	"Notes": "Description",
+	"VisitReason": "VisitReason",
+	"CompanyName": "CompanyName",
 	"ExpectedArrival": null,
 	"IsTour": null,
 	"TourConfirmed": null,
@@ -646,9 +685,15 @@ The id of the visitor to update
 {% endapi-method-parameter %}
 {% api-method-parameter name="CoworkerId" type="int" required=false %}
 {% endapi-method-parameter %}
+{% api-method-parameter name="VisitorSource" type="enum" required=false %}
+{% endapi-method-parameter %}
 {% api-method-parameter name="CheckedInAt" type="string" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="Notes" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="VisitReason" type="string" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="CompanyName" type="string" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="ExpectedArrival" type="DateTime?" required=true %}
 {% endapi-method-parameter %}
@@ -743,8 +788,11 @@ _This response is an example, errors and messages will follow this structure but
 	"FullName": "Jon Doe",
 	"Email": "email@email.com",
 	"Coworker": 12345678,
+	"VisitorSource": 1 (check Enumerated values section below),
 	"CheckedInAt": "CheckedInAt",
 	"Notes": "Description",
+	"VisitReason": "VisitReason",
+	"CompanyName": "CompanyName",
 	"ExpectedArrival": null,
 	"Arrived": true,
 	"ArrivalDate": null,
@@ -977,6 +1025,9 @@ _Commands also return a status 200 when they fail to process one or more of the 
 > 🔒 Requires user role `visitor-edit`
 
 ## Enumerated values
+
+##### VisitorSource:
+> GET /api/utils/enums?name=eVisitorSource
 
 ## Binary files
 
