@@ -11,10 +11,7 @@ description: >-
 This only applies to published apps, not internal apps
 {% endhint %}
 
-Before users install your application they get presented with a screen showing these roles. If they accept to install your application then the API calls you can make will be restricted to those roles.
-
-[![](http://help.spaces.nexudus.com/content/images/captures/access-request-en.png)](http://help.spaces.nexudus.com/content/images/captures/access-request-en.png)  
-Click on the image to make it larger
+Before users install your application they are presented with a screen showing these roles. If they agree to install your application then the API calls you can make will be restricted to those roles
 
 If you change the roles of your application after users have installed it, they will be asked again to approve those roles the next time they access your application. Until then, you won't have access to their accounts, not even based on the old roles.
 

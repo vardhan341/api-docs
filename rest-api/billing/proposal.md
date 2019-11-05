@@ -1,4 +1,6 @@
-﻿{% api-method method="get" host="https://spaces.nexudus.com/api" path="/billing/proposals" %}
+# Proposal
+
+{% api-method method="get" host="https://spaces.nexudus.com/api" path="/billing/proposals" %}
 {% api-method-summary %}
 Find
 {% endapi-method-summary %}
@@ -9,18 +11,17 @@ This endpoint allows you to GET a list of proposals based on one or more filter 
 
 {% api-method-spec %}
 {% api-method-request %}
-
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
 {% api-method-query-parameters %}
-
 {% api-method-parameter name="Id" type="int" %}
 ?Id=...
 {% endapi-method-parameter %}
@@ -148,12 +149,12 @@ application/json
 {% api-method-parameter name="Desks" type="int" required=false %}
 ?Proposal_Desks=...
 {% endapi-method-parameter %}
-
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
 
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
 
 ```javascript
 {
@@ -192,7 +193,6 @@ application/json
     "TotalItems": 60,
     "TotalPages": 3
 }
-
 ```
 
 {% endapi-method-response-example %}
@@ -213,11 +213,11 @@ This endpoint allows you to GET a list of proposals.
 
 {% api-method-spec %}
 {% api-method-request %}
-
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
@@ -311,11 +311,11 @@ Gets a list of proposals based on a range of dates, integer or decimal propertie
 
 {% api-method-spec %}
 {% api-method-request %}
-
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
@@ -341,12 +341,15 @@ application/json
 {% api-method-parameter name="Price" type="decimal" required=false %}
 ?from_Proposal_Price=...
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Price" type="decimal" required=false %}
 ?to_Proposal_Price=...
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="StartDate" type="datetime" required=false %}
 ?from_Proposal_StartDate=...
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="StartDate" type="datetime" required=false %}
 ?to_Proposal_StartDate=...
 {% endapi-method-parameter %}
@@ -362,31 +365,54 @@ application/json
 {% api-method-parameter name="ContractTerm" type="datetime" required=false %}
 ?to_Proposal_ContractTerm=...
 {% endapi-method-parameter %}
+
+{% api-method-parameter name="CancellationLimitDays" type="int" required=false %}
+?from\_Proposal\_CancellationLimitDays=...
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="CancellationLimitDays" type="int" required=false %}
+?to\_Proposal\_CancellationLimitDays=...
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="ContractTerm" type="datetime" required=false %}
+?from\_Proposal\_ContractTerm=...
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="ContractTerm" type="datetime" required=false %}
+?to\_Proposal\_ContractTerm=...
+{% endapi-method-parameter %}
+
 {% api-method-parameter name="CancellationDate" type="datetime" required=false %}
 ?from_Proposal_CancellationDate=...
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="CancellationDate" type="datetime" required=false %}
 ?to_Proposal_CancellationDate=...
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="BillingDay" type="int" required=false %}
 ?from_Proposal_BillingDay=...
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="BillingDay" type="int" required=false %}
 ?to_Proposal_BillingDay=...
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Quantity" type="int" required=false %}
 ?from_Proposal_Quantity=...
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Quantity" type="int" required=false %}
 ?to_Proposal_Quantity=...
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="SentOn" type="datetime" required=false %}
 ?from_Proposal_SentOn=...
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="SentOn" type="datetime" required=false %}
 ?to_Proposal_SentOn=...
 {% endapi-method-parameter %}
-
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
 
@@ -454,11 +480,17 @@ Gets one or more proposal records based on their Id.
 
 {% api-method-spec %}
 {% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="id" type="integer" required=true %}
+Comma-separated list of IDs of every proposal to fetch. I.e. \[123456,789102,...\]
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
 
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
@@ -524,7 +556,7 @@ Comma-separated list of IDs of every proposal to fetch. I.e. [123456,789102,...]
 
 {% endapi-method-response-example-description %}
 
-```
+```text
 "Not found"
 ```
 
@@ -546,21 +578,21 @@ Gets one proposal record.
 
 {% api-method-spec %}
 {% api-method-request %}
-
-{% api-method-headers %}
-{% api-method-parameter name="Authorization" type="string" required=true %}
-Basic Authentication token. Base64 encoding of 'username:password'.
-{% endapi-method-parameter %}
-{% api-method-parameter name="Content" type="string" required=true %}
-application/json
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
-
 {% api-method-path-parameters %}
 {% api-method-parameter name="id" type="integer" required=true %}
 The ID of the proposal to fetch.
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
+
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+Basic Authentication token. Base64 encoding of 'username:password'.
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="Content" type="string" required=true %}
+application/json
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
 {% endapi-method-request %}
 
 {% api-method-response %}
@@ -601,7 +633,7 @@ The ID of the proposal to fetch.
 
 {% endapi-method-response-example-description %}
 
-```
+```text
 "Not found"
 ```
 
@@ -623,11 +655,11 @@ Creates a new proposal.
 
 {% api-method-spec %}
 {% api-method-request %}
-
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
@@ -635,43 +667,78 @@ application/json
 
 {% api-method-body-parameters %}
 {% api-method-parameter name="IssuedById" type="int" required=true %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="ResponsibleId" type="int" required=true %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="CoworkerId" type="int" required=true %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Reference" type="string" required=true %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Notes" type="string" required=false %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="ProposalStatus" type="enum" required=false %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="DocumentToSendId" type="int" required=false %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="DocumentToSignId" type="int" required=false %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="DocumentToSignHtml" type="string" required=false %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="DocumentToSendHtml" type="string" required=false %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="TariffId" type="int" required=true %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Price" type="decimal?" required=false %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="StartDate" type="DateTime?" required=false %}
+
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="CancellationLimitDays" type="int?" required=false %}
+
 {% endapi-method-parameter %}
 {% api-method-parameter name="CancellationLimitDays" type="int?" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="CancellationDate" type="DateTime?" required=false %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="BillingDay" type="int" required=true %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Quantity" type="int" required=true %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="DiscountCodeId" type="int" required=false %}
+
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
-
 {% endapi-method-request %}
 
 {% api-method-response %}
@@ -695,7 +762,7 @@ application/json
 
 {% api-method-response-example httpCode=400 %}
 {% api-method-response-example-description %}
-_This response is an example, errors and messages will follow this structure but keys and descriptions may be different for each record._  
+_This response is an example, errors and messages will follow this structure but keys and descriptions may be different for each record._
 {% endapi-method-response-example-description %}
 
 ```javascript
@@ -773,7 +840,6 @@ _This response is an example, errors and messages will follow this structure but
 	"Quantity": 1,
 	"DiscountCode": 12345678,
 }
-
 ```
 
 {% api-method method="put" host="https://spaces.nexudus.com/api" path="/billing/proposals" %}
@@ -789,37 +855,63 @@ Required User Role: `proposal-edit`
 
 {% api-method-spec %}
 {% api-method-request %}
-
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
 {% api-method-body-parameters %}
-The id of the proposal to update
 {% api-method-parameter name="IssuedById" type="int" required=true %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="ResponsibleId" type="int" required=true %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="CoworkerId" type="int" required=true %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Reference" type="string" required=true %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Notes" type="string" required=false %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="ProposalStatus" type="enum" required=false %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="DocumentToSendId" type="int" required=false %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="DocumentToSignId" type="int" required=false %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="DocumentToSignHtml" type="string" required=false %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="DocumentToSendHtml" type="string" required=false %}
+
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="CancellationLimitDays" type="int?" required=false %}
+
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="ContractTerm" type="DateTime?" required=false %}
+
 {% endapi-method-parameter %}
 {% api-method-parameter name="CancellationLimitDays" type="int?" required=false %}
 {% endapi-method-parameter %}
@@ -851,7 +943,7 @@ The id of the proposal to update
 
 {% api-method-response-example httpCode=400 %}
 {% api-method-response-example-description %}
-_This response is an example, errors and messages will follow this structure but keys and descriptions may be different for each record._  
+_This response is an example, errors and messages will follow this structure but keys and descriptions may be different for each record._
 {% endapi-method-response-example-description %}
 
 ```javascript
@@ -920,7 +1012,6 @@ _This response is an example, errors and messages will follow this structure but
 	"CancellationLimitDays": null,
 	"ContractTerm": null,
 }
-
 ```
 
 {% api-method method="delete" host="https://spaces.nexudus.com/api" path="/billing/proposals/:id" %}
@@ -936,21 +1027,21 @@ Required User Roles: `proposal-delete`
 
 {% api-method-spec %}
 {% api-method-request %}
-
-{% api-method-headers %}
-{% api-method-parameter name="Authorization" type="string" required=true %}
-Basic Authentication token. Base64 encoding of 'username:password'.
-{% endapi-method-parameter %}
-{% api-method-parameter name="Content" type="string" required=true %}
-application/json
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
-
 {% api-method-path-parameters %}
 {% api-method-parameter name="Id" type="integer" required=false %}
 
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
+
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+Basic Authentication token. Base64 encoding of 'username:password'.
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="Content" type="string" required=true %}
+application/json
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
 {% endapi-method-request %}
 
 {% api-method-response %}
@@ -979,7 +1070,7 @@ application/json
 
 {% endapi-method-response-example-description %}
 
-```
+```text
 "Not found"
 ```
 
@@ -1027,11 +1118,11 @@ Get all commands available to run for proposal records.
 
 {% api-method-spec %}
 {% api-method-request %}
-
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
@@ -1041,7 +1132,7 @@ application/json
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
 {% api-method-response-example-description %}
-_This response is an example._  
+_This response is an example._
 {% endapi-method-response-example-description %}
 
 ```javascript
@@ -1086,11 +1177,11 @@ Run Command
 
 {% api-method-spec %}
 {% api-method-request %}
-
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
@@ -1159,21 +1250,21 @@ DocumentToSignBinaryDocument
 
 {% api-method-spec %}
 {% api-method-request %}
-
-{% api-method-headers %}
-{% api-method-parameter name="Authorization" type="string" required=true %}
-Basic Authentication token. Base64 encoding of 'username:password'.
-{% endapi-method-parameter %}
-{% api-method-parameter name="Content" type="string" required=true %}
-application/json
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
-
 {% api-method-path-parameters %}
 {% api-method-parameter name="id" type="integer" required=true %}
 The id of the Proposal to get the documenttosignbinarydocument for.
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
+
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+Basic Authentication token. Base64 encoding of 'username:password'.
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="Content" type="string" required=true %}
+application/json
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
 {% endapi-method-request %}
 
 {% api-method-response %}
@@ -1202,21 +1293,21 @@ DocumentToSendBinaryDocument
 
 {% api-method-spec %}
 {% api-method-request %}
-
-{% api-method-headers %}
-{% api-method-parameter name="Authorization" type="string" required=true %}
-Basic Authentication token. Base64 encoding of 'username:password'.
-{% endapi-method-parameter %}
-{% api-method-parameter name="Content" type="string" required=true %}
-application/json
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
-
 {% api-method-path-parameters %}
 {% api-method-parameter name="id" type="integer" required=true %}
 The id of the Proposal to get the documenttosendbinarydocument for.
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
+
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+Basic Authentication token. Base64 encoding of 'username:password'.
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="Content" type="string" required=true %}
+application/json
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
 {% endapi-method-request %}
 
 {% api-method-response %}
@@ -1245,21 +1336,21 @@ ProposalFile
 
 {% api-method-spec %}
 {% api-method-request %}
-
-{% api-method-headers %}
-{% api-method-parameter name="Authorization" type="string" required=true %}
-Basic Authentication token. Base64 encoding of 'username:password'.
-{% endapi-method-parameter %}
-{% api-method-parameter name="Content" type="string" required=true %}
-application/json
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
-
 {% api-method-path-parameters %}
 {% api-method-parameter name="id" type="integer" required=true %}
 The id of the Proposal to get the proposalfile for.
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
+
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+Basic Authentication token. Base64 encoding of 'username:password'.
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="Content" type="string" required=true %}
+application/json
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
 {% endapi-method-request %}
 
 {% api-method-response %}

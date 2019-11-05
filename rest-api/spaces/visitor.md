@@ -1,4 +1,6 @@
-﻿{% api-method method="get" host="https://spaces.nexudus.com/api" path="/spaces/visitors" %}
+# Visitor
+
+{% api-method method="get" host="https://spaces.nexudus.com/api" path="/spaces/visitors" %}
 {% api-method-summary %}
 Find
 {% endapi-method-summary %}
@@ -9,18 +11,17 @@ This endpoint allows you to GET a list of visitors based on one or more filter q
 
 {% api-method-spec %}
 {% api-method-request %}
-
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
 {% api-method-query-parameters %}
-
 {% api-method-parameter name="Id" type="int" %}
 ?Id=...
 {% endapi-method-parameter %}
@@ -33,26 +34,25 @@ application/json
 ?Visitor\_SystemId=...
 {% endapi-method-parameter %}
 
-
 {% api-method-parameter name="Business" type="Business" %}
 ?Visitor\_Business=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="FullName" type="string" %}
 ?Visitor\_FullName=...
 {% endapi-method-parameter %}
 
-
 {% api-method-parameter name="Email" type="string" %}
 ?Visitor\_Email=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="Coworker" type="Coworker" %}
 ?Visitor\_Coworker=...
 {% endapi-method-parameter %}
 
+{% api-method-parameter name="VisitorSource" type="enum" %}
+?Visitor\_VisitorSource=...
+{% endapi-method-parameter %}
 
 {% api-method-parameter name="VisitorSource" type="enum" %}
 ?Visitor\_VisitorSource=...
@@ -63,16 +63,21 @@ application/json
 ?Visitor\_VisitorCode=...
 {% endapi-method-parameter %}
 
-
 {% api-method-parameter name="CheckedInAt" type="string" %}
 ?Visitor\_CheckedInAt=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="Notes" type="string" %}
 ?Visitor\_Notes=...
 {% endapi-method-parameter %}
 
+{% api-method-parameter name="VisitReason" type="string" %}
+?Visitor\_VisitReason=...
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="CompanyName" type="string" %}
+?Visitor\_CompanyName=...
+{% endapi-method-parameter %}
 
 {% api-method-parameter name="VisitReason" type="string" %}
 ?Visitor\_VisitReason=...
@@ -88,38 +93,33 @@ application/json
 ?Visitor\_ExpectedArrival=...
 {% endapi-method-parameter %}
 
-
 {% api-method-parameter name="Arrived" type="bool" %}
 ?Visitor\_Arrived=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="ArrivalDate" type="DateTime?" %}
 ?Visitor\_ArrivalDate=...
 {% endapi-method-parameter %}
 
-
 {% api-method-parameter name="IsTour" type="bool" %}
 ?Visitor\_IsTour=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="TourConfirmed" type="bool" %}
 ?Visitor\_TourConfirmed=...
 {% endapi-method-parameter %}
 
-
 {% api-method-parameter name="Coworker\_FullName" type="string" %}
 ?Visitor\_Coworker\_FullName=...
 {% endapi-method-parameter %}
-
-
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
 
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
 
+{% endapi-method-response-example-description %}
 
 ```javascript
 {
@@ -153,7 +153,6 @@ application/json
     "TotalItems": 60,
     "TotalPages": 3
 }
-
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}
@@ -173,11 +172,11 @@ This endpoint allows you to GET a list of visitors.
 
 {% api-method-spec %}
 {% api-method-request %}
-
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
@@ -250,8 +249,7 @@ size=25 \(maximum=1000\)
 > 🔒 Requires user role `visitor-list`
 
 {% hint style="info" %}
-You can also get a list of records based when they were created or updated. This is useful if you want to get a list of records created after or before a particular point in time. 
-You can also use range query parameters for all date, integer and decimal properties.
+You can also get a list of records based when they were created or updated. This is useful if you want to get a list of records created after or before a particular point in time. You can also use range query parameters for all date, integer and decimal properties.
 {% endhint %}
 
 {% api-method method="get" host="https://spaces.nexudus.com/api" path="/spaces/visitors" %}
@@ -265,11 +263,11 @@ Gets a list of visitors based on a range of dates, integer or decimal properties
 
 {% api-method-spec %}
 {% api-method-request %}
-
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
@@ -295,16 +293,18 @@ application/json
 {% api-method-parameter name="ExpectedArrival" type="datetime" required=false %}
 ?from\_Visitor\_ExpectedArrival=...
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="ExpectedArrival" type="datetime" required=false %}
 ?to\_Visitor\_ExpectedArrival=...
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="ArrivalDate" type="datetime" required=false %}
 ?from\_Visitor\_ArrivalDate=...
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="ArrivalDate" type="datetime" required=false %}
 ?to\_Visitor\_ArrivalDate=...
 {% endapi-method-parameter %}
-
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
 
@@ -355,8 +355,7 @@ application/json
 
 > 🔒 Requires user role `visitor-list`
 
-
-{% api-method method="get" host="https://spaces.nexudus.com/api" path="/spaces/visitors?Visitor_Id=[:id1,:id2,...]" %}
+{% api-method method="get" host="https://spaces.nexudus.com/api" path="/spaces/visitors?Visitor\_Id=\[:id1,:id2,...\]" %}
 {% api-method-summary %}
 List by Ids
 {% endapi-method-summary %}
@@ -367,21 +366,21 @@ Gets one or more visitor records based on their Id.
 
 {% api-method-spec %}
 {% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="id" type="integer" required=true %}
+Comma-separated list of IDs of every visitor to fetch. I.e. \[123456,789102,...\]
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
 
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
-
-{% api-method-path-parameters %}
-{% api-method-parameter name="id" type="integer" required=true %}
-Comma-separated list of IDs of every visitor to fetch. I.e. [123456,789102,...] 
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
 {% endapi-method-request %}
 
 {% api-method-response %}
@@ -431,7 +430,92 @@ Comma-separated list of IDs of every visitor to fetch. I.e. [123456,789102,...]
 
 {% endapi-method-response-example-description %}
 
+```text
+"Not found"
 ```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+> 🔒 Requires user role `visitor-list`
+
+{% api-method method="get" host="https://spaces.nexudus.com/api" path="/spaces/visitors?Visitor\_Id=\[:id1,:id2,...\]" %}
+{% api-method-summary %}
+List by Ids
+{% endapi-method-summary %}
+
+{% api-method-description %}
+Gets one or more visitor records based on their Id.
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="id" type="integer" required=true %}
+Comma-separated list of IDs of every visitor to fetch. I.e. \[123456,789102,...\]
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+Basic Authentication token. Base64 encoding of 'username:password'.
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="Content" type="string" required=true %}
+application/json
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```javascript
+{
+    "Records": [{
+        "Business": null,
+        "FullName": "Jon Doe",
+        "Email": "email@email.com",
+        "Coworker": null,
+        "VisitorSource": Nexudus.Coworking.Core.Enums.eVisitorSource.Administrator,
+        "VisitorCode": "012345",
+        "CheckedInAt": "CheckedInAt",
+        "Notes": "Description",
+        "VisitReason": "VisitReason",
+        "CompanyName": "CompanyName",
+        "ExpectedArrival": null,
+        "Arrived": true,
+        "ArrivalDate": null,
+        "IsTour": null,
+        "TourConfirmed": null,
+    }],
+    }],
+    "CurrentPageSize": 25,
+    "CurrentPage": 1,
+    "CurrentOrderField": "Id",
+    "CurrentSortDirection": 1,
+    "FirstItem": 1,
+    "HasNextPage": true,
+    "HasPreviousPage": false,
+    "LastItem": 25,
+    "PageNumber": 1,
+    "PageSize": 25,
+    "TotalItems": 60,
+    "TotalPages": 3
+}
+```
+{% endapi-method-response-example %}
+
+{% api-method-response-example httpCode=404 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```text
 "Not found"
 ```
 {% endapi-method-response-example %}
@@ -452,21 +536,21 @@ Gets one visitor record.
 
 {% api-method-spec %}
 {% api-method-request %}
-
-{% api-method-headers %}
-{% api-method-parameter name="Authorization" type="string" required=true %}
-Basic Authentication token. Base64 encoding of 'username:password'.
-{% endapi-method-parameter %}
-{% api-method-parameter name="Content" type="string" required=true %}
-application/json
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
-
 {% api-method-path-parameters %}
 {% api-method-parameter name="id" type="integer" required=true %}
 The ID of the visitor to fetch.
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
+
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+Basic Authentication token. Base64 encoding of 'username:password'.
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="Content" type="string" required=true %}
+application/json
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
 {% endapi-method-request %}
 
 {% api-method-response %}
@@ -501,7 +585,7 @@ The ID of the visitor to fetch.
 
 {% endapi-method-response-example-description %}
 
-```
+```text
 "Not found"
 ```
 {% endapi-method-response-example %}
@@ -510,7 +594,6 @@ The ID of the visitor to fetch.
 {% endapi-method %}
 
 > 🔒 Requires user role `visitor-read`
-
 
 {% api-method method="post" host="https://spaces.nexudus.com/api" path="/spaces/visitors" %}
 {% api-method-summary %}
@@ -523,11 +606,11 @@ Creates a new visitor.
 
 {% api-method-spec %}
 {% api-method-request %}
-
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
@@ -535,31 +618,49 @@ application/json
 
 {% api-method-body-parameters %}
 {% api-method-parameter name="BusinessId" type="int" required=true %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="FullName" type="string" required=true %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Email" type="string" required=true %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="CoworkerId" type="int" required=false %}
+
 {% endapi-method-parameter %}
 {% api-method-parameter name="VisitorSource" type="enum" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="CheckedInAt" type="string" required=false %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Notes" type="string" required=false %}
+
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="VisitReason" type="string" required=false %}
+
 {% endapi-method-parameter %}
 {% api-method-parameter name="VisitReason" type="string" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="CompanyName" type="string" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="ExpectedArrival" type="DateTime?" required=true %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="IsTour" type="bool" required=false %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="TourConfirmed" type="bool" required=false %}
+
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
-
 {% endapi-method-request %}
 
 {% api-method-response %}
@@ -582,7 +683,7 @@ application/json
 
 {% api-method-response-example httpCode=400 %}
 {% api-method-response-example-description %}
-_This response is an example, errors and messages will follow this structure but keys and descriptions may be different for each record._  
+_This response is an example, errors and messages will follow this structure but keys and descriptions may be different for each record._
 {% endapi-method-response-example-description %}
 
 ```javascript
@@ -649,7 +750,6 @@ _This response is an example, errors and messages will follow this structure but
 	"IsTour": null,
 	"TourConfirmed": null,
 }
-
 ```
 
 {% api-method method="put" host="https://spaces.nexudus.com/api" path="/spaces/visitors" %}
@@ -658,52 +758,68 @@ Update
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Updates and existing visitor.
-  
-Required User Role: `visitor-edit`
+Updates and existing visitor.Required User Role: `visitor-edit`
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
-
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
 {% api-method-body-parameters %}
-The id of the visitor to update
 {% api-method-parameter name="BusinessId" type="int" required=true %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="FullName" type="string" required=true %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Email" type="string" required=true %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="CoworkerId" type="int" required=false %}
+
 {% endapi-method-parameter %}
 {% api-method-parameter name="VisitorSource" type="enum" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="CheckedInAt" type="string" required=false %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Notes" type="string" required=false %}
+
 {% endapi-method-parameter %}
 {% api-method-parameter name="VisitReason" type="string" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="CompanyName" type="string" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="ExpectedArrival" type="DateTime?" required=true %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Arrived" type="bool" required=false %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="ArrivalDate" type="DateTime?" required=false %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="IsTour" type="bool" required=false %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="TourConfirmed" type="bool" required=false %}
+
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
@@ -730,7 +846,7 @@ The id of the visitor to update
 
 {% api-method-response-example httpCode=400 %}
 {% api-method-response-example-description %}
-_This response is an example, errors and messages will follow this structure but keys and descriptions may be different for each record._  
+_This response is an example, errors and messages will follow this structure but keys and descriptions may be different for each record._
 {% endapi-method-response-example-description %}
 
 ```javascript
@@ -799,11 +915,7 @@ _This response is an example, errors and messages will follow this structure but
 	"IsTour": null,
 	"TourConfirmed": null,
 }
-
 ```
-
-
-
 
 {% api-method method="delete" host="https://spaces.nexudus.com/api" path="/spaces/visitors/:id" %}
 {% api-method-summary %}
@@ -811,28 +923,26 @@ Delete
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Deletes a visitor.  
-  
-Required User Roles: `visitor-delete`
+Deletes a visitor.Required User Roles: `visitor-delete`
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
-
-{% api-method-headers %}
-{% api-method-parameter name="Authorization" type="string" required=true %}
-Basic Authentication token. Base64 encoding of 'username:password'.
-{% endapi-method-parameter %}
-{% api-method-parameter name="Content" type="string" required=true %}
-application/json
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
-
 {% api-method-path-parameters %}
 {% api-method-parameter name="Id" type="integer" required=false %}
 
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
+
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+Basic Authentication token. Base64 encoding of 'username:password'.
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="Content" type="string" required=true %}
+application/json
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
 {% endapi-method-request %}
 
 {% api-method-response %}
@@ -860,7 +970,7 @@ application/json
 
 {% endapi-method-response-example-description %}
 
-```
+```text
 "Not found"
 ```
 {% endapi-method-response-example %}
@@ -880,14 +990,11 @@ application/json
 {% endapi-method-spec %}
 {% endapi-method %}
 
-
-
 > 🔒 Requires user role `visitor-delete`
-
 
 ## Commands
 
-Commands allow to perform actions against one or more visitor records. Some commands accept only one record while others can run an action for a number of records at the same time.  Each command has metadata with information about how it can be used and the amount of records, if any, it needs to run.
+Commands allow to perform actions against one or more visitor records. Some commands accept only one record while others can run an action for a number of records at the same time. Each command has metadata with information about how it can be used and the amount of records, if any, it needs to run.
 
 > ```javascript
 > {
@@ -909,11 +1016,11 @@ Get all commands available to run for visitor records.
 
 {% api-method-spec %}
 {% api-method-request %}
-
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
@@ -923,7 +1030,7 @@ application/json
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
 {% api-method-response-example-description %}
-_This response is an example._  
+_This response is an example._
 {% endapi-method-response-example-description %}
 
 ```javascript
@@ -967,11 +1074,11 @@ Run Command
 
 {% api-method-spec %}
 {% api-method-request %}
-
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
@@ -983,21 +1090,17 @@ The command Key defining the command to run. `"COMMAND_KEY_1"`
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Parameters" type="array" required=false %}
-A list of object with the structure below. The parameters required for each command are returned in the "RequiresParameters" array return by the "commands" endpoint.  
-  
-`[  
-   {  
-      "Name": "Name",   
-      "Type":"Type",   
-      "Value":recordId  
-    }  
+A list of object with the structure below. The parameters required for each command are returned in the "RequiresParameters" array return by the "commands" endpoint.`[    
+{    
+"Name": "Name",    
+"Type":"Type",    
+"Value":recordId    
+}    
 ]`
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Ids" type="array" required=true %}
-A list of integer IDs for each of the records to run this command for.  
-  
-`[987654321, 123565978]`
+A list of integer IDs for each of the records to run this command for.`[987654321, 123565978]`
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
@@ -1005,7 +1108,7 @@ A list of integer IDs for each of the records to run this command for.
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
 {% api-method-response-example-description %}
-_Commands also return a status 200 when they fail to process one or more of the records. Use the 'WasSuccessful'  property to know if the command run succeeded._  
+_Commands also return a status 200 when they fail to process one or more of the records. Use the 'WasSuccessful' property to know if the command run succeeded._
 {% endapi-method-response-example-description %}
 
 ```javascript
@@ -1033,7 +1136,8 @@ _Commands also return a status 200 when they fail to process one or more of the 
 
 The following endpoints return binary data. Check the `ContentType` header to understand the type of file being returned in the response stream.
 
-
 ## Related Entities
+
 * [Business](../sys/business.md)
-* [Coworker](../spaces/coworker.md)
+* [Coworker](coworker.md)
+

@@ -1,0 +1,6 @@
+---
+description: Placeholder
+---
+
+# EmailTemplateFile
+

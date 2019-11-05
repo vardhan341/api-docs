@@ -19,7 +19,7 @@ The API is divided in 7 main areas. You can get details about the resources in e
 * \*\*\*\*[**Billing**](rest-api/billing/): data related to the items you sell, invoices and payments. 
 * \*\*\*\*[**Community**](rest-api/community/): data related to the community boards. 
 * \*\*\*\*[**Content**](rest-api/content/): data related to the articles, events and newsletters. 
-* \*\*\*\*[**CRM**](): data related to your CRM boards, custom fields, reminders and tasks. 
+* \*\*\*\*[**CRM**](./): data related to your CRM boards, custom fields, reminders and tasks. 
 * \*\*\*\*[**Spaces**](rest-api/spaces/): data related to a space, like members profiles, bookings or resources. 
 * \*\*\*\*[**Support**](rest-api/support/): data related to the support features, like chats and help messages. 
 * \*\*\*\*[**Sys**](rest-api/sys/): data related to your Nexudus account configuration, floor plans and core entities like taxes, currencies and timezones.

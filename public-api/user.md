@@ -7,43 +7,6 @@ description: >-
 # User
 
 {% api-method method="post" host="https://spaces.nexudus.com" path="/sys/users/token" %}
-{% api-method-summary %}
-Get User Token
-{% endapi-method-summary %}
-
-{% api-method-description %}
-Gets a JWT token for a user based on their username and password. JWT tokens can be used to authenticate against the PUBLIC API or to log a user in the member portal \(once\) without having to ask for their credentials.
-{% endapi-method-description %}
-
-{% api-method-spec %}
-{% api-method-request %}
-
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
-```javascript
-{
-  "Status": 200,
-  "Message": "OK",
-  "Value": "1350eXAiOiJKV1QiLCJhbGciOiJIUzI11J9.[truncated].dfE1dtaeOfqhasdasd23hCJUn_RMW9usu9oUdE",
-  "WasSuccessful": true
-}
-
-or 
-
-{
-  "Status": 500,
-  "Message": "The email address or password you entered is not valid.",
-  "WasSuccessful": false
-}
-```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
 
 **Request Body**
 
@@ -56,43 +19,6 @@ or
 ```
 
 {% api-method method="post" host="https://spaces.nexudus.com" path="/sys/users/:id/token/refresh" %}
-{% api-method-summary %}
-Refresh Access Token
-{% endapi-method-summary %}
-
-{% api-method-description %}
-Gets a new authentication token based on a set of REST API user credentials. This method requires you to pass REST authentication details, not the email and password of the user you are obtaining the token for!
-{% endapi-method-description %}
-
-{% api-method-spec %}
-{% api-method-request %}
-
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
-```javascript
-{
-  "Status": 200,
-  "Message": "OK",
-  "Value": "1350eXAiOiJKV1QiLCJhbGciOiJIUzI11J9.[truncated].dfE1dtaeOfqhasdasd23hCJUn_RMW9usu9oUdE",
-  "WasSuccessful": true
-}
-      
-or
-      
-{
-  "Status": 500,
-  "Message": "The email address or password you entered is not valid.",
-  "WasSuccessful": false
-}
-```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
 
 **Request Body**
 
@@ -116,11 +42,11 @@ or
 
 {% api-method method="get" host="https://xyz.spaces.nexudus.com" path="/:langauge/user/login" %}
 {% api-method-summary %}
-Log User By Token
+
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Logs a user in on your members portal based on a authentication token. This action will immediately invalidate the access token.
+
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -142,7 +68,7 @@ The access token
 
 {% endapi-method-response-example-description %}
 
-```
+```text
 
 ```
 {% endapi-method-response-example %}
@@ -195,6 +121,4 @@ If user is not found
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
-
-
 

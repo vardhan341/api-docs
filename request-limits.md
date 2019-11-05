@@ -29,7 +29,7 @@ Content-Length: 0
 
 ```
 
-Consider the following javascript code that takes advantage of the "Retry-After" response header to repeat an API request.
+Consider the following JavaScript code that takes advantage of the "Retry-After" response header to repeat an API request.
 
 ```javascript
 function getContent(id) {

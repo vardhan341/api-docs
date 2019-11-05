@@ -218,7 +218,7 @@ application/jso
 {% endapi-method-headers %}
 
 {% api-method-query-parameters %}
-{% api-method-parameter name="" type="object" required=true %}
+{% api-method-parameter name="start" type="object" required=true %}
 Return bookings starting after the passed in date.
 {% endapi-method-parameter %}
 
@@ -383,7 +383,7 @@ application/json
 {% endapi-method-headers %}
 
 {% api-method-query-parameters %}
-{% api-method-parameter name="" type="object" required=true %}
+{% api-method-parameter name="start" type="object" required=true %}
 Return events starting after the passed in date.
 {% endapi-method-parameter %}
 

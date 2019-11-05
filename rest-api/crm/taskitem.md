@@ -1,4 +1,6 @@
-﻿{% api-method method="get" host="https://spaces.nexudus.com/api" path="/crm/taskitems" %}
+# TaskItem
+
+{% api-method method="get" host="https://spaces.nexudus.com/api" path="/crm/taskitems" %}
 {% api-method-summary %}
 Find
 {% endapi-method-summary %}
@@ -9,18 +11,17 @@ This endpoint allows you to GET a list of taskitems based on one or more filter 
 
 {% api-method-spec %}
 {% api-method-request %}
-
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
 {% api-method-query-parameters %}
-
 {% api-method-parameter name="Id" type="int" %}
 ?Id=...
 {% endapi-method-parameter %}
@@ -33,53 +34,45 @@ application/json
 ?TaskItem\_SystemId=...
 {% endapi-method-parameter %}
 
-
 {% api-method-parameter name="TaskList" type="TaskList" %}
 ?TaskItem\_TaskList=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="Responsible" type="User" %}
 ?TaskItem\_Responsible=...
 {% endapi-method-parameter %}
 
-
 {% api-method-parameter name="Name" type="string" %}
 ?TaskItem\_Name=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="Active" type="bool" %}
 ?TaskItem\_Active=...
 {% endapi-method-parameter %}
 
-
 {% api-method-parameter name="NotifyByEmail" type="bool" %}
 ?TaskItem\_NotifyByEmail=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="DisplayToEveryone" type="bool" %}
 ?TaskItem\_DisplayToEveryone=...
 {% endapi-method-parameter %}
 
-
 {% api-method-parameter name="DelayInHours" type="int" %}
 ?TaskItem\_DelayInHours=...
 {% endapi-method-parameter %}
 
-
 {% api-method-parameter name="Responsible\_FullName" type="string" %}
 ?TaskItem\_Responsible\_FullName=...
 {% endapi-method-parameter %}
-
-
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
 
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
 
+{% endapi-method-response-example-description %}
 
 ```javascript
 {
@@ -105,7 +98,6 @@ application/json
     "TotalItems": 60,
     "TotalPages": 3
 }
-
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}
@@ -125,11 +117,11 @@ This endpoint allows you to GET a list of taskitems.
 
 {% api-method-spec %}
 {% api-method-request %}
-
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
@@ -194,8 +186,7 @@ size=25 \(maximum=1000\)
 > 🔒 Requires user role `taskitem-list`
 
 {% hint style="info" %}
-You can also get a list of records based when they were created or updated. This is useful if you want to get a list of records created after or before a particular point in time. 
-You can also use range query parameters for all date, integer and decimal properties.
+You can also get a list of records based when they were created or updated. This is useful if you want to get a list of records created after or before a particular point in time. You can also use range query parameters for all date, integer and decimal properties.
 {% endhint %}
 
 {% api-method method="get" host="https://spaces.nexudus.com/api" path="/crm/taskitems" %}
@@ -209,11 +200,11 @@ Gets a list of taskitems based on a range of dates, integer or decimal propertie
 
 {% api-method-spec %}
 {% api-method-request %}
-
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
@@ -239,10 +230,10 @@ application/json
 {% api-method-parameter name="DelayInHours" type="int" required=false %}
 ?from\_TaskItem\_DelayInHours=...
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="DelayInHours" type="int" required=false %}
 ?to\_TaskItem\_DelayInHours=...
 {% endapi-method-parameter %}
-
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
 
@@ -285,8 +276,7 @@ application/json
 
 > 🔒 Requires user role `taskitem-list`
 
-
-{% api-method method="get" host="https://spaces.nexudus.com/api" path="/crm/taskitems?TaskItem_Id=[:id1,:id2,...]" %}
+{% api-method method="get" host="https://spaces.nexudus.com/api" path="/crm/taskitems?TaskItem\_Id=\[:id1,:id2,...\]" %}
 {% api-method-summary %}
 List by Ids
 {% endapi-method-summary %}
@@ -297,21 +287,21 @@ Gets one or more taskitem records based on their Id.
 
 {% api-method-spec %}
 {% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="id" type="integer" required=true %}
+Comma-separated list of IDs of every taskitem to fetch. I.e. \[123456,789102,...\]
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
 
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
-
-{% api-method-path-parameters %}
-{% api-method-parameter name="id" type="integer" required=true %}
-Comma-separated list of IDs of every taskitem to fetch. I.e. [123456,789102,...] 
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
 {% endapi-method-request %}
 
 {% api-method-response %}
@@ -353,7 +343,7 @@ Comma-separated list of IDs of every taskitem to fetch. I.e. [123456,789102,...]
 
 {% endapi-method-response-example-description %}
 
-```
+```text
 "Not found"
 ```
 {% endapi-method-response-example %}
@@ -374,21 +364,21 @@ Gets one taskitem record.
 
 {% api-method-spec %}
 {% api-method-request %}
-
-{% api-method-headers %}
-{% api-method-parameter name="Authorization" type="string" required=true %}
-Basic Authentication token. Base64 encoding of 'username:password'.
-{% endapi-method-parameter %}
-{% api-method-parameter name="Content" type="string" required=true %}
-application/json
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
-
 {% api-method-path-parameters %}
 {% api-method-parameter name="id" type="integer" required=true %}
 The ID of the taskitem to fetch.
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
+
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+Basic Authentication token. Base64 encoding of 'username:password'.
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="Content" type="string" required=true %}
+application/json
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
 {% endapi-method-request %}
 
 {% api-method-response %}
@@ -415,7 +405,7 @@ The ID of the taskitem to fetch.
 
 {% endapi-method-response-example-description %}
 
-```
+```text
 "Not found"
 ```
 {% endapi-method-response-example %}
@@ -424,7 +414,6 @@ The ID of the taskitem to fetch.
 {% endapi-method %}
 
 > 🔒 Requires user role `taskitem-read`
-
 
 {% api-method method="post" host="https://spaces.nexudus.com/api" path="/crm/taskitems" %}
 {% api-method-summary %}
@@ -437,11 +426,11 @@ Creates a new taskitem.
 
 {% api-method-spec %}
 {% api-method-request %}
-
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
@@ -449,21 +438,33 @@ application/json
 
 {% api-method-body-parameters %}
 {% api-method-parameter name="TaskListId" type="int" required=true %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="ResponsibleId" type="int" required=true %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Name" type="string" required=true %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Active" type="bool" required=false %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="NotifyByEmail" type="bool" required=false %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="DisplayToEveryone" type="bool" required=false %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="DelayInHours" type="int" required=true %}
+
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
-
 {% endapi-method-request %}
 
 {% api-method-response %}
@@ -486,7 +487,7 @@ application/json
 
 {% api-method-response-example httpCode=400 %}
 {% api-method-response-example-description %}
-_This response is an example, errors and messages will follow this structure but keys and descriptions may be different for each record._  
+_This response is an example, errors and messages will follow this structure but keys and descriptions may be different for each record._
 {% endapi-method-response-example-description %}
 
 ```javascript
@@ -540,15 +541,14 @@ _This response is an example, errors and messages will follow this structure but
 
 ```javascript
 {
-	"TaskList": 12345678,
-	"Responsible": 12345678,
-	"Name": "Name",
-	"Active": true,
-	"NotifyByEmail": true,
-	"DisplayToEveryone": true,
-	"DelayInHours": 1,
+    "TaskList": 12345678,
+    "Responsible": 12345678,
+    "Name": "Name",
+    "Active": true,
+    "NotifyByEmail": true,
+    "DisplayToEveryone": true,
+    "DelayInHours": 1,
 }
-
 ```
 
 {% api-method method="put" host="https://spaces.nexudus.com/api" path="/crm/taskitems" %}
@@ -557,38 +557,48 @@ Update
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Updates and existing taskitem.
-  
-Required User Role: `taskitem-edit`
+Updates and existing taskitem.Required User Role: `taskitem-edit`
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
-
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
 {% api-method-body-parameters %}
-The id of the taskitem to update
 {% api-method-parameter name="TaskListId" type="int" required=true %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="ResponsibleId" type="int" required=true %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Name" type="string" required=true %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Active" type="bool" required=false %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="NotifyByEmail" type="bool" required=false %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="DisplayToEveryone" type="bool" required=false %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="DelayInHours" type="int" required=true %}
+
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
@@ -615,7 +625,7 @@ The id of the taskitem to update
 
 {% api-method-response-example httpCode=400 %}
 {% api-method-response-example-description %}
-_This response is an example, errors and messages will follow this structure but keys and descriptions may be different for each record._  
+_This response is an example, errors and messages will follow this structure but keys and descriptions may be different for each record._
 {% endapi-method-response-example-description %}
 
 ```javascript
@@ -669,19 +679,15 @@ _This response is an example, errors and messages will follow this structure but
 
 ```javascript
 {
-	"TaskList": 12345678,
-	"Responsible": 12345678,
-	"Name": "Name",
-	"Active": true,
-	"NotifyByEmail": true,
-	"DisplayToEveryone": true,
-	"DelayInHours": 1,
+    "TaskList": 12345678,
+    "Responsible": 12345678,
+    "Name": "Name",
+    "Active": true,
+    "NotifyByEmail": true,
+    "DisplayToEveryone": true,
+    "DelayInHours": 1,
 }
-
 ```
-
-
-
 
 {% api-method method="delete" host="https://spaces.nexudus.com/api" path="/crm/taskitems/:id" %}
 {% api-method-summary %}
@@ -689,28 +695,26 @@ Delete
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Deletes a taskitem.  
-  
-Required User Roles: `taskitem-delete`
+Deletes a taskitem.Required User Roles: `taskitem-delete`
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
-
-{% api-method-headers %}
-{% api-method-parameter name="Authorization" type="string" required=true %}
-Basic Authentication token. Base64 encoding of 'username:password'.
-{% endapi-method-parameter %}
-{% api-method-parameter name="Content" type="string" required=true %}
-application/json
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
-
 {% api-method-path-parameters %}
 {% api-method-parameter name="Id" type="integer" required=false %}
 
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
+
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+Basic Authentication token. Base64 encoding of 'username:password'.
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="Content" type="string" required=true %}
+application/json
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
 {% endapi-method-request %}
 
 {% api-method-response %}
@@ -738,7 +742,7 @@ application/json
 
 {% endapi-method-response-example-description %}
 
-```
+```text
 "Not found"
 ```
 {% endapi-method-response-example %}
@@ -758,14 +762,11 @@ application/json
 {% endapi-method-spec %}
 {% endapi-method %}
 
-
-
 > 🔒 Requires user role `taskitem-delete`
-
 
 ## Commands
 
-Commands allow to perform actions against one or more taskitem records. Some commands accept only one record while others can run an action for a number of records at the same time.  Each command has metadata with information about how it can be used and the amount of records, if any, it needs to run.
+Commands allow to perform actions against one or more taskitem records. Some commands accept only one record while others can run an action for a number of records at the same time. Each command has metadata with information about how it can be used and the amount of records, if any, it needs to run.
 
 > ```javascript
 > {
@@ -787,11 +788,11 @@ Get all commands available to run for taskitem records.
 
 {% api-method-spec %}
 {% api-method-request %}
-
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
@@ -801,7 +802,7 @@ application/json
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
 {% api-method-response-example-description %}
-_This response is an example._  
+_This response is an example._
 {% endapi-method-response-example-description %}
 
 ```javascript
@@ -845,11 +846,11 @@ Run Command
 
 {% api-method-spec %}
 {% api-method-request %}
-
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
@@ -861,21 +862,17 @@ The command Key defining the command to run. `"COMMAND_KEY_1"`
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Parameters" type="array" required=false %}
-A list of object with the structure below. The parameters required for each command are returned in the "RequiresParameters" array return by the "commands" endpoint.  
-  
-`[  
-   {  
-      "Name": "Name",   
-      "Type":"Type",   
-      "Value":recordId  
-    }  
+A list of object with the structure below. The parameters required for each command are returned in the "RequiresParameters" array return by the "commands" endpoint.`[    
+{    
+"Name": "Name",    
+"Type":"Type",    
+"Value":recordId    
+}    
 ]`
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Ids" type="array" required=true %}
-A list of integer IDs for each of the records to run this command for.  
-  
-`[987654321, 123565978]`
+A list of integer IDs for each of the records to run this command for.`[987654321, 123565978]`
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
@@ -883,7 +880,7 @@ A list of integer IDs for each of the records to run this command for.
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
 {% api-method-response-example-description %}
-_Commands also return a status 200 when they fail to process one or more of the records. Use the 'WasSuccessful'  property to know if the command run succeeded._  
+_Commands also return a status 200 when they fail to process one or more of the records. Use the 'WasSuccessful' property to know if the command run succeeded._
 {% endapi-method-response-example-description %}
 
 ```javascript
@@ -908,7 +905,8 @@ _Commands also return a status 200 when they fail to process one or more of the 
 
 The following endpoints return binary data. Check the `ContentType` header to understand the type of file being returned in the response stream.
 
-
 ## Related Entities
-* [TaskList](../crm/tasklist.md)
+
+* [TaskList](tasklist.md)
 * [User](../sys/user.md)
+
