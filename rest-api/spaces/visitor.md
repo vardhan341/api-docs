@@ -54,11 +54,6 @@ application/json
 ?Visitor\_VisitorSource=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="VisitorSource" type="enum" %}
-?Visitor\_VisitorSource=...
-{% endapi-method-parameter %}
-
-
 {% api-method-parameter name="VisitorCode" type="string" %}
 ?Visitor\_VisitorCode=...
 {% endapi-method-parameter %}
@@ -78,16 +73,6 @@ application/json
 {% api-method-parameter name="CompanyName" type="string" %}
 ?Visitor\_CompanyName=...
 {% endapi-method-parameter %}
-
-{% api-method-parameter name="VisitReason" type="string" %}
-?Visitor\_VisitReason=...
-{% endapi-method-parameter %}
-
-
-{% api-method-parameter name="CompanyName" type="string" %}
-?Visitor\_CompanyName=...
-{% endapi-method-parameter %}
-
 
 {% api-method-parameter name="ExpectedArrival" type="DateTime?" %}
 ?Visitor\_ExpectedArrival=...
@@ -481,12 +466,9 @@ application/json
         "FullName": "Jon Doe",
         "Email": "email@email.com",
         "Coworker": null,
-        "VisitorSource": Nexudus.Coworking.Core.Enums.eVisitorSource.Administrator,
         "VisitorCode": "012345",
         "CheckedInAt": "CheckedInAt",
         "Notes": "Description",
-        "VisitReason": "VisitReason",
-        "CompanyName": "CompanyName",
         "ExpectedArrival": null,
         "Arrived": true,
         "ArrivalDate": null,
@@ -632,8 +614,11 @@ application/json
 {% api-method-parameter name="CoworkerId" type="int" required=false %}
 
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="VisitorSource" type="enum" required=false %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="CheckedInAt" type="string" required=false %}
 
 {% endapi-method-parameter %}
@@ -645,10 +630,11 @@ application/json
 {% api-method-parameter name="VisitReason" type="string" required=false %}
 
 {% endapi-method-parameter %}
-{% api-method-parameter name="VisitReason" type="string" required=false %}
-{% endapi-method-parameter %}
+
 {% api-method-parameter name="CompanyName" type="string" required=false %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="ExpectedArrival" type="DateTime?" required=true %}
 
 {% endapi-method-parameter %}
@@ -737,18 +723,18 @@ _This response is an example, errors and messages will follow this structure but
 
 ```javascript
 {
-	"Business": 12345678,
-	"FullName": "Jon Doe",
-	"Email": "email@email.com",
-	"Coworker": 12345678,
-	"VisitorSource": 1 (check Enumerated values section below),
-	"CheckedInAt": "CheckedInAt",
-	"Notes": "Description",
-	"VisitReason": "VisitReason",
-	"CompanyName": "CompanyName",
-	"ExpectedArrival": null,
-	"IsTour": null,
-	"TourConfirmed": null,
+    "Business": 12345678,
+    "FullName": "Jon Doe",
+    "Email": "email@email.com",
+    "Coworker": 12345678,
+    "VisitorSource": 1 (check Enumerated values section below),
+    "CheckedInAt": "CheckedInAt",
+    "Notes": "Description",
+    "VisitReason": "VisitReason",
+    "CompanyName": "CompanyName",
+    "ExpectedArrival": null,
+    "IsTour": null,
+    "TourConfirmed": null,
 }
 ```
 
@@ -789,8 +775,11 @@ application/json
 {% api-method-parameter name="CoworkerId" type="int" required=false %}
 
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="VisitorSource" type="enum" required=false %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="CheckedInAt" type="string" required=false %}
 
 {% endapi-method-parameter %}
@@ -798,10 +787,15 @@ application/json
 {% api-method-parameter name="Notes" type="string" required=false %}
 
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="VisitReason" type="string" required=false %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="CompanyName" type="string" required=false %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="ExpectedArrival" type="DateTime?" required=true %}
 
 {% endapi-method-parameter %}
@@ -900,20 +894,20 @@ _This response is an example, errors and messages will follow this structure but
 
 ```javascript
 {
-	"Business": 12345678,
-	"FullName": "Jon Doe",
-	"Email": "email@email.com",
-	"Coworker": 12345678,
-	"VisitorSource": 1 (check Enumerated values section below),
-	"CheckedInAt": "CheckedInAt",
-	"Notes": "Description",
-	"VisitReason": "VisitReason",
-	"CompanyName": "CompanyName",
-	"ExpectedArrival": null,
-	"Arrived": true,
-	"ArrivalDate": null,
-	"IsTour": null,
-	"TourConfirmed": null,
+    "Business": 12345678,
+    "FullName": "Jon Doe",
+    "Email": "email@email.com",
+    "Coworker": 12345678,
+    "VisitorSource": 1 (check Enumerated values section below),
+    "CheckedInAt": "CheckedInAt",
+    "Notes": "Description",
+    "VisitReason": "VisitReason",
+    "CompanyName": "CompanyName",
+    "ExpectedArrival": null,
+    "Arrived": true,
+    "ArrivalDate": null,
+    "IsTour": null,
+    "TourConfirmed": null,
 }
 ```
 
@@ -1129,7 +1123,8 @@ _Commands also return a status 200 when they fail to process one or more of the 
 
 ## Enumerated values
 
-##### VisitorSource:
+### VisitorSource:
+
 > GET /api/utils/enums?name=eVisitorSource
 
 ## Binary files

@@ -81,6 +81,7 @@
     * [EmailTemplateFile](rest-api/sys/emailtemplatefile.md)
     * [FloorPlan](rest-api/sys/floorplan.md)
     * [FloorPlanDesk](rest-api/sys/floorplandesk.md)
+    * [TemplateFile](rest-api/sys/templatefile.md)
     * [User](rest-api/sys/user.md)
     * [WebHook](rest-api/sys/webhook.md)
     * [SimpleTimeZone](rest-api/sys/simpletimezone.md)

@@ -31,123 +31,123 @@ application/json
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="SystemId" type="string" %}
-?Proposal_SystemId=...
+?Proposal\_SystemId=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="IssuedBy" type="Business" %}
-?Proposal_IssuedBy=...
+?Proposal\_IssuedBy=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Responsible" type="User" %}
-?Proposal_Responsible=...
+?Proposal\_Responsible=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Coworker" type="Coworker" %}
-?Proposal_Coworker=...
+?Proposal\_Coworker=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Reference" type="string" %}
-?Proposal_Reference=...
+?Proposal\_Reference=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Notes" type="string" %}
-?Proposal_Notes=...
+?Proposal\_Notes=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="ProposalStatus" type="enum" %}
-?Proposal_ProposalStatus=...
+?Proposal\_ProposalStatus=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="DocumentToSend" type="DocumentTemplate" %}
-?Proposal_DocumentToSend=...
+?Proposal\_DocumentToSend=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="DocumentToSign" type="DocumentTemplate" %}
-?Proposal_DocumentToSign=...
+?Proposal\_DocumentToSign=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="DocumentToSignHtml" type="string" %}
-?Proposal_DocumentToSignHtml=...
+?Proposal\_DocumentToSignHtml=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="DocumentToSendHtml" type="string" %}
-?Proposal_DocumentToSendHtml=...
+?Proposal\_DocumentToSendHtml=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Tariff" type="Tariff" %}
-?Proposal_Tariff=...
+?Proposal\_Tariff=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Price" type="decimal?" %}
-?Proposal_Price=...
+?Proposal\_Price=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="StartDate" type="DateTime?" %}
-?Proposal_StartDate=...
+?Proposal\_StartDate=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="CancellationLimitDays" type="int?" %}
-?Proposal_CancellationLimitDays=...
+?Proposal\_CancellationLimitDays=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="ContractTerm" type="DateTime?" %}
-?Proposal_ContractTerm=...
+?Proposal\_ContractTerm=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="CancellationDate" type="DateTime?" %}
-?Proposal_CancellationDate=...
+?Proposal\_CancellationDate=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="BillingDay" type="int" %}
-?Proposal_BillingDay=...
+?Proposal\_BillingDay=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Quantity" type="int" %}
-?Proposal_Quantity=...
+?Proposal\_Quantity=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="DiscountCode" type="DiscountCode" %}
-?Proposal_DiscountCode=...
+?Proposal\_DiscountCode=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="SentOn" type="DateTime?" %}
-?Proposal_SentOn=...
+?Proposal\_SentOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="IssuedBy\_Name" type="string" %}
-?Proposal_IssuedBy_Name=...
+?Proposal\_IssuedBy\_Name=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="IssuedBy\_Currency_Code" type="string" %}
-?Proposal_IssuedBy_Currency_Code=...
+{% api-method-parameter name="IssuedBy\_Currency\_Code" type="string" %}
+?Proposal\_IssuedBy\_Currency\_Code=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Responsible\_FullName" type="string" %}
-?Proposal_Responsible_FullName=...
+?Proposal\_Responsible\_FullName=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Coworker\_CoworkerType" type="string" %}
-?Proposal_Coworker_CoworkerType=...
+?Proposal\_Coworker\_CoworkerType=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Coworker\_FullName" type="string" %}
-?Proposal_Coworker_FullName=...
+?Proposal\_Coworker\_FullName=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Coworker\_CompanyName" type="string" %}
-?Proposal_Coworker_CompanyName=...
+?Proposal\_Coworker\_CompanyName=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Coworker\_BillingName" type="string" %}
-?Proposal_Coworker_BillingName=...
+?Proposal\_Coworker\_BillingName=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Tariff\_Name" type="string" %}
-?Proposal_Tariff_Name=...
+?Proposal\_Tariff\_Name=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Desks" type="int" required=false %}
-?Proposal_Desks=...
+?Proposal\_Desks=...
 {% endapi-method-parameter %}
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
@@ -155,6 +155,8 @@ application/json
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
 {% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
 
 ```javascript
 {
@@ -194,7 +196,6 @@ application/json
     "TotalPages": 3
 }
 ```
-
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
@@ -287,7 +288,6 @@ size=25 \(maximum=1000\)
     "TotalPages": 3
 }
 ```
-
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
@@ -296,8 +296,7 @@ size=25 \(maximum=1000\)
 > 🔒 Requires user role `proposal-list`
 
 {% hint style="info" %}
-You can also get a list of records based when they were created or updated. This is useful if you want to get a list of records created after or before a particular point in time.
-You can also use range query parameters for all date, integer and decimal properties.
+You can also get a list of records based when they were created or updated. This is useful if you want to get a list of records created after or before a particular point in time. You can also use range query parameters for all date, integer and decimal properties.
 {% endhint %}
 
 {% api-method method="get" host="https://spaces.nexudus.com/api" path="/billing/proposals" %}
@@ -323,47 +322,35 @@ application/json
 
 {% api-method-query-parameters %}
 {% api-method-parameter name="CreatedOn" type="object" required=false %}
-?to_Proposal_CreatedOn=...
+?to\_Proposal\_CreatedOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="CreatedOn" type="object" required=false %}
-?from_Proposal_CreatedOn=...
+?from\_Proposal\_CreatedOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="UpdatedOn" type="object" required=false %}
-?to_Proposal_UpdatedOn=...
+?to\_Proposal\_UpdatedOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="UpdatedOn" type="object" required=false %}
-?from_Proposal_UpdatedOn=...
+?from\_Proposal\_UpdatedOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Price" type="decimal" required=false %}
-?from_Proposal_Price=...
+?from\_Proposal\_Price=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Price" type="decimal" required=false %}
-?to_Proposal_Price=...
+?to\_Proposal\_Price=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="StartDate" type="datetime" required=false %}
-?from_Proposal_StartDate=...
+?from\_Proposal\_StartDate=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="StartDate" type="datetime" required=false %}
-?to_Proposal_StartDate=...
-{% endapi-method-parameter %}
-{% api-method-parameter name="CancellationLimitDays" type="int" required=false %}
-?from_Proposal_CancellationLimitDays=...
-{% endapi-method-parameter %}
-{% api-method-parameter name="CancellationLimitDays" type="int" required=false %}
-?to_Proposal_CancellationLimitDays=...
-{% endapi-method-parameter %}
-{% api-method-parameter name="ContractTerm" type="datetime" required=false %}
-?from_Proposal_ContractTerm=...
-{% endapi-method-parameter %}
-{% api-method-parameter name="ContractTerm" type="datetime" required=false %}
-?to_Proposal_ContractTerm=...
+?to\_Proposal\_StartDate=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="CancellationLimitDays" type="int" required=false %}
@@ -383,35 +370,35 @@ application/json
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="CancellationDate" type="datetime" required=false %}
-?from_Proposal_CancellationDate=...
+?from\_Proposal\_CancellationDate=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="CancellationDate" type="datetime" required=false %}
-?to_Proposal_CancellationDate=...
+?to\_Proposal\_CancellationDate=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="BillingDay" type="int" required=false %}
-?from_Proposal_BillingDay=...
+?from\_Proposal\_BillingDay=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="BillingDay" type="int" required=false %}
-?to_Proposal_BillingDay=...
+?to\_Proposal\_BillingDay=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Quantity" type="int" required=false %}
-?from_Proposal_Quantity=...
+?from\_Proposal\_Quantity=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Quantity" type="int" required=false %}
-?to_Proposal_Quantity=...
+?to\_Proposal\_Quantity=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="SentOn" type="datetime" required=false %}
-?from_Proposal_SentOn=...
+?from\_Proposal\_SentOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="SentOn" type="datetime" required=false %}
-?to_Proposal_SentOn=...
+?to\_Proposal\_SentOn=...
 {% endapi-method-parameter %}
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
@@ -461,7 +448,6 @@ application/json
     "TotalPages": 3
 }
 ```
-
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
@@ -469,7 +455,7 @@ application/json
 
 > 🔒 Requires user role `proposal-list`
 
-{% api-method method="get" host="https://spaces.nexudus.com/api" path="/billing/proposals?Proposal_Id=[:id1,:id2,...]" %}
+{% api-method method="get" host="https://spaces.nexudus.com/api" path="/billing/proposals?Proposal\_Id=\[:id1,:id2,...\]" %}
 {% api-method-summary %}
 List by Ids
 {% endapi-method-summary %}
@@ -495,12 +481,6 @@ Basic Authentication token. Base64 encoding of 'username:password'.
 application/json
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
-
-{% api-method-path-parameters %}
-{% api-method-parameter name="id" type="integer" required=true %}
-Comma-separated list of IDs of every proposal to fetch. I.e. [123456,789102,...]
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
 {% endapi-method-request %}
 
 {% api-method-response %}
@@ -548,7 +528,6 @@ Comma-separated list of IDs of every proposal to fetch. I.e. [123456,789102,...]
     "TotalPages": 3
 }
 ```
-
 {% endapi-method-response-example %}
 
 {% api-method-response-example httpCode=404 %}
@@ -559,7 +538,6 @@ Comma-separated list of IDs of every proposal to fetch. I.e. [123456,789102,...]
 ```text
 "Not found"
 ```
-
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
@@ -625,7 +603,6 @@ application/json
         "SentOn": false,
 }
 ```
-
 {% endapi-method-response-example %}
 
 {% api-method-response-example httpCode=404 %}
@@ -636,7 +613,6 @@ application/json
 ```text
 "Not found"
 ```
-
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
@@ -721,8 +697,7 @@ application/json
 {% api-method-parameter name="CancellationLimitDays" type="int?" required=false %}
 
 {% endapi-method-parameter %}
-{% api-method-parameter name="CancellationLimitDays" type="int?" required=false %}
-{% endapi-method-parameter %}
+
 {% api-method-parameter name="CancellationDate" type="DateTime?" required=false %}
 
 {% endapi-method-parameter %}
@@ -757,7 +732,6 @@ application/json
     }
 }
 ```
-
 {% endapi-method-response-example %}
 
 {% api-method-response-example httpCode=400 %}
@@ -795,7 +769,6 @@ _This response is an example, errors and messages will follow this structure but
     ]
 }
 ```
-
 {% endapi-method-response-example %}
 
 {% api-method-response-example httpCode=500 %}
@@ -808,7 +781,6 @@ _This response is an example, errors and messages will follow this structure but
     "Message": "An error has occurred."
 }
 ```
-
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
@@ -818,27 +790,27 @@ _This response is an example, errors and messages will follow this structure but
 
 ```javascript
 {
-	"IssuedBy": 12345678,
-	"Responsible": 12345678,
-	"Coworker": 12345678,
-	"Reference": "00001",
-	"Notes": "Notes",
-	"ProposalStatus": 1 (check Enumerated values section below),
-	"DocumentToSend": 12345678,
-	"DocumentToSign": 12345678,
-	"DocumentToSignHtml": "",
-	"DocumentToSendHtml": "",
-	"Tariff": 12345678,
-	"Desks": [12345678, 87654321] (replaces entire list),
-	"AddedDesks": [12345678, 87654321] (adds to list),
-	"RemovedDesks": [12345678, 87654321] (removes from list),
-	"Price": false,
-	"StartDate": null,
-	"CancellationLimitDays": null,
-	"CancellationDate": null,
-	"BillingDay": 1,
-	"Quantity": 1,
-	"DiscountCode": 12345678,
+    "IssuedBy": 12345678,
+    "Responsible": 12345678,
+    "Coworker": 12345678,
+    "Reference": "00001",
+    "Notes": "Notes",
+    "ProposalStatus": 1 (check Enumerated values section below),
+    "DocumentToSend": 12345678,
+    "DocumentToSign": 12345678,
+    "DocumentToSignHtml": "",
+    "DocumentToSendHtml": "",
+    "Tariff": 12345678,
+    "Desks": [12345678, 87654321] (replaces entire list),
+    "AddedDesks": [12345678, 87654321] (adds to list),
+    "RemovedDesks": [12345678, 87654321] (removes from list),
+    "Price": false,
+    "StartDate": null,
+    "CancellationLimitDays": null,
+    "CancellationDate": null,
+    "BillingDay": 1,
+    "Quantity": 1,
+    "DiscountCode": 12345678,
 }
 ```
 
@@ -848,9 +820,7 @@ Update
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Updates and existing proposal.
-
-Required User Role: `proposal-edit`
+Updates and existing proposal.Required User Role: `proposal-edit`
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -913,10 +883,6 @@ application/json
 {% api-method-parameter name="ContractTerm" type="DateTime?" required=false %}
 
 {% endapi-method-parameter %}
-{% api-method-parameter name="CancellationLimitDays" type="int?" required=false %}
-{% endapi-method-parameter %}
-{% api-method-parameter name="ContractTerm" type="DateTime?" required=false %}
-{% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
 
@@ -938,7 +904,6 @@ application/json
     "Errors": null
 }
 ```
-
 {% endapi-method-response-example %}
 
 {% api-method-response-example httpCode=400 %}
@@ -976,7 +941,6 @@ _This response is an example, errors and messages will follow this structure but
     ]
 }
 ```
-
 {% endapi-method-response-example %}
 
 {% api-method-response-example httpCode=500 %}
@@ -989,7 +953,6 @@ _This response is an example, errors and messages will follow this structure but
     "Message": "An error has occurred."
 }
 ```
-
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
@@ -999,18 +962,18 @@ _This response is an example, errors and messages will follow this structure but
 
 ```javascript
 {
-	"IssuedBy": 12345678,
-	"Responsible": 12345678,
-	"Coworker": 12345678,
-	"Reference": "00001",
-	"Notes": "Notes",
-	"ProposalStatus": 1 (check Enumerated values section below),
-	"DocumentToSend": 12345678,
-	"DocumentToSign": 12345678,
-	"DocumentToSignHtml": "",
-	"DocumentToSendHtml": "",
-	"CancellationLimitDays": null,
-	"ContractTerm": null,
+    "IssuedBy": 12345678,
+    "Responsible": 12345678,
+    "Coworker": 12345678,
+    "Reference": "00001",
+    "Notes": "Notes",
+    "ProposalStatus": 1 (check Enumerated values section below),
+    "DocumentToSend": 12345678,
+    "DocumentToSign": 12345678,
+    "DocumentToSignHtml": "",
+    "DocumentToSendHtml": "",
+    "CancellationLimitDays": null,
+    "ContractTerm": null,
 }
 ```
 
@@ -1020,9 +983,7 @@ Delete
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Deletes a proposal.
-
-Required User Roles: `proposal-delete`
+Deletes a proposal.Required User Roles: `proposal-delete`
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -1062,7 +1023,6 @@ application/json
     "Errors": null
 }
 ```
-
 {% endapi-method-response-example %}
 
 {% api-method-response-example httpCode=404 %}
@@ -1073,7 +1033,6 @@ application/json
 ```text
 "Not found"
 ```
-
 {% endapi-method-response-example %}
 
 {% api-method-response-example httpCode=500 %}
@@ -1086,7 +1045,6 @@ application/json
     "Message": "An error has occurred."
 }
 ```
-
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
@@ -1160,7 +1118,6 @@ _This response is an example._
     ...
 ]
 ```
-
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
@@ -1193,15 +1150,11 @@ The command Key defining the command to run. `"COMMAND_KEY_1"`
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Parameters" type="array" required=false %}
-A list of object with the structure below. The parameters required for each command are returned in the "RequiresParameters" array return by the "commands" endpoint.
-
-`[ { "Name": "Name", "Type":"Type", "Value":recordId } ]`
+A list of object with the structure below. The parameters required for each command are returned in the "RequiresParameters" array return by the "commands" endpoint.`[ { "Name": "Name", "Type":"Type", "Value":recordId } ]`
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Ids" type="array" required=true %}
-A list of integer IDs for each of the records to run this command for.
-
-`[987654321, 123565978]`
+A list of integer IDs for each of the records to run this command for.`[987654321, 123565978]`
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
@@ -1209,7 +1162,7 @@ A list of integer IDs for each of the records to run this command for.
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
 {% api-method-response-example-description %}
-_Commands also return a status 200 when they fail to process one or more of the records. Use the 'WasSuccessful' property to know if the command run succeeded._  
+_Commands also return a status 200 when they fail to process one or more of the records. Use the 'WasSuccessful' property to know if the command run succeeded._
 {% endapi-method-response-example-description %}
 
 ```javascript
@@ -1221,7 +1174,6 @@ _Commands also return a status 200 when they fail to process one or more of the 
    "WasSuccessful":false
 }
 ```
-
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
@@ -1231,7 +1183,7 @@ _Commands also return a status 200 when they fail to process one or more of the 
 
 ## Enumerated values
 
-##### ProposalStatus:
+### ProposalStatus:
 
 > GET /api/utils/enums?name=eProposalStatus
 
@@ -1276,7 +1228,6 @@ application/json
 ```javascript
 Binary stream or null
 ```
-
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
@@ -1319,7 +1270,6 @@ application/json
 ```javascript
 Binary stream or null
 ```
-
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
@@ -1362,7 +1312,6 @@ application/json
 ```javascript
 Binary stream or null
 ```
-
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
@@ -1370,10 +1319,11 @@ Binary stream or null
 
 ## Related Entities
 
-- [Business](../sys/business.md)
-- [User](../sys/user.md)
-- [Coworker](../spaces/coworker.md)
-- [DocumentTemplate](../crm/documenttemplate.md)
-- [DocumentTemplate](../crm/documenttemplate.md)
-- [Tariff](../billing/tariff.md)
-- [DiscountCode](../billing/discountcode.md)
+* [Business](../sys/business.md)
+* [User](../sys/user.md)
+* [Coworker](../spaces/coworker.md)
+* [DocumentTemplate](https://github.com/Nexudus/api-docs/tree/6c08c63d9c0c6779737ccfddc96f70c6623677d0/rest-api/crm/documenttemplate.md)
+* [DocumentTemplate](https://github.com/Nexudus/api-docs/tree/6c08c63d9c0c6779737ccfddc96f70c6623677d0/rest-api/crm/documenttemplate.md)
+* [Tariff](tariff.md)
+* [DiscountCode](discountcode.md)
+
