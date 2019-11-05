@@ -78,6 +78,7 @@
     * [Business](rest-api/sys/business.md)
     * [Currency](rest-api/sys/currency.md)
     * [EmailQueueItem](rest-api/sys/emailqueueitem.md)
+    * [EmailTemplateFile](rest-api/sys/emailtemplatefile.md)
     * [FloorPlan](rest-api/sys/floorplan.md)
     * [FloorPlanDesk](rest-api/sys/floorplandesk.md)
     * [User](rest-api/sys/user.md)
