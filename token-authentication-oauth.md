@@ -24,7 +24,7 @@ Authentication and Refresh Token
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Gets a short-lived access token and a long-lived refresh token.`grant_ype=password&username=EMAIL_ADDRESS&    
+Gets a short-lived access token and a long-lived refresh token.`grant_type=password&username=EMAIL_ADDRESS&    
 password=Demo1234`
 {% endapi-method-description %}
 
