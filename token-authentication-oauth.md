@@ -39,8 +39,15 @@ A unique identifier for the client making these requests. A single refresh token
 application/json
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
+{% api-method-parameter name="Content-Type" type="string" required=true %}
+application/x-www-form-urlencoded
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
 
 {% api-method-body-parameters %}
+
+Set body content type to 'x-www-form-urlencoded'.
+
 {% api-method-parameter name="grant\_type" required=true type="string" %}
 password
 {% endapi-method-parameter %}
