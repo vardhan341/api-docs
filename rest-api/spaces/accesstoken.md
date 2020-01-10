@@ -622,7 +622,7 @@ application/json
 
 {% api-method-body-parameters %}
 
-{% api-method-parameter name="Id" type="int" required="true" %}
+{% api-method-parameter name="Id" type="int" required="true" %}{% endapi-method-parameter %}
 {% api-method-parameter name="BusinessId" type="int" required="true" %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="AccessCode" type="string" required="true" %}

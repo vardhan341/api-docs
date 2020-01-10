@@ -529,7 +529,7 @@ application/json
 
 {% api-method-body-parameters %}
 
-{% api-method-parameter name="Id" type="int" required="true" %}
+{% api-method-parameter name="Id" type="int" required="true" %}{% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
 

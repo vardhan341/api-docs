@@ -588,7 +588,7 @@ application/json
 
 {% api-method-body-parameters %}
 
-{% api-method-parameter name="Id" type="int" required="true" %}
+{% api-method-parameter name="Id" type="int" required="true" %}{% endapi-method-parameter %}
 {% api-method-parameter name="Description" type="string" required="true" %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="CoworkerBookingCreditId" type="int" required="true" %}

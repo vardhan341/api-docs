@@ -1485,7 +1485,7 @@ application/json
 
 {% api-method-body-parameters %}
 
-{% api-method-parameter name="Id" type="int" required="true" %}
+{% api-method-parameter name="Id" type="int" required="true" %}{% endapi-method-parameter %}
 {% api-method-parameter name="Name" type="string" required="true" %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="DefaultLanguage" type="enum" required="true" %}
