@@ -285,11 +285,11 @@ You can also use range query parameters for all date, integer and decimal proper
 
 {% api-method method="get" host="https://spaces.nexudus.com/api" path="/sys/floorplandesks" %}
 {% api-method-summary %}
-By date or number range
+By date range
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Gets a list of floorplandesks based on a range of dates, integer or decimal properties.
+Gets a list of floorplandesks based on the date when they were created or updated.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -339,22 +339,22 @@ application/json
 {% api-method-parameter name="Price" type="decimal" required=false %}
 ?to\_FloorPlanDesk\_Price=...
 {% endapi-method-parameter %}
-{% api-method-parameter name="PositionX" type="int" required=false %}
+{% api-method-parameter name="PositionX" type="decimal" required=false %}
 ?from\_FloorPlanDesk\_PositionX=...
 {% endapi-method-parameter %}
-{% api-method-parameter name="PositionX" type="int" required=false %}
+{% api-method-parameter name="PositionX" type="decimal" required=false %}
 ?to\_FloorPlanDesk\_PositionX=...
 {% endapi-method-parameter %}
-{% api-method-parameter name="PositionY" type="int" required=false %}
+{% api-method-parameter name="PositionY" type="decimal" required=false %}
 ?from\_FloorPlanDesk\_PositionY=...
 {% endapi-method-parameter %}
-{% api-method-parameter name="PositionY" type="int" required=false %}
+{% api-method-parameter name="PositionY" type="decimal" required=false %}
 ?to\_FloorPlanDesk\_PositionY=...
 {% endapi-method-parameter %}
-{% api-method-parameter name="PositionZ" type="int" required=false %}
+{% api-method-parameter name="PositionZ" type="decimal" required=false %}
 ?from\_FloorPlanDesk\_PositionZ=...
 {% endapi-method-parameter %}
-{% api-method-parameter name="PositionZ" type="int" required=false %}
+{% api-method-parameter name="PositionZ" type="decimal" required=false %}
 ?to\_FloorPlanDesk\_PositionZ=...
 {% endapi-method-parameter %}
 
@@ -402,94 +402,6 @@ application/json
     "TotalItems": 60,
     "TotalPages": 3
 }
-```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
-
-> 🔒 Requires user role `floorplandesk-list`
-
-
-{% api-method method="get" host="https://spaces.nexudus.com/api" path="/sys/floorplandesks?FloorPlanDesk_Id=[:id1,:id2,...]" %}
-{% api-method-summary %}
-List by Ids
-{% endapi-method-summary %}
-
-{% api-method-description %}
-Gets one or more floorplandesk records based on their Id.
-{% endapi-method-description %}
-
-{% api-method-spec %}
-{% api-method-request %}
-
-{% api-method-headers %}
-{% api-method-parameter name="Authorization" type="string" required=true %}
-Basic Authentication token. Base64 encoding of 'username:password'.
-{% endapi-method-parameter %}
-{% api-method-parameter name="Content" type="string" required=true %}
-application/json
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
-
-{% api-method-path-parameters %}
-{% api-method-parameter name="id" type="integer" required=true %}
-Comma-separated list of IDs of every floorplandesk to fetch. I.e. [123456,789102,...] 
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
-{% endapi-method-request %}
-
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
-```javascript
-{
-    "Records": [{
-        "FloorPlan": null,
-        "Coworker": null,
-        "Name": "00001",
-        "ItemType": Nexudus.Coworking.Core.Enums.eFloorPlanItemType.Office,
-        "Size": 00001,
-        "Capacity": 00001,
-        "Price": 00001,
-        "Area": "00001",
-        "Notes": "00001",
-        "Available": true,
-        "PositionX": 1,
-        "PositionY": 1,
-        "PositionZ": 1,
-        "TunnelPrivateGroupId": "",
-        "CoworkerContractIds": "",
-        "CoworkerContractFullNames": "",
-        "CoworkerContractStartDates": "",
-    }],
-    }],
-    "CurrentPageSize": 25,
-    "CurrentPage": 1,
-    "CurrentOrderField": "Id",
-    "CurrentSortDirection": 1,
-    "FirstItem": 1,
-    "HasNextPage": true,
-    "HasPreviousPage": false,
-    "LastItem": 25,
-    "PageNumber": 1,
-    "PageSize": 25,
-    "TotalItems": 60,
-    "TotalPages": 3
-}
-```
-{% endapi-method-response-example %}
-
-{% api-method-response-example httpCode=404 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
-```
-"Not found"
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}
@@ -569,7 +481,6 @@ The ID of the floorplandesk to fetch.
 {% endapi-method %}
 
 > 🔒 Requires user role `floorplandesk-read`
-
 
 {% api-method method="post" host="https://spaces.nexudus.com/api" path="/sys/floorplandesks" %}
 {% api-method-summary %}
@@ -703,29 +614,6 @@ _This response is an example, errors and messages will follow this structure but
 
 > 🔒 Requires user role `floorplandesk-create`
 
-```javascript
-{
-	"FloorPlan": 12345678,
-	"Coworker": 12345678,
-	"Name": "00001",
-	"ItemType": 1 (check Enumerated values section below),
-	"Size": 00001,
-	"Capacity": 00001,
-	"Price": 00001,
-	"Area": "00001",
-	"Notes": "00001",
-	"Available": true,
-	"PositionX": 1,
-	"PositionY": 1,
-	"PositionZ": 1,
-	"TunnelPrivateGroupId": "",
-	"CoworkerContractIds": "",
-	"CoworkerContractFullNames": "",
-	"CoworkerContractStartDates": "",
-}
-
-```
-
 {% api-method method="put" host="https://spaces.nexudus.com/api" path="/sys/floorplandesks" %}
 {% api-method-summary %}
 Update
@@ -749,8 +637,13 @@ application/json
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
-{% api-method-body-parameters %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="Id" type="integer" required=true %}
 The id of the floorplandesk to update
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+
+{% api-method-body-parameters %}
 {% api-method-parameter name="FloorPlanId" type="int" required=true %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="CoworkerId" type="int" required=false %}
@@ -861,31 +754,6 @@ _This response is an example, errors and messages will follow this structure but
 {% endapi-method %}
 
 > 🔒 Requires user role `floorplandesk-edit`
-
-```javascript
-{
-	"FloorPlan": 12345678,
-	"Coworker": 12345678,
-	"Name": "00001",
-	"ItemType": 1 (check Enumerated values section below),
-	"Size": 00001,
-	"Capacity": 00001,
-	"Price": 00001,
-	"Area": "00001",
-	"Notes": "00001",
-	"Available": true,
-	"PositionX": 1,
-	"PositionY": 1,
-	"PositionZ": 1,
-	"TunnelPrivateGroupId": "",
-	"CoworkerContractIds": "",
-	"CoworkerContractFullNames": "",
-	"CoworkerContractStartDates": "",
-}
-
-```
-
-
 
 
 {% api-method method="delete" host="https://spaces.nexudus.com/api" path="/sys/floorplandesks/:id" %}
@@ -1106,11 +974,6 @@ _Commands also return a status 200 when they fail to process one or more of the 
 {% endapi-method %}
 
 > 🔒 Requires user role `floorplandesk-edit`
-
-## Enumerated values
-
-##### ItemType:
-> GET /api/utils/enums?name=eFloorPlanItemType
 
 ## Binary files
 
