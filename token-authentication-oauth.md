@@ -24,15 +24,14 @@ Authentication and Refresh Token
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Gets a short-lived access token and a long-lived refresh token.`grant_type=password&username=EMAIL_ADDRESS&    
-password=Demo1234`
+Gets a short-lived access token and a long-lived refresh token.`grant_type=password&username=EMAIL_ADDRESS& password=Demo1234`
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-headers %}
 {% api-method-parameter type="string" name="client\_id" %}
-A unique identifier for the client making these requests. A single refresh token will be created per client, existing tokens for a given client\_id are invalidated when a new token is requested for that client\_id. If no client\_id header is passed, the client id would be set to your email.
+A unique identifier for the client making these requests. A single refresh token will be created per client, existing tokens for a given client_id are invalidated when a new token is requested for that client_id. If no client_id header is passed, the client id would be set to your email.
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Accept" type="string" required=true %}
@@ -69,6 +68,7 @@ your password
     "refresh_token": "2669808..."
 }
 ```
+
 {% endapi-method-response-example %}
 
 {% api-method-response-example httpCode=400 %}
@@ -82,6 +82,7 @@ If you submit an invalid username and/or password
     "error_description": "The user name or password is incorrect."
 }
 ```
+
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
@@ -104,13 +105,13 @@ application/json
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="client\_id" type="string" required=true %}
-The client id to refresh the access token for. This must the same as the client id you passed in when creating the access token. If you did not pass a client\_id header to get the initial token, you must pass the email used to obtain the initial token as the client\_id header to refresh it.
+The client id to refresh the access token for. This must the same as the client id you passed in when creating the access token. If you did not pass a client_id header to get the initial token, you must pass the email used to obtain the initial token as the client_id header to refresh it.
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
 {% api-method-body-parameters %}
 {% api-method-parameter name="grant\_type" type="string" required=true %}
-refresh\_token
+refresh_token
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="refresh\_token" type="string" required=true %}
@@ -133,6 +134,7 @@ refresh\_token
     "refresh_token": "c3c14715..."
 }
 ```
+
 {% endapi-method-response-example %}
 
 {% api-method-response-example httpCode=400 %}
@@ -145,6 +147,7 @@ refresh\_token
     "error": "invalid_grant"
 }
 ```
+
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
@@ -156,7 +159,7 @@ Making a Request
 {% endapi-method-summary %}
 
 {% api-method-description %}
-This is an example of passing a access token to any requests to the REST API. 
+This is an example of passing a access token to any requests to the REST API.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -249,8 +252,8 @@ v8hNJebN2...
     "LocalizationDetails": null
 }
 ```
+
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
-
