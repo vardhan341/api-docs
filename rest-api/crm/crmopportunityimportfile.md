@@ -4,7 +4,7 @@ Find
 {% endapi-method-summary %}
 
 {% api-method-description %}
-This endpoint allows you to GET a list of crmopportunityimportfiles based on one or more filter querystring parameters.
+ This endpoint allows you to GET a list of crmopportunityimportfiles based on one or more filter querystring parameters.
 {% endapi-method-description %}
 
 {% api-method-spec %}

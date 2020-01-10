@@ -1,27 +1,26 @@
-# FloorPlan
-
-{% api-method method="get" host="https://spaces.nexudus.com/api" path="/sys/floorplans" %}
+﻿{% api-method method="get" host="https://spaces.nexudus.com/api" path="/sys/floorplans" %}
 {% api-method-summary %}
 Find
 {% endapi-method-summary %}
 
 {% api-method-description %}
-This endpoint allows you to GET a list of floorplans based on one or more filter querystring parameters.
+ This endpoint allows you to GET a list of floorplans based on one or more filter querystring parameters.
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
+
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
 {% api-method-query-parameters %}
+
 {% api-method-parameter name="Id" type="int" %}
 ?Id=...
 {% endapi-method-parameter %}
@@ -34,49 +33,58 @@ application/json
 ?FloorPlan\_SystemId=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="Business" type="Business" %}
 ?FloorPlan\_Business=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="Name" type="string" %}
 ?FloorPlan\_Name=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="DisplayBackground" type="bool" %}
 ?FloorPlan\_DisplayBackground=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="BackgroundScale" type="int" %}
 ?FloorPlan\_BackgroundScale=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="PositionX" type="int" %}
 ?FloorPlan\_PositionX=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="PositionY" type="int" %}
 ?FloorPlan\_PositionY=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="Scale" type="decimal" %}
 ?FloorPlan\_Scale=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="Business\_Name" type="string" %}
 ?FloorPlan\_Business\_Name=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="Business\_Currency\_Code" type="string" %}
-?FloorPlan\_Business\_Currency\_Code=...
+
+{% api-method-parameter name="Business\_Currency_Code" type="string" %}
+?FloorPlan\_Business\_Currency_Code=...
 {% endapi-method-parameter %}
+
+
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
 
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
 
-{% endapi-method-response-example-description %}
 
 ```javascript
 {
@@ -88,6 +96,9 @@ application/json
         "PositionX": 1,
         "PositionY": 1,
         "Scale": 1,
+		"FloorPlanBusinessName": "...",
+		"FloorPlanBusinessCurrency_Code": "...",
+
     }],
     "CurrentPageSize": 25,
     "CurrentPage": 1,
@@ -102,6 +113,7 @@ application/json
     "TotalItems": 60,
     "TotalPages": 3
 }
+
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}
@@ -121,11 +133,11 @@ This endpoint allows you to GET a list of floorplans.
 
 {% api-method-spec %}
 {% api-method-request %}
+
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
@@ -190,7 +202,8 @@ size=25 \(maximum=1000\)
 > 🔒 Requires user role `floorplan-list`
 
 {% hint style="info" %}
-You can also get a list of records based when they were created or updated. This is useful if you want to get a list of records created after or before a particular point in time. You can also use range query parameters for all date, integer and decimal properties.
+You can also get a list of records based when they were created or updated. This is useful if you want to get a list of records created after or before a particular point in time. 
+You can also use range query parameters for all date, integer and decimal properties.
 {% endhint %}
 
 {% api-method method="get" host="https://spaces.nexudus.com/api" path="/sys/floorplans" %}
@@ -204,11 +217,11 @@ Gets a list of floorplans based on a range of dates, integer or decimal properti
 
 {% api-method-spec %}
 {% api-method-request %}
+
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
@@ -234,34 +247,28 @@ application/json
 {% api-method-parameter name="BackgroundScale" type="int" required=false %}
 ?from\_FloorPlan\_BackgroundScale=...
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="BackgroundScale" type="int" required=false %}
 ?to\_FloorPlan\_BackgroundScale=...
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="PositionX" type="int" required=false %}
 ?from\_FloorPlan\_PositionX=...
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="PositionX" type="int" required=false %}
 ?to\_FloorPlan\_PositionX=...
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="PositionY" type="int" required=false %}
 ?from\_FloorPlan\_PositionY=...
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="PositionY" type="int" required=false %}
 ?to\_FloorPlan\_PositionY=...
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Scale" type="decimal" required=false %}
 ?from\_FloorPlan\_Scale=...
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Scale" type="decimal" required=false %}
 ?to\_FloorPlan\_Scale=...
 {% endapi-method-parameter %}
+
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
 
@@ -304,7 +311,8 @@ application/json
 
 > 🔒 Requires user role `floorplan-list`
 
-{% api-method method="get" host="https://spaces.nexudus.com/api" path="/sys/floorplans?FloorPlan\_Id=\[:id1,:id2,...\]" %}
+
+{% api-method method="get" host="https://spaces.nexudus.com/api" path="/sys/floorplans?FloorPlan_Id=[:id1,:id2,...]" %}
 {% api-method-summary %}
 List by Ids
 {% endapi-method-summary %}
@@ -315,21 +323,21 @@ Gets one or more floorplan records based on their Id.
 
 {% api-method-spec %}
 {% api-method-request %}
-{% api-method-path-parameters %}
-{% api-method-parameter name="id" type="integer" required=true %}
-Comma-separated list of IDs of every floorplan to fetch. I.e. \[123456,789102,...\]
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
 
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
+
+{% api-method-path-parameters %}
+{% api-method-parameter name="id" type="integer" required=true %}
+Comma-separated list of IDs of every floorplan to fetch. I.e. [123456,789102,...] 
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
 {% endapi-method-request %}
 
 {% api-method-response %}
@@ -371,7 +379,7 @@ application/json
 
 {% endapi-method-response-example-description %}
 
-```text
+```
 "Not found"
 ```
 {% endapi-method-response-example %}
@@ -392,21 +400,21 @@ Gets one floorplan record.
 
 {% api-method-spec %}
 {% api-method-request %}
-{% api-method-path-parameters %}
-{% api-method-parameter name="id" type="integer" required=true %}
-The ID of the floorplan to fetch.
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
 
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
+
+{% api-method-path-parameters %}
+{% api-method-parameter name="id" type="integer" required=true %}
+The ID of the floorplan to fetch.
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
 {% endapi-method-request %}
 
 {% api-method-response %}
@@ -433,7 +441,7 @@ application/json
 
 {% endapi-method-response-example-description %}
 
-```text
+```
 "Not found"
 ```
 {% endapi-method-response-example %}
@@ -442,6 +450,7 @@ application/json
 {% endapi-method %}
 
 > 🔒 Requires user role `floorplan-read`
+
 
 {% api-method method="post" host="https://spaces.nexudus.com/api" path="/sys/floorplans" %}
 {% api-method-summary %}
@@ -454,11 +463,11 @@ Creates a new floorplan.
 
 {% api-method-spec %}
 {% api-method-request %}
+
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
@@ -466,33 +475,21 @@ application/json
 
 {% api-method-body-parameters %}
 {% api-method-parameter name="BusinessId" type="int" required=true %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Name" type="string" required=true %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="DisplayBackground" type="bool" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="BackgroundScale" type="int" required=true %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="PositionX" type="int" required=true %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="PositionY" type="int" required=true %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Scale" type="decimal" required=true %}
-
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
+
 {% endapi-method-request %}
 
 {% api-method-response %}
@@ -515,7 +512,7 @@ application/json
 
 {% api-method-response-example httpCode=400 %}
 {% api-method-response-example-description %}
-_This response is an example, errors and messages will follow this structure but keys and descriptions may be different for each record._
+_This response is an example, errors and messages will follow this structure but keys and descriptions may be different for each record._  
 {% endapi-method-response-example-description %}
 
 ```javascript
@@ -569,14 +566,15 @@ _This response is an example, errors and messages will follow this structure but
 
 ```javascript
 {
-    "Business": 12345678,
-    "Name": "00001",
-    "DisplayBackground": 1,
-    "BackgroundScale": 1,
-    "PositionX": 1,
-    "PositionY": 1,
-    "Scale": 1,
+	"Business": 12345678,
+	"Name": "00001",
+	"DisplayBackground": 1,
+	"BackgroundScale": 1,
+	"PositionX": 1,
+	"PositionY": 1,
+	"Scale": 1,
 }
+
 ```
 
 {% api-method method="put" host="https://spaces.nexudus.com/api" path="/sys/floorplans" %}
@@ -585,48 +583,39 @@ Update
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Updates and existing floorplan.Required User Role: `floorplan-edit`
+Updates and existing floorplan. PUT requests require ALL record properties to be submitted with every request. Any missing properties will be cleared or set to false.
+  
+Required User Role: `floorplan-edit`
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
+
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
 {% api-method-body-parameters %}
-{% api-method-parameter name="BusinessId" type="int" required=true %}
 
+{% api-method-parameter name="Id" type="int" required="true" %}
+{% api-method-parameter name="BusinessId" type="int" required="true" %}
 {% endapi-method-parameter %}
-
-{% api-method-parameter name="Name" type="string" required=true %}
-
+{% api-method-parameter name="Name" type="string" required="true" %}
 {% endapi-method-parameter %}
-
-{% api-method-parameter name="DisplayBackground" type="bool" required=false %}
-
+{% api-method-parameter name="DisplayBackground" type="bool" required="true" %}
 {% endapi-method-parameter %}
-
-{% api-method-parameter name="BackgroundScale" type="int" required=true %}
-
+{% api-method-parameter name="BackgroundScale" type="int" required="true" %}
 {% endapi-method-parameter %}
-
-{% api-method-parameter name="PositionX" type="int" required=true %}
-
+{% api-method-parameter name="PositionX" type="int" required="true" %}
 {% endapi-method-parameter %}
-
-{% api-method-parameter name="PositionY" type="int" required=true %}
-
+{% api-method-parameter name="PositionY" type="int" required="true" %}
 {% endapi-method-parameter %}
-
-{% api-method-parameter name="Scale" type="decimal" required=true %}
-
+{% api-method-parameter name="Scale" type="decimal" required="true" %}
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
@@ -653,7 +642,7 @@ application/json
 
 {% api-method-response-example httpCode=400 %}
 {% api-method-response-example-description %}
-_This response is an example, errors and messages will follow this structure but keys and descriptions may be different for each record._
+_This response is an example, errors and messages will follow this structure but keys and descriptions may be different for each record._  
 {% endapi-method-response-example-description %}
 
 ```javascript
@@ -707,15 +696,19 @@ _This response is an example, errors and messages will follow this structure but
 
 ```javascript
 {
-    "Business": 12345678,
-    "Name": "00001",
-    "DisplayBackground": 1,
-    "BackgroundScale": 1,
-    "PositionX": 1,
-    "PositionY": 1,
-    "Scale": 1,
+	"Business": 12345678,
+	"Name": "00001",
+	"DisplayBackground": 1,
+	"BackgroundScale": 1,
+	"PositionX": 1,
+	"PositionY": 1,
+	"Scale": 1,
 }
+
 ```
+
+
+
 
 {% api-method method="delete" host="https://spaces.nexudus.com/api" path="/sys/floorplans/:id" %}
 {% api-method-summary %}
@@ -723,26 +716,28 @@ Delete
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Deletes a floorplan.Required User Roles: `floorplan-delete`
+Deletes a floorplan.  
+  
+Required User Roles: `floorplan-delete`
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
-{% api-method-path-parameters %}
-{% api-method-parameter name="Id" type="integer" required=false %}
-
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
 
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
+
+{% api-method-path-parameters %}
+{% api-method-parameter name="Id" type="integer" required=false %}
+
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
 {% endapi-method-request %}
 
 {% api-method-response %}
@@ -770,7 +765,7 @@ application/json
 
 {% endapi-method-response-example-description %}
 
-```text
+```
 "Not found"
 ```
 {% endapi-method-response-example %}
@@ -790,11 +785,14 @@ application/json
 {% endapi-method-spec %}
 {% endapi-method %}
 
+
+
 > 🔒 Requires user role `floorplan-delete`
+
 
 ## Commands
 
-Commands allow to perform actions against one or more floorplan records. Some commands accept only one record while others can run an action for a number of records at the same time. Each command has metadata with information about how it can be used and the amount of records, if any, it needs to run.
+Commands allow to perform actions against one or more floorplan records. Some commands accept only one record while others can run an action for a number of records at the same time.  Each command has metadata with information about how it can be used and the amount of records, if any, it needs to run.
 
 > ```javascript
 > {
@@ -816,11 +814,11 @@ Get all commands available to run for floorplan records.
 
 {% api-method-spec %}
 {% api-method-request %}
+
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
@@ -830,7 +828,7 @@ application/json
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
 {% api-method-response-example-description %}
-_This response is an example._
+_This response is an example._  
 {% endapi-method-response-example-description %}
 
 ```javascript
@@ -874,11 +872,11 @@ Run Command
 
 {% api-method-spec %}
 {% api-method-request %}
+
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
@@ -890,17 +888,21 @@ The command Key defining the command to run. `"COMMAND_KEY_1"`
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Parameters" type="array" required=false %}
-A list of object with the structure below. The parameters required for each command are returned in the "RequiresParameters" array return by the "commands" endpoint.`[    
-{    
-"Name": "Name",    
-"Type":"Type",    
-"Value":recordId    
-}    
+A list of object with the structure below. The parameters required for each command are returned in the "RequiresParameters" array return by the "commands" endpoint.  
+  
+`[  
+   {  
+      "Name": "Name",   
+      "Type":"Type",   
+      "Value":recordId  
+    }  
 ]`
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Ids" type="array" required=true %}
-A list of integer IDs for each of the records to run this command for.`[987654321, 123565978]`
+A list of integer IDs for each of the records to run this command for.  
+  
+`[987654321, 123565978]`
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
@@ -908,7 +910,7 @@ A list of integer IDs for each of the records to run this command for.`[98765432
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
 {% api-method-response-example-description %}
-_Commands also return a status 200 when they fail to process one or more of the records. Use the 'WasSuccessful' property to know if the command run succeeded._
+_Commands also return a status 200 when they fail to process one or more of the records. Use the 'WasSuccessful'  property to know if the command run succeeded._  
 {% endapi-method-response-example-description %}
 
 ```javascript
@@ -944,21 +946,21 @@ BackgroundImage
 
 {% api-method-spec %}
 {% api-method-request %}
-{% api-method-path-parameters %}
-{% api-method-parameter name="id" type="integer" required=true %}
-The id of the FloorPlan to get the backgroundimage for.
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
 
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
+
+{% api-method-path-parameters %}
+{% api-method-parameter name="id" type="integer" required=true %}
+The id of the FloorPlan to get the backgroundimage for.
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
 {% endapi-method-request %}
 
 {% api-method-response %}
@@ -975,7 +977,6 @@ Binary stream or null
 {% endapi-method-spec %}
 {% endapi-method %}
 
+
 ## Related Entities
-
-* [Business](business.md)
-
+* [Business](../sys/business.md)

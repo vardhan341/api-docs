@@ -1,27 +1,26 @@
-# CoworkerProduct
-
-{% api-method method="get" host="https://spaces.nexudus.com/api" path="/billing/coworkerproducts" %}
+﻿{% api-method method="get" host="https://spaces.nexudus.com/api" path="/billing/coworkerproducts" %}
 {% api-method-summary %}
 Find
 {% endapi-method-summary %}
 
 {% api-method-description %}
-This endpoint allows you to GET a list of coworkerproducts based on one or more filter querystring parameters.
+ This endpoint allows you to GET a list of coworkerproducts based on one or more filter querystring parameters.
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
+
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
 {% api-method-query-parameters %}
+
 {% api-method-parameter name="Id" type="int" %}
 ?Id=...
 {% endapi-method-parameter %}
@@ -34,109 +33,133 @@ application/json
 ?CoworkerProduct\_SystemId=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="Coworker" type="Coworker" %}
 ?CoworkerProduct\_Coworker=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="Business" type="Business" %}
 ?CoworkerProduct\_Business=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="Product" type="Product" %}
 ?CoworkerProduct\_Product=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="Notes" type="string" %}
 ?CoworkerProduct\_Notes=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="OrderNumber" type="string" %}
 ?CoworkerProduct\_OrderNumber=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="Activated" type="bool" %}
 ?CoworkerProduct\_Activated=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="ActivateNow" type="bool" %}
 ?CoworkerProduct\_ActivateNow=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="InvoiceThisCoworker" type="bool" %}
 ?CoworkerProduct\_InvoiceThisCoworker=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="Price" type="decimal?" %}
 ?CoworkerProduct\_Price=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="Quantity" type="int" %}
 ?CoworkerProduct\_Quantity=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="RegularCharge" type="bool" %}
 ?CoworkerProduct\_RegularCharge=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="RepeatCycle" type="enum" %}
 ?CoworkerProduct\_RepeatCycle=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="RepeatUnit" type="int?" %}
 ?CoworkerProduct\_RepeatUnit=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="InvoiceOn" type="DateTime?" %}
 ?CoworkerProduct\_InvoiceOn=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="RepeatFrom" type="DateTime?" %}
 ?CoworkerProduct\_RepeatFrom=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="RepeatUntil" type="DateTime?" %}
 ?CoworkerProduct\_RepeatUntil=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="DueDate" type="DateTime?" %}
 ?CoworkerProduct\_DueDate=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="Invoiced" type="bool" %}
 ?CoworkerProduct\_Invoiced=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="InvoicedOn" type="DateTime?" %}
 ?CoworkerProduct\_InvoicedOn=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="FromTariff" type="bool" %}
 ?CoworkerProduct\_FromTariff=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="ContractDepositUniqueId" type="Guid?" %}
 ?CoworkerProduct\_ContractDepositUniqueId=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="Product\_Name" type="string" %}
 ?CoworkerProduct\_Product\_Name=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="Product\_Price" type="string" %}
 ?CoworkerProduct\_Product\_Price=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="Product\_Currency\_Code" type="string" %}
-?CoworkerProduct\_Product\_Currency\_Code=...
+
+{% api-method-parameter name="Product\_Currency_Code" type="string" %}
+?CoworkerProduct\_Product\_Currency_Code=...
 {% endapi-method-parameter %}
+
+
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
 
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
 
-{% endapi-method-response-example-description %}
 
 ```javascript
 {
@@ -162,6 +185,10 @@ application/json
         "InvoicedOn": null,
         "FromTariff": false,
         "ContractDepositUniqueId": ,
+		"CoworkerProductProductName": "...",
+		"CoworkerProductProductPrice": "...",
+		"CoworkerProductProductCurrency_Code": "...",
+
     }],
     "CurrentPageSize": 25,
     "CurrentPage": 1,
@@ -176,6 +203,7 @@ application/json
     "TotalItems": 60,
     "TotalPages": 3
 }
+
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}
@@ -195,11 +223,11 @@ This endpoint allows you to GET a list of coworkerproducts.
 
 {% api-method-spec %}
 {% api-method-request %}
+
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
@@ -278,7 +306,8 @@ size=25 \(maximum=1000\)
 > 🔒 Requires user role `coworkerproduct-list`
 
 {% hint style="info" %}
-You can also get a list of records based when they were created or updated. This is useful if you want to get a list of records created after or before a particular point in time. You can also use range query parameters for all date, integer and decimal properties.
+You can also get a list of records based when they were created or updated. This is useful if you want to get a list of records created after or before a particular point in time. 
+You can also use range query parameters for all date, integer and decimal properties.
 {% endhint %}
 
 {% api-method method="get" host="https://spaces.nexudus.com/api" path="/billing/coworkerproducts" %}
@@ -292,11 +321,11 @@ Gets a list of coworkerproducts based on a range of dates, integer or decimal pr
 
 {% api-method-spec %}
 {% api-method-request %}
+
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
@@ -322,66 +351,52 @@ application/json
 {% api-method-parameter name="Price" type="decimal" required=false %}
 ?from\_CoworkerProduct\_Price=...
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Price" type="decimal" required=false %}
 ?to\_CoworkerProduct\_Price=...
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Quantity" type="int" required=false %}
 ?from\_CoworkerProduct\_Quantity=...
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Quantity" type="int" required=false %}
 ?to\_CoworkerProduct\_Quantity=...
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="RepeatUnit" type="int" required=false %}
 ?from\_CoworkerProduct\_RepeatUnit=...
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="RepeatUnit" type="int" required=false %}
 ?to\_CoworkerProduct\_RepeatUnit=...
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="InvoiceOn" type="datetime" required=false %}
 ?from\_CoworkerProduct\_InvoiceOn=...
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="InvoiceOn" type="datetime" required=false %}
 ?to\_CoworkerProduct\_InvoiceOn=...
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="RepeatFrom" type="datetime" required=false %}
 ?from\_CoworkerProduct\_RepeatFrom=...
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="RepeatFrom" type="datetime" required=false %}
 ?to\_CoworkerProduct\_RepeatFrom=...
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="RepeatUntil" type="datetime" required=false %}
 ?from\_CoworkerProduct\_RepeatUntil=...
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="RepeatUntil" type="datetime" required=false %}
 ?to\_CoworkerProduct\_RepeatUntil=...
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="DueDate" type="datetime" required=false %}
 ?from\_CoworkerProduct\_DueDate=...
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="DueDate" type="datetime" required=false %}
 ?to\_CoworkerProduct\_DueDate=...
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="InvoicedOn" type="datetime" required=false %}
 ?from\_CoworkerProduct\_InvoicedOn=...
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="InvoicedOn" type="datetime" required=false %}
 ?to\_CoworkerProduct\_InvoicedOn=...
 {% endapi-method-parameter %}
+
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
 
@@ -438,7 +453,8 @@ application/json
 
 > 🔒 Requires user role `coworkerproduct-list`
 
-{% api-method method="get" host="https://spaces.nexudus.com/api" path="/billing/coworkerproducts?CoworkerProduct\_Id=\[:id1,:id2,...\]" %}
+
+{% api-method method="get" host="https://spaces.nexudus.com/api" path="/billing/coworkerproducts?CoworkerProduct_Id=[:id1,:id2,...]" %}
 {% api-method-summary %}
 List by Ids
 {% endapi-method-summary %}
@@ -449,21 +465,21 @@ Gets one or more coworkerproduct records based on their Id.
 
 {% api-method-spec %}
 {% api-method-request %}
-{% api-method-path-parameters %}
-{% api-method-parameter name="id" type="integer" required=true %}
-Comma-separated list of IDs of every coworkerproduct to fetch. I.e. \[123456,789102,...\]
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
 
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
+
+{% api-method-path-parameters %}
+{% api-method-parameter name="id" type="integer" required=true %}
+Comma-separated list of IDs of every coworkerproduct to fetch. I.e. [123456,789102,...] 
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
 {% endapi-method-request %}
 
 {% api-method-response %}
@@ -519,7 +535,7 @@ application/json
 
 {% endapi-method-response-example-description %}
 
-```text
+```
 "Not found"
 ```
 {% endapi-method-response-example %}
@@ -540,21 +556,21 @@ Gets one coworkerproduct record.
 
 {% api-method-spec %}
 {% api-method-request %}
-{% api-method-path-parameters %}
-{% api-method-parameter name="id" type="integer" required=true %}
-The ID of the coworkerproduct to fetch.
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
 
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
+
+{% api-method-path-parameters %}
+{% api-method-parameter name="id" type="integer" required=true %}
+The ID of the coworkerproduct to fetch.
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
 {% endapi-method-request %}
 
 {% api-method-response %}
@@ -595,7 +611,7 @@ application/json
 
 {% endapi-method-response-example-description %}
 
-```text
+```
 "Not found"
 ```
 {% endapi-method-response-example %}
@@ -604,6 +620,7 @@ application/json
 {% endapi-method %}
 
 > 🔒 Requires user role `coworkerproduct-read`
+
 
 {% api-method method="post" host="https://spaces.nexudus.com/api" path="/billing/coworkerproducts" %}
 {% api-method-summary %}
@@ -616,11 +633,11 @@ Creates a new coworkerproduct.
 
 {% api-method-spec %}
 {% api-method-request %}
+
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
@@ -628,69 +645,39 @@ application/json
 
 {% api-method-body-parameters %}
 {% api-method-parameter name="CoworkerId" type="int" required=true %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="BusinessId" type="int" required=true %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="ProductId" type="int" required=true %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Notes" type="string" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="ActivateNow" type="bool" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="InvoiceThisCoworker" type="bool" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Price" type="decimal?" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Quantity" type="int" required=true %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="RegularCharge" type="bool" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="RepeatCycle" type="enum" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="RepeatUnit" type="int?" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="InvoiceOn" type="DateTime?" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="RepeatFrom" type="DateTime?" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="RepeatUntil" type="DateTime?" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="DueDate" type="DateTime?" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Invoiced" type="bool" required=false %}
-
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
+
 {% endapi-method-request %}
 
 {% api-method-response %}
@@ -713,7 +700,7 @@ application/json
 
 {% api-method-response-example httpCode=400 %}
 {% api-method-response-example-description %}
-_This response is an example, errors and messages will follow this structure but keys and descriptions may be different for each record._
+_This response is an example, errors and messages will follow this structure but keys and descriptions may be different for each record._  
 {% endapi-method-response-example-description %}
 
 ```javascript
@@ -767,23 +754,24 @@ _This response is an example, errors and messages will follow this structure but
 
 ```javascript
 {
-    "Coworker": 12345678,
-    "Business": 12345678,
-    "Product": 12345678,
-    "Notes": "Notes",
-    "ActivateNow": true,
-    "InvoiceThisCoworker": false,
-    "Price": false,
-    "Quantity": 1,
-    "RegularCharge": false,
-    "RepeatCycle": 1 (check Enumerated values section below),
-    "RepeatUnit": 1,
-    "InvoiceOn": null,
-    "RepeatFrom": null,
-    "RepeatUntil": null,
-    "DueDate": null,
-    "Invoiced": false,
+	"Coworker": 12345678,
+	"Business": 12345678,
+	"Product": 12345678,
+	"Notes": "Notes",
+	"ActivateNow": true,
+	"InvoiceThisCoworker": false,
+	"Price": false,
+	"Quantity": 1,
+	"RegularCharge": false,
+	"RepeatCycle": 1 (check Enumerated values section below),
+	"RepeatUnit": 1,
+	"InvoiceOn": null,
+	"RepeatFrom": null,
+	"RepeatUntil": null,
+	"DueDate": null,
+	"Invoiced": false,
 }
+
 ```
 
 {% api-method method="put" host="https://spaces.nexudus.com/api" path="/billing/coworkerproducts" %}
@@ -792,80 +780,55 @@ Update
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Updates and existing coworkerproduct.Required User Role: `coworkerproduct-edit`
+Updates and existing coworkerproduct. PUT requests require ALL record properties to be submitted with every request. Any missing properties will be cleared or set to false.
+  
+Required User Role: `coworkerproduct-edit`
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
+
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
 {% api-method-body-parameters %}
-{% api-method-parameter name="CoworkerId" type="int" required=true %}
 
+{% api-method-parameter name="Id" type="int" required="true" %}
+{% api-method-parameter name="CoworkerId" type="int" required="true" %}
 {% endapi-method-parameter %}
-
-{% api-method-parameter name="BusinessId" type="int" required=true %}
-
+{% api-method-parameter name="BusinessId" type="int" required="true" %}
 {% endapi-method-parameter %}
-
-{% api-method-parameter name="ProductId" type="int" required=true %}
-
+{% api-method-parameter name="ProductId" type="int" required="true" %}
 {% endapi-method-parameter %}
-
-{% api-method-parameter name="Notes" type="string" required=false %}
-
+{% api-method-parameter name="Notes" type="string" required="true" %}
 {% endapi-method-parameter %}
-
-{% api-method-parameter name="InvoiceThisCoworker" type="bool" required=false %}
-
+{% api-method-parameter name="InvoiceThisCoworker" type="bool" required="true" %}
 {% endapi-method-parameter %}
-
-{% api-method-parameter name="Price" type="decimal?" required=false %}
-
+{% api-method-parameter name="Price" type="decimal?" required="true" %}
 {% endapi-method-parameter %}
-
-{% api-method-parameter name="Quantity" type="int" required=true %}
-
+{% api-method-parameter name="Quantity" type="int" required="true" %}
 {% endapi-method-parameter %}
-
-{% api-method-parameter name="RegularCharge" type="bool" required=false %}
-
+{% api-method-parameter name="RegularCharge" type="bool" required="true" %}
 {% endapi-method-parameter %}
-
-{% api-method-parameter name="RepeatCycle" type="enum" required=false %}
-
+{% api-method-parameter name="RepeatCycle" type="enum" required="true" %}
 {% endapi-method-parameter %}
-
-{% api-method-parameter name="RepeatUnit" type="int?" required=false %}
-
+{% api-method-parameter name="RepeatUnit" type="int?" required="true" %}
 {% endapi-method-parameter %}
-
-{% api-method-parameter name="InvoiceOn" type="DateTime?" required=false %}
-
+{% api-method-parameter name="InvoiceOn" type="DateTime?" required="true" %}
 {% endapi-method-parameter %}
-
-{% api-method-parameter name="RepeatFrom" type="DateTime?" required=false %}
-
+{% api-method-parameter name="RepeatFrom" type="DateTime?" required="true" %}
 {% endapi-method-parameter %}
-
-{% api-method-parameter name="RepeatUntil" type="DateTime?" required=false %}
-
+{% api-method-parameter name="RepeatUntil" type="DateTime?" required="true" %}
 {% endapi-method-parameter %}
-
-{% api-method-parameter name="DueDate" type="DateTime?" required=false %}
-
+{% api-method-parameter name="DueDate" type="DateTime?" required="true" %}
 {% endapi-method-parameter %}
-
-{% api-method-parameter name="Invoiced" type="bool" required=false %}
-
+{% api-method-parameter name="Invoiced" type="bool" required="true" %}
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
@@ -892,7 +855,7 @@ application/json
 
 {% api-method-response-example httpCode=400 %}
 {% api-method-response-example-description %}
-_This response is an example, errors and messages will follow this structure but keys and descriptions may be different for each record._
+_This response is an example, errors and messages will follow this structure but keys and descriptions may be different for each record._  
 {% endapi-method-response-example-description %}
 
 ```javascript
@@ -946,23 +909,27 @@ _This response is an example, errors and messages will follow this structure but
 
 ```javascript
 {
-    "Coworker": 12345678,
-    "Business": 12345678,
-    "Product": 12345678,
-    "Notes": "Notes",
-    "InvoiceThisCoworker": false,
-    "Price": false,
-    "Quantity": 1,
-    "RegularCharge": false,
-    "RepeatCycle": 1 (check Enumerated values section below),
-    "RepeatUnit": 1,
-    "InvoiceOn": null,
-    "RepeatFrom": null,
-    "RepeatUntil": null,
-    "DueDate": null,
-    "Invoiced": false,
+	"Coworker": 12345678,
+	"Business": 12345678,
+	"Product": 12345678,
+	"Notes": "Notes",
+	"InvoiceThisCoworker": false,
+	"Price": false,
+	"Quantity": 1,
+	"RegularCharge": false,
+	"RepeatCycle": 1 (check Enumerated values section below),
+	"RepeatUnit": 1,
+	"InvoiceOn": null,
+	"RepeatFrom": null,
+	"RepeatUntil": null,
+	"DueDate": null,
+	"Invoiced": false,
 }
+
 ```
+
+
+
 
 {% api-method method="delete" host="https://spaces.nexudus.com/api" path="/billing/coworkerproducts/:id" %}
 {% api-method-summary %}
@@ -970,26 +937,28 @@ Delete
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Deletes a coworkerproduct.Required User Roles: `coworkerproduct-delete`
+Deletes a coworkerproduct.  
+  
+Required User Roles: `coworkerproduct-delete`
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
-{% api-method-path-parameters %}
-{% api-method-parameter name="Id" type="integer" required=false %}
-
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
 
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
+
+{% api-method-path-parameters %}
+{% api-method-parameter name="Id" type="integer" required=false %}
+
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
 {% endapi-method-request %}
 
 {% api-method-response %}
@@ -1017,7 +986,7 @@ application/json
 
 {% endapi-method-response-example-description %}
 
-```text
+```
 "Not found"
 ```
 {% endapi-method-response-example %}
@@ -1037,11 +1006,14 @@ application/json
 {% endapi-method-spec %}
 {% endapi-method %}
 
+
+
 > 🔒 Requires user role `coworkerproduct-delete`
+
 
 ## Commands
 
-Commands allow to perform actions against one or more coworkerproduct records. Some commands accept only one record while others can run an action for a number of records at the same time. Each command has metadata with information about how it can be used and the amount of records, if any, it needs to run.
+Commands allow to perform actions against one or more coworkerproduct records. Some commands accept only one record while others can run an action for a number of records at the same time.  Each command has metadata with information about how it can be used and the amount of records, if any, it needs to run.
 
 > ```javascript
 > {
@@ -1063,11 +1035,11 @@ Get all commands available to run for coworkerproduct records.
 
 {% api-method-spec %}
 {% api-method-request %}
+
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
@@ -1077,7 +1049,7 @@ application/json
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
 {% api-method-response-example-description %}
-_This response is an example._
+_This response is an example._  
 {% endapi-method-response-example-description %}
 
 ```javascript
@@ -1121,11 +1093,11 @@ Run Command
 
 {% api-method-spec %}
 {% api-method-request %}
+
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
@@ -1137,17 +1109,21 @@ The command Key defining the command to run. `"COMMAND_KEY_1"`
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Parameters" type="array" required=false %}
-A list of object with the structure below. The parameters required for each command are returned in the "RequiresParameters" array return by the "commands" endpoint.`[    
-{    
-"Name": "Name",    
-"Type":"Type",    
-"Value":recordId    
-}    
+A list of object with the structure below. The parameters required for each command are returned in the "RequiresParameters" array return by the "commands" endpoint.  
+  
+`[  
+   {  
+      "Name": "Name",   
+      "Type":"Type",   
+      "Value":recordId  
+    }  
 ]`
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Ids" type="array" required=true %}
-A list of integer IDs for each of the records to run this command for.`[987654321, 123565978]`
+A list of integer IDs for each of the records to run this command for.  
+  
+`[987654321, 123565978]`
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
@@ -1155,7 +1131,7 @@ A list of integer IDs for each of the records to run this command for.`[98765432
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
 {% api-method-response-example-description %}
-_Commands also return a status 200 when they fail to process one or more of the records. Use the 'WasSuccessful' property to know if the command run succeeded._
+_Commands also return a status 200 when they fail to process one or more of the records. Use the 'WasSuccessful'  property to know if the command run succeeded._  
 {% endapi-method-response-example-description %}
 
 ```javascript
@@ -1176,17 +1152,15 @@ _Commands also return a status 200 when they fail to process one or more of the 
 
 ## Enumerated values
 
-### RepeatCycle:
-
+##### RepeatCycle:
 > GET /api/utils/enums?name=eRecurrentChargePattern
 
 ## Binary files
 
 The following endpoints return binary data. Check the `ContentType` header to understand the type of file being returned in the response stream.
 
-## Related Entities
 
+## Related Entities
 * [Coworker](../spaces/coworker.md)
 * [Business](../sys/business.md)
-* [Product](product.md)
-
+* [Product](../billing/product.md)

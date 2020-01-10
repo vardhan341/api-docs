@@ -1,27 +1,26 @@
-# CommunityThread
-
-{% api-method method="get" host="https://spaces.nexudus.com/api" path="/community/communitythreads" %}
+﻿{% api-method method="get" host="https://spaces.nexudus.com/api" path="/community/communitythreads" %}
 {% api-method-summary %}
 Find
 {% endapi-method-summary %}
 
 {% api-method-description %}
-This endpoint allows you to GET a list of communitythreads based on one or more filter querystring parameters.
+ This endpoint allows you to GET a list of communitythreads based on one or more filter querystring parameters.
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
+
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
 {% api-method-query-parameters %}
+
 {% api-method-parameter name="Id" type="int" %}
 ?Id=...
 {% endapi-method-parameter %}
@@ -34,37 +33,46 @@ application/json
 ?CommunityThread\_SystemId=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="Business" type="Business" %}
 ?CommunityThread\_Business=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="CommunityGroup" type="CommunityGroup" %}
 ?CommunityThread\_CommunityGroup=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="User" type="User" %}
 ?CommunityThread\_User=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="Subject" type="string" %}
 ?CommunityThread\_Subject=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="Message" type="string" %}
 ?CommunityThread\_Message=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="InstantDelivery" type="bool" %}
 ?CommunityThread\_InstantDelivery=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="Tags" type="string" %}
 ?CommunityThread\_Tags=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="Private" type="bool" %}
 ?CommunityThread\_Private=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="LastMessageDate" type="DateTime?" %}
 ?CommunityThread\_LastMessageDate=...
@@ -73,14 +81,13 @@ application/json
 {% api-method-parameter name="Guests" type="int" required=false %}
 ?CommunityThread\_Guests=...
 {% endapi-method-parameter %}
+
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
 
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
 
-{% endapi-method-response-example-description %}
 
 ```javascript
 {
@@ -94,6 +101,7 @@ application/json
         "Tags": "00001",
         "Private": false,
         "LastMessageDate": null,
+
     }],
     "CurrentPageSize": 25,
     "CurrentPage": 1,
@@ -108,6 +116,7 @@ application/json
     "TotalItems": 60,
     "TotalPages": 3
 }
+
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}
@@ -127,11 +136,11 @@ This endpoint allows you to GET a list of communitythreads.
 
 {% api-method-spec %}
 {% api-method-request %}
+
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
@@ -198,7 +207,8 @@ size=25 \(maximum=1000\)
 > 🔒 Requires user role `communitythread-list`
 
 {% hint style="info" %}
-You can also get a list of records based when they were created or updated. This is useful if you want to get a list of records created after or before a particular point in time. You can also use range query parameters for all date, integer and decimal properties.
+You can also get a list of records based when they were created or updated. This is useful if you want to get a list of records created after or before a particular point in time. 
+You can also use range query parameters for all date, integer and decimal properties.
 {% endhint %}
 
 {% api-method method="get" host="https://spaces.nexudus.com/api" path="/community/communitythreads" %}
@@ -212,11 +222,11 @@ Gets a list of communitythreads based on a range of dates, integer or decimal pr
 
 {% api-method-spec %}
 {% api-method-request %}
+
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
@@ -242,10 +252,10 @@ application/json
 {% api-method-parameter name="LastMessageDate" type="datetime" required=false %}
 ?from\_CommunityThread\_LastMessageDate=...
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="LastMessageDate" type="datetime" required=false %}
 ?to\_CommunityThread\_LastMessageDate=...
 {% endapi-method-parameter %}
+
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
 
@@ -290,7 +300,8 @@ application/json
 
 > 🔒 Requires user role `communitythread-list`
 
-{% api-method method="get" host="https://spaces.nexudus.com/api" path="/community/communitythreads?CommunityThread\_Id=\[:id1,:id2,...\]" %}
+
+{% api-method method="get" host="https://spaces.nexudus.com/api" path="/community/communitythreads?CommunityThread_Id=[:id1,:id2,...]" %}
 {% api-method-summary %}
 List by Ids
 {% endapi-method-summary %}
@@ -301,21 +312,21 @@ Gets one or more communitythread records based on their Id.
 
 {% api-method-spec %}
 {% api-method-request %}
-{% api-method-path-parameters %}
-{% api-method-parameter name="id" type="integer" required=true %}
-Comma-separated list of IDs of every communitythread to fetch. I.e. \[123456,789102,...\]
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
 
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
+
+{% api-method-path-parameters %}
+{% api-method-parameter name="id" type="integer" required=true %}
+Comma-separated list of IDs of every communitythread to fetch. I.e. [123456,789102,...] 
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
 {% endapi-method-request %}
 
 {% api-method-response %}
@@ -359,7 +370,7 @@ application/json
 
 {% endapi-method-response-example-description %}
 
-```text
+```
 "Not found"
 ```
 {% endapi-method-response-example %}
@@ -380,21 +391,21 @@ Gets one communitythread record.
 
 {% api-method-spec %}
 {% api-method-request %}
-{% api-method-path-parameters %}
-{% api-method-parameter name="id" type="integer" required=true %}
-The ID of the communitythread to fetch.
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
 
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
+
+{% api-method-path-parameters %}
+{% api-method-parameter name="id" type="integer" required=true %}
+The ID of the communitythread to fetch.
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
 {% endapi-method-request %}
 
 {% api-method-response %}
@@ -423,7 +434,7 @@ application/json
 
 {% endapi-method-response-example-description %}
 
-```text
+```
 "Not found"
 ```
 {% endapi-method-response-example %}
@@ -432,6 +443,7 @@ application/json
 {% endapi-method %}
 
 > 🔒 Requires user role `communitythread-read`
+
 
 {% api-method method="post" host="https://spaces.nexudus.com/api" path="/community/communitythreads" %}
 {% api-method-summary %}
@@ -444,11 +456,11 @@ Creates a new communitythread.
 
 {% api-method-spec %}
 {% api-method-request %}
+
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
@@ -456,37 +468,23 @@ application/json
 
 {% api-method-body-parameters %}
 {% api-method-parameter name="BusinessId" type="int" required=true %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="CommunityGroupId" type="int" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="UserId" type="int" required=true %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Subject" type="string" required=true %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Message" type="string" required=true %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="InstantDelivery" type="bool" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Tags" type="string" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Private" type="bool" required=false %}
-
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
+
 {% endapi-method-request %}
 
 {% api-method-response %}
@@ -509,7 +507,7 @@ application/json
 
 {% api-method-response-example httpCode=400 %}
 {% api-method-response-example-description %}
-_This response is an example, errors and messages will follow this structure but keys and descriptions may be different for each record._
+_This response is an example, errors and messages will follow this structure but keys and descriptions may be different for each record._  
 {% endapi-method-response-example-description %}
 
 ```javascript
@@ -563,18 +561,19 @@ _This response is an example, errors and messages will follow this structure but
 
 ```javascript
 {
-    "Business": 12345678,
-    "CommunityGroup": 12345678,
-    "User": 12345678,
-    "Subject": "00001",
-    "Message": "Message",
-    "InstantDelivery": instant delivery,
-    "Tags": "00001",
-    "Private": false,
-    "Guests": [12345678, 87654321] (replaces entire list),
-    "AddedGuests": [12345678, 87654321] (adds to list),
-    "RemovedGuests": [12345678, 87654321] (removes from list),
+	"Business": 12345678,
+	"CommunityGroup": 12345678,
+	"User": 12345678,
+	"Subject": "00001",
+	"Message": "Message",
+	"InstantDelivery": instant delivery,
+	"Tags": "00001",
+	"Private": false,
+	"Guests": [12345678, 87654321] (replaces entire list),
+	"AddedGuests": [12345678, 87654321] (adds to list),
+	"RemovedGuests": [12345678, 87654321] (removes from list),
 }
+
 ```
 
 {% api-method method="put" host="https://spaces.nexudus.com/api" path="/community/communitythreads" %}
@@ -583,64 +582,47 @@ Update
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Updates and existing communitythread.Required User Role: `communitythread-edit`
+Updates and existing communitythread. PUT requests require ALL record properties to be submitted with every request. Any missing properties will be cleared or set to false.
+  
+Required User Role: `communitythread-edit`
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
+
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
 {% api-method-body-parameters %}
-{% api-method-parameter name="BusinessId" type="int" required=true %}
 
+{% api-method-parameter name="Id" type="int" required="true" %}
+{% api-method-parameter name="BusinessId" type="int" required="true" %}
 {% endapi-method-parameter %}
-
-{% api-method-parameter name="CommunityGroupId" type="int" required=false %}
-
+{% api-method-parameter name="CommunityGroupId" type="int" required="true" %}
 {% endapi-method-parameter %}
-
-{% api-method-parameter name="UserId" type="int" required=true %}
-
+{% api-method-parameter name="UserId" type="int" required="true" %}
 {% endapi-method-parameter %}
-
-{% api-method-parameter name="Subject" type="string" required=true %}
-
+{% api-method-parameter name="Subject" type="string" required="true" %}
 {% endapi-method-parameter %}
-
-{% api-method-parameter name="Message" type="string" required=true %}
-
+{% api-method-parameter name="Message" type="string" required="true" %}
 {% endapi-method-parameter %}
-
-{% api-method-parameter name="InstantDelivery" type="bool" required=false %}
-
+{% api-method-parameter name="InstantDelivery" type="bool" required="true" %}
 {% endapi-method-parameter %}
-
-{% api-method-parameter name="Tags" type="string" required=false %}
-
+{% api-method-parameter name="Tags" type="string" required="true" %}
 {% endapi-method-parameter %}
-
-{% api-method-parameter name="Private" type="bool" required=false %}
-
+{% api-method-parameter name="Private" type="bool" required="true" %}
 {% endapi-method-parameter %}
-
-{% api-method-parameter name="Guests" type="int\[\]" required=true %}
-
+{% api-method-parameter name="Guests" type="int[]" required="true" %}
 {% endapi-method-parameter %}
-
-{% api-method-parameter name="AddedGuests" type="int\[\]" required=true %}
-
+{% api-method-parameter name="AddedGuests" type="int[]" required="true" %}
 {% endapi-method-parameter %}
-
-{% api-method-parameter name="RemovedGuests" type="int\[\]" required=true %}
-
+{% api-method-parameter name="RemovedGuests" type="int[]" required="true" %}
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
@@ -667,7 +649,7 @@ application/json
 
 {% api-method-response-example httpCode=400 %}
 {% api-method-response-example-description %}
-_This response is an example, errors and messages will follow this structure but keys and descriptions may be different for each record._
+_This response is an example, errors and messages will follow this structure but keys and descriptions may be different for each record._  
 {% endapi-method-response-example-description %}
 
 ```javascript
@@ -721,19 +703,23 @@ _This response is an example, errors and messages will follow this structure but
 
 ```javascript
 {
-    "Business": 12345678,
-    "CommunityGroup": 12345678,
-    "User": 12345678,
-    "Subject": "00001",
-    "Message": "Message",
-    "InstantDelivery": instant delivery,
-    "Tags": "00001",
-    "Private": false,
-    "Guests": [12345678, 87654321] (replaces entire list),
-    "AddedGuests": [12345678, 87654321] (adds to list),
-    "RemovedGuests": [12345678, 87654321] (removes from list),
+	"Business": 12345678,
+	"CommunityGroup": 12345678,
+	"User": 12345678,
+	"Subject": "00001",
+	"Message": "Message",
+	"InstantDelivery": instant delivery,
+	"Tags": "00001",
+	"Private": false,
+	"Guests": [12345678, 87654321] (replaces entire list),
+	"AddedGuests": [12345678, 87654321] (adds to list),
+	"RemovedGuests": [12345678, 87654321] (removes from list),
 }
+
 ```
+
+
+
 
 {% api-method method="delete" host="https://spaces.nexudus.com/api" path="/community/communitythreads/:id" %}
 {% api-method-summary %}
@@ -741,26 +727,28 @@ Delete
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Deletes a communitythread.Required User Roles: `communitythread-delete`
+Deletes a communitythread.  
+  
+Required User Roles: `communitythread-delete`
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
-{% api-method-path-parameters %}
-{% api-method-parameter name="Id" type="integer" required=false %}
-
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
 
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
+
+{% api-method-path-parameters %}
+{% api-method-parameter name="Id" type="integer" required=false %}
+
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
 {% endapi-method-request %}
 
 {% api-method-response %}
@@ -788,7 +776,7 @@ application/json
 
 {% endapi-method-response-example-description %}
 
-```text
+```
 "Not found"
 ```
 {% endapi-method-response-example %}
@@ -808,11 +796,14 @@ application/json
 {% endapi-method-spec %}
 {% endapi-method %}
 
+
+
 > 🔒 Requires user role `communitythread-delete`
+
 
 ## Commands
 
-Commands allow to perform actions against one or more communitythread records. Some commands accept only one record while others can run an action for a number of records at the same time. Each command has metadata with information about how it can be used and the amount of records, if any, it needs to run.
+Commands allow to perform actions against one or more communitythread records. Some commands accept only one record while others can run an action for a number of records at the same time.  Each command has metadata with information about how it can be used and the amount of records, if any, it needs to run.
 
 > ```javascript
 > {
@@ -834,11 +825,11 @@ Get all commands available to run for communitythread records.
 
 {% api-method-spec %}
 {% api-method-request %}
+
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
@@ -848,7 +839,7 @@ application/json
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
 {% api-method-response-example-description %}
-_This response is an example._
+_This response is an example._  
 {% endapi-method-response-example-description %}
 
 ```javascript
@@ -892,11 +883,11 @@ Run Command
 
 {% api-method-spec %}
 {% api-method-request %}
+
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
@@ -908,17 +899,21 @@ The command Key defining the command to run. `"COMMAND_KEY_1"`
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Parameters" type="array" required=false %}
-A list of object with the structure below. The parameters required for each command are returned in the "RequiresParameters" array return by the "commands" endpoint.`[    
-{    
-"Name": "Name",    
-"Type":"Type",    
-"Value":recordId    
-}    
+A list of object with the structure below. The parameters required for each command are returned in the "RequiresParameters" array return by the "commands" endpoint.  
+  
+`[  
+   {  
+      "Name": "Name",   
+      "Type":"Type",   
+      "Value":recordId  
+    }  
 ]`
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Ids" type="array" required=true %}
-A list of integer IDs for each of the records to run this command for.`[987654321, 123565978]`
+A list of integer IDs for each of the records to run this command for.  
+  
+`[987654321, 123565978]`
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
@@ -926,7 +921,7 @@ A list of integer IDs for each of the records to run this command for.`[98765432
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
 {% api-method-response-example-description %}
-_Commands also return a status 200 when they fail to process one or more of the records. Use the 'WasSuccessful' property to know if the command run succeeded._
+_Commands also return a status 200 when they fail to process one or more of the records. Use the 'WasSuccessful'  property to know if the command run succeeded._  
 {% endapi-method-response-example-description %}
 
 ```javascript
@@ -951,9 +946,8 @@ _Commands also return a status 200 when they fail to process one or more of the 
 
 The following endpoints return binary data. Check the `ContentType` header to understand the type of file being returned in the response stream.
 
+
 ## Related Entities
-
 * [Business](../sys/business.md)
-* [CommunityGroup](communitygroup.md)
+* [CommunityGroup](../community/communitygroup.md)
 * [User](../sys/user.md)
-

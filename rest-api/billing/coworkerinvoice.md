@@ -1,27 +1,26 @@
-# CoworkerInvoice
-
-{% api-method method="get" host="https://spaces.nexudus.com/api" path="/billing/coworkerinvoices" %}
+﻿{% api-method method="get" host="https://spaces.nexudus.com/api" path="/billing/coworkerinvoices" %}
 {% api-method-summary %}
 Find
 {% endapi-method-summary %}
 
 {% api-method-description %}
-This endpoint allows you to GET a list of coworkerinvoices based on one or more filter querystring parameters.
+ This endpoint allows you to GET a list of coworkerinvoices based on one or more filter querystring parameters.
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
+
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
 {% api-method-query-parameters %}
+
 {% api-method-parameter name="Id" type="int" %}
 ?Id=...
 {% endapi-method-parameter %}
@@ -34,233 +33,288 @@ application/json
 ?CoworkerInvoice\_SystemId=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="Coworker" type="Coworker" %}
 ?CoworkerInvoice\_Coworker=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="Business" type="Business" %}
 ?CoworkerInvoice\_Business=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="InvoiceNumber" type="string" %}
 ?CoworkerInvoice\_InvoiceNumber=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="PaymentReference" type="string" %}
 ?CoworkerInvoice\_PaymentReference=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="BillToName" type="string" %}
 ?CoworkerInvoice\_BillToName=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="BillToAddress" type="string" %}
 ?CoworkerInvoice\_BillToAddress=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="BillToCity" type="string" %}
 ?CoworkerInvoice\_BillToCity=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="BillToPostCode" type="string" %}
 ?CoworkerInvoice\_BillToPostCode=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="BillToPhone" type="string" %}
 ?CoworkerInvoice\_BillToPhone=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="BillToFax" type="string" %}
 ?CoworkerInvoice\_BillToFax=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="BillToCountry" type="Country" %}
 ?CoworkerInvoice\_BillToCountry=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="BillToBankAccount" type="string" %}
 ?CoworkerInvoice\_BillToBankAccount=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="BillToTaxIDNumber" type="string" %}
 ?CoworkerInvoice\_BillToTaxIDNumber=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="PurchaseOrder" type="string" %}
 ?CoworkerInvoice\_PurchaseOrder=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="Description" type="string" %}
 ?CoworkerInvoice\_Description=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="DiscountAmount" type="decimal" %}
 ?CoworkerInvoice\_DiscountAmount=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="DueDate" type="DateTime?" %}
 ?CoworkerInvoice\_DueDate=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="InvoiceFromDate" type="DateTime?" %}
 ?CoworkerInvoice\_InvoiceFromDate=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="InvoiceToDate" type="DateTime?" %}
 ?CoworkerInvoice\_InvoiceToDate=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="TotalAmount" type="decimal" %}
 ?CoworkerInvoice\_TotalAmount=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="PaidAmount" type="decimal?" %}
 ?CoworkerInvoice\_PaidAmount=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="Currency" type="Currency" %}
 ?CoworkerInvoice\_Currency=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="TaxAmount" type="decimal" %}
 ?CoworkerInvoice\_TaxAmount=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="Draft" type="bool" %}
 ?CoworkerInvoice\_Draft=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="Paid" type="bool" %}
 ?CoworkerInvoice\_Paid=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="Sent" type="bool" %}
 ?CoworkerInvoice\_Sent=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="SentOn" type="DateTime?" %}
 ?CoworkerInvoice\_SentOn=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="PaidOn" type="DateTime?" %}
 ?CoworkerInvoice\_PaidOn=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="Refunded" type="bool" %}
 ?CoworkerInvoice\_Refunded=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="XeroInvoiceTransfered" type="bool" %}
 ?CoworkerInvoice\_XeroInvoiceTransfered=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="XeroPaymentTransfered" type="bool" %}
 ?CoworkerInvoice\_XeroPaymentTransfered=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="RefundedOn" type="DateTime?" %}
 ?CoworkerInvoice\_RefundedOn=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="CreditNote" type="bool" %}
 ?CoworkerInvoice\_CreditNote=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="OriginalInvoiceGuid" type="Guid?" %}
 ?CoworkerInvoice\_OriginalInvoiceGuid=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="ContractGuid" type="Guid?" %}
 ?CoworkerInvoice\_ContractGuid=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="CustomData" type="string" %}
 ?CoworkerInvoice\_CustomData=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="ReceivedAmount" type="decimal?" %}
 ?CoworkerInvoice\_ReceivedAmount=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="CreditedAmount" type="decimal?" %}
 ?CoworkerInvoice\_CreditedAmount=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="RefundedAmount" type="decimal?" %}
 ?CoworkerInvoice\_RefundedAmount=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="Coworker\_FullName" type="string" %}
 ?CoworkerInvoice\_Coworker\_FullName=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="Coworker\_RegularPaymentContractNumber" type="string" %}
 ?CoworkerInvoice\_Coworker\_RegularPaymentContractNumber=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="Coworker\_RegularPaymentProvider" type="string" %}
 ?CoworkerInvoice\_Coworker\_RegularPaymentProvider=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="Coworker\_CardNumber" type="string" %}
 ?CoworkerInvoice\_Coworker\_CardNumber=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="Coworker\_GoCardlessContractNumber" type="string" %}
 ?CoworkerInvoice\_Coworker\_GoCardlessContractNumber=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="Coworker\_EnableGoCardlessPayments" type="string" %}
 ?CoworkerInvoice\_Coworker\_EnableGoCardlessPayments=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="Coworker\_BillingEmail" type="string" %}
 ?CoworkerInvoice\_Coworker\_BillingEmail=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="Coworker\_NotifyOnNewInvoice" type="string" %}
 ?CoworkerInvoice\_Coworker\_NotifyOnNewInvoice=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="Coworker\_NotifyOnNewPayment" type="string" %}
 ?CoworkerInvoice\_Coworker\_NotifyOnNewPayment=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="Coworker\_NotifyOnFailedPayment" type="string" %}
 ?CoworkerInvoice\_Coworker\_NotifyOnFailedPayment=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="Coworker\_DoNotProcessInvoicesAutomatically" type="string" %}
 ?CoworkerInvoice\_Coworker\_DoNotProcessInvoicesAutomatically=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="Business\_Name" type="string" %}
 ?CoworkerInvoice\_Business\_Name=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="BillToCountry\_Name" type="string" %}
 ?CoworkerInvoice\_BillToCountry\_Name=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="BillToCountry\_TwoDigitsCode" type="string" %}
 ?CoworkerInvoice\_BillToCountry\_TwoDigitsCode=...
 {% endapi-method-parameter %}
+
 
 {% api-method-parameter name="TransactionCurrency\_Code" type="string" %}
 ?CoworkerInvoice\_TransactionCurrency\_Code=...
 {% endapi-method-parameter %}
 
+
 {% api-method-parameter name="Currency\_Code" type="string" %}
 ?CoworkerInvoice\_Currency\_Code=...
 {% endapi-method-parameter %}
+
+
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
 
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
 
-{% endapi-method-response-example-description %}
 
 ```javascript
 {
@@ -304,6 +358,23 @@ application/json
         "ReceivedAmount": ,
         "CreditedAmount": ,
         "RefundedAmount": ,
+		"CoworkerInvoiceCoworkerFullName": "...",
+		"CoworkerInvoiceCoworkerRegularPaymentContractNumber": "...",
+		"CoworkerInvoiceCoworkerRegularPaymentProvider": "...",
+		"CoworkerInvoiceCoworkerCardNumber": "...",
+		"CoworkerInvoiceCoworkerGoCardlessContractNumber": "...",
+		"CoworkerInvoiceCoworkerEnableGoCardlessPayments": "...",
+		"CoworkerInvoiceCoworkerBillingEmail": "...",
+		"CoworkerInvoiceCoworkerNotifyOnNewInvoice": "...",
+		"CoworkerInvoiceCoworkerNotifyOnNewPayment": "...",
+		"CoworkerInvoiceCoworkerNotifyOnFailedPayment": "...",
+		"CoworkerInvoiceCoworkerDoNotProcessInvoicesAutomatically": "...",
+		"CoworkerInvoiceBusinessName": "...",
+		"CoworkerInvoiceBillToCountryName": "...",
+		"CoworkerInvoiceBillToCountryTwoDigitsCode": "...",
+		"CoworkerInvoiceTransactionCurrencyCode": "...",
+		"CoworkerInvoiceCurrencyCode": "...",
+
     }],
     "CurrentPageSize": 25,
     "CurrentPage": 1,
@@ -318,6 +389,7 @@ application/json
     "TotalItems": 60,
     "TotalPages": 3
 }
+
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}
@@ -337,11 +409,11 @@ This endpoint allows you to GET a list of coworkerinvoices.
 
 {% api-method-spec %}
 {% api-method-request %}
+
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
@@ -438,7 +510,8 @@ size=25 \(maximum=1000\)
 > 🔒 Requires user role `coworkerinvoice-list`
 
 {% hint style="info" %}
-You can also get a list of records based when they were created or updated. This is useful if you want to get a list of records created after or before a particular point in time. You can also use range query parameters for all date, integer and decimal properties.
+You can also get a list of records based when they were created or updated. This is useful if you want to get a list of records created after or before a particular point in time. 
+You can also use range query parameters for all date, integer and decimal properties.
 {% endhint %}
 
 {% api-method method="get" host="https://spaces.nexudus.com/api" path="/billing/coworkerinvoices" %}
@@ -452,11 +525,11 @@ Gets a list of coworkerinvoices based on a range of dates, integer or decimal pr
 
 {% api-method-spec %}
 {% api-method-request %}
+
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
@@ -482,106 +555,82 @@ application/json
 {% api-method-parameter name="DiscountAmount" type="decimal" required=false %}
 ?from\_CoworkerInvoice\_DiscountAmount=...
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="DiscountAmount" type="decimal" required=false %}
 ?to\_CoworkerInvoice\_DiscountAmount=...
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="DueDate" type="datetime" required=false %}
 ?from\_CoworkerInvoice\_DueDate=...
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="DueDate" type="datetime" required=false %}
 ?to\_CoworkerInvoice\_DueDate=...
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="InvoiceFromDate" type="datetime" required=false %}
 ?from\_CoworkerInvoice\_InvoiceFromDate=...
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="InvoiceFromDate" type="datetime" required=false %}
 ?to\_CoworkerInvoice\_InvoiceFromDate=...
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="InvoiceToDate" type="datetime" required=false %}
 ?from\_CoworkerInvoice\_InvoiceToDate=...
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="InvoiceToDate" type="datetime" required=false %}
 ?to\_CoworkerInvoice\_InvoiceToDate=...
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="TotalAmount" type="decimal" required=false %}
 ?from\_CoworkerInvoice\_TotalAmount=...
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="TotalAmount" type="decimal" required=false %}
 ?to\_CoworkerInvoice\_TotalAmount=...
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="PaidAmount" type="decimal" required=false %}
 ?from\_CoworkerInvoice\_PaidAmount=...
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="PaidAmount" type="decimal" required=false %}
 ?to\_CoworkerInvoice\_PaidAmount=...
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="TaxAmount" type="decimal" required=false %}
 ?from\_CoworkerInvoice\_TaxAmount=...
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="TaxAmount" type="decimal" required=false %}
 ?to\_CoworkerInvoice\_TaxAmount=...
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="SentOn" type="datetime" required=false %}
 ?from\_CoworkerInvoice\_SentOn=...
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="SentOn" type="datetime" required=false %}
 ?to\_CoworkerInvoice\_SentOn=...
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="PaidOn" type="datetime" required=false %}
 ?from\_CoworkerInvoice\_PaidOn=...
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="PaidOn" type="datetime" required=false %}
 ?to\_CoworkerInvoice\_PaidOn=...
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="RefundedOn" type="datetime" required=false %}
 ?from\_CoworkerInvoice\_RefundedOn=...
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="RefundedOn" type="datetime" required=false %}
 ?to\_CoworkerInvoice\_RefundedOn=...
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="ReceivedAmount" type="decimal" required=false %}
 ?from\_CoworkerInvoice\_ReceivedAmount=...
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="ReceivedAmount" type="decimal" required=false %}
 ?to\_CoworkerInvoice\_ReceivedAmount=...
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="CreditedAmount" type="decimal" required=false %}
 ?from\_CoworkerInvoice\_CreditedAmount=...
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="CreditedAmount" type="decimal" required=false %}
 ?to\_CoworkerInvoice\_CreditedAmount=...
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="RefundedAmount" type="decimal" required=false %}
 ?from\_CoworkerInvoice\_RefundedAmount=...
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="RefundedAmount" type="decimal" required=false %}
 ?to\_CoworkerInvoice\_RefundedAmount=...
 {% endapi-method-parameter %}
+
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
 
@@ -656,7 +705,8 @@ application/json
 
 > 🔒 Requires user role `coworkerinvoice-list`
 
-{% api-method method="get" host="https://spaces.nexudus.com/api" path="/billing/coworkerinvoices?CoworkerInvoice\_Id=\[:id1,:id2,...\]" %}
+
+{% api-method method="get" host="https://spaces.nexudus.com/api" path="/billing/coworkerinvoices?CoworkerInvoice_Id=[:id1,:id2,...]" %}
 {% api-method-summary %}
 List by Ids
 {% endapi-method-summary %}
@@ -667,21 +717,21 @@ Gets one or more coworkerinvoice records based on their Id.
 
 {% api-method-spec %}
 {% api-method-request %}
-{% api-method-path-parameters %}
-{% api-method-parameter name="id" type="integer" required=true %}
-Comma-separated list of IDs of every coworkerinvoice to fetch. I.e. \[123456,789102,...\]
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
 
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
+
+{% api-method-path-parameters %}
+{% api-method-parameter name="id" type="integer" required=true %}
+Comma-separated list of IDs of every coworkerinvoice to fetch. I.e. [123456,789102,...] 
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
 {% endapi-method-request %}
 
 {% api-method-response %}
@@ -755,7 +805,7 @@ application/json
 
 {% endapi-method-response-example-description %}
 
-```text
+```
 "Not found"
 ```
 {% endapi-method-response-example %}
@@ -776,21 +826,21 @@ Gets one coworkerinvoice record.
 
 {% api-method-spec %}
 {% api-method-request %}
-{% api-method-path-parameters %}
-{% api-method-parameter name="id" type="integer" required=true %}
-The ID of the coworkerinvoice to fetch.
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
 
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
+
+{% api-method-path-parameters %}
+{% api-method-parameter name="id" type="integer" required=true %}
+The ID of the coworkerinvoice to fetch.
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
 {% endapi-method-request %}
 
 {% api-method-response %}
@@ -849,7 +899,7 @@ application/json
 
 {% endapi-method-response-example-description %}
 
-```text
+```
 "Not found"
 ```
 {% endapi-method-response-example %}
@@ -858,6 +908,7 @@ application/json
 {% endapi-method %}
 
 > 🔒 Requires user role `coworkerinvoice-read`
+
 
 {% api-method method="post" host="https://spaces.nexudus.com/api" path="/billing/coworkerinvoices" %}
 {% api-method-summary %}
@@ -870,11 +921,11 @@ Creates a new coworkerinvoice.
 
 {% api-method-spec %}
 {% api-method-request %}
+
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
@@ -882,89 +933,49 @@ application/json
 
 {% api-method-body-parameters %}
 {% api-method-parameter name="CoworkerId" type="int" required=true %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="BusinessId" type="int" required=true %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="InvoiceNumber" type="string" required=true %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="PaymentReference" type="string" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="BillToName" type="string" required=true %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="BillToAddress" type="string" required=true %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="BillToCity" type="string" required=true %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="BillToPostCode" type="string" required=true %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="BillToPhone" type="string" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="BillToFax" type="string" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="BillToCountryId" type="int" required=true %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="BillToBankAccount" type="string" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="BillToTaxIDNumber" type="string" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="PurchaseOrder" type="string" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="DueDate" type="DateTime?" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="InvoiceFromDate" type="DateTime?" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="InvoiceToDate" type="DateTime?" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="CurrencyId" type="int" required=true %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Draft" type="bool" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="PaidOn" type="DateTime?" required=false %}
-
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="CustomData" type="string" required=false %}
-
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
+
 {% endapi-method-request %}
 
 {% api-method-response %}
@@ -987,7 +998,7 @@ application/json
 
 {% api-method-response-example httpCode=400 %}
 {% api-method-response-example-description %}
-_This response is an example, errors and messages will follow this structure but keys and descriptions may be different for each record._
+_This response is an example, errors and messages will follow this structure but keys and descriptions may be different for each record._  
 {% endapi-method-response-example-description %}
 
 ```javascript
@@ -1041,28 +1052,29 @@ _This response is an example, errors and messages will follow this structure but
 
 ```javascript
 {
-    "Coworker": 12345678,
-    "Business": 12345678,
-    "InvoiceNumber": "00001",
-    "PaymentReference": "00001",
-    "BillToName": "BillToName",
-    "BillToAddress": "BillToAddress",
-    "BillToCity": "BillToCity",
-    "BillToPostCode": "BillToPostCode",
-    "BillToPhone": "BillToPhone",
-    "BillToFax": "BillToFax",
-    "BillToCountry": 12345678,
-    "BillToBankAccount": "123456",
-    "BillToTaxIDNumber": "123456",
-    "PurchaseOrder": "PurchaseOrder",
-    "DueDate": null,
-    "InvoiceFromDate": null,
-    "InvoiceToDate": null,
-    "Currency": 12345678,
-    "Draft": false,
-    "PaidOn": null,
-    "CustomData": "null",
+	"Coworker": 12345678,
+	"Business": 12345678,
+	"InvoiceNumber": "00001",
+	"PaymentReference": "00001",
+	"BillToName": "BillToName",
+	"BillToAddress": "BillToAddress",
+	"BillToCity": "BillToCity",
+	"BillToPostCode": "BillToPostCode",
+	"BillToPhone": "BillToPhone",
+	"BillToFax": "BillToFax",
+	"BillToCountry": 12345678,
+	"BillToBankAccount": "123456",
+	"BillToTaxIDNumber": "123456",
+	"PurchaseOrder": "PurchaseOrder",
+	"DueDate": null,
+	"InvoiceFromDate": null,
+	"InvoiceToDate": null,
+	"Currency": 12345678,
+	"Draft": false,
+	"PaidOn": null,
+	"CustomData": "null",
 }
+
 ```
 
 {% api-method method="put" host="https://spaces.nexudus.com/api" path="/billing/coworkerinvoices" %}
@@ -1071,104 +1083,67 @@ Update
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Updates and existing coworkerinvoice.Required User Role: `coworkerinvoice-edit`
+Updates and existing coworkerinvoice. PUT requests require ALL record properties to be submitted with every request. Any missing properties will be cleared or set to false.
+  
+Required User Role: `coworkerinvoice-edit`
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
+
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
 {% api-method-body-parameters %}
-{% api-method-parameter name="CoworkerId" type="int" required=true %}
 
+{% api-method-parameter name="Id" type="int" required="true" %}
+{% api-method-parameter name="CoworkerId" type="int" required="true" %}
 {% endapi-method-parameter %}
-
-{% api-method-parameter name="BusinessId" type="int" required=true %}
-
+{% api-method-parameter name="BusinessId" type="int" required="true" %}
 {% endapi-method-parameter %}
-
-{% api-method-parameter name="InvoiceNumber" type="string" required=true %}
-
+{% api-method-parameter name="InvoiceNumber" type="string" required="true" %}
 {% endapi-method-parameter %}
-
-{% api-method-parameter name="PaymentReference" type="string" required=false %}
-
+{% api-method-parameter name="PaymentReference" type="string" required="true" %}
 {% endapi-method-parameter %}
-
-{% api-method-parameter name="BillToName" type="string" required=true %}
-
+{% api-method-parameter name="BillToName" type="string" required="true" %}
 {% endapi-method-parameter %}
-
-{% api-method-parameter name="BillToAddress" type="string" required=true %}
-
+{% api-method-parameter name="BillToAddress" type="string" required="true" %}
 {% endapi-method-parameter %}
-
-{% api-method-parameter name="BillToCity" type="string" required=true %}
-
+{% api-method-parameter name="BillToCity" type="string" required="true" %}
 {% endapi-method-parameter %}
-
-{% api-method-parameter name="BillToPostCode" type="string" required=true %}
-
+{% api-method-parameter name="BillToPostCode" type="string" required="true" %}
 {% endapi-method-parameter %}
-
-{% api-method-parameter name="BillToPhone" type="string" required=false %}
-
+{% api-method-parameter name="BillToPhone" type="string" required="true" %}
 {% endapi-method-parameter %}
-
-{% api-method-parameter name="BillToFax" type="string" required=false %}
-
+{% api-method-parameter name="BillToFax" type="string" required="true" %}
 {% endapi-method-parameter %}
-
-{% api-method-parameter name="BillToCountryId" type="int" required=true %}
-
+{% api-method-parameter name="BillToCountryId" type="int" required="true" %}
 {% endapi-method-parameter %}
-
-{% api-method-parameter name="BillToBankAccount" type="string" required=false %}
-
+{% api-method-parameter name="BillToBankAccount" type="string" required="true" %}
 {% endapi-method-parameter %}
-
-{% api-method-parameter name="BillToTaxIDNumber" type="string" required=false %}
-
+{% api-method-parameter name="BillToTaxIDNumber" type="string" required="true" %}
 {% endapi-method-parameter %}
-
-{% api-method-parameter name="PurchaseOrder" type="string" required=false %}
-
+{% api-method-parameter name="PurchaseOrder" type="string" required="true" %}
 {% endapi-method-parameter %}
-
-{% api-method-parameter name="DueDate" type="DateTime?" required=false %}
-
+{% api-method-parameter name="DueDate" type="DateTime?" required="true" %}
 {% endapi-method-parameter %}
-
-{% api-method-parameter name="InvoiceFromDate" type="DateTime?" required=false %}
-
+{% api-method-parameter name="InvoiceFromDate" type="DateTime?" required="true" %}
 {% endapi-method-parameter %}
-
-{% api-method-parameter name="InvoiceToDate" type="DateTime?" required=false %}
-
+{% api-method-parameter name="InvoiceToDate" type="DateTime?" required="true" %}
 {% endapi-method-parameter %}
-
-{% api-method-parameter name="CurrencyId" type="int" required=true %}
-
+{% api-method-parameter name="CurrencyId" type="int" required="true" %}
 {% endapi-method-parameter %}
-
-{% api-method-parameter name="Draft" type="bool" required=false %}
-
+{% api-method-parameter name="Draft" type="bool" required="true" %}
 {% endapi-method-parameter %}
-
-{% api-method-parameter name="PaidOn" type="DateTime?" required=false %}
-
+{% api-method-parameter name="PaidOn" type="DateTime?" required="true" %}
 {% endapi-method-parameter %}
-
-{% api-method-parameter name="CustomData" type="string" required=false %}
-
+{% api-method-parameter name="CustomData" type="string" required="true" %}
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
@@ -1195,7 +1170,7 @@ application/json
 
 {% api-method-response-example httpCode=400 %}
 {% api-method-response-example-description %}
-_This response is an example, errors and messages will follow this structure but keys and descriptions may be different for each record._
+_This response is an example, errors and messages will follow this structure but keys and descriptions may be different for each record._  
 {% endapi-method-response-example-description %}
 
 ```javascript
@@ -1249,33 +1224,37 @@ _This response is an example, errors and messages will follow this structure but
 
 ```javascript
 {
-    "Coworker": 12345678,
-    "Business": 12345678,
-    "InvoiceNumber": "00001",
-    "PaymentReference": "00001",
-    "BillToName": "BillToName",
-    "BillToAddress": "BillToAddress",
-    "BillToCity": "BillToCity",
-    "BillToPostCode": "BillToPostCode",
-    "BillToPhone": "BillToPhone",
-    "BillToFax": "BillToFax",
-    "BillToCountry": 12345678,
-    "BillToBankAccount": "123456",
-    "BillToTaxIDNumber": "123456",
-    "PurchaseOrder": "PurchaseOrder",
-    "DueDate": null,
-    "InvoiceFromDate": null,
-    "InvoiceToDate": null,
-    "Currency": 12345678,
-    "Draft": false,
-    "PaidOn": null,
-    "CustomData": "null",
+	"Coworker": 12345678,
+	"Business": 12345678,
+	"InvoiceNumber": "00001",
+	"PaymentReference": "00001",
+	"BillToName": "BillToName",
+	"BillToAddress": "BillToAddress",
+	"BillToCity": "BillToCity",
+	"BillToPostCode": "BillToPostCode",
+	"BillToPhone": "BillToPhone",
+	"BillToFax": "BillToFax",
+	"BillToCountry": 12345678,
+	"BillToBankAccount": "123456",
+	"BillToTaxIDNumber": "123456",
+	"PurchaseOrder": "PurchaseOrder",
+	"DueDate": null,
+	"InvoiceFromDate": null,
+	"InvoiceToDate": null,
+	"Currency": 12345678,
+	"Draft": false,
+	"PaidOn": null,
+	"CustomData": "null",
 }
+
 ```
+
+
+
 
 ## Commands
 
-Commands allow to perform actions against one or more coworkerinvoice records. Some commands accept only one record while others can run an action for a number of records at the same time. Each command has metadata with information about how it can be used and the amount of records, if any, it needs to run.
+Commands allow to perform actions against one or more coworkerinvoice records. Some commands accept only one record while others can run an action for a number of records at the same time.  Each command has metadata with information about how it can be used and the amount of records, if any, it needs to run.
 
 > ```javascript
 > {
@@ -1297,11 +1276,11 @@ Get all commands available to run for coworkerinvoice records.
 
 {% api-method-spec %}
 {% api-method-request %}
+
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
@@ -1311,7 +1290,7 @@ application/json
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
 {% api-method-response-example-description %}
-_This response is an example._
+_This response is an example._  
 {% endapi-method-response-example-description %}
 
 ```javascript
@@ -1355,11 +1334,11 @@ Run Command
 
 {% api-method-spec %}
 {% api-method-request %}
+
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
-
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
@@ -1371,17 +1350,21 @@ The command Key defining the command to run. `"COMMAND_KEY_1"`
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Parameters" type="array" required=false %}
-A list of object with the structure below. The parameters required for each command are returned in the "RequiresParameters" array return by the "commands" endpoint.`[    
-{    
-"Name": "Name",    
-"Type":"Type",    
-"Value":recordId    
-}    
+A list of object with the structure below. The parameters required for each command are returned in the "RequiresParameters" array return by the "commands" endpoint.  
+  
+`[  
+   {  
+      "Name": "Name",   
+      "Type":"Type",   
+      "Value":recordId  
+    }  
 ]`
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Ids" type="array" required=true %}
-A list of integer IDs for each of the records to run this command for.`[987654321, 123565978]`
+A list of integer IDs for each of the records to run this command for.  
+  
+`[987654321, 123565978]`
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
@@ -1389,7 +1372,7 @@ A list of integer IDs for each of the records to run this command for.`[98765432
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
 {% api-method-response-example-description %}
-_Commands also return a status 200 when they fail to process one or more of the records. Use the 'WasSuccessful' property to know if the command run succeeded._
+_Commands also return a status 200 when they fail to process one or more of the records. Use the 'WasSuccessful'  property to know if the command run succeeded._  
 {% endapi-method-response-example-description %}
 
 ```javascript
@@ -1414,11 +1397,10 @@ _Commands also return a status 200 when they fail to process one or more of the 
 
 The following endpoints return binary data. Check the `ContentType` header to understand the type of file being returned in the response stream.
 
-## Related Entities
 
+## Related Entities
 * [Coworker](../spaces/coworker.md)
 * [Business](../sys/business.md)
-* [Country](https://github.com/Nexudus/api-docs/tree/6c08c63d9c0c6779737ccfddc96f70c6623677d0/rest-api/sys/country.md)
+* [Country](../sys/country.md)
 * [Currency](../sys/currency.md)
 * [Currency](../sys/currency.md)
-
