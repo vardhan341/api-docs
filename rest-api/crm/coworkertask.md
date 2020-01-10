@@ -1,4 +1,6 @@
-﻿{% api-method method="get" host="https://spaces.nexudus.com/api" path="/crm/coworkertasks" %}
+# CoworkerTask
+
+{% api-method method="get" host="https://spaces.nexudus.com/api" path="/crm/coworkertasks" %}
 {% api-method-summary %}
 Find
 {% endapi-method-summary %}
@@ -9,18 +11,17 @@ This endpoint allows you to GET a list of coworkertasks based on one or more fil
 
 {% api-method-spec %}
 {% api-method-request %}
-
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
 {% api-method-query-parameters %}
-
 {% api-method-parameter name="Id" type="int" %}
 ?Id=...
 {% endapi-method-parameter %}
@@ -33,73 +34,61 @@ application/json
 ?CoworkerTask\_SystemId=...
 {% endapi-method-parameter %}
 
-
 {% api-method-parameter name="Business" type="Business" %}
 ?CoworkerTask\_Business=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="Coworker" type="Coworker" %}
 ?CoworkerTask\_Coworker=...
 {% endapi-method-parameter %}
 
-
 {% api-method-parameter name="Name" type="string" %}
 ?CoworkerTask\_Name=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="Notes" type="string" %}
 ?CoworkerTask\_Notes=...
 {% endapi-method-parameter %}
 
-
 {% api-method-parameter name="TaskListName" type="string" %}
 ?CoworkerTask\_TaskListName=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="Completed" type="bool" %}
 ?CoworkerTask\_Completed=...
 {% endapi-method-parameter %}
 
-
 {% api-method-parameter name="DueDate" type="DateTime?" %}
 ?CoworkerTask\_DueDate=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="Responsible" type="User" %}
 ?CoworkerTask\_Responsible=...
 {% endapi-method-parameter %}
 
-
 {% api-method-parameter name="NotifyByEmail" type="bool" %}
 ?CoworkerTask\_NotifyByEmail=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="DisplayToEveryone" type="bool" %}
 ?CoworkerTask\_DisplayToEveryone=...
 {% endapi-method-parameter %}
 
-
 {% api-method-parameter name="Coworker\_FullName" type="string" %}
 ?CoworkerTask\_Coworker\_FullName=...
 {% endapi-method-parameter %}
 
-
 {% api-method-parameter name="Responsible\_FullName" type="string" %}
 ?CoworkerTask\_Responsible\_FullName=...
 {% endapi-method-parameter %}
-
-
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
 
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
 
+{% endapi-method-response-example-description %}
 
 ```javascript
 {
@@ -114,9 +103,6 @@ application/json
         "Responsible": null,
         "NotifyByEmail": true,
         "DisplayToEveryone": true,
-		"CoworkerTaskCoworkerFullName": "...",
-		"CoworkerTaskResponsibleFullName": "...",
-
     }],
     "CurrentPageSize": 25,
     "CurrentPage": 1,
@@ -131,7 +117,6 @@ application/json
     "TotalItems": 60,
     "TotalPages": 3
 }
-
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}
@@ -151,11 +136,11 @@ This endpoint allows you to GET a list of coworkertasks.
 
 {% api-method-spec %}
 {% api-method-request %}
-
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
@@ -223,8 +208,7 @@ size=25 \(maximum=1000\)
 > 🔒 Requires user role `coworkertask-list`
 
 {% hint style="info" %}
-You can also get a list of records based when they were created or updated. This is useful if you want to get a list of records created after or before a particular point in time. 
-You can also use range query parameters for all date, integer and decimal properties.
+You can also get a list of records based when they were created or updated. This is useful if you want to get a list of records created after or before a particular point in time. You can also use range query parameters for all date, integer and decimal properties.
 {% endhint %}
 
 {% api-method method="get" host="https://spaces.nexudus.com/api" path="/crm/coworkertasks" %}
@@ -238,11 +222,11 @@ Gets a list of coworkertasks based on a range of dates, integer or decimal prope
 
 {% api-method-spec %}
 {% api-method-request %}
-
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
@@ -268,10 +252,10 @@ application/json
 {% api-method-parameter name="DueDate" type="datetime" required=false %}
 ?from\_CoworkerTask\_DueDate=...
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="DueDate" type="datetime" required=false %}
 ?to\_CoworkerTask\_DueDate=...
 {% endapi-method-parameter %}
-
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
 
@@ -317,8 +301,7 @@ application/json
 
 > 🔒 Requires user role `coworkertask-list`
 
-
-{% api-method method="get" host="https://spaces.nexudus.com/api" path="/crm/coworkertasks?CoworkerTask_Id=[:id1,:id2,...]" %}
+{% api-method method="get" host="https://spaces.nexudus.com/api" path="/crm/coworkertasks?CoworkerTask\_Id=\[:id1,:id2,...\]" %}
 {% api-method-summary %}
 List by Ids
 {% endapi-method-summary %}
@@ -329,21 +312,21 @@ Gets one or more coworkertask records based on their Id.
 
 {% api-method-spec %}
 {% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="id" type="integer" required=true %}
+Comma-separated list of IDs of every coworkertask to fetch. I.e. \[123456,789102,...\]
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
 
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
-
-{% api-method-path-parameters %}
-{% api-method-parameter name="id" type="integer" required=true %}
-Comma-separated list of IDs of every coworkertask to fetch. I.e. [123456,789102,...] 
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
 {% endapi-method-request %}
 
 {% api-method-response %}
@@ -388,7 +371,7 @@ Comma-separated list of IDs of every coworkertask to fetch. I.e. [123456,789102,
 
 {% endapi-method-response-example-description %}
 
-```
+```text
 "Not found"
 ```
 {% endapi-method-response-example %}
@@ -409,21 +392,21 @@ Gets one coworkertask record.
 
 {% api-method-spec %}
 {% api-method-request %}
-
-{% api-method-headers %}
-{% api-method-parameter name="Authorization" type="string" required=true %}
-Basic Authentication token. Base64 encoding of 'username:password'.
-{% endapi-method-parameter %}
-{% api-method-parameter name="Content" type="string" required=true %}
-application/json
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
-
 {% api-method-path-parameters %}
 {% api-method-parameter name="id" type="integer" required=true %}
 The ID of the coworkertask to fetch.
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
+
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+Basic Authentication token. Base64 encoding of 'username:password'.
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="Content" type="string" required=true %}
+application/json
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
 {% endapi-method-request %}
 
 {% api-method-response %}
@@ -453,7 +436,7 @@ The ID of the coworkertask to fetch.
 
 {% endapi-method-response-example-description %}
 
-```
+```text
 "Not found"
 ```
 {% endapi-method-response-example %}
@@ -462,7 +445,6 @@ The ID of the coworkertask to fetch.
 {% endapi-method %}
 
 > 🔒 Requires user role `coworkertask-read`
-
 
 {% api-method method="post" host="https://spaces.nexudus.com/api" path="/crm/coworkertasks" %}
 {% api-method-summary %}
@@ -475,11 +457,11 @@ Creates a new coworkertask.
 
 {% api-method-spec %}
 {% api-method-request %}
-
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
@@ -487,25 +469,41 @@ application/json
 
 {% api-method-body-parameters %}
 {% api-method-parameter name="BusinessId" type="int" required=true %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="CoworkerId" type="int" required=true %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Name" type="string" required=true %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Notes" type="string" required=false %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Completed" type="bool" required=false %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="DueDate" type="DateTime?" required=false %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="ResponsibleId" type="int" required=true %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="NotifyByEmail" type="bool" required=false %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="DisplayToEveryone" type="bool" required=false %}
+
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
-
 {% endapi-method-request %}
 
 {% api-method-response %}
@@ -528,7 +526,7 @@ application/json
 
 {% api-method-response-example httpCode=400 %}
 {% api-method-response-example-description %}
-_This response is an example, errors and messages will follow this structure but keys and descriptions may be different for each record._  
+_This response is an example, errors and messages will follow this structure but keys and descriptions may be different for each record._
 {% endapi-method-response-example-description %}
 
 ```javascript
@@ -582,17 +580,16 @@ _This response is an example, errors and messages will follow this structure but
 
 ```javascript
 {
-	"Business": 12345678,
-	"Coworker": 12345678,
-	"Name": "00001",
-	"Notes": "Notes",
-	"Completed": true,
-	"DueDate": null,
-	"Responsible": 12345678,
-	"NotifyByEmail": true,
-	"DisplayToEveryone": true,
+    "Business": 12345678,
+    "Coworker": 12345678,
+    "Name": "00001",
+    "Notes": "Notes",
+    "Completed": true,
+    "DueDate": null,
+    "Responsible": 12345678,
+    "NotifyByEmail": true,
+    "DisplayToEveryone": true,
 }
-
 ```
 
 {% api-method method="put" host="https://spaces.nexudus.com/api" path="/crm/coworkertasks" %}
@@ -601,43 +598,56 @@ Update
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Updates and existing coworkertask. PUT requests require ALL record properties to be submitted with every request. Any missing properties will be cleared or set to false.
-  
-Required User Role: `coworkertask-edit`
+Updates and existing coworkertask.Required User Role: `coworkertask-edit`
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
-
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
 {% api-method-body-parameters %}
+{% api-method-parameter name="BusinessId" type="int" required=true %}
 
-{% api-method-parameter name="Id" type="int" required="true" %}
-{% api-method-parameter name="BusinessId" type="int" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="CoworkerId" type="int" required="true" %}
+
+{% api-method-parameter name="CoworkerId" type="int" required=true %}
+
 {% endapi-method-parameter %}
-{% api-method-parameter name="Name" type="string" required="true" %}
+
+{% api-method-parameter name="Name" type="string" required=true %}
+
 {% endapi-method-parameter %}
-{% api-method-parameter name="Notes" type="string" required="true" %}
+
+{% api-method-parameter name="Notes" type="string" required=false %}
+
 {% endapi-method-parameter %}
-{% api-method-parameter name="Completed" type="bool" required="true" %}
+
+{% api-method-parameter name="Completed" type="bool" required=false %}
+
 {% endapi-method-parameter %}
-{% api-method-parameter name="DueDate" type="DateTime?" required="true" %}
+
+{% api-method-parameter name="DueDate" type="DateTime?" required=false %}
+
 {% endapi-method-parameter %}
-{% api-method-parameter name="ResponsibleId" type="int" required="true" %}
+
+{% api-method-parameter name="ResponsibleId" type="int" required=true %}
+
 {% endapi-method-parameter %}
-{% api-method-parameter name="NotifyByEmail" type="bool" required="true" %}
+
+{% api-method-parameter name="NotifyByEmail" type="bool" required=false %}
+
 {% endapi-method-parameter %}
-{% api-method-parameter name="DisplayToEveryone" type="bool" required="true" %}
+
+{% api-method-parameter name="DisplayToEveryone" type="bool" required=false %}
+
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
@@ -664,7 +674,7 @@ application/json
 
 {% api-method-response-example httpCode=400 %}
 {% api-method-response-example-description %}
-_This response is an example, errors and messages will follow this structure but keys and descriptions may be different for each record._  
+_This response is an example, errors and messages will follow this structure but keys and descriptions may be different for each record._
 {% endapi-method-response-example-description %}
 
 ```javascript
@@ -718,21 +728,17 @@ _This response is an example, errors and messages will follow this structure but
 
 ```javascript
 {
-	"Business": 12345678,
-	"Coworker": 12345678,
-	"Name": "00001",
-	"Notes": "Notes",
-	"Completed": true,
-	"DueDate": null,
-	"Responsible": 12345678,
-	"NotifyByEmail": true,
-	"DisplayToEveryone": true,
+    "Business": 12345678,
+    "Coworker": 12345678,
+    "Name": "00001",
+    "Notes": "Notes",
+    "Completed": true,
+    "DueDate": null,
+    "Responsible": 12345678,
+    "NotifyByEmail": true,
+    "DisplayToEveryone": true,
 }
-
 ```
-
-
-
 
 {% api-method method="delete" host="https://spaces.nexudus.com/api" path="/crm/coworkertasks/:id" %}
 {% api-method-summary %}
@@ -740,28 +746,26 @@ Delete
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Deletes a coworkertask.  
-  
-Required User Roles: `coworkertask-delete`
+Deletes a coworkertask.Required User Roles: `coworkertask-delete`
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
-
-{% api-method-headers %}
-{% api-method-parameter name="Authorization" type="string" required=true %}
-Basic Authentication token. Base64 encoding of 'username:password'.
-{% endapi-method-parameter %}
-{% api-method-parameter name="Content" type="string" required=true %}
-application/json
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
-
 {% api-method-path-parameters %}
 {% api-method-parameter name="Id" type="integer" required=false %}
 
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
+
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+Basic Authentication token. Base64 encoding of 'username:password'.
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="Content" type="string" required=true %}
+application/json
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
 {% endapi-method-request %}
 
 {% api-method-response %}
@@ -789,7 +793,7 @@ application/json
 
 {% endapi-method-response-example-description %}
 
-```
+```text
 "Not found"
 ```
 {% endapi-method-response-example %}
@@ -809,14 +813,11 @@ application/json
 {% endapi-method-spec %}
 {% endapi-method %}
 
-
-
 > 🔒 Requires user role `coworkertask-delete`
-
 
 ## Commands
 
-Commands allow to perform actions against one or more coworkertask records. Some commands accept only one record while others can run an action for a number of records at the same time.  Each command has metadata with information about how it can be used and the amount of records, if any, it needs to run.
+Commands allow to perform actions against one or more coworkertask records. Some commands accept only one record while others can run an action for a number of records at the same time. Each command has metadata with information about how it can be used and the amount of records, if any, it needs to run.
 
 > ```javascript
 > {
@@ -838,11 +839,11 @@ Get all commands available to run for coworkertask records.
 
 {% api-method-spec %}
 {% api-method-request %}
-
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
@@ -852,7 +853,7 @@ application/json
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
 {% api-method-response-example-description %}
-_This response is an example._  
+_This response is an example._
 {% endapi-method-response-example-description %}
 
 ```javascript
@@ -896,11 +897,11 @@ Run Command
 
 {% api-method-spec %}
 {% api-method-request %}
-
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
@@ -912,21 +913,17 @@ The command Key defining the command to run. `"COMMAND_KEY_1"`
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Parameters" type="array" required=false %}
-A list of object with the structure below. The parameters required for each command are returned in the "RequiresParameters" array return by the "commands" endpoint.  
-  
-`[  
-   {  
-      "Name": "Name",   
-      "Type":"Type",   
-      "Value":recordId  
-    }  
+A list of object with the structure below. The parameters required for each command are returned in the "RequiresParameters" array return by the "commands" endpoint.`[    
+{    
+"Name": "Name",    
+"Type":"Type",    
+"Value":recordId    
+}    
 ]`
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Ids" type="array" required=true %}
-A list of integer IDs for each of the records to run this command for.  
-  
-`[987654321, 123565978]`
+A list of integer IDs for each of the records to run this command for.`[987654321, 123565978]`
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
@@ -934,7 +931,7 @@ A list of integer IDs for each of the records to run this command for.
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
 {% api-method-response-example-description %}
-_Commands also return a status 200 when they fail to process one or more of the records. Use the 'WasSuccessful'  property to know if the command run succeeded._  
+_Commands also return a status 200 when they fail to process one or more of the records. Use the 'WasSuccessful' property to know if the command run succeeded._
 {% endapi-method-response-example-description %}
 
 ```javascript
@@ -959,8 +956,9 @@ _Commands also return a status 200 when they fail to process one or more of the 
 
 The following endpoints return binary data. Check the `ContentType` header to understand the type of file being returned in the response stream.
 
-
 ## Related Entities
+
 * [Business](../sys/business.md)
 * [Coworker](../spaces/coworker.md)
 * [User](../sys/user.md)
+

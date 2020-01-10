@@ -1,4 +1,6 @@
-﻿{% api-method method="get" host="https://spaces.nexudus.com/api" path="/spaces/bookingproducts" %}
+# BookingProduct
+
+{% api-method method="get" host="https://spaces.nexudus.com/api" path="/spaces/bookingproducts" %}
 {% api-method-summary %}
 Find
 {% endapi-method-summary %}
@@ -9,18 +11,17 @@ This endpoint allows you to GET a list of bookingproducts based on one or more f
 
 {% api-method-spec %}
 {% api-method-request %}
-
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
 {% api-method-query-parameters %}
-
 {% api-method-parameter name="Id" type="int" %}
 ?Id=...
 {% endapi-method-parameter %}
@@ -33,38 +34,33 @@ application/json
 ?BookingProduct\_SystemId=...
 {% endapi-method-parameter %}
 
-
 {% api-method-parameter name="Booking" type="Booking" %}
 ?BookingProduct\_Booking=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="Product" type="Product" %}
 ?BookingProduct\_Product=...
 {% endapi-method-parameter %}
 
-
 {% api-method-parameter name="InvoiceInMinutes" type="bool" %}
 ?BookingProduct\_InvoiceInMinutes=...
 {% endapi-method-parameter %}
-
 
 {% api-method-parameter name="Quantity" type="int" %}
 ?BookingProduct\_Quantity=...
 {% endapi-method-parameter %}
 
-
 {% api-method-parameter name="Product\_Name" type="string" %}
 ?BookingProduct\_Product\_Name=...
 {% endapi-method-parameter %}
-
-
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
 
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
 
+{% endapi-method-response-example-description %}
 
 ```javascript
 {
@@ -73,8 +69,6 @@ application/json
         "Product": null,
         "InvoiceInMinutes": false,
         "Quantity": False,
-		"BookingProductProductName": "...",
-
     }],
     "CurrentPageSize": 25,
     "CurrentPage": 1,
@@ -89,7 +83,6 @@ application/json
     "TotalItems": 60,
     "TotalPages": 3
 }
-
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}
@@ -109,11 +102,11 @@ This endpoint allows you to GET a list of bookingproducts.
 
 {% api-method-spec %}
 {% api-method-request %}
-
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
@@ -175,8 +168,7 @@ size=25 \(maximum=1000\)
 > 🔒 Requires user role `bookingproduct-list`
 
 {% hint style="info" %}
-You can also get a list of records based when they were created or updated. This is useful if you want to get a list of records created after or before a particular point in time. 
-You can also use range query parameters for all date, integer and decimal properties.
+You can also get a list of records based when they were created or updated. This is useful if you want to get a list of records created after or before a particular point in time. You can also use range query parameters for all date, integer and decimal properties.
 {% endhint %}
 
 {% api-method method="get" host="https://spaces.nexudus.com/api" path="/spaces/bookingproducts" %}
@@ -190,11 +182,11 @@ Gets a list of bookingproducts based on a range of dates, integer or decimal pro
 
 {% api-method-spec %}
 {% api-method-request %}
-
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
@@ -220,10 +212,10 @@ application/json
 {% api-method-parameter name="Quantity" type="int" required=false %}
 ?from\_BookingProduct\_Quantity=...
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Quantity" type="int" required=false %}
 ?to\_BookingProduct\_Quantity=...
 {% endapi-method-parameter %}
-
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
 
@@ -263,8 +255,7 @@ application/json
 
 > 🔒 Requires user role `bookingproduct-list`
 
-
-{% api-method method="get" host="https://spaces.nexudus.com/api" path="/spaces/bookingproducts?BookingProduct_Id=[:id1,:id2,...]" %}
+{% api-method method="get" host="https://spaces.nexudus.com/api" path="/spaces/bookingproducts?BookingProduct\_Id=\[:id1,:id2,...\]" %}
 {% api-method-summary %}
 List by Ids
 {% endapi-method-summary %}
@@ -275,21 +266,21 @@ Gets one or more bookingproduct records based on their Id.
 
 {% api-method-spec %}
 {% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="id" type="integer" required=true %}
+Comma-separated list of IDs of every bookingproduct to fetch. I.e. \[123456,789102,...\]
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
 
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
-
-{% api-method-path-parameters %}
-{% api-method-parameter name="id" type="integer" required=true %}
-Comma-separated list of IDs of every bookingproduct to fetch. I.e. [123456,789102,...] 
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
 {% endapi-method-request %}
 
 {% api-method-response %}
@@ -328,7 +319,7 @@ Comma-separated list of IDs of every bookingproduct to fetch. I.e. [123456,78910
 
 {% endapi-method-response-example-description %}
 
-```
+```text
 "Not found"
 ```
 {% endapi-method-response-example %}
@@ -349,21 +340,21 @@ Gets one bookingproduct record.
 
 {% api-method-spec %}
 {% api-method-request %}
-
-{% api-method-headers %}
-{% api-method-parameter name="Authorization" type="string" required=true %}
-Basic Authentication token. Base64 encoding of 'username:password'.
-{% endapi-method-parameter %}
-{% api-method-parameter name="Content" type="string" required=true %}
-application/json
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
-
 {% api-method-path-parameters %}
 {% api-method-parameter name="id" type="integer" required=true %}
 The ID of the bookingproduct to fetch.
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
+
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+Basic Authentication token. Base64 encoding of 'username:password'.
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="Content" type="string" required=true %}
+application/json
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
 {% endapi-method-request %}
 
 {% api-method-response %}
@@ -387,7 +378,7 @@ The ID of the bookingproduct to fetch.
 
 {% endapi-method-response-example-description %}
 
-```
+```text
 "Not found"
 ```
 {% endapi-method-response-example %}
@@ -396,7 +387,6 @@ The ID of the bookingproduct to fetch.
 {% endapi-method %}
 
 > 🔒 Requires user role `bookingproduct-read`
-
 
 {% api-method method="post" host="https://spaces.nexudus.com/api" path="/spaces/bookingproducts" %}
 {% api-method-summary %}
@@ -409,11 +399,11 @@ Creates a new bookingproduct.
 
 {% api-method-spec %}
 {% api-method-request %}
-
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
@@ -421,15 +411,21 @@ application/json
 
 {% api-method-body-parameters %}
 {% api-method-parameter name="BookingId" type="int" required=true %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="ProductId" type="int" required=true %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="InvoiceInMinutes" type="bool" required=false %}
+
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Quantity" type="int" required=true %}
+
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
-
 {% endapi-method-request %}
 
 {% api-method-response %}
@@ -452,7 +448,7 @@ application/json
 
 {% api-method-response-example httpCode=400 %}
 {% api-method-response-example-description %}
-_This response is an example, errors and messages will follow this structure but keys and descriptions may be different for each record._  
+_This response is an example, errors and messages will follow this structure but keys and descriptions may be different for each record._
 {% endapi-method-response-example-description %}
 
 ```javascript
@@ -506,12 +502,11 @@ _This response is an example, errors and messages will follow this structure but
 
 ```javascript
 {
-	"Booking": 12345678,
-	"Product": 12345678,
-	"InvoiceInMinutes": false,
-	"Quantity": False,
+    "Booking": 12345678,
+    "Product": 12345678,
+    "InvoiceInMinutes": false,
+    "Quantity": False,
 }
-
 ```
 
 {% api-method method="put" host="https://spaces.nexudus.com/api" path="/spaces/bookingproducts" %}
@@ -520,33 +515,36 @@ Update
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Updates and existing bookingproduct. PUT requests require ALL record properties to be submitted with every request. Any missing properties will be cleared or set to false.
-  
-Required User Role: `bookingproduct-edit`
+Updates and existing bookingproduct.Required User Role: `bookingproduct-edit`
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
-
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
 {% api-method-body-parameters %}
+{% api-method-parameter name="BookingId" type="int" required=true %}
 
-{% api-method-parameter name="Id" type="int" required="true" %}
-{% api-method-parameter name="BookingId" type="int" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="ProductId" type="int" required="true" %}
+
+{% api-method-parameter name="ProductId" type="int" required=true %}
+
 {% endapi-method-parameter %}
-{% api-method-parameter name="InvoiceInMinutes" type="bool" required="true" %}
+
+{% api-method-parameter name="InvoiceInMinutes" type="bool" required=false %}
+
 {% endapi-method-parameter %}
-{% api-method-parameter name="Quantity" type="int" required="true" %}
+
+{% api-method-parameter name="Quantity" type="int" required=true %}
+
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
@@ -573,7 +571,7 @@ application/json
 
 {% api-method-response-example httpCode=400 %}
 {% api-method-response-example-description %}
-_This response is an example, errors and messages will follow this structure but keys and descriptions may be different for each record._  
+_This response is an example, errors and messages will follow this structure but keys and descriptions may be different for each record._
 {% endapi-method-response-example-description %}
 
 ```javascript
@@ -627,16 +625,12 @@ _This response is an example, errors and messages will follow this structure but
 
 ```javascript
 {
-	"Booking": 12345678,
-	"Product": 12345678,
-	"InvoiceInMinutes": false,
-	"Quantity": False,
+    "Booking": 12345678,
+    "Product": 12345678,
+    "InvoiceInMinutes": false,
+    "Quantity": False,
 }
-
 ```
-
-
-
 
 {% api-method method="delete" host="https://spaces.nexudus.com/api" path="/spaces/bookingproducts/:id" %}
 {% api-method-summary %}
@@ -644,28 +638,26 @@ Delete
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Deletes a bookingproduct.  
-  
-Required User Roles: `bookingproduct-delete`
+Deletes a bookingproduct.Required User Roles: `bookingproduct-delete`
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
-
-{% api-method-headers %}
-{% api-method-parameter name="Authorization" type="string" required=true %}
-Basic Authentication token. Base64 encoding of 'username:password'.
-{% endapi-method-parameter %}
-{% api-method-parameter name="Content" type="string" required=true %}
-application/json
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
-
 {% api-method-path-parameters %}
 {% api-method-parameter name="Id" type="integer" required=false %}
 
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
+
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+Basic Authentication token. Base64 encoding of 'username:password'.
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="Content" type="string" required=true %}
+application/json
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
 {% endapi-method-request %}
 
 {% api-method-response %}
@@ -693,7 +685,7 @@ application/json
 
 {% endapi-method-response-example-description %}
 
-```
+```text
 "Not found"
 ```
 {% endapi-method-response-example %}
@@ -713,14 +705,11 @@ application/json
 {% endapi-method-spec %}
 {% endapi-method %}
 
-
-
 > 🔒 Requires user role `bookingproduct-delete`
-
 
 ## Commands
 
-Commands allow to perform actions against one or more bookingproduct records. Some commands accept only one record while others can run an action for a number of records at the same time.  Each command has metadata with information about how it can be used and the amount of records, if any, it needs to run.
+Commands allow to perform actions against one or more bookingproduct records. Some commands accept only one record while others can run an action for a number of records at the same time. Each command has metadata with information about how it can be used and the amount of records, if any, it needs to run.
 
 > ```javascript
 > {
@@ -742,11 +731,11 @@ Get all commands available to run for bookingproduct records.
 
 {% api-method-spec %}
 {% api-method-request %}
-
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
@@ -756,7 +745,7 @@ application/json
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
 {% api-method-response-example-description %}
-_This response is an example._  
+_This response is an example._
 {% endapi-method-response-example-description %}
 
 ```javascript
@@ -800,11 +789,11 @@ Run Command
 
 {% api-method-spec %}
 {% api-method-request %}
-
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="Content" type="string" required=true %}
 application/json
 {% endapi-method-parameter %}
@@ -816,21 +805,17 @@ The command Key defining the command to run. `"COMMAND_KEY_1"`
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Parameters" type="array" required=false %}
-A list of object with the structure below. The parameters required for each command are returned in the "RequiresParameters" array return by the "commands" endpoint.  
-  
-`[  
-   {  
-      "Name": "Name",   
-      "Type":"Type",   
-      "Value":recordId  
-    }  
+A list of object with the structure below. The parameters required for each command are returned in the "RequiresParameters" array return by the "commands" endpoint.`[    
+{    
+"Name": "Name",    
+"Type":"Type",    
+"Value":recordId    
+}    
 ]`
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Ids" type="array" required=true %}
-A list of integer IDs for each of the records to run this command for.  
-  
-`[987654321, 123565978]`
+A list of integer IDs for each of the records to run this command for.`[987654321, 123565978]`
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
@@ -838,7 +823,7 @@ A list of integer IDs for each of the records to run this command for.
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
 {% api-method-response-example-description %}
-_Commands also return a status 200 when they fail to process one or more of the records. Use the 'WasSuccessful'  property to know if the command run succeeded._  
+_Commands also return a status 200 when they fail to process one or more of the records. Use the 'WasSuccessful' property to know if the command run succeeded._
 {% endapi-method-response-example-description %}
 
 ```javascript
@@ -863,7 +848,8 @@ _Commands also return a status 200 when they fail to process one or more of the 
 
 The following endpoints return binary data. Check the `ContentType` header to understand the type of file being returned in the response stream.
 
-
 ## Related Entities
-* [Booking](../spaces/booking.md)
+
+* [Booking](booking.md)
 * [Product](../billing/product.md)
+
