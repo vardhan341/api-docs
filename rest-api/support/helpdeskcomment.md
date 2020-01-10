@@ -31,23 +31,27 @@ application/json
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="SystemId" type="string" %}
-?HelpDeskComment\_SystemId=...
+?HelpDeskComment_SystemId=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="HelpDeskMessage" type="HelpDeskMessage" %}
-?HelpDeskComment\_HelpDeskMessage=...
+?HelpDeskComment_HelpDeskMessage=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Coworker" type="Coworker" %}
-?HelpDeskComment\_Coworker=...
+?HelpDeskComment_Coworker=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="MessageText" type="string" %}
-?HelpDeskComment\_MessageText=...
+?HelpDeskComment_MessageText=...
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="Internal" type="bool" %}
+?HelpDeskComment_Internal=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Coworker\_FullName" type="string" %}
-?HelpDeskComment\_Coworker\_FullName=...
+?HelpDeskComment_Coworker_FullName=...
 {% endapi-method-parameter %}
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
@@ -79,6 +83,7 @@ application/json
     "TotalPages": 3
 }
 ```
+
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
@@ -154,6 +159,7 @@ size=25 \(maximum=1000\)
     "TotalPages": 3
 }
 ```
+
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
@@ -188,15 +194,15 @@ application/json
 
 {% api-method-query-parameters %}
 {% api-method-parameter name="CreatedOn" type="object" required=false %}
-?to\_HelpDeskComment\_CreatedOn=...
+?to_HelpDeskComment_CreatedOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="UpdatedOn" type="object" required=false %}
-?from\_HelpDeskComment\_CreatedOn=...
+?from_HelpDeskComment_CreatedOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="CreatedOn" type="object" required=false %}
-?from\_HelpDeskComment\_CreatedOn=...
+?from_HelpDeskComment_CreatedOn=...
 {% endapi-method-parameter %}
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
@@ -229,6 +235,83 @@ application/json
     "TotalPages": 3
 }
 ```
+
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+> 🔒 Requires user role `helpdeskcomment-list`
+
+{% api-method method="get" host="https://spaces.nexudus.com/api" path="/support/helpdeskcomments?HelpDeskComment\_Id=\[:id1,:id2,...\]" %}
+{% api-method-summary %}
+One by Id
+{% endapi-method-summary %}
+
+{% api-method-description %}
+Gets one helpdeskcomment record.
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="id" type="integer" required=true %}
+Comma-separated list of IDs of every helpdeskcomment to fetch. I.e. \[123456,789102,...\]
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+Basic Authentication token. Base64 encoding of 'username:password'.
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="Content" type="string" required=true %}
+application/json
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```javascript
+{
+    "Records": [{
+        "HelpDeskMessage": null,
+        "Coworker": null,
+        "MessageText": "MessageText",
+        "Internal": false,
+    }],
+    }],
+    "CurrentPageSize": 25,
+    "CurrentPage": 1,
+    "CurrentOrderField": "Id",
+    "CurrentSortDirection": 1,
+    "FirstItem": 1,
+    "HasNextPage": true,
+    "HasPreviousPage": false,
+    "LastItem": 25,
+    "PageNumber": 1,
+    "PageSize": 25,
+    "TotalItems": 60,
+    "TotalPages": 3
+}
+```
+
+{% endapi-method-response-example %}
+
+{% api-method-response-example httpCode=404 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```text
+"Not found"
+```
+
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
@@ -277,6 +360,7 @@ application/json
         "MessageText": "MessageText",
 }
 ```
+
 {% endapi-method-response-example %}
 
 {% api-method-response-example httpCode=404 %}
@@ -287,6 +371,7 @@ application/json
 ```text
 "Not found"
 ```
+
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
@@ -327,6 +412,10 @@ application/json
 {% api-method-parameter name="MessageText" type="string" required=true %}
 
 {% endapi-method-parameter %}
+
+{% api-method-parameter name="Internal" type="bool" required=false %}
+
+{% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
 
@@ -346,6 +435,7 @@ application/json
     }
 }
 ```
+
 {% endapi-method-response-example %}
 
 {% api-method-response-example httpCode=400 %}
@@ -383,6 +473,7 @@ _This response is an example, errors and messages will follow this structure but
     ]
 }
 ```
+
 {% endapi-method-response-example %}
 
 {% api-method-response-example httpCode=500 %}
@@ -395,12 +486,22 @@ _This response is an example, errors and messages will follow this structure but
     "Message": "An error has occurred."
 }
 ```
+
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
 
 > 🔒 Requires user role `helpdeskcomment-create`
+
+```javascript
+{
+    "HelpDeskMessage": 12345678,
+    "Coworker": 12345678,
+    "MessageText": "MessageText",
+    "Internal": false,
+}
+```
 
 {% api-method method="put" host="https://spaces.nexudus.com/api" path="/support/helpdeskcomments" %}
 {% api-method-summary %}
@@ -413,12 +514,6 @@ Updates and existing helpdeskcomment.Required User Role: `helpdeskcomment-edit`
 
 {% api-method-spec %}
 {% api-method-request %}
-{% api-method-path-parameters %}
-{% api-method-parameter name="Id" type="integer" required=true %}
-The id of the helpdeskcomment to update
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
-
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
@@ -439,6 +534,10 @@ application/json
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="MessageText" type="string" required=true %}
+
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="Internal" type="bool" required=false %}
 
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
@@ -462,6 +561,7 @@ application/json
     "Errors": null
 }
 ```
+
 {% endapi-method-response-example %}
 
 {% api-method-response-example httpCode=400 %}
@@ -499,6 +599,7 @@ _This response is an example, errors and messages will follow this structure but
     ]
 }
 ```
+
 {% endapi-method-response-example %}
 
 {% api-method-response-example httpCode=500 %}
@@ -511,12 +612,22 @@ _This response is an example, errors and messages will follow this structure but
     "Message": "An error has occurred."
 }
 ```
+
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
 
 > 🔒 Requires user role `helpdeskcomment-edit`
+
+```javascript
+{
+    "HelpDeskMessage": 12345678,
+    "Coworker": 12345678,
+    "MessageText": "MessageText",
+    "Internal": false,
+}
+```
 
 {% api-method method="delete" host="https://spaces.nexudus.com/api" path="/support/helpdeskcomments/:id" %}
 {% api-method-summary %}
@@ -564,6 +675,7 @@ application/json
     "Errors": null
 }
 ```
+
 {% endapi-method-response-example %}
 
 {% api-method-response-example httpCode=404 %}
@@ -574,6 +686,7 @@ application/json
 ```text
 "Not found"
 ```
+
 {% endapi-method-response-example %}
 
 {% api-method-response-example httpCode=500 %}
@@ -586,6 +699,7 @@ application/json
     "Message": "An error has occurred."
 }
 ```
+
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
@@ -659,6 +773,7 @@ _This response is an example._
     ...
 ]
 ```
+
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
@@ -691,13 +806,7 @@ The command Key defining the command to run. `"COMMAND_KEY_1"`
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Parameters" type="array" required=false %}
-A list of object with the structure below. The parameters required for each command are returned in the "RequiresParameters" array return by the "commands" endpoint.`[    
-{    
-"Name": "Name",    
-"Type":"Type",    
-"Value":recordId    
-}    
-]`
+A list of object with the structure below. The parameters required for each command are returned in the "RequiresParameters" array return by the "commands" endpoint.`[ { "Name": "Name", "Type":"Type", "Value":recordId } ]`
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Ids" type="array" required=true %}
@@ -713,7 +822,7 @@ _Commands also return a status 200 when they fail to process one or more of the 
 {% endapi-method-response-example-description %}
 
 ```javascript
-{  
+{
    "Status":500 or 200,
    "Message":"Command error description",
    "Value":null,
@@ -721,6 +830,7 @@ _Commands also return a status 200 when they fail to process one or more of the 
    "WasSuccessful":false
 }
 ```
+
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
@@ -734,6 +844,5 @@ The following endpoints return binary data. Check the `ContentType` header to un
 
 ## Related Entities
 
-* [HelpDeskMessage](helpdeskmessage.md)
-* [Coworker](../spaces/coworker.md)
-
+- [HelpDeskMessage](helpdeskmessage.md)
+- [Coworker](../spaces/coworker.md)

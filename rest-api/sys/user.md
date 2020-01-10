@@ -31,123 +31,135 @@ application/json
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="SystemId" type="string" %}
-?User\_SystemId=...
+?User_SystemId=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="FullName" type="string" %}
-?User\_FullName=...
+?User_FullName=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Email" type="string" %}
-?User\_Email=...
+?User_Email=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="AccessToken" type="string" %}
-?User\_AccessToken=...
+?User_AccessToken=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="PreferredLanguage" type="Language" %}
-?User\_PreferredLanguage=...
+?User_PreferredLanguage=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="NewPassword" type="string" %}
-?User\_NewPassword=...
+?User_NewPassword=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="PassportNumber" type="string" %}
-?User\_PassportNumber=...
+?User_PassportNumber=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="PassportCardNumber" type="string" %}
-?User\_PassportCardNumber=...
+?User_PassportCardNumber=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="EnablePassportAccess" type="bool" %}
-?User\_EnablePassportAccess=...
+?User_EnablePassportAccess=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Active" type="bool" %}
-?User\_Active=...
+?User_Active=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="IsAdmin" type="bool" %}
-?User\_IsAdmin=...
+?User_IsAdmin=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="APIAccess" type="bool" %}
-?User\_APIAccess=...
+?User_APIAccess=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Validated" type="bool" %}
-?User\_Validated=...
+?User_Validated=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="MustResetPassword" type="bool" %}
-?User\_MustResetPassword=...
+?User_MustResetPassword=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="LastAccess" type="DateTime?" %}
-?User\_LastAccess=...
+?User_LastAccess=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Devices" type="string" %}
-?User\_Devices=...
+?User_Devices=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="OnNewEmail" type="bool" %}
-?User\_OnNewEmail=...
+?User_OnNewEmail=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="OnHelpDeskMsg" type="bool" %}
-?User\_OnHelpDeskMsg=...
+?User_OnHelpDeskMsg=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="OnNewWallPost" type="bool" %}
-?User\_OnNewWallPost=...
+?User_OnNewWallPost=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="OnNewMember" type="bool" %}
-?User\_OnNewMember=...
+?User_OnNewMember=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="OnProfileChanges" type="bool" %}
-?User\_OnProfileChanges=...
+?User_OnProfileChanges=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="OnNewBlogComment" type="bool" %}
-?User\_OnNewBlogComment=...
+?User_OnNewBlogComment=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="OnNewEventComment" type="bool" %}
-?User\_OnNewEventComment=...
+?User_OnNewEventComment=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="OnTariffChange" type="bool" %}
-?User\_OnTariffChange=...
+?User_OnTariffChange=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="OnBookingChange" type="bool" %}
-?User\_OnBookingChange=...
+?User_OnBookingChange=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="OnPurchases" type="bool" %}
-?User\_OnPurchases=...
+?User_OnPurchases=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="OnVisitorRegistration" type="bool" %}
-?User\_OnVisitorRegistration=...
+?User_OnVisitorRegistration=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="OnPlaformInvoices" type="bool" %}
-?User\_OnPlaformInvoices=...
+?User_OnPlaformInvoices=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="ReceiveCommunityDigest" type="bool" %}
-?User\_ReceiveCommunityDigest=...
+?User_ReceiveCommunityDigest=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="ReceiveEveryMessage" type="bool" %}
-?User\_ReceiveEveryMessage=...
+?User_ReceiveEveryMessage=...
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="Businesses" type="int" required=false %}
+?User_Businesses=...
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="UserRoles" type="int" required=false %}
+?User_UserRoles=...
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="ChatRooms" type="int" required=false %}
+?User_ChatRooms=...
 {% endapi-method-parameter %}
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
@@ -205,6 +217,7 @@ application/json
     "TotalPages": 3
 }
 ```
+
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
@@ -306,6 +319,7 @@ size=25 \(maximum=1000\)
     "TotalPages": 3
 }
 ```
+
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
@@ -340,27 +354,27 @@ application/json
 
 {% api-method-query-parameters %}
 {% api-method-parameter name="CreatedOn" type="object" required=false %}
-?to\_User\_CreatedOn=...
+?to_User_CreatedOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="CreatedOn" type="object" required=false %}
-?from\_User\_CreatedOn=...
+?from_User_CreatedOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="UpdatedOn" type="object" required=false %}
-?to\_User\_UpdatedOn=...
+?to_User_UpdatedOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="UpdatedOn" type="object" required=false %}
-?from\_User\_UpdatedOn=...
+?from_User_UpdatedOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="LastAccess" type="datetime" required=false %}
-?from\_User\_LastAccess=...
+?from_User_LastAccess=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="LastAccess" type="datetime" required=false %}
-?to\_User\_LastAccess=...
+?to_User_LastAccess=...
 {% endapi-method-parameter %}
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
@@ -419,6 +433,108 @@ application/json
     "TotalPages": 3
 }
 ```
+
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+> 🔒 Requires user role `user-list`
+
+{% api-method method="get" host="https://spaces.nexudus.com/api" path="/sys/users?User\_Id=\[:id1,:id2,...\]" %}
+{% api-method-summary %}
+One by Id
+{% endapi-method-summary %}
+
+{% api-method-description %}
+Gets one user record.
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="id" type="integer" required=true %}
+Comma-separated list of IDs of every user to fetch. I.e. \[123456,789102,...\]
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+Basic Authentication token. Base64 encoding of 'username:password'.
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="Content" type="string" required=true %}
+application/json
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```javascript
+{
+    "Records": [{
+        "FullName": "Full Name",
+        "Email": "email@email.com",
+        "AccessToken": "hush",
+        "PreferredLanguage": null,
+        "NewPassword": "password",
+        "PassportNumber": "",
+        "PassportCardNumber": "",
+        "EnablePassportAccess": false,
+        "Active": true,
+        "IsAdmin": false,
+        "APIAccess": false,
+        "Validated": true,
+        "MustResetPassword": true,
+        "LastAccess": false,
+        "Devices": "Devices",
+        "OnNewEmail": true,
+        "OnHelpDeskMsg": true,
+        "OnNewWallPost": true,
+        "OnNewMember": true,
+        "OnProfileChanges": true,
+        "OnNewBlogComment": true,
+        "OnNewEventComment": true,
+        "OnTariffChange": true,
+        "OnBookingChange": true,
+        "OnPurchases": true,
+        "OnVisitorRegistration": true,
+        "OnPlaformInvoices": true,
+        "ReceiveCommunityDigest": true,
+        "ReceiveEveryMessage": true,
+    }],
+    }],
+    "CurrentPageSize": 25,
+    "CurrentPage": 1,
+    "CurrentOrderField": "Id",
+    "CurrentSortDirection": 1,
+    "FirstItem": 1,
+    "HasNextPage": true,
+    "HasPreviousPage": false,
+    "LastItem": 25,
+    "PageNumber": 1,
+    "PageSize": 25,
+    "TotalItems": 60,
+    "TotalPages": 3
+}
+```
+
+{% endapi-method-response-example %}
+
+{% api-method-response-example httpCode=404 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```text
+"Not found"
+```
+
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
@@ -493,6 +609,7 @@ application/json
         "ReceiveEveryMessage": true,
 }
 ```
+
 {% endapi-method-response-example %}
 
 {% api-method-response-example httpCode=404 %}
@@ -503,6 +620,7 @@ application/json
 ```text
 "Not found"
 ```
+
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
@@ -545,22 +663,6 @@ application/json
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="PreferredLanguageId" type="int" required=false %}
-
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="NewPassword" type="string" required=false %}
-
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="PassportNumber" type="string" required=false %}
-
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="PassportCardNumber" type="string" required=false %}
-
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="EnablePassportAccess" type="bool" required=false %}
 
 {% endapi-method-parameter %}
 
@@ -666,6 +768,7 @@ application/json
     }
 }
 ```
+
 {% endapi-method-response-example %}
 
 {% api-method-response-example httpCode=400 %}
@@ -703,6 +806,7 @@ _This response is an example, errors and messages will follow this structure but
     ]
 }
 ```
+
 {% endapi-method-response-example %}
 
 {% api-method-response-example httpCode=500 %}
@@ -715,12 +819,49 @@ _This response is an example, errors and messages will follow this structure but
     "Message": "An error has occurred."
 }
 ```
+
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
 
 > 🔒 Requires user role `user-create`
+
+```javascript
+{
+    "FullName": "Full Name",
+    "Email": "email@email.com",
+    "AccessToken": "hush",
+    "PreferredLanguage": 12345678,
+    "Active": true,
+    "IsAdmin": false,
+    "APIAccess": false,
+    "Validated": true,
+    "MustResetPassword": true,
+    "LastAccess": false,
+    "Devices": "Devices",
+    "OnNewEmail": true,
+    "OnHelpDeskMsg": true,
+    "OnNewWallPost": true,
+    "OnNewMember": true,
+    "OnProfileChanges": true,
+    "OnNewBlogComment": true,
+    "OnNewEventComment": true,
+    "OnTariffChange": true,
+    "OnBookingChange": true,
+    "OnPurchases": true,
+    "OnVisitorRegistration": true,
+    "OnPlaformInvoices": true,
+    "ReceiveCommunityDigest": true,
+    "ReceiveEveryMessage": true,
+    "Businesses": [12345678, 87654321] (replaces entire list),
+    "AddedBusinesses": [12345678, 87654321] (adds to list),
+    "RemovedBusinesses": [12345678, 87654321] (removes from list),
+    "UserRoles": [12345678, 87654321] (replaces entire list),
+    "AddedUserRoles": [12345678, 87654321] (adds to list),
+    "RemovedUserRoles": [12345678, 87654321] (removes from list),
+}
+```
 
 {% api-method method="put" host="https://spaces.nexudus.com/api" path="/sys/users" %}
 {% api-method-summary %}
@@ -733,12 +874,6 @@ Updates and existing user.Required User Role: `user-edit`
 
 {% api-method-spec %}
 {% api-method-request %}
-{% api-method-path-parameters %}
-{% api-method-parameter name="Id" type="integer" required=true %}
-The id of the user to update
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
-
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
@@ -853,6 +988,30 @@ application/json
 {% api-method-parameter name="ReceiveEveryMessage" type="bool" required=false %}
 
 {% endapi-method-parameter %}
+
+{% api-method-parameter name="Businesses" type="int\[\]" required=false %}
+
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="AddedBusinesses" type="int\[\]" required=false %}
+
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="RemovedBusinesses" type="int\[\]" required=false %}
+
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="UserRoles" type="int\[\]" required=false %}
+
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="AddedUserRoles" type="int\[\]" required=false %}
+
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="RemovedUserRoles" type="int\[\]" required=false %}
+
+{% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
 
@@ -874,6 +1033,7 @@ application/json
     "Errors": null
 }
 ```
+
 {% endapi-method-response-example %}
 
 {% api-method-response-example httpCode=400 %}
@@ -911,6 +1071,7 @@ _This response is an example, errors and messages will follow this structure but
     ]
 }
 ```
+
 {% endapi-method-response-example %}
 
 {% api-method-response-example httpCode=500 %}
@@ -923,12 +1084,50 @@ _This response is an example, errors and messages will follow this structure but
     "Message": "An error has occurred."
 }
 ```
+
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
 
 > 🔒 Requires user role `user-edit`
+
+```javascript
+{
+    "FullName": "Full Name",
+    "Email": "email@email.com",
+    "AccessToken": "hush",
+    "PreferredLanguage": 12345678,
+    "NewPassword": "password",
+    "Active": true,
+    "IsAdmin": false,
+    "APIAccess": false,
+    "Validated": true,
+    "MustResetPassword": true,
+    "LastAccess": false,
+    "Devices": "Devices",
+    "OnNewEmail": true,
+    "OnHelpDeskMsg": true,
+    "OnNewWallPost": true,
+    "OnNewMember": true,
+    "OnProfileChanges": true,
+    "OnNewBlogComment": true,
+    "OnNewEventComment": true,
+    "OnTariffChange": true,
+    "OnBookingChange": true,
+    "OnPurchases": true,
+    "OnVisitorRegistration": true,
+    "OnPlaformInvoices": true,
+    "ReceiveCommunityDigest": true,
+    "ReceiveEveryMessage": true,
+    "Businesses": [12345678, 87654321] (replaces entire list),
+    "AddedBusinesses": [12345678, 87654321] (adds to list),
+    "RemovedBusinesses": [12345678, 87654321] (removes from list),
+    "UserRoles": [12345678, 87654321] (replaces entire list),
+    "AddedUserRoles": [12345678, 87654321] (adds to list),
+    "RemovedUserRoles": [12345678, 87654321] (removes from list),
+}
+```
 
 {% api-method method="delete" host="https://spaces.nexudus.com/api" path="/sys/users/:id" %}
 {% api-method-summary %}
@@ -976,6 +1175,7 @@ application/json
     "Errors": null
 }
 ```
+
 {% endapi-method-response-example %}
 
 {% api-method-response-example httpCode=404 %}
@@ -986,6 +1186,7 @@ application/json
 ```text
 "Not found"
 ```
+
 {% endapi-method-response-example %}
 
 {% api-method-response-example httpCode=500 %}
@@ -998,6 +1199,7 @@ application/json
     "Message": "An error has occurred."
 }
 ```
+
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
@@ -1071,6 +1273,7 @@ _This response is an example._
     ...
 ]
 ```
+
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
@@ -1103,13 +1306,7 @@ The command Key defining the command to run. `"COMMAND_KEY_1"`
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Parameters" type="array" required=false %}
-A list of object with the structure below. The parameters required for each command are returned in the "RequiresParameters" array return by the "commands" endpoint.`[    
-{    
-"Name": "Name",    
-"Type":"Type",    
-"Value":recordId    
-}    
-]`
+A list of object with the structure below. The parameters required for each command are returned in the "RequiresParameters" array return by the "commands" endpoint.`[ { "Name": "Name", "Type":"Type", "Value":recordId } ]`
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Ids" type="array" required=true %}
@@ -1125,7 +1322,7 @@ _Commands also return a status 200 when they fail to process one or more of the 
 {% endapi-method-response-example-description %}
 
 ```javascript
-{  
+{
    "Status":500 or 200,
    "Message":"Command error description",
    "Value":null,
@@ -1133,12 +1330,19 @@ _Commands also return a status 200 when they fail to process one or more of the 
    "WasSuccessful":false
 }
 ```
+
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
 
 > 🔒 Requires user role `user-edit`
+
+## Enumerated values
+
+### Language:
+
+> GET /api/utils/enums?name=eLanguage
 
 ## Binary files
 
@@ -1181,6 +1385,7 @@ application/json
 ```javascript
 Binary stream or null
 ```
+
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
@@ -1188,7 +1393,6 @@ Binary stream or null
 
 ## Related Entities
 
-* [Language](https://github.com/Nexudus/api-docs/tree/2e2814b15bdd5d4d053cccba6121ef9679021ec9/rest-api/sys/language.md)
-* [Application](https://github.com/Nexudus/api-docs/tree/2e2814b15bdd5d4d053cccba6121ef9679021ec9/rest-api/apps/application.md)
-* [Business](business.md)
-
+- [Language](https://github.com/Nexudus/api-docs/tree/6c08c63d9c0c6779737ccfddc96f70c6623677d0/rest-api/sys/language.md)
+- [Application](https://github.com/Nexudus/api-docs/tree/6c08c63d9c0c6779737ccfddc96f70c6623677d0/rest-api/apps/application.md)
+- [Business](business.md)

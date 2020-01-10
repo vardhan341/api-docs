@@ -54,8 +54,16 @@ application/json
 ?HelpDeskMessage\_MessageText=...
 {% endapi-method-parameter %}
 
+{% api-method-parameter name="Priority" type="enum" %}
+?HelpDeskMessage\_Priority=...
+{% endapi-method-parameter %}
+
 {% api-method-parameter name="Closed" type="bool" %}
 ?HelpDeskMessage\_Closed=...
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="ClosedOn" type="DateTime?" %}
+?HelpDeskMessage\_ClosedOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Coworker\_FullName" type="string" %}
@@ -217,8 +225,12 @@ application/json
 ?from\_HelpDeskMessage\_CreatedOn=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="CreatedOn" type="object" required=false %}
-?from\_HelpDeskMessage\_CreatedOn=...
+{% api-method-parameter name="ClosedOn" type="datetime" required=false %}
+?from\_HelpDeskMessage\_ClosedOn=...
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="ClosedOn" type="datetime" required=false %}
+?to\_HelpDeskMessage\_ClosedOn=...
 {% endapi-method-parameter %}
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
@@ -253,6 +265,84 @@ application/json
     "TotalItems": 60,
     "TotalPages": 3
 }
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+> 🔒 Requires user role `helpdeskmessage-list`
+
+{% api-method method="get" host="https://spaces.nexudus.com/api" path="/support/helpdeskmessages?HelpDeskMessage\_Id=\[:id1,:id2,...\]" %}
+{% api-method-summary %}
+One by Id
+{% endapi-method-summary %}
+
+{% api-method-description %}
+Gets one helpdeskmessage record.
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="id" type="integer" required=true %}
+Comma-separated list of IDs of every helpdeskmessage to fetch. I.e. \[123456,789102,...\]
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+Basic Authentication token. Base64 encoding of 'username:password'.
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="Content" type="string" required=true %}
+application/json
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```javascript
+{
+    "Records": [{
+        "Business": null,
+        "Coworker": null,
+        "HelpDeskDepartment": null,
+        "Subject": "Name",
+        "MessageText": "MessageText",
+        "Priority": Nexudus.Coworking.Core.Enums.eHelpDeskMessagePriority.Normal,
+        "Closed": false,
+        "ClosedOn": ,
+    }],
+    }],
+    "CurrentPageSize": 25,
+    "CurrentPage": 1,
+    "CurrentOrderField": "Id",
+    "CurrentSortDirection": 1,
+    "FirstItem": 1,
+    "HasNextPage": true,
+    "HasPreviousPage": false,
+    "LastItem": 25,
+    "PageNumber": 1,
+    "PageSize": 25,
+    "TotalItems": 60,
+    "TotalPages": 3
+}
+```
+{% endapi-method-response-example %}
+
+{% api-method-response-example httpCode=404 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```text
+"Not found"
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}
@@ -364,7 +454,15 @@ application/json
 
 {% endapi-method-parameter %}
 
+{% api-method-parameter name="Priority" type="enum" required=false %}
+
+{% endapi-method-parameter %}
+
 {% api-method-parameter name="Closed" type="bool" required=false %}
+
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="ClosedOn" type="DateTime?" required=false %}
 
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
@@ -442,6 +540,19 @@ _This response is an example, errors and messages will follow this structure but
 
 > 🔒 Requires user role `helpdeskmessage-create`
 
+```javascript
+{
+    "Business": 12345678,
+    "Coworker": 12345678,
+    "HelpDeskDepartment": 12345678,
+    "Subject": "Name",
+    "MessageText": "MessageText",
+    "Priority": 1 (check Enumerated values section below),
+    "Closed": false,
+    "ClosedOn": ,
+}
+```
+
 {% api-method method="put" host="https://spaces.nexudus.com/api" path="/support/helpdeskmessages" %}
 {% api-method-summary %}
 Update
@@ -453,12 +564,6 @@ Updates and existing helpdeskmessage.Required User Role: `helpdeskmessage-edit`
 
 {% api-method-spec %}
 {% api-method-request %}
-{% api-method-path-parameters %}
-{% api-method-parameter name="Id" type="integer" required=true %}
-The id of the helpdeskmessage to update
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
-
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
@@ -490,7 +595,15 @@ application/json
 
 {% endapi-method-parameter %}
 
+{% api-method-parameter name="Priority" type="enum" required=false %}
+
+{% endapi-method-parameter %}
+
 {% api-method-parameter name="Closed" type="bool" required=false %}
+
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="ClosedOn" type="DateTime?" required=false %}
 
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
@@ -569,6 +682,19 @@ _This response is an example, errors and messages will follow this structure but
 {% endapi-method %}
 
 > 🔒 Requires user role `helpdeskmessage-edit`
+
+```javascript
+{
+    "Business": 12345678,
+    "Coworker": 12345678,
+    "HelpDeskDepartment": 12345678,
+    "Subject": "Name",
+    "MessageText": "MessageText",
+    "Priority": 1 (check Enumerated values section below),
+    "Closed": false,
+    "ClosedOn": ,
+}
+```
 
 {% api-method method="delete" host="https://spaces.nexudus.com/api" path="/support/helpdeskmessages/:id" %}
 {% api-method-summary %}
@@ -779,6 +905,12 @@ _Commands also return a status 200 when they fail to process one or more of the 
 {% endapi-method %}
 
 > 🔒 Requires user role `helpdeskmessage-edit`
+
+## Enumerated values
+
+### Priority:
+
+> GET /api/utils/enums?name=eHelpDeskMessagePriority
 
 ## Binary files
 

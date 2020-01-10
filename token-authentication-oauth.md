@@ -12,7 +12,7 @@ The general process to use token authentication is as follows:
 2. Refresh the access token as needed by using a refresh token.
 3. Use the "Bearer" HTTP header to make requests to the [REST API](rest-api/).
 
-Access tokens are generally short-lived and you should not assume they last for more than a few minutes or hours. 
+Access tokens are generally short-lived and you should not assume they last for more than a few minutes or hours.
 
 {% hint style="danger" %}
 You should always keep your refresh tokens secure, treat them as passwords.
@@ -24,9 +24,7 @@ Authentication and Refresh Token
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Gets a short-lived access token and a long-lived refresh token.  
-  
-`grant_ype=password&username=EMAIL_ADDRESS&  
+Gets a short-lived access token and a long-lived refresh token.`grant_type=password&username=EMAIL_ADDRESS&    
 password=Demo1234`
 {% endapi-method-description %}
 
@@ -41,8 +39,15 @@ A unique identifier for the client making these requests. A single refresh token
 application/json
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
+{% api-method-parameter name="Content-Type" type="string" required=true %}
+application/x-www-form-urlencoded
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
 
 {% api-method-body-parameters %}
+
+Set body content type to 'x-www-form-urlencoded'.
+
 {% api-method-parameter name="grant\_type" required=true type="string" %}
 password
 {% endapi-method-parameter %}
@@ -52,7 +57,7 @@ your email
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="password" type="string" required=true %}
-your password  
+your password
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
@@ -95,9 +100,7 @@ Refresh Access Token
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Gets a new short-lived access token based on a refresh token. Refreshing a token for a client ID will invalidate all previous refresh tokens for that client ID but not existing Access Tokens that may not have expired.  
-  
-Refresh Tokens are valid for 15 days. If your refresh token has expired, you will need to use a username and password to create a new access token.
+Gets a new short-lived access token based on a refresh token. Refreshing a token for a client ID will invalidate all previous refresh tokens for that client ID but not existing Access Tokens that may not have expired.Refresh Tokens are valid for 15 days. If your refresh token has expired, you will need to use a username and password to create a new access token.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -135,7 +138,7 @@ refresh\_token
     "token_type": "bearer",
     "expires_in": 604799,
     "refresh_token": "c3c14715..."
-}    
+}
 ```
 {% endapi-method-response-example %}
 

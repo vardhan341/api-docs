@@ -232,6 +232,79 @@ application/json
 
 > 🔒 Requires user role `currency-list`
 
+{% api-method method="get" host="https://spaces.nexudus.com/api" path="/sys/currencies?Currency\_Id=\[:id1,:id2,...\]" %}
+{% api-method-summary %}
+One by Id
+{% endapi-method-summary %}
+
+{% api-method-description %}
+Gets one currency record.
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="id" type="integer" required=true %}
+Comma-separated list of IDs of every currency to fetch. I.e. \[123456,789102,...\]
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+Basic Authentication token. Base64 encoding of 'username:password'.
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="Content" type="string" required=true %}
+application/json
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```javascript
+{
+    "Records": [{
+        "Name": "Euros",
+        "Code": "EUR",
+        "Format": "€{0:0.00}",
+    }],
+    }],
+    "CurrentPageSize": 25,
+    "CurrentPage": 1,
+    "CurrentOrderField": "Id",
+    "CurrentSortDirection": 1,
+    "FirstItem": 1,
+    "HasNextPage": true,
+    "HasPreviousPage": false,
+    "LastItem": 25,
+    "PageNumber": 1,
+    "PageSize": 25,
+    "TotalItems": 60,
+    "TotalPages": 3
+}
+```
+{% endapi-method-response-example %}
+
+{% api-method-response-example httpCode=404 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```text
+"Not found"
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+> 🔒 Requires user role `currency-list`
+
 {% api-method method="get" host="https://spaces.nexudus.com/api" path="/sys/currencies/:id" %}
 {% api-method-summary %}
 One by Id
@@ -398,6 +471,14 @@ _This response is an example, errors and messages will follow this structure but
 
 > 🔒 Requires user role `currency-create`
 
+```javascript
+{
+    "Name": "Euros",
+    "Code": "EUR",
+    "Format": "€{0:0.00}",
+}
+```
+
 {% api-method method="put" host="https://spaces.nexudus.com/api" path="/sys/currencies" %}
 {% api-method-summary %}
 Update
@@ -409,12 +490,6 @@ Updates and existing currency.Required User Role: `currency-edit`
 
 {% api-method-spec %}
 {% api-method-request %}
-{% api-method-path-parameters %}
-{% api-method-parameter name="Id" type="integer" required=true %}
-The id of the currency to update
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
-
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
@@ -513,6 +588,14 @@ _This response is an example, errors and messages will follow this structure but
 {% endapi-method %}
 
 > 🔒 Requires user role `currency-edit`
+
+```javascript
+{
+    "Name": "Euros",
+    "Code": "EUR",
+    "Format": "€{0:0.00}",
+}
+```
 
 ## Commands
 

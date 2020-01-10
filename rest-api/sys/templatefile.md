@@ -1,12 +1,12 @@
-# Charge
+# TemplateFile
 
-{% api-method method="get" host="https://spaces.nexudus.com/api" path="/billing/charges" %}
+{% api-method method="get" host="https://spaces.nexudus.com/api" path="/sys/templatefiles" %}
 {% api-method-summary %}
-Find
+Find.
 {% endapi-method-summary %}
 
 {% api-method-description %}
-This endpoint allows you to GET a list of charges based on one or more filter querystring parameters.
+This endpoint allows you to GET a list of templatefiles based on one or more filter querystring parameters.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -31,91 +31,55 @@ application/json
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="SystemId" type="string" %}
-?Charge\_SystemId=...
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="Coworker" type="Coworker" %}
-?Charge\_Coworker=...
+?TemplateFile\_SystemId=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Business" type="Business" %}
-?Charge\_Business=...
+?TemplateFile\_Business=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="ChargeNumber" type="string" %}
-?Charge\_ChargeNumber=...
+{% api-method-parameter name="TemplateVersion" type="TemplateVersion" %}
+?TemplateFile\_TemplateVersion=...
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="Name" type="string" %}
+?TemplateFile\_Name=...
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="Title" type="string" %}
+?TemplateFile\_Title=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Description" type="string" %}
-?Charge\_Description=...
+?TemplateFile\_Description=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="RegularCharge" type="bool" %}
-?Charge\_RegularCharge=...
+{% api-method-parameter name="Permalink" type="string" %}
+?TemplateFile\_Permalink=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="DiscountAmount" type="decimal" %}
-?Charge\_DiscountAmount=...
+{% api-method-parameter name="FileLanguage" type="Language" %}
+?TemplateFile\_FileLanguage=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="DueDate" type="DateTime?" %}
-?Charge\_DueDate=...
+{% api-method-parameter name="Published" type="bool" %}
+?TemplateFile\_Published=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="TotalAmount" type="decimal" %}
-?Charge\_TotalAmount=...
+{% api-method-parameter name="Visibility" type="enum" %}
+?TemplateFile\_Visibility=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="TaxRate" type="TaxRate" %}
-?Charge\_TaxRate=...
+{% api-method-parameter name="Password" type="string" %}
+?TemplateFile\_Password=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="FinancialAccount" type="FinancialAccount" %}
-?Charge\_FinancialAccount=...
+{% api-method-parameter name="IsCustom" type="bool" %}
+?TemplateFile\_IsCustom=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="Invoiced" type="bool" %}
-?Charge\_Invoiced=...
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="InvoicedOn" type="DateTime?" %}
-?Charge\_InvoicedOn=...
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="CoworkerContractUniqueId" type="Guid?" %}
-?Charge\_CoworkerContractUniqueId=...
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="CoworkerExtraServiceUniqueId" type="Guid?" %}
-?Charge\_CoworkerExtraServiceUniqueId=...
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="CoworkerTimePassUniqueId" type="Guid?" %}
-?Charge\_CoworkerTimePassUniqueId=...
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="CoworkerChargeUniqueId" type="Guid?" %}
-?Charge\_CoworkerChargeUniqueId=...
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="EventAttendeeUniqueId" type="Guid?" %}
-?Charge\_EventAttendeeUniqueId=...
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="InvoiceFromDate" type="DateTime?" %}
-?Charge\_InvoiceFromDate=...
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="InvoiceToDate" type="DateTime?" %}
-?Charge\_InvoiceToDate=...
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="Business\_Name" type="string" %}
-?Charge\_Business\_Name=...
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="Business\_Currency\_Code" type="string" %}
-?Charge\_Business\_Currency\_Code=...
+{% api-method-parameter name="FileContents" type="string" %}
+?TemplateFile\_FileContents=...
 {% endapi-method-parameter %}
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
@@ -129,25 +93,18 @@ application/json
 ```javascript
 {
     "Records": [{
-        "Coworker": null,
         "Business": null,
-        "ChargeNumber": "00001",
-        "Description": "[DataType(DataType.MultilineText)]",
-        "RegularCharge": false,
-        "DiscountAmount": 0,
-        "DueDate": null,
-        "TotalAmount": 0,
-        "TaxRate": null,
-        "FinancialAccount": null,
-        "Invoiced": false,
-        "InvoicedOn": null,
-        "CoworkerContractUniqueId": ,
-        "CoworkerExtraServiceUniqueId": ,
-        "CoworkerTimePassUniqueId": ,
-        "CoworkerChargeUniqueId": ,
-        "EventAttendeeUniqueId": ,
-        "InvoiceFromDate": ,
-        "InvoiceToDate": ,
+        "TemplateVersion": null,
+        "Name": "Name",
+        "Title": "Title",
+        "Description": "Descripción",
+        "Permalink": "Permalink",
+        "FileLanguage": null,
+        "Published": false,
+        "Visibility": Nexudus.Coworking.Core.Enums.eTemplateFileVisibility.Public,
+        "Password": "False",
+        "IsCustom": false,
+        "FileContents": "FileContent",
     }],
     "CurrentPageSize": 25,
     "CurrentPage": 1,
@@ -168,15 +125,15 @@ application/json
 {% endapi-method-spec %}
 {% endapi-method %}
 
-> 🔒 Requires user role `charge-list`
+> 🔒 Requires user role `templatefile-list`
 
-{% api-method method="get" host="https://spaces.nexudus.com/api" path="/billing/charges" %}
+{% api-method method="get" host="https://spaces.nexudus.com/api" path="/sys/templatefiles" %}
 {% api-method-summary %}
 List
 {% endapi-method-summary %}
 
 {% api-method-description %}
-This endpoint allows you to GET a list of charges.
+This endpoint allows you to GET a list of templatefiles.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -219,25 +176,18 @@ size=25 \(maximum=1000\)
 ```javascript
 {
     "Records": [{
-        "Coworker": null,
         "Business": null,
-        "ChargeNumber": "00001",
-        "Description": "[DataType(DataType.MultilineText)]",
-        "RegularCharge": false,
-        "DiscountAmount": 0,
-        "DueDate": null,
-        "TotalAmount": 0,
-        "TaxRate": null,
-        "FinancialAccount": null,
-        "Invoiced": false,
-        "InvoicedOn": null,
-        "CoworkerContractUniqueId": ,
-        "CoworkerExtraServiceUniqueId": ,
-        "CoworkerTimePassUniqueId": ,
-        "CoworkerChargeUniqueId": ,
-        "EventAttendeeUniqueId": ,
-        "InvoiceFromDate": ,
-        "InvoiceToDate": ,
+        "TemplateVersion": null,
+        "Name": "Name",
+        "Title": "Title",
+        "Description": "Descripción",
+        "Permalink": "Permalink",
+        "FileLanguage": null,
+        "Published": false,
+        "Visibility": Nexudus.Coworking.Core.Enums.eTemplateFileVisibility.Public,
+        "Password": "False",
+        "IsCustom": false,
+        "FileContents": "FileContent",
     }],
     }],
     "CurrentPageSize": 25,
@@ -259,19 +209,19 @@ size=25 \(maximum=1000\)
 {% endapi-method-spec %}
 {% endapi-method %}
 
-> 🔒 Requires user role `charge-list`
+> 🔒 Requires user role `templatefile-list`
 
 {% hint style="info" %}
 You can also get a list of records based when they were created or updated. This is useful if you want to get a list of records created after or before a particular point in time. You can also use range query parameters for all date, integer and decimal properties.
 {% endhint %}
 
-{% api-method method="get" host="https://spaces.nexudus.com/api" path="/billing/charges" %}
+{% api-method method="get" host="https://spaces.nexudus.com/api" path="/sys/templatefiles" %}
 {% api-method-summary %}
 By date or number range
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Gets a list of charges based on a range of dates, integer or decimal properties.
+Gets a list of templatefiles based on a range of dates, integer or decimal properties.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -288,67 +238,19 @@ application/json
 
 {% api-method-query-parameters %}
 {% api-method-parameter name="CreatedOn" type="object" required=false %}
-?to\_Charge\_CreatedOn=...
+?to\_TemplateFile\_CreatedOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="CreatedOn" type="object" required=false %}
-?from\_Charge\_CreatedOn=...
+?from\_TemplateFile\_CreatedOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="UpdatedOn" type="object" required=false %}
-?to\_Charge\_UpdatedOn=...
+?to\_TemplateFile\_UpdatedOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="UpdatedOn" type="object" required=false %}
-?from\_Charge\_UpdatedOn=...
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="DiscountAmount" type="decimal" required=false %}
-?from\_Charge\_DiscountAmount=...
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="DiscountAmount" type="decimal" required=false %}
-?to\_Charge\_DiscountAmount=...
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="DueDate" type="datetime" required=false %}
-?from\_Charge\_DueDate=...
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="DueDate" type="datetime" required=false %}
-?to\_Charge\_DueDate=...
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="TotalAmount" type="decimal" required=false %}
-?from\_Charge\_TotalAmount=...
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="TotalAmount" type="decimal" required=false %}
-?to\_Charge\_TotalAmount=...
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="InvoicedOn" type="datetime" required=false %}
-?from\_Charge\_InvoicedOn=...
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="InvoicedOn" type="datetime" required=false %}
-?to\_Charge\_InvoicedOn=...
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="InvoiceFromDate" type="datetime" required=false %}
-?from\_Charge\_InvoiceFromDate=...
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="InvoiceFromDate" type="datetime" required=false %}
-?to\_Charge\_InvoiceFromDate=...
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="InvoiceToDate" type="datetime" required=false %}
-?from\_Charge\_InvoiceToDate=...
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="InvoiceToDate" type="datetime" required=false %}
-?to\_Charge\_InvoiceToDate=...
+?from\_TemplateFile\_UpdatedOn=...
 {% endapi-method-parameter %}
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
@@ -362,25 +264,18 @@ application/json
 ```javascript
 {
     "Records": [{
-        "Coworker": null,
         "Business": null,
-        "ChargeNumber": "00001",
-        "Description": "[DataType(DataType.MultilineText)]",
-        "RegularCharge": false,
-        "DiscountAmount": 0,
-        "DueDate": null,
-        "TotalAmount": 0,
-        "TaxRate": null,
-        "FinancialAccount": null,
-        "Invoiced": false,
-        "InvoicedOn": null,
-        "CoworkerContractUniqueId": ,
-        "CoworkerExtraServiceUniqueId": ,
-        "CoworkerTimePassUniqueId": ,
-        "CoworkerChargeUniqueId": ,
-        "EventAttendeeUniqueId": ,
-        "InvoiceFromDate": ,
-        "InvoiceToDate": ,
+        "TemplateVersion": null,
+        "Name": "Name",
+        "Title": "Title",
+        "Description": "Descripción",
+        "Permalink": "Permalink",
+        "FileLanguage": null,
+        "Published": false,
+        "Visibility": Nexudus.Coworking.Core.Enums.eTemplateFileVisibility.Public,
+        "Password": "False",
+        "IsCustom": false,
+        "FileContents": "FileContent",
     }],
     }],
     "CurrentPageSize": 25,
@@ -402,22 +297,22 @@ application/json
 {% endapi-method-spec %}
 {% endapi-method %}
 
-> 🔒 Requires user role `charge-list`
+> 🔒 Requires user role `templatefile-list`
 
-{% api-method method="get" host="https://spaces.nexudus.com/api" path="/billing/charges?Charge\_Id=\[:id1,:id2,...\]" %}
+{% api-method method="get" host="https://spaces.nexudus.com/api" path="/sys/templatefiles?TemplateFile\_Id=\[:id1,:id2,...\]" %}
 {% api-method-summary %}
 List by Ids
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Gets one or more charge records based on their Id.
+Gets one or more templatefile records based on their Id.
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-path-parameters %}
 {% api-method-parameter name="id" type="integer" required=true %}
-Comma-separated list of IDs of every charge to fetch. I.e. \[123456,789102,...\]
+Comma-separated list of IDs of every templatefile to fetch. I.e. \[123456,789102,...\]
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
 
@@ -441,25 +336,18 @@ application/json
 ```javascript
 {
     "Records": [{
-        "Coworker": null,
         "Business": null,
-        "ChargeNumber": "00001",
-        "Description": "[DataType(DataType.MultilineText)]",
-        "RegularCharge": false,
-        "DiscountAmount": 0,
-        "DueDate": null,
-        "TotalAmount": 0,
-        "TaxRate": null,
-        "FinancialAccount": null,
-        "Invoiced": false,
-        "InvoicedOn": null,
-        "CoworkerContractUniqueId": ,
-        "CoworkerExtraServiceUniqueId": ,
-        "CoworkerTimePassUniqueId": ,
-        "CoworkerChargeUniqueId": ,
-        "EventAttendeeUniqueId": ,
-        "InvoiceFromDate": ,
-        "InvoiceToDate": ,
+        "TemplateVersion": null,
+        "Name": "Name",
+        "Title": "Title",
+        "Description": "Descripción",
+        "Permalink": "Permalink",
+        "FileLanguage": null,
+        "Published": false,
+        "Visibility": Nexudus.Coworking.Core.Enums.eTemplateFileVisibility.Public,
+        "Password": "False",
+        "IsCustom": false,
+        "FileContents": "FileContent",
     }],
     }],
     "CurrentPageSize": 25,
@@ -491,22 +379,22 @@ application/json
 {% endapi-method-spec %}
 {% endapi-method %}
 
-> 🔒 Requires user role `charge-list`
+> 🔒 Requires user role `templatefile-list`
 
-{% api-method method="get" host="https://spaces.nexudus.com/api" path="/billing/charges/:id" %}
+{% api-method method="get" host="https://spaces.nexudus.com/api" path="/sys/templatefiles/:id" %}
 {% api-method-summary %}
 One by Id
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Gets one charge record.
+Gets one templatefile record.
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-path-parameters %}
 {% api-method-parameter name="id" type="integer" required=true %}
-The ID of the charge to fetch.
+The ID of the templatefile to fetch.
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
 
@@ -529,25 +417,18 @@ application/json
 
 ```javascript
 {
-        "Coworker": null,
         "Business": null,
-        "ChargeNumber": "00001",
-        "Description": "[DataType(DataType.MultilineText)]",
-        "RegularCharge": false,
-        "DiscountAmount": 0,
-        "DueDate": null,
-        "TotalAmount": 0,
-        "TaxRate": null,
-        "FinancialAccount": null,
-        "Invoiced": false,
-        "InvoicedOn": null,
-        "CoworkerContractUniqueId": ,
-        "CoworkerExtraServiceUniqueId": ,
-        "CoworkerTimePassUniqueId": ,
-        "CoworkerChargeUniqueId": ,
-        "EventAttendeeUniqueId": ,
-        "InvoiceFromDate": ,
-        "InvoiceToDate": ,
+        "TemplateVersion": null,
+        "Name": "Name",
+        "Title": "Title",
+        "Description": "Descripción",
+        "Permalink": "Permalink",
+        "FileLanguage": null,
+        "Published": false,
+        "Visibility": Nexudus.Coworking.Core.Enums.eTemplateFileVisibility.Public,
+        "Password": "False",
+        "IsCustom": false,
+        "FileContents": "FileContent",
 }
 ```
 {% endapi-method-response-example %}
@@ -565,15 +446,15 @@ application/json
 {% endapi-method-spec %}
 {% endapi-method %}
 
-> 🔒 Requires user role `charge-read`
+> 🔒 Requires user role `templatefile-read`
 
-{% api-method method="post" host="https://spaces.nexudus.com/api" path="/billing/charges" %}
+{% api-method method="post" host="https://spaces.nexudus.com/api" path="/sys/templatefiles" %}
 {% api-method-summary %}
 Create
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Creates a new charge.
+Creates a new templatefile.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -589,11 +470,19 @@ application/json
 {% endapi-method-headers %}
 
 {% api-method-body-parameters %}
-{% api-method-parameter name="CoworkerId" type="int" required=true %}
+{% api-method-parameter name="BusinessId" type="int" required=true %}
 
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="BusinessId" type="int" required=true %}
+{% api-method-parameter name="TemplateVersionId" type="int" required=false %}
+
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="Name" type="string" required=true %}
+
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="Title" type="string" required=false %}
 
 {% endapi-method-parameter %}
 
@@ -601,31 +490,27 @@ application/json
 
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="RegularCharge" type="bool" required=false %}
+{% api-method-parameter name="Permalink" type="string" required=true %}
 
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="DiscountAmount" type="decimal" required=true %}
+{% api-method-parameter name="FileLanguageId" type="int" required=false %}
 
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="DueDate" type="DateTime?" required=false %}
+{% api-method-parameter name="Published" type="bool" required=false %}
 
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="TotalAmount" type="decimal" required=true %}
+{% api-method-parameter name="Visibility" type="enum" required=false %}
 
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="TaxRateId" type="int" required=false %}
+{% api-method-parameter name="Password" type="string" required=false %}
 
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="FinancialAccountId" type="int" required=false %}
-
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="Invoiced" type="bool" required=false %}
+{% api-method-parameter name="FileContents" type="string" required=false %}
 
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
@@ -701,30 +586,31 @@ _This response is an example, errors and messages will follow this structure but
 {% endapi-method-spec %}
 {% endapi-method %}
 
-> 🔒 Requires user role `charge-create`
+> 🔒 Requires user role `templatefile-create`
 
 ```javascript
 {
-    "Coworker": 12345678,
     "Business": 12345678,
-    "Description": "[DataType(DataType.MultilineText)]",
-    "RegularCharge": false,
-    "DiscountAmount": 0,
-    "DueDate": null,
-    "TotalAmount": 0,
-    "TaxRate": 12345678,
-    "FinancialAccount": 12345678,
-    "Invoiced": false,
+    "TemplateVersion": 12345678,
+    "Name": "Name",
+    "Title": "Title",
+    "Description": "Descripción",
+    "Permalink": "Permalink",
+    "FileLanguage": 12345678,
+    "Published": false,
+    "Visibility": 1 (check Enumerated values section below),
+    "Password": "False",
+    "FileContents": "FileContent",
 }
 ```
 
-{% api-method method="put" host="https://spaces.nexudus.com/api" path="/billing/charges" %}
+{% api-method method="put" host="https://spaces.nexudus.com/api" path="/sys/templatefiles" %}
 {% api-method-summary %}
 Update
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Updates and existing charge.Required User Role: `charge-edit`
+Updates and existing templatefile.Required User Role: `templatefile-edit`
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -740,11 +626,19 @@ application/json
 {% endapi-method-headers %}
 
 {% api-method-body-parameters %}
-{% api-method-parameter name="CoworkerId" type="int" required=true %}
+{% api-method-parameter name="BusinessId" type="int" required=true %}
 
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="BusinessId" type="int" required=true %}
+{% api-method-parameter name="TemplateVersionId" type="int" required=false %}
+
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="Name" type="string" required=true %}
+
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="Title" type="string" required=false %}
 
 {% endapi-method-parameter %}
 
@@ -752,31 +646,27 @@ application/json
 
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="RegularCharge" type="bool" required=false %}
+{% api-method-parameter name="Permalink" type="string" required=true %}
 
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="DiscountAmount" type="decimal" required=true %}
+{% api-method-parameter name="FileLanguageId" type="int" required=false %}
 
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="DueDate" type="DateTime?" required=false %}
+{% api-method-parameter name="Published" type="bool" required=false %}
 
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="TotalAmount" type="decimal" required=true %}
+{% api-method-parameter name="Visibility" type="enum" required=false %}
 
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="TaxRateId" type="int" required=false %}
+{% api-method-parameter name="Password" type="string" required=false %}
 
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="FinancialAccountId" type="int" required=false %}
-
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="Invoiced" type="bool" required=false %}
+{% api-method-parameter name="FileContents" type="string" required=false %}
 
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
@@ -854,30 +744,31 @@ _This response is an example, errors and messages will follow this structure but
 {% endapi-method-spec %}
 {% endapi-method %}
 
-> 🔒 Requires user role `charge-edit`
+> 🔒 Requires user role `templatefile-edit`
 
 ```javascript
 {
-    "Coworker": 12345678,
     "Business": 12345678,
-    "Description": "[DataType(DataType.MultilineText)]",
-    "RegularCharge": false,
-    "DiscountAmount": 0,
-    "DueDate": null,
-    "TotalAmount": 0,
-    "TaxRate": 12345678,
-    "FinancialAccount": 12345678,
-    "Invoiced": false,
+    "TemplateVersion": 12345678,
+    "Name": "Name",
+    "Title": "Title",
+    "Description": "Descripción",
+    "Permalink": "Permalink",
+    "FileLanguage": 12345678,
+    "Published": false,
+    "Visibility": 1 (check Enumerated values section below),
+    "Password": "False",
+    "FileContents": "FileContent",
 }
 ```
 
-{% api-method method="delete" host="https://spaces.nexudus.com/api" path="/billing/charges/:id" %}
+{% api-method method="delete" host="https://spaces.nexudus.com/api" path="/sys/templatefiles/:id" %}
 {% api-method-summary %}
 Delete
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Deletes a charge.Required User Roles: `charge-delete`
+Deletes a templatefile.Required User Roles: `templatefile-delete`
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -944,11 +835,11 @@ application/json
 {% endapi-method-spec %}
 {% endapi-method %}
 
-> 🔒 Requires user role `charge-delete`
+> 🔒 Requires user role `templatefile-delete`
 
 ## Commands
 
-Commands allow to perform actions against one or more charge records. Some commands accept only one record while others can run an action for a number of records at the same time. Each command has metadata with information about how it can be used and the amount of records, if any, it needs to run.
+Commands allow to perform actions against one or more templatefile records. Some commands accept only one record while others can run an action for a number of records at the same time. Each command has metadata with information about how it can be used and the amount of records, if any, it needs to run.
 
 > ```javascript
 > {
@@ -959,13 +850,13 @@ Commands allow to perform actions against one or more charge records. Some comma
 > }
 > ```
 
-{% api-method method="get" host="https://spaces.nexudus.com/api" path="/billing/charges/commands" %}
+{% api-method method="get" host="https://spaces.nexudus.com/api" path="/sys/templatefiles/commands" %}
 {% api-method-summary %}
 Commands
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Get all commands available to run for charge records.
+Get all commands available to run for templatefile records.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -1017,7 +908,7 @@ _This response is an example._
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="get" host="https://spaces.nexudus.com/api" path="/billing/charges/runcommand" %}
+{% api-method method="get" host="https://spaces.nexudus.com/api" path="/sys/templatefiles/runcommand" %}
 {% api-method-summary %}
 Run Command
 {% endapi-method-summary %}
@@ -1079,18 +970,63 @@ _Commands also return a status 200 when they fail to process one or more of the 
 {% endapi-method-spec %}
 {% endapi-method %}
 
-> 🔒 Requires user role `charge-edit`
+> 🔒 Requires user role `templatefile-edit`
 
 ## Enumerated values
+
+### Visibility:
+
+> GET /api/utils/enums?name=eTemplateFileVisibility
 
 ## Binary files
 
 The following endpoints return binary data. Check the `ContentType` header to understand the type of file being returned in the response stream.
 
+{% api-method method="get" host="https://spaces.nexudus.com/api" path="/sys/templatefiles/getpicture/:id" %}
+{% api-method-summary %}
+Picture
+{% endapi-method-summary %}
+
+{% api-method-description %}
+
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="id" type="integer" required=true %}
+The id of the TemplateFile to get the picture for.
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+Basic Authentication token. Base64 encoding of 'username:password'.
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="Content" type="string" required=true %}
+application/json
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```javascript
+Binary stream or null
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
 ## Related Entities
 
-* [Coworker](../spaces/coworker.md)
-* [Business](../sys/business.md)
-* [TaxRate](https://github.com/Nexudus/api-docs/tree/6c08c63d9c0c6779737ccfddc96f70c6623677d0/rest-api/sys/taxrate.md)
-* [FinancialAccount](financialaccount.md)
+* [Business](business.md)
+* [TemplateVersion](https://github.com/Nexudus/api-docs/tree/6f24ff9454231ba7d9c76bf78eab86eb93822e3b/rest-api/sys/templateversion.md)
+* [Language](https://github.com/Nexudus/api-docs/tree/6f24ff9454231ba7d9c76bf78eab86eb93822e3b/rest-api/sys/language.md)
 

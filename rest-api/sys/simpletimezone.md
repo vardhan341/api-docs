@@ -31,23 +31,23 @@ application/json
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="SystemId" type="string" %}
-?SimpleTimeZone\_SystemId=...
+?SimpleTimeZone_SystemId=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Name" type="string" %}
-?SimpleTimeZone\_Name=...
+?SimpleTimeZone_Name=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Description" type="string" %}
-?SimpleTimeZone\_Description=...
+?SimpleTimeZone_Description=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="TimeOffset" type="string" %}
-?SimpleTimeZone\_TimeOffset=...
+?SimpleTimeZone_TimeOffset=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="UsesSummerTime" type="bool" %}
-?SimpleTimeZone\_UsesSummerTime=...
+?SimpleTimeZone_UsesSummerTime=...
 {% endapi-method-parameter %}
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
@@ -80,6 +80,7 @@ application/json
     "TotalPages": 3
 }
 ```
+
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
@@ -156,6 +157,7 @@ size=25 \(maximum=1000\)
     "TotalPages": 3
 }
 ```
+
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
@@ -190,19 +192,19 @@ application/json
 
 {% api-method-query-parameters %}
 {% api-method-parameter name="CreatedOn" type="object" required=false %}
-?to\_SimpleTimeZone\_CreatedOn=...
+?to_SimpleTimeZone_CreatedOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="CreatedOn" type="object" required=false %}
-?from\_SimpleTimeZone\_CreatedOn=...
+?from_SimpleTimeZone_CreatedOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="UpdatedOn" type="object" required=false %}
-?to\_SimpleTimeZone\_UpdatedOn=...
+?to_SimpleTimeZone_UpdatedOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="UpdatedOn" type="object" required=false %}
-?from\_SimpleTimeZone\_UpdatedOn=...
+?from_SimpleTimeZone_UpdatedOn=...
 {% endapi-method-parameter %}
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
@@ -236,6 +238,83 @@ application/json
     "TotalPages": 3
 }
 ```
+
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+> 🔒 Requires user role `simpletimezone-list`
+
+{% api-method method="get" host="https://spaces.nexudus.com/api" path="/sys/simpletimezones?SimpleTimeZone\_Id=\[:id1,:id2,...\]" %}
+{% api-method-summary %}
+One by Id
+{% endapi-method-summary %}
+
+{% api-method-description %}
+Gets one simpletimezone record.
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="id" type="integer" required=true %}
+Comma-separated list of IDs of every simpletimezone to fetch. I.e. \[123456,789102,...\]
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+Basic Authentication token. Base64 encoding of 'username:password'.
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="Content" type="string" required=true %}
+application/json
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```javascript
+{
+    "Records": [{
+        "Name": "GMT Standard Time",
+        "Description": "(UTC) Dublin, Edinburgh, Lisbon, London",
+        "TimeOffset": "0:00",
+        "UsesSummerTime": true,
+    }],
+    }],
+    "CurrentPageSize": 25,
+    "CurrentPage": 1,
+    "CurrentOrderField": "Id",
+    "CurrentSortDirection": 1,
+    "FirstItem": 1,
+    "HasNextPage": true,
+    "HasPreviousPage": false,
+    "LastItem": 25,
+    "PageNumber": 1,
+    "PageSize": 25,
+    "TotalItems": 60,
+    "TotalPages": 3
+}
+```
+
+{% endapi-method-response-example %}
+
+{% api-method-response-example httpCode=404 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```text
+"Not found"
+```
+
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
@@ -285,6 +364,7 @@ application/json
         "UsesSummerTime": true,
 }
 ```
+
 {% endapi-method-response-example %}
 
 {% api-method-response-example httpCode=404 %}
@@ -295,6 +375,7 @@ application/json
 ```text
 "Not found"
 ```
+
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
@@ -358,6 +439,7 @@ application/json
     }
 }
 ```
+
 {% endapi-method-response-example %}
 
 {% api-method-response-example httpCode=400 %}
@@ -395,6 +477,7 @@ _This response is an example, errors and messages will follow this structure but
     ]
 }
 ```
+
 {% endapi-method-response-example %}
 
 {% api-method-response-example httpCode=500 %}
@@ -407,12 +490,22 @@ _This response is an example, errors and messages will follow this structure but
     "Message": "An error has occurred."
 }
 ```
+
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
 
 > 🔒 Requires user role `simpletimezone-create`
+
+```javascript
+{
+    "Name": "GMT Standard Time",
+    "Description": "(UTC) Dublin, Edinburgh, Lisbon, London",
+    "TimeOffset": "0:00",
+    "UsesSummerTime": true,
+}
+```
 
 {% api-method method="put" host="https://spaces.nexudus.com/api" path="/sys/simpletimezones" %}
 {% api-method-summary %}
@@ -425,12 +518,6 @@ Updates and existing simpletimezone.Required User Role: `simpletimezone-edit`
 
 {% api-method-spec %}
 {% api-method-request %}
-{% api-method-path-parameters %}
-{% api-method-parameter name="Id" type="integer" required=true %}
-The id of the simpletimezone to update
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
-
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
@@ -478,6 +565,7 @@ application/json
     "Errors": null
 }
 ```
+
 {% endapi-method-response-example %}
 
 {% api-method-response-example httpCode=400 %}
@@ -515,6 +603,7 @@ _This response is an example, errors and messages will follow this structure but
     ]
 }
 ```
+
 {% endapi-method-response-example %}
 
 {% api-method-response-example httpCode=500 %}
@@ -527,12 +616,22 @@ _This response is an example, errors and messages will follow this structure but
     "Message": "An error has occurred."
 }
 ```
+
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
 
 > 🔒 Requires user role `simpletimezone-edit`
+
+```javascript
+{
+    "Name": "GMT Standard Time",
+    "Description": "(UTC) Dublin, Edinburgh, Lisbon, London",
+    "TimeOffset": "0:00",
+    "UsesSummerTime": true,
+}
+```
 
 ## Commands
 
@@ -600,6 +699,7 @@ _This response is an example._
     ...
 ]
 ```
+
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
@@ -632,13 +732,7 @@ The command Key defining the command to run. `"COMMAND_KEY_1"`
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Parameters" type="array" required=false %}
-A list of object with the structure below. The parameters required for each command are returned in the "RequiresParameters" array return by the "commands" endpoint.`[    
-{    
-"Name": "Name",    
-"Type":"Type",    
-"Value":recordId    
-}    
-]`
+A list of object with the structure below. The parameters required for each command are returned in the "RequiresParameters" array return by the "commands" endpoint.`[ { "Name": "Name", "Type":"Type", "Value":recordId } ]`
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Ids" type="array" required=true %}
@@ -654,7 +748,7 @@ _Commands also return a status 200 when they fail to process one or more of the 
 {% endapi-method-response-example-description %}
 
 ```javascript
-{  
+{
    "Status":500 or 200,
    "Message":"Command error description",
    "Value":null,
@@ -662,6 +756,7 @@ _Commands also return a status 200 when they fail to process one or more of the 
    "WasSuccessful":false
 }
 ```
+
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
@@ -674,4 +769,3 @@ _Commands also return a status 200 when they fail to process one or more of the 
 The following endpoints return binary data. Check the `ContentType` header to understand the type of file being returned in the response stream.
 
 ## Related Entities
-

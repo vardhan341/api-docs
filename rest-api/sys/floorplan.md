@@ -31,43 +31,43 @@ application/json
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="SystemId" type="string" %}
-?FloorPlan\_SystemId=...
+?FloorPlan_SystemId=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Business" type="Business" %}
-?FloorPlan\_Business=...
+?FloorPlan_Business=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Name" type="string" %}
-?FloorPlan\_Name=...
+?FloorPlan_Name=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="DisplayBackground" type="bool" %}
-?FloorPlan\_DisplayBackground=...
+?FloorPlan_DisplayBackground=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="BackgroundScale" type="int" %}
-?FloorPlan\_BackgroundScale=...
+?FloorPlan_BackgroundScale=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="PositionX" type="int" %}
-?FloorPlan\_PositionX=...
+?FloorPlan_PositionX=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="PositionY" type="int" %}
-?FloorPlan\_PositionY=...
+?FloorPlan_PositionY=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Scale" type="decimal" %}
-?FloorPlan\_Scale=...
+?FloorPlan_Scale=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Business\_Name" type="string" %}
-?FloorPlan\_Business\_Name=...
+?FloorPlan_Business_Name=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Business\_Currency\_Code" type="string" %}
-?FloorPlan\_Business\_Currency\_Code=...
+?FloorPlan_Business_Currency_Code=...
 {% endapi-method-parameter %}
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
@@ -103,6 +103,7 @@ application/json
     "TotalPages": 3
 }
 ```
+
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
@@ -182,6 +183,7 @@ size=25 \(maximum=1000\)
     "TotalPages": 3
 }
 ```
+
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
@@ -216,51 +218,51 @@ application/json
 
 {% api-method-query-parameters %}
 {% api-method-parameter name="CreatedOn" type="object" required=false %}
-?to\_FloorPlan\_CreatedOn=...
+?to_FloorPlan_CreatedOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="CreatedOn" type="object" required=false %}
-?from\_FloorPlan\_CreatedOn=...
+?from_FloorPlan_CreatedOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="UpdatedOn" type="object" required=false %}
-?to\_FloorPlan\_UpdatedOn=...
+?to_FloorPlan_UpdatedOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="UpdatedOn" type="object" required=false %}
-?from\_FloorPlan\_UpdatedOn=...
+?from_FloorPlan_UpdatedOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="BackgroundScale" type="decimal" required=false %}
-?from\_FloorPlan\_BackgroundScale=...
+?from_FloorPlan_BackgroundScale=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="BackgroundScale" type="decimal" required=false %}
-?to\_FloorPlan\_BackgroundScale=...
+{% api-method-parameter name="BackgroundScale" type="int" required=false %}
+?to_FloorPlan_BackgroundScale=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="PositionX" type="decimal" required=false %}
-?from\_FloorPlan\_PositionX=...
+{% api-method-parameter name="PositionX" type="int" required=false %}
+?from_FloorPlan_PositionX=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="PositionX" type="decimal" required=false %}
-?to\_FloorPlan\_PositionX=...
+{% api-method-parameter name="PositionX" type="int" required=false %}
+?to_FloorPlan_PositionX=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="PositionY" type="decimal" required=false %}
-?from\_FloorPlan\_PositionY=...
+{% api-method-parameter name="PositionY" type="int" required=false %}
+?from_FloorPlan_PositionY=...
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="PositionY" type="decimal" required=false %}
-?to\_FloorPlan\_PositionY=...
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="Scale" type="decimal" required=false %}
-?from\_FloorPlan\_Scale=...
+{% api-method-parameter name="PositionY" type="int" required=false %}
+?to_FloorPlan_PositionY=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Scale" type="decimal" required=false %}
-?to\_FloorPlan\_Scale=...
+?from_FloorPlan_Scale=...
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="Scale" type="decimal" required=false %}
+?to_FloorPlan_Scale=...
 {% endapi-method-parameter %}
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
@@ -297,6 +299,86 @@ application/json
     "TotalPages": 3
 }
 ```
+
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+> 🔒 Requires user role `floorplan-list`
+
+{% api-method method="get" host="https://spaces.nexudus.com/api" path="/sys/floorplans?FloorPlan\_Id=\[:id1,:id2,...\]" %}
+{% api-method-summary %}
+One by Id
+{% endapi-method-summary %}
+
+{% api-method-description %}
+Gets one floorplan record.
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="id" type="integer" required=true %}
+Comma-separated list of IDs of every floorplan to fetch. I.e. \[123456,789102,...\]
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+Basic Authentication token. Base64 encoding of 'username:password'.
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="Content" type="string" required=true %}
+application/json
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```javascript
+{
+    "Records": [{
+        "Business": null,
+        "Name": "00001",
+        "DisplayBackground": 1,
+        "BackgroundScale": 1,
+        "PositionX": 1,
+        "PositionY": 1,
+        "Scale": 1,
+    }],
+    }],
+    "CurrentPageSize": 25,
+    "CurrentPage": 1,
+    "CurrentOrderField": "Id",
+    "CurrentSortDirection": 1,
+    "FirstItem": 1,
+    "HasNextPage": true,
+    "HasPreviousPage": false,
+    "LastItem": 25,
+    "PageNumber": 1,
+    "PageSize": 25,
+    "TotalItems": 60,
+    "TotalPages": 3
+}
+```
+
+{% endapi-method-response-example %}
+
+{% api-method-response-example httpCode=404 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```text
+"Not found"
+```
+
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
@@ -349,6 +431,7 @@ application/json
         "Scale": 1,
 }
 ```
+
 {% endapi-method-response-example %}
 
 {% api-method-response-example httpCode=404 %}
@@ -359,6 +442,7 @@ application/json
 ```text
 "Not found"
 ```
+
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
@@ -434,6 +518,7 @@ application/json
     }
 }
 ```
+
 {% endapi-method-response-example %}
 
 {% api-method-response-example httpCode=400 %}
@@ -471,6 +556,7 @@ _This response is an example, errors and messages will follow this structure but
     ]
 }
 ```
+
 {% endapi-method-response-example %}
 
 {% api-method-response-example httpCode=500 %}
@@ -483,12 +569,25 @@ _This response is an example, errors and messages will follow this structure but
     "Message": "An error has occurred."
 }
 ```
+
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
 
 > 🔒 Requires user role `floorplan-create`
+
+```javascript
+{
+    "Business": 12345678,
+    "Name": "00001",
+    "DisplayBackground": 1,
+    "BackgroundScale": 1,
+    "PositionX": 1,
+    "PositionY": 1,
+    "Scale": 1,
+}
+```
 
 {% api-method method="put" host="https://spaces.nexudus.com/api" path="/sys/floorplans" %}
 {% api-method-summary %}
@@ -501,12 +600,6 @@ Updates and existing floorplan.Required User Role: `floorplan-edit`
 
 {% api-method-spec %}
 {% api-method-request %}
-{% api-method-path-parameters %}
-{% api-method-parameter name="Id" type="integer" required=true %}
-The id of the floorplan to update
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
-
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
@@ -566,6 +659,7 @@ application/json
     "Errors": null
 }
 ```
+
 {% endapi-method-response-example %}
 
 {% api-method-response-example httpCode=400 %}
@@ -603,6 +697,7 @@ _This response is an example, errors and messages will follow this structure but
     ]
 }
 ```
+
 {% endapi-method-response-example %}
 
 {% api-method-response-example httpCode=500 %}
@@ -615,12 +710,25 @@ _This response is an example, errors and messages will follow this structure but
     "Message": "An error has occurred."
 }
 ```
+
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
 
 > 🔒 Requires user role `floorplan-edit`
+
+```javascript
+{
+    "Business": 12345678,
+    "Name": "00001",
+    "DisplayBackground": 1,
+    "BackgroundScale": 1,
+    "PositionX": 1,
+    "PositionY": 1,
+    "Scale": 1,
+}
+```
 
 {% api-method method="delete" host="https://spaces.nexudus.com/api" path="/sys/floorplans/:id" %}
 {% api-method-summary %}
@@ -668,6 +776,7 @@ application/json
     "Errors": null
 }
 ```
+
 {% endapi-method-response-example %}
 
 {% api-method-response-example httpCode=404 %}
@@ -678,6 +787,7 @@ application/json
 ```text
 "Not found"
 ```
+
 {% endapi-method-response-example %}
 
 {% api-method-response-example httpCode=500 %}
@@ -690,6 +800,7 @@ application/json
     "Message": "An error has occurred."
 }
 ```
+
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
@@ -763,6 +874,7 @@ _This response is an example._
     ...
 ]
 ```
+
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
@@ -795,13 +907,7 @@ The command Key defining the command to run. `"COMMAND_KEY_1"`
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Parameters" type="array" required=false %}
-A list of object with the structure below. The parameters required for each command are returned in the "RequiresParameters" array return by the "commands" endpoint.`[    
-{    
-"Name": "Name",    
-"Type":"Type",    
-"Value":recordId    
-}    
-]`
+A list of object with the structure below. The parameters required for each command are returned in the "RequiresParameters" array return by the "commands" endpoint.`[ { "Name": "Name", "Type":"Type", "Value":recordId } ]`
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Ids" type="array" required=true %}
@@ -817,7 +923,7 @@ _Commands also return a status 200 when they fail to process one or more of the 
 {% endapi-method-response-example-description %}
 
 ```javascript
-{  
+{
    "Status":500 or 200,
    "Message":"Command error description",
    "Value":null,
@@ -825,6 +931,7 @@ _Commands also return a status 200 when they fail to process one or more of the 
    "WasSuccessful":false
 }
 ```
+
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
@@ -873,6 +980,7 @@ application/json
 ```javascript
 Binary stream or null
 ```
+
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
@@ -880,5 +988,4 @@ Binary stream or null
 
 ## Related Entities
 
-* [Business](business.md)
-
+- [Business](business.md)

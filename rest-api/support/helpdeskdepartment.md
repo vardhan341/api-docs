@@ -31,27 +31,31 @@ application/json
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="SystemId" type="string" %}
-?HelpDeskDepartment\_SystemId=...
+?HelpDeskDepartment_SystemId=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Business" type="Business" %}
-?HelpDeskDepartment\_Business=...
+?HelpDeskDepartment_Business=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Name" type="string" %}
-?HelpDeskDepartment\_Name=...
+?HelpDeskDepartment_Name=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Description" type="string" %}
-?HelpDeskDepartment\_Description=...
+?HelpDeskDepartment_Description=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Active" type="bool" %}
-?HelpDeskDepartment\_Active=...
+?HelpDeskDepartment_Active=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="TaskList" type="TaskList" %}
-?HelpDeskDepartment\_TaskList=...
+?HelpDeskDepartment_TaskList=...
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="Managers" type="int" required=false %}
+?HelpDeskDepartment_Managers=...
 {% endapi-method-parameter %}
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
@@ -85,6 +89,7 @@ application/json
     "TotalPages": 3
 }
 ```
+
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
@@ -162,6 +167,7 @@ size=25 \(maximum=1000\)
     "TotalPages": 3
 }
 ```
+
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
@@ -196,15 +202,15 @@ application/json
 
 {% api-method-query-parameters %}
 {% api-method-parameter name="CreatedOn" type="object" required=false %}
-?to\_HelpDeskDepartment\_CreatedOn=...
+?to_HelpDeskDepartment_CreatedOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="UpdatedOn" type="object" required=false %}
-?from\_HelpDeskDepartment\_CreatedOn=...
+?from_HelpDeskDepartment_CreatedOn=...
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="CreatedOn" type="object" required=false %}
-?from\_HelpDeskDepartment\_CreatedOn=...
+?from_HelpDeskDepartment_CreatedOn=...
 {% endapi-method-parameter %}
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
@@ -239,6 +245,84 @@ application/json
     "TotalPages": 3
 }
 ```
+
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+> 🔒 Requires user role `helpdeskdepartment-list`
+
+{% api-method method="get" host="https://spaces.nexudus.com/api" path="/support/helpdeskdepartments?HelpDeskDepartment\_Id=\[:id1,:id2,...\]" %}
+{% api-method-summary %}
+One by Id
+{% endapi-method-summary %}
+
+{% api-method-description %}
+Gets one helpdeskdepartment record.
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="id" type="integer" required=true %}
+Comma-separated list of IDs of every helpdeskdepartment to fetch. I.e. \[123456,789102,...\]
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+Basic Authentication token. Base64 encoding of 'username:password'.
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="Content" type="string" required=true %}
+application/json
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```javascript
+{
+    "Records": [{
+        "Business": null,
+        "Name": "Name",
+        "Description": "Description",
+        "Active": false,
+        "TaskList": null,
+    }],
+    }],
+    "CurrentPageSize": 25,
+    "CurrentPage": 1,
+    "CurrentOrderField": "Id",
+    "CurrentSortDirection": 1,
+    "FirstItem": 1,
+    "HasNextPage": true,
+    "HasPreviousPage": false,
+    "LastItem": 25,
+    "PageNumber": 1,
+    "PageSize": 25,
+    "TotalItems": 60,
+    "TotalPages": 3
+}
+```
+
+{% endapi-method-response-example %}
+
+{% api-method-response-example httpCode=404 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```text
+"Not found"
+```
+
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
@@ -289,6 +373,7 @@ application/json
         "TaskList": null,
 }
 ```
+
 {% endapi-method-response-example %}
 
 {% api-method-response-example httpCode=404 %}
@@ -299,6 +384,7 @@ application/json
 ```text
 "Not found"
 ```
+
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
@@ -366,6 +452,7 @@ application/json
     }
 }
 ```
+
 {% endapi-method-response-example %}
 
 {% api-method-response-example httpCode=400 %}
@@ -403,6 +490,7 @@ _This response is an example, errors and messages will follow this structure but
     ]
 }
 ```
+
 {% endapi-method-response-example %}
 
 {% api-method-response-example httpCode=500 %}
@@ -415,12 +503,26 @@ _This response is an example, errors and messages will follow this structure but
     "Message": "An error has occurred."
 }
 ```
+
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
 
 > 🔒 Requires user role `helpdeskdepartment-create`
+
+```javascript
+{
+    "Business": 12345678,
+    "Name": "Name",
+    "Description": "Description",
+    "Active": false,
+    "Managers": [12345678, 87654321] (replaces entire list),
+    "AddedManagers": [12345678, 87654321] (adds to list),
+    "RemovedManagers": [12345678, 87654321] (removes from list),
+    "TaskList": 12345678,
+}
+```
 
 {% api-method method="put" host="https://spaces.nexudus.com/api" path="/support/helpdeskdepartments" %}
 {% api-method-summary %}
@@ -433,12 +535,6 @@ Updates and existing helpdeskdepartment.Required User Role: `helpdeskdepartment-
 
 {% api-method-spec %}
 {% api-method-request %}
-{% api-method-path-parameters %}
-{% api-method-parameter name="Id" type="integer" required=true %}
-The id of the helpdeskdepartment to update
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
-
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
 Basic Authentication token. Base64 encoding of 'username:password'.
@@ -466,6 +562,18 @@ application/json
 
 {% endapi-method-parameter %}
 
+{% api-method-parameter name="Managers" type="int\[\]" required=false %}
+
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="AddedManagers" type="int\[\]" required=false %}
+
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="RemovedManagers" type="int\[\]" required=false %}
+
+{% endapi-method-parameter %}
+
 {% api-method-parameter name="TaskListId" type="int" required=false %}
 
 {% endapi-method-parameter %}
@@ -490,6 +598,7 @@ application/json
     "Errors": null
 }
 ```
+
 {% endapi-method-response-example %}
 
 {% api-method-response-example httpCode=400 %}
@@ -527,6 +636,7 @@ _This response is an example, errors and messages will follow this structure but
     ]
 }
 ```
+
 {% endapi-method-response-example %}
 
 {% api-method-response-example httpCode=500 %}
@@ -539,12 +649,26 @@ _This response is an example, errors and messages will follow this structure but
     "Message": "An error has occurred."
 }
 ```
+
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
 
 > 🔒 Requires user role `helpdeskdepartment-edit`
+
+```javascript
+{
+    "Business": 12345678,
+    "Name": "Name",
+    "Description": "Description",
+    "Active": false,
+    "Managers": [12345678, 87654321] (replaces entire list),
+    "AddedManagers": [12345678, 87654321] (adds to list),
+    "RemovedManagers": [12345678, 87654321] (removes from list),
+    "TaskList": 12345678,
+}
+```
 
 {% api-method method="delete" host="https://spaces.nexudus.com/api" path="/support/helpdeskdepartments/:id" %}
 {% api-method-summary %}
@@ -592,6 +716,7 @@ application/json
     "Errors": null
 }
 ```
+
 {% endapi-method-response-example %}
 
 {% api-method-response-example httpCode=404 %}
@@ -602,6 +727,7 @@ application/json
 ```text
 "Not found"
 ```
+
 {% endapi-method-response-example %}
 
 {% api-method-response-example httpCode=500 %}
@@ -614,6 +740,7 @@ application/json
     "Message": "An error has occurred."
 }
 ```
+
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
@@ -687,6 +814,7 @@ _This response is an example._
     ...
 ]
 ```
+
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
@@ -719,13 +847,7 @@ The command Key defining the command to run. `"COMMAND_KEY_1"`
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Parameters" type="array" required=false %}
-A list of object with the structure below. The parameters required for each command are returned in the "RequiresParameters" array return by the "commands" endpoint.`[    
-{    
-"Name": "Name",    
-"Type":"Type",    
-"Value":recordId    
-}    
-]`
+A list of object with the structure below. The parameters required for each command are returned in the "RequiresParameters" array return by the "commands" endpoint.`[ { "Name": "Name", "Type":"Type", "Value":recordId } ]`
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Ids" type="array" required=true %}
@@ -741,7 +863,7 @@ _Commands also return a status 200 when they fail to process one or more of the 
 {% endapi-method-response-example-description %}
 
 ```javascript
-{  
+{
    "Status":500 or 200,
    "Message":"Command error description",
    "Value":null,
@@ -749,6 +871,7 @@ _Commands also return a status 200 when they fail to process one or more of the 
    "WasSuccessful":false
 }
 ```
+
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
@@ -762,6 +885,5 @@ The following endpoints return binary data. Check the `ContentType` header to un
 
 ## Related Entities
 
-* [Business](../sys/business.md)
-* [TaskList](../crm/tasklist.md)
-
+- [Business](../sys/business.md)
+- [TaskList](../crm/tasklist.md)
