@@ -502,8 +502,6 @@ Update
 
 {% api-method-description %}
 Updates and existing blogcategory. PUT requests require ALL record properties to be submitted with every request. Any missing properties will be cleared or set to false.
-  
-Required User Role: `blogcategory-edit`
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -609,9 +607,11 @@ _This response is an example, errors and messages will follow this structure but
 {% endapi-method %}
 
 > 🔒 Requires user role `blogcategory-edit`
+> Note PUT requests, unlike PATCH requests, must include all properties as part of the request body. Any missing properties will be cleared or set to false.
 
 ```javascript
 {
+	"Id": 12345678,
 	"Business": 12345678,
 	"Language": 12345678,
 	"Title": "Title",

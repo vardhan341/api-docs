@@ -509,8 +509,6 @@ Update
 
 {% api-method-description %}
 Updates and existing simpletimezone. PUT requests require ALL record properties to be submitted with every request. Any missing properties will be cleared or set to false.
-  
-Required User Role: `simpletimezone-edit`
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -612,9 +610,11 @@ _This response is an example, errors and messages will follow this structure but
 {% endapi-method %}
 
 > 🔒 Requires user role `simpletimezone-edit`
+> Note PUT requests, unlike PATCH requests, must include all properties as part of the request body. Any missing properties will be cleared or set to false.
 
 ```javascript
 {
+	"Id": 12345678,
 	"Name": "GMT Standard Time",
 	"Description": "(UTC) Dublin, Edinburgh, Lisbon, London",
 	"TimeOffset": "0:00",

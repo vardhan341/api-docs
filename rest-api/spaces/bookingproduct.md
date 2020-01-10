@@ -521,8 +521,6 @@ Update
 
 {% api-method-description %}
 Updates and existing bookingproduct. PUT requests require ALL record properties to be submitted with every request. Any missing properties will be cleared or set to false.
-  
-Required User Role: `bookingproduct-edit`
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -624,9 +622,11 @@ _This response is an example, errors and messages will follow this structure but
 {% endapi-method %}
 
 > 🔒 Requires user role `bookingproduct-edit`
+> Note PUT requests, unlike PATCH requests, must include all properties as part of the request body. Any missing properties will be cleared or set to false.
 
 ```javascript
 {
+	"Id": 12345678,
 	"Booking": 12345678,
 	"Product": 12345678,
 	"InvoiceInMinutes": false,

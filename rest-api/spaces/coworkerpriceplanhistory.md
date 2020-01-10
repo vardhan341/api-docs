@@ -598,8 +598,6 @@ Update
 
 {% api-method-description %}
 Updates and existing coworkerpriceplanhistory. PUT requests require ALL record properties to be submitted with every request. Any missing properties will be cleared or set to false.
-  
-Required User Role: `coworkerpriceplanhistory-edit`
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -711,9 +709,11 @@ _This response is an example, errors and messages will follow this structure but
 {% endapi-method %}
 
 > 🔒 Requires user role `coworkerpriceplanhistory-edit`
+> Note PUT requests, unlike PATCH requests, must include all properties as part of the request body. Any missing properties will be cleared or set to false.
 
 ```javascript
 {
+	"Id": 12345678,
 	"Coworker": 12345678,
 	"OldTariffName": "Old Price Plan",
 	"NewTariffName": "New Price Plan",

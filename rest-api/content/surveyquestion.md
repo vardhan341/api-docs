@@ -573,8 +573,6 @@ Update
 
 {% api-method-description %}
 Updates and existing surveyquestion. PUT requests require ALL record properties to be submitted with every request. Any missing properties will be cleared or set to false.
-  
-Required User Role: `surveyquestion-edit`
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -684,9 +682,11 @@ _This response is an example, errors and messages will follow this structure but
 {% endapi-method %}
 
 > 🔒 Requires user role `surveyquestion-edit`
+> Note PUT requests, unlike PATCH requests, must include all properties as part of the request body. Any missing properties will be cleared or set to false.
 
 ```javascript
 {
+	"Id": 12345678,
 	"Survey": 12345678,
 	"Text": "",
 	"Description": "",
