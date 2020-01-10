@@ -72,6 +72,9 @@ application/json
         "TimePass": null,
         "Tariff": null,
         "Price": 0,
+		"TimePassPriceTimePassName": "...",
+		"TimePassPriceTariffName": "...",
+
     }],
     "CurrentPageSize": 25,
     "CurrentPage": 1,
@@ -510,7 +513,7 @@ Update
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Updates and existing timepassprice.
+Updates and existing timepassprice. PUT requests require ALL record properties to be submitted with every request. Any missing properties will be cleared or set to false.
   
 Required User Role: `timepassprice-edit`
 {% endapi-method-description %}
@@ -528,12 +531,13 @@ application/json
 {% endapi-method-headers %}
 
 {% api-method-body-parameters %}
-The id of the timepassprice to update
-{% api-method-parameter name="TimePassId" type="int" required=true %}
+
+{% api-method-parameter name="Id" type="int" required="true" %}
+{% api-method-parameter name="TimePassId" type="int" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="TariffId" type="int" required=true %}
+{% api-method-parameter name="TariffId" type="int" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="Price" type="decimal" required=true %}
+{% api-method-parameter name="Price" type="decimal" required="true" %}
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}

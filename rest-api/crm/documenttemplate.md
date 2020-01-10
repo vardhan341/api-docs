@@ -68,6 +68,7 @@ application/json
         "Name": "Joe",
         "Document": "",
         "TemplateOutputFormat": Nexudus.Coworking.Core.Enums.eDocumentTemplateFormat.Html,
+
     }],
     "CurrentPageSize": 25,
     "CurrentPage": 1,
@@ -507,7 +508,7 @@ Update
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Updates and existing documenttemplate.
+Updates and existing documenttemplate. PUT requests require ALL record properties to be submitted with every request. Any missing properties will be cleared or set to false.
   
 Required User Role: `documenttemplate-edit`
 {% endapi-method-description %}
@@ -525,14 +526,15 @@ application/json
 {% endapi-method-headers %}
 
 {% api-method-body-parameters %}
-The id of the documenttemplate to update
-{% api-method-parameter name="BusinessId" type="int" required=true %}
+
+{% api-method-parameter name="Id" type="int" required="true" %}
+{% api-method-parameter name="BusinessId" type="int" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="Name" type="string" required=true %}
+{% api-method-parameter name="Name" type="string" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="Document" type="string" required=false %}
+{% api-method-parameter name="Document" type="string" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="TemplateOutputFormat" type="enum" required=false %}
+{% api-method-parameter name="TemplateOutputFormat" type="enum" required="true" %}
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}

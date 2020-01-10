@@ -99,6 +99,12 @@ application/json
         "UsesIncluded": 0,
         "ExpirationType": Nexudus.Coworking.Core.Enums.eRecurrentChargePattern.PricePlan,
         "ExpiresIn": 0,
+		"ProductExtraServiceProductName": "...",
+		"ProductExtraServiceExtraServiceName": "...",
+		"ProductExtraServiceExtraServiceChargePeriod": "...",
+		"ProductExtraServiceExtraServiceIsBookingCredit": "...",
+		"ProductExtraServiceExtraServiceIsPrintingCredit": "...",
+
     }],
     "CurrentPageSize": 25,
     "CurrentPage": 1,
@@ -557,7 +563,7 @@ Update
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Updates and existing productextraservice.
+Updates and existing productextraservice. PUT requests require ALL record properties to be submitted with every request. Any missing properties will be cleared or set to false.
   
 Required User Role: `productextraservice-edit`
 {% endapi-method-description %}
@@ -575,16 +581,17 @@ application/json
 {% endapi-method-headers %}
 
 {% api-method-body-parameters %}
-The id of the productextraservice to update
-{% api-method-parameter name="ProductId" type="int" required=true %}
+
+{% api-method-parameter name="Id" type="int" required="true" %}
+{% api-method-parameter name="ProductId" type="int" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="ExtraServiceId" type="int" required=true %}
+{% api-method-parameter name="ExtraServiceId" type="int" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="UsesIncluded" type="int" required=true %}
+{% api-method-parameter name="UsesIncluded" type="int" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="ExpirationType" type="enum" required=false %}
+{% api-method-parameter name="ExpirationType" type="enum" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="ExpiresIn" type="int?" required=false %}
+{% api-method-parameter name="ExpiresIn" type="int?" required="true" %}
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}

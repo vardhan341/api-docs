@@ -112,6 +112,11 @@ application/json
         "Amount": 0,
         "ErrorDescription": "0",
         "LastPaymentAttempt": 2019-01-01,
+		"ResellerPayoutResellerUser_Id": "...",
+		"ResellerPayoutResellerUser_FullName": "...",
+		"ResellerPayoutResellerCurrency_Id": "...",
+		"ResellerPayoutResellerCurrency_Code": "...",
+
     }],
     "CurrentPageSize": 25,
     "CurrentPage": 1,
@@ -573,7 +578,7 @@ Update
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Updates and existing resellerpayout.
+Updates and existing resellerpayout. PUT requests require ALL record properties to be submitted with every request. Any missing properties will be cleared or set to false.
   
 Required User Role: `resellerpayout-edit`
 {% endapi-method-description %}
@@ -591,7 +596,8 @@ application/json
 {% endapi-method-headers %}
 
 {% api-method-body-parameters %}
-The id of the resellerpayout to update
+
+{% api-method-parameter name="Id" type="int" required="true" %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
 

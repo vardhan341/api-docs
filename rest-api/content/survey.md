@@ -92,6 +92,7 @@ application/json
         "DeliveryRate": ,
         "DeliveryFrequency": Nexudus.Coworking.Core.Enums.eSurveyDeliveryFrequency.Weeks,
         "ScheduledJobId": "ScheduledJobId",
+
     }],
     "CurrentPageSize": 25,
     "CurrentPage": 1,
@@ -568,7 +569,7 @@ Update
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Updates and existing survey.
+Updates and existing survey. PUT requests require ALL record properties to be submitted with every request. Any missing properties will be cleared or set to false.
   
 Required User Role: `survey-edit`
 {% endapi-method-description %}
@@ -586,20 +587,21 @@ application/json
 {% endapi-method-headers %}
 
 {% api-method-body-parameters %}
-The id of the survey to update
-{% api-method-parameter name="BusinessId" type="int" required=true %}
+
+{% api-method-parameter name="Id" type="int" required="true" %}
+{% api-method-parameter name="BusinessId" type="int" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="Name" type="string" required=true %}
+{% api-method-parameter name="Name" type="string" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="Description" type="string" required=true %}
+{% api-method-parameter name="Description" type="string" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="Active" type="bool" required=false %}
+{% api-method-parameter name="Active" type="bool" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="NextDeliveryDate" type="DateTime" required=true %}
+{% api-method-parameter name="NextDeliveryDate" type="DateTime" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="DeliveryRate" type="int" required=true %}
+{% api-method-parameter name="DeliveryRate" type="int" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="DeliveryFrequency" type="enum" required=false %}
+{% api-method-parameter name="DeliveryFrequency" type="enum" required="true" %}
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}

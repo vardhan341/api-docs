@@ -65,6 +65,7 @@ application/json
         "FromUser": null,
         "ChatText": "ChatText",
         "Delievered": false,
+
     }],
     "CurrentPageSize": 25,
     "CurrentPage": 1,
@@ -500,7 +501,7 @@ Update
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Updates and existing chatusermessage.
+Updates and existing chatusermessage. PUT requests require ALL record properties to be submitted with every request. Any missing properties will be cleared or set to false.
   
 Required User Role: `chatusermessage-edit`
 {% endapi-method-description %}
@@ -518,18 +519,19 @@ application/json
 {% endapi-method-headers %}
 
 {% api-method-body-parameters %}
-The id of the chatusermessage to update
-{% api-method-parameter name="FromUserId" type="int" required=true %}
+
+{% api-method-parameter name="Id" type="int" required="true" %}
+{% api-method-parameter name="FromUserId" type="int" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="ToUsers" type="int[]" required=false %}
+{% api-method-parameter name="ToUsers" type="int[]" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="AddedToUsers" type="int[]" required=false %}
+{% api-method-parameter name="AddedToUsers" type="int[]" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="RemovedToUsers" type="int[]" required=false %}
+{% api-method-parameter name="RemovedToUsers" type="int[]" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="ChatText" type="string" required=false %}
+{% api-method-parameter name="ChatText" type="string" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="Delievered" type="bool" required=false %}
+{% api-method-parameter name="Delievered" type="bool" required="true" %}
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}

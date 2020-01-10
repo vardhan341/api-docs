@@ -86,6 +86,7 @@ application/json
         "Formula": "",
         "Description": "",
         "ErrorMessage": "00001",
+
     }],
     "CurrentPageSize": 25,
     "CurrentPage": 1,
@@ -546,7 +547,7 @@ Update
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Updates and existing validationrule.
+Updates and existing validationrule. PUT requests require ALL record properties to be submitted with every request. Any missing properties will be cleared or set to false.
   
 Required User Role: `validationrule-edit`
 {% endapi-method-description %}
@@ -564,20 +565,21 @@ application/json
 {% endapi-method-headers %}
 
 {% api-method-body-parameters %}
-The id of the validationrule to update
-{% api-method-parameter name="BusinessId" type="int" required=true %}
+
+{% api-method-parameter name="Id" type="int" required="true" %}
+{% api-method-parameter name="BusinessId" type="int" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="Name" type="string" required=true %}
+{% api-method-parameter name="Name" type="string" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="RecordType" type="enum" required=false %}
+{% api-method-parameter name="RecordType" type="enum" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="Active" type="bool" required=false %}
+{% api-method-parameter name="Active" type="bool" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="Formula" type="string" required=true %}
+{% api-method-parameter name="Formula" type="string" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="Description" type="string" required=false %}
+{% api-method-parameter name="Description" type="string" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="ErrorMessage" type="string" required=false %}
+{% api-method-parameter name="ErrorMessage" type="string" required="true" %}
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}

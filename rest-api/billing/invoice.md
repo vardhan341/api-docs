@@ -186,6 +186,9 @@ application/json
         "PaidOn": null,
         "CustomData": "null",
         "PaymentAttemptsCount": null,
+		"InvoiceBillToCountryName": "...",
+		"InvoiceCurrencyCode": "...",
+
     }],
     "CurrentPageSize": 25,
     "CurrentPage": 1,
@@ -760,7 +763,7 @@ Update
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Updates and existing invoice.
+Updates and existing invoice. PUT requests require ALL record properties to be submitted with every request. Any missing properties will be cleared or set to false.
   
 Required User Role: `invoice-edit`
 {% endapi-method-description %}
@@ -778,24 +781,25 @@ application/json
 {% endapi-method-headers %}
 
 {% api-method-body-parameters %}
-The id of the invoice to update
-{% api-method-parameter name="BusinessId" type="int" required=true %}
+
+{% api-method-parameter name="Id" type="int" required="true" %}
+{% api-method-parameter name="BusinessId" type="int" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="BillToName" type="string" required=true %}
+{% api-method-parameter name="BillToName" type="string" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="BillToAddress" type="string" required=true %}
+{% api-method-parameter name="BillToAddress" type="string" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="BillToCity" type="string" required=true %}
+{% api-method-parameter name="BillToCity" type="string" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="BillToTaxIDNumber" type="string" required=false %}
+{% api-method-parameter name="BillToTaxIDNumber" type="string" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="BillToPostCode" type="string" required=true %}
+{% api-method-parameter name="BillToPostCode" type="string" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="BillToPhone" type="string" required=false %}
+{% api-method-parameter name="BillToPhone" type="string" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="BillToFax" type="string" required=false %}
+{% api-method-parameter name="BillToFax" type="string" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="BillToCountryId" type="int" required=true %}
+{% api-method-parameter name="BillToCountryId" type="int" required="true" %}
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}

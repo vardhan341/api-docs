@@ -68,6 +68,7 @@ application/json
         "EntityId": 0,
         "Name": "0",
         "EntityUrl": "http://www.google.com",
+
     }],
     "CurrentPageSize": 25,
     "CurrentPage": 1,
@@ -513,7 +514,7 @@ Update
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Updates and existing userbookmark.
+Updates and existing userbookmark. PUT requests require ALL record properties to be submitted with every request. Any missing properties will be cleared or set to false.
   
 Required User Role: `userbookmark-edit`
 {% endapi-method-description %}
@@ -531,14 +532,15 @@ application/json
 {% endapi-method-headers %}
 
 {% api-method-body-parameters %}
-The id of the userbookmark to update
-{% api-method-parameter name="UserId" type="int" required=true %}
+
+{% api-method-parameter name="Id" type="int" required="true" %}
+{% api-method-parameter name="UserId" type="int" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="EntityId" type="int" required=true %}
+{% api-method-parameter name="EntityId" type="int" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="Name" type="string" required=true %}
+{% api-method-parameter name="Name" type="string" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="EntityUrl" type="string" required=true %}
+{% api-method-parameter name="EntityUrl" type="string" required="true" %}
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}

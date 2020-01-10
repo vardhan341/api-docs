@@ -68,6 +68,7 @@ application/json
         "Survey": null,
         "MailingDate": ,
         "Submitted": ,
+
     }],
     "CurrentPageSize": 25,
     "CurrentPage": 1,
@@ -513,7 +514,7 @@ Update
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Updates and existing surveyrun.
+Updates and existing surveyrun. PUT requests require ALL record properties to be submitted with every request. Any missing properties will be cleared or set to false.
   
 Required User Role: `surveyrun-edit`
 {% endapi-method-description %}
@@ -531,14 +532,15 @@ application/json
 {% endapi-method-headers %}
 
 {% api-method-body-parameters %}
-The id of the surveyrun to update
-{% api-method-parameter name="CoworkerId" type="int" required=true %}
+
+{% api-method-parameter name="Id" type="int" required="true" %}
+{% api-method-parameter name="CoworkerId" type="int" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="SurveyId" type="int" required=true %}
+{% api-method-parameter name="SurveyId" type="int" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="MailingDate" type="DateTime?" required=false %}
+{% api-method-parameter name="MailingDate" type="DateTime?" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="Submitted" type="bool" required=false %}
+{% api-method-parameter name="Submitted" type="bool" required="true" %}
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}

@@ -59,6 +59,7 @@ application/json
     "Records": [{
         "Business": null,
         "Title": "Title",
+
     }],
     "CurrentPageSize": 25,
     "CurrentPage": 1,
@@ -487,7 +488,7 @@ Update
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Updates and existing calendareventcategory.
+Updates and existing calendareventcategory. PUT requests require ALL record properties to be submitted with every request. Any missing properties will be cleared or set to false.
   
 Required User Role: `calendareventcategory-edit`
 {% endapi-method-description %}
@@ -505,16 +506,17 @@ application/json
 {% endapi-method-headers %}
 
 {% api-method-body-parameters %}
-The id of the calendareventcategory to update
-{% api-method-parameter name="BusinessId" type="int" required=true %}
+
+{% api-method-parameter name="Id" type="int" required="true" %}
+{% api-method-parameter name="BusinessId" type="int" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="Title" type="string" required=true %}
+{% api-method-parameter name="Title" type="string" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="CalendarEvents" type="int[]" required=false %}
+{% api-method-parameter name="CalendarEvents" type="int[]" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="AddedCalendarEvents" type="int[]" required=false %}
+{% api-method-parameter name="AddedCalendarEvents" type="int[]" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="RemovedCalendarEvents" type="int[]" required=false %}
+{% api-method-parameter name="RemovedCalendarEvents" type="int[]" required="true" %}
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}

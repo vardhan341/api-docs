@@ -80,6 +80,7 @@ application/json
         "ProtectedTicket": "Protected Ticket",
         "TicketHash": "Ticket Hash",
         "TicketSalt": "Ticket Salt",
+
     }],
     "CurrentPageSize": 25,
     "CurrentPage": 1,
@@ -539,7 +540,7 @@ Update
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Updates and existing refreshtoken.
+Updates and existing refreshtoken. PUT requests require ALL record properties to be submitted with every request. Any missing properties will be cleared or set to false.
   
 Required User Role: `refreshtoken-edit`
 {% endapi-method-description %}
@@ -557,18 +558,19 @@ application/json
 {% endapi-method-headers %}
 
 {% api-method-body-parameters %}
-The id of the refreshtoken to update
-{% api-method-parameter name="Subject" type="string" required=true %}
+
+{% api-method-parameter name="Id" type="int" required="true" %}
+{% api-method-parameter name="Subject" type="string" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="ClientId" type="string" required=true %}
+{% api-method-parameter name="ClientId" type="string" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="ExpiresOn" type="DateTime" required=true %}
+{% api-method-parameter name="ExpiresOn" type="DateTime" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="ProtectedTicket" type="string" required=true %}
+{% api-method-parameter name="ProtectedTicket" type="string" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="TicketHash" type="string" required=true %}
+{% api-method-parameter name="TicketHash" type="string" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="TicketSalt" type="string" required=true %}
+{% api-method-parameter name="TicketSalt" type="string" required="true" %}
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}

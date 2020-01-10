@@ -100,6 +100,11 @@ application/json
         "ToTime": FromTime,
         "NewCrmBoardColumn": null,
         "User": null,
+		"CrmOpportunityHistoryCrmOpportunityId": "...",
+		"CrmOpportunityHistoryOldCrmBoardColumnName": "...",
+		"CrmOpportunityHistoryNewCrmBoardColumnName": "...",
+		"CrmOpportunityHistoryUserFullName": "...",
+
     }],
     "CurrentPageSize": 25,
     "CurrentPage": 1,
@@ -565,7 +570,7 @@ Update
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Updates and existing crmopportunityhistory.
+Updates and existing crmopportunityhistory. PUT requests require ALL record properties to be submitted with every request. Any missing properties will be cleared or set to false.
   
 Required User Role: `crmopportunityhistory-edit`
 {% endapi-method-description %}
@@ -583,18 +588,19 @@ application/json
 {% endapi-method-headers %}
 
 {% api-method-body-parameters %}
-The id of the crmopportunityhistory to update
-{% api-method-parameter name="CrmOpportunityId" type="int" required=false %}
+
+{% api-method-parameter name="Id" type="int" required="true" %}
+{% api-method-parameter name="CrmOpportunityId" type="int" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="OldCrmBoardColumnId" type="int" required=false %}
+{% api-method-parameter name="OldCrmBoardColumnId" type="int" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="FromTime" type="DateTime?" required=false %}
+{% api-method-parameter name="FromTime" type="DateTime?" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="ToTime" type="DateTime?" required=false %}
+{% api-method-parameter name="ToTime" type="DateTime?" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="NewCrmBoardColumnId" type="int" required=true %}
+{% api-method-parameter name="NewCrmBoardColumnId" type="int" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="UserId" type="int" required=false %}
+{% api-method-parameter name="UserId" type="int" required="true" %}
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}

@@ -100,6 +100,8 @@ application/json
         "AutoAddEvents": true,
         "AutoAddVisitors": true,
         "AutoAddPayingMembers": true,
+		"SubscriberGroupBusinessName": "...",
+
     }],
     "CurrentPageSize": 25,
     "CurrentPage": 1,
@@ -570,7 +572,7 @@ Update
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Updates and existing subscribergroup.
+Updates and existing subscribergroup. PUT requests require ALL record properties to be submitted with every request. Any missing properties will be cleared or set to false.
   
 Required User Role: `subscribergroup-edit`
 {% endapi-method-description %}
@@ -588,28 +590,29 @@ application/json
 {% endapi-method-headers %}
 
 {% api-method-body-parameters %}
-The id of the subscribergroup to update
-{% api-method-parameter name="BusinessId" type="int" required=true %}
+
+{% api-method-parameter name="Id" type="int" required="true" %}
+{% api-method-parameter name="BusinessId" type="int" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="Name" type="string" required=true %}
+{% api-method-parameter name="Name" type="string" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="NewsLetterSubscribers" type="int[]" required=false %}
+{% api-method-parameter name="NewsLetterSubscribers" type="int[]" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="AddedNewsLetterSubscribers" type="int[]" required=false %}
+{% api-method-parameter name="AddedNewsLetterSubscribers" type="int[]" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="RemovedNewsLetterSubscribers" type="int[]" required=false %}
+{% api-method-parameter name="RemovedNewsLetterSubscribers" type="int[]" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="AutoAddMembers" type="bool" required=false %}
+{% api-method-parameter name="AutoAddMembers" type="bool" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="AutoAddContacts" type="bool" required=false %}
+{% api-method-parameter name="AutoAddContacts" type="bool" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="AutoAddBookings" type="bool" required=false %}
+{% api-method-parameter name="AutoAddBookings" type="bool" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="AutoAddEvents" type="bool" required=false %}
+{% api-method-parameter name="AutoAddEvents" type="bool" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="AutoAddVisitors" type="bool" required=false %}
+{% api-method-parameter name="AutoAddVisitors" type="bool" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="AutoAddPayingMembers" type="bool" required=false %}
+{% api-method-parameter name="AutoAddPayingMembers" type="bool" required="true" %}
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}

@@ -74,6 +74,7 @@ application/json
         "ToTime": DateTime.Parse("2013-01-01 11:00"),
         "DayOfWeek": DayOfWeek.Monday,
         "Available": true,
+
     }],
     "CurrentPageSize": 25,
     "CurrentPage": 1,
@@ -532,7 +533,7 @@ Update
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Updates and existing extraservicetimeslot.
+Updates and existing extraservicetimeslot. PUT requests require ALL record properties to be submitted with every request. Any missing properties will be cleared or set to false.
   
 Required User Role: `extraservicetimeslot-edit`
 {% endapi-method-description %}
@@ -550,16 +551,17 @@ application/json
 {% endapi-method-headers %}
 
 {% api-method-body-parameters %}
-The id of the extraservicetimeslot to update
-{% api-method-parameter name="ExtraServiceId" type="int" required=true %}
+
+{% api-method-parameter name="Id" type="int" required="true" %}
+{% api-method-parameter name="ExtraServiceId" type="int" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="FromTime" type="DateTime" required=true %}
+{% api-method-parameter name="FromTime" type="DateTime" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="ToTime" type="DateTime" required=true %}
+{% api-method-parameter name="ToTime" type="DateTime" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="DayOfWeek" type="DayOfWeek" required=false %}
+{% api-method-parameter name="DayOfWeek" type="DayOfWeek" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="Available" type="bool?" required=false %}
+{% api-method-parameter name="Available" type="bool?" required="true" %}
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}

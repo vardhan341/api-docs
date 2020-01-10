@@ -98,6 +98,7 @@ application/json
         "NewValue": "0",
         "ActionBy": "0",
         "EntityId": 0,
+
     }],
     "CurrentPageSize": 25,
     "CurrentPage": 1,
@@ -578,7 +579,7 @@ Update
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Updates and existing audittrailentry.
+Updates and existing audittrailentry. PUT requests require ALL record properties to be submitted with every request. Any missing properties will be cleared or set to false.
   
 Required User Role: `audittrailentry-edit`
 {% endapi-method-description %}
@@ -596,24 +597,25 @@ application/json
 {% endapi-method-headers %}
 
 {% api-method-body-parameters %}
-The id of the audittrailentry to update
-{% api-method-parameter name="BusinessId" type="int" required=true %}
+
+{% api-method-parameter name="Id" type="int" required="true" %}
+{% api-method-parameter name="BusinessId" type="int" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="EntityShortName" type="string" required=true %}
+{% api-method-parameter name="EntityShortName" type="string" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="Description" type="string" required=true %}
+{% api-method-parameter name="Description" type="string" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="PropertyName" type="string" required=true %}
+{% api-method-parameter name="PropertyName" type="string" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="AuditType" type="enum" required=false %}
+{% api-method-parameter name="AuditType" type="enum" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="OldValue" type="string" required=false %}
+{% api-method-parameter name="OldValue" type="string" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="NewValue" type="string" required=false %}
+{% api-method-parameter name="NewValue" type="string" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="ActionBy" type="string" required=false %}
+{% api-method-parameter name="ActionBy" type="string" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="EntityId" type="int" required=true %}
+{% api-method-parameter name="EntityId" type="int" required="true" %}
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}

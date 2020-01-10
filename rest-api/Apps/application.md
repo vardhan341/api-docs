@@ -83,6 +83,7 @@ application/json
         "ShortDescription": "ShortDescription",
         "Description": "Description",
         "InstallUrl": "InstallUrl",
+
     }],
     "CurrentPageSize": 25,
     "CurrentPage": 1,
@@ -536,7 +537,7 @@ Update
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Updates and existing application.
+Updates and existing application. PUT requests require ALL record properties to be submitted with every request. Any missing properties will be cleared or set to false.
   
 Required User Role: `application-edit`
 {% endapi-method-description %}
@@ -554,22 +555,23 @@ application/json
 {% endapi-method-headers %}
 
 {% api-method-body-parameters %}
-The id of the application to update
-{% api-method-parameter name="Name" type="string" required=true %}
+
+{% api-method-parameter name="Id" type="int" required="true" %}
+{% api-method-parameter name="Name" type="string" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="Published" type="bool" required=false %}
+{% api-method-parameter name="Published" type="bool" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="ShortDescription" type="string" required=true %}
+{% api-method-parameter name="ShortDescription" type="string" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="Description" type="string" required=false %}
+{% api-method-parameter name="Description" type="string" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="InstallUrl" type="string" required=true %}
+{% api-method-parameter name="InstallUrl" type="string" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="RequiredRoles" type="int[]" required=true %}
+{% api-method-parameter name="RequiredRoles" type="int[]" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="AddedRequiredRoles" type="int[]" required=true %}
+{% api-method-parameter name="AddedRequiredRoles" type="int[]" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="RemovedRequiredRoles" type="int[]" required=true %}
+{% api-method-parameter name="RemovedRequiredRoles" type="int[]" required="true" %}
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}

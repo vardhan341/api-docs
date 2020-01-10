@@ -128,6 +128,7 @@ application/json
         "AccountPort": "00001",
         "AuthPort": "00001",
         "SharedSecret": "00001",
+
     }],
     "CurrentPageSize": 25,
     "CurrentPage": 1,
@@ -610,7 +611,7 @@ Update
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Updates and existing radiusserver.
+Updates and existing radiusserver. PUT requests require ALL record properties to be submitted with every request. Any missing properties will be cleared or set to false.
   
 Required User Role: `radiusserver-edit`
 {% endapi-method-description %}
@@ -628,16 +629,17 @@ application/json
 {% endapi-method-headers %}
 
 {% api-method-body-parameters %}
-The id of the radiusserver to update
-{% api-method-parameter name="BusinessId" type="int" required=true %}
+
+{% api-method-parameter name="Id" type="int" required="true" %}
+{% api-method-parameter name="BusinessId" type="int" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="Name" type="string" required=true %}
+{% api-method-parameter name="Name" type="string" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="Vendor" type="enum" required=false %}
+{% api-method-parameter name="Vendor" type="enum" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="Active" type="bool" required=false %}
+{% api-method-parameter name="Active" type="bool" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="Description" type="string" required=false %}
+{% api-method-parameter name="Description" type="string" required="true" %}
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}

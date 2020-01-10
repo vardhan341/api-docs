@@ -109,6 +109,14 @@ application/json
         "Booking": null,
         "EventAttendee": null,
         "CreditUsed": 0,
+		"CoworkerBookingCreditUseHistoryBookingFromTime": "...",
+		"CoworkerBookingCreditUseHistoryBookingToTime": "...",
+		"CoworkerBookingCreditUseHistoryBookingResource_Name": "...",
+		"CoworkerBookingCreditUseHistoryEventAttendeeCalendarEvent_Name": "...",
+		"CoworkerBookingCreditUseHistoryEventAttendeeEventProduct_Name": "...",
+		"CoworkerBookingCreditUseHistoryEventAttendeeFullName": "...",
+		"CoworkerBookingCreditUseHistoryEventAttendeeEmail": "...",
+
     }],
     "CurrentPageSize": 25,
     "CurrentPage": 1,
@@ -561,7 +569,7 @@ Update
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Updates and existing coworkerbookingcreditusehistory.
+Updates and existing coworkerbookingcreditusehistory. PUT requests require ALL record properties to be submitted with every request. Any missing properties will be cleared or set to false.
   
 Required User Role: `coworkerbookingcreditusehistory-edit`
 {% endapi-method-description %}
@@ -579,14 +587,15 @@ application/json
 {% endapi-method-headers %}
 
 {% api-method-body-parameters %}
-The id of the coworkerbookingcreditusehistory to update
-{% api-method-parameter name="Description" type="string" required=false %}
+
+{% api-method-parameter name="Id" type="int" required="true" %}
+{% api-method-parameter name="Description" type="string" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="CoworkerBookingCreditId" type="int" required=true %}
+{% api-method-parameter name="CoworkerBookingCreditId" type="int" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="BookingId" type="int" required=false %}
+{% api-method-parameter name="BookingId" type="int" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="EventAttendeeId" type="int" required=false %}
+{% api-method-parameter name="EventAttendeeId" type="int" required="true" %}
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}

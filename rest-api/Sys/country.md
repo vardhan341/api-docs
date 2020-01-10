@@ -62,6 +62,7 @@ application/json
         "Name": "Spain",
         "TwoDigitsCode": "ES",
         "Culture": "ES-es",
+
     }],
     "CurrentPageSize": 25,
     "CurrentPage": 1,
@@ -494,7 +495,7 @@ Update
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Updates and existing country.
+Updates and existing country. PUT requests require ALL record properties to be submitted with every request. Any missing properties will be cleared or set to false.
   
 Required User Role: `country-edit`
 {% endapi-method-description %}
@@ -512,12 +513,13 @@ application/json
 {% endapi-method-headers %}
 
 {% api-method-body-parameters %}
-The id of the country to update
-{% api-method-parameter name="Name" type="string" required=true %}
+
+{% api-method-parameter name="Id" type="int" required="true" %}
+{% api-method-parameter name="Name" type="string" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="TwoDigitsCode" type="string" required=true %}
+{% api-method-parameter name="TwoDigitsCode" type="string" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="Culture" type="string" required=true %}
+{% api-method-parameter name="Culture" type="string" required="true" %}
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}

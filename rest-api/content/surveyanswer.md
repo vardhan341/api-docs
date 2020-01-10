@@ -72,6 +72,9 @@ application/json
         "SurveyRun": null,
         "SurveyQuestion": null,
         "Value": "",
+		"SurveyAnswerSurveyQuestionText": "...",
+		"SurveyAnswerSurveyQuestionSurvey_Name": "...",
+
     }],
     "CurrentPageSize": 25,
     "CurrentPage": 1,
@@ -504,7 +507,7 @@ Update
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Updates and existing surveyanswer.
+Updates and existing surveyanswer. PUT requests require ALL record properties to be submitted with every request. Any missing properties will be cleared or set to false.
   
 Required User Role: `surveyanswer-edit`
 {% endapi-method-description %}
@@ -522,12 +525,13 @@ application/json
 {% endapi-method-headers %}
 
 {% api-method-body-parameters %}
-The id of the surveyanswer to update
-{% api-method-parameter name="SurveyRunId" type="int" required=false %}
+
+{% api-method-parameter name="Id" type="int" required="true" %}
+{% api-method-parameter name="SurveyRunId" type="int" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="SurveyQuestionId" type="int" required=true %}
+{% api-method-parameter name="SurveyQuestionId" type="int" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="Value" type="string" required=false %}
+{% api-method-parameter name="Value" type="string" required="true" %}
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}

@@ -77,6 +77,10 @@ application/json
         "CoworkerExtraService": null,
         "Booking": null,
         "CreditUsed": 0,
+		"CoworkerExtraServiceUseHistoryBookingFromTime": "...",
+		"CoworkerExtraServiceUseHistoryBookingToTime": "...",
+		"CoworkerExtraServiceUseHistoryBookingResource_Name": "...",
+
     }],
     "CurrentPageSize": 25,
     "CurrentPage": 1,
@@ -512,7 +516,7 @@ Update
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Updates and existing coworkerextraserviceusehistory.
+Updates and existing coworkerextraserviceusehistory. PUT requests require ALL record properties to be submitted with every request. Any missing properties will be cleared or set to false.
   
 Required User Role: `coworkerextraserviceusehistory-edit`
 {% endapi-method-description %}
@@ -530,10 +534,11 @@ application/json
 {% endapi-method-headers %}
 
 {% api-method-body-parameters %}
-The id of the coworkerextraserviceusehistory to update
-{% api-method-parameter name="CoworkerExtraServiceId" type="int" required=true %}
+
+{% api-method-parameter name="Id" type="int" required="true" %}
+{% api-method-parameter name="CoworkerExtraServiceId" type="int" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="BookingId" type="int" required=false %}
+{% api-method-parameter name="BookingId" type="int" required="true" %}
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}

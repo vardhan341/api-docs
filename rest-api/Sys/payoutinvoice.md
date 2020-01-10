@@ -77,6 +77,10 @@ application/json
         "Invoice": null,
         "ResellerPayout": null,
         "Amount": 0,
+		"PayoutInvoiceInvoiceInvoiceNumber": "...",
+		"PayoutInvoiceInvoiceBusiness_Id": "...",
+		"PayoutInvoiceInvoiceBusiness_Name": "...",
+
     }],
     "CurrentPageSize": 25,
     "CurrentPage": 1,
@@ -506,7 +510,7 @@ Update
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Updates and existing payoutinvoice.
+Updates and existing payoutinvoice. PUT requests require ALL record properties to be submitted with every request. Any missing properties will be cleared or set to false.
   
 Required User Role: `payoutinvoice-edit`
 {% endapi-method-description %}
@@ -524,7 +528,8 @@ application/json
 {% endapi-method-headers %}
 
 {% api-method-body-parameters %}
-The id of the payoutinvoice to update
+
+{% api-method-parameter name="Id" type="int" required="true" %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
 

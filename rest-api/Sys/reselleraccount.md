@@ -161,6 +161,16 @@ application/json
         "CanManageAccount": false,
         "Notes": "Joe",
         "ScopeOfWork": "Joe",
+		"ResellerAccountResellerCurrency_Id": "...",
+		"ResellerAccountResellerCurrency_Code": "...",
+		"ResellerAccountBusinessName": "...",
+		"ResellerAccountBusinessPreAuthId": "...",
+		"ResellerAccountBusinessLast4Digits": "...",
+		"ResellerAccountBusinessPreAuthLastError": "...",
+		"ResellerAccountBusinessSuspended": "...",
+		"ResellerAccountBusinessNextInvoice": "...",
+		"ResellerAccountBusinessTrialExpireDate": "...",
+
     }],
     "CurrentPageSize": 25,
     "CurrentPage": 1,
@@ -662,7 +672,7 @@ Update
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Updates and existing reselleraccount.
+Updates and existing reselleraccount. PUT requests require ALL record properties to be submitted with every request. Any missing properties will be cleared or set to false.
   
 Required User Role: `reselleraccount-edit`
 {% endapi-method-description %}
@@ -680,10 +690,11 @@ application/json
 {% endapi-method-headers %}
 
 {% api-method-body-parameters %}
-The id of the reselleraccount to update
-{% api-method-parameter name="Notes" type="string" required=false %}
+
+{% api-method-parameter name="Id" type="int" required="true" %}
+{% api-method-parameter name="Notes" type="string" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="ScopeOfWork" type="string" required=false %}
+{% api-method-parameter name="ScopeOfWork" type="string" required="true" %}
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}

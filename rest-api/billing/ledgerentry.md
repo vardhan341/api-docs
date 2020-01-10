@@ -74,6 +74,7 @@ application/json
         "Description": "Descripción",
         "Debit": 0,
         "Credit": 0,
+
     }],
     "CurrentPageSize": 25,
     "CurrentPage": 1,
@@ -532,7 +533,7 @@ Update
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Updates and existing ledgerentry.
+Updates and existing ledgerentry. PUT requests require ALL record properties to be submitted with every request. Any missing properties will be cleared or set to false.
   
 Required User Role: `ledgerentry-edit`
 {% endapi-method-description %}
@@ -550,16 +551,17 @@ application/json
 {% endapi-method-headers %}
 
 {% api-method-body-parameters %}
-The id of the ledgerentry to update
-{% api-method-parameter name="BusinessId" type="int" required=true %}
+
+{% api-method-parameter name="Id" type="int" required="true" %}
+{% api-method-parameter name="BusinessId" type="int" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="Code" type="string" required=true %}
+{% api-method-parameter name="Code" type="string" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="Description" type="string" required=true %}
+{% api-method-parameter name="Description" type="string" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="Debit" type="decimal" required=true %}
+{% api-method-parameter name="Debit" type="decimal" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="Credit" type="decimal" required=true %}
+{% api-method-parameter name="Credit" type="decimal" required="true" %}
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}

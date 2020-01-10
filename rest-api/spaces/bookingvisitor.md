@@ -61,6 +61,8 @@ application/json
     "Records": [{
         "Booking": null,
         "Visitor": null,
+		"BookingVisitorVisitorFullName": "...",
+
     }],
     "CurrentPageSize": 25,
     "CurrentPage": 1,
@@ -486,7 +488,7 @@ Update
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Updates and existing bookingvisitor.
+Updates and existing bookingvisitor. PUT requests require ALL record properties to be submitted with every request. Any missing properties will be cleared or set to false.
   
 Required User Role: `bookingvisitor-edit`
 {% endapi-method-description %}
@@ -504,10 +506,11 @@ application/json
 {% endapi-method-headers %}
 
 {% api-method-body-parameters %}
-The id of the bookingvisitor to update
-{% api-method-parameter name="BookingId" type="int" required=true %}
+
+{% api-method-parameter name="Id" type="int" required="true" %}
+{% api-method-parameter name="BookingId" type="int" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="VisitorId" type="int" required=true %}
+{% api-method-parameter name="VisitorId" type="int" required="true" %}
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}

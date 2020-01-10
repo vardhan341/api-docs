@@ -54,6 +54,16 @@ application/json
 {% endapi-method-parameter %}
 
 
+{% api-method-parameter name="ApplyRuleFrom" type="DateTime?" %}
+?ResourceAccessRule\_ApplyRuleFrom=...
+{% endapi-method-parameter %}
+
+
+{% api-method-parameter name="ApplyRuleTo" type="DateTime?" %}
+?ResourceAccessRule\_ApplyRuleTo=...
+{% endapi-method-parameter %}
+
+
 {% api-method-parameter name="BookInAdvanceLimit" type="int?" %}
 ?ResourceAccessRule\_BookInAdvanceLimit=...
 {% endapi-method-parameter %}
@@ -129,6 +139,8 @@ application/json
         "Name": "Rule Name",
         "Active": true,
         "OnlyForContacts": true,
+        "ApplyRuleFrom": true,
+        "ApplyRuleTo": true,
         "BookInAdvanceLimit": 0,
         "LateBookingLimit": 0,
         "LateCancellationLimit": 0,
@@ -140,6 +152,7 @@ application/json
         "NoReturnPolicyAllUsers": 0,
         "RejectWithMessage": "0",
         "OnlyForMembers": true,
+
     }],
     "CurrentPageSize": 25,
     "CurrentPage": 1,
@@ -216,6 +229,8 @@ size=25 \(maximum=1000\)
         "Name": "Rule Name",
         "Active": true,
         "OnlyForContacts": true,
+        "ApplyRuleFrom": true,
+        "ApplyRuleTo": true,
         "BookInAdvanceLimit": 0,
         "LateBookingLimit": 0,
         "LateCancellationLimit": 0,
@@ -293,6 +308,18 @@ application/json
 ?from\_ResourceAccessRule\_UpdatedOn=...
 {% endapi-method-parameter %}
 
+{% api-method-parameter name="ApplyRuleFrom" type="datetime" required=false %}
+?from\_ResourceAccessRule\_ApplyRuleFrom=...
+{% endapi-method-parameter %}
+{% api-method-parameter name="ApplyRuleFrom" type="datetime" required=false %}
+?to\_ResourceAccessRule\_ApplyRuleFrom=...
+{% endapi-method-parameter %}
+{% api-method-parameter name="ApplyRuleTo" type="datetime" required=false %}
+?from\_ResourceAccessRule\_ApplyRuleTo=...
+{% endapi-method-parameter %}
+{% api-method-parameter name="ApplyRuleTo" type="datetime" required=false %}
+?to\_ResourceAccessRule\_ApplyRuleTo=...
+{% endapi-method-parameter %}
 {% api-method-parameter name="BookInAdvanceLimit" type="int" required=false %}
 ?from\_ResourceAccessRule\_BookInAdvanceLimit=...
 {% endapi-method-parameter %}
@@ -364,6 +391,8 @@ application/json
         "Name": "Rule Name",
         "Active": true,
         "OnlyForContacts": true,
+        "ApplyRuleFrom": true,
+        "ApplyRuleTo": true,
         "BookInAdvanceLimit": 0,
         "LateBookingLimit": 0,
         "LateCancellationLimit": 0,
@@ -440,6 +469,8 @@ Comma-separated list of IDs of every resourceaccessrule to fetch. I.e. [123456,7
         "Name": "Rule Name",
         "Active": true,
         "OnlyForContacts": true,
+        "ApplyRuleFrom": true,
+        "ApplyRuleTo": true,
         "BookInAdvanceLimit": 0,
         "LateBookingLimit": 0,
         "LateCancellationLimit": 0,
@@ -524,6 +555,8 @@ The ID of the resourceaccessrule to fetch.
         "Name": "Rule Name",
         "Active": true,
         "OnlyForContacts": true,
+        "ApplyRuleFrom": true,
+        "ApplyRuleTo": true,
         "BookInAdvanceLimit": 0,
         "LateBookingLimit": 0,
         "LateCancellationLimit": 0,
@@ -584,6 +617,10 @@ application/json
 {% api-method-parameter name="Active" type="bool" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="OnlyForContacts" type="bool" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="ApplyRuleFrom" type="DateTime?" required=false %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="ApplyRuleTo" type="DateTime?" required=false %}
 {% endapi-method-parameter %}
 {% api-method-parameter name="BookInAdvanceLimit" type="int?" required=false %}
 {% endapi-method-parameter %}
@@ -689,6 +726,8 @@ _This response is an example, errors and messages will follow this structure but
 	"Name": "Rule Name",
 	"Active": true,
 	"OnlyForContacts": true,
+	"ApplyRuleFrom": true,
+	"ApplyRuleTo": true,
 	"BookInAdvanceLimit": 0,
 	"LateBookingLimit": 0,
 	"LateCancellationLimit": 0,
@@ -716,7 +755,7 @@ Update
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Updates and existing resourceaccessrule.
+Updates and existing resourceaccessrule. PUT requests require ALL record properties to be submitted with every request. Any missing properties will be cleared or set to false.
   
 Required User Role: `resourceaccessrule-edit`
 {% endapi-method-description %}
@@ -734,48 +773,53 @@ application/json
 {% endapi-method-headers %}
 
 {% api-method-body-parameters %}
-The id of the resourceaccessrule to update
-{% api-method-parameter name="ResourceId" type="int" required=true %}
+
+{% api-method-parameter name="Id" type="int" required="true" %}
+{% api-method-parameter name="ResourceId" type="int" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="Name" type="string" required=true %}
+{% api-method-parameter name="Name" type="string" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="Active" type="bool" required=false %}
+{% api-method-parameter name="Active" type="bool" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="OnlyForContacts" type="bool" required=false %}
+{% api-method-parameter name="OnlyForContacts" type="bool" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="BookInAdvanceLimit" type="int?" required=false %}
+{% api-method-parameter name="ApplyRuleFrom" type="DateTime?" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="LateBookingLimit" type="int?" required=false %}
+{% api-method-parameter name="ApplyRuleTo" type="DateTime?" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="LateCancellationLimit" type="int?" required=false %}
+{% api-method-parameter name="BookInAdvanceLimit" type="int?" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="IntervalLimit" type="int?" required=false %}
+{% api-method-parameter name="LateBookingLimit" type="int?" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="MaxBookingLength" type="int?" required=false %}
+{% api-method-parameter name="LateCancellationLimit" type="int?" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="MinBookingLength" type="int?" required=false %}
+{% api-method-parameter name="IntervalLimit" type="int?" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="NoReturnPolicy" type="int?" required=false %}
+{% api-method-parameter name="MaxBookingLength" type="int?" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="NoReturnPolicyAllResources" type="int?" required=false %}
+{% api-method-parameter name="MinBookingLength" type="int?" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="NoReturnPolicyAllUsers" type="int?" required=false %}
+{% api-method-parameter name="NoReturnPolicy" type="int?" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="RejectWithMessage" type="string" required=false %}
+{% api-method-parameter name="NoReturnPolicyAllResources" type="int?" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="OnlyForMembers" type="bool" required=false %}
+{% api-method-parameter name="NoReturnPolicyAllUsers" type="int?" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="Tariffs" type="int[]" required=false %}
+{% api-method-parameter name="RejectWithMessage" type="string" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="AddedTariffs" type="int[]" required=false %}
+{% api-method-parameter name="OnlyForMembers" type="bool" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="RemovedTariffs" type="int[]" required=false %}
+{% api-method-parameter name="Tariffs" type="int[]" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="Members" type="int[]" required=false %}
+{% api-method-parameter name="AddedTariffs" type="int[]" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="AddedMembers" type="int[]" required=false %}
+{% api-method-parameter name="RemovedTariffs" type="int[]" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="RemovedMembers" type="int[]" required=false %}
+{% api-method-parameter name="Members" type="int[]" required="true" %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="AddedMembers" type="int[]" required="true" %}
+{% endapi-method-parameter %}
+{% api-method-parameter name="RemovedMembers" type="int[]" required="true" %}
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
@@ -860,6 +904,8 @@ _This response is an example, errors and messages will follow this structure but
 	"Name": "Rule Name",
 	"Active": true,
 	"OnlyForContacts": true,
+	"ApplyRuleFrom": true,
+	"ApplyRuleTo": true,
 	"BookInAdvanceLimit": 0,
 	"LateBookingLimit": 0,
 	"LateCancellationLimit": 0,

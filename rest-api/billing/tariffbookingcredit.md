@@ -90,6 +90,9 @@ application/json
         "Credit": 0,
         "CaneBeUsedForEvents": false,
         "ServiceRenewalTime": 0,
+		"TariffBookingCreditTariffName": "...",
+		"TariffBookingCreditTariffBusiness_Currency_Code": "...",
+
     }],
     "CurrentPageSize": 25,
     "CurrentPage": 1,
@@ -548,7 +551,7 @@ Update
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Updates and existing tariffbookingcredit.
+Updates and existing tariffbookingcredit. PUT requests require ALL record properties to be submitted with every request. Any missing properties will be cleared or set to false.
   
 Required User Role: `tariffbookingcredit-edit`
 {% endapi-method-description %}
@@ -566,28 +569,29 @@ application/json
 {% endapi-method-headers %}
 
 {% api-method-body-parameters %}
-The id of the tariffbookingcredit to update
-{% api-method-parameter name="Name" type="string" required=true %}
+
+{% api-method-parameter name="Id" type="int" required="true" %}
+{% api-method-parameter name="Name" type="string" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="TariffId" type="int" required=true %}
+{% api-method-parameter name="TariffId" type="int" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="ElegibleResourceTypes" type="int[]" required=true %}
+{% api-method-parameter name="ElegibleResourceTypes" type="int[]" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="AddedElegibleResourceTypes" type="int[]" required=true %}
+{% api-method-parameter name="AddedElegibleResourceTypes" type="int[]" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="RemovedElegibleResourceTypes" type="int[]" required=true %}
+{% api-method-parameter name="RemovedElegibleResourceTypes" type="int[]" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="Credit" type="decimal" required=true %}
+{% api-method-parameter name="Credit" type="decimal" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="CaneBeUsedForEvents" type="bool" required=false %}
+{% api-method-parameter name="CaneBeUsedForEvents" type="bool" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="EventCategories" type="int[]" required=false %}
+{% api-method-parameter name="EventCategories" type="int[]" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="AddedEventCategories" type="int[]" required=false %}
+{% api-method-parameter name="AddedEventCategories" type="int[]" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="RemovedEventCategories" type="int[]" required=false %}
+{% api-method-parameter name="RemovedEventCategories" type="int[]" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="ServiceRenewalTime" type="enum" required=false %}
+{% api-method-parameter name="ServiceRenewalTime" type="enum" required="true" %}
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}

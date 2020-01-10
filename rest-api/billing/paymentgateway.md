@@ -104,6 +104,7 @@ application/json
         "TransactionFee": 0,
         "FinancialAccount": null,
         "TaxRate": null,
+
     }],
     "CurrentPageSize": 25,
     "CurrentPage": 1,
@@ -385,86 +386,6 @@ Comma-separated list of IDs of every paymentgateway to fetch. I.e. [123456,78910
 
 > 🔒 Requires user role `paymentgateway-list`
 
-
-{% api-method method="get" host="https://spaces.nexudus.com/api" path="/billing/paymentgateways?PaymentGateway_Id=[:id1,:id2,...]" %}
-{% api-method-summary %}
-List by Ids
-{% endapi-method-summary %}
-
-{% api-method-description %}
-Gets one or more paymentgateway records based on their Id.
-{% endapi-method-description %}
-
-{% api-method-spec %}
-{% api-method-request %}
-
-{% api-method-headers %}
-{% api-method-parameter name="Authorization" type="string" required=true %}
-Basic Authentication token. Base64 encoding of 'username:password'.
-{% endapi-method-parameter %}
-{% api-method-parameter name="Content" type="string" required=true %}
-application/json
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
-
-{% api-method-path-parameters %}
-{% api-method-parameter name="id" type="integer" required=true %}
-Comma-separated list of IDs of every paymentgateway to fetch. I.e. [123456,789102,...] 
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
-{% endapi-method-request %}
-
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
-```javascript
-{
-    "Records": [{
-        "Business": null,
-        "Name": "PayPal",
-        "PaymentGatewayType": Nexudus.Coworking.Core.Enums.ePaymentGatewayType.AutorizeNET,
-        "AccessToken": "PayPal",
-        "ConfigurationXml": "ConfigurationXml",
-        "XmlResponse": "XmlResponse",
-        "TransactionFee": 0,
-        "FinancialAccount": null,
-        "TaxRate": null,
-    }],
-    }],
-    "CurrentPageSize": 25,
-    "CurrentPage": 1,
-    "CurrentOrderField": "Id",
-    "CurrentSortDirection": 1,
-    "FirstItem": 1,
-    "HasNextPage": true,
-    "HasPreviousPage": false,
-    "LastItem": 25,
-    "PageNumber": 1,
-    "PageSize": 25,
-    "TotalItems": 60,
-    "TotalPages": 3
-}
-```
-{% endapi-method-response-example %}
-
-{% api-method-response-example httpCode=404 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
-```
-"Not found"
-```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
-
-> 🔒 Requires user role `paymentgateway-list`
-
 {% api-method method="get" host="https://spaces.nexudus.com/api" path="/billing/paymentgateways/:id" %}
 {% api-method-summary %}
 One by Id
@@ -665,7 +586,7 @@ Update
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Updates and existing paymentgateway.
+Updates and existing paymentgateway. PUT requests require ALL record properties to be submitted with every request. Any missing properties will be cleared or set to false.
   
 Required User Role: `paymentgateway-edit`
 {% endapi-method-description %}
@@ -683,20 +604,21 @@ application/json
 {% endapi-method-headers %}
 
 {% api-method-body-parameters %}
-The id of the paymentgateway to update
-{% api-method-parameter name="BusinessId" type="int" required=true %}
+
+{% api-method-parameter name="Id" type="int" required="true" %}
+{% api-method-parameter name="BusinessId" type="int" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="Name" type="string" required=true %}
+{% api-method-parameter name="Name" type="string" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="Attempt3dSecure" type="bool" required=false %}
+{% api-method-parameter name="Attempt3dSecure" type="bool" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="ConfigurationXml" type="string" required=false %}
+{% api-method-parameter name="ConfigurationXml" type="string" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="TransactionFee" type="decimal?" required=false %}
+{% api-method-parameter name="TransactionFee" type="decimal?" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="FinancialAccountId" type="int" required=false %}
+{% api-method-parameter name="FinancialAccountId" type="int" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="TaxRateId" type="int" required=false %}
+{% api-method-parameter name="TaxRateId" type="int" required="true" %}
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}

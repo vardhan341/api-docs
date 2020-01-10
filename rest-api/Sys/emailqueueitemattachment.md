@@ -56,6 +56,7 @@ application/json
     "Records": [{
         "EmailQueueItem": null,
         "Name": "Header",
+
     }],
     "CurrentPageSize": 25,
     "CurrentPage": 1,
@@ -481,7 +482,7 @@ Update
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Updates and existing emailqueueitemattachment.
+Updates and existing emailqueueitemattachment. PUT requests require ALL record properties to be submitted with every request. Any missing properties will be cleared or set to false.
   
 Required User Role: `emailqueueitemattachment-edit`
 {% endapi-method-description %}
@@ -499,10 +500,11 @@ application/json
 {% endapi-method-headers %}
 
 {% api-method-body-parameters %}
-The id of the emailqueueitemattachment to update
-{% api-method-parameter name="EmailQueueItemId" type="int" required=true %}
+
+{% api-method-parameter name="Id" type="int" required="true" %}
+{% api-method-parameter name="EmailQueueItemId" type="int" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="Name" type="string" required=true %}
+{% api-method-parameter name="Name" type="string" required="true" %}
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}

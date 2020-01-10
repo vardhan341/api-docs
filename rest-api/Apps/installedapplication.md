@@ -62,6 +62,7 @@ application/json
         "Application": null,
         "Business": null,
         "RequiresApproval": false,
+
     }],
     "CurrentPageSize": 25,
     "CurrentPage": 1,
@@ -494,7 +495,7 @@ Update
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Updates and existing installedapplication.
+Updates and existing installedapplication. PUT requests require ALL record properties to be submitted with every request. Any missing properties will be cleared or set to false.
   
 Required User Role: `installedapplication-edit`
 {% endapi-method-description %}
@@ -512,12 +513,13 @@ application/json
 {% endapi-method-headers %}
 
 {% api-method-body-parameters %}
-The id of the installedapplication to update
-{% api-method-parameter name="ApplicationId" type="int" required=true %}
+
+{% api-method-parameter name="Id" type="int" required="true" %}
+{% api-method-parameter name="ApplicationId" type="int" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="BusinessId" type="int" required=true %}
+{% api-method-parameter name="BusinessId" type="int" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="RequiresApproval" type="bool" required=false %}
+{% api-method-parameter name="RequiresApproval" type="bool" required="true" %}
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}

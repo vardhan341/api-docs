@@ -68,6 +68,7 @@ application/json
         "FromTime": DateTime.Parse("2013-01-01 10:00"),
         "ToTime": DateTime.Parse("2013-01-01 11:00"),
         "DayOfWeek": DayOfWeek.Monday,
+
     }],
     "CurrentPageSize": 25,
     "CurrentPage": 1,
@@ -519,7 +520,7 @@ Update
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Updates and existing businesstimeslot.
+Updates and existing businesstimeslot. PUT requests require ALL record properties to be submitted with every request. Any missing properties will be cleared or set to false.
   
 Required User Role: `businesstimeslot-edit`
 {% endapi-method-description %}
@@ -537,14 +538,15 @@ application/json
 {% endapi-method-headers %}
 
 {% api-method-body-parameters %}
-The id of the businesstimeslot to update
-{% api-method-parameter name="BusinessId" type="int" required=true %}
+
+{% api-method-parameter name="Id" type="int" required="true" %}
+{% api-method-parameter name="BusinessId" type="int" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="FromTime" type="DateTime" required=true %}
+{% api-method-parameter name="FromTime" type="DateTime" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="ToTime" type="DateTime" required=true %}
+{% api-method-parameter name="ToTime" type="DateTime" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="DayOfWeek" type="DayOfWeek" required=false %}
+{% api-method-parameter name="DayOfWeek" type="DayOfWeek" required="true" %}
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}

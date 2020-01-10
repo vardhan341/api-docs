@@ -78,6 +78,9 @@ application/json
         "Product": null,
         "Price": false,
         "Refundable": false,
+		"TariffSignupProductTariffName": "...",
+		"TariffSignupProductProductName": "...",
+
     }],
     "CurrentPageSize": 25,
     "CurrentPage": 1,
@@ -523,7 +526,7 @@ Update
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Updates and existing tariffsignupproduct.
+Updates and existing tariffsignupproduct. PUT requests require ALL record properties to be submitted with every request. Any missing properties will be cleared or set to false.
   
 Required User Role: `tariffsignupproduct-edit`
 {% endapi-method-description %}
@@ -541,14 +544,15 @@ application/json
 {% endapi-method-headers %}
 
 {% api-method-body-parameters %}
-The id of the tariffsignupproduct to update
-{% api-method-parameter name="TariffId" type="int" required=true %}
+
+{% api-method-parameter name="Id" type="int" required="true" %}
+{% api-method-parameter name="TariffId" type="int" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="ProductId" type="int" required=true %}
+{% api-method-parameter name="ProductId" type="int" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="Price" type="decimal?" required=false %}
+{% api-method-parameter name="Price" type="decimal?" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="Refundable" type="bool" required=false %}
+{% api-method-parameter name="Refundable" type="bool" required="true" %}
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}

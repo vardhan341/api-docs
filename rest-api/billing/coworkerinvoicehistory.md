@@ -128,6 +128,19 @@ application/json
         "Name": "00001",
         "Description": "00001",
         "IsProblem": false,
+		"CoworkerInvoiceHistoryCoworkerInvoiceCoworker_Id": "...",
+		"CoworkerInvoiceHistoryCoworkerInvoiceBusiness_Currency_Code": "...",
+		"CoworkerInvoiceHistoryCoworkerInvoiceCoworker_FullName": "...",
+		"CoworkerInvoiceHistoryCoworkerInvoiceTotalAmount": "...",
+		"CoworkerInvoiceHistoryCoworkerInvoiceInvoiceNumber": "...",
+		"CoworkerInvoiceHistoryCoworkerInvoiceBillToName": "...",
+		"CoworkerInvoiceHistoryCoworkerInvoicePaid": "...",
+		"CoworkerInvoiceHistoryCoworkerInvoicePaidOn": "...",
+		"CoworkerInvoiceHistoryCoworkerInvoiceRefunded": "...",
+		"CoworkerInvoiceHistoryCoworkerInvoiceRefundedOn": "...",
+		"CoworkerInvoiceHistoryCoworkerInvoiceDueDate": "...",
+		"CoworkerInvoiceHistoryCoworkerInvoiceDraft": "...",
+
     }],
     "CurrentPageSize": 25,
     "CurrentPage": 1,
@@ -567,7 +580,7 @@ Update
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Updates and existing coworkerinvoicehistory.
+Updates and existing coworkerinvoicehistory. PUT requests require ALL record properties to be submitted with every request. Any missing properties will be cleared or set to false.
   
 Required User Role: `coworkerinvoicehistory-edit`
 {% endapi-method-description %}
@@ -585,14 +598,15 @@ application/json
 {% endapi-method-headers %}
 
 {% api-method-body-parameters %}
-The id of the coworkerinvoicehistory to update
-{% api-method-parameter name="CoworkerInvoiceId" type="int" required=true %}
+
+{% api-method-parameter name="Id" type="int" required="true" %}
+{% api-method-parameter name="CoworkerInvoiceId" type="int" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="Name" type="string" required=true %}
+{% api-method-parameter name="Name" type="string" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="Description" type="string" required=true %}
+{% api-method-parameter name="Description" type="string" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="IsProblem" type="bool" required=false %}
+{% api-method-parameter name="IsProblem" type="bool" required="true" %}
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}

@@ -62,6 +62,7 @@ application/json
         "Language": null,
         "Name": "Name",
         "Value": "Value",
+
     }],
     "CurrentPageSize": 25,
     "CurrentPage": 1,
@@ -494,7 +495,7 @@ Update
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Updates and existing languagetoken.
+Updates and existing languagetoken. PUT requests require ALL record properties to be submitted with every request. Any missing properties will be cleared or set to false.
   
 Required User Role: `languagetoken-edit`
 {% endapi-method-description %}
@@ -512,12 +513,13 @@ application/json
 {% endapi-method-headers %}
 
 {% api-method-body-parameters %}
-The id of the languagetoken to update
-{% api-method-parameter name="LanguageId" type="int" required=true %}
+
+{% api-method-parameter name="Id" type="int" required="true" %}
+{% api-method-parameter name="LanguageId" type="int" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="Name" type="string" required=true %}
+{% api-method-parameter name="Name" type="string" required="true" %}
 {% endapi-method-parameter %}
-{% api-method-parameter name="Value" type="string" required=false %}
+{% api-method-parameter name="Value" type="string" required="true" %}
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
