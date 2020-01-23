@@ -582,13 +582,13 @@ _This response is an example, errors and messages will follow this structure but
 
 ```javascript
 {
-	"Business": 12345678,
-	"Coworker": 12345678,
+	"BusinessId": 12345678,
+	"CoworkerId": 12345678,
 	"Name": "00001",
 	"Notes": "Notes",
 	"Completed": true,
 	"DueDate": null,
-	"Responsible": 12345678,
+	"ResponsibleId": 12345678,
 	"NotifyByEmail": true,
 	"DisplayToEveryone": true,
 }
@@ -718,13 +718,13 @@ _This response is an example, errors and messages will follow this structure but
 ```javascript
 {
 	"Id": 12345678,
-	"Business": 12345678,
-	"Coworker": 12345678,
+	"BusinessId": 12345678,
+	"CoworkerId": 12345678,
 	"Name": "00001",
 	"Notes": "Notes",
 	"Completed": true,
 	"DueDate": null,
-	"Responsible": 12345678,
+	"ResponsibleId": 12345678,
 	"NotifyByEmail": true,
 	"DisplayToEveryone": true,
 }

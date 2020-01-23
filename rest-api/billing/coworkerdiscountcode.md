@@ -546,9 +546,9 @@ _This response is an example, errors and messages will follow this structure but
 
 ```javascript
 {
-	"Coworker": 12345678,
-	"Business": 12345678,
-	"DiscountCode": 12345678,
+	"CoworkerId": 12345678,
+	"BusinessId": 12345678,
+	"DiscountCodeId": 12345678,
 	"Notes": "Notes",
 	"ExpiresOn": null,
 }
@@ -670,9 +670,9 @@ _This response is an example, errors and messages will follow this structure but
 ```javascript
 {
 	"Id": 12345678,
-	"Coworker": 12345678,
-	"Business": 12345678,
-	"DiscountCode": 12345678,
+	"CoworkerId": 12345678,
+	"BusinessId": 12345678,
+	"DiscountCodeId": 12345678,
 	"Notes": "Notes",
 	"ExpiresOn": null,
 }

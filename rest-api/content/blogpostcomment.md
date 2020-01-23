@@ -524,9 +524,9 @@ _This response is an example, errors and messages will follow this structure but
 
 ```javascript
 {
-	"Business": 12345678,
-	"BlogPost": 12345678,
-	"PostedBy": 12345678,
+	"BusinessId": 12345678,
+	"BlogPostId": 12345678,
+	"PostedById": 12345678,
 	"Title": "Title",
 	"Text": "Text",
 	"Published": true,
@@ -651,9 +651,9 @@ _This response is an example, errors and messages will follow this structure but
 ```javascript
 {
 	"Id": 12345678,
-	"Business": 12345678,
-	"BlogPost": 12345678,
-	"PostedBy": 12345678,
+	"BusinessId": 12345678,
+	"BlogPostId": 12345678,
+	"PostedById": 12345678,
 	"Title": "Title",
 	"Text": "Text",
 	"Published": true,

@@ -686,7 +686,7 @@ _This response is an example, errors and messages will follow this structure but
 
 ```javascript
 {
-	"Business": 12345678,
+	"BusinessId": 12345678,
 	"DisplayName": "Joe",
 	"EmailAddress": "joe@example.com",
 	"Active": true,
@@ -852,7 +852,7 @@ _This response is an example, errors and messages will follow this structure but
 ```javascript
 {
 	"Id": 12345678,
-	"Business": 12345678,
+	"BusinessId": 12345678,
 	"DisplayName": "Joe",
 	"EmailAddress": "joe@example.com",
 	"Active": true,

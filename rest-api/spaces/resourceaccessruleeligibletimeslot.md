@@ -506,7 +506,7 @@ _This response is an example, errors and messages will follow this structure but
 
 ```javascript
 {
-	"ResourceAccessRule": 12345678,
+	"ResourceAccessRuleId": 12345678,
 	"FromTime": DateTime.Parse("FromTime"),
 	"ToTime": DateTime.Parse("FromTime"),
 	"DayOfWeek": 1 (check Enumerated values section below),
@@ -627,7 +627,7 @@ _This response is an example, errors and messages will follow this structure but
 ```javascript
 {
 	"Id": 12345678,
-	"ResourceAccessRule": 12345678,
+	"ResourceAccessRuleId": 12345678,
 	"FromTime": DateTime.Parse("FromTime"),
 	"ToTime": DateTime.Parse("FromTime"),
 	"DayOfWeek": 1 (check Enumerated values section below),

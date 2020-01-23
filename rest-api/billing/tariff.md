@@ -1148,7 +1148,7 @@ _This response is an example, errors and messages will follow this structure but
 
 ```javascript
 {
-	"Business": 12345678,
+	"BusinessId": 12345678,
 	"Name": "Name",
 	"Price": 0,
 	"DefaultInvoicingDay": ,
@@ -1156,9 +1156,9 @@ _This response is an example, errors and messages will follow this structure but
 	"UseTimePasses": true,
 	"Description": "Descripción",
 	"SignUpFee": 0,
-	"Currency": 12345678,
-	"TaxRate": 12345678,
-	"FinancialAccount": 12345678,
+	"CurrencyId": 12345678,
+	"TaxRateId": 12345678,
+	"FinancialAccountId": 12345678,
 	"TermsAndConditions": "TermsAndConditions",
 	"CancellationPeriod": 0,
 	"DisplayOrder": true,
@@ -1386,7 +1386,7 @@ _This response is an example, errors and messages will follow this structure but
 ```javascript
 {
 	"Id": 12345678,
-	"Business": 12345678,
+	"BusinessId": 12345678,
 	"Name": "Name",
 	"Price": 0,
 	"DefaultInvoicingDay": ,
@@ -1394,9 +1394,9 @@ _This response is an example, errors and messages will follow this structure but
 	"UseTimePasses": true,
 	"Description": "Descripción",
 	"SignUpFee": 0,
-	"Currency": 12345678,
-	"TaxRate": 12345678,
-	"FinancialAccount": 12345678,
+	"CurrencyId": 12345678,
+	"TaxRateId": 12345678,
+	"FinancialAccountId": 12345678,
 	"TermsAndConditions": "TermsAndConditions",
 	"CancellationPeriod": 0,
 	"DisplayOrder": true,

@@ -470,7 +470,7 @@ _This response is an example, errors and messages will follow this structure but
 
 ```javascript
 {
-	"EmailQueueItem": 12345678,
+	"EmailQueueItemId": 12345678,
 	"Name": "Header",
 }
 
@@ -585,7 +585,7 @@ _This response is an example, errors and messages will follow this structure but
 ```javascript
 {
 	"Id": 12345678,
-	"EmailQueueItem": 12345678,
+	"EmailQueueItemId": 12345678,
 	"Name": "Header",
 }
 

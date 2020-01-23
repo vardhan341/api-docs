@@ -512,8 +512,8 @@ _This response is an example, errors and messages will follow this structure but
 
 ```javascript
 {
-	"Resource": 12345678,
-	"Product": 12345678,
+	"ResourceId": 12345678,
+	"ProductId": 12345678,
 	"InvoiceInMinutes": false,
 	"RequestQuantity": false,
 	"Visible": true,
@@ -636,8 +636,8 @@ _This response is an example, errors and messages will follow this structure but
 ```javascript
 {
 	"Id": 12345678,
-	"Resource": 12345678,
-	"Product": 12345678,
+	"ResourceId": 12345678,
+	"ProductId": 12345678,
 	"InvoiceInMinutes": false,
 	"RequestQuantity": false,
 	"Visible": true,

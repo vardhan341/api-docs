@@ -1014,9 +1014,9 @@ _This response is an example, errors and messages will follow this structure but
 
 ```javascript
 {
-	"Resource": 12345678,
-	"Coworker": 12345678,
-	"ExtraService": 12345678,
+	"ResourceId": 12345678,
+	"CoworkerId": 12345678,
+	"ExtraServiceId": 12345678,
 	"FromTime": DateTime.Parse("FromTime"),
 	"ToTime": DateTime.Parse("FromTime"),
 	"Notes": "Notes",
@@ -1225,9 +1225,9 @@ _This response is an example, errors and messages will follow this structure but
 ```javascript
 {
 	"Id": 12345678,
-	"Resource": 12345678,
-	"Coworker": 12345678,
-	"ExtraService": 12345678,
+	"ResourceId": 12345678,
+	"CoworkerId": 12345678,
+	"ExtraServiceId": 12345678,
 	"FromTime": DateTime.Parse("FromTime"),
 	"ToTime": DateTime.Parse("FromTime"),
 	"Notes": "Notes",

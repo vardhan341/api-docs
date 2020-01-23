@@ -542,8 +542,8 @@ _This response is an example, errors and messages will follow this structure but
 
 ```javascript
 {
-	"TaskList": 12345678,
-	"Responsible": 12345678,
+	"TaskListId": 12345678,
+	"ResponsibleId": 12345678,
 	"Name": "Name",
 	"Active": true,
 	"NotifyByEmail": true,
@@ -672,8 +672,8 @@ _This response is an example, errors and messages will follow this structure but
 ```javascript
 {
 	"Id": 12345678,
-	"TaskList": 12345678,
-	"Responsible": 12345678,
+	"TaskListId": 12345678,
+	"ResponsibleId": 12345678,
 	"Name": "Name",
 	"Active": true,
 	"NotifyByEmail": true,

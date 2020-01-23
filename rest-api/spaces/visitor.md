@@ -638,10 +638,10 @@ _This response is an example, errors and messages will follow this structure but
 
 ```javascript
 {
-	"Business": 12345678,
+	"BusinessId": 12345678,
 	"FullName": "Jon Doe",
 	"Email": "email@email.com",
-	"Coworker": 12345678,
+	"CoworkerId": 12345678,
 	"VisitorSource": 1 (check Enumerated values section below),
 	"CheckedInAt": "CheckedInAt",
 	"Notes": "Description",
@@ -787,10 +787,10 @@ _This response is an example, errors and messages will follow this structure but
 ```javascript
 {
 	"Id": 12345678,
-	"Business": 12345678,
+	"BusinessId": 12345678,
 	"FullName": "Jon Doe",
 	"Email": "email@email.com",
-	"Coworker": 12345678,
+	"CoworkerId": 12345678,
 	"VisitorSource": 1 (check Enumerated values section below),
 	"CheckedInAt": "CheckedInAt",
 	"Notes": "Description",

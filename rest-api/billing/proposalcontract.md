@@ -645,8 +645,8 @@ _This response is an example, errors and messages will follow this structure but
 
 ```javascript
 {
-	"Proposal": 12345678,
-	"Tariff": 12345678,
+	"ProposalId": 12345678,
+	"TariffId": 12345678,
 	"Desks": [12345678, 87654321] (replaces entire list),
 	"AddedDesks": [12345678, 87654321] (adds to list),
 	"RemovedDesks": [12345678, 87654321] (removes from list),
@@ -656,7 +656,7 @@ _This response is an example, errors and messages will follow this structure but
 	"CancellationDate": null,
 	"BillingDay": 1,
 	"Quantity": 1,
-	"DiscountCode": 12345678,
+	"DiscountCodeId": 12345678,
 	"FloorPlanDeskIds": "",
 	"FloorPlanDeskNames": "",
 }
@@ -798,8 +798,8 @@ _This response is an example, errors and messages will follow this structure but
 ```javascript
 {
 	"Id": 12345678,
-	"Proposal": 12345678,
-	"Tariff": 12345678,
+	"ProposalId": 12345678,
+	"TariffId": 12345678,
 	"Desks": [12345678, 87654321] (replaces entire list),
 	"AddedDesks": [12345678, 87654321] (adds to list),
 	"RemovedDesks": [12345678, 87654321] (removes from list),
@@ -810,7 +810,7 @@ _This response is an example, errors and messages will follow this structure but
 	"CancellationDate": null,
 	"BillingDay": 1,
 	"Quantity": 1,
-	"DiscountCode": 12345678,
+	"DiscountCodeId": 12345678,
 	"FloorPlanDeskIds": "",
 	"FloorPlanDeskNames": "",
 }

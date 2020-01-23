@@ -568,14 +568,14 @@ _This response is an example, errors and messages will follow this structure but
 
 ```javascript
 {
-	"Business": 12345678,
+	"BusinessId": 12345678,
 	"Name": "PayPal",
 	"PaymentGatewayType": 1 (check Enumerated values section below),
 	"Attempt3dSecure": false,
 	"ConfigurationXml": "ConfigurationXml",
 	"TransactionFee": 0,
-	"FinancialAccount": 12345678,
-	"TaxRate": 12345678,
+	"FinancialAccountId": 12345678,
+	"TaxRateId": 12345678,
 }
 
 ```
@@ -699,13 +699,13 @@ _This response is an example, errors and messages will follow this structure but
 ```javascript
 {
 	"Id": 12345678,
-	"Business": 12345678,
+	"BusinessId": 12345678,
 	"Name": "PayPal",
 	"Attempt3dSecure": false,
 	"ConfigurationXml": "ConfigurationXml",
 	"TransactionFee": 0,
-	"FinancialAccount": 12345678,
-	"TaxRate": 12345678,
+	"FinancialAccountId": 12345678,
+	"TaxRateId": 12345678,
 }
 
 ```

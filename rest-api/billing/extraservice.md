@@ -830,7 +830,7 @@ _This response is an example, errors and messages will follow this structure but
 
 ```javascript
 {
-	"Business": 12345678,
+	"BusinessId": 12345678,
 	"Name": "Name",
 	"Description": "Description",
 	"Visible": true,
@@ -844,9 +844,9 @@ _This response is an example, errors and messages will follow this structure but
 	"MaximumPrice": null,
 	"IsDefaultPrice": true,
 	"UsePerNightPricing": true,
-	"Currency": 12345678,
-	"TaxRate": 12345678,
-	"FinancialAccount": 12345678,
+	"CurrencyId": 12345678,
+	"TaxRateId": 12345678,
+	"FinancialAccountId": 12345678,
 	"FromTime": null,
 	"ToTime": null,
 	"MinLength": null,
@@ -1035,7 +1035,7 @@ _This response is an example, errors and messages will follow this structure but
 ```javascript
 {
 	"Id": 12345678,
-	"Business": 12345678,
+	"BusinessId": 12345678,
 	"Name": "Name",
 	"Description": "Description",
 	"Visible": true,
@@ -1049,9 +1049,9 @@ _This response is an example, errors and messages will follow this structure but
 	"MaximumPrice": null,
 	"IsDefaultPrice": true,
 	"UsePerNightPricing": true,
-	"Currency": 12345678,
-	"TaxRate": 12345678,
-	"FinancialAccount": 12345678,
+	"CurrencyId": 12345678,
+	"TaxRateId": 12345678,
+	"FinancialAccountId": 12345678,
 	"FromTime": null,
 	"ToTime": null,
 	"MinLength": null,

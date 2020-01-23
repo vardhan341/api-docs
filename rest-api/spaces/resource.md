@@ -1016,9 +1016,9 @@ _This response is an example, errors and messages will follow this structure but
 
 ```javascript
 {
-	"Business": 12345678,
+	"BusinessId": 12345678,
 	"Name": "Name",
-	"ResourceType": 12345678,
+	"ResourceTypeId": 12345678,
 	"Description": "Descripción",
 	"EmailConfirmationContent": "Descripción",
 	"Visible": true,
@@ -1263,9 +1263,9 @@ _This response is an example, errors and messages will follow this structure but
 ```javascript
 {
 	"Id": 12345678,
-	"Business": 12345678,
+	"BusinessId": 12345678,
 	"Name": "Name",
-	"ResourceType": 12345678,
+	"ResourceTypeId": 12345678,
 	"Description": "Descripción",
 	"EmailConfirmationContent": "Descripción",
 	"Visible": true,

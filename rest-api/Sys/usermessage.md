@@ -515,7 +515,7 @@ _This response is an example, errors and messages will follow this structure but
 
 ```javascript
 {
-	"Business": 12345678,
+	"BusinessId": 12345678,
 	"ToUsers": [12345678, 87654321] (replaces entire list),
 	"AddedToUsers": [12345678, 87654321] (adds to list),
 	"RemovedToUsers": [12345678, 87654321] (removes from list),
@@ -636,7 +636,7 @@ _This response is an example, errors and messages will follow this structure but
 ```javascript
 {
 	"Id": 12345678,
-	"Business": 12345678,
+	"BusinessId": 12345678,
 	"Header": "Header",
 	"Body": "Body",
 }

@@ -903,7 +903,7 @@ _This response is an example, errors and messages will follow this structure but
 
 ```javascript
 {
-	"Business": 12345678,
+	"BusinessId": 12345678,
 	"Name": "Name",
 	"ShortDescription": "Description",
 	"LongDescription": "Description",
@@ -912,7 +912,7 @@ _This response is an example, errors and messages will follow this structure but
 	"ShowEventAttendees": show event attendees,
 	"Location": "Location",
 	"VenueAddress": "Location",
-	"Resource": 12345678,
+	"ResourceId": 12345678,
 	"StartDate": DateTime.Parse("2001-01-01"),
 	"EndDate": DateTime.Parse("2001-01-01"),
 	"Allocation": 0,
@@ -1119,7 +1119,7 @@ _This response is an example, errors and messages will follow this structure but
 ```javascript
 {
 	"Id": 12345678,
-	"Business": 12345678,
+	"BusinessId": 12345678,
 	"Name": "Name",
 	"ShortDescription": "Description",
 	"LongDescription": "Description",
@@ -1128,7 +1128,7 @@ _This response is an example, errors and messages will follow this structure but
 	"ShowEventAttendees": show event attendees,
 	"Location": "Location",
 	"VenueAddress": "Location",
-	"Resource": 12345678,
+	"ResourceId": 12345678,
 	"StartDate": DateTime.Parse("2001-01-01"),
 	"EndDate": DateTime.Parse("2001-01-01"),
 	"Allocation": 0,

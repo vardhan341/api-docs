@@ -688,9 +688,9 @@ _This response is an example, errors and messages will follow this structure but
 
 ```javascript
 {
-	"Coworker": 12345678,
-	"Business": 12345678,
-	"TimePass": 12345678,
+	"CoworkerId": 12345678,
+	"BusinessId": 12345678,
+	"TimePassId": 12345678,
 	"Notes": "Notes",
 	"Free": false,
 	"Price": 15.25,
@@ -824,9 +824,9 @@ _This response is an example, errors and messages will follow this structure but
 ```javascript
 {
 	"Id": 12345678,
-	"Coworker": 12345678,
-	"Business": 12345678,
-	"TimePass": 12345678,
+	"CoworkerId": 12345678,
+	"BusinessId": 12345678,
+	"TimePassId": 12345678,
 	"Notes": "Notes",
 	"Used": false,
 	"Free": false,

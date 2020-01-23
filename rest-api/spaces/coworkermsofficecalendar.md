@@ -530,8 +530,8 @@ _This response is an example, errors and messages will follow this structure but
 
 ```javascript
 {
-	"Resource": 12345678,
-	"Coworker": 12345678,
+	"ResourceId": 12345678,
+	"CoworkerId": 12345678,
 	"Name": "00001",
 	"SubscriptionId": "00001",
 	"CalendarId": "00001",
@@ -657,8 +657,8 @@ _This response is an example, errors and messages will follow this structure but
 ```javascript
 {
 	"Id": 12345678,
-	"Resource": 12345678,
-	"Coworker": 12345678,
+	"ResourceId": 12345678,
+	"CoworkerId": 12345678,
 	"Name": "00001",
 	"SubscriptionId": "00001",
 	"CalendarId": "00001",

@@ -592,7 +592,7 @@ _This response is an example, errors and messages will follow this structure but
 
 ```javascript
 {
-	"Business": 12345678,
+	"BusinessId": 12345678,
 	"Description": "Descripción",
 	"CallBackUrl": "Callback",
 	"DueDate": null,
@@ -711,7 +711,7 @@ _This response is an example, errors and messages will follow this structure but
 ```javascript
 {
 	"Id": 12345678,
-	"Business": 12345678,
+	"BusinessId": 12345678,
 	"CallBackUrl": "Callback",
 }
 

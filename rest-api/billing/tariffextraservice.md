@@ -530,8 +530,8 @@ _This response is an example, errors and messages will follow this structure but
 
 ```javascript
 {
-	"Tariff": 12345678,
-	"ExtraService": 12345678,
+	"TariffId": 12345678,
+	"ExtraServiceId": 12345678,
 	"UsesIncluded": 0,
 	"ServiceRenewalTime": 1 (check Enumerated values section below),
 }
@@ -651,8 +651,8 @@ _This response is an example, errors and messages will follow this structure but
 ```javascript
 {
 	"Id": 12345678,
-	"Tariff": 12345678,
-	"ExtraService": 12345678,
+	"TariffId": 12345678,
+	"ExtraServiceId": 12345678,
 	"UsesIncluded": 0,
 	"ServiceRenewalTime": 1 (check Enumerated values section below),
 }

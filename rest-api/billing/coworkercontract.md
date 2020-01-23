@@ -939,9 +939,9 @@ _This response is an example, errors and messages will follow this structure but
 
 ```javascript
 {
-	"IssuedBy": 12345678,
-	"Coworker": 12345678,
-	"Tariff": 12345678,
+	"IssuedById": 12345678,
+	"CoworkerId": 12345678,
+	"TariffId": 12345678,
 	"Notes": "Notes",
 	"StartDate": null,
 	"BillingDay": 1,
@@ -1132,10 +1132,10 @@ _This response is an example, errors and messages will follow this structure but
 ```javascript
 {
 	"Id": 12345678,
-	"IssuedBy": 12345678,
-	"Coworker": 12345678,
-	"Tariff": 12345678,
-	"NextTariff": 12345678,
+	"IssuedById": 12345678,
+	"CoworkerId": 12345678,
+	"TariffId": 12345678,
+	"NextTariffId": 12345678,
 	"Notes": "Notes",
 	"StartDate": null,
 	"BillingDay": 1,

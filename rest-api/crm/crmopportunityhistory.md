@@ -554,12 +554,12 @@ _This response is an example, errors and messages will follow this structure but
 
 ```javascript
 {
-	"CrmOpportunity": 12345678,
-	"OldCrmBoardColumn": 12345678,
+	"CrmOpportunityId": 12345678,
+	"OldCrmBoardColumnId": 12345678,
 	"FromTime": FromTime,
 	"ToTime": FromTime,
-	"NewCrmBoardColumn": 12345678,
-	"User": 12345678,
+	"NewCrmBoardColumnId": 12345678,
+	"UserId": 12345678,
 }
 
 ```
@@ -681,12 +681,12 @@ _This response is an example, errors and messages will follow this structure but
 ```javascript
 {
 	"Id": 12345678,
-	"CrmOpportunity": 12345678,
-	"OldCrmBoardColumn": 12345678,
+	"CrmOpportunityId": 12345678,
+	"OldCrmBoardColumnId": 12345678,
 	"FromTime": FromTime,
 	"ToTime": FromTime,
-	"NewCrmBoardColumn": 12345678,
-	"User": 12345678,
+	"NewCrmBoardColumnId": 12345678,
+	"UserId": 12345678,
 }
 
 ```

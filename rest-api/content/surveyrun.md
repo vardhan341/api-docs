@@ -500,8 +500,8 @@ _This response is an example, errors and messages will follow this structure but
 
 ```javascript
 {
-	"Coworker": 12345678,
-	"Survey": 12345678,
+	"CoworkerId": 12345678,
+	"SurveyId": 12345678,
 	"MailingDate": ,
 	"Submitted": ,
 }
@@ -621,8 +621,8 @@ _This response is an example, errors and messages will follow this structure but
 ```javascript
 {
 	"Id": 12345678,
-	"Coworker": 12345678,
-	"Survey": 12345678,
+	"CoworkerId": 12345678,
+	"SurveyId": 12345678,
 	"MailingDate": ,
 	"Submitted": ,
 }

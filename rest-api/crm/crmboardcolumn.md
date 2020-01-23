@@ -710,7 +710,7 @@ _This response is an example, errors and messages will follow this structure but
 
 ```javascript
 {
-	"CrmBoard": 12345678,
+	"CrmBoardId": 12345678,
 	"Name": "Joe",
 	"Position": 1,
 	"TourRequests": true,
@@ -724,8 +724,8 @@ _This response is an example, errors and messages will follow this structure but
 	"DocumentsSigned": true,
 	"EventRegistrations": true,
 	"ContactMessages": true,
-	"CannedResponse": 12345678,
-	"TaskList": 12345678,
+	"CannedResponseId": 12345678,
+	"TaskListId": 12345678,
 	"ActivateAccount": true,
 	"DeactivateAccount": false,
 	"ConfirmTour": false,
@@ -876,7 +876,7 @@ _This response is an example, errors and messages will follow this structure but
 ```javascript
 {
 	"Id": 12345678,
-	"CrmBoard": 12345678,
+	"CrmBoardId": 12345678,
 	"Name": "Joe",
 	"Position": 1,
 	"TourRequests": true,
@@ -890,8 +890,8 @@ _This response is an example, errors and messages will follow this structure but
 	"DocumentsSigned": true,
 	"EventRegistrations": true,
 	"ContactMessages": true,
-	"CannedResponse": 12345678,
-	"TaskList": 12345678,
+	"CannedResponseId": 12345678,
+	"TaskListId": 12345678,
 	"ActivateAccount": true,
 	"DeactivateAccount": false,
 	"ConfirmTour": false,

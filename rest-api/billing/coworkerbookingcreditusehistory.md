@@ -555,9 +555,9 @@ _This response is an example, errors and messages will follow this structure but
 ```javascript
 {
 	"Description": "Description",
-	"CoworkerBookingCredit": 12345678,
-	"Booking": 12345678,
-	"EventAttendee": 12345678,
+	"CoworkerBookingCreditId": 12345678,
+	"BookingId": 12345678,
+	"EventAttendeeId": 12345678,
 	"CreditUsed": 0,
 }
 
@@ -677,9 +677,9 @@ _This response is an example, errors and messages will follow this structure but
 {
 	"Id": 12345678,
 	"Description": "Description",
-	"CoworkerBookingCredit": 12345678,
-	"Booking": 12345678,
-	"EventAttendee": 12345678,
+	"CoworkerBookingCreditId": 12345678,
+	"BookingId": 12345678,
+	"EventAttendeeId": 12345678,
 }
 
 ```

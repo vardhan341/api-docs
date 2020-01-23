@@ -572,8 +572,8 @@ _This response is an example, errors and messages will follow this structure but
 
 ```javascript
 {
-	"Proposal": 12345678,
-	"Product": 12345678,
+	"ProposalId": 12345678,
+	"ProductId": 12345678,
 	"Quantity": 1,
 	"Price": false,
 	"IsDeposit": false,
@@ -705,8 +705,8 @@ _This response is an example, errors and messages will follow this structure but
 ```javascript
 {
 	"Id": 12345678,
-	"Proposal": 12345678,
-	"Product": 12345678,
+	"ProposalId": 12345678,
+	"ProductId": 12345678,
 	"Quantity": 1,
 	"Price": false,
 	"IsDeposit": false,

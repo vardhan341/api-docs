@@ -744,7 +744,7 @@ _This response is an example, errors and messages will follow this structure but
 
 ```javascript
 {
-	"Business": 12345678,
+	"BusinessId": 12345678,
 	"BillToName": "BillToName",
 	"BillToAddress": "BillToAddress",
 	"BillToCity": "BillToCity",
@@ -752,7 +752,7 @@ _This response is an example, errors and messages will follow this structure but
 	"BillToPostCode": "BillToPostCode",
 	"BillToPhone": "BillToPhone",
 	"BillToFax": "BillToFax",
-	"BillToCountry": 12345678,
+	"BillToCountryId": 12345678,
 }
 
 ```
@@ -880,7 +880,7 @@ _This response is an example, errors and messages will follow this structure but
 ```javascript
 {
 	"Id": 12345678,
-	"Business": 12345678,
+	"BusinessId": 12345678,
 	"BillToName": "BillToName",
 	"BillToAddress": "BillToAddress",
 	"BillToCity": "BillToCity",
@@ -888,7 +888,7 @@ _This response is an example, errors and messages will follow this structure but
 	"BillToPostCode": "BillToPostCode",
 	"BillToPhone": "BillToPhone",
 	"BillToFax": "BillToFax",
-	"BillToCountry": 12345678,
+	"BillToCountryId": 12345678,
 }
 
 ```

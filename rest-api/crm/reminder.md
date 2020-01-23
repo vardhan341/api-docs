@@ -641,23 +641,23 @@ _This response is an example, errors and messages will follow this structure but
 
 ```javascript
 {
-	"Business": 12345678,
+	"BusinessId": 12345678,
 	"Name": "Joe",
 	"ForAllContacts": false,
 	"ForAllMembers": false,
-	"Coworker": 12345678,
+	"CoworkerId": 12345678,
 	"Tariffs": [12345678, 87654321] (replaces entire list),
 	"AddedTariffs": [12345678, 87654321] (adds to list),
 	"RemovedTariffs": [12345678, 87654321] (removes from list),
 	"ReminderType": 1 (check Enumerated values section below),
 	"ReminderDate": null,
 	"DaysAfterSignup": null,
-	"Product": 12345678,
+	"ProductId": 12345678,
 	"DaysAfterRenewal": null,
 	"DaysBeforeRenewal": null,
 	"ReminderAction": 1 (check Enumerated values section below),
 	"Email": "joe@nexudus.com",
-	"CannedResponse": 12345678,
+	"CannedResponseId": 12345678,
 }
 
 ```
@@ -801,23 +801,23 @@ _This response is an example, errors and messages will follow this structure but
 ```javascript
 {
 	"Id": 12345678,
-	"Business": 12345678,
+	"BusinessId": 12345678,
 	"Name": "Joe",
 	"ForAllContacts": false,
 	"ForAllMembers": false,
-	"Coworker": 12345678,
+	"CoworkerId": 12345678,
 	"Tariffs": [12345678, 87654321] (replaces entire list),
 	"AddedTariffs": [12345678, 87654321] (adds to list),
 	"RemovedTariffs": [12345678, 87654321] (removes from list),
 	"ReminderType": 1 (check Enumerated values section below),
 	"ReminderDate": null,
 	"DaysAfterSignup": null,
-	"Product": 12345678,
+	"ProductId": 12345678,
 	"DaysAfterRenewal": null,
 	"DaysBeforeRenewal": null,
 	"ReminderAction": 1 (check Enumerated values section below),
 	"Email": "joe@nexudus.com",
-	"CannedResponse": 12345678,
+	"CannedResponseId": 12345678,
 }
 
 ```

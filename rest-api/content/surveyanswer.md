@@ -494,8 +494,8 @@ _This response is an example, errors and messages will follow this structure but
 
 ```javascript
 {
-	"SurveyRun": 12345678,
-	"SurveyQuestion": 12345678,
+	"SurveyRunId": 12345678,
+	"SurveyQuestionId": 12345678,
 	"Value": "",
 }
 
@@ -612,8 +612,8 @@ _This response is an example, errors and messages will follow this structure but
 ```javascript
 {
 	"Id": 12345678,
-	"SurveyRun": 12345678,
-	"SurveyQuestion": 12345678,
+	"SurveyRunId": 12345678,
+	"SurveyQuestionId": 12345678,
 	"Value": "",
 }
 

@@ -482,8 +482,8 @@ _This response is an example, errors and messages will follow this structure but
 
 ```javascript
 {
-	"CommunityThread": 12345678,
-	"User": 12345678,
+	"CommunityThreadId": 12345678,
+	"UserId": 12345678,
 	"Message": "Message",
 }
 
@@ -600,8 +600,8 @@ _This response is an example, errors and messages will follow this structure but
 ```javascript
 {
 	"Id": 12345678,
-	"CommunityThread": 12345678,
-	"User": 12345678,
+	"CommunityThreadId": 12345678,
+	"UserId": 12345678,
 	"Message": "Message",
 }
 

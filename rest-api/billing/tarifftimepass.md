@@ -512,8 +512,8 @@ _This response is an example, errors and messages will follow this structure but
 
 ```javascript
 {
-	"Tariff": 12345678,
-	"TimePass": 12345678,
+	"TariffId": 12345678,
+	"TimePassId": 12345678,
 	"PassesIncluded": 0,
 	"PassRenewalTime": 1 (check Enumerated values section below),
 }
@@ -633,8 +633,8 @@ _This response is an example, errors and messages will follow this structure but
 ```javascript
 {
 	"Id": 12345678,
-	"Tariff": 12345678,
-	"TimePass": 12345678,
+	"TariffId": 12345678,
+	"TimePassId": 12345678,
 	"PassesIncluded": 0,
 	"PassRenewalTime": 1 (check Enumerated values section below),
 }

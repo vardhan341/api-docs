@@ -548,8 +548,8 @@ _This response is an example, errors and messages will follow this structure but
 
 ```javascript
 {
-	"Product": 12345678,
-	"ExtraService": 12345678,
+	"ProductId": 12345678,
+	"ExtraServiceId": 12345678,
 	"UsesIncluded": 0,
 	"ExpirationType": 1 (check Enumerated values section below),
 	"ExpiresIn": 0,
@@ -672,8 +672,8 @@ _This response is an example, errors and messages will follow this structure but
 ```javascript
 {
 	"Id": 12345678,
-	"Product": 12345678,
-	"ExtraService": 12345678,
+	"ProductId": 12345678,
+	"ExtraServiceId": 12345678,
 	"UsesIncluded": 0,
 	"ExpirationType": 1 (check Enumerated values section below),
 	"ExpiresIn": 0,

@@ -549,7 +549,7 @@ _This response is an example, errors and messages will follow this structure but
 ```javascript
 {
 	"Name": "00001",
-	"Product": 12345678,
+	"ProductId": 12345678,
 	"ElegibleResourceTypes": [12345678, 87654321] (replaces entire list),
 	"AddedElegibleResourceTypes": [12345678, 87654321] (adds to list),
 	"RemovedElegibleResourceTypes": [12345678, 87654321] (removes from list),
@@ -694,7 +694,7 @@ _This response is an example, errors and messages will follow this structure but
 {
 	"Id": 12345678,
 	"Name": "00001",
-	"Product": 12345678,
+	"ProductId": 12345678,
 	"ElegibleResourceTypes": [12345678, 87654321] (replaces entire list),
 	"AddedElegibleResourceTypes": [12345678, 87654321] (adds to list),
 	"RemovedElegibleResourceTypes": [12345678, 87654321] (removes from list),

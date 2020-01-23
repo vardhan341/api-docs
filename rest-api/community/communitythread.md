@@ -561,9 +561,9 @@ _This response is an example, errors and messages will follow this structure but
 
 ```javascript
 {
-	"Business": 12345678,
-	"CommunityGroup": 12345678,
-	"User": 12345678,
+	"BusinessId": 12345678,
+	"CommunityGroupId": 12345678,
+	"UserId": 12345678,
 	"Subject": "00001",
 	"Message": "Message",
 	"InstantDelivery": instant delivery,
@@ -703,9 +703,9 @@ _This response is an example, errors and messages will follow this structure but
 ```javascript
 {
 	"Id": 12345678,
-	"Business": 12345678,
-	"CommunityGroup": 12345678,
-	"User": 12345678,
+	"BusinessId": 12345678,
+	"CommunityGroupId": 12345678,
+	"UserId": 12345678,
 	"Subject": "00001",
 	"Message": "Message",
 	"InstantDelivery": instant delivery,

@@ -602,8 +602,8 @@ _This response is an example, errors and messages will follow this structure but
 
 ```javascript
 {
-	"CoworkerContract": 12345678,
-	"Product": 12345678,
+	"CoworkerContractId": 12345678,
+	"ProductId": 12345678,
 	"Notes": "Notes",
 	"Price": false,
 	"Refundable": false,
@@ -726,8 +726,8 @@ _This response is an example, errors and messages will follow this structure but
 ```javascript
 {
 	"Id": 12345678,
-	"CoworkerContract": 12345678,
-	"Product": 12345678,
+	"CoworkerContractId": 12345678,
+	"ProductId": 12345678,
 	"Notes": "Notes",
 	"Price": false,
 	"Refundable": false,

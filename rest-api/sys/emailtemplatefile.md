@@ -518,8 +518,8 @@ _This response is an example, errors and messages will follow this structure but
 
 ```javascript
 {
-	"Business": 12345678,
-	"FileLanguage": 12345678,
+	"BusinessId": 12345678,
+	"FileLanguageId": 12345678,
 	"Name": "Name",
 	"Subject": "Subject",
 	"FileContents": "FileContent",
@@ -645,8 +645,8 @@ _This response is an example, errors and messages will follow this structure but
 ```javascript
 {
 	"Id": 12345678,
-	"Business": 12345678,
-	"FileLanguage": 12345678,
+	"BusinessId": 12345678,
+	"FileLanguageId": 12345678,
 	"Name": "Name",
 	"Subject": "Subject",
 	"FileContents": "FileContent",

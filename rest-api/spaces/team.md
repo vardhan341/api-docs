@@ -857,7 +857,7 @@ _This response is an example, errors and messages will follow this structure but
 
 ```javascript
 {
-	"Business": 12345678,
+	"BusinessId": 12345678,
 	"Name": "Name",
 	"Description": "Descripción",
 	"TunnelPrivateGroupId": "",
@@ -866,8 +866,8 @@ _This response is an example, errors and messages will follow this structure but
 	"RemovedTeamMembers": [12345678, 87654321] (removes from list),
 	"CreateSingleInvoiceForTeam": true,
 	"UseSpecialPrices": true,
-	"PayingMember": 12345678,
-	"DefaultMemberTariff": 12345678,
+	"PayingMemberId": 12345678,
+	"DefaultMemberTariffId": 12345678,
 	"MaxTeamMemberCount": null,
 	"TransferCreditsToPayingMember": true,
 	"ShareTimePasses": true,
@@ -1065,7 +1065,7 @@ _This response is an example, errors and messages will follow this structure but
 ```javascript
 {
 	"Id": 12345678,
-	"Business": 12345678,
+	"BusinessId": 12345678,
 	"Name": "Name",
 	"Description": "Descripción",
 	"TunnelPrivateGroupId": "",
@@ -1074,8 +1074,8 @@ _This response is an example, errors and messages will follow this structure but
 	"RemovedTeamMembers": [12345678, 87654321] (removes from list),
 	"CreateSingleInvoiceForTeam": true,
 	"UseSpecialPrices": true,
-	"PayingMember": 12345678,
-	"DefaultMemberTariff": 12345678,
+	"PayingMemberId": 12345678,
+	"DefaultMemberTariffId": 12345678,
 	"MaxTeamMemberCount": null,
 	"TransferCreditsToPayingMember": true,
 	"ShareTimePasses": true,

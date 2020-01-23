@@ -808,7 +808,7 @@ _This response is an example, errors and messages will follow this structure but
 
 ```javascript
 {
-	"CoworkerInvoice": 12345678,
+	"CoworkerInvoiceId": 12345678,
 	"Description": "BillToName",
 	"TaxCategoryName": "Joe",
 	"Quantity": 1,
@@ -944,7 +944,7 @@ _This response is an example, errors and messages will follow this structure but
 ```javascript
 {
 	"Id": 12345678,
-	"CoworkerInvoice": 12345678,
+	"CoworkerInvoiceId": 12345678,
 	"Description": "BillToName",
 	"TaxCategoryName": "Joe",
 	"Quantity": 1,

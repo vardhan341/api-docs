@@ -482,8 +482,8 @@ _This response is an example, errors and messages will follow this structure but
 
 ```javascript
 {
-	"Application": 12345678,
-	"Business": 12345678,
+	"ApplicationId": 12345678,
+	"BusinessId": 12345678,
 	"RequiresApproval": false,
 }
 
@@ -600,8 +600,8 @@ _This response is an example, errors and messages will follow this structure but
 ```javascript
 {
 	"Id": 12345678,
-	"Application": 12345678,
-	"Business": 12345678,
+	"ApplicationId": 12345678,
+	"BusinessId": 12345678,
 	"RequiresApproval": false,
 }
 

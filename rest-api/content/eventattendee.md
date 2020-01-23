@@ -658,10 +658,10 @@ _This response is an example, errors and messages will follow this structure but
 
 ```javascript
 {
-	"Business": 12345678,
-	"CalendarEvent": 12345678,
-	"EventProduct": 12345678,
-	"Coworker": 12345678,
+	"BusinessId": 12345678,
+	"CalendarEventId": 12345678,
+	"EventProductId": 12345678,
+	"CoworkerId": 12345678,
 	"FullName": "Attendee FullName",
 	"Email": "Attendee Email",
 	"CheckedIn": false,
@@ -801,10 +801,10 @@ _This response is an example, errors and messages will follow this structure but
 ```javascript
 {
 	"Id": 12345678,
-	"Business": 12345678,
-	"CalendarEvent": 12345678,
-	"EventProduct": 12345678,
-	"Coworker": 12345678,
+	"BusinessId": 12345678,
+	"CalendarEventId": 12345678,
+	"EventProductId": 12345678,
+	"CoworkerId": 12345678,
 	"FullName": "Attendee FullName",
 	"Email": "Attendee Email",
 	"CheckedIn": false,

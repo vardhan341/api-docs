@@ -470,8 +470,8 @@ _This response is an example, errors and messages will follow this structure but
 
 ```javascript
 {
-	"Thread": 12345678,
-	"User": 12345678,
+	"ThreadId": 12345678,
+	"UserId": 12345678,
 }
 
 ```
@@ -585,8 +585,8 @@ _This response is an example, errors and messages will follow this structure but
 ```javascript
 {
 	"Id": 12345678,
-	"Thread": 12345678,
-	"User": 12345678,
+	"ThreadId": 12345678,
+	"UserId": 12345678,
 }
 
 ```

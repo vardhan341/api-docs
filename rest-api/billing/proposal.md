@@ -781,17 +781,17 @@ _This response is an example, errors and messages will follow this structure but
 
 ```javascript
 {
-	"IssuedBy": 12345678,
-	"Responsible": 12345678,
-	"Coworker": 12345678,
+	"IssuedById": 12345678,
+	"ResponsibleId": 12345678,
+	"CoworkerId": 12345678,
 	"Reference": "00001",
 	"Notes": "Notes",
 	"ProposalStatus": 1 (check Enumerated values section below),
-	"DocumentToSend": 12345678,
-	"DocumentToSign": 12345678,
+	"DocumentToSendId": 12345678,
+	"DocumentToSignId": 12345678,
 	"DocumentToSignHtml": "",
 	"DocumentToSendHtml": "",
-	"Tariff": 12345678,
+	"TariffId": 12345678,
 	"Desks": [12345678, 87654321] (replaces entire list),
 	"AddedDesks": [12345678, 87654321] (adds to list),
 	"RemovedDesks": [12345678, 87654321] (removes from list),
@@ -801,7 +801,7 @@ _This response is an example, errors and messages will follow this structure but
 	"CancellationDate": null,
 	"BillingDay": 1,
 	"Quantity": 1,
-	"DiscountCode": 12345678,
+	"DiscountCodeId": 12345678,
 }
 
 ```
@@ -935,14 +935,14 @@ _This response is an example, errors and messages will follow this structure but
 ```javascript
 {
 	"Id": 12345678,
-	"IssuedBy": 12345678,
-	"Responsible": 12345678,
-	"Coworker": 12345678,
+	"IssuedById": 12345678,
+	"ResponsibleId": 12345678,
+	"CoworkerId": 12345678,
 	"Reference": "00001",
 	"Notes": "Notes",
 	"ProposalStatus": 1 (check Enumerated values section below),
-	"DocumentToSend": 12345678,
-	"DocumentToSign": 12345678,
+	"DocumentToSendId": 12345678,
+	"DocumentToSignId": 12345678,
 	"DocumentToSignHtml": "",
 	"DocumentToSendHtml": "",
 	"CancellationLimitDays": null,

@@ -675,7 +675,7 @@ _This response is an example, errors and messages will follow this structure but
 
 ```javascript
 {
-	"CalendarEvent": 12345678,
+	"CalendarEventId": 12345678,
 	"Name": "Name",
 	"Description": "Description",
 	"TicketNotes": "TicketNotes",
@@ -686,9 +686,9 @@ _This response is an example, errors and messages will follow this structure but
 	"Allocation": 0,
 	"MaxTicketsPerAttendee": 0,
 	"Price": 0,
-	"Currency": 12345678,
-	"TaxRate": 12345678,
-	"FinancialAccount": 12345678,
+	"CurrencyId": 12345678,
+	"TaxRateId": 12345678,
+	"FinancialAccountId": 12345678,
 	"Tariffs": [12345678, 87654321] (replaces entire list),
 	"AddedTariffs": [12345678, 87654321] (adds to list),
 	"RemovedTariffs": [12345678, 87654321] (removes from list),
@@ -835,7 +835,7 @@ _This response is an example, errors and messages will follow this structure but
 ```javascript
 {
 	"Id": 12345678,
-	"CalendarEvent": 12345678,
+	"CalendarEventId": 12345678,
 	"Name": "Name",
 	"Description": "Description",
 	"TicketNotes": "TicketNotes",
@@ -846,9 +846,9 @@ _This response is an example, errors and messages will follow this structure but
 	"Allocation": 0,
 	"MaxTicketsPerAttendee": 0,
 	"Price": 0,
-	"Currency": 12345678,
-	"TaxRate": 12345678,
-	"FinancialAccount": 12345678,
+	"CurrencyId": 12345678,
+	"TaxRateId": 12345678,
+	"FinancialAccountId": 12345678,
 	"Tariffs": [12345678, 87654321] (replaces entire list),
 	"AddedTariffs": [12345678, 87654321] (adds to list),
 	"RemovedTariffs": [12345678, 87654321] (removes from list),

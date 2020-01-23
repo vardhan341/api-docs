@@ -482,7 +482,7 @@ _This response is an example, errors and messages will follow this structure but
 
 ```javascript
 {
-	"Coworker": 12345678,
+	"CoworkerId": 12345678,
 	"Notes": "00001",
 	"AddedBy": "00001",
 }
@@ -600,7 +600,7 @@ _This response is an example, errors and messages will follow this structure but
 ```javascript
 {
 	"Id": 12345678,
-	"Coworker": 12345678,
+	"CoworkerId": 12345678,
 	"Notes": "00001",
 	"AddedBy": "00001",
 }

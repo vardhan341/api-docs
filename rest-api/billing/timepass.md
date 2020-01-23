@@ -575,14 +575,14 @@ _This response is an example, errors and messages will follow this structure but
 
 ```javascript
 {
-	"Business": 12345678,
+	"BusinessId": 12345678,
 	"Name": "Name",
 	"Price": 0,
 	"MinutesIncluded": 0,
 	"CountsTowardsPlanLimits": true,
-	"Currency": 12345678,
-	"TaxRate": 12345678,
-	"FinancialAccount": 12345678,
+	"CurrencyId": 12345678,
+	"TaxRateId": 12345678,
+	"FinancialAccountId": 12345678,
 	"Businesses": [12345678, 87654321] (replaces entire list),
 	"AddedBusinesses": [12345678, 87654321] (adds to list),
 	"RemovedBusinesses": [12345678, 87654321] (removes from list),
@@ -720,14 +720,14 @@ _This response is an example, errors and messages will follow this structure but
 ```javascript
 {
 	"Id": 12345678,
-	"Business": 12345678,
+	"BusinessId": 12345678,
 	"Name": "Name",
 	"Price": 0,
 	"MinutesIncluded": 0,
 	"CountsTowardsPlanLimits": true,
-	"Currency": 12345678,
-	"TaxRate": 12345678,
-	"FinancialAccount": 12345678,
+	"CurrencyId": 12345678,
+	"TaxRateId": 12345678,
+	"FinancialAccountId": 12345678,
 	"Businesses": [12345678, 87654321] (replaces entire list),
 	"AddedBusinesses": [12345678, 87654321] (adds to list),
 	"RemovedBusinesses": [12345678, 87654321] (removes from list),

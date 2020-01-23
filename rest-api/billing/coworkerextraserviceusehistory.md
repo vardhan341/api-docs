@@ -504,8 +504,8 @@ _This response is an example, errors and messages will follow this structure but
 
 ```javascript
 {
-	"CoworkerExtraService": 12345678,
-	"Booking": 12345678,
+	"CoworkerExtraServiceId": 12345678,
+	"BookingId": 12345678,
 }
 
 ```
@@ -619,8 +619,8 @@ _This response is an example, errors and messages will follow this structure but
 ```javascript
 {
 	"Id": 12345678,
-	"CoworkerExtraService": 12345678,
-	"Booking": 12345678,
+	"CoworkerExtraServiceId": 12345678,
+	"BookingId": 12345678,
 }
 
 ```

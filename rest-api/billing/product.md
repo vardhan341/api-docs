@@ -723,7 +723,7 @@ _This response is an example, errors and messages will follow this structure but
 
 ```javascript
 {
-	"Business": 12345678,
+	"BusinessId": 12345678,
 	"Name": "Name",
 	"Description": "Description",
 	"Sku": "SKU",
@@ -731,9 +731,9 @@ _This response is an example, errors and messages will follow this structure but
 	"DisplayOrder": true,
 	"Price": 0,
 	"Visible": true,
-	"Currency": 12345678,
-	"TaxRate": 12345678,
-	"FinancialAccount": 12345678,
+	"CurrencyId": 12345678,
+	"TaxRateId": 12345678,
+	"FinancialAccountId": 12345678,
 	"AvailableAs": 1 (check Enumerated values section below),
 	"OnlyForContacts": true,
 	"OnlyForMembers": true,
@@ -898,7 +898,7 @@ _This response is an example, errors and messages will follow this structure but
 ```javascript
 {
 	"Id": 12345678,
-	"Business": 12345678,
+	"BusinessId": 12345678,
 	"Name": "Name",
 	"Description": "Description",
 	"Sku": "SKU",
@@ -906,9 +906,9 @@ _This response is an example, errors and messages will follow this structure but
 	"DisplayOrder": true,
 	"Price": 0,
 	"Visible": true,
-	"Currency": 12345678,
-	"TaxRate": 12345678,
-	"FinancialAccount": 12345678,
+	"CurrencyId": 12345678,
+	"TaxRateId": 12345678,
+	"FinancialAccountId": 12345678,
 	"AvailableAs": 1 (check Enumerated values section below),
 	"OnlyForContacts": true,
 	"OnlyForMembers": true,

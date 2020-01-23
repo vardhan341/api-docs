@@ -530,8 +530,8 @@ _This response is an example, errors and messages will follow this structure but
 
 ```javascript
 {
-	"Business": 12345678,
-	"Coworker": 12345678,
+	"BusinessId": 12345678,
+	"CoworkerId": 12345678,
 	"Name": "00001",
 	"Description": "",
 	"AvailableToUser": available to user,
@@ -660,8 +660,8 @@ _This response is an example, errors and messages will follow this structure but
 ```javascript
 {
 	"Id": 12345678,
-	"Business": 12345678,
-	"Coworker": 12345678,
+	"BusinessId": 12345678,
+	"CoworkerId": 12345678,
 	"Name": "00001",
 	"Description": "",
 	"AvailableToUser": available to user,

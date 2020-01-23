@@ -482,7 +482,7 @@ _This response is an example, errors and messages will follow this structure but
 
 ```javascript
 {
-	"Language": 12345678,
+	"LanguageId": 12345678,
 	"Name": "Name",
 	"Value": "Value",
 }
@@ -600,7 +600,7 @@ _This response is an example, errors and messages will follow this structure but
 ```javascript
 {
 	"Id": 12345678,
-	"Language": 12345678,
+	"LanguageId": 12345678,
 	"Name": "Name",
 	"Value": "Value",
 }

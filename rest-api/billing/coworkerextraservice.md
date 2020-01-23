@@ -808,9 +808,9 @@ _This response is an example, errors and messages will follow this structure but
 
 ```javascript
 {
-	"Coworker": 12345678,
-	"Business": 12345678,
-	"ExtraService": 12345678,
+	"CoworkerId": 12345678,
+	"BusinessId": 12345678,
+	"ExtraServiceId": 12345678,
 	"Notes": "Notes",
 	"TotalUses": false,
 	"Free": false,
@@ -962,9 +962,9 @@ _This response is an example, errors and messages will follow this structure but
 ```javascript
 {
 	"Id": 12345678,
-	"Coworker": 12345678,
-	"Business": 12345678,
-	"ExtraService": 12345678,
+	"CoworkerId": 12345678,
+	"BusinessId": 12345678,
+	"ExtraServiceId": 12345678,
 	"Notes": "Notes",
 	"TotalUses": false,
 	"Free": false,

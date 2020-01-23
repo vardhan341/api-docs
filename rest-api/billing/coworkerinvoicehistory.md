@@ -566,7 +566,7 @@ _This response is an example, errors and messages will follow this structure but
 
 ```javascript
 {
-	"CoworkerInvoice": 12345678,
+	"CoworkerInvoiceId": 12345678,
 	"Name": "00001",
 	"Description": "00001",
 	"IsProblem": false,
@@ -687,7 +687,7 @@ _This response is an example, errors and messages will follow this structure but
 ```javascript
 {
 	"Id": 12345678,
-	"CoworkerInvoice": 12345678,
+	"CoworkerInvoiceId": 12345678,
 	"Name": "00001",
 	"Description": "00001",
 	"IsProblem": false,

@@ -518,8 +518,8 @@ _This response is an example, errors and messages will follow this structure but
 
 ```javascript
 {
-	"ExtraService": 12345678,
-	"Tariff": 12345678,
+	"ExtraServiceId": 12345678,
+	"TariffId": 12345678,
 	"Price": 0,
 	"MaximumPrice": 0,
 }
@@ -639,8 +639,8 @@ _This response is an example, errors and messages will follow this structure but
 ```javascript
 {
 	"Id": 12345678,
-	"ExtraService": 12345678,
-	"Tariff": 12345678,
+	"ExtraServiceId": 12345678,
+	"TariffId": 12345678,
 	"Price": 0,
 	"MaximumPrice": 0,
 }

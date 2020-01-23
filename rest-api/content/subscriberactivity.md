@@ -494,8 +494,8 @@ _This response is an example, errors and messages will follow this structure but
 
 ```javascript
 {
-	"NewsLetterSubscriber": 12345678,
-	"NewsLetter": 12345678,
+	"NewsLetterSubscriberId": 12345678,
+	"NewsLetterId": 12345678,
 	"ActiviyType": 1 (check Enumerated values section below),
 	"Data": "Joe",
 }
@@ -615,8 +615,8 @@ _This response is an example, errors and messages will follow this structure but
 ```javascript
 {
 	"Id": 12345678,
-	"NewsLetterSubscriber": 12345678,
-	"NewsLetter": 12345678,
+	"NewsLetterSubscriberId": 12345678,
+	"NewsLetterId": 12345678,
 	"ActiviyType": 1 (check Enumerated values section below),
 	"Data": "Joe",
 }

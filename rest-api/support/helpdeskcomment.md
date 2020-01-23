@@ -500,8 +500,8 @@ _This response is an example, errors and messages will follow this structure but
 
 ```javascript
 {
-	"HelpDeskMessage": 12345678,
-	"Coworker": 12345678,
+	"HelpDeskMessageId": 12345678,
+	"CoworkerId": 12345678,
 	"MessageText": "MessageText",
 	"Internal": false,
 }
@@ -621,8 +621,8 @@ _This response is an example, errors and messages will follow this structure but
 ```javascript
 {
 	"Id": 12345678,
-	"HelpDeskMessage": 12345678,
-	"Coworker": 12345678,
+	"HelpDeskMessageId": 12345678,
+	"CoworkerId": 12345678,
 	"MessageText": "MessageText",
 	"Internal": false,
 }

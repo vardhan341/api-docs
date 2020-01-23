@@ -594,8 +594,8 @@ _This response is an example, errors and messages will follow this structure but
 
 ```javascript
 {
-	"Coworker": 12345678,
-	"Business": 12345678,
+	"CoworkerId": 12345678,
+	"BusinessId": 12345678,
 	"FromTime": DateTime.Parse("2013-01-01 10:00"),
 	"ToTime": 2013-01-01 11:00,
 	"CoworkerTimePassGuid": null,
@@ -730,8 +730,8 @@ _This response is an example, errors and messages will follow this structure but
 ```javascript
 {
 	"Id": 12345678,
-	"Coworker": 12345678,
-	"Business": 12345678,
+	"CoworkerId": 12345678,
+	"BusinessId": 12345678,
 	"FromTime": DateTime.Parse("2013-01-01 10:00"),
 	"ToTime": 2013-01-01 11:00,
 	"CoworkerTimePassGuid": null,

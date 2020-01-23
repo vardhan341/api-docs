@@ -500,7 +500,7 @@ _This response is an example, errors and messages will follow this structure but
 
 ```javascript
 {
-	"User": 12345678,
+	"UserId": 12345678,
 	"EntityId": 0,
 	"Name": "0",
 	"EntityUrl": "http://www.google.com",
@@ -621,7 +621,7 @@ _This response is an example, errors and messages will follow this structure but
 ```javascript
 {
 	"Id": 12345678,
-	"User": 12345678,
+	"UserId": 12345678,
 	"EntityId": 0,
 	"Name": "0",
 	"EntityUrl": "http://www.google.com",

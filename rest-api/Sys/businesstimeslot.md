@@ -506,7 +506,7 @@ _This response is an example, errors and messages will follow this structure but
 
 ```javascript
 {
-	"Business": 12345678,
+	"BusinessId": 12345678,
 	"FromTime": DateTime.Parse("2013-01-01 10:00"),
 	"ToTime": DateTime.Parse("2013-01-01 11:00"),
 	"DayOfWeek": 1 (check Enumerated values section below),
@@ -627,7 +627,7 @@ _This response is an example, errors and messages will follow this structure but
 ```javascript
 {
 	"Id": 12345678,
-	"Business": 12345678,
+	"BusinessId": 12345678,
 	"FromTime": DateTime.Parse("2013-01-01 10:00"),
 	"ToTime": DateTime.Parse("2013-01-01 11:00"),
 	"DayOfWeek": 1 (check Enumerated values section below),

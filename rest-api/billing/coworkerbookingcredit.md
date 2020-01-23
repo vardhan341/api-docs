@@ -568,8 +568,8 @@ _This response is an example, errors and messages will follow this structure but
 
 ```javascript
 {
-	"Coworker": 12345678,
-	"Business": 12345678,
+	"CoworkerId": 12345678,
+	"BusinessId": 12345678,
 	"Description": "",
 	"ElegibleResourceTypes": [12345678, 87654321] (replaces entire list),
 	"AddedElegibleResourceTypes": [12345678, 87654321] (adds to list),
@@ -713,8 +713,8 @@ _This response is an example, errors and messages will follow this structure but
 ```javascript
 {
 	"Id": 12345678,
-	"Coworker": 12345678,
-	"Business": 12345678,
+	"CoworkerId": 12345678,
+	"BusinessId": 12345678,
 	"Description": "",
 	"ElegibleResourceTypes": [12345678, 87654321] (replaces entire list),
 	"AddedElegibleResourceTypes": [12345678, 87654321] (adds to list),
